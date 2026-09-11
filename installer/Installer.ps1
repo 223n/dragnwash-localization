@@ -51,7 +51,7 @@ $T = @{
         running = 'Close the game first.'; noPayload = 'Plugin files are missing next to the installer. Extract the whole zip first.'
         stBep = 'BepInEx'; stMod = 'Mod'; yes = 'installed'; no = 'not installed'
         done = 'Done. Start the game from Steam.'; undone = 'Done. The mod has been removed.'
-        pickFolder = "Select the Drag'n Wash folder"; english = 'English (no translation)'
+        pickFolder = "Select the Drag'n Wash folder"
     }
     ja = @{
         title = "Drag'n Wash 日本語化 / 中文化"; folder = 'ゲームフォルダ'; browse = '参照...'
@@ -61,7 +61,7 @@ $T = @{
         running = '先にゲームを終了してください。'; noPayload = 'インストーラーの隣にプラグインのファイルがありません。zip を丸ごと展開してから実行してください。'
         stBep = 'BepInEx'; stMod = 'Mod'; yes = '導入済み'; no = '未導入'
         done = '完了しました。Steam からゲームを起動してください。'; undone = '完了しました。Mod を削除しました。'
-        pickFolder = "Drag'n Wash のフォルダを選択"; english = '英語のまま（翻訳しない）'
+        pickFolder = "Drag'n Wash のフォルダを選択"
     }
     zh = @{
         title = "Drag'n Wash 汉化 / 日本語化"; folder = '游戏文件夹'; browse = '浏览...'
@@ -71,7 +71,7 @@ $T = @{
         running = '请先关闭游戏。'; noPayload = '安装器旁边缺少插件文件。请先完整解压 zip。'
         stBep = 'BepInEx'; stMod = 'Mod'; yes = '已安装'; no = '未安装'
         done = '完成。请从 Steam 启动游戏。'; undone = '完成。Mod 已删除。'
-        pickFolder = "选择 Drag'n Wash 文件夹"; english = '英语（不翻译）'
+        pickFolder = "选择 Drag'n Wash 文件夹"
     }
 }[$Lang]
 
@@ -239,9 +239,9 @@ $btnBrowse = New-Object Windows.Forms.Button; $btnBrowse.Text = $T.browse; $btnB
 $lblStatus = New-Object Windows.Forms.Label; $lblStatus.Location = '12,64'; $lblStatus.AutoSize = $true
 
 $grpLang = New-Object Windows.Forms.GroupBox; $grpLang.Text = $T.language; $grpLang.Location = '12,92'; $grpLang.Size = '496,50'
-$rbJa = New-Object Windows.Forms.RadioButton; $rbJa.Text = '日本語 (ja)'; $rbJa.Location = '12,20'; $rbJa.AutoSize = $true; $rbJa.Checked = ($Lang -ne 'zh')
-$rbZh = New-Object Windows.Forms.RadioButton; $rbZh.Text = '简体中文 (zh-Hans)'; $rbZh.Location = '160,20'; $rbZh.AutoSize = $true; $rbZh.Checked = ($Lang -eq 'zh')
-$rbEn = New-Object Windows.Forms.RadioButton; $rbEn.Text = $T.english; $rbEn.Location = '330,20'; $rbEn.AutoSize = $true
+$rbJa = New-Object Windows.Forms.RadioButton; $rbJa.Text = '日本語'; $rbJa.Location = '12,20'; $rbJa.AutoSize = $true; $rbJa.Checked = ($Lang -ne 'zh')
+$rbZh = New-Object Windows.Forms.RadioButton; $rbZh.Text = '中文'; $rbZh.Location = '130,20'; $rbZh.AutoSize = $true; $rbZh.Checked = ($Lang -eq 'zh')
+$rbEn = New-Object Windows.Forms.RadioButton; $rbEn.Text = 'English'; $rbEn.Location = '220,20'; $rbEn.AutoSize = $true
 $grpLang.Controls.AddRange(@($rbJa, $rbZh, $rbEn))
 
 $btnInstall = New-Object Windows.Forms.Button; $btnInstall.Text = $T.install; $btnInstall.Location = '12,154'; $btnInstall.Size = '200,36'
