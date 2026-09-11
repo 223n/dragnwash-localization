@@ -13,7 +13,7 @@
 #     BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
-#     Install.cmd                <- double-click installer / uninstaller
+#     Install.exe                <- double-click installer / uninstaller (no console)
 #     installer/Installer.ps1
 #     README.md
 param(
@@ -93,10 +93,17 @@ Get-ChildItem -LiteralPath $SrcTranslations -Directory |
 
 Copy-Item -LiteralPath (Join-Path $Root 'README.md') -Destination $Stage
 
-# The one-click installer: Install.cmd at the zip root, script beside the payload.
+# The one-click installer: Install.exe at the zip root, script beside the payload.
+# The exe is a tiny console-less launcher compiled with the C# compiler that
+# ships with .NET Framework 4 on every Windows machine.
 New-Item -ItemType Directory -Force -Path (Join-Path $Stage 'installer') | Out-Null
 Copy-Item -LiteralPath (Join-Path $Root 'installer/Installer.ps1') -Destination (Join-Path $Stage 'installer')
-Copy-Item -LiteralPath (Join-Path $Root 'installer/Install.cmd') -Destination $Stage
+$Csc = Join-Path $env:WINDIR 'Microsoft.NET' | Join-Path -ChildPath 'Framework64' | Join-Path -ChildPath 'v4.0.30319' | Join-Path -ChildPath 'csc.exe'
+if (-not (Test-Path -LiteralPath $Csc)) { throw "C# compiler not found at $Csc (needed to build Install.exe)." }
+$LauncherExe = Join-Path $Stage 'Install.exe'
+$LauncherSrc = Join-Path $Root 'installer/Launcher.cs'
+& $Csc /nologo /target:winexe /optimize+ /r:System.Windows.Forms.dll "/out:$LauncherExe" $LauncherSrc
+if ($LASTEXITCODE -ne 0) { throw 'Failed to build Install.exe.' }
 
 # 5. Zip the stage contents (so the zip root holds BepInEx/ and README.md).
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
@@ -109,4 +116,4 @@ Compress-Archive -Path (Join-Path $Stage '*') -DestinationPath $Zip
 
 Write-Host ''
 Write-Host "Created $Zip"
-Write-Host 'Install: extract anywhere and double-click Install.cmd (or merge BepInEx/ into the game folder by hand).'
+Write-Host 'Install: extract anywhere and double-click Install.exe (or merge BepInEx/ into the game folder by hand).'

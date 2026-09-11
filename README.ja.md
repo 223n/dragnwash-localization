@@ -13,7 +13,7 @@
 ### かんたん導入（推奨）
 
 1. [Releases](https://github.com/TomXV/dragnwash-localization/releases) から `DragNWashLocalization-<version>.zip` をダウンロードし、どこでもよいので展開する
-2. **`Install.cmd` をダブルクリック**する。ゲームフォルダは Steam から自動で見つかります（見つからなければ選択できます）
+2. **`Install.exe` をダブルクリック**する。ゲームフォルダは Steam から自動で見つかります（見つからなければ選択できます）
 3. 言語（日本語 / 简体中文）を選んで「インストール / 更新」を押す。BepInEx が未導入なら、公式の 5.4.23.5 を自動でダウンロード（SHA-256 検証つき）して導入します
 4. Steam からゲームを起動する
 

@@ -1,6 +1,6 @@
 ﻿# Installer / uninstaller for the Drag'n Wash localization mod.
 #
-# Double-click Install.cmd (next to this folder) for the window. The same
+# Double-click Install.exe (next to this folder) for the window. The same
 # script also works from a terminal without the window, which is how it is
 # tested:
 #
