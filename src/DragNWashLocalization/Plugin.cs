@@ -360,6 +360,7 @@ namespace DragNWashLocalization
 
             // "en" is always offered: it has no translation folder and means
             // "leave the game's own English text alone".
+            _localeNames.Clear();
             _availableLocales = new[] { "en" }
                 .Concat(Directory.GetDirectories(translationsDir)
                     .Select(Path.GetFileName)
@@ -411,7 +412,11 @@ namespace DragNWashLocalization
                 ascii.Append(FontFallback.WarmedCharacters());
 
                 _menuFont.RequestCharactersInTexture(ascii.ToString(), MenuFontSize, FontStyle.Normal);
-                _menuFont.RequestCharactersInTexture("日本語中文", MenuFontSize, FontStyle.Normal);
+                // Locale display names may be non-Latin (name.txt is translator-set).
+                foreach (string locale in _availableLocales ?? new string[0])
+                {
+                    _menuFont.RequestCharactersInTexture(LocaleDisplayName(locale), MenuFontSize, FontStyle.Normal);
+                }
             }
             catch (Exception ex)
             {

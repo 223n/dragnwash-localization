@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -406,15 +407,36 @@ namespace DragNWashLocalization
         }
     
         // Shown on the language buttons; the folder name is what the config stores.
+        // Translators set the name in Translations/<locale>/name.txt.
+        private static readonly Dictionary<string, string> _localeNames = new Dictionary<string, string>();
+
         private static string LocaleDisplayName(string locale)
         {
-            switch (locale)
+            if (_localeNames.TryGetValue(locale, out string cached))
             {
-                case "en": return "English";
-                case "ja": return "日本語";
-                case "zh-Hans": return "中文";
-                default: return locale;
+                return cached;
             }
+
+            string name = locale == "en" ? "English" : locale;
+            try
+            {
+                string path = Path.Combine(PluginDirectory, "Translations", locale, "name.txt");
+                if (File.Exists(path))
+                {
+                    string text = File.ReadAllText(path).Trim();
+                    if (text.Length > 0)
+                    {
+                        name = text;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // Fall back to the folder name.
+            }
+
+            _localeNames[locale] = name;
+            return name;
         }
 }
 }

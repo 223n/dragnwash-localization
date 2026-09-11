@@ -21,7 +21,6 @@ param(
     [ValidateSet('install', 'uninstall')]
     [string]$Action,
     [string]$GamePath,
-    [ValidateSet('ja', 'zh-Hans', 'en')]
     [string]$Locale = 'ja',
     [switch]$RemoveBepInEx,
     [switch]$RemoveEverything
@@ -102,6 +101,21 @@ function Find-GameFolder {
         }
     }
     return $null
+}
+
+function Get-AvailableLocales {
+    $list = @()
+    $t = Join-Path $Payload 'Translations'
+    if (Test-Path -LiteralPath $t) {
+        foreach ($d in Get-ChildItem -LiteralPath $t -Directory | Where-Object { $_.Name -notlike '_*' } | Sort-Object Name) {
+            $name = $d.Name
+            $nf = Join-Path $d.FullName 'name.txt'
+            if (Test-Path -LiteralPath $nf) { $txt = ([IO.File]::ReadAllText($nf, [Text.Encoding]::UTF8)).Trim(); if ($txt) { $name = $txt } }
+            $list += [pscustomobject]@{ Code = $d.Name; Name = $name }
+        }
+    }
+    $list += [pscustomobject]@{ Code = 'en'; Name = 'English' }
+    return $list
 }
 
 function Test-GameFolder([string]$p) { $p -and (Test-Path -LiteralPath (Join-Path $p $GameExe)) }
@@ -239,10 +253,19 @@ $btnBrowse = New-Object Windows.Forms.Button; $btnBrowse.Text = $T.browse; $btnB
 $lblStatus = New-Object Windows.Forms.Label; $lblStatus.Location = '12,64'; $lblStatus.AutoSize = $true
 
 $grpLang = New-Object Windows.Forms.GroupBox; $grpLang.Text = $T.language; $grpLang.Location = '12,92'; $grpLang.Size = '496,50'
-$rbJa = New-Object Windows.Forms.RadioButton; $rbJa.Text = '日本語'; $rbJa.Location = '12,20'; $rbJa.AutoSize = $true; $rbJa.Checked = ($Lang -ne 'zh')
-$rbZh = New-Object Windows.Forms.RadioButton; $rbZh.Text = '中文'; $rbZh.Location = '130,20'; $rbZh.AutoSize = $true; $rbZh.Checked = ($Lang -eq 'zh')
-$rbEn = New-Object Windows.Forms.RadioButton; $rbEn.Text = 'English'; $rbEn.Location = '220,20'; $rbEn.AutoSize = $true
-$grpLang.Controls.AddRange(@($rbJa, $rbZh, $rbEn))
+# One radio per shipped locale (name from Translations/<locale>/name.txt), plus English = off.
+$radios = @()
+$x = 12
+foreach ($loc in Get-AvailableLocales) {
+    $rb = New-Object Windows.Forms.RadioButton
+    $rb.Text = $loc.Name; $rb.Tag = $loc.Code; $rb.Location = "$x,20"; $rb.AutoSize = $true
+    $grpLang.Controls.Add($rb); $radios += $rb
+    $x += [Math]::Max(90, [Windows.Forms.TextRenderer]::MeasureText($loc.Name, $form.Font).Width + 40)
+}
+$preferred = if ($Lang -eq 'zh') { 'zh-Hans' } elseif ($Lang -eq 'ja') { 'ja' } else { 'en' }
+$pick = $radios | Where-Object { $_.Tag -eq $preferred } | Select-Object -First 1
+if (-not $pick) { $pick = $radios[0] }
+$pick.Checked = $true
 
 $btnInstall = New-Object Windows.Forms.Button; $btnInstall.Text = $T.install; $btnInstall.Location = '12,154'; $btnInstall.Size = '200,36'
 $btnUninstall = New-Object Windows.Forms.Button; $btnUninstall.Text = $T.uninstall; $btnUninstall.Location = '308,154'; $btnUninstall.Size = '200,36'
@@ -296,7 +319,7 @@ function Run-Guarded([scriptblock]$work) {
 }
 
 $btnInstall.Add_Click({
-    Run-Guarded { Invoke-Install $txtFolder.Text $(if ($rbZh.Checked) { 'zh-Hans' } elseif ($rbEn.Checked) { 'en' } else { 'ja' }) }
+    Run-Guarded { Invoke-Install $txtFolder.Text ($radios | Where-Object Checked | Select-Object -First 1).Tag }
 })
 $btnUninstall.Add_Click({
     Run-Guarded { Invoke-Uninstall $txtFolder.Text $chkKeep.Checked $chkBep.Checked }

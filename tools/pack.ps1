@@ -87,8 +87,10 @@ Get-ChildItem -LiteralPath $SrcTranslations -Directory |
     ForEach-Object {
         $dest = Join-Path $TranslationsDir $_.Name
         New-Item -ItemType Directory -Force -Path $dest | Out-Null
-        # Only the published file ships.
+        # Only the published file and the display name ship.
         Copy-Item -LiteralPath (Join-Path $_.FullName 'strings.csv') -Destination $dest
+        $nameFile = Join-Path $_.FullName 'name.txt'
+        if (Test-Path -LiteralPath $nameFile) { Copy-Item -LiteralPath $nameFile -Destination $dest }
     }
 
 Copy-Item -LiteralPath (Join-Path $Root 'README.md') -Destination $Stage
