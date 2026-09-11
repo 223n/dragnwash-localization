@@ -10,6 +10,19 @@ See [docs/PLAN.md](docs/PLAN.md) for the technical research and implementation p
 
 ## Installation
 
+### Quick install (recommended)
+
+1. Download `DragNWashLocalization-<version>.zip` from the [Releases page](https://github.com/TomXV/dragnwash-localization/releases) and extract it anywhere.
+2. Double-click **`Install.cmd`**. The installer finds the game through Steam (or lets you pick the folder).
+3. Choose the language (日本語 / 简体中文) and press **Install / Update**. If BepInEx is not installed yet, the installer downloads the official 5.4.23.5 release, verifies its SHA-256, and unpacks it for you.
+4. Start the game from Steam.
+
+The same window has an **Uninstall** button. Save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
+
+If you prefer to do it by hand, follow the manual steps below.
+
+### Manual installation
+
 ### What you need
 
 - The Windows Steam version of Drag'n Wash

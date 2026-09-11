@@ -13,6 +13,8 @@
 #     BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
+#     Install.cmd                <- double-click installer / uninstaller
+#     installer/Installer.ps1
 #     README.md
 param(
     [string]$Version
@@ -91,6 +93,11 @@ Get-ChildItem -LiteralPath $SrcTranslations -Directory |
 
 Copy-Item -LiteralPath (Join-Path $Root 'README.md') -Destination $Stage
 
+# The one-click installer: Install.cmd at the zip root, script beside the payload.
+New-Item -ItemType Directory -Force -Path (Join-Path $Stage 'installer') | Out-Null
+Copy-Item -LiteralPath (Join-Path $Root 'installer/Installer.ps1') -Destination (Join-Path $Stage 'installer')
+Copy-Item -LiteralPath (Join-Path $Root 'installer/Install.cmd') -Destination $Stage
+
 # 5. Zip the stage contents (so the zip root holds BepInEx/ and README.md).
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
 $Zip = Join-Path $OutDir "DragNWashLocalization-$Version.zip"
@@ -102,4 +109,4 @@ Compress-Archive -Path (Join-Path $Stage '*') -DestinationPath $Zip
 
 Write-Host ''
 Write-Host "Created $Zip"
-Write-Host 'Install: extract into the game folder (merges with the existing BepInEx/).'
+Write-Host 'Install: extract anywhere and double-click Install.cmd (or merge BepInEx/ into the game folder by hand).'
