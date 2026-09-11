@@ -2,14 +2,8 @@ name: Check translations
 
 on:
   pull_request:
-    paths:
-      - "Translations/**"
-      - "tools/check-translations.py"
   push:
     branches: [main]
-    paths:
-      - "Translations/**"
-      - "tools/check-translations.py"
 
 jobs:
   check:
