@@ -1,0 +1,77 @@
+# 翻訳対象から除外する文字列のパターン（1行1つ、.NETの正規表現）
+#
+# ここに書いた文字列は「未翻訳」として記録されなくなります。
+# _discovered/strings.csv にもデバッグログにも出なくなるので、
+# 数値やビルド番号に埋もれず、訳すべき文章だけが残ります。
+#
+# 除外されるのは「記録」だけです。翻訳の検索はこれより先に行われるため、
+# strings.csv に書いた行は除外パターンに一致していても必ず翻訳されます。
+# 「本当はこれも訳したい」という場合は、素直に strings.csv に書けばOKです。
+#
+# プラグインには以下の組み込みルールが最初から入っています（このファイルは追加分）:
+#   - 単体の数値               0 / -3 / 0.001 / 1,250 / 45%
+#   - 解像度                   1920 x 1080 @ 164.995Hz
+#   - リフレッシュレート等     60Hz / 144 Hz / 30 FPS
+#   - ビルド番号・日付         9/9/2026_ee944596
+#   - 時間表示                 1:23 / 00:05:12
+#
+# 行頭の # はコメントです。空行は無視されます。
+# パターンは前後の空白を取り除いた文字列全体に対して照合されます。
+#
+# 記述例:
+#   ^v?\d+\.\d+\.\d+$        バージョン番号（v1.2.3）
+#   ^[A-Z]{2,}_[A-Z0-9_]+$   内部キー（PLAYER_NAME など）
+
+# セーブ枠の空きスロットに表示される「NEW」。翻訳不要のため記録対象から除外。
+# 翻訳したい場合は strings.csv に "NEW" の行を書けば、この除外より優先して翻訳されます。
+^NEW$
+
+# プレハブに残るTMPの初期値。実行時に本文で上書きされるため画面には出ない。
+^LABEL$
+^Character Name$
+^Last line$
+^Here's a big long line of dialogue, ready to be shown to the player\.$
+
+# 開発用チート。製品版のプレイヤーには関係しない。
+^CHEAT: .+$
+
+# ブランド名。原文のまま表示するのが正しい。
+^Xbox$
+^DualShock$
+
+# セーブ枠のバッジ。^NEW$ と同じものが別の綴りで出るケース。
+^New$
+# UIプレハブの雛形に残る文言。実行時に本文で置き換わるため画面には出ない。
+# object_path に Template / Option Item が含まれるもの。
+^Option A$
+^Option Text$
+
+# TMPが空の入力欄に入れるゼロ幅スペース。
+^​$
+# メインメニュー隅のバージョン表示。訳す意味がないため記録・翻訳の対象外。
+# 実際の文字列は末尾に改行を含むが、照合は前後の空白を除いて行われる。
+^Version$
+
+# Yarn の内部マーカー（表示テキストではない。会話ダンプから翻訳対象外にする）
+^title: .+$
+^Test line \d+$
+^(player|conrad) hooked up with (conrad|ryan)$
+^Something went wrong with flags!$
+^Help the developers out please\.\.$
+^if you're seeing this please grab nael or submit a bug report$
+^My first ever Yarn script in Unity!$
+^Project Scale mary$
+^-{2,}$
+^={2,}$
+
+# Yarn Spinner のサンプルスクリプト（Start ノード）と開発用エラー画面。製品の会話ではない。
+^Wow!$
+^Gosh!$
+^Incredible!$
+^I'm amazed!$
+^Anyway, time to get writing!$
+^Oh fcuk something went wrong$
+^sorry!$
+
+# 進捗カウンター（10 / 14 など）
+^\d+\s*/\s*\d+$

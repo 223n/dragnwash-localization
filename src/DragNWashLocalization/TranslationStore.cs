@@ -1,0 +1,407 @@
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace DragNWashLocalization
+{
+    // Maps the text TMP_Text.text is set to, straight to a translation. There
+    // is no table or key concept for translators to learn: a row is the exact
+    // on-screen English string and its translation.
+    //
+    // The published file does not contain that English, though. Rows are keyed
+    // by TranslationKey.Hash of the source, so the repository redistributes
+    // none of the script. Both layouts are accepted in the same file:
+    //
+    //   key,translation           what the repository ships
+    //   source_en,translation     what a translator writes locally, against
+    //                             the exports the plugin produces for them
+    //
+    // A translator works in the second form (hot reload picks it up), and runs
+    // "Hash strings.csv for commit" or tools/hash-strings.ps1 before opening a
+    // pull request. The plugin hashes each string it is asked to translate and
+    // looks the hash up, so a plain row and its hashed form behave identically.
+    internal static class TranslationStore
+    {
+        private static readonly Dictionary<string, string> ByKey = new Dictionary<string, string>(StringComparer.Ordinal);
+        // Source text for keys that arrived as source_en rows. Only for
+        // logging and exports; lookups never need it.
+        private static readonly Dictionary<string, string> SourceByKey = new Dictionary<string, string>(StringComparer.Ordinal);
+        // TryGetTranslation runs on every text assignment, so hash once per
+        // distinct string rather than once per call.
+        private static readonly ConcurrentDictionary<string, string> HashCache = new ConcurrentDictionary<string, string>(StringComparer.Ordinal);
+        private static readonly ConcurrentDictionary<string, byte> DiscoveredText = new ConcurrentDictionary<string, byte>();
+        private static readonly ConcurrentDictionary<string, byte> AppliedOnce = new ConcurrentDictionary<string, byte>();
+        private static readonly List<string> PendingDiscoveredLines = new List<string>();
+
+        private static string _pluginDirectory;
+
+        public static int EntryCount => ByKey.Count;
+
+        // key -> translation. HotReload diffs these; use DescribeKey to label.
+        public static IEnumerable<KeyValuePair<string, string>> Entries => ByKey;
+
+        // The English for a key when this locale's file supplied it, else the
+        // key itself prefixed so it is obviously not text.
+        public static string DescribeKey(string key)
+        {
+            return SourceByKey.TryGetValue(key, out string source) ? source : "#" + key;
+        }
+
+        public static string KeyFor(string source)
+        {
+            return HashCache.GetOrAdd(source, TranslationKey.Hash);
+        }
+
+        // Every translation in every installed locale. FontFallback rasterizes
+        // all of these glyphs at startup so switching locale mid-game never has
+        // to grow an atlas (a runtime texture upload that trips the Direct3D 12
+        // crash). Locale folders under Translations/ starting with '_' are
+        // runtime output and skipped.
+        public static IEnumerable<string> CollectAllLocalesTexts(string pluginDirectory)
+        {
+            string translationsDir = Path.Combine(pluginDirectory, "Translations");
+            if (!Directory.Exists(translationsDir))
+            {
+                yield break;
+            }
+
+            foreach (string localeDir in Directory.GetDirectories(translationsDir))
+            {
+                string name = Path.GetFileName(localeDir);
+                if (name.StartsWith("_"))
+                {
+                    continue;
+                }
+
+                string path = Path.Combine(localeDir, "strings.csv");
+                if (!File.Exists(path))
+                {
+                    continue;
+                }
+
+                foreach (var row in CsvReader.ReadRows(path))
+                {
+                    if (row.TryGetValue("translation", out var translation) &&
+                        !string.IsNullOrEmpty(translation))
+                    {
+                        yield return translation;
+                    }
+                }
+            }
+        }
+
+        // Every string this locale can put on screen. FontFallback rasterizes
+        // their glyphs up front so no atlas has to grow mid-gameplay.
+        public static IEnumerable<string> TranslatedTexts => ByKey.Values;
+
+        public static void Load(string pluginDirectory, string locale)
+        {
+            _pluginDirectory = pluginDirectory;
+            IgnoreRules.Load(pluginDirectory);
+            ByKey.Clear();
+            SourceByKey.Clear();
+            DiscoveredText.Clear();
+            AppliedOnce.Clear();
+            lock (PendingDiscoveredLines)
+            {
+                PendingDiscoveredLines.Clear();
+            }
+
+            if (!string.IsNullOrEmpty(locale))
+            {
+                // The published file first, then the translator's plain working
+                // copy on top if there is one, so edits made there win.
+                string localeDir = Path.Combine(pluginDirectory, "Translations", locale);
+                LoadFile(Path.Combine(localeDir, "strings.csv"), locale + "/strings.csv");
+                LoadFile(WorkingCopy.PathFor(pluginDirectory, locale), "_discovered/" + WorkingCopy.FileNameFor(locale));
+            }
+
+            RebuildDiscoveredFile();
+        }
+
+        private static void LoadFile(string path, string label)
+        {
+            {
+                if (File.Exists(path))
+                {
+                    int badKeys = 0;
+                    foreach (var row in CsvReader.ReadRows(path))
+                    {
+                        if (!row.TryGetValue("translation", out var translation) || string.IsNullOrEmpty(translation))
+                        {
+                            continue;
+                        }
+
+                        string key = ResolveKey(row, out string source, out bool malformed);
+                        if (key == null)
+                        {
+                            if (malformed)
+                            {
+                                badKeys++;
+                            }
+                            continue;
+                        }
+
+                        ByKey[key] = translation;
+                        if (source != null)
+                        {
+                            SourceByKey[key] = source;
+                        }
+                    }
+
+                    if (badKeys > 0)
+                    {
+                        Plugin.Log($"[load] {badKeys} row(s) in {label} have a malformed key (expected {TranslationKey.Length} hex digits) and were skipped.");
+                    }
+                }
+            }
+        }
+
+        // A row identifies its string either way. key wins if both are present
+        // and agree; if they disagree the row is wrong and is dropped loudly.
+        private static string ResolveKey(Dictionary<string, string> row, out string source, out bool malformed)
+        {
+            source = null;
+            malformed = false;
+
+            row.TryGetValue("key", out string key);
+            row.TryGetValue("source_en", out string text);
+            key = key?.Trim().ToLowerInvariant();
+            bool hasKey = !string.IsNullOrEmpty(key);
+            bool hasText = !string.IsNullOrEmpty(text);
+
+            if (hasKey && !TranslationKey.LooksLikeKey(key))
+            {
+                // A translator appending "English,訳" to a published file puts
+                // the English under the key column, since that is the header.
+                // That is the most natural edit there is, so take it as source
+                // text rather than rejecting it. Only something that is neither
+                // a key nor plausibly text is malformed.
+                if (!hasText)
+                {
+                    row.TryGetValue("key", out string rawKey);
+                    source = rawKey;
+                    return KeyFor(rawKey);
+                }
+                malformed = true;
+                return null;
+            }
+
+            if (hasText)
+            {
+                string hashed = KeyFor(text);
+                if (hasKey && hashed != key)
+                {
+                    malformed = true;
+                    return null;
+                }
+                source = text;
+                return hashed;
+            }
+
+            return hasKey ? key : null;
+        }
+
+        // Rewrite the locale file so every row is keyed by hash and carries no
+        // English. This is what makes the file safe to publish. Rows already in
+        // key form pass through; a key column is added ahead of translation.
+        public static string HashFileInPlace(string pluginDirectory, string locale)
+        {
+            string localeDir = Path.Combine(pluginDirectory, "Translations", locale);
+            string path = Path.Combine(localeDir, "strings.csv");
+            // When a working copy exists it is the thing being edited, so the
+            // published file is regenerated from it rather than from itself.
+            string working = WorkingCopy.PathFor(pluginDirectory, locale);
+            string input = File.Exists(working) ? working : path;
+            if (!File.Exists(input))
+            {
+                return $"[hash] {locale}/strings.csv not found.";
+            }
+
+            var lines = new List<string>();
+            int converted = 0, kept = 0, dropped = 0;
+            foreach (var row in CsvReader.ReadRows(input))
+            {
+                string key = ResolveKey(row, out string source, out bool malformed);
+                if (key == null)
+                {
+                    dropped++;
+                    continue;
+                }
+                if (source != null)
+                {
+                    converted++;
+                }
+                else
+                {
+                    kept++;
+                }
+                row.TryGetValue("translation", out string translation);
+                // Who says the line is not the game's text, so it may ship.
+                // Take it from the row, else work it out from the loaded script.
+                row.TryGetValue("speaker", out string speaker);
+                if (string.IsNullOrEmpty(speaker))
+                {
+                    speaker = source != null ? SpeakerLookup.For(source) : SpeakerLookup.ForKey(key);
+                }
+                lines.Add(key + "," + CsvReader.Escape(speaker ?? string.Empty) + "," + CsvReader.Escape(translation ?? string.Empty));
+            }
+
+            using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
+            {
+                writer.WriteLine("key,speaker,translation");
+                foreach (string line in lines)
+                {
+                    writer.WriteLine(line);
+                }
+            }
+
+            string from = input == working ? " from the working copy" : string.Empty;
+            return $"[hash] {locale}/strings.csv written{from}: {converted} row(s) converted from English, {kept} already hashed, {dropped} malformed dropped. No source text in the published file.";
+        }
+
+        // The discovery file is appended to while playing, so without this it
+        // accumulates a fresh copy of everything on every launch and keeps
+        // listing strings that have since been translated. Rebuild it against
+        // the locale we just loaded, and seed DiscoveredText from it so this
+        // session only appends genuinely new strings.
+        private static void RebuildDiscoveredFile()
+        {
+            string filePath = Path.Combine(_pluginDirectory, "Translations", "_discovered", "strings.csv");
+
+            try
+            {
+                if (!File.Exists(filePath))
+                {
+                    return;
+                }
+
+                var kept = new List<string>();
+                foreach (var row in CsvReader.ReadRows(filePath))
+                {
+                    if (!row.TryGetValue("source_en", out var source) || string.IsNullOrEmpty(source))
+                    {
+                        continue;
+                    }
+                    if (ByKey.ContainsKey(KeyFor(source)))
+                    {
+                        continue;
+                    }
+                    if (!DiscoveredText.TryAdd(source, 0))
+                    {
+                        continue;
+                    }
+                    // Drops values recorded before the ignore rules existed.
+                    if (IgnoreRules.IsIgnored(source))
+                    {
+                        continue;
+                    }
+
+                    // Keep any draft the translator typed into this file directly.
+                    row.TryGetValue("translation", out var draft);
+                    kept.Add(CsvReader.Escape(source) + "," + CsvReader.Escape(draft ?? string.Empty));
+                }
+
+                using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
+                {
+                    writer.WriteLine("source_en,translation");
+                    foreach (string line in kept)
+                    {
+                        writer.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[dump] Failed to rebuild discovered strings: {ex.Message}");
+            }
+        }
+
+        public static bool TryGetTranslation(string source, out string translation)
+        {
+            return ByKey.TryGetValue(KeyFor(source), out translation);
+        }
+
+        // Used by the verbose debug log so repeated re-renders of the same line
+        // (sliders, per-frame counters, replayed dialogue) don't spam the log.
+        public static bool IsFirstApplication(string source)
+        {
+            return AppliedOnce.TryAdd(source, 0);
+        }
+
+        // Lets "Clear log" actually un-stick the verbose log: without this, text
+        // already seen once this session would never be logged again even though
+        // the visible log window is now empty.
+        public static void ResetAppliedOnceTracking()
+        {
+            AppliedOnce.Clear();
+        }
+
+        // Queue discoveries in memory to avoid per-label file I/O during text
+        // updates. Plugin.Update flushes them in batches. The observed Options
+        // crash is in the native Direct3D12 renderer, not this CSV writer.
+        public static void NoteDiscoveredText(string source)
+        {
+            if (Plugin.LogDiscoveredKeys == null || !Plugin.LogDiscoveredKeys.Value)
+            {
+                return;
+            }
+
+            if (!DiscoveredText.TryAdd(source, 0))
+            {
+                return;
+            }
+
+            // After the dedupe, so each distinct string is matched once.
+            if (IgnoreRules.IsIgnored(source))
+            {
+                return;
+            }
+
+            lock (PendingDiscoveredLines)
+            {
+                PendingDiscoveredLines.Add(CsvReader.Escape(source) + ",");
+            }
+        }
+
+        public static void FlushDiscoveredToDisk()
+        {
+            string[] lines;
+            lock (PendingDiscoveredLines)
+            {
+                if (PendingDiscoveredLines.Count == 0)
+                {
+                    return;
+                }
+                lines = PendingDiscoveredLines.ToArray();
+                PendingDiscoveredLines.Clear();
+            }
+
+            try
+            {
+                string dir = Path.Combine(_pluginDirectory, "Translations", "_discovered");
+                Directory.CreateDirectory(dir);
+                string filePath = Path.Combine(dir, "strings.csv");
+
+                bool writeHeader = !File.Exists(filePath);
+                using (var writer = new StreamWriter(filePath, append: true, Encoding.UTF8))
+                {
+                    if (writeHeader)
+                    {
+                        writer.WriteLine("source_en,translation");
+                    }
+                    foreach (string line in lines)
+                    {
+                        writer.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[dump] Failed to write discovered strings: {ex.Message}");
+            }
+        }
+    }
+}

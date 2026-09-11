@@ -1,0 +1,407 @@
+using System.Collections.Generic;
+using System;
+using UnityEngine;
+
+namespace DragNWashLocalization
+{
+    public partial class Plugin
+    {
+        private const float MenuPadding = 16f;
+        private const float RowHeight = 30f;
+        private static readonly Color MenuPanel = new Color(0.09f, 0.11f, 0.15f);
+        private static readonly Color MenuInset = new Color(0.055f, 0.07f, 0.10f);
+        private static readonly Color MenuAccent = new Color(0.32f, 0.78f, 0.72f);
+        private static readonly Color MenuMuted = new Color(0.60f, 0.66f, 0.73f);
+
+        private GUIStyle _buttonStyle;
+        private GUIStyle _selectedButtonStyle;
+        private GUIStyle _mutedLabelStyle;
+        private GUIStyle _wrappedLabelStyle;
+        private GUIStyle _logLabelStyle;
+        private int _menuTab;
+        private bool _followLog = true;
+        private bool _logNeedsScroll;
+        private float _logContentHeight;
+        private float _logContentWidth = -1;
+        private bool _resizingMenu;
+        private Vector2 _resizeStartMouse;
+        private Vector2 _resizeStartSize;
+        private int _resizeControl;
+        private Vector2? _requestedMenuSize;
+        private string _menuNotice = string.Empty;
+
+        private GUIStyle MenuStyle(GUIStyle basis, Color textColor)
+        {
+            var style = new GUIStyle(basis)
+            {
+                font = _menuFont != null ? _menuFont : basis.font,
+                fontSize = MenuFontSize,
+                fontStyle = FontStyle.Normal,
+                richText = false
+            };
+            style.normal.textColor = textColor;
+            style.hover.textColor = textColor;
+            style.active.textColor = textColor;
+            style.focused.textColor = textColor;
+            style.onNormal.textColor = textColor;
+            style.onHover.textColor = textColor;
+            style.onActive.textColor = textColor;
+            style.onFocused.textColor = textColor;
+            return style;
+        }
+
+        private void EnsureStyles()
+        {
+            if (_windowStyle != null) return;
+
+            // Reuse the texture and font prepared in Awake. All controls use the
+            // same prewarmed font size/style; opening a tab allocates no texture.
+            _windowStyle = MenuStyle(GUI.skin.window, Color.white);
+            _windowStyle.normal.background = _darkBackground;
+            _windowStyle.onNormal.background = _darkBackground;
+            _windowStyle.focused.background = _darkBackground;
+            _windowStyle.border = new RectOffset(0, 0, 0, 0);
+            _windowStyle.padding = new RectOffset(0, 0, 0, 0);
+
+            _labelStyle = MenuStyle(GUI.skin.label, new Color(0.91f, 0.94f, 0.97f));
+            _labelStyle.alignment = TextAnchor.MiddleLeft;
+            _mutedLabelStyle = MenuStyle(_labelStyle, MenuMuted);
+            _wrappedLabelStyle = MenuStyle(_mutedLabelStyle, MenuMuted);
+            _wrappedLabelStyle.wordWrap = true;
+            _wrappedLabelStyle.alignment = TextAnchor.UpperLeft;
+            _logLabelStyle = MenuStyle(_labelStyle, new Color(0.86f, 0.91f, 0.94f));
+            _logLabelStyle.wordWrap = true;
+            _logLabelStyle.alignment = TextAnchor.UpperLeft;
+            _logLabelStyle.padding = new RectOffset(4, 4, 4, 4);
+
+            _buttonStyle = MenuStyle(GUI.skin.button, new Color(0.88f, 0.92f, 0.95f));
+            _buttonStyle.padding = new RectOffset(10, 10, 4, 4);
+            _selectedButtonStyle = MenuStyle(_buttonStyle, MenuAccent);
+        }
+
+        private static void FillMenuRect(Rect rect, Color color)
+        {
+            Color previous = GUI.color;
+            GUI.color = color;
+            GUI.DrawTexture(rect, Texture2D.whiteTexture);
+            GUI.color = previous;
+        }
+
+        internal static Rect ClampMenuRect(Rect rect, float screenWidth, float screenHeight)
+        {
+            float width = Mathf.Max(1, screenWidth);
+            float height = Mathf.Max(1, screenHeight);
+            rect.width = Mathf.Clamp(rect.width, Mathf.Min(420, width), width);
+            rect.height = Mathf.Clamp(rect.height, Mathf.Min(340, height), height);
+            rect.x = Mathf.Clamp(rect.x, 0, width - rect.width);
+            rect.y = Mathf.Clamp(rect.y, 0, height - rect.height);
+            return rect;
+        }
+
+        private void OnGUI()
+        {
+            if (!_showMenu)
+            {
+                if (_resizingMenu && GUIUtility.hotControl == _resizeControl)
+                    GUIUtility.hotControl = 0;
+                _resizingMenu = false;
+                return;
+            }
+
+            EnsureStyles();
+            _windowRect = ClampMenuRect(_windowRect, Screen.width, Screen.height);
+            Color previousColor = GUI.color;
+            Color previousBackground = GUI.backgroundColor;
+            Color previousContent = GUI.contentColor;
+            try
+            {
+                GUI.color = Color.white;
+                GUI.backgroundColor = Color.white;
+                GUI.contentColor = Color.white;
+                _windowRect = GUI.Window(GetInstanceID(), _windowRect, DrawWindow, string.Empty, _windowStyle);
+                // GUI.Window returns its own rectangle after the callback. Apply
+                // a resize afterwards so that return value cannot undo it.
+                if (_requestedMenuSize.HasValue)
+                {
+                    _windowRect.size = _requestedMenuSize.Value;
+                    _requestedMenuSize = null;
+                    _windowRect = ClampMenuRect(_windowRect, Screen.width, Screen.height);
+                }
+            }
+            finally
+            {
+                GUI.color = previousColor;
+                GUI.backgroundColor = previousBackground;
+                GUI.contentColor = previousContent;
+            }
+        }
+
+        private void DrawWindow(int id)
+        {
+            float width = _windowRect.width;
+            float height = _windowRect.height;
+            float bodyWidth = width - MenuPadding * 2;
+
+            FillMenuRect(new Rect(0, 0, width, 48), MenuPanel);
+            FillMenuRect(new Rect(0, 0, 4, 48), MenuAccent);
+            GUI.Label(new Rect(MenuPadding, 8, width - 80, 32), "DRAG'N WASH  /  LOCALIZATION", _labelStyle);
+            if (GUI.Button(new Rect(width - 46, 10, 30, 28), "X", _buttonStyle))
+                _showMenu = false;
+
+            string localeStatus = _pendingLocale == null ? TargetLocale.Value : TargetLocale.Value + " -> " + _pendingLocale;
+            GUI.Label(new Rect(MenuPadding, 54, bodyWidth, 24),
+                $"Locale: {localeStatus}    |    Entries: {TranslationStore.EntryCount}", _mutedLabelStyle);
+
+            if (GUI.Button(new Rect(MenuPadding, 84, 114, RowHeight), "Activity log", _menuTab == 0 ? _selectedButtonStyle : _buttonStyle))
+                _menuTab = 0;
+            if (GUI.Button(new Rect(MenuPadding + 122, 84, 114, RowHeight), "Tools", _menuTab == 1 ? _selectedButtonStyle : _buttonStyle))
+                _menuTab = 1;
+            if (GUI.Button(new Rect(MenuPadding + 244, 84, 114, RowHeight), "Saves", _menuTab == 2 ? _selectedButtonStyle : _buttonStyle))
+                _menuTab = 2;
+
+            var body = new Rect(MenuPadding, 126, bodyWidth, Mathf.Max(80, height - 164));
+            if (_menuTab == 0) DrawActivityLog(body);
+            else if (_menuTab == 1) DrawTools(body);
+            else DrawSaves(body);
+
+            GUI.Label(new Rect(MenuPadding, height - 30, width - 54, 24),
+                string.IsNullOrEmpty(_menuNotice) ? $"{ToggleMenuKey.Value}: toggle    |    Drag title to move    |    Drag corner to resize" : _menuNotice,
+                _mutedLabelStyle);
+
+            HandleMenuResize(new Rect(width - 22, height - 22, 22, 22));
+            // Restrict dragging to the title, so text selection and scrolling
+            // never start moving the entire window.
+            GUI.DragWindow(new Rect(4, 0, width - 58, 48));
+        }
+
+        private void DrawActivityLog(Rect area)
+        {
+            if (GUI.Button(new Rect(area.x, area.y, 122, RowHeight), _followLog ? "Follow: ON" : "Follow: OFF",
+                _followLog ? _selectedButtonStyle : _buttonStyle))
+            {
+                _followLog = !_followLog;
+                _logNeedsScroll = _followLog;
+            }
+            if (GUI.Button(new Rect(area.x + 130, area.y, 110, RowHeight), "Clear log", _buttonStyle))
+            {
+                lock (LogBuffer)
+                {
+                    LogBuffer.Clear();
+                    _lastLogMessage = null;
+                    _logVersion++;
+                }
+                TranslationStore.ResetAppliedOnceTracking();
+                _logScroll = Vector2.zero;
+                _menuNotice = "Log cleared.";
+            }
+
+            bool changed = false;
+            int count;
+            lock (LogBuffer)
+            {
+                count = LogBuffer.Count;
+                if (_lastLogVersion != _logVersion)
+                {
+                    _lastLogVersion = _logVersion;
+                    _logText = string.Join("\n", LogBuffer.ToArray());
+                    changed = true;
+                }
+            }
+
+            var viewport = new Rect(area.x, area.y + 40, area.width, Mathf.Max(20, area.height - 40));
+            FillMenuRect(viewport, MenuInset);
+            float contentWidth = Mathf.Max(40, viewport.width - 24);
+            if (changed || !Mathf.Approximately(_logContentWidth, contentWidth))
+            {
+                _logContentWidth = contentWidth;
+                _logContentHeight = string.IsNullOrEmpty(_logText) ? 0 :
+                    _logLabelStyle.CalcHeight(new GUIContent(_logText), contentWidth);
+                if (_followLog) _logNeedsScroll = true;
+            }
+
+            Event current = Event.current;
+            if (viewport.Contains(current.mousePosition) &&
+                (current.type == EventType.ScrollWheel ||
+                 (current.type == EventType.MouseDown && current.mousePosition.x >= viewport.xMax - 20)))
+            {
+                _followLog = false;
+                _logNeedsScroll = false;
+            }
+            float maxScroll = Mathf.Max(0, _logContentHeight - viewport.height);
+            _logScroll.y = _logNeedsScroll ? maxScroll : Mathf.Clamp(_logScroll.y, 0, maxScroll);
+            _logNeedsScroll = false;
+
+            _logScroll = GUI.BeginScrollView(viewport, _logScroll,
+                new Rect(0, 0, contentWidth, Mathf.Max(viewport.height - 1, _logContentHeight)), false, true);
+            if (count == 0)
+                GUI.Label(new Rect(12, 12, contentWidth - 24, 64),
+                    "No activity yet.\nOpen a game menu or dialogue to capture text.", _wrappedLabelStyle);
+            else
+                GUI.Label(new Rect(0, 0, contentWidth, _logContentHeight), _logText, _logLabelStyle);
+            GUI.EndScrollView();
+
+            GUI.Label(new Rect(area.x + 250, area.y, Mathf.Max(0, area.width - 250), RowHeight),
+                $"{count} / {MaxLogLines}", _mutedLabelStyle);
+        }
+
+        private void DrawTools(Rect area)
+        {
+            FillMenuRect(area, MenuInset);
+            float innerWidth = Mathf.Max(100, area.width - 36);
+            const float contentHeight = 356;
+            _localeScroll = GUI.BeginScrollView(area, _localeScroll,
+                new Rect(0, 0, innerWidth, contentHeight + Mathf.Ceil(_availableLocales.Length / 3f) * 38), false, false);
+            GUI.Label(new Rect(12, 8, innerWidth - 12, 26), "LANGUAGE", _labelStyle);
+            float buttonWidth = (innerWidth - 28) / 3;
+            float y = 42;
+            for (int i = 0; i < _availableLocales.Length; i++)
+            {
+                string locale = _availableLocales[i];
+                bool selected = locale == TargetLocale.Value;
+                if (GUI.Button(new Rect(12 + (i % 3) * (buttonWidth + 8), y + (i / 3) * 38, buttonWidth, RowHeight),
+                    selected ? locale + "  [active]" : locale, selected ? _selectedButtonStyle : _buttonStyle))
+                {
+                    _pendingLocale = locale;
+                    _menuNotice = "See Activity log for the language change result.";
+                }
+            }
+            if (_availableLocales.Length == 0)
+                GUI.Label(new Rect(12, y, innerWidth, RowHeight), "No language folders installed.", _mutedLabelStyle);
+            y += Mathf.Max(1, Mathf.Ceil(_availableLocales.Length / 3f)) * 38 + 12;
+            GUI.Label(new Rect(12, y, innerWidth - 12, 26), "TRANSLATION TOOLS", _labelStyle);
+            y += 34;
+            if (GUI.Button(new Rect(12, y, innerWidth - 12, RowHeight), _pendingDump ? "Dialogue export queued..." : $"Export loaded dialogue  ({DumpDialogueKey.Value})", _buttonStyle))
+            {
+                _pendingDump = true;
+                _menuNotice = "See Activity log for the dialogue export result.";
+            }
+            y += 38;
+            if (GUI.Button(new Rect(12, y, innerWidth - 12, RowHeight), _pendingUiDump ? "UI text export queued..." : $"Export UI text  ({DumpUiTextKey.Value})", _buttonStyle))
+            {
+                _pendingUiDump = true;
+                _menuNotice = "See Activity log for the UI text export result.";
+            }
+            y += 38;
+            if (GUI.Button(new Rect(12, y, innerWidth - 12, RowHeight), _pendingLayoutCheck ? "Layout check queued..." : "Check translation layout", _buttonStyle))
+            {
+                _pendingLayoutCheck = true;
+                _menuNotice = "See Activity log for the layout check result.";
+            }
+            y += 38;
+            if (GUI.Button(new Rect(12, y, innerWidth - 12, RowHeight), _pendingWorkingCopy ? "Export queued..." : "Export working copy (English beside each line)", _buttonStyle))
+            {
+                _pendingWorkingCopy = true;
+                _menuNotice = "See Activity log for the working copy result.";
+            }
+            y += 38;
+            if (GUI.Button(new Rect(12, y, innerWidth - 12, RowHeight), _pendingHashFile ? "Hashing queued..." : "Hash for commit (rebuild strings.csv, no English)", _buttonStyle))
+            {
+                _pendingHashFile = true;
+                _menuNotice = "See Activity log for the hashing result.";
+            }
+            y += 42;
+            GUI.Label(new Rect(12, y, innerWidth - 12, 52),
+                "Exports are written to Translations/_discovered.\nLanguage changes apply to text already on screen.", _wrappedLabelStyle);
+            GUI.EndScrollView();
+        }
+
+        private Vector2 _savesScroll;
+        private string _savesSlot;
+        private float _savesRefreshAt;
+        private List<string> _savesSlots = new List<string>();
+        private List<SaveHistory.Snapshot> _savesList = new List<SaveHistory.Snapshot>();
+
+        // Snapshots of the game's own save file, one per write, newest first.
+        // Restore puts one back; the player then reloads the slot from the
+        // title screen. Listing is cached and refreshed every couple of
+        // seconds so OnGUI does not hit the disk every frame.
+        private void DrawSaves(Rect area)
+        {
+            FillMenuRect(area, MenuInset);
+            float innerWidth = Mathf.Max(100, area.width - 36);
+
+            if (Time.unscaledTime >= _savesRefreshAt)
+            {
+                _savesRefreshAt = Time.unscaledTime + 2f;
+                _savesSlots = SaveHistory.Slots();
+                if (_savesSlot == null || !_savesSlots.Contains(_savesSlot))
+                {
+                    _savesSlot = _savesSlots.Count > 0 ? _savesSlots[0] : null;
+                }
+                _savesList = _savesSlot != null ? SaveHistory.SnapshotsFor(_savesSlot) : new List<SaveHistory.Snapshot>();
+            }
+
+            float y = 8;
+            GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, 26), "SAVE SLOT", _labelStyle);
+            y += 32;
+            float x = 12;
+            foreach (string slot in _savesSlots)
+            {
+                string shown = slot.Contains("_slot") ? "slot " + slot.Substring(slot.IndexOf("_slot") + 5) : slot;
+                float w = 90;
+                if (GUI.Button(new Rect(area.x + x, area.y + y, w, RowHeight), shown, slot == _savesSlot ? _selectedButtonStyle : _buttonStyle))
+                {
+                    _savesSlot = slot;
+                    _savesRefreshAt = 0;
+                }
+                x += w + 8;
+            }
+            if (_savesSlots.Count == 0)
+                GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, RowHeight), "No save files found.", _mutedLabelStyle);
+            y += 42;
+
+            GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, 26),
+                $"HISTORY  ({_savesList.Count} snapshot(s), newest first; a snapshot is taken whenever the game writes the save)", _labelStyle);
+            y += 32;
+
+            var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - 40));
+            _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _savesList.Count * 36)), false, false);
+            for (int i = 0; i < _savesList.Count; i++)
+            {
+                SaveHistory.Snapshot s = _savesList[i];
+                GUI.Label(new Rect(12, i * 36, innerWidth - 130, RowHeight), (i == 0 ? "current   " : "") + s.Label, _labelStyle);
+                if (i > 0 && GUI.Button(new Rect(innerWidth - 110, i * 36, 98, RowHeight), "Restore", _buttonStyle))
+                {
+                    _pendingRestoreSlot = _savesSlot;
+                    _pendingRestoreSnapshot = s;
+                    _savesRefreshAt = 0;
+                }
+            }
+            GUI.EndScrollView();
+
+            GUI.Label(new Rect(area.x + 12, area.y + area.height - 34, innerWidth, 30),
+                "After Restore: go to the title screen and load the slot. Saving in game overwrites it again.", _mutedLabelStyle);
+        }
+
+        private void HandleMenuResize(Rect grip)
+        {
+            GUI.Label(grip, "/", _mutedLabelStyle);
+            int control = GUIUtility.GetControlID("DragNWashMenuResize".GetHashCode(), FocusType.Passive);
+            Event current = Event.current;
+            Vector2 screenMouse = current.mousePosition + _windowRect.position;
+            if (current.type == EventType.MouseDown && current.button == 0 && grip.Contains(current.mousePosition))
+            {
+                _resizingMenu = true;
+                _resizeControl = control;
+                GUIUtility.hotControl = control;
+                _resizeStartMouse = screenMouse;
+                _resizeStartSize = _windowRect.size;
+                current.Use();
+            }
+            if (_resizingMenu && GUIUtility.hotControl == _resizeControl)
+            {
+                if (current.type == EventType.MouseDrag)
+                {
+                    _requestedMenuSize = _resizeStartSize + screenMouse - _resizeStartMouse;
+                    current.Use();
+                }
+                else if (current.type == EventType.MouseUp)
+                {
+                    _resizingMenu = false;
+                    GUIUtility.hotControl = 0;
+                    current.Use();
+                }
+            }
+        }
+    }
+}

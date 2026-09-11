@@ -1,0 +1,32 @@
+name: 翻訳の修正提案 / Translation fix
+description: 訳が不自然・誤り・場面に合わない箇所の報告
+labels: ["translation"]
+body:
+  - type: dropdown
+    id: locale
+    attributes:
+      label: 言語 / Language
+      options: ["ja", "zh-Hans", "other"]
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: 場面 / Where
+      description: 会話なら node 名（F6 の出力にあります。例 Conrad_1_intro）、UI ならどの画面か
+      placeholder: Conrad_1_intro / Options 画面のゲージ名
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 今の訳 / Current translation
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: 提案する訳 / Proposed translation
+      description: 理由も一言あると助かります（口調・場面・言葉遊びなど）
+    validations:
+      required: true

@@ -1,0 +1,23 @@
+name: 新しい言語の追加 / New language
+description: 新しいロケールで翻訳を始めたい
+labels: ["new-language"]
+body:
+  - type: input
+    id: locale
+    attributes:
+      label: ロケール名 / Locale code
+      description: 既存に合わせた形で（例 ja, zh-Hans, ko, de）
+    validations:
+      required: true
+  - type: textarea
+    id: fonts
+    attributes:
+      label: 必要なフォント / Fonts needed
+      description: その言語の文字が Windows 標準フォント（Yu Gothic UI / Microsoft YaHei UI）で表示できない場合はお知らせください。フォールバックフォントの追加が必要になります。
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 確認
+      options:
+        - label: 製品版のゲームを所有しており、F6 / F7 で原文を取得できる
+          required: true

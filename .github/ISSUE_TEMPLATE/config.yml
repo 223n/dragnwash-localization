@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 翻訳の始め方 / How to contribute
+    url: https://github.com/TomXV/dragnwash-localization/blob/main/CONTRIBUTING.md
+    about: 手順・ファイル形式・ハッシュ化の方法はこちら
