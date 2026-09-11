@@ -411,6 +411,7 @@ namespace DragNWashLocalization
                 ascii.Append(FontFallback.WarmedCharacters());
 
                 _menuFont.RequestCharactersInTexture(ascii.ToString(), MenuFontSize, FontStyle.Normal);
+                _menuFont.RequestCharactersInTexture("日本語中文", MenuFontSize, FontStyle.Normal);
             }
             catch (Exception ex)
             {

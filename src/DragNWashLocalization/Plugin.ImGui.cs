@@ -258,7 +258,7 @@ namespace DragNWashLocalization
             {
                 string locale = _availableLocales[i];
                 bool selected = locale == TargetLocale.Value;
-                string label = locale == "en" ? "en (original)" : locale;
+                string label = LocaleDisplayName(locale);
                 if (GUI.Button(new Rect(12 + (i % 3) * (buttonWidth + 8), y + (i / 3) * 38, buttonWidth, RowHeight),
                     selected ? label + "  [active]" : label, selected ? _selectedButtonStyle : _buttonStyle))
                 {
@@ -404,5 +404,17 @@ namespace DragNWashLocalization
                 }
             }
         }
-    }
+    
+        // Shown on the language buttons; the folder name is what the config stores.
+        private static string LocaleDisplayName(string locale)
+        {
+            switch (locale)
+            {
+                case "en": return "English";
+                case "ja": return "日本語";
+                case "zh-Hans": return "中文";
+                default: return locale;
+            }
+        }
+}
 }
