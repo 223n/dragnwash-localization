@@ -90,7 +90,7 @@ namespace DragNWashLocalization
                 "General",
                 "TargetLocale",
                 "ja",
-                "Translations/<TargetLocale>/ 以下のファイルを読み込みます。例: ja, zh-Hans");
+                "Translations/<TargetLocale>/ 以下のファイルを読み込みます。例: ja, zh-Hans。en を指定すると翻訳せず英語のままになります");
 
             LogDiscoveredKeys = Config.Bind(
                 "Debug",
@@ -358,10 +358,13 @@ namespace DragNWashLocalization
                 return;
             }
 
-            _availableLocales = Directory.GetDirectories(translationsDir)
-                .Select(Path.GetFileName)
-                .Where(name => !name.StartsWith("_"))
-                .OrderBy(name => name, StringComparer.Ordinal)
+            // "en" is always offered: it has no translation folder and means
+            // "leave the game's own English text alone".
+            _availableLocales = new[] { "en" }
+                .Concat(Directory.GetDirectories(translationsDir)
+                    .Select(Path.GetFileName)
+                    .Where(name => !name.StartsWith("_") && name != "en")
+                    .OrderBy(name => name, StringComparer.Ordinal))
                 .ToArray();
         }
 

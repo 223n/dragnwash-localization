@@ -14,7 +14,7 @@
 
 1. [Releases](https://github.com/TomXV/dragnwash-localization/releases) から `DragNWashLocalization-<version>.zip` をダウンロードし、どこでもよいので展開する
 2. **`Install.exe` をダブルクリック**する。ゲームフォルダは Steam から自動で見つかります（見つからなければ選択できます）
-3. 言語（日本語 / 简体中文）を選んで「インストール / 更新」を押す。BepInEx が未導入なら、公式の 5.4.23.5 を自動でダウンロード（SHA-256 検証つき）して導入します
+3. 言語（日本語 / 简体中文 / 英語のまま）を選んで「インストール / 更新」を押す。BepInEx が未導入なら、公式の 5.4.23.5 を自動でダウンロード（SHA-256 検証つき）して導入します
 4. Steam からゲームを起動する
 
 同じ画面に「アンインストール」ボタンもあります。セーブ履歴は既定で残し、インストーラーが入れた BepInEx は他の Mod がなければ一緒に削除できます。
@@ -68,7 +68,7 @@ Drag'n Washを起動します。初期設定では日本語が選択されます
 BepInEx/config/com.tomxv.dragnwash.localization.cfg
 ```
 
-`[General]` の `TargetLocale` を `ja` や `zh-Hans` などの導入済みロケールへ変更し、ゲームを起動し直します。
+`[General]` の `TargetLocale` を `ja` や `zh-Hans` などの導入済みロケールへ変更し、ゲームを起動し直します。`en` にすると Mod を入れたまま英語の原文で遊べます（インストーラーとゲーム内 F1 メニューでも同じ選択ができます）。
 
 ### Modが読み込まれない場合
 

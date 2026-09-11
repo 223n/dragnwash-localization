@@ -258,8 +258,9 @@ namespace DragNWashLocalization
             {
                 string locale = _availableLocales[i];
                 bool selected = locale == TargetLocale.Value;
+                string label = locale == "en" ? "en (original)" : locale;
                 if (GUI.Button(new Rect(12 + (i % 3) * (buttonWidth + 8), y + (i / 3) * 38, buttonWidth, RowHeight),
-                    selected ? locale + "  [active]" : locale, selected ? _selectedButtonStyle : _buttonStyle))
+                    selected ? label + "  [active]" : label, selected ? _selectedButtonStyle : _buttonStyle))
                 {
                     _pendingLocale = locale;
                     _menuNotice = "See Activity log for the language change result.";
