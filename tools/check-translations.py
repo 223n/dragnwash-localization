@@ -10,8 +10,8 @@ A published Translations/<locale>/strings.csv must:
   - key: 16 lowercase hex digits (SHA-256 prefix of the source string)
   - no duplicate keys, no empty translations
   - contain no English source text (a source_en column is the tell)
-and no strings.local.csv may be committed - that file is the maintainer's
-plain working copy and carries the game's script.
+and nothing under Translations/_discovered/ may be committed - the working
+copies there carry the game's script in plain English.
 """
 import csv
 import io
@@ -71,6 +71,11 @@ def is_tracked(path: Path) -> bool:
 
 def main() -> int:
     problems = []
+    discovered = TRANSLATIONS / "_discovered"
+    if discovered.is_dir():
+        for f in sorted(discovered.iterdir()):
+            if f.is_file() and is_tracked(f):
+                problems.append(f"{f}: must not be committed (contains source text)")
     for locale_dir in sorted(TRANSLATIONS.iterdir()):
         if not locale_dir.is_dir() or locale_dir.name.startswith("_"):
             continue
