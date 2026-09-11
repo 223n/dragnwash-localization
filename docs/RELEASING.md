@@ -17,7 +17,7 @@ Translation-only changes do not require a build. Translators should see [CONTRIB
 
 ### 1. Update the version
 
-Update `PluginVersion` in `src/DragNWashLocalization/Plugin.cs`.
+Update `PluginVersion` in `src/DragNWashLocalization/Plugin.cs` and `<Version>` / `<FileVersion>` in the `.csproj` (the installer shows the file version).
 
 The value is used in the BepInEx plugin ID string and must use the `x.y.z` format, for example `0.2.0`.
 
@@ -35,8 +35,13 @@ This creates `release/DragNWashLocalization-<version>.zip` with the following st
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
+BepInEx/plugins/DragNWashLocalization/Translations/<locale>/name.txt
+Install.exe
+installer/Installer.ps1
 README.md
 ```
+
+`Install.exe` is a small console-less launcher compiled by `pack.ps1` with the C# compiler that ships with .NET Framework 4 (`%WINDIR%\Microsoft.NET\Framework644.0.30319\csc.exe`); nothing extra needs to be installed. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works.
 
 To install it, extract the archive into the game directory and merge the included `BepInEx/` directory.
 

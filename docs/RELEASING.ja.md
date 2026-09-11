@@ -22,7 +22,7 @@ GitHub Releases へアップロードします。
 
 ### 1. バージョンを更新する
 
-`src/DragNWashLocalization/Plugin.cs` の `PluginVersion` を更新します。
+`src/DragNWashLocalization/Plugin.cs` の `PluginVersion` を更新します。 `.csproj` の `<Version>` / `<FileVersion>` も同じ値にします（インストーラーがファイルバージョンを表示します）。
 BepInEx のプラグインID文字列に使われるため、形式は `x.y.z`（例: `0.2.0`）です。
 
 必要なら `docs/PLAN.md` と `README.md` のステータスも更新します。
@@ -39,8 +39,13 @@ pwsh tools/pack.ps1
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
+BepInEx/plugins/DragNWashLocalization/Translations/<locale>/name.txt
+Install.exe
+installer/Installer.ps1
 README.md
 ```
+
+`Install.exe` は `pack.ps1` が .NET Framework 4 付属の C# コンパイラ（`%WINDIR%\Microsoft.NET\Framework644.0.30319\csc.exe`）で生成する、コンソールを持たない小さな起動用プログラムです。追加のインストールは不要です。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。
 
 です。ゲームフォルダに展開して `BepInEx/` にマージするだけで導入できます。
 

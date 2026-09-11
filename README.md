@@ -146,7 +146,9 @@ Open **F1 → Saves**, select a slot, and click **Restore** on the version you w
 
 The plugin automatically preserves the state from immediately before a restore, so you can recover if you go back too far.
 
-Use this feature to revisit the same scene while comparing revisions of a dialogue translation. It replaces the game's own save file without directly editing flags or variables.
+Use this feature to revisit the same scene while comparing revisions of a dialogue translation. Restore replaces the game's own save file without editing flags or variables.
+
+The same tab also has a **PROGRESS** editor: step the level index back or forward with **-** / **+** and press **Apply**. Moving forward asks for confirmation because it can spoil content you have not seen. **Flags...** lists the save's boolean flags (for example the "scene already watched" markers) and lets you toggle them, which is how you make a scene play again after rewinding. Every edit snapshots the save first.
 
 ## Crash when opening Options on Windows
 
@@ -162,7 +164,7 @@ Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localiza
 
 ## Current status
 
-Phase 4 is complete. The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
+Released as v0.1.1 (one-click installer, English pass-through, save progress editor). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
 
