@@ -188,6 +188,92 @@ namespace DragNWashLocalization
             }
         }
 
+        // ---- progress editing -------------------------------------------
+        // The save is a JSON array: [{"levelIndex":N}, {"id":..,"type":"BOOL",
+        // "boolValue":..,"stringValue":..}, ...]. Edits are done with regexes on
+        // the text so the file keeps exactly the game's own layout.
+
+        internal struct Flag
+        {
+            public string Id;
+            public bool Value;
+        }
+
+        public static int ReadLevel(string slot, out string error)
+        {
+            error = null;
+            try
+            {
+                string m = ReadLevel(Path.Combine(Application.persistentDataPath, slot, SaveFileName));
+                return int.TryParse(m, out int level) ? level : -1;
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return -1;
+            }
+        }
+
+        public static List<Flag> ReadFlags(string slot)
+        {
+            var list = new List<Flag>();
+            try
+            {
+                string text = File.ReadAllText(Path.Combine(Application.persistentDataPath, slot, SaveFileName));
+                foreach (Match m in FlagEntry.Matches(text))
+                {
+                    list.Add(new Flag { Id = m.Groups[1].Value, Value = m.Groups[2].Value == "true" });
+                }
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[saves] Could not read flags of {slot}: {ex.Message}");
+            }
+            return list;
+        }
+
+        public static string SetLevel(string slot, int level)
+        {
+            return Edit(slot, text => LevelIndex.Replace(text, "\"levelIndex\":" + level, 1),
+                $"levelIndex set to {level}");
+        }
+
+        public static string SetFlag(string slot, string id, bool value)
+        {
+            string v = value ? "true" : "false";
+            var one = new Regex("(\"id\"\\s*:\\s*\"" + Regex.Escape(id) + "\"\\s*,\\s*\"type\"\\s*:\\s*\"BOOL\"\\s*,\\s*\"boolValue\"\\s*:\\s*)(true|false)(\\s*,\\s*\"stringValue\"\\s*:\\s*)(true|false)");
+            return Edit(slot, text => one.Replace(text, "${1}" + v + "${3}" + v, 1), $"{id} = {v}");
+        }
+
+        private static readonly Regex FlagEntry = new Regex(
+            "\"id\"\\s*:\\s*\"([^\"]+)\"\\s*,\\s*\"type\"\\s*:\\s*\"BOOL\"\\s*,\\s*\"boolValue\"\\s*:\\s*(true|false)", RegexOptions.Compiled);
+
+        // Snapshot, rewrite, and re-arm change tracking so the edit itself is
+        // not reported as a game write.
+        private static string Edit(string slot, Func<string, string> change, string what)
+        {
+            try
+            {
+                string savePath = Path.Combine(Application.persistentDataPath, slot, SaveFileName);
+                string current = File.ReadAllText(savePath);
+                LastContent[slot] = current;
+                TakeSnapshot(slot, savePath, current);
+                string edited = change(current);
+                if (edited == current)
+                {
+                    return $"[saves] Nothing changed ({what}).";
+                }
+                File.WriteAllText(savePath, edited);
+                LastWrite[slot] = File.GetLastWriteTimeUtc(savePath);
+                LastContent[slot] = edited;
+                return $"[saves] {slot}: {what}. Return to the title screen and load the slot for it to take effect.";
+            }
+            catch (Exception ex)
+            {
+                return $"[saves] Edit failed: {ex.Message}";
+            }
+        }
+
         private static string ReadLevel(string file)
         {
             try

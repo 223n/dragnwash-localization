@@ -9,6 +9,12 @@ namespace DragNWashLocalization
     {
         private const float MenuPadding = 16f;
         private const float RowHeight = 30f;
+        private int _editLevel;
+        private int _editLevelBase = -2;
+        private string _editLevelSlot;
+        private bool _progressConfirm;
+        private bool _showFlags;
+        private List<SaveHistory.Flag> _savesFlags = new List<SaveHistory.Flag>();
         private static readonly Color MenuPanel = new Color(0.09f, 0.11f, 0.15f);
         private static readonly Color MenuInset = new Color(0.055f, 0.07f, 0.10f);
         private static readonly Color MenuAccent = new Color(0.32f, 0.78f, 0.72f);
@@ -331,6 +337,7 @@ namespace DragNWashLocalization
                     _savesSlot = _savesSlots.Count > 0 ? _savesSlots[0] : null;
                 }
                 _savesList = _savesSlot != null ? SaveHistory.SnapshotsFor(_savesSlot) : new List<SaveHistory.Snapshot>();
+                _savesFlags = _savesSlot != null ? SaveHistory.ReadFlags(_savesSlot) : new List<SaveHistory.Flag>();
             }
 
             float y = 8;
@@ -352,6 +359,73 @@ namespace DragNWashLocalization
                 GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, RowHeight), "No save files found.", _mutedLabelStyle);
             y += 42;
 
+            // ---- progress editor: levelIndex and the boolean flags ----------
+            if (_savesSlot != null)
+            {
+                int current = SaveHistory.ReadLevel(_savesSlot, out _);
+                if (_editLevelSlot != _savesSlot || _editLevelBase != current)
+                {
+                    _editLevelSlot = _savesSlot;
+                    _editLevelBase = current;
+                    _editLevel = current;
+                    _progressConfirm = false;
+                }
+
+                GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, 26), "PROGRESS", _labelStyle);
+                y += 32;
+                GUI.Label(new Rect(area.x + 12, area.y + y, 200, RowHeight),
+                    _editLevel == current ? $"level {current}" : $"level {current}  ->  {_editLevel}", _labelStyle);
+                if (GUI.Button(new Rect(area.x + 216, area.y + y, 40, RowHeight), "-", _buttonStyle) && _editLevel > 0)
+                {
+                    _editLevel--; _progressConfirm = false;
+                }
+                if (GUI.Button(new Rect(area.x + 262, area.y + y, 40, RowHeight), "+", _buttonStyle))
+                {
+                    _editLevel++; _progressConfirm = false;
+                }
+                bool canApply = _editLevel != current && current >= 0;
+                GUI.enabled = canApply;
+                if (GUI.Button(new Rect(area.x + 314, area.y + y, 90, RowHeight), "Apply", _buttonStyle))
+                {
+                    if (_editLevel > current)
+                    {
+                        _progressConfirm = true;   // going forward can spoil the story
+                    }
+                    else
+                    {
+                        Log(SaveHistory.SetLevel(_savesSlot, _editLevel));
+                        _savesRefreshAt = 0;
+                    }
+                }
+                GUI.enabled = true;
+                if (GUI.Button(new Rect(area.x + 414, area.y + y, Mathf.Max(60, innerWidth - 414 + 12), RowHeight),
+                    _showFlags ? "Hide flags" : "Flags...", _buttonStyle))
+                {
+                    _showFlags = !_showFlags;
+                }
+                y += 36;
+
+                if (_progressConfirm)
+                {
+                    var warn = new GUIContent($"Warning: jumping ahead to level {_editLevel} may spoil content you have not seen. Continue?");
+                    float wh = _labelStyle.CalcHeight(warn, innerWidth);
+                    GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, wh), warn, _labelStyle);
+                    y += wh + 4;
+                    if (GUI.Button(new Rect(area.x + 12, area.y + y, 120, RowHeight), "Yes, continue", _buttonStyle))
+                    {
+                        Log(SaveHistory.SetLevel(_savesSlot, _editLevel));
+                        _progressConfirm = false;
+                        _savesRefreshAt = 0;
+                    }
+                    if (GUI.Button(new Rect(area.x + 140, area.y + y, 90, RowHeight), "Cancel", _buttonStyle))
+                    {
+                        _progressConfirm = false;
+                        _editLevel = current;
+                    }
+                    y += 36;
+                }
+            }
+
             // Both explanatory labels wrap on a narrow window, so size them from
             // the text instead of assuming one line.
             var historyText = new GUIContent($"HISTORY  ({_savesList.Count} snapshot(s), newest first)");
@@ -363,7 +437,7 @@ namespace DragNWashLocalization
             float footerHeight = _mutedLabelStyle.CalcHeight(footerText, innerWidth);
 
             var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - footerHeight - 12));
-            _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _savesList.Count * 36)), false, false);
+            _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _savesList.Count * 36 + (_showFlags ? 38 + _savesFlags.Count * 30 : 0))), false, false);
             for (int i = 0; i < _savesList.Count; i++)
             {
                 SaveHistory.Snapshot s = _savesList[i];
@@ -373,6 +447,22 @@ namespace DragNWashLocalization
                     _pendingRestoreSlot = _savesSlot;
                     _pendingRestoreSnapshot = s;
                     _savesRefreshAt = 0;
+                }
+            }
+            if (_showFlags && _savesSlot != null)
+            {
+                float fy = _savesList.Count * 36 + 8;
+                GUI.Label(new Rect(12, fy, innerWidth, 26), $"FLAGS  ({_savesFlags.Count})  click a value to toggle it", _labelStyle);
+                fy += 30;
+                for (int i = 0; i < _savesFlags.Count; i++)
+                {
+                    SaveHistory.Flag f = _savesFlags[i];
+                    GUI.Label(new Rect(12, fy + i * 30, innerWidth - 110, RowHeight), f.Id, _labelStyle);
+                    if (GUI.Button(new Rect(innerWidth - 90, fy + i * 30, 78, RowHeight), f.Value ? "true" : "false", f.Value ? _selectedButtonStyle : _buttonStyle))
+                    {
+                        Log(SaveHistory.SetFlag(_savesSlot, f.Id, !f.Value));
+                        _savesRefreshAt = 0;
+                    }
                 }
             }
             GUI.EndScrollView();
