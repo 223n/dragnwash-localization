@@ -307,6 +307,17 @@ A flag editor was considered, but restoring correctly would require knowing flag
 
 `SaveHistory` polls each slot's `savegame.dgn` timestamp every two seconds. When content changes, it copies the file to `SaveHistory/<slot>/<timestamp>.dgn`, keeping 30 versions by default. The F1 **Saves** tab lists slots and versions and offers **Restore**. The state immediately before restoration is also archived. Restoration changes only the file; the player must return to the title screen and load the slot because in-memory flags are untouched. Saving during gameplay naturally overwrites the active save again. The list extracts `levelIndex` from JSON for identification.
 
+## Public release and installer, v0.1.1 (2026-09-12)
+
+- **Public repository.** The git history still carried the plain-English CSVs from before hashing, so it was squashed to a single commit (the full history is kept in a local branch) before the repository was made public. A ruleset protects `main`: pull requests only, no force-push or deletion, the translation check required, administrators may bypass.
+- **Pull-request check.** `check-translations.py` validates the published files on every pull request. A second workflow (`workflow_run`, so it works for forks) posts one explanatory comment when the check fails and rewrites it to a pass message after a fix. The report lists line numbers only, never the rejected text, because the log is public.
+- **Installer.** `Install.exe` (a console-less launcher compiled at pack time with the C# compiler shipped in .NET Framework 4) opens `installer/Installer.ps1`, a WinForms window that finds the game through Steam, downloads BepInEx 5.4.23.5 when missing (SHA-256 pinned), copies the mod, writes `TargetLocale`, and uninstalls. Save-history snapshots are kept by default; BepInEx is removed only when the installer put it there and no other plugin uses it. A `.cmd` launcher was tried first and rejected because it always shows a console window.
+- **English pass-through.** `TargetLocale=en` loads nothing, so the mod can stay installed while the game shows its own text. Offered in the installer and the F1 menu.
+- **Language names.** `Translations/<locale>/name.txt` supplies the label shown on the F1 buttons and in the installer, so adding a language needs no code change.
+- **Save progress editor.** The Saves tab can step `levelIndex` (moving forward asks for confirmation because it can spoil content) and toggle the save's boolean flags, for example the `finished_watching_*` markers the game sets after a cutscene. Every edit snapshots the save first. Edits are regex replacements on the save text so the game's own layout is preserved.
+- **Typewriter fix.** Replacing on-screen text on a locale switch or hot reload left `maxVisibleCharacters` at the old text's length, truncating longer text ("HEY! This is th"). The cap is lifted when the previous text was fully shown.
+- **Versioning.** The csproj now emits assembly attributes (`Version`/`FileVersion`), and releases are built after the commit and tag so the informational version carries the tagged commit.
+
 ## Phases
 
 - **Phase 0:** Create the repository and finalize the plan — complete.
@@ -315,6 +326,7 @@ A flag editor was considered, but restoring correctly would require knowing flag
 - **Phase 2:** Verify replacement in real dialogue — **complete**, after finding and fixing the `SetText` bypass.
 - **Phase 3:** Add substantial Japanese and Chinese translations and check UI layouts — **complete**. UI inventory is complete, layout detection uses TMP measurements, and dialogue translation remains maintainable.
 - **Phase 4:** Complete `CONTRIBUTING.md` and establish distribution through GitHub Releases — **complete**.
+- **Phase 5:** Public repository, pull-request checks, installer, and the v0.1.1 release — **complete**.
 
 ## Risks and items to verify
 

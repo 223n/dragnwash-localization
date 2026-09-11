@@ -79,10 +79,17 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 
 ## 翻訳者向け
 
-`Translations/<locale>/strings.csv` を編集するだけで翻訳を追加できます。作業中は
-`source_en`（ゲームに表示される英語原文そのまま）と `translation`（訳文）の2列で書き、
-コミット前に原文をハッシュ（`key` 列）に変換します。リポジトリにはゲームの英語台本を
-含めない方針で、**製品版を持っている人だけが翻訳できる**仕組みです。
+`Translations/<locale>/strings.csv` を編集するだけで翻訳を追加できます。公開ファイルは
+`key,speaker,translation` の3列で、`key` は英語原文のハッシュ、`speaker` は誰の台詞かです。
+おすすめの作業手順：
+
+1. ゲーム内で **F1 → Tools → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
+   に、各行の英語原文を並べた作業用ファイル（`key,speaker,source_en,translation`）がゲーム内の実行順で書き出されます
+2. `translation` 列を編集して保存する。起動中のゲームにその場で反映されます
+3. コミット前に **F1 → Tools → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す
+
+リポジトリにはゲームの英語台本を含めない方針で、**製品版を持っている人だけが翻訳できる**仕組みです。
+各言語フォルダには表示名を書いた1行の `name.txt`（例: `日本語`）があり、インストーラーとゲーム内メニューに表示されます。
 Unity内部のキー名などを知る必要はありません。手順は [CONTRIBUTING.md](CONTRIBUTING.md) を参照。書式タグ（`<size=70%>`など）が原文に
 含まれている場合は、タグ構造をそのまま残して中の文章だけ訳してください。
 
@@ -105,8 +112,9 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
 
 ### 編集した訳を再起動なしで確認する
 
-ゲームを起動したまま `Translations/<現在の言語>/strings.csv` を保存すると、
-約2秒後に自動で読み直され、画面に出ているテキストにもその場で反映されます。
+ゲームを起動したまま `Translations/<現在の言語>/strings.csv` または作業用ファイル
+`_discovered/<locale>.working.csv` を保存すると、約2秒後に自動で読み直され、画面に出ている
+テキストにもその場で反映されます。変わった行は F1 の Activity log に1行ずつ出ます。
 訳を直しては画面で確かめる、を再起動なしで繰り返せます（`[Debug] HotReloadTranslations`
 で無効化可能）。反映されたかは F1 の Activity log に `[reload]` で出ます。
 
@@ -115,7 +123,7 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
 **F7キー** で、読み込み済みの全UIテキストが
 `Translations/_discovered/ui_texts.csv` に書き出されます。**非表示のメニューも対象**なので、
 ポーズメニューや確認ダイアログを開かなくても、そのシーンのUI文言が丸ごと手に入ります。
-列は `source_en` / `translation`（訳済みなら既存の訳）/ `object_path`（画面上のどこか）です。
+列は `key` / `source_en` / `translation`（訳済みなら既存の訳）/ `object_path`（画面上のどこか）です。
 
 タイトル画面とゲーム中で1回ずつ押せば、ほぼ全てのUIが揃います。
 
@@ -140,8 +148,11 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
 - **Activity log**: 翻訳結果と処理ログを表示します。`Follow: ON/OFF` で末尾への
   自動追従を切り替えられ、手動スクロールすると追従が止まります。`Clear log` は
   表示と重複抑制をリセットします。ログは直近100件を保持します。
-- **Tools**: 導入済みの言語を選択すると、画面上の翻訳が再起動なしで切り替わります。
-  会話抽出（`Export loaded dialogue`）とレイアウトチェックもここから実行できます。
+- **Tools**: 再起動なしで言語を切り替えます（ボタン名は各言語の `name.txt`、**English** は翻訳オフ）。
+  会話の書き出し（`Export loaded dialogue`）、UI文言の書き出し（`Export UI text`）、
+  原文つき作業ファイルの書き出し（`Export working copy`）、公開ファイルの作り直し（`Hash for commit`）、
+  レイアウトチェックもここから行います。
+- **Saves**: セーブの巻き戻し、レベル番号の変更、フラグの反転。後述。
 
 **Check translation layout** ボタンで、レイアウト崩れリスクのある文字列を
 `Translations/_discovered/layout_risks.csv` に書き出せます（しきい値は

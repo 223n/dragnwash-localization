@@ -76,10 +76,10 @@ bc1b88907d3b748a,UI,Options,オプション
 PR を送る前に、公開用の `strings.csv` を作り直してください。作業ファイル（`_discovered/<locale>.working.csv`）が
 あればそこから、なければ `strings.csv` 自身の `source_en` 行から生成されます。方法は2つ：
 
-- ゲーム内 **F1 → Tools → Hash strings.csv for commit**（現在の言語のファイルを書き換えます）
+- ゲーム内 **F1 → Tools → Hash for commit**（現在の言語のファイルを書き換えます）
 - `tools/hash-strings.ps1`（引数なしで全言語、`-Path` で1ファイル）
 
-**英語原文が残った `strings.csv` は PR で受け付けません**（自動チェックで弾かれます）。
+**英語原文が残った `strings.csv` は PR で受け付けません。** PR ごとに自動チェックが走り、形式が違う場合は理由を英語でコメントします。直してプッシュすれば同じコメントが更新されます。
 
 カンマ・引用符・改行を含む場合は、フィールドを `"` で囲んでください（引用符は `""` と
 エスケープ）。詳細は [RFC 4180](https://datatracker.ietf.org/doc/html/rfc4180) 準拠です。

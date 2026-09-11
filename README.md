@@ -79,7 +79,13 @@ Set `TargetLocale` under `[General]` to an installed locale such as `ja` or `zh-
 
 ## For translators
 
-You can add a translation by editing `Translations/<locale>/strings.csv`. While translating, use two columns: `source_en` (the exact English text displayed in the game) and `translation` (your translation). Before committing, convert the source text into hashes in the `key` column.
+You can add a translation by editing `Translations/<locale>/strings.csv`. The published file has three columns, `key,speaker,translation`, where `key` is a hash of the English line and `speaker` says who says it. The recommended way to work is:
+
+1. In the game, open **F1 → Tools → Export working copy**. This writes `Translations/_discovered/<locale>.working.csv` with the English text beside every line (`key,speaker,source_en,translation`), in the order the lines are played.
+2. Edit the `translation` column. Saving the file hot-reloads it into the running game.
+3. Before committing, press **F1 → Tools → Hash for commit** (or run `tools/hash-strings.ps1`). This regenerates `strings.csv` without any English text.
+
+Each language folder also holds a one-line `name.txt` with the language's display name (for example `日本語`), shown in the installer and the in-game menu.
 
 The game's English script is intentionally not included in this repository. This ensures that **only people who own the full game can create translations**. You do not need to know Unity's internal keys or write any code. See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions.
 
@@ -101,7 +107,7 @@ Already translated lines are exported with their translations filled in, so expo
 
 ### Previewing edits without restarting the game
 
-When you save `Translations/<current-language>/strings.csv` while the game is running, the plugin reloads it automatically after about two seconds and immediately updates text that is currently visible.
+When you save `Translations/<current-language>/strings.csv` or the working copy `_discovered/<locale>.working.csv` while the game is running, the plugin reloads it automatically after about two seconds and immediately updates text that is currently visible. Each changed line is listed in the F1 Activity log.
 
 This lets you edit a translation and check it in the game repeatedly without restarting. You can disable this behavior with `[Debug] HotReloadTranslations`. Successful reloads appear as `[reload]` entries in the F1 Activity log.
 
@@ -111,7 +117,7 @@ Press **F7** to export all loaded UI text to:
 
 `Translations/_discovered/ui_texts.csv`
 
-The export includes **hidden menus**, so you can collect every UI string in the current scene without opening the pause menu or confirmation dialogs. Its columns are `source_en`, `translation` (the existing translation, if any), and `object_path` (where the text appears in the UI).
+The export includes **hidden menus**, so you can collect every UI string in the current scene without opening the pause menu or confirmation dialogs. Its columns are `key`, `source_en`, `translation` (the existing translation, if any), and `object_path` (where the text appears in the UI).
 
 Press F7 once on the title screen and once during gameplay to collect nearly all UI text.
 
@@ -130,7 +136,8 @@ Exclusions affect discovery only. Translation lookup happens first, so any entry
 Press **F1** to toggle the debug window. The key is configurable. Drag the title bar to move the window, and drag the lower-right corner to resize it.
 
 - **Activity log:** Displays translation results and processing logs. `Follow: ON/OFF` controls automatic scrolling to the latest entry; scrolling manually disables following. `Clear log` clears the display and resets duplicate suppression. The log keeps the 100 most recent entries.
-- **Tools:** Select any installed language to switch the on-screen translation without restarting. You can also export dialogue (`Export loaded dialogue`) and run the layout check here.
+- **Tools:** Switch the language without restarting (the buttons show each language's name from `name.txt`; **English** turns translation off). Export dialogue (`Export loaded dialogue`), UI text (`Export UI text`), or the working copy with English beside each line (`Export working copy`), rebuild the published file (`Hash for commit`), and run the layout check.
+- **Saves:** Restore an earlier save, step the level index, or toggle save flags. See below.
 
 The **Check translation layout** button exports strings at risk of overflowing their layout to `Translations/_discovered/layout_risks.csv`. Configure the threshold with `BepInEx/config/.../LayoutOverflowThreshold`; the default is `1.0`, meaning an exact fit.
 
