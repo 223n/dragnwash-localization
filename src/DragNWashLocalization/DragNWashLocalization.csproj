@@ -4,6 +4,9 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>DragNWashLocalization</AssemblyName>
     <LangVersion>latest</LangVersion>
+    <!-- Keep in sync with Plugin.PluginVersion; the installer shows this. -->
+    <Version>0.1.0</Version>
+    <FileVersion>0.1.0</FileVersion>
     <Nullable>disable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
