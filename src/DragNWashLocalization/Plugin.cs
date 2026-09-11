@@ -165,8 +165,9 @@ namespace DragNWashLocalization
             HotReload.Track(PluginDirectory, TargetLocale.Value);
             SaveHistory.Configure(PluginDirectory, SaveHistoryKeep.Value);
             CreateMenuBackgroundTexture();
-            CreateMenuFont();
+            // Locales first: the font warm-up below needs their display names.
             RefreshAvailableLocales();
+            CreateMenuFont();
 
             var harmony = new Harmony(PluginGuid);
             harmony.PatchAll();
@@ -417,6 +418,15 @@ namespace DragNWashLocalization
                 {
                     _menuFont.RequestCharactersInTexture(LocaleDisplayName(locale), MenuFontSize, FontStyle.Normal);
                 }
+                // The flag editor shows catalog text (Japanese descriptions) in
+                // this font; rasterizing those glyphs while the menu is open is
+                // the D3D12 crash trigger, so they are warmed here at startup.
+                var catalog = new StringBuilder();
+                foreach (FlagCatalog.Entry e in FlagCatalog.Entries)
+                {
+                    catalog.Append(e.Id).Append(e.Group).Append(e.Description);
+                }
+                _menuFont.RequestCharactersInTexture(catalog.ToString(), MenuFontSize, FontStyle.Normal);
             }
             catch (Exception ex)
             {
