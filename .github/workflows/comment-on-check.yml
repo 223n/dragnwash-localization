@@ -1,0 +1,72 @@
+name: Comment on translation check
+
+# Runs after "Check translations" finishes on a pull request and leaves
+# (or updates) one comment explaining why the check failed. It lives in
+# a separate workflow so it can comment on pull requests from forks.
+
+on:
+  workflow_run:
+    workflows: ["Check translations"]
+    types: [completed]
+
+permissions:
+  pull-requests: write
+  actions: read
+
+jobs:
+  comment:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: check-report
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const pr = Number(fs.readFileSync('pr-number.txt', 'utf8').trim());
+            const status = fs.readFileSync('status.txt', 'utf8').trim();
+            const report = fs.readFileSync('report.txt', 'utf8').trim();
+            const marker = '<!-- translation-check -->';
+
+            const hints = [];
+            const add = (re, text) => { if (re.test(report)) hints.push(text); };
+            add(/header is/, '**The file still has its working-copy header.** Published files must be `key,speaker,translation`. Run `tools/hash-strings.ps1` (or use *Hash for commit* in the in-game F1 menu) and commit the result.');
+            add(/is not 16 lowercase hex digits/, '**Some keys are plain text instead of hashes.** The repository never carries the game\'s English script, so each line is identified by a 16-character hash of the source text. `tools/hash-strings.ps1` converts a working copy into that form.');
+            add(/must not be committed/, '**A working copy was committed.** Files under `Translations/_discovered/` contain the English source and must stay local. Please remove them from the pull request.');
+            add(/duplicate key/, '**Duplicate keys.** The same line appears more than once; keep one translation per key.');
+            add(/empty translation/, '**Empty translations.** Leave a line out rather than committing it blank; the game then falls back to English for it.');
+            add(/expected \d+ fields/, '**Malformed rows.** Some rows have the wrong number of columns, usually an unquoted comma or line break inside the translation. Wrap such values in double quotes.');
+
+            let body;
+            if (status === '0') {
+              body = `${marker}\nThe translation check passed. Thank you for the contribution!`;
+            } else {
+              body = [
+                marker,
+                'Thanks for the pull request! Unfortunately the automatic translation check could not accept it yet, for the following reason(s):',
+                '',
+                ...hints.map(h => `- ${h}`),
+                '',
+                '<details><summary>Full report</summary>',
+                '',
+                '```',
+                report,
+                '```',
+                '</details>',
+                '',
+                'See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) for the workflow. Push a fix to this branch and the check will run again.',
+              ].join('\n');
+            }
+
+            const { owner, repo } = context.repo;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number: pr, per_page: 100 });
+            const mine = comments.find(c => c.body && c.body.startsWith(marker));
+            if (mine) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
+            } else if (status !== '0') {
+              await github.rest.issues.createComment({ owner, repo, issue_number: pr, body });
+            }

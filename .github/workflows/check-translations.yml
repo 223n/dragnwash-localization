@@ -14,4 +14,24 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate published strings.csv files
-        run: python tools/check-translations.py
+        id: validate
+        run: |
+          set +e
+          python tools/check-translations.py | tee report.txt
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+      - name: Save the report for the comment workflow
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "${{ github.event.pull_request.number }}" > pr-number.txt
+          echo "${{ steps.validate.outputs.status }}" > status.txt
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: check-report
+          path: |
+            report.txt
+            pr-number.txt
+            status.txt
+      - name: Fail if the check found problems
+        if: steps.validate.outputs.status != '0'
+        run: exit 1
