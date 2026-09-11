@@ -156,7 +156,20 @@ namespace DragNWashLocalization
             _buttonStyle = MenuStyle(GUI.skin.button, new Color(0.88f, 0.92f, 0.95f));
             _buttonStyle.padding = new RectOffset(10, 10, 4, 4);
             _selectedButtonStyle = MenuStyle(_buttonStyle, MenuAccent);
-            _textFieldStyle = new GUIStyle(GUI.skin.textField) { font = _buttonStyle.font, fontSize = _buttonStyle.fontSize, alignment = TextAnchor.MiddleLeft };
+            // The search box must not touch GUI.skin.textField: its built-in
+            // background textures (normal and, once it has keyboard focus,
+            // focused) would be uploaded on first draw while the menu is open,
+            // which is the Direct3D 12 crash. Use our own 1x1 texture for every
+            // state instead, like the window does.
+            _textFieldStyle = MenuStyle(_labelStyle, new Color(0.91f, 0.94f, 0.97f));
+            _textFieldStyle.alignment = TextAnchor.MiddleLeft;
+            _textFieldStyle.padding = new RectOffset(8, 8, 4, 4);
+            _textFieldStyle.border = new RectOffset(0, 0, 0, 0);
+            foreach (GUIStyleState st in new[] { _textFieldStyle.normal, _textFieldStyle.hover, _textFieldStyle.active, _textFieldStyle.focused,
+                                                 _textFieldStyle.onNormal, _textFieldStyle.onHover, _textFieldStyle.onActive, _textFieldStyle.onFocused })
+            {
+                st.background = _darkBackground;
+            }
         }
 
         private static void FillMenuRect(Rect rect, Color color)
