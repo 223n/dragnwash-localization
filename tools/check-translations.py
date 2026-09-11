@@ -39,17 +39,19 @@ def check_file(path: Path) -> list[str]:
             )
             return problems
         width = len(header)
-        seen = set()
+        seen = {}
         for n, row in enumerate(reader, start=2):
             if len(row) != width:
                 problems.append(f"{path}:{n}: expected {width} fields, got {len(row)}")
                 continue
             key, translation = row[0], row[-1]
             if not KEY.match(key):
-                problems.append(f"{path}:{n}: key {key!r} is not 16 lowercase hex digits")
+                # Deliberately do not echo the key: on a public repository the
+                # report is visible, and a plain-text key is the game's script.
+                problems.append(f"{path}:{n}: key is not 16 lowercase hex digits")
             if key in seen:
-                problems.append(f"{path}:{n}: duplicate key {key}")
-            seen.add(key)
+                problems.append(f"{path}:{n}: duplicate key (see line {seen[key]})")
+            seen.setdefault(key, n)
             if not translation.strip():
                 problems.append(f"{path}:{n}: empty translation")
     return problems
