@@ -1,49 +1,53 @@
-# 翻訳スタイルガイド（キャラクター別）
+# Japanese Translation Style Guide by Character
 
-会話文の翻訳は、**キャラごとの口調を一貫させる**ことが最重要です。訳文の品質は
-口調のブレで一気に落ちます。行を追加・修正するときは、このガイドに従ってください。
+[日本語](TRANSLATION_STYLE.ja.md)
 
-## 登場キャラと口調
+Maintaining a **consistent voice for each character** is the highest priority when translating dialogue into Japanese. Inconsistent speech patterns quickly reduce the quality of the translation. Follow this guide whenever you add or revise a line.
 
-### コボルド（主人公・洗い屋）
-- 明るく気さくな接客口調。基本的に「です・ます」だが親しみがあり、時々「〜だね」「〜だよ」と崩れる。
-- 掛け声は **「イップ！」**（`Yip!`）。意味補足 `Yip! (Yes)` は **「イップ！（うん）」** と括弧書きで訳す。
-- 客を迎える・送り出す側なので、「ゲートを開けてくるね」等の世話焼きが目立つ。
+## Characters and voices
 
-### コンラッド（大きな赤いドラゴン）
-- 乱暴で短気な**男言葉**。「〜だぜ」「〜だろ」「〜だな」。
-- 「Damn right」→「あったりめぇだ」、「Hell yeah」→ カタカナにせず場面で言い換える（「よっしゃあ！」「そうこなくっちゃ」「最高だぜ」「たまんねえ」など）。
-- 口は悪いが照れ屋で根は優しい。恋愛相手にはやや不器用。
+### Kobold (protagonist and washer)
 
-### ライアン（小さなドレイク）
-- 甘えん坊で照れ屋な**やわらかい男の子口調**。「〜だよ」「〜なんだ」。
-- 自分が小さいことを気にしている（"vertically challenged" は「縦に小さい」）。
-- 下ネタには照れながらも積極的に乗る。
+- Uses a cheerful, friendly customer-service voice. Usually speaks in polite `です・ます` forms, but remains approachable and occasionally relaxes into `〜だね` or `〜だよ`.
+- The signature call is **「イップ！」** for `Yip!`. Translate an explanatory form such as `Yip! (Yes)` as **「イップ！（うん）」**, retaining the parenthetical explanation.
+- As the character who welcomes and sees off customers, the kobold often sounds attentive and helpful, as in 「ゲートを開けてくるね」.
 
-### アレクサンダー（教授・ラベンダー色）
-- 学術的で**仰々しい丁寧語**。「〜でございます」「〜でありまして」「いかが」「お見事」。
-- 語彙が硬い（"prestigious"「格式高い」、"ornamental"「装飾的な」）。
-- 自分の評判・名誉・紋章をやたら気にする。燃えては不死鳥的に復活する。
+### Conrad (large red dragon)
 
-### その他
-- マックス（コボルドの知人・怒りっぽい）、イグウィックス（アレクサンダーの同僚教授）は登場が少ない。
+- Uses rough, short-tempered **masculine speech**, including `〜だぜ`, `〜だろ`, and `〜だな`.
+- Translate `Damn right` as 「あったりめぇだ」. Adapt `Hell yeah` to the scene instead of transliterating it, using expressions such as 「よっしゃあ！」, 「そうこなくっちゃ」, 「最高だぜ」, or 「たまんねえ」.
+- He is foul-mouthed but shy and kind underneath, and somewhat awkward with romantic partners.
 
+### Ryan (small drake)
 
-## 「人」を避ける
+- Uses a soft, boyish masculine voice. He is affectionate and shy, with endings such as `〜だよ` and `〜なんだ`.
+- He is self-conscious about being small. Translate `vertically challenged` as 「縦に小さい」.
+- He is embarrassed by sexual jokes but readily plays along.
 
-この世界に人間はいない（ドラゴン・コボルド・グリフォンなど）。英語の people / someone /
-folks / guy を「人」と訳すと全員が人間になってしまうので、名詞を言い換える。
+### Alexander (lavender professor)
 
-- someone / new people → 「誰か」「新しい相手」「新しい出会い」
-- folks / those around me → 「みんな」「周りのみんな」「相手」
-- big guy / little guy（呼びかけ）→ 「おっきいの」「ちっちゃいの」
-- you two（コボルド＋ドラゴンの組）→ 「君たち」「お二方」。ドラゴン同士なら「お二竜」
-- 数える相手が全員ドラゴンなら「一竜」「二竜」（言葉遊びとして採用）
-- 恋人・有名人・素人・人目・個人的・本人・人生 のような熟語の「人」は人間を指さないので可
+- Uses academic, **grandiose polite language**, including `〜でございます`, `〜でありまして`, `いかが`, and `お見事`.
+- Uses formal vocabulary, such as 「格式高い」 for `prestigious` and 「装飾的な」 for `ornamental`.
+- He is excessively concerned with his reputation, honor, and crest. He burns and returns in phoenix-like fashion.
 
-## 用語の統一
+### Other characters
 
-| 英語 | 訳 |
+- Max, an irritable acquaintance of the kobold, and Igwyx, a fellow professor of Alexander, appear only briefly.
+
+## Avoid words that imply humans
+
+There are no humans in this setting; its inhabitants include dragons, kobolds, and griffins. Translating English words such as `people`, `someone`, `folks`, or `guy` with the Japanese word 「人」 can incorrectly imply that everyone is human. Rephrase the noun instead.
+
+- `someone` / `new people` → 「誰か」「新しい相手」「新しい出会い」
+- `folks` / `those around me` → 「みんな」「周りのみんな」「相手」
+- `big guy` / `little guy` as forms of address → 「おっきいの」「ちっちゃいの」
+- `you two` for a kobold and a dragon → 「君たち」「お二方」; for two dragons, 「お二竜」
+- When everyone being counted is a dragon, use 「一竜」「二竜」 as intentional wordplay.
+- The 「人」 in established words such as 「恋人」「有名人」「素人」「人目」「個人的」「本人」「人生」 does not specifically mean a human and is acceptable.
+
+## Standard terminology
+
+| English | Japanese |
 |---|---|
 | Yip / Yip! | イップ！ |
 | gate | ゲート |
@@ -58,12 +62,11 @@ folks / guy を「人」と訳すと全員が人間になってしまうので�
 | crest | 紋章 |
 | "Burnswick Community College of Thaumaturgy" | バーンズウィック・コミュニティ・サマタージー大学 |
 
-## 書式タグ
+## Formatting tags
 
-`<size=70%>` / `<gradient="gold">` / `<i>` / `<b>` などの TMP タグは**構造をそのまま残し、
-中の文章だけ訳す**。括弧書きの選択肢ヒント（`(Will lead to no romance!)` 等）も訳す。
+Preserve the structure of TMP tags such as `<size=70%>`, `<gradient="gold">`, `<i>`, and `<b>`, and translate only the text inside them. Also translate parenthetical choice hints such as `(Will lead to no romance!)`.
 
-## 名前の表記
+## Character names
 
 - Conrad → コンラッド
 - Ryan → ライアン
@@ -71,9 +74,8 @@ folks / guy を「人」と訳すと全員が人間になってしまうので�
 - Igwyx → イグウィックス
 - Max → マックス
 
-発言に `Conrad: ...` のような名前接頭辞が付く場合は、`コンラッド：...` と全角コロンで残す。
+When a line starts with a name prefix such as `Conrad: ...`, retain the prefix as `コンラッド：...` using a full-width Japanese colon.
 
-## 翻訳対象外（Yarn の内部マーカー）
+## Do not translate Yarn internal markers
 
-`title:` 行、`Test line` 行、フラグ（`player hooked up with …` 等）、開発用メッセージ、
-`---` / `===` は表示テキストではないため翻訳しない（`Translations/ignore.txt` で除外済み）。
+Lines beginning with `title:`, `Test line` entries, flags such as `player hooked up with …`, development messages, and the markers `---` and `===` are not displayed text. Do not translate them. They are already excluded in `Translations/ignore.txt`.

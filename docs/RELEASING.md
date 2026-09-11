@@ -1,71 +1,63 @@
 # Releasing
 
-この Mod の配布手順です。プラグイン本体をビルドするにはゲームの参照アセンブリ
-（`libs/`）が必要で、これは著作権のためリポジトリにコミットしていません。したがって
-**CI ではビルドできず、リリースはゲームを導入済みの環境でローカルに作成**して
-GitHub Releases へアップロードします。
+[日本語](RELEASING.ja.md)
 
-翻訳の追加だけであればビルド不要です。翻訳者は [CONTRIBUTING.md](../CONTRIBUTING.md)
-を参照してください。
+This document describes how to distribute the mod. Building the plugin requires game-derived reference assemblies in `libs/`. They cannot be committed to this repository for copyright reasons. As a result, **the plugin cannot be built in CI; releases must be built locally on a computer with the game installed** and uploaded to GitHub Releases.
 
-## 前提
+Translation-only changes do not require a build. Translators should see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
-- Drag'n Wash（Steam版）がインストール済み
-- `src/DragNWashLocalization/libs/` にゲーム由来の参照アセンブリが揃っている
-  （`.csproj` のコメントに一覧あり）
-- .NET SDK と PowerShell 7（`pwsh`）
-- GitHub Releases をコマンドラインで作る場合は [`gh`](https://cli.github.com/)
+## Prerequisites
 
-## 手順
+- The Steam version of Drag'n Wash is installed.
+- All game-derived reference assemblies are present in `src/DragNWashLocalization/libs/`. See the comments in the `.csproj` file for the complete list.
+- The .NET SDK and PowerShell 7 (`pwsh`) are installed.
+- To create GitHub Releases from the command line, install [`gh`](https://cli.github.com/).
 
-### 1. バージョンを更新する
+## Procedure
 
-`src/DragNWashLocalization/Plugin.cs` の `PluginVersion` を更新します。
-BepInEx のプラグインID文字列に使われるため、形式は `x.y.z`（例: `0.2.0`）です。
+### 1. Update the version
 
-必要なら `docs/PLAN.md` と `README.md` のステータスも更新します。
+Update `PluginVersion` in `src/DragNWashLocalization/Plugin.cs`.
 
-### 2. ビルドして zip を作る
+The value is used in the BepInEx plugin ID string and must use the `x.y.z` format, for example `0.2.0`.
+
+Update the status in `docs/PLAN.md` and `README.md` as needed.
+
+### 2. Build and create the ZIP
 
 ```powershell
 pwsh tools/pack.ps1
 ```
 
-`release/DragNWashLocalization-<version>.zip` が生成されます。中身は
+This creates `release/DragNWashLocalization-<version>.zip` with the following structure:
 
-```
+```text
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
 README.md
 ```
 
-です。ゲームフォルダに展開して `BepInEx/` にマージするだけで導入できます。
+To install it, extract the archive into the game directory and merge the included `BepInEx/` directory.
 
-### 3. 検証する
+### 3. Validate the package
 
-- Release ビルドの警告・エラーが0であること。
-- zip を展開して、DLL と `Translations/` が正しい位置にあること。
-- 可能ならクリーンな BepInEx 導入で一度起動し、F1 メニュー・言語切り替えが
-  動くことを確認します。
+- Confirm that the Release build produces no warnings or errors.
+- Extract the ZIP and confirm that the DLL and `Translations/` directory are in the correct locations.
+- If possible, launch the game once with a clean BepInEx installation and verify the F1 menu and language switching.
 
-### 4. GitHub Release を作る
+### 4. Create the GitHub Release
 
 ```powershell
 gh release create v0.2.0 release/DragNWashLocalization-0.2.0.zip `
   --title "v0.2.0" `
-  --notes "変更点をここに記載"
+  --notes "Describe the changes here"
 ```
 
-タグ名は `v` 付き（`v0.2.0`）で統一します。Web UI からでも構いません
-（Releases → Draft a new release → タグ作成 → zip をアップロード）。
+Use tags prefixed with `v`, such as `v0.2.0`. You may also use the GitHub web interface: open Releases, draft a new release, create the tag, and upload the ZIP.
 
-リリースノートには、**BepInEx が別途必要**であることと、Direct3D 12 で
-クラッシュする場合の `-force-d3d11` 回避策を併記してください
-（[README](../README.md) 参照）。
+The release notes must state that **BepInEx is required separately** and mention the `-force-d3d11` workaround for crashes under Direct3D 12. See the [README](../README.md).
 
-## なぜ CI で自動ビルドしないのか
+## Why releases are not built in CI
 
-ビルドに必要なゲームの DLL（`UnityEngine.CoreModule.dll` や `YarnSpinner.dll` など）を
-リポジトリに含めることができないため、GitHub Actions 上でコンパイルできません。
-そのためビルドはローカルで行い、成果物（zip）だけをリリースへ添付します。
+The game DLLs required for compilation, including `UnityEngine.CoreModule.dll` and `YarnSpinner.dll`, cannot be included in the repository. GitHub Actions therefore cannot compile the plugin. Builds are created locally, and only the resulting ZIP is attached to a release.

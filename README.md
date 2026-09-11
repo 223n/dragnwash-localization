@@ -1,135 +1,114 @@
 # Drag'n Wash Localization
 
-[Drag'n Wash](https://store.steampowered.com/) 用の BepInEx ベースの非公式ローカライズ Mod です。
-日本語・簡体字中国語（今後他言語も歓迎）への翻訳を、コードを書かずに追加できるようにすることを
-目指しています。
+[日本語](README.ja.md)
 
-技術的な調査結果と実装計画は [docs/PLAN.md](docs/PLAN.md) を参照してください。
+An unofficial BepInEx-based localization mod for [Drag'n Wash](https://store.steampowered.com/).
 
-## 翻訳者向け
+The project aims to make it possible to add Japanese, Simplified Chinese, and other languages in the future without writing code.
 
-`Translations/<locale>/strings.csv` を編集するだけで翻訳を追加できます。作業中は
-`source_en`（ゲームに表示される英語原文そのまま）と `translation`（訳文）の2列で書き、
-コミット前に原文をハッシュ（`key` 列）に変換します。リポジトリにはゲームの英語台本を
-含めない方針で、**製品版を持っている人だけが翻訳できる**仕組みです。
-Unity内部のキー名などを知る必要はありません。手順は [CONTRIBUTING.md](CONTRIBUTING.md) を参照。書式タグ（`<size=70%>`など）が原文に
-含まれている場合は、タグ構造をそのまま残して中の文章だけ訳してください。
+See [docs/PLAN.md](docs/PLAN.md) for the technical research and implementation plan.
 
-### 会話文をまとめて確認したい場合
+## For translators
 
-プラグイン導入後、ゲーム内（セーブをロードした後）で **F6キー** を押すと、全会話文が
+You can add a translation by editing `Translations/<locale>/strings.csv`. While translating, use two columns: `source_en` (the exact English text displayed in the game) and `translation` (your translation). Before committing, convert the source text into hashes in the `key` column.
+
+The game's English script is intentionally not included in this repository. This ensures that **only people who own the full game can create translations**. You do not need to know Unity's internal keys or write any code. See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions.
+
+If the source text contains formatting tags such as `<size=70%>`, preserve the tag structure and translate only the text inside it.
+
+### Exporting all dialogue for context
+
+After installing the plugin, load a save and press **F6** in the game. The plugin exports all dialogue to:
+
 `BepInEx/plugins/DragNWashLocalization/Translations/_discovered/dialogue_lines.csv`
-に一括で書き出されます（実機で1839行を確認済み）。
 
-行は**ゲーム内で実際に流れる順**に並びます。`node` 列が会話の単位で、
-`Alexander_2_intro` のように「キャラクター名＿何回目＿場面」の形になっており、
-`order` 列がその会話内での順番です。`kind` 列は `line`（キャラクターの台詞）と
-`option`（プレイヤーが選ぶ選択肢）を区別します。誰が誰に何と答えているかが分かるので、
-前後を見ながら訳せます。登場するドラゴンは Conrad / Ryan / Alexander の3体です。
+The export has been verified with 1,839 lines on an actual game installation.
 
-訳したい行を `Translations/<locale>/strings.csv` にコピーし、`translation` 列を埋めて
-PRを送ってください（`node` や `key` など余分な列が付いたままでも問題なく読み込まれます）。
-すでに訳した行は `translation` 列に訳が入った状態で出力されるので、再ダンプしても
-作業は失われません。
+Lines appear in the order in which they are played in the game. The `node` column identifies each conversation and uses names such as `Alexander_2_intro`, following the pattern "character name_occurrence_scene." The `order` column gives the line's position within that conversation. The `kind` column distinguishes character dialogue (`line`) from player choices (`option`). This context makes it easier to understand who is speaking and what each response refers to. The three dragons in the game are Conrad, Ryan, and Alexander.
 
-### 編集した訳を再起動なしで確認する
+Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and submit a pull request. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
 
-ゲームを起動したまま `Translations/<現在の言語>/strings.csv` を保存すると、
-約2秒後に自動で読み直され、画面に出ているテキストにもその場で反映されます。
-訳を直しては画面で確かめる、を再起動なしで繰り返せます（`[Debug] HotReloadTranslations`
-で無効化可能）。反映されたかは F1 の Activity log に `[reload]` で出ます。
+Already translated lines are exported with their translations filled in, so exporting again will not discard your work.
 
-### UI文言をまとめて確認したい場合
+### Previewing edits without restarting the game
 
-**F7キー** で、読み込み済みの全UIテキストが
-`Translations/_discovered/ui_texts.csv` に書き出されます。**非表示のメニューも対象**なので、
-ポーズメニューや確認ダイアログを開かなくても、そのシーンのUI文言が丸ごと手に入ります。
-列は `source_en` / `translation`（訳済みなら既存の訳）/ `object_path`（画面上のどこか）です。
+When you save `Translations/<current-language>/strings.csv` while the game is running, the plugin reloads it automatically after about two seconds and immediately updates text that is currently visible.
 
-タイトル画面とゲーム中で1回ずつ押せば、ほぼ全てのUIが揃います。
+This lets you edit a translation and check it in the game repeatedly without restarting. You can disable this behavior with `[Debug] HotReloadTranslations`. Successful reloads appear as `[reload]` entries in the F1 Activity log.
 
-未翻訳のUI文言は、プレイ中に自動的に
-`Translations/_discovered/strings.csv` にも記録されます。このファイルは起動のたびに
-整理され、すでに訳した行や重複は取り除かれるので、常に「残りの作業リスト」になります。
+### Exporting all UI text
 
-### 訳す必要のない文字列について
+Press **F7** to export all loaded UI text to:
 
-スライダーの数値・解像度（`1920 x 1080 @ 164.995Hz`）・ビルド番号などは、
-最初から記録の対象外です。除外パターンは [Translations/ignore.txt](Translations/ignore.txt)
-に追記できます（正規表現、ファイル内に記述例あり）。
+`Translations/_discovered/ui_texts.csv`
 
-除外されるのは「記録」だけです。翻訳の検索のほうが先に行われるため、
-`strings.csv` に書いた行は除外パターンに一致していても必ず翻訳されます。
+The export includes **hidden menus**, so you can collect every UI string in the current scene without opening the pause menu or confirmation dialogs. Its columns are `source_en`, `translation` (the existing translation, if any), and `object_path` (where the text appears in the UI).
 
-### ゲーム内デバッグメニュー
+Press F7 once on the title screen and once during gameplay to collect nearly all UI text.
 
-**F1キー** でデバッグウィンドウを開閉できます（設定で変更可能）。
-タイトル部分をドラッグして移動、右下の角をドラッグしてサイズを変更できます。
+Untranslated UI text is also recorded automatically during gameplay in `Translations/_discovered/strings.csv`. This file is cleaned up each time the game starts: translated entries and duplicates are removed, leaving an up-to-date list of remaining work.
 
-- **Activity log**: 翻訳結果と処理ログを表示します。`Follow: ON/OFF` で末尾への
-  自動追従を切り替えられ、手動スクロールすると追従が止まります。`Clear log` は
-  表示と重複抑制をリセットします。ログは直近100件を保持します。
-- **Tools**: 導入済みの言語を選択すると、画面上の翻訳が再起動なしで切り替わります。
-  会話抽出（`Export loaded dialogue`）とレイアウトチェックもここから実行できます。
+### Strings that do not need translation
 
-**Check translation layout** ボタンで、レイアウト崩れリスクのある文字列を
-`Translations/_discovered/layout_risks.csv` に書き出せます（しきい値は
-`BepInEx/config/.../LayoutOverflowThreshold`、既定 `1.0` ＝ ちょうど収まる）。
+Slider values, resolutions such as `1920 x 1080 @ 164.995Hz`, build numbers, and similar strings are excluded from discovery by default.
 
-### セーブを1つ前に戻す（翻訳確認用）
+You can add exclusion patterns to [Translations/ignore.txt](Translations/ignore.txt). The file uses regular expressions and includes examples.
 
-ゲームがセーブを書き込むたびに、プラグインが
-`BepInEx/plugins/DragNWashLocalization/SaveHistory/<スロット>/` に世代コピーを残します
-（スロットごとに既定30世代、`[Debug] SaveHistoryKeep` で変更可）。
-**F1 → Saves** タブでスロットを選び、戻したい世代の **Restore** を押すと、その世代が
-ゲームのセーブファイルに書き戻されます。**その後タイトル画面に戻ってスロットをロード**すると
-反映されます（ゲーム内でセーブすると再び上書きされます）。復元前の状態も自動で
-世代に残るので、戻しすぎても元に戻せます。
+Exclusions affect discovery only. Translation lookup happens first, so any entry present in `strings.csv` will always be translated even if it matches an exclusion pattern.
 
-同じ場面の会話を訳し直して見比べたいときに使ってください。フラグや変数を直接いじる
-わけではなく、ゲーム自身のセーブファイルを差し替えるだけです。
+### In-game debug menu
 
-## 設定画面を開くとクラッシュする場合（Windows）
+Press **F1** to toggle the debug window. The key is configurable. Drag the title bar to move the window, and drag the lower-right corner to resize it.
 
-Unity 6000.3.14f1 / DirectX 12 環境で、Options を開いた際に
-`D3D12ScratchAllocator::DestroyScratch` で落ちる問題がありました。同じスタックの
-[Unity公式の不具合報告（UUM-140564）](https://issuetracker.unity.com/issues/10698)
-があり、ネイティブ描画側のバグなので翻訳フックで例外を捕捉しても防げません。
+- **Activity log:** Displays translation results and processing logs. `Follow: ON/OFF` controls automatic scrolling to the latest entry; scrolling manually disables following. `Clear log` clears the display and resets duplicate suppression. The log keeps the 100 most recent entries.
+- **Tools:** Select any installed language to switch the on-screen translation without restarting. You can also export dialogue (`Export loaded dialogue`) and run the layout check here.
 
-このバグは**実行中のテクスチャ確保・アップロード**で踏みます。プラグインは
-日本語グリフを起動時にまとめて生成することでゲーム中のアトラス更新をなくし、
-Direct3D 12 のままクラッシュしないことを実機で確認済みです。設定は不要です。
+The **Check translation layout** button exports strings at risk of overflowing their layout to `Translations/_discovered/layout_risks.csv`. Configure the threshold with `BepInEx/config/.../LayoutOverflowThreshold`; the default is `1.0`, meaning an exact fit.
 
-それでも落ちる場合は、Steamライブラリで
-**Drag'n Wash → プロパティ → 一般 → 起動オプション** に `-force-d3d11` を追加して
-再起動すると、描画APIごとバグを回避できます
-（[Unity標準の起動オプション](https://docs.unity3d.com/6000.3/Documentation/Manual/PlayerCommandLineArguments.html)。
-ゲーム本体のDLL・セーブデータは変更されません）。
-`BepInEx/LogOutput.log` のプラグイン起動行で、実際に使われている描画APIを
-`graphics=...` として確認できます。
+### Restoring the previous save for translation testing
 
-`BepInEx/config/com.tomxv.dragnwash.localization.cfg` の `[Font] AtlasPointSize`
-を下げると、フォントアトラスの枚数が減り、上げると文字が鮮明になります（既定80）。
+Whenever the game writes a save, the plugin stores a versioned copy in:
 
-## 現在のステータス
+`BepInEx/plugins/DragNWashLocalization/SaveHistory/<slot>/`
 
-Phase 4まで完了: BepInExプラグインの骨格、UI文字列・会話文の日本語/中国語差し替え、
-CJKフォント表示、会話・UIの一括抽出、ゲーム内デバッグメニュー、レイアウト崩れ検出、
-翻訳者向けドキュメント、リリース手順を実装・実機確認済みです。
-詳細は [docs/PLAN.md](docs/PLAN.md) を参照してください。
+It keeps 30 versions per slot by default. You can change this with `[Debug] SaveHistoryKeep`.
 
-## 翻訳に参加する
+Open **F1 → Saves**, select a slot, and click **Restore** on the version you want. Then return to the title screen and load that slot for the restored save to take effect. Saving again during gameplay will overwrite the active save as usual.
 
-コード不要で `Translations/<locale>/strings.csv` を編集するだけで参加できます。
-手順・書式・未翻訳の見つけ方は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+The plugin automatically preserves the state from immediately before a restore, so you can recover if you go back too far.
 
-## 配布・リリース
+Use this feature to revisit the same scene while comparing revisions of a dialogue translation. It replaces the game's own save file without directly editing flags or variables.
 
-リリース zip のビルドと配布手順は [docs/RELEASING.md](docs/RELEASING.md) を
-参照してください（ゲーム由来の参照アセンブリをコミットできないため、リリースは
-ローカルでビルドして GitHub Releases にアップロードします）。
+## Crash when opening Options on Windows
 
-## ライセンス
+A crash in `D3D12ScratchAllocator::DestroyScratch` has been observed when opening Options with Unity 6000.3.14f1 and DirectX 12. Unity has an official issue report with the same stack trace: [UUM-140564](https://issuetracker.unity.com/issues/10698). Because this is a native rendering bug, it cannot be prevented by catching exceptions in the translation hook.
 
-プラグインのコードは [LICENSE](LICENSE) を参照してください。ゲーム本体の資産・コードは
-含んでおらず、翻訳文はそれぞれの翻訳者の貢献として扱われます。
+The bug is triggered when textures are allocated or uploaded at runtime. The plugin generates Japanese glyphs together at startup to avoid atlas updates during gameplay, and this has been verified on an actual system to prevent the crash while continuing to use Direct3D 12. No configuration is required.
+
+If the game still crashes, open Steam and go to **Drag'n Wash → Properties → General → Launch Options**, add `-force-d3d11`, and restart the game. This bypasses the issue by switching the graphics API. The option is part of [Unity's standard command-line arguments](https://docs.unity3d.com/6000.3/Documentation/Manual/PlayerCommandLineArguments.html), and it does not modify the game's DLLs or save data.
+
+The plugin startup entry in `BepInEx/LogOutput.log` reports the graphics API currently in use as `graphics=...`.
+
+Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localization.cfg` reduces the number of font atlases. Raising it produces sharper text. The default is 80.
+
+## Current status
+
+Phase 4 is complete. The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
+
+See [docs/PLAN.md](docs/PLAN.md) for details.
+
+## Contributing translations
+
+No code is required. Edit `Translations/<locale>/strings.csv` to contribute a translation.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow, file format, and instructions for finding untranslated strings.
+
+## Distribution and releases
+
+See [docs/RELEASING.md](docs/RELEASING.md) for instructions on building and distributing the release ZIP.
+
+Because the game-derived reference assemblies cannot be committed, releases are built locally and uploaded to GitHub Releases.
+
+## License
+
+See [LICENSE](LICENSE) for the plugin's code license. This repository does not include assets or code from the game. Translations are treated as contributions from their respective translators.

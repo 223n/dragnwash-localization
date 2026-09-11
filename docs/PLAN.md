@@ -1,616 +1,365 @@
-# Drag'n Wash ローカライズ Mod 計画書
+# Drag'n Wash Localization Mod Plan
 
-## 目的
+[日本語](PLAN.ja.md)
 
-「Drag'n Wash」に BepInEx を導入し、日本語・簡体字中国語（および将来的に他言語）への
-ローカライズを可能にする。翻訳者はコードを書かずに、決められた形式の翻訳ファイルを
-`Translations/<locale>/` に置くだけで参加できるようにする。
+## Objective
 
-## 調査結果（2026-09-11 時点、Steam版で確認）
+Add BepInEx support to Drag'n Wash and enable localization into Japanese, Simplified Chinese, and additional languages in the future. Translators should be able to contribute without writing code by placing translation files in the prescribed format under `Translations/<locale>/`.
 
-| 項目 | 結果 |
+## Research findings (Steam version, as of 2026-09-11)
+
+| Item | Finding |
 |---|---|
-| エンジン | Unity **6000.3.14f1**（Unity 6.3） |
-| ビルド形式 | **Mono**（IL2CPP ではない）, x64 |
-| UI文字列 | **Unity Localization** パッケージ（`Unity.Localization.dll`）＋ Addressables 経由のStringTable（`StreamingAssets/aa/StandaloneWindows64/localization-locales_assets_all.bundle`） |
-| 会話文 | **Yarn Spinner**（`YarnSpinner.dll` / `YarnSpinner.Unity.dll` / `Yarn.CsvHelper.dll`）。CSVベースのローカライズ機構を標準搭載 |
-| フォント | Unity 6.3 の TextMeshPro は Dynamic OS Font Fallback に対応。Windows標準搭載のCJKフォント（游ゴシック / Microsoft YaHei 等）で代替表示できる可能性が高い |
+| Engine | Unity **6000.3.14f1** (Unity 6.3) |
+| Build type | **Mono**, not IL2CPP; x64 |
+| UI strings | Unity Localization (`Unity.Localization.dll`) and StringTables delivered through Addressables (`StreamingAssets/aa/StandaloneWindows64/localization-locales_assets_all.bundle`) |
+| Dialogue | **Yarn Spinner** (`YarnSpinner.dll`, `YarnSpinner.Unity.dll`, and `Yarn.CsvHelper.dll`), which includes CSV-based localization support |
+| Fonts | TextMeshPro in Unity 6.3 supports Dynamic OS Font Fallback. CJK text can likely fall back to fonts bundled with Windows, such as Yu Gothic and Microsoft YaHei. |
 
-### 結論
-ゲーム本体の `.dll` やアセットを書き換えずに、**BepInEx + Harmony によるランタイムのテキスト差し替え**
-で日本語化・中国語化は十分に実現可能と判断。実機検証（Phase 1）の結果、当初想定していた
-Unity Localization経由のフックは不採用とし、**TextMeshProのテキスト設定自体をフックする方式**を
-採用した（詳細は下記「Phase 1 実機検証で判明したこと」を参照）。
+### Conclusion
 
-## Phase 1 実機検証で判明したこと（2026-09-11）
+Japanese and Chinese localization is practical without modifying the game's DLLs or assets by replacing text at runtime with **BepInEx and Harmony**. Testing in Phase 1 showed that the initially planned Unity Localization hook was not suitable. The implementation instead hooks TextMeshPro text assignment itself, as described below.
 
-- `Unity.Localization.dll` は同梱されているが、メインメニュー・オプション画面・実際の
-  会話文のいずれも `LocalizeStringEvent` / `LocalizedString.RefreshString` /
-  `LocalizedStringDatabase.GenerateLocalizedString` を一切経由していないことを、
-  Harmonyでの呼び出し検知パッチにより実機で確認した（メニュー操作・会話表示中でも
-  ヒット数0件）。つまりUnity Localizationパッケージは現状ほぼ未使用の依存関係。
-- 代わりに、UIボタン・設定項目・会話文はすべて **`TMPro.TMP_Text.text`（プロパティセッター）**
-  を経由して画面に反映されることを確認。これはUnity Localizationを使っていようがいまいが
-  関係ない、エンジンレベルの共通経路であるため、ここをフックすればゲーム内のほぼ全テキストを
-  一括で捕捉・差し替えできる。
-- 翻訳データの構造も、当初案の「テーブル名＋キー」方式から、**「画面に表示される英語原文
-  そのもの → 訳文」という単純な対応表**に変更した。これにより翻訳者はUnityの内部キー名を
-  一切知る必要がなく、ゲーム画面に出ている文章をそのままCSVに書き写すだけで参加できる。
-- CJKフォント表示: 案の定、ゲーム側のTMPフォントアセットには日本語・中国語のグリフが
-  含まれておらず、翻訳を差し込んだ直後は文字が四角（tofu）で表示された。Unity 6.3の
-  `TMP_FontAsset.CreateFontAsset(familyName, styleName)` API（`AtlasPopulationMode.DynamicOS`）
-  を使い、Windows標準搭載の游ゴシック/メイリオ/MSゴシック（日本語）・Microsoft YaHei（中国語）
-  から動的にTMPフォントアセットを生成し、`TMP_Settings.fallbackFontAssets` に登録することで
-  解決。ゲーム本体のフォントアセットには一切手を加えていない。実機で日本語表示を確認済み。
+## Findings from Phase 1 testing (2026-09-11)
 
-## アーキテクチャ（確定版）
+- Although `Unity.Localization.dll` is bundled with the game, Harmony call-detection patches confirmed that the main menu, Options screen, and actual dialogue never call `LocalizeStringEvent`, `LocalizedString.RefreshString`, or `LocalizedStringDatabase.GenerateLocalizedString`. The hit count remained zero while navigating menus and displaying dialogue. Unity Localization is effectively an unused dependency in the current game.
+- UI buttons, settings, and dialogue all reach the screen through the `TMPro.TMP_Text.text` property setter. This engine-level route is independent of whether Unity Localization is used, so hooking it captures and replaces nearly all in-game text.
+- The translation format changed from the proposed table-name-and-key scheme to a simple mapping from **the exact English text shown on screen to its translation**. Translators do not need Unity's internal keys; they can copy text visible in the game into a CSV file.
+- The game's TMP font assets do not contain Japanese or Chinese glyphs, so injected translations initially appeared as tofu boxes. This was fixed with Unity 6.3's `TMP_FontAsset.CreateFontAsset(familyName, styleName)` API in `AtlasPopulationMode.DynamicOS`. Dynamic TMP assets are created from Yu Gothic, Meiryo, or MS Gothic for Japanese and Microsoft YaHei for Chinese, then registered in `TMP_Settings.fallbackFontAssets`. No game font asset is modified. Japanese rendering was verified in the game.
 
-1. **BepInEx 5.4.23.5（x64, Mono）** をゲームフォルダへ導入 — 実機導入・起動確認済み
-2. 自作 BepInEx プラグイン `DragNWashLocalization`
-   - `TMPro.TMP_Text` の `text` セッターを Harmony でフックし（Prefixで`ref string value`を書き換え）、
-     外部ファイルに一致する原文があれば訳文に差し替え
-   - 一致する訳文がない原文は自動的に `Translations/_discovered/strings.csv` に記録し、
-     翻訳者が「まだ訳されていない文章」を把握できるようにする
-   - 起動時に `FontFallback.EnsureCjkFallback()` でCJKフォールバックフォントを注入
-   - BepInEx configで言語切り替え（`TargetLocale`: `ja` / `zh-Hans` / 手動指定）を提供
-3. **翻訳ファイル形式**（誰でも「投げるだけ」で参加できる形式）
-   - `Translations/<locale>/strings.csv` — 列は `source_en,translation` の2列のみ
-   - UIも会話文も同じ1ファイルで扱える（フックが共通のため区別不要）
-   - 翻訳者は `Translations/_discovered/strings.csv`（未訳一覧、ゲームをプレイすると
-     自動生成される）を参考に、`Translations/<locale>/strings.csv` の該当行を埋めてPRを送るだけ
+## Final architecture
 
-## リポジトリ構成
+1. Install **BepInEx 5.4.23.5 (x64, Mono)** in the game directory. Installation and startup have been verified.
+2. Load the custom BepInEx plugin `DragNWashLocalization`.
+   - Harmony-patch the `TMPro.TMP_Text.text` setter and replace its `ref string value` in a Prefix when an external translation matches the source text.
+   - Record unmatched source strings in `Translations/_discovered/strings.csv` so translators can see what remains.
+   - Inject CJK fallback fonts at startup with `FontFallback.EnsureCjkFallback()`.
+   - Provide a BepInEx `TargetLocale` setting for `ja`, `zh-Hans`, or a manually supplied locale.
+3. Use a contributor-friendly translation format.
+   - `Translations/<locale>/strings.csv` originally used the two columns `source_en,translation`; the public format later changed to hashed keys, as documented below.
+   - UI and dialogue share one file because they use the same hook.
+   - Translators use the locally generated `Translations/_discovered/strings.csv`, fill the corresponding rows, and submit a pull request.
 
-```
+## Repository layout
+
+```text
 dragnwash-localization/
-  README.md                    プロジェクト概要・翻訳者向け手順
+  README.md                    Project overview and translator instructions
   LICENSE
-  docs/PLAN.md                 この計画書
-  src/DragNWashLocalization/   BepInExプラグイン（C#プロジェクト）
-    Plugin.cs                  エントリポイント、Harmony初期化、config
-    TmpTextPatches.cs          TMP_Text.text のHarmonyフック
-    TranslationStore.cs        翻訳データの読み込み・検索・未訳ログ出力
-    CsvReader.cs                依存なしの簡易CSVパーサ
-    FontFallback.cs             CJKフォールバックフォントの動的生成・登録
+  docs/PLAN.md                 This document
+  src/DragNWashLocalization/   BepInEx plugin C# project
+    Plugin.cs                  Entry point, Harmony setup, and configuration
+    TmpTextPatches.cs          Harmony patches for TMP_Text.text
+    TranslationStore.cs        Translation loading, lookup, and discovery output
+    CsvReader.cs               Small dependency-free CSV parser
+    FontFallback.cs            Dynamic CJK fallback creation and registration
   Translations/
     ja/strings.csv
     zh-Hans/strings.csv
-  tools/                       （今後）未訳エクスポート等の補助スクリプト
+  tools/                       Helper scripts, including export tools
   .gitignore
 ```
 
-ゲーム本体のアセット・コードはリポジトリに含めない（著作権保護のため）。配布するのは
-プラグインのコードと翻訳ファイルのみ。
+The repository contains no game assets or code. Only the plugin source and translation files are distributed.
 
-## Phase 1.5: 会話ログ一括抽出＆デバッグUI（2026-09-11）
+## Phase 1.5: Bulk dialogue export and debug UI (2026-09-11)
 
-翻訳者体験を大きく改善する2機能を追加し、実機で動作確認済み。
+Two features were added to improve the translator workflow and verified in the game.
 
-- **`DialogueDumper`（F6キー）**: `YarnProject.baseLocalization` の内部テーブル（`entries`:
-  行ID→英語原文の辞書）をリフレクションで読み出し、ロード済みの全会話行を
-  `Translations/_discovered/dialogue_lines.csv` に一括書き出しする。実機で **1839行を
-  一括抽出** できることを確認済み。プレイして会話を発生させる必要はなく、該当シーンが
-  一度ロードされていれば（YarnProjectがメモリに乗っていれば）足りる。
-  - 抽出結果には `<gradient="gold"><b>...</b></gradient><size=70%>...` のようなTMP書式
-    タグを含む行も原文のまま出てくることを確認。**追加のCSV列は不要**で、既存の
-    `source_en,translation` 2列方式のまま、タグ構造を保持して中のテキストだけ訳せば
-    書式も再現される。
-  - 抽出結果はゲーム本体の著作物（会話文そのもの）を含むため、リポジトリにはコミットせず
-    `.gitignore` 対象とした。翻訳者は各自プラグイン導入後にF6を押して手元に再生成する。
-- **デバッグメニュー（F1キー）**: OnGUIによる簡易オーバーレイ。`Translations/` 配下の
-  ロケールフォルダを自動検出してボタン表示し、クリックで即座に言語切り替え
-  （再起動不要）。会話ログダンプもボタンから実行可能。ゲーム本体のOptions画面には
-  一切手を加えていない（改造対象が壊れにくい／ゲーム更新の影響を受けにくい設計）。
+- **`DialogueDumper` (F6):** Reads the internal `entries` table in `YarnProject.baseLocalization` through reflection and writes every loaded dialogue line to `Translations/_discovered/dialogue_lines.csv`. A test installation exported **1,839 lines** at once. Translators do not need to trigger every conversation; the relevant scene only needs to have loaded the YarnProject into memory.
+  - Lines containing TMP formatting such as `<gradient="gold"><b>...</b></gradient><size=70%>...` are exported intact. No additional CSV columns are needed: translators preserve the tags and translate only the enclosed text.
+  - Because the export contains copyrighted game dialogue, it is excluded by `.gitignore`. Each translator regenerates it locally by pressing F6 after installing the plugin.
+- **Debug menu (F1):** A small `OnGUI` overlay discovers locale directories under `Translations/`, presents them as buttons, and switches languages immediately without restarting. It can also trigger dialogue export. The game's Options screen is untouched, reducing coupling to game updates.
 
-## Phase 2: 実会話での差し替え確認（2026-09-11）
+## Phase 2: Replacement in real dialogue (2026-09-11)
 
-### 発見: `TMP_Text.SetText()` は `text` プロパティを経由しない別経路
+### Discovery: `TMP_Text.SetText()` bypasses the `text` property
 
-実際の会話（NPC頭上の吹き出しUI）で訳文が反映されないケースを実機で確認。調査の結果、
-Yarn Spinner標準のタイプライター（`LetterTypewriter`/`WordTypewriter`）は `Text.text = ...`
-を使っており問題なかったが、**このゲーム独自の吹き出しUIコンポーネントは
-`TMP_Text.SetText(string)` を直接呼んでいた**。`SetText`を逆コンパイルして確認したところ、
-`text` プロパティのセッターを一切経由せず内部フィールド（`m_text`）に直接書き込む実装
-だったため、`text` セッターだけへのHarmonyパッチでは捕捉できなかった。
+Translations failed to appear in some NPC speech bubbles. Yarn Spinner's standard `LetterTypewriter` and `WordTypewriter` use `Text.text = ...`, but the game's custom bubble component calls `TMP_Text.SetText(string)` directly. Decompilation confirmed that `SetText` writes the internal `m_text` field without invoking the property setter.
 
-対策として `TMP_Text.SetText(string)` と `SetText(string, bool)` にも同じ書き換えロジック
-（`TmpTextHook.Rewrite`）を適用するパッチを追加し、実機で解決を確認した。
-**教訓**: TMPのテキスト設定はプロパティ以外にも複数のAPIがあるため、今後別の未対応経路が
-見つかる可能性は残る（デバッグログの `[--]` に該当しそうな文が出ない＝別経路の疑い、という
-切り分け方が有効）。
+The shared rewrite logic, `TmpTextHook.Rewrite`, was therefore patched into both `TMP_Text.SetText(string)` and `SetText(string, bool)`. This fixed the issue in the game.
 
-### デバッグ体験の改善
+The lesson is that TMP exposes several text-assignment APIs. Another unhandled route may still exist. If likely text never appears as an untranslated `[--]` entry in the debug log, suspect a separate assignment path.
 
-ユーザーからのフィードバックを受け、以下を実装：
-- ゲーム内ログビューア（F1メニュー内）: `[OK] "原文" -> "訳文"` / `[--] "未対応原文"` を
-  リアルタイム表示。外部ログファイルを都度確認する必要がなくなった。
-- ログの自動スクロール、ダークテーマ（デフォルトの白背景OnGUIスキンは可読性が低いため）。
-- 「Clear log」ボタンの不具合を修正: ログ表示だけでなく、内部の重複排除トラッキングも
-  リセットするようにした（さもないと一度表示した文字列は二度とログに出なくなっていた）。
+### Debugging improvements
 
-## Phase 3: 訳文の本格追加とレイアウト確認（2026-09-11）
+Based on user feedback, the following were added:
 
-Phase 3 の目的は (1) 日本語・簡体字中国語の訳を本格的に追加し、(2) CJK 文字が
-ゲームのレイアウトを崩さないことを確認すること。このうち「ツールと訳文の整備」までを
-実装し、「実機での目視確認」は今後のQA作業として残っている。
+- An in-game log viewer under F1 that shows `[OK] "source" -> "translation"` and `[--] "untranslated source"` in real time.
+- Automatic scrolling and a dark theme because Unity's default white `OnGUI` skin was difficult to read.
+- A fix for **Clear log** so it resets both visible entries and internal duplicate suppression. Previously, cleared strings could never appear again.
 
-### 訳文の追加
+## Phase 3: Full translations and layout validation (2026-09-11)
 
-- `Translations/zh-Hans/strings.csv` を新規作成し、`ja/strings.csv` にある全原文の
-  簡体字中国語訳を追加した（95エントリ、`ja` とキー順が一致）。
-  - 中国語フォントは Microsoft YaHei 系を既定で使用。実機での表示確認はPhase 3の
-    残作業（下記リスク参照）。
-- `Translations/ja/strings.csv` に、ほぼどのUnityゲームにも存在する共通UI文言
-  （Play/Continue/Pause/Settings/Language/Volume/Apply/Confirm など）を追加した。
-  - これらは「画面に実際に出るか」を実機で確認する前のベストエフォート追加であり、
-    一致しない原文は従来どおり `_discovered/strings.csv` に記録されるだけなので害はない。
-- 翻訳キーは完全一致方式のため、追加する原文は「画面に出る英文そのまま」でなければ
-  ならない。`_discovered/strings.csv`（著作物のため未コミット）を各自生成して、
-  本格的な訳の拡充を続ける。
+Phase 3 aimed to add substantial Japanese and Simplified Chinese translations and verify that CJK text does not break the layout. Translation and tooling were completed first, with visual testing initially left as QA.
 
-### レイアウト崩れの検出（LayoutChecker）
+### Translation additions
 
-CJK文字はラテン文字の約2倍の幅で描画されるため、訳文は原文より短くてもボタンや
-ラベルからはみ出すことがある。目視確認の前に、リスクの高い文字列を絞り込む
-`LayoutChecker` を追加した。
+- Added `Translations/zh-Hans/strings.csv` with Simplified Chinese versions of all 95 entries then present in the Japanese file, in the same key order. Microsoft YaHei was selected as the default Chinese font; actual rendering remained to be tested at that stage.
+- Added common Unity UI strings to `Translations/ja/strings.csv`, including Play, Continue, Pause, Settings, Language, Volume, Apply, and Confirm. These were best-effort additions before checking which strings the game actually displays. Nonmatching entries are harmless; actual unmatched text is still recorded in `_discovered/strings.csv`.
+- Because matching is exact, each source must reproduce the displayed English verbatim. Contributors generate their own ignored discovery file and use it to expand the translations.
 
-- 幅の推定は「CJK等の全角グリフ=2、その他=1」というヒューリスティック。フォント
-  メトリクスや折り返し・コンテナ幅は見ていない（あくまでトリアージ用）。
-- 起動時と、デバッグメニューの **Check layout** ボタンから実行できる。しきい値は
-  `[Debug] LayoutRiskThreshold`（既定 `1.4`、訳文の推定幅が原文のこの倍率を超えると
-  記録）。
-- 結果は `Translations/_discovered/layout_risks.csv` に書き出される
-  （`source_en,translation,source_width,translation_width,ratio`）。
+### Layout overflow detection
 
-### 残作業
+CJK glyphs can be approximately twice as wide as Latin characters, so translated text can overflow a control even when it contains fewer characters. `LayoutChecker` was added to identify likely risks before visual inspection.
 
-- 実機で `ja` / `zh-Hans` を順に切り替え、`layout_risks.csv` に挙がった文字列を
-  中心に目視でレイアウト崩れがないか確認する（特にOptions画面・会話吹き出し）。
-- 中国語フォント（Microsoft YaHei）での実表示確認（Phase 1で登録のみ確認済み）。
-- `_discovered/strings.csv` をもとに訳文をさらに拡充する。
+- The first heuristic assigned width 2 to CJK and other full-width glyphs and 1 to all others. It did not inspect font metrics, wrapping, or container width and was intended only for triage.
+- It ran at startup and from **Check layout** in the debug menu. `[Debug] LayoutRiskThreshold` defaulted to `1.4`; entries were reported when estimated translation width exceeded source width by that factor.
+- Results were written to `Translations/_discovered/layout_risks.csv` with `source_en,translation,source_width,translation_width,ratio`.
 
-## 静的UIテキストの取りこぼし（2026-09-11）
+### Work remaining at that point
 
-ポーズメニューの `Pause Menu` / `Resume` / `Options` / `Quit` が英語のまま表示され、
-ログにも `_discovered` にも記録が一切なかった。フックに到達していなかった。
+- Switch between `ja` and `zh-Hans` in the game and visually inspect strings reported in `layout_risks.csv`, especially on the Options screen and in dialogue bubbles.
+- Verify actual Chinese rendering with Microsoft YaHei.
+- Continue expanding translations from `_discovered/strings.csv`.
 
-原因は、プレハブ上で設定され実行時に一度も代入されないTMPテキストが
-`m_text` へ直接デシリアライズされること。`text` セッターも `SetText` も呼ばれないため、
-傍受する対象が存在しない。`SetText` バイパスに続く3つ目の経路で、今回は
-「呼び出し自体が無い」という点がこれまでと異なる。メインメニューの
-`New Game` / `Credits` / `Quit` / `Back` / `Options` が全て未適用だったのも同じ理由。
+## Missing static UI text (2026-09-11)
 
-対応:
+`Pause Menu`, `Resume`, `Options`, and `Quit` remained in English and appeared in neither the log nor the discovery file because the hook was never reached.
 
-- `TextMeshProUGUI.OnEnable` と `TextMeshPro.OnEnable` に Postfix を追加し、
-  コンポーネントが有効化された時点（＝メニューが表示された時点）で現在のテキストを
-  翻訳する。セッター経由で既知のコンポーネントは二重適用を避けるため除外し、
-  訳文の代入時は `SuppressRewrite` で自己再入を止める。
-- ただしこれは「表示されれば拾える」だけで、全メニューを開いて回る必要が残る。
-  そこで `UiTextDumper` を追加した。`Resources.FindObjectsOfTypeAll<TMP_Text>()` は
-  非アクティブなオブジェクトも列挙するため、ポーズメニューを開かずに
-  そのシーンの全UI文言を `_discovered/ui_texts.csv` へ書き出せる（F7）。
-  翻訳済みコンポーネントは `.text` が訳文になっているので、
-  `TmpTextHook.TryGetTrackedSource` で元の英文を引く。
+TMP text configured on a prefab is deserialized directly into `m_text` and may never be assigned at runtime. Neither the property setter nor `SetText` is called. This was the third assignment route found, and unlike the `SetText` bypass, it involved no call to intercept. The same cause affected `New Game`, `Credits`, `Quit`, `Back`, and `Options` on the main menu.
 
-### 調査時の誤判定について
+The fix had two parts:
 
-ゲームアセットを長さ接頭辞付き文字列として検索し、`Resume` を
-「アニメーションのボーン名（`Resume.Bone.004`）だから表示テキストではない」と判定したが、
-これは誤りだった。ボーン名の `Resume` と、ポーズメニューのラベルの `Resume` が
-別々に存在していた。件数が少なく文脈も紛らわしかったため見落とした。
-アセット検索は「存在しないことの証明」には使えるが、「表示テキストでないことの証明」には
-弱い。`ui_texts.csv` が実データを出すので、今後はそちらを根拠にする。
+- Add Postfix patches to `TextMeshProUGUI.OnEnable` and `TextMeshPro.OnEnable`. When a component becomes active, translate its current text. Components already seen through a setter are skipped to prevent duplicate work, and `SuppressRewrite` prevents re-entry while assigning the translation.
+- Add `UiTextDumper`. `Resources.FindObjectsOfTypeAll<TMP_Text>()` includes inactive objects, so F7 can export every UI string in the loaded scene to `_discovered/ui_texts.csv` without opening every menu. If a component already contains a translation, `TmpTextHook.TryGetTrackedSource` recovers its English source.
 
-なお画像としてデザインされたボタン（`Back` / `Save` / `Set Default` / `OPTIONS` の
-見出しなど）は翻訳対象外とする方針。
+### Incorrect conclusion during investigation
 
-## IMGUIの入力がゲームに抜ける問題（2026-09-11）
+A length-prefixed asset search found `Resume` in the animation bone name `Resume.Bone.004`, which led to the incorrect conclusion that it was not display text. The bone name and the pause-menu label were separate occurrences. Asset search is useful for showing that something exists, but weak evidence that a string is not UI text. Future decisions should rely on the actual output of `ui_texts.csv`.
 
-デバッグウィンドウ上でクリックすると、背後のゲームUIにも当たり判定が入っていた。
-IMGUIはゲームの入力読み取りを止めないため、OnGUI側では防げない。uGUIは
-EventSystem 経由、ゲーム本体は Input System 経由で読んでおり、どちらもIMGUIを見ない。
+Buttons whose labels are designed as images, including `Back`, `Save`, `Set Default`, and the `OPTIONS` heading, are intentionally outside the translation scope.
 
-`InputBlocker` を追加し、ポインタがウィンドウ上にある間だけ
-`EventSystem.enabled = false` と `PlayerInput.DeactivateInput()` で両方を止める。
-「メニューが開いている間」ではなく「ポインタが乗っている間」に限定したのは、
-ログをオーバーレイとして出したままプレイできる利点を残すため。
-マウスボタンを押している間はポインタが外に出ても遮断を維持する。
-ウィンドウやリサイズグリップをドラッグして画面端を越えたときに、
-操作の途中でゲーム側へ制御が渡るのを防ぐため。`OnDestroy` で必ず解除する。
+## IMGUI input leaking into the game (2026-09-11)
 
-## LayoutChecker を実測方式へ（2026-09-11）
+Clicks on the debug window also activated the game UI behind it. IMGUI does not stop the game from reading input. uGUI reads through `EventSystem`, while the game reads through the Input System; neither observes IMGUI.
 
-初版は原文と訳文の文字幅（全角=2、半角=1）を比較していたが、コンテナの幅を
-まったく見ていないため、余裕のあるラベルまで片端から挙がっていた。実際
-`Audio → オーディオ` や `Options → オプション` が「2.0倍」として報告される一方、
-スクリーンショットではどちらも余裕をもって収まっていた。誤検出が大半で、
-目視確認の絞り込みという本来の役割を果たせていなかった。
+`InputBlocker` was added to disable `EventSystem` and call `PlayerInput.DeactivateInput()` only while the pointer is over the debug window. Restricting the block to pointer hover preserves the ability to play while leaving the log visible. While a mouse button is held, the block remains active even if the pointer leaves the window, preventing input from returning to the game mid-drag when moving or resizing the window beyond a screen edge. `OnDestroy` always restores input.
 
-TMP自身に問い合わせる方式へ変更した。`GetPreferredValues` はそのコンポーネント固有の
-フォント・サイズ・字間で訳文に必要な大きさを返すので、`rectTransform.rect` と比べれば
-実際に収まるかが分かる。折り返しが無効なら幅を、有効なら `rect.width` 制約下での
-必要高さを比較する。出力に `axis` / `required_px` / `available_px` / `object_path` を
-追加し、どこがどれだけはみ出しているかを直接示す。
+## LayoutChecker changed to measured dimensions (2026-09-11)
 
-設定キーは `LayoutRiskThreshold` から `LayoutOverflowThreshold`（既定 `1.0`）へ改名した。
-意味が「原文比」から「コンテナ比」に変わったため、既存の設定ファイルに残った `1.4` が
-そのまま使われると実際のはみ出しを見逃すことになる。
+The first implementation compared character widths using full-width = 2 and half-width = 1, but ignored the container. It reported comfortable labels such as `Audio → オーディオ` and `Options → オプション` as 2.0× risks even though screenshots showed ample space. False positives prevented it from serving as useful triage.
 
-## UI文言の全量確定（2026-09-11）
+The checker now asks TMP directly. `GetPreferredValues` measures the translated text with the component's font, size, and spacing. Comparing the result to `rectTransform.rect` reveals whether it actually fits. For text without wrapping, the checker compares width. With wrapping, it compares the required height under the `rect.width` constraint. Output now includes `axis`, `required_px`, `available_px`, and `object_path`.
 
-F7（`UiTextDumper`）を実機で実行し、読み込み済みの全TMPテキスト40件を取得した。
-`object_path` を併記したことで、各文字列の正体が推測なしで判別できた。
+The setting was renamed from `LayoutRiskThreshold` to `LayoutOverflowThreshold`, with a default of `1.0`. Its meaning changed from source-text ratio to container ratio. Leaving an old value of `1.4` in an existing config would hide real overflow.
 
-- 35件は翻訳済み
-- `Option A` は Unityドロップダウンの **Template** 配下、`Option Text` は Yarn選択肢の
-  プレハブ雛形で、どちらも実行時に本文へ置き換わるため画面には出ない。`​` は
-  TMPが空の入力欄に入れるゼロ幅スペース。3件とも `ignore.txt` へ追加した。
-- 実質的に未翻訳だったのは入力欄のプレースホルダ `Enter text...` の1件のみ。
+## Complete UI string inventory (2026-09-11)
 
-見つかった不具合2件:
+Running F7 in the game collected all 40 loaded TMP text objects. Including `object_path` made each string identifiable without guessing.
 
-- `UiTextDumper` が `Trim()` してから翻訳を引いていたため、実際の文字列が
-  `"Version
-"` であるバージョン表示が、`"Version"` として「未翻訳」に見えていた。
-  翻訳者が `Version` の行を足しても永久に一致しない。トリムは空判定のみに使うよう修正。
-- `LayoutChecker.Report` を `Awake` から呼んでいたが、実測方式にした後は
-  その時点でシーンが未読み込みのため測定対象が存在しない
-  （`No translated text is on screen yet`）。起動時呼び出しを削除し、
-  デバッグメニューのボタン実行のみとした。
+- 35 were already translated.
+- `Option A` belongs to the Unity dropdown **Template**, and `Option Text` is the Yarn choice prefab placeholder. Both are replaced at runtime and never displayed as written. A zero-width space is inserted by TMP into an empty input field. All three were added to `ignore.txt`.
+- The only meaningful untranslated entry was the input placeholder `Enter text...`.
 
-これでUI文言の翻訳は完了。残るはレイアウトの目視確認と会話文の分量。
+Two bugs were found:
 
-## レガシー入力APIによる連鎖障害（2026-09-11）
+- `UiTextDumper` called `Trim()` before looking up translations. The version label is actually `"Version\n"`, so it appeared as the nonexistent untranslated key `"Version"`. Adding `Version` would never match. Trimming is now used only to test whether a string is empty.
+- `LayoutChecker.Report` was called from `Awake`, but after switching to actual measurements, the scene contained no targets at that point and returned `No translated text is on screen yet`. The startup call was removed; checks run only from the debug-menu button.
 
-`InputBlocker` 導入後、レイアウトチェックとUIダンプの両方が動かなくなった。原因は1つ。
+This completed the UI translation inventory. Visual layout review and dialogue volume remained.
 
-```
+## Cascading failure caused by the legacy input API (2026-09-11)
+
+After adding `InputBlocker`, both layout checking and UI export stopped working because of one exception:
+
+```text
 InvalidOperationException: You are trying to read Input using the UnityEngine.Input
 class, but you have switched active Input handling to Input System package.
 ```
 
-このゲームは新Input Systemのみを使う設定で、レガシー `UnityEngine.Input` は例外を投げる。
-ポインタ位置の取得に `Input.mousePosition` を使ったのが誤りだった。BepInEx の
-`KeyboardShortcut` は内部で新旧を判別するため、F1などのホットキーは動いており、
-レガシーAPIが使えると誤認した。
+The game is configured for the new Input System only, so legacy `UnityEngine.Input` throws. Using `Input.mousePosition` was incorrect. BepInEx's `KeyboardShortcut` internally selects between input systems, which made the F1 hotkey work and led to the false assumption that the legacy API was available.
 
-被害が入力遮断だけで済まなかったのは、`UpdateInputBlocking()` を `Update()` の前半に
-置いたため。毎フレーム例外で `Update()` が中断し、後続のダンプ・レイアウトチェックの
-処理に到達しなかった。**1箇所の例外が、無関係な機能を2つ巻き添えにしていた。**
+The exception affected unrelated features because `UpdateInputBlocking()` ran near the beginning of `Update()`. It threw every frame and prevented later dump and layout code from running. One fault disabled two separate features.
 
-対応:
+The fix:
 
-- ポインタ取得を `Mouse.current`（Input System）に変更。
-- `UpdateInputBlocking()` を `Update()` の**最後**へ移動し、try-catch で囲んだ。
-  さらに一度失敗したらフラグを立てて以後呼ばない（毎フレーム例外を投げ続けないため）。
-  順序と例外隔離の両方を直したのは、片方だけでは同種の事故が再発しうるため。
-- 未使用になった `UnityEngine.InputLegacyModule` の参照とDLLを削除。このゲームでは
-  使ってはいけないAPIなので、参照可能なまま残さない。
-- `PlayerInput` を使わずInputActionを直接駆動するゲームでは遮断が空振りしうるため、
-  初回遮断時に `EventSystem` の有無と suspend した `PlayerInput` の数をログに出す。
+- Read the pointer from `Mouse.current`.
+- Move `UpdateInputBlocking()` to the **end** of `Update()`, wrap it in a try/catch, and permanently disable it after the first failure to avoid throwing every frame. Both ordering and isolation matter; either fix alone leaves room for a similar cascade.
+- Remove the now-unused `UnityEngine.InputLegacyModule` reference and DLL so this project cannot accidentally use an invalid API.
+- Log whether an `EventSystem` exists and how many `PlayerInput` instances were suspended, because games that drive InputActions directly may not be blocked.
 
-教訓: BepInEx側のユーティリティが動くことは、Unity APIが直接使えることを意味しない。
-また `Update()` 内の処理順は、例外が起きたときに何を巻き添えにするかを決める。
+BepInEx utilities working does not prove that a Unity API is safe to call directly. The order of work inside `Update()` determines which features an exception can take down.
 
-## 入力遮断のAPI選択ミス（2026-09-11）
+## Wrong input-blocking API (2026-09-11)
 
-`PlayerInput.DeactivateInput()` で遮断する実装にしていたが、このゲームには
-`PlayerInput` コンポーネントが存在しない。`Assembly-CSharp` を調べたところ、
-参照している入力型は以下のとおりだった。
+The implementation used `PlayerInput.DeactivateInput()`, but the game has no `PlayerInput` component. Inspection of `Assembly-CSharp` showed:
 
-```
-PlayerInput            0   ← 使っていない
+```text
+PlayerInput            0
 InputActionAsset       1
 InputActionReference   1
 InputActionMap         1
 ```
 
-`PlayerInput.all` は空なので、遮断処理は何も止めずに成功したように見えていた。
-`InputActionAsset` を `Resources.FindObjectsOfTypeAll` で列挙し、有効な
-`InputActionMap` だけを `Disable()` する方式へ変更した。復帰時は
-「元々有効だったマップ」だけを `Enable()` する。`InputActionAsset.Enable()` は
-全マップを有効にしてしまい、元の状態と異なる結果になるため使わない。
-
-遮断して何も止まらなかった場合はログに明示する
-（`No enabled action maps were found, so gameplay input is NOT blocked.`）。
-空振りを成功として報告しないため。
-
-## 進め方の反省（2026-09-11）
-
-ユーザーから「2つとも直っていない」との報告。調査したところ、修正版DLLが配置されて
-いなかった。「ゲーム終了を監視して配置」する方式にしていたため、ゲームが起動したままだと
-配置が走らず、ユーザーは修正前のDLLをテストしていた。
-
-加えて、実機で動かせない変更を続けて投入していたため、不具合が積み上がってから
-まとめて発覚する形になっていた。今後は以下を守る。
-
-- テストを依頼する前に、必ず配置済みDLLと成果物のハッシュ一致を確認して提示する。
-- 「動くはず」で依頼せず、事前に検証できることは先に検証する
-  （例: `PlayerInput` の有無はゲームアセットの調査で事前に判明した）。
-
-## Phase 4: 翻訳者向け文書と配布の整備（2026-09-11）
-
-翻訳者とメンテナ双方の導線を整えた。
-
-- **`CONTRIBUTING.md`**: 翻訳者向けガイド。CSVの形式（`source_en,translation` の2列・
-  完全一致）、書式タグの扱い、F6/F7/自動記録による未訳の見つけ方、`ignore.txt`、
-  ロケールの追加、PR前のチェック、ルール（ゲーム資産・`_discovered/` をコミットしない）
-  をまとめた。
-- **`docs/RELEASING.md`**: メンテナ向け配布手順。ビルドにゲーム由来の参照アセンブリ
-  （`libs/`）が必要でリポジトリにコミットできないため、CIではなくローカルでビルドして
-  GitHub Releases へアップロードする方針を明文化した。
-- **`tools/pack.ps1`**: `dotnet build` から `release/DragNWashLocalization-<version>.zip`
-  の作成までを自動化。`BepInEx/plugins/DragNWashLocalization/{dll, Translations/}` と
-  `README.md` を、ゲームルートに展開すれば導入できる構造で固める。ランタイム生成物の
-  `_discovered/`（ゲームの著作物）は同梱しない。
-- README にコントリビュート／配布の導線を追加し、`.gitignore` に `release/` と `*.zip`
-  を追加した。
-
-## 会話ダンプを実行順に（2026-09-12）
-
-`dialogue_lines.csv` は `line_id` 順で出力していたが、IDは内容のハッシュなので
-ゲーム内の流れとは無関係な並びになっていた。誰が誰に答えているのか、どの返答が
-どの質問に属するのか、会話がどこから始まるのかが分からず、実質的に訳せない状態だった。
-
-コンパイル済みの `Yarn.Program` には本来の順序が入っている。ノードが会話の単位で、
-その `Instructions` は上から順に実行される。`RunLine` と `AddOption` を拾えば
-台本どおりの順序が復元でき、台詞と選択肢の区別も付く（`Program.LineIDsForNode` と
-同じ走査だが、種別を残すため自前で歩いている）。
-
-出力列は `yarn_project,node,order,kind,line_id,source_en,translation,tags`。
-`translation` には現在の訳を入れて出すので、再ダンプで作業が失われない。
-どのノードからも参照されない行は末尾に `(not reached from any node)` として出す
-（取りこぼしを翻訳者が疑わなくて済むように）。
-
-実機確認: 1839行すべてが195ノードのいずれかに属し、未参照は0件。
-ノード名は `Alexander_2_intro` のように「キャラクター＿回数＿場面」で、
-Conrad 547行 / Ryan 507行 / Alexander 472行 の3体が主要キャラクターと判明した。
-`RyanMuddy` `ConradBeatup` `RyanDate` は同一キャラの状態違い。
-
-注意: YarnProject はタイトル画面では読み込まれていない。F6はセーブをロードしてから押す。
-
-## 一括翻訳の照合と整理（2026-09-12）
-
-`ja/strings.csv` に会話の一括翻訳が入り 1660 件になった。実行順ダンプと照合したところ:
-
-- 会話の一意な原文 1601 件のうち 1566 件が一致（97.8%）。
-- 「未訳」35 件の内訳は、`Test line N` / `title: X_Done` / `==` などの開発デバッグ文が
-  33 件（すべて `ignore.txt` で除外済み）と、本当の未訳が `Yes!` と `no` の 2 件。
-- 一方で、どのダンプにも一致しない原文が 72 件あった。うち 21 件は F7 実行時に
-  読み込まれていなかった Options 画面などの実在UI（問題なし）。残りは
-  **会話の一部だけをキーにした行**だった（例: `I'm in need of a clean...` は実際の行
-  `Yes. I'm in need of a clean...` の後半、`HELL YEAH!` は `HELL YEAH!` の一部）。
-  完全一致方式なのでこれらは永久に適用されない。
-
-対応:
-
-- 部分キーを実際の行と照合（部分文字列一致→ `difflib` の類似度）。実際の行が別途
-  訳済みなら冗長として削除（46 件）。訳を移す必要があるものは 0 件だった。
-- `Yes!` → `はい！`、`no` → `いいえ。` を追加。既訳の `No='いいえ。'` `yes='はい。'` に
-  口調を合わせた。
-- ゲーム内に一致行が存在しない 5 件（`The watermelon!` `Alright.` `Nice to see you.`
-  `I am a professor!` `You bipeds tend to savor your meals.`）は残した。別ビルド由来か
-  転記ミスか判断できないため、翻訳者の確認待ち。害はない（一致しないだけ）。
-
-結果: 1616 件、空欄 0、重複 0。会話原文 1601 件中 1568 件が訳済み（97.9%）で、
-残り 33 件は除外対象のデバッグ文。**会話文は実質的に完訳。**
-1616 件・978 文字の事前焼き込みで起動に問題がないことも実機で確認した
-（`Prewarmed 978/978`、例外なし）。
-
-`zh-Hans` は 95 件のままで、会話文は未着手。
-
-## 日本語訳の全面やり直し（2026-09-12）
-
-一括翻訳はスラングと口調を取り違えていた。コンラッドの豪州スラング（"Yeah, nah" は「いや」の意、`G'day mate!` `Good as!` と話す乱暴者）が
-直訳されて「うん、いや。相棒」のように意味が反転していた、アレクサンダーは指針で「〜でございます」の仰々しい教授なのに
-一人称や語尾が砕けた話し方になっていて、キャラの声が消えていた。
-
-`TRANSLATION_STYLE.md` に従い、会話1561行（一意）をキャラ別・実行順に訳し直した。
-- コンラッド: 「〜だぜ」「〜だろ」。"Yeah, nah"＝いや、"Grouse as / Good as"＝最高じゃねえか、
-  "Damn right"＝あったりめぇだ、"Hell yeah"＝ヘルイェア、"'aight I'm down"＝いいぜ、乗った。
-  傷心時（ConradBeatup）は男言葉のまま弱気に。
-- ライアン: 「〜だよ」「〜なんだ」の甘えん坊。口にバスケットをくわえた行は舌足らずに
-  （舌足らずな表記で）。フランチャイズ本部の電話は事務的な敬語で別人格に。
-- アレクサンダー: 「〜でございます」「〜でありまして」「貴殿」。紋章・大学名・評判への執着。
-  縮小サイズが連なる長広舌はタグ位置を保持して訳した。
-- コボルド（選択肢491行）: 「です・ます」基調、時々「〜だね」。`Yip!`＝イップ！、
-  `Yip! (Yes)`＝イップ！（うん）。
-- ライアン×コンラッドの場面は「ライアン：」「コンラッド：」の全角コロン付きで各自の口調。
-
-作業手順: 実行順ダンプをキャラ別に分割し、140〜150行ずつ読んで訳し、JSONに保存。
-組み立て時に (1) キーが実際の行と完全一致するか（打ち間違い検出）、(2) 重複・空欄、
-(3) TMPタグ数が原文と一致するか、(4) 除外対象外の全行が訳されているか、を機械検証した。
-検出2件は原文が `<i>` を閉じていないのに `</i>` を足したもので、原文どおりに修正。
-
-結果: UI 48件＋会話1561件＝1609件。実機起動で `Prewarmed 1007/1007`、例外なし。
-Yarnのサンプルスクリプト（`Start` ノード）と開発用エラー文は `ignore.txt` へ追加。
-
-## フォント解像度の引き上げ（2026-09-12）
-
-文字をもっと鮮明にしたいとの要望。鮮明さは `[Font] AtlasPointSize`（SDFのサンプリング
-ポイントサイズ）で決まり、D3D12 クラッシュ対策の過程でアトラス枚数を減らすため 40 まで
-下げていた。しかしその後、グリフ生成を起動時の事前焼き込みに一本化したため、
-「実行中のアトラス拡張」という元のリスク要因は消えている。上げても増えるのは
-起動時のアトラス生成コストだけ。
-
-40 → 80 に変更（設定ファイルとコードの既定値の両方）。実機で 1007 文字の事前焼き込みが
-完了し、例外なし、Options 画面の日本語を拡大して輪郭が鮮明なことを確認した。
-README の記述も更新（旧設定名 `LayoutRiskThreshold` の記載も `LayoutOverflowThreshold` に修正）。
-
-## 簡体字中国語の全訳と、再利用行の中立化（2026-09-12）
-
-日本語と同じ手順で `zh-Hans` の会話 1561 行を訳した（UI 43 件＋会話＝1604 件）。
-口調: コンラッドは粗野な男言葉（「老兄」「操」は控えめに）、ライアンは柔らかい「呢/呀/啦」、
-アレクサンダーは文語調の敬語（「在下」「阁下」「乃是」「甚是」）、コボルドの選択肢は「您/请」。
-組み立て時の機械検証（キー完全一致・重複・空欄・TMPタグ数・除外対象外の全行カバー）は
-問題 0 で通過。
-
-実プレイ中のユーザーから「`What's up?` はこの場面では『どうしました？』では」との指摘。
-調べると原因は構造的だった。完全一致方式では**同じ英文は全場面で同じ訳**になるが、
-短い定型句は複数ノードで、しかも**別のキャラの口から**出る。私は各バッチの文脈だけを見て
-訳していたため、たとえば:
-
-- `Whats up?`（4 箇所）を `Conrad_Outro_4` の「行き先を決めた」への返答だけ見て「どこですか？」に
-- `I'm excited.`（6 箇所中 4 箇所がコンラッド）をアレクサンダー調「楽しみでございます。」に
-- `I'm glad.`（3 箇所中 2 箇所がコボルド）を「何よりでございます。」に
-- `Hey there.` `Me too.` `Thanks.` `Aw, thanks.` `I am too.` も同様の話者混在
-
-対応: 複数ノードで使われる 22 文字以下の英文 76 件を、各出現の直前行つきで一覧化し、
-話者が混在するものは**全場面に収まる中立的な訳**へ変更（日本語 10 件、中国語 7 件）。
-`Whats up?` などは全場面に収まる中立的な訳にした。
-
-教訓: 再利用される定型句は、訳す前に全出現箇所と話者を確認する。この一覧化スクリプトは
-今後の追加訳でも使う。ユーザーからは「キャラ感の統一感は問題ない」との評価。
-
-## 翻訳のホットリロード（2026-09-12）
-
-実プレイしながら訳を直し、その場で画面に反映したいとの要望。言語切替の経路
-（`TranslationStore.Load` → `TmpTextHook.RefreshAll`）がすでに「読み直して画面上の全テキストに
-再適用する」処理そのものなので、**ファイルの更新を検知してそれを呼ぶ**だけで実現できる。
-
-`HotReload` を追加。`FileSystemWatcher` ではなく `Update` からの 1 秒ポーリング。
-理由は、Watcher はスレッドプールから発火する・1 回の保存で複数回発火する・エディタが
-まだファイルを掴んでいる最中に発火する、の 3 点。更新時刻が 2 回連続で動かなくなってから
-読み直すことで、書き込み途中のファイルを読まない。
-
-重要な順序: 読み直し → **差分文字の事前焼き込み** → 再適用。新しい訳に未生成のグリフが
-含まれていると、最初の描画で実行時のアトラス拡張（D3D12 クラッシュ経路）になるため、
-再適用の前に `FontFallback.Prewarm` で差分だけ焼き込む。プレイ中の1フレームに小さな
-テクスチャ更新が乗ることになるが、放置すれば必ず起きる実行時拡張よりは安全。
-
-対象は現在の言語の `strings.csv` のみ。`ignore.txt` は一度しか読まない設計のままなので、
-除外ルールの変更には再起動が要る。
-
-## 公開準備: 翻訳ファイルから英語台本を外す（2026-09-12）
-
-公開にあたり、`strings.csv` のキーとしてゲームの英語台本1561行がそのまま入っている点が
-問題になった。`_discovered/` を gitignore にした理由と同じ著作物が、完全一致方式の構造上、
-翻訳ファイル側に必ず入る。ユーザーの要望は「製品版を持っていないと楽に翻訳できない仕組み」。
-
-対応: 行のキーを原文の **SHA-256 先頭16桁**（`TranslationKey`）にした。
-- プラグインは画面に出た英文をその場でハッシュして引く（`TranslationStore.KeyFor`、
-  文字列ごとにキャッシュ）。`key` 列と `source_en` 列の**両方を同一ファイルで受け付ける**ので、
-  翻訳者は作業中は原文で書き（ホットリロードが効く）、コミット前だけ変換する。
-- 変換は F1 → Tools の「Hash strings.csv for commit」と `tools/hash-strings.ps1` の2経路。
-  同じ結果になることを1609行で突き合わせて確認した。
-- F6 / F7 の出力に `key` 列を追加。翻訳者はそこで原文↔キーの対応を見る。
-- 両方の列があって食い違う行、16桁の16進数でない `key` は「壊れた行」として読み飛ばし、
-  件数をログに出す（黙って何にも一致しない状態を作らない）。
-- 原文つきの作業コピーは `_discovered/<locale>.working.csv` に置く（ローカル生成物）。
-
-ユーザーから「Steam 認証でハッシュを元に戻し、原文を並べて翻訳したい」との要望。
-Steam API は不要で、**プラグインがゲームの中で動いていることが所有の証明**になる
-（BepInEx は Steam が起動したゲームの中でしか動かない）。そこで `WorkingCopy` を追加：
-公開用 `strings.csv` を、読み込み済みの Yarn 台本・シーン内の全 TMP_Text・発見済み文字列と
-突き合わせ、`key,source_en,translation` の作業ファイル `strings.local.csv` に実行順で展開する。
-`TranslationStore` は公開ファイルの上に作業ファイルを重ねて読み、ホットリロードは両方を監視。
-「Hash for commit」は作業ファイルがあればそこから公開ファイルを再生成する。
-翻訳者の作業は「展開 → 原文を見ながら編集 → 保存で即反映 → ハッシュ化してPR」の一本道になる。
-
-Git 履歴には原文つきの CSV が何コミットも入っているため、ハッシュ化だけでは不十分。
-公開前に履歴を1コミットに潰す（経緯はこの文書に残っている）。ドキュメント中の台詞の
-引用も短い断片に削った。
-
-## セーブの巻き戻し（2026-09-12）
-
-翻訳確認のために「セーブを1つ前に戻したい」との要望。ゲームの進行は `Flags`（静的レジストリ）
-＋ Yarn 変数で持ち、`SaveManager` が `savegame.dgn`（JSON）を
-`<persistentDataPath>/<SteamID>_slot<N>/` に保存、自前のバックアップは1世代のみ。
-
-フラグを個別に編集するタブも検討したが、フラグの意味を知らないと正しく戻せず、
-Yarn 側との同期（`WalkNWashSceneState._SetFlag` 経由）も必要で危うい。
-**ゲーム自身のセーブファイルを世代管理して差し替える**方が、意味を知らずに確実に戻せる。
-
-`SaveHistory` を追加。2秒ごとに各スロットの `savegame.dgn` の更新時刻を見て、
-内容が変わっていれば `SaveHistory/<slot>/<timestamp>.dgn` にコピー（既定30世代）。
-F1 に「Saves」タブを追加し、スロットと世代を選んで Restore。復元前の状態も世代に残す。
-復元はファイルの書き戻しのみで、反映にはタイトルからのロードが必要（メモリ上の
-フラグは触らない）。ゲーム内でセーブすれば再び上書きされる、という自然な挙動。
-`levelIndex` を JSON から拾って一覧に表示する。
-
-## フェーズ
-
-- **Phase 0**: リポジトリ作成・計画確定 — 完了
-- **Phase 1**: BepInEx導入、プラグイン骨格作成、UI文字列の差し替え・CJKフォント表示を
-  実機確認 — **完了**（当初計画からフック方式を修正のうえ達成）
-- **Phase 1.5**: 会話ログ一括抽出ツール、ゲーム内デバッグUI — **完了**
-- **Phase 2**: 実際の会話シーンで訳文が正しく差し替わることを実機確認 — **完了**
-  （`SetText`バイパス問題を発見・修正）
-- **Phase 3**: 日本語・中国語の訳を本格的に追加し、UIレイアウト崩れがないか確認 — **完了**
-  （UI文言は全量確定、レイアウト検出はTMP実測方式へ移行。会話文の訳文追加は継続）
-- **Phase 4**: 翻訳者向けCONTRIBUTINGの整備、配布方法（GitHub Releases）の確立 — **完了**
-
-## リスク・要検証事項
-
-- 動的テキスト（数値・プレースホルダを含む文章）は完全一致方式だと訳しにくい場合がある
-  → 発生頻度を見て、部分一致/フォーマット文字列対応を検討
-- ゲームのSteamアップデートでTMP_TextやYarnSpinner内部実装のバージョンが変わるリスク
-  → バージョンチェックを入れる
-- 中国語フォントは Microsoft YaHei の登録は確認できたが、実際の中国語表示は未検証
-  （Phase 3で確認予定）
-- `DialogueDumper` はリフレクションで `Localization` の internal フィールドを読んでいるため、
-  YarnSpinnerのバージョンアップで内部レイアウトが変わると壊れる可能性がある
-- `TMP_Text` には `SetText` 以外にも `SetCharArray` 等のテキスト設定APIが存在する。
-  今のところ未遭遇だが、今後同様の「素通り」ケースが見つかる可能性がある
-
-## Optionsクラッシュの調査（2026-09-11）
-
-- 保存済みの9件のクラッシュログは、すべて描画スレッドの
-  `D3D12ScratchAllocator::DestroyScratch → ReleaseExcessScratch → ReclaimMemory`
-  で終了していた。Unity 6000.3.14f1 / Direct3D 12 / GeForce RTX 3060 の環境。
-- [Unity UUM-140564](https://issuetracker.unity.com/issues/10698) に同じスタックの報告がある。
-  CSV書き込みや文字列セッターの再入が原因という診断は、このログでは裏付けられない。
-- 回避策は Steam の起動オプション `-force-d3d11`。描画APIはプラグイン初期化前に
-  決まるため、プラグイン内で動的に切り替えるのではなく再起動時に指定する。
-- 切り分け用のsetter Postfixを終了し、setter・`SetText(string)`・
-  `SetText(string, bool)` の引数をPrefixで差し替える通常の翻訳フックを復元。
-  未翻訳文字列のキュー記録と、重複を抑制したデバッグログも復元する。
-- 起動ログに描画APIを記録し、確認したUnityバージョンとDirect3D 12の組み合わせでは
-  上記回避策を警告する。動的フォントの構成は今回変更しない。
-- 実機確認完了: 修正版DLL + `-force-d3d11` で設定画面を開閉・スクロールし、クラッシュせず
-  日本語表示されることを確認。起動ログでも `graphics=Direct3D11` を確認。
-
-### 根本対応（起動オプション不要化）
-
-`-force-d3d11` に頼らず落ちないようにするため、クラッシュの引き金そのものを潰した。
-
-`TMP_FontAsset.CreateFontAsset(familyName, styleName)` は
-`AtlasPopulationMode.DynamicOS` / 1024x1024 のアセットを作るが、アトラス実体は
-`new Texture2D(1, 1, ...)` のダミーで始まる。デコンパイルで確認した挙動は以下の通り。
-
-1. 最初のグリフ追加で `Reinitialize(1024, 1024)` + `ResetAtlasTexture` → 実行時のテクスチャ再確保
-2. 新規グリフのバッチごとに `UpdateAtlasTexture()` → `Apply()` → 実行時のGPUアップロード
-3. アトラスが埋まると `SetupNewAtlasTexture()` → `new Texture2D(...)` → 実行時の追加確保
-
-つまり「**初めて画面に出る文字**」のフレームで毎回テクスチャ確保／アップロードが走る。
-Optionsは未表示のテキストが密集した画面なので、確実な再現ポイントになっていた。
-`AtlasWidth/Height` のsetterは `internal` でサイズ指定はできないが、
-`TryAddCharacters(string, out string, bool)` は `DynamicOS` でも使える公開APIなので、
-グリフ生成を起動時へ前倒しできる。
-
-対応:
-
-- 読み込んだ翻訳の全非ASCII文字を起動時に `TryAddCharacters` で焼き込む
-  （`FontFallback.Prewarm`）。ゲーム中のアトラス拡張が原理的に発生しなくなる
-- フォールバックフォントを言語ごと1本ずつ（計2本）に削減。以前は6本登録しており、
-  アトラステクスチャも6面あった
-- デバッグメニュー背景の `Texture2D` を `Awake` で生成。以前はF1初回押下時に
-  `Apply()` していたため、「設定画面を開いたままF1」で落ちる経路になっていた
-- 言語切り替えと会話ログ出力を `OnGUI` から `Update` へ退避（ファイルI/Oとグリフ生成を
-  描画コールバックから追い出す）
-- アトラス解像度を `[Font] AtlasPointSize`（既定64）で調整可能にした
-
-実機確認: `-force-d3d11` を外した状態（起動ログで `graphics=Direct3D12` を確認）で
-設定画面の開閉・スクロール、会話シーンの日本語表示は正常になった。
-`Prewarmed 175/175 characters` が両フォントで出ており、取りこぼしもなし。
-ただしF1のデバッグメニューでは再発した（後述）。
-
-### F1デバッグメニューのクラッシュ（IMGUI側）
-
-取得したスタックトレースが決定的だった。
-
-```
+Because `PlayerInput.all` was empty, the block silently did nothing. The implementation now enumerates `InputActionAsset` objects with `Resources.FindObjectsOfTypeAll` and disables only enabled `InputActionMap` instances. On restoration, it re-enables only maps that were originally enabled. Calling `InputActionAsset.Enable()` would enable every map and change the previous state.
+
+If nothing is stopped, the plugin states this explicitly: `No enabled action maps were found, so gameplay input is NOT blocked.` A no-op must not be reported as success.
+
+## Process retrospective (2026-09-11)
+
+A user reported that neither fix worked. Investigation found that the corrected DLL had not been deployed. Deployment was waiting for the game to exit, so testing while the game remained open used the old DLL.
+
+Changes that could not be exercised locally had also been added in succession, causing defects to accumulate before being discovered. Future work must follow these rules:
+
+- Before asking someone to test, verify and report that the deployed DLL hash matches the built artifact.
+- Do not ask for testing based only on an expectation. Perform all available checks first; for example, inspecting the game assemblies could have shown that `PlayerInput` was absent.
+
+## Phase 4: Contributor documentation and distribution (2026-09-11)
+
+The contributor and maintainer paths were completed.
+
+- **`CONTRIBUTING.md`:** Explains the two-column `source_en,translation` format used at that point, exact matching, formatting tags, F6/F7 discovery, automatic recording, `ignore.txt`, adding locales, pre-PR checks, and the rule against committing game assets or `_discovered/`.
+- **`docs/RELEASING.md`:** Documents local release builds. Game-derived assemblies in `libs/` cannot be committed, so releases cannot be built in CI and are uploaded from a local environment.
+- **`tools/pack.ps1`:** Automates `dotnet build` and creation of `release/DragNWashLocalization-<version>.zip`. The archive contains `BepInEx/plugins/DragNWashLocalization/{dll, Translations/}` and `README.md` in a structure that can be extracted at the game root. Runtime-generated `_discovered/` content is excluded.
+- Added contribution and release links to the README, and ignored `release/` and `*.zip`.
+
+## Dialogue export ordered by execution (2026-09-12)
+
+`dialogue_lines.csv` was originally sorted by `line_id`, but IDs are content hashes and have no relation to narrative order. The export did not reveal who replied to whom, which response belonged to a question, or where conversations began, making meaningful translation impractical.
+
+The compiled `Yarn.Program` retains execution order. Each node represents a conversation, and its `Instructions` run from top to bottom. Walking `RunLine` and `AddOption` restores script order and distinguishes dialogue from choices. This is equivalent to the traversal behind `Program.LineIDsForNode`, with custom handling to retain the entry type.
+
+The columns are now `yarn_project,node,order,kind,line_id,source_en,translation,tags`. Existing translations are included so another export does not lose work. Lines not referenced by any node are appended with `(not reached from any node)` so translators can distinguish unreachable content from an incomplete export.
+
+Testing found all 1,839 lines in one of 195 nodes and no unreferenced lines. Node names follow patterns such as `Alexander_2_intro`, representing character, occurrence, and scene. The three main characters account for Conrad 547 lines, Ryan 507, and Alexander 472. `RyanMuddy`, `ConradBeatup`, and `RyanDate` are alternate states of the same characters.
+
+YarnProject is not loaded on the title screen. Press F6 after loading a save.
+
+## Bulk-translation reconciliation and cleanup (2026-09-12)
+
+After the Japanese CSV grew to 1,660 entries, it was compared with the execution-ordered export:
+
+- 1,566 of 1,601 unique dialogue sources matched, or 97.8%.
+- Of 35 apparently untranslated entries, 33 were development strings such as `Test line N`, `title: X_Done`, and `==`, all excluded by `ignore.txt`. The only real omissions were `Yes!` and `no`.
+- Another 72 source strings matched no dump. Twenty-one were valid UI elements such as Options-screen text not loaded during F7. The rest were **partial dialogue keys**. Exact matching meant they could never apply.
+
+Partial keys were matched against actual lines using substring checks followed by `difflib` similarity. Forty-six redundant partials were removed when the real line was already translated; no translation needed to be moved. `Yes!` became `はい！`, and `no` became `いいえ。`, consistent with existing variants.
+
+Five unmatched strings were retained because they might come from another build or be transcription errors. They are harmless because they simply never match.
+
+The result was 1,616 entries with no blanks or duplicates. Of 1,601 dialogue sources, 1,568 were translated and the remaining 33 were excluded development text: dialogue was effectively complete. Prewarming all 978 characters from the 1,616 entries succeeded in the game without exceptions. Simplified Chinese still contained 95 entries at this stage.
+
+## Complete rewrite of the Japanese translation (2026-09-12)
+
+The first bulk translation misunderstood slang and character voices. Conrad's Australian slang was translated literally, sometimes reversing the meaning: `Yeah, nah` means no, while his speech also includes `G'day mate!` and `Good as!`. Alexander was supposed to use the grandiose `〜でございます` style but instead spoke casually, losing his character.
+
+Following `TRANSLATION_STYLE.md`, 1,561 unique dialogue lines were retranslated by character and in execution order.
+
+- **Conrad:** Rough endings such as `〜だぜ` and `〜だろ`. `Yeah, nah` means 「いや」, `Grouse as / Good as` becomes 「最高じゃねえか」, `Damn right` becomes 「あったりめぇだ」, and `'aight I'm down` becomes 「いいぜ、乗った。」. ConradBeatup remains masculine but subdued.
+- **Ryan:** Affectionate endings such as `〜だよ` and `〜なんだ`. Lines spoken with a basket in his mouth use deliberately muffled spelling. Calls from franchise headquarters use separate, businesslike polite language.
+- **Alexander:** Grandiose forms such as `〜でございます`, `〜でありまして`, and `貴殿`, with his fixation on his crest, university, and reputation. Long speeches with progressively shrinking text preserve every tag position.
+- **Kobold choices (491 lines):** Primarily polite `です・ます`, with occasional friendly `〜だね`. `Yip!` is 「イップ！」 and `Yip! (Yes)` is 「イップ！（うん）」.
+- **Ryan and Conrad scenes:** Speaker prefixes use full-width colons, and each speaker retains his own voice.
+
+The execution-ordered export was split by character and translated in batches of roughly 140–150 lines, stored as JSON, and reassembled with mechanical checks for exact source keys, duplicates, blanks, matching TMP tag counts, and complete coverage of non-ignored lines. Two detected errors added `</i>` where the source left `<i>` open; both were corrected to match the source exactly.
+
+The final set contained 48 UI entries and 1,561 dialogue entries, for 1,609 total. In-game startup prewarmed all 1,007 characters without exceptions. Yarn sample content from the `Start` node and development error messages were added to `ignore.txt`.
+
+## Higher font resolution (2026-09-12)
+
+Sharper text was requested. Clarity is controlled by `[Font] AtlasPointSize`, the SDF sampling point size. It had been reduced to 40 while minimizing atlas count during the Direct3D 12 crash investigation. Once all glyph creation was moved to startup, runtime atlas expansion was no longer the risk; increasing the value only adds startup atlas-generation cost.
+
+The default was raised from 40 to 80 in both code and configuration. A real-game test prewarmed all 1,007 characters without exceptions, and magnified Japanese text on the Options screen had visibly sharper contours. The README was updated, including replacement of the obsolete `LayoutRiskThreshold` name with `LayoutOverflowThreshold`.
+
+## Complete Simplified Chinese translation and neutral reused lines (2026-09-12)
+
+The same workflow produced Simplified Chinese translations for 1,561 dialogue lines, for 1,604 entries including 43 UI strings. Conrad uses a rough masculine voice while avoiding excessive 「老兄」 and 「操」; Ryan uses softer particles such as 「呢」「呀」「啦」; Alexander uses literary honorifics such as 「在下」「阁下」「乃是」「甚是」; and kobold choices use 「您」 and 「请」. Exact-key, duplicate, blank, TMP-tag-count, and non-ignored-coverage checks all passed.
+
+A player then pointed out that `What's up?` should mean 「どうしました？」 in its scene. This exposed a structural constraint: exact matching gives the **same English string one translation in every scene**, while short stock phrases can occur in multiple nodes and be spoken by different characters. Translating only within individual batches had produced context-specific results for reused strings such as `Whats up?`, `I'm excited.`, `I'm glad.`, `Hey there.`, `Me too.`, `Thanks.`, `Aw, thanks.`, and `I am too.`.
+
+All English strings of 22 characters or fewer that appeared in multiple nodes—76 entries—were listed with the preceding line for every occurrence. Mixed-speaker entries were changed to neutral translations that work in every scene: ten Japanese and seven Chinese entries changed.
+
+The lesson is to inspect every occurrence and speaker before translating a reused stock phrase. This occurrence-listing script should be used for future additions. User feedback confirmed that overall character consistency was otherwise sound.
+
+## Translation hot reload (2026-09-12)
+
+The existing language-switch path, `TranslationStore.Load → TmpTextHook.RefreshAll`, already reloads data and reapplies it to visible text. Hot reload only needed to detect file changes and call that path.
+
+`HotReload` polls once per second from `Update` rather than using `FileSystemWatcher`. Watchers run on a thread-pool thread, often emit several events for one save, and may fire while an editor still holds the file. Reload begins only after the modification timestamp remains stable for two consecutive polls, avoiding partially written CSV data.
+
+The required order is reload, **prewarm newly introduced characters**, then reapply. Otherwise, the first render of a new glyph would expand the atlas at runtime and re-enter the Direct3D 12 crash path. `FontFallback.Prewarm` therefore generates only the delta before the UI refresh. This performs a small texture update during gameplay, but it is safer than leaving an inevitable uncontrolled expansion.
+
+Only the active locale's `strings.csv` is watched. `ignore.txt` remains load-once and requires a restart after editing.
+
+## Removing the English script from public translation files (2026-09-12)
+
+Publishing `strings.csv` with 1,561 lines of the game's English dialogue as keys would expose the same copyrighted material that caused `_discovered/` to be ignored. The goal was to require ownership of the full game for convenient translation.
+
+Source text keys were replaced with the **first 16 hexadecimal characters of SHA-256**, represented by `TranslationKey`.
+
+- The plugin hashes English text as it appears and looks up the result through `TranslationStore.KeyFor`, with a per-string cache.
+- Both `key` and `source_en` rows are accepted in one file. Translators can work with source text and hot reload, then convert it before committing.
+- Conversion is available through **F1 → Tools → Hash strings.csv for commit** and `tools/hash-strings.ps1`. Both paths produced identical output for all 1,609 Japanese rows.
+- F6 and F7 exports include a `key` column so owners can see the source-to-key mapping.
+- Rows with conflicting `key` and `source_en` values, or keys that are not 16 hexadecimal characters, are treated as invalid, skipped, and counted in the log. They do not silently create unusable translations.
+- Source-bearing working copies belong under `_discovered/<locale>.working.csv`.
+
+A request to authenticate through Steam and expand hashes back into source text did not require the Steam API. The plugin running inside the installed game already establishes access to the game data. `WorkingCopy` therefore compares the public hashed file against the loaded Yarn script, all TMP text in the scene, and discovered strings. It expands them in execution order into `strings.local.csv` with `key,source_en,translation`. `TranslationStore` overlays this working file on the public file, and hot reload watches both. **Hash for commit** regenerates the public file from the working copy when it exists. The workflow becomes expand, edit with source context, see changes immediately, hash, and submit a PR.
+
+Because earlier Git history contained many full-source CSV commits, hashing the latest files was not enough. Before publication, history needed to be squashed to one commit while retaining development history in this plan. Dialogue excerpts in documentation were reduced to short fragments.
+
+## Save rollback (2026-09-12)
+
+Translation testing required returning to a previous save. Game state consists of a static `Flags` registry plus Yarn variables. `SaveManager` writes JSON to `savegame.dgn` under `<persistentDataPath>/<SteamID>_slot<N>/` and keeps only one backup.
+
+A flag editor was considered, but restoring correctly would require knowing flag semantics and synchronizing Yarn state through `WalkNWashSceneState._SetFlag`. Versioning and replacing the game's own save file is more reliable and requires no interpretation.
+
+`SaveHistory` polls each slot's `savegame.dgn` timestamp every two seconds. When content changes, it copies the file to `SaveHistory/<slot>/<timestamp>.dgn`, keeping 30 versions by default. The F1 **Saves** tab lists slots and versions and offers **Restore**. The state immediately before restoration is also archived. Restoration changes only the file; the player must return to the title screen and load the slot because in-memory flags are untouched. Saving during gameplay naturally overwrites the active save again. The list extracts `levelIndex` from JSON for identification.
+
+## Phases
+
+- **Phase 0:** Create the repository and finalize the plan — complete.
+- **Phase 1:** Install BepInEx, create the plugin skeleton, replace UI text, and verify CJK fonts in the game — **complete**, after changing the original hook design.
+- **Phase 1.5:** Add bulk dialogue export and the in-game debug UI — **complete**.
+- **Phase 2:** Verify replacement in real dialogue — **complete**, after finding and fixing the `SetText` bypass.
+- **Phase 3:** Add substantial Japanese and Chinese translations and check UI layouts — **complete**. UI inventory is complete, layout detection uses TMP measurements, and dialogue translation remains maintainable.
+- **Phase 4:** Complete `CONTRIBUTING.md` and establish distribution through GitHub Releases — **complete**.
+
+## Risks and items to verify
+
+- Exact matching can be awkward for dynamic strings containing values or placeholders. Consider partial matching or format strings if these occur often.
+- Steam updates may change the versions or internals of TMP_Text or Yarn Spinner. Add version checks.
+- Microsoft YaHei registration was confirmed, but actual Chinese display still required verification at the time this risk was recorded.
+- `DialogueDumper` reads an internal `Localization` field through reflection and may break if Yarn Spinner changes its layout.
+- TMP has text APIs beyond `SetText`, including `SetCharArray`. None have caused a problem yet, but another bypass may appear.
+
+## Investigation of the Options crash (2026-09-11)
+
+- All nine saved crash logs ended on the render thread in `D3D12ScratchAllocator::DestroyScratch → ReleaseExcessScratch → ReclaimMemory` under Unity 6000.3.14f1, Direct3D 12, and a GeForce RTX 3060.
+- Unity issue [UUM-140564](https://issuetracker.unity.com/issues/10698) reports the same stack. These logs do not support earlier theories involving CSV writes or recursive string setters.
+- The workaround is the Steam launch option `-force-d3d11`. The graphics API is selected before plugin initialization, so it must be supplied on restart and cannot be switched dynamically by the plugin.
+- Diagnostic setter Postfixes were removed, restoring the regular translation Prefixes for the setter, `SetText(string)`, and `SetText(string, bool)`. Queueing of untranslated strings and duplicate-suppressed debug logging were also restored.
+- Startup logging now reports the graphics API and warns about the affected Unity and Direct3D 12 combination. The dynamic-font setup was initially left unchanged.
+- A real-game test with the corrected DLL and `-force-d3d11` opened, scrolled, and closed Options without a crash while displaying Japanese. Startup logged `graphics=Direct3D11`.
+
+### Root fix without a launch option
+
+The trigger itself was removed so the workaround would no longer be required.
+
+`TMP_FontAsset.CreateFontAsset(familyName, styleName)` creates a `DynamicOS` asset with a 1024×1024 target atlas, but its texture begins as a dummy `new Texture2D(1, 1, ...)`. Decompilation showed this sequence:
+
+1. Adding the first glyph calls `Reinitialize(1024, 1024)` and `ResetAtlasTexture`, reallocating a texture at runtime.
+2. Every batch of new glyphs calls `UpdateAtlasTexture() → Apply()`, uploading to the GPU at runtime.
+3. When an atlas fills, `SetupNewAtlasTexture() → new Texture2D(...)` performs another runtime allocation.
+
+A frame displaying a character for the first time can therefore allocate and upload a texture. Options reliably triggered the crash because it introduces many previously hidden strings at once. Although the atlas width and height setters are internal, public `TryAddCharacters(string, out string, bool)` works for `DynamicOS` assets and can move glyph generation to startup.
+
+The implementation changed as follows:
+
+- Prewarm every non-ASCII character used by loaded translations with `FontFallback.Prewarm`, preventing atlas growth during normal gameplay.
+- Reduce fallback fonts to one per language instead of six total, cutting the number of atlas textures.
+- Create the debug-menu background `Texture2D` during `Awake`. Previously the first press of F1 called `Apply()`, which could crash when Options was already open.
+- Move language switching and dialogue export from `OnGUI` to `Update`, keeping file I/O and glyph generation out of the rendering callback.
+- Make atlas resolution configurable through `[Font] AtlasPointSize`, initially defaulting to 64.
+
+Testing without `-force-d3d11` confirmed `graphics=Direct3D12`. Options could be opened and scrolled, and Japanese dialogue rendered correctly. Both fonts logged `Prewarmed 175/175 characters` with no missing glyphs. The F1 debug menu still triggered the crash, leading to the next investigation.
+
+### F1 debug-menu crash in IMGUI
+
+The captured stack was decisive:
+
+```text
 D3D12ScratchAllocator::DestroyScratch
 D3D12ScratchAllocator::ReleaseExcessScratch
 D3D12ScratchAllocator::ReclaimMemory
@@ -620,58 +369,37 @@ GfxDeviceD3D12::PresentFrame
 GfxDeviceWorker::RunCommand
 ```
 
-`PresentFrame` 経由ということは、条件は「1フレーム中のスクラッチメモリ使用量」であり、
-そのフレームの提示時に超過分を解放しようとして落ちる。上のフォント対応は
-設定画面という経路を塞いだだけで、条件そのものは残っていた。
-F1が最悪の再現条件だったのは、TMPとIMGUIの負荷が同一フレームに乗るため。
+The `PresentFrame` path indicates a limit related to scratch-memory use within one frame, with the crash occurring when excess memory is reclaimed during presentation. Font prewarming eliminated the Options-specific route but not the underlying condition. F1 was an especially severe trigger because TMP and IMGUI load occurred in the same frame.
 
-IMGUI側の対応:
+The IMGUI implementation was changed:
 
-- ログを行ごとの `GUILayout.Label` で描画していた（毎フレーム最大200回、
-  1行ごとに別メッシュ・別ドローコール）。ログ全体を1つの `Label` に結合し、
-  内容が変わったときだけ再構築するようにした
-- ログには翻訳後の日本語が載るため、IMGUIの動的フォントが実行時にテクスチャを
-  拡張していた。`Font.CreateDynamicFontFromOSFont` でメニュー専用フォントを持ち、
-  ASCIIと翻訳文の文字を `RequestCharactersInTexture` で起動時に焼き込む
-- 表示行数の上限を200から100へ
+- Instead of rendering up to 200 individual `GUILayout.Label` calls each frame, join the full log into one label and rebuild it only when content changes. This greatly reduces meshes and draw calls.
+- The log contains translated Japanese, so IMGUI's dynamic font was also expanding a texture at runtime. Create a dedicated menu font with `Font.CreateDynamicFontFromOSFont` and prewarm ASCII plus all translation characters through `RequestCharactersInTexture`.
+- Reduce the maximum visible log from 200 entries to 100.
 
-同時に見つかった別のバグ: 変更検出に `LogBuffer.Count` を使っていたため、
-バッファが上限に達すると件数が変わらずログの表示が止まっていた。
-更新のたびに加算するバージョン番号で判定するよう変更。
-また会話文中の `<i>` や `<gradient>` をIMGUIがリッチテキストとして解釈していたので
-`richText = false` にした。
+A separate bug was found at the same time. Change detection used `LogBuffer.Count`; when the buffer reached capacity, the count stopped changing and the display froze. It now uses a version number incremented on every update. `richText` is disabled so IMGUI does not interpret dialogue tags such as `<i>` or `<gradient>`.
 
-実機確認完了: `-force-d3d11` なしで、設定画面を開いたままのF1を含めクラッシュしない。
+A real-game test confirmed that F1 no longer crashes under Direct3D 12, including while Options is open.
 
-### 翻訳対象外の文字列（`IgnoreRules`）
+### Ignored strings (`IgnoreRules`)
 
-TMPフックは画面に出る全文字列を拾うため、スライダーの値・解像度・ビルド番号
-（`9/9/2026_ee944596`）まで「未翻訳」として記録され、訳すべき行が埋もれていた。
+Because the TMP hook sees all visible strings, slider values, resolutions, and build numbers such as `9/9/2026_ee944596` overwhelmed the untranslated list.
 
-組み込みの正規表現（単体の数値、解像度、リフレッシュレート、日付/ビルド番号、時刻）に
-加え、`Translations/ignore.txt` で追記できるようにした。
+Built-in regular expressions now exclude standalone numbers, resolutions, refresh rates, date/build identifiers, and times. Additional patterns can be added in `Translations/ignore.txt`.
 
-重要な設計判断として、除外が効くのは「記録とログ」だけで、翻訳の検索には影響しない。
-`TryGetTranslation` のほうが先に走るので、`strings.csv` に明示した行は除外パターンに
-一致していても必ず翻訳される。誤って除外しても取り返しがつく側に倒してある。
+Exclusions affect only discovery and logging, never lookup. `TryGetTranslation` runs first, so a row explicitly placed in `strings.csv` is translated even if an exclusion pattern matches it. A mistaken exclusion can therefore be overridden.
 
-注意点: 当初の数値パターン `^[+-]?[\d.,]+\s*%?$` は会話行の `...` にも一致していた。
-数字を最低1文字要求する形に修正済み。実データ34件でパターンを検証した。
-- 検証: Releaseビルド成功（警告0・エラー0）。実際のHarmonyでTMPの代替クラスに
-  本番パッチを適用する一時テストで15項目に合格。3つの入口、再代入がないこと、
-  bool引数保持、数値フォーマットの非干渉、null/空文字、ログ重複抑制、CSVの遅延出力・
-  改行/カンマの保持、設定フラグ、未導入ロケールでの原文維持を確認した。
-  このテストはネイティブ描画を検証するものではない。
-- ビルドしたDLLをゲームのBepInExプラグインフォルダーへ配置し、SHA-256一致を確認。
+The initial numeric expression, `^[+-]?[\\d.,]+\\s*%?$`, also matched the dialogue line `...`. It was fixed to require at least one digit and validated against 34 real strings.
 
-## IMGUIデバッグウィンドウの再構成（2026-09-11）
+Validation included a clean Release build with no warnings or errors. A temporary test applied the production Harmony patches to TMP substitutes and passed 15 cases covering all three entry points, prevention of re-assignment, preservation of the Boolean argument, numeric formatting, null and empty strings, duplicate log suppression, delayed CSV output, embedded newlines and commas, configuration flags, and source preservation for an unavailable locale. This test did not exercise native rendering.
 
-- 描画処理を `Plugin.ImGui.cs` に分離し、ログとツールの2タブに整理。
-- タイトル限定の移動、右下のサイズ変更、画面内への位置・サイズ補正を追加。
-- ログの自動追従を切り替え可能にし、手動スクロール時には追従を停止する。
-  件数が上限に達した後の更新も引き続きバージョン番号で検出する。
-- 言語切り替え・会話抽出・レイアウトチェックは従来どおりUpdate側で実行する。
-- 全コントロールは事前生成済みの同じフォント・サイズを使う。ログは1つのLabelで
-  描画し、結合文字列と折り返し高さを変更時だけ再計算する。OnGUI内では新規の
-  Texture2D生成やApply、ファイルI/Oを行わない。
-- 検証: Releaseビルド成功。実機での表示・操作・クラッシュ有無はユーザー確認待ち。
+The built DLL was deployed to the game's BepInEx plugin directory, and its SHA-256 hash was verified against the build artifact.
+
+## IMGUI debug-window restructuring (2026-09-11)
+
+- Moved rendering into `Plugin.ImGui.cs` and organized the window into **Log** and **Tools** tabs.
+- Added title-only movement, resizing from the lower-right corner, and bounds correction to keep the window on screen.
+- Made automatic log following optional and stopped following when the user scrolls manually. Version-based updates continue after the buffer reaches capacity.
+- Language switching, dialogue export, and layout checking continue to execute from `Update`.
+- Every control uses the same prewarmed font and size. The log renders as one label, and its joined text and wrapped height are recalculated only after content changes. `OnGUI` performs no new `Texture2D` creation, `Apply`, or file I/O.
+- The Release build succeeded. At the time of this entry, in-game appearance, interaction, and crash testing awaited user confirmation.
