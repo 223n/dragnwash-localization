@@ -164,6 +164,19 @@ namespace DragNWashLocalization
             }
         }
 
+        public static bool SnapshotMatchesSave(string slot, Snapshot snapshot)
+        {
+            try
+            {
+                string savePath = Path.Combine(Application.persistentDataPath, slot, SaveFileName);
+                return File.Exists(savePath) && File.ReadAllText(savePath) == File.ReadAllText(snapshot.Path);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         // Put a snapshot back as the slot's save. The file being replaced is
         // snapshotted first so a restore is itself reversible.
         public static string Restore(string slot, Snapshot snapshot)

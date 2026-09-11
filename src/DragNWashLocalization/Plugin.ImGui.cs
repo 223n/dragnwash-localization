@@ -14,6 +14,7 @@ namespace DragNWashLocalization
         private string _editLevelSlot;
         private bool _progressConfirm;
         private GUIStyle _textFieldStyle;
+        private bool _newestMatchesSave;
         private bool _showFlags;
         private List<SaveHistory.Flag> _savesFlags = new List<SaveHistory.Flag>();
         private string _flagFilter = "";
@@ -424,6 +425,7 @@ namespace DragNWashLocalization
                 }
                 _savesList = _savesSlot != null ? SaveHistory.SnapshotsFor(_savesSlot) : new List<SaveHistory.Snapshot>();
                 _savesFlags = _savesSlot != null ? SaveHistory.ReadFlags(_savesSlot) : new List<SaveHistory.Flag>();
+                _newestMatchesSave = _savesSlot != null && _savesList.Count > 0 && SaveHistory.SnapshotMatchesSave(_savesSlot, _savesList[0]);
                 RebuildFlagRows();
             }
 
@@ -524,30 +526,40 @@ namespace DragNWashLocalization
             float footerHeight = _mutedLabelStyle.CalcHeight(footerText, innerWidth);
 
             var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - footerHeight - 12));
-            _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _savesList.Count * 36 + (_showFlags ? FlagRowsHeight() : 0))), false, false);
-            for (int i = 0; i < _savesList.Count; i++)
+            _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _showFlags && _savesSlot != null ? FlagRowsHeight() : _savesList.Count * 36)), false, false);
+            // The flag editor replaces the history list while it is open, so
+            // the flags start at the top instead of below 30 snapshot rows.
+            bool flagsOpen = _showFlags && _savesSlot != null;
+            for (int i = 0; i < _savesList.Count && !flagsOpen; i++)
             {
                 SaveHistory.Snapshot s = _savesList[i];
-                GUI.Label(new Rect(12, i * 36, innerWidth - 130, RowHeight), (i == 0 ? "current   " : "") + s.Label, _labelStyle);
-                if (i > 0 && GUI.Button(new Rect(innerWidth - 110, i * 36, 98, RowHeight), "Restore", _buttonStyle))
+                // "current" only when the newest snapshot really is the save on
+                // disk; after a progress or flag edit it is the pre-edit state.
+                bool isCurrent = i == 0 && _newestMatchesSave;
+                GUI.Label(new Rect(12, i * 36, innerWidth - 130, RowHeight), (isCurrent ? "current   " : "") + s.Label, _labelStyle);
+                if (!isCurrent && GUI.Button(new Rect(innerWidth - 110, i * 36, 98, RowHeight), "Restore", _buttonStyle))
                 {
                     _pendingRestoreSlot = _savesSlot;
                     _pendingRestoreSnapshot = s;
                     _savesRefreshAt = 0;
                 }
             }
-            if (_showFlags && _savesSlot != null)
+            if (flagsOpen)
             {
-                float fy = _savesList.Count * 36 + 8;
+                float fy = 4;
                 GUI.Label(new Rect(12, fy, innerWidth, 26), "EVENT FLAGS   click a value: unset -> true -> false", _labelStyle);
                 fy += 30;
 
                 // Search box, once-lines toggle, and the bulk reset.
-                string newFilter = GUI.TextField(new Rect(12, fy, Mathf.Max(80, innerWidth - 330), RowHeight), _flagFilter ?? "", _textFieldStyle);
-                if (newFilter != _flagFilter)
+                int dbg = FlagPanelDebug != null ? FlagPanelDebug.Value : 0;
+                if ((dbg & 1) == 0)
                 {
-                    _flagFilter = newFilter;
-                    RebuildFlagRows();
+                    string newFilter = GUI.TextField(new Rect(12, fy, Mathf.Max(80, innerWidth - 330), RowHeight), _flagFilter ?? "", _textFieldStyle);
+                    if (newFilter != _flagFilter)
+                    {
+                        _flagFilter = newFilter;
+                        RebuildFlagRows();
+                    }
                 }
                 if (GUI.Button(new Rect(innerWidth - 310, fy, 120, RowHeight), _showOnceLines ? "Hide once-lines" : "Show once-lines", _buttonStyle))
                 {
@@ -580,17 +592,19 @@ namespace DragNWashLocalization
                     fy += 38;
                 }
 
-                for (int i = 0; i < _flagRows.Count; i++)
+                for (int i = 0; i < _flagRows.Count && (dbg & 4) == 0; i++)
                 {
                     FlagRow r = _flagRows[i];
                     float ry = fy + i * 30;
                     if (r.IsHeader)
                     {
-                        GUI.Label(new Rect(12, ry + 4, innerWidth - 24, 26), r.Id.ToUpperInvariant(), _labelStyle);
+                        if ((dbg & 8) == 0)
+                            GUI.Label(new Rect(12, ry + 4, innerWidth - 24, 26), r.Id.ToUpperInvariant(), _labelStyle);
                         continue;
                     }
                     GUI.Label(new Rect(24, ry, Mathf.Max(60, innerWidth * 0.42f), RowHeight), r.Id, _labelStyle);
-                    GUI.Label(new Rect(24 + Mathf.Max(60, innerWidth * 0.42f), ry, Mathf.Max(40, innerWidth * 0.58f - 130), RowHeight), r.Description ?? "", _mutedLabelStyle);
+                    if ((dbg & 2) == 0)
+                        GUI.Label(new Rect(24 + Mathf.Max(60, innerWidth * 0.42f), ry, Mathf.Max(40, innerWidth * 0.58f - 130), RowHeight), r.Description ?? "", _mutedLabelStyle);
                     string shown = r.Value == null ? "unset" : (r.Value.Value ? "true" : "false");
                     GUIStyle st = r.Value == true ? _selectedButtonStyle : _buttonStyle;
                     if (GUI.Button(new Rect(innerWidth - 90, ry, 78, RowHeight), shown, st))

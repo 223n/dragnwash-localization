@@ -1,49 +1,49 @@
 id,group,set_by,description
-level_1,Level flow,game,レベル1（Ryan 初回）を開始した
-level_1_complete,Level flow,game,レベル1をクリアした
-level_5,Level flow,game,レベル5を開始した
-level_5_complete,Level flow,game,レベル5をクリアした
-level_6_started,Level flow,game,レベル6を開始した
-level_2_spawn,Level flow,game,レベル2の出現処理を実行済み
-level_3_spawn,Level flow,game,レベル3の出現処理を実行済み
-level_4_spawn,Level flow,game,レベル4の出現処理を実行済み
-level_5_spawn,Level flow,game,レベル5の出現処理を実行済み
-level_6_spawn,Level flow,game,レベル6の出現処理を実行済み
-level_7_spawn,Level flow,game,レベル7の出現処理を実行済み
-level_8_spawn,Level flow,game,レベル8の出現処理を実行済み
-level_9_spawn,Level flow,game,レベル9の出現処理を実行済み
-level_10_spawn,Level flow,game,レベル10の出現処理を実行済み
-level_11_spawn,Level flow,game,レベル11の出現処理を実行済み
-level_12_spawn,Level flow,game,レベル12の出現処理を実行済み
-level_13_spawn,Level flow,game,レベル13の出現処理を実行済み
-level_14_spawn,Level flow,game,レベル14の出現処理を実行済み
-has_talked_to_ryan,Story,dialogue,Ryan と初めて話した（レベル1冒頭会話・電話チュートリアルの分岐）
-has_asked_question,Story,dialogue,質問をしたことがある
-suggested_ryan_to_conrad,Story,dialogue,Conrad に Ryan のことを持ちかけた
-conrad_used_mount_3,Story,dialogue,Conrad 3回目：マウントを使った
-conrad_jerked_off_3,Story,dialogue,Conrad 3回目：手コキをした
-conrad_romanced,Romance,dialogue,Conrad と恋愛関係になった
-ryan_romanced,Romance,dialogue,Ryan と恋愛関係になった
-alexander_romanced,Romance,dialogue,Alexander と恋愛関係になった
-ryan_conrad_romanced,Romance,dialogue,Ryan と Conrad が結ばれた
-conrad_sex_scene,Scene trigger,dialogue,Conrad のシーンを再生する条件（会話で立つ）
-ryan_sex_scene,Scene trigger,dialogue,Ryan のシーンを再生する条件（会話で立つ）
-alexander_sex_scene,Scene trigger,dialogue,Alexander のシーンを再生する条件（会話で立つ）
-ryan_conrad_sex_scene,Scene trigger,dialogue,Ryan と Conrad のシーンを再生する条件（会話で立つ）
-finished_watching_conrad_sex_scene,Scene watched,game,Conrad のシーンを最後まで見た（true だと再生しない）
-finished_watching_ryan_sex_scene,Scene watched,game,Ryan のシーンを最後まで見た（true だと再生しない）
-finished_watching_alexander_sex_scene,Scene watched,game,Alexander のシーンを最後まで見た（true だと再生しない）
-finished_watching_conrad_ryan_sex_scene,Scene watched,game,Ryan と Conrad のシーンを最後まで見た（true だと再生しない）
-DragonFinishedFromHandJob,Wash session,game,今回の洗い場で手コキで終えた
-DragonOnaholeSexInProgress,Wash session,game,オナホ行為の進行中
-DragonOnaholeSexCompleted,Wash session,game,オナホ行為を完了した
-DragonDenyMount,Wash session,dialogue,ドラゴンがマウントを拒否した
-HasMountFrame,Items,game,マウントのフレームを所持している
-DeliveredMountFrame,Items,game,マウントのフレームが配達された
-BuiltMount,Items,game,マウントを組み立てた
-PlacedMount,Items,game,マウントを設置した
-PlacedMountForUse,Items,game,マウントを使用位置に置いた
-MedkitCompleted,Items,game,救急キットの件を完了した
-PicnicPlaced,Items,game,ピクニックを設置した
-PicnicCompleted,Items,game,ピクニックを完了した
-isEditor,Debug,game,エディタ実行中の印（通常は false のまま）
+level_1,Level flow,game,Level 1 (Ryan's first visit) started
+level_1_complete,Level flow,game,Level 1 completed
+level_5,Level flow,game,Level 5 started
+level_5_complete,Level flow,game,Level 5 completed
+level_6_started,Level flow,game,Level 6 started
+level_2_spawn,Level flow,game,Level 2 spawn handled
+level_3_spawn,Level flow,game,Level 3 spawn handled
+level_4_spawn,Level flow,game,Level 4 spawn handled
+level_5_spawn,Level flow,game,Level 5 spawn handled
+level_6_spawn,Level flow,game,Level 6 spawn handled
+level_7_spawn,Level flow,game,Level 7 spawn handled
+level_8_spawn,Level flow,game,Level 8 spawn handled
+level_9_spawn,Level flow,game,Level 9 spawn handled
+level_10_spawn,Level flow,game,Level 10 spawn handled
+level_11_spawn,Level flow,game,Level 11 spawn handled
+level_12_spawn,Level flow,game,Level 12 spawn handled
+level_13_spawn,Level flow,game,Level 13 spawn handled
+level_14_spawn,Level flow,game,Level 14 spawn handled
+has_talked_to_ryan,Story,dialogue,Talked to Ryan for the first time (gates the level 1 intro and phone tutorial)
+has_asked_question,Story,dialogue,Asked a question
+suggested_ryan_to_conrad,Story,dialogue,Suggested Ryan to Conrad
+conrad_used_mount_3,Story,dialogue,Conrad visit 3: used the mount
+conrad_jerked_off_3,Story,dialogue,Conrad visit 3: handjob
+conrad_romanced,Romance,dialogue,Romanced Conrad
+ryan_romanced,Romance,dialogue,Romanced Ryan
+alexander_romanced,Romance,dialogue,Romanced Alexander
+ryan_conrad_romanced,Romance,dialogue,Ryan and Conrad got together
+conrad_sex_scene,Scene trigger,dialogue,Conrad scene should play (set by dialogue)
+ryan_sex_scene,Scene trigger,dialogue,Ryan scene should play (set by dialogue)
+alexander_sex_scene,Scene trigger,dialogue,Alexander scene should play (set by dialogue)
+ryan_conrad_sex_scene,Scene trigger,dialogue,Ryan + Conrad scene should play (set by dialogue)
+finished_watching_conrad_sex_scene,Scene watched,game,Conrad scene watched to the end (true = not played again)
+finished_watching_ryan_sex_scene,Scene watched,game,Ryan scene watched to the end (true = not played again)
+finished_watching_alexander_sex_scene,Scene watched,game,Alexander scene watched to the end (true = not played again)
+finished_watching_conrad_ryan_sex_scene,Scene watched,game,Ryan + Conrad scene watched to the end (true = not played again)
+DragonFinishedFromHandJob,Wash session,game,This wash ended with a handjob
+DragonOnaholeSexInProgress,Wash session,game,Onahole session in progress
+DragonOnaholeSexCompleted,Wash session,game,Onahole session completed
+DragonDenyMount,Wash session,dialogue,Dragon refused the mount
+HasMountFrame,Items,game,Holding the mount frame
+DeliveredMountFrame,Items,game,Mount frame was delivered
+BuiltMount,Items,game,Mount built
+PlacedMount,Items,game,Mount placed
+PlacedMountForUse,Items,game,Mount placed for use
+MedkitCompleted,Items,game,Medkit task completed
+PicnicPlaced,Items,game,Picnic placed
+PicnicCompleted,Items,game,Picnic completed
+isEditor,Debug,game,Editor marker (normally false)

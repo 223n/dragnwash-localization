@@ -25,6 +25,7 @@ namespace DragNWashLocalization
         private const int MenuFontSize = 14;
 
         internal static ConfigEntry<string> TargetLocale;
+        internal static ConfigEntry<int> FlagPanelDebug;
         internal static ConfigEntry<bool> LogDiscoveredKeys;
         internal static ConfigEntry<bool> VerboseTextLog;
         internal static ConfigEntry<KeyboardShortcut> ToggleMenuKey;
@@ -149,6 +150,12 @@ namespace DragNWashLocalization
                 "SaveHistoryKeep",
                 30,
                 "スロットごとに残す世代数");
+
+            FlagPanelDebug = Config.Bind(
+                "Debug",
+                "FlagPanelDebug",
+                0,
+                "Troubleshooting only. Bit 1: no search box. Bit 2: no descriptions. Bit 4: no flag rows. Bit 8: no group headers.");
 
             HotReloadTranslations = Config.Bind(
                 "Debug",
