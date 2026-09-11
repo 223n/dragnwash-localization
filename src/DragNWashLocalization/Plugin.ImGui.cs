@@ -352,11 +352,17 @@ namespace DragNWashLocalization
                 GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, RowHeight), "No save files found.", _mutedLabelStyle);
             y += 42;
 
-            GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, 26),
-                $"HISTORY  ({_savesList.Count} snapshot(s), newest first; a snapshot is taken whenever the game writes the save)", _labelStyle);
-            y += 32;
+            // Both explanatory labels wrap on a narrow window, so size them from
+            // the text instead of assuming one line.
+            var historyText = new GUIContent($"HISTORY  ({_savesList.Count} snapshot(s), newest first)");
+            float historyHeight = _labelStyle.CalcHeight(historyText, innerWidth);
+            GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, historyHeight), historyText, _labelStyle);
+            y += historyHeight + 6;
 
-            var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - 40));
+            var footerText = new GUIContent("A snapshot is taken whenever the game writes the save. After Restore: go to the title screen and load the slot. Saving in game overwrites it again.");
+            float footerHeight = _mutedLabelStyle.CalcHeight(footerText, innerWidth);
+
+            var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - footerHeight - 12));
             _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _savesList.Count * 36)), false, false);
             for (int i = 0; i < _savesList.Count; i++)
             {
@@ -371,8 +377,7 @@ namespace DragNWashLocalization
             }
             GUI.EndScrollView();
 
-            GUI.Label(new Rect(area.x + 12, area.y + area.height - 34, innerWidth, 30),
-                "After Restore: go to the title screen and load the slot. Saving in game overwrites it again.", _mutedLabelStyle);
+            GUI.Label(new Rect(area.x + 12, area.y + area.height - footerHeight - 6, innerWidth, footerHeight), footerText, _mutedLabelStyle);
         }
 
         private void HandleMenuResize(Rect grip)
