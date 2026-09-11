@@ -8,6 +8,62 @@ The project aims to make it possible to add Japanese, Simplified Chinese, and ot
 
 See [docs/PLAN.md](docs/PLAN.md) for the technical research and implementation plan.
 
+## Installation
+
+### What you need
+
+- The Windows Steam version of Drag'n Wash
+- [BepInEx 5 for 64-bit Windows (Mono)](https://github.com/BepInEx/BepInEx/releases)
+- The latest `DragNWashLocalization-<version>.zip` from this repository's [Releases page](https://github.com/TomXV/dragnwash-localization/releases)
+
+> [!IMPORTANT]
+> Download the file named `DragNWashLocalization-<version>.zip` from the release assets. GitHub's automatically generated **Source code** archives are not installable mod packages. If the Releases page does not contain a mod ZIP yet, an installable build has not been published.
+
+### 1. Open the game folder
+
+In Steam, right-click **Drag'n Wash**, then select **Manage → Browse local files**. This opens the game root: the folder containing the game's `.exe`.
+
+### 2. Install BepInEx
+
+Download the BepInEx 5 archive for **Windows x64 (Mono)** and extract it directly into the game root.
+
+After extraction, `winhttp.dll`, `doorstop_config.ini`, and the `BepInEx` folder should be next to the game's executable. If they are inside another nested folder, move them up to the game root.
+
+Launch the game once, wait until the title screen appears, and close it. BepInEx will create its configuration and log files. Confirm that `BepInEx/LogOutput.log` now exists before continuing.
+
+### 3. Install Drag'n Wash Localization
+
+Download `DragNWashLocalization-<version>.zip` from [Releases](https://github.com/TomXV/dragnwash-localization/releases) and extract it into the **same game root**. Allow your archive tool to merge the included `BepInEx` folder.
+
+The plugin DLL should end up at:
+
+```text
+<Drag'n Wash folder>/BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
+```
+
+Do not leave the ZIP itself or an extra `DragNWashLocalization-<version>` directory between `plugins` and the DLL.
+
+### 4. Launch and verify
+
+Start Drag'n Wash. Japanese is selected by default. Press **F1** to open the localization menu; under **Tools**, you can switch between the installed languages without restarting.
+
+A successful installation also produces a `DragNWashLocalization` startup entry in `BepInEx/LogOutput.log`.
+
+To change the default language manually, close the game and edit:
+
+```text
+BepInEx/config/com.tomxv.dragnwash.localization.cfg
+```
+
+Set `TargetLocale` under `[General]` to an installed locale such as `ja` or `zh-Hans`, then start the game again.
+
+### If the mod does not load
+
+- Confirm that both BepInEx and the mod were extracted into the folder containing the game executable.
+- Confirm the exact DLL path shown above.
+- Open `BepInEx/LogOutput.log`. If the file does not exist, BepInEx itself is not loading. If it exists, search it for `DragNWashLocalization` and review the nearby error.
+- If opening Options causes a Direct3D 12 crash, use the Windows workaround described in [Crash when opening Options on Windows](#crash-when-opening-options-on-windows).
+
 ## For translators
 
 You can add a translation by editing `Translations/<locale>/strings.csv`. While translating, use two columns: `source_en` (the exact English text displayed in the game) and `translation` (your translation). Before committing, convert the source text into hashes in the `key` column.

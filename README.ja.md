@@ -8,6 +8,62 @@
 
 技術的な調査結果と実装計画は [docs/PLAN.md](docs/PLAN.ja.md) を参照してください。
 
+## 導入方法
+
+### 必要なもの
+
+- Steam版（Windows）の Drag'n Wash
+- [BepInEx 5 Windows x64（Mono）版](https://github.com/BepInEx/BepInEx/releases)
+- このリポジトリの [Releasesページ](https://github.com/TomXV/dragnwash-localization/releases) で配布される最新版の `DragNWashLocalization-<version>.zip`
+
+> [!IMPORTANT]
+> ReleasesのAssetsにある `DragNWashLocalization-<version>.zip` を使用してください。GitHubが自動生成する **Source code** のZIPはMod導入用ではありません。ReleasesページにModのZIPがまだない場合は、導入可能なビルドが未公開です。
+
+### 1. ゲームフォルダを開く
+
+Steamライブラリで **Drag'n Washを右クリック → 管理 → ローカルファイルを閲覧** を選びます。ゲームの `.exe` が置かれているフォルダがゲームルートです。
+
+### 2. BepInExを導入する
+
+BepInEx 5の **Windows x64（Mono）版**をダウンロードし、アーカイブの中身をゲームルートへ直接展開します。
+
+展開後、ゲームの実行ファイルと同じ場所に `winhttp.dll`、`doorstop_config.ini`、`BepInEx` フォルダが並んでいることを確認してください。これらがもう1段内側のフォルダに入っている場合は、ゲームルートへ移します。
+
+ゲームを一度起動し、タイトル画面まで進んだら終了します。BepInExの設定ファイルとログが生成されるので、次へ進む前に `BepInEx/LogOutput.log` が存在することを確認します。
+
+### 3. Drag'n Wash Localizationを導入する
+
+[Releases](https://github.com/TomXV/dragnwash-localization/releases) から `DragNWashLocalization-<version>.zip` をダウンロードし、BepInExと同じ**ゲームルート**へ展開します。`BepInEx` フォルダの統合を確認された場合は許可してください。
+
+プラグインのDLLが次の場所にあれば正しく展開されています。
+
+```text
+<Drag'n Washのフォルダ>/BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
+```
+
+ZIPファイルや `DragNWashLocalization-<version>` フォルダが `plugins` とDLLの間に入らないようにしてください。
+
+### 4. 起動して確認する
+
+Drag'n Washを起動します。初期設定では日本語が選択されます。**F1**でローカライズメニューを開き、**Tools**から導入済みの言語へ再起動なしで切り替えられます。
+
+`BepInEx/LogOutput.log` に `DragNWashLocalization` の起動行が記録されていれば、プラグインは読み込まれています。
+
+起動時の言語を手動で変更する場合は、ゲームを終了して次のファイルを開きます。
+
+```text
+BepInEx/config/com.tomxv.dragnwash.localization.cfg
+```
+
+`[General]` の `TargetLocale` を `ja` や `zh-Hans` などの導入済みロケールへ変更し、ゲームを起動し直します。
+
+### Modが読み込まれない場合
+
+- BepInExとModの両方を、ゲームの実行ファイルがあるフォルダへ展開したか確認します。
+- DLLが上記のパスにあるか確認します。
+- `BepInEx/LogOutput.log` を開きます。ファイル自体がない場合はBepInExが起動していません。ファイルがある場合は `DragNWashLocalization` を検索し、周辺のエラーを確認します。
+- Optionsを開いたときにDirect3D 12でクラッシュする場合は、[設定画面を開くとクラッシュする場合（Windows）](#設定画面を開くとクラッシュする場合windows) の回避策を試してください。
+
 ## 翻訳者向け
 
 `Translations/<locale>/strings.csv` を編集するだけで翻訳を追加できます。作業中は
