@@ -23,9 +23,14 @@ The value is used in the BepInEx plugin ID string and must use the `x.y.z` forma
 
 Update the status in `docs/PLAN.md` and `README.md` as needed.
 
-### 2. Build and create the ZIP
+### 2. Commit, tag, then build the ZIP
+
+Commit the version bump and create the tag **before** building. The DLL's informational version embeds the commit hash of the checkout it was built from (visible as `0.1.1+<hash>` in the file properties), so building first would stamp the previous commit. The build is a clean one so the hash is refreshed:
 
 ```powershell
+git commit -am "Release 0.2.0"
+git tag -a v0.2.0 -m "v0.2.0"
+Remove-Item -Recurse -Force src/DragNWashLocalization/obj, src/DragNWashLocalization/bin
 pwsh tools/pack.ps1
 ```
 

@@ -29,7 +29,12 @@ BepInEx のプラグインID文字列に使われるため、形式は `x.y.z`�
 
 ### 2. ビルドして zip を作る
 
+バージョン更新のコミットとタグ付けを**ビルドより先に**行います。DLL の内部バージョン（ファイルのプロパティで `0.1.1+<ハッシュ>` と見える値）にはビルド時のコミットハッシュが埋め込まれるため、先にビルドすると1つ前のコミットが刻まれます。ハッシュを確実に更新するためクリーンビルドにします。
+
 ```powershell
+git commit -am "Release 0.2.0"
+git tag -a v0.2.0 -m "v0.2.0"
+Remove-Item -Recurse -Force src/DragNWashLocalization/obj, src/DragNWashLocalization/bin
 pwsh tools/pack.ps1
 ```
 
