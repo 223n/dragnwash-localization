@@ -240,9 +240,42 @@ namespace DragNWashLocalization
 
         public static string SetFlag(string slot, string id, bool value)
         {
+            return Edit(slot, text => ApplyFlag(text, id, value), $"{id} = {(value ? "true" : "false")}");
+        }
+
+        // Several flags in one edit (one snapshot, one write).
+        public static string SetFlags(string slot, IEnumerable<KeyValuePair<string, bool>> values, string what)
+        {
+            return Edit(slot, text =>
+            {
+                foreach (KeyValuePair<string, bool> kv in values)
+                {
+                    text = ApplyFlag(text, kv.Key, kv.Value);
+                }
+                return text;
+            }, what);
+        }
+
+        // Rewrites an existing entry, or appends one when the game has never
+        // set that flag (the registry only stores flags that were set once).
+        private static string ApplyFlag(string text, string id, bool value)
+        {
             string v = value ? "true" : "false";
             var one = new Regex("(\"id\"\\s*:\\s*\"" + Regex.Escape(id) + "\"\\s*,\\s*\"type\"\\s*:\\s*\"BOOL\"\\s*,\\s*\"boolValue\"\\s*:\\s*)(true|false)(\\s*,\\s*\"stringValue\"\\s*:\\s*)(true|false)");
-            return Edit(slot, text => one.Replace(text, "${1}" + v + "${3}" + v, 1), $"{id} = {v}");
+            if (one.IsMatch(text))
+            {
+                return one.Replace(text, "${1}" + v + "${3}" + v, 1);
+            }
+
+            int end = text.LastIndexOf(']');
+            if (end < 0)
+            {
+                return text;
+            }
+            string entry = "{\"id\":\"" + id.Replace("\\", "\\\\").Replace("\"", "\\\"") + "\",\"type\":\"BOOL\",\"boolValue\":" + v + ",\"stringValue\":" + v + "}";
+            string before = text.Substring(0, end).TrimEnd();
+            string sep = before.EndsWith("[") ? "" : ",";
+            return before + sep + entry + text.Substring(end);
         }
 
         private static readonly Regex FlagEntry = new Regex(

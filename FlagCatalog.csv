@@ -1,0 +1,49 @@
+id,group,set_by,description
+level_1,Level flow,game,レベル1（Ryan 初回）を開始した
+level_1_complete,Level flow,game,レベル1をクリアした
+level_5,Level flow,game,レベル5を開始した
+level_5_complete,Level flow,game,レベル5をクリアした
+level_6_started,Level flow,game,レベル6を開始した
+level_2_spawn,Level flow,game,レベル2の出現処理を実行済み
+level_3_spawn,Level flow,game,レベル3の出現処理を実行済み
+level_4_spawn,Level flow,game,レベル4の出現処理を実行済み
+level_5_spawn,Level flow,game,レベル5の出現処理を実行済み
+level_6_spawn,Level flow,game,レベル6の出現処理を実行済み
+level_7_spawn,Level flow,game,レベル7の出現処理を実行済み
+level_8_spawn,Level flow,game,レベル8の出現処理を実行済み
+level_9_spawn,Level flow,game,レベル9の出現処理を実行済み
+level_10_spawn,Level flow,game,レベル10の出現処理を実行済み
+level_11_spawn,Level flow,game,レベル11の出現処理を実行済み
+level_12_spawn,Level flow,game,レベル12の出現処理を実行済み
+level_13_spawn,Level flow,game,レベル13の出現処理を実行済み
+level_14_spawn,Level flow,game,レベル14の出現処理を実行済み
+has_talked_to_ryan,Story,dialogue,Ryan と初めて話した（レベル1冒頭会話・電話チュートリアルの分岐）
+has_asked_question,Story,dialogue,質問をしたことがある
+suggested_ryan_to_conrad,Story,dialogue,Conrad に Ryan のことを持ちかけた
+conrad_used_mount_3,Story,dialogue,Conrad 3回目：マウントを使った
+conrad_jerked_off_3,Story,dialogue,Conrad 3回目：手コキをした
+conrad_romanced,Romance,dialogue,Conrad と恋愛関係になった
+ryan_romanced,Romance,dialogue,Ryan と恋愛関係になった
+alexander_romanced,Romance,dialogue,Alexander と恋愛関係になった
+ryan_conrad_romanced,Romance,dialogue,Ryan と Conrad が結ばれた
+conrad_sex_scene,Scene trigger,dialogue,Conrad のシーンを再生する条件（会話で立つ）
+ryan_sex_scene,Scene trigger,dialogue,Ryan のシーンを再生する条件（会話で立つ）
+alexander_sex_scene,Scene trigger,dialogue,Alexander のシーンを再生する条件（会話で立つ）
+ryan_conrad_sex_scene,Scene trigger,dialogue,Ryan と Conrad のシーンを再生する条件（会話で立つ）
+finished_watching_conrad_sex_scene,Scene watched,game,Conrad のシーンを最後まで見た（true だと再生しない）
+finished_watching_ryan_sex_scene,Scene watched,game,Ryan のシーンを最後まで見た（true だと再生しない）
+finished_watching_alexander_sex_scene,Scene watched,game,Alexander のシーンを最後まで見た（true だと再生しない）
+finished_watching_conrad_ryan_sex_scene,Scene watched,game,Ryan と Conrad のシーンを最後まで見た（true だと再生しない）
+DragonFinishedFromHandJob,Wash session,game,今回の洗い場で手コキで終えた
+DragonOnaholeSexInProgress,Wash session,game,オナホ行為の進行中
+DragonOnaholeSexCompleted,Wash session,game,オナホ行為を完了した
+DragonDenyMount,Wash session,dialogue,ドラゴンがマウントを拒否した
+HasMountFrame,Items,game,マウントのフレームを所持している
+DeliveredMountFrame,Items,game,マウントのフレームが配達された
+BuiltMount,Items,game,マウントを組み立てた
+PlacedMount,Items,game,マウントを設置した
+PlacedMountForUse,Items,game,マウントを使用位置に置いた
+MedkitCompleted,Items,game,救急キットの件を完了した
+PicnicPlaced,Items,game,ピクニックを設置した
+PicnicCompleted,Items,game,ピクニックを完了した
+isEditor,Debug,game,エディタ実行中の印（通常は false のまま）

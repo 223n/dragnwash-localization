@@ -11,6 +11,7 @@
 # Output:
 #   release/DragNWashLocalization-<version>.zip
 #     BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
+#     BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
 #     Install.exe                <- double-click installer / uninstaller (no console)
@@ -77,6 +78,7 @@ $TranslationsDir = Join-Path $PluginDir 'Translations'
 New-Item -ItemType Directory -Force -Path $TranslationsDir | Out-Null
 
 Copy-Item -LiteralPath $Dll -Destination $PluginDir
+Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
 
 # Locale folders and ignore.txt only; never the runtime _discovered/ output
 # (it contains the game's own text).

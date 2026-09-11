@@ -13,8 +13,80 @@ namespace DragNWashLocalization
         private int _editLevelBase = -2;
         private string _editLevelSlot;
         private bool _progressConfirm;
+        private GUIStyle _textFieldStyle;
         private bool _showFlags;
         private List<SaveHistory.Flag> _savesFlags = new List<SaveHistory.Flag>();
+        private string _flagFilter = "";
+        private bool _flagClearConfirm;
+        private bool _showOnceLines;
+
+        // One row of the flag editor: catalog entry (may be null) + save state.
+        private sealed class FlagRow
+        {
+            public string Id;
+            public string Group;
+            public string Description;
+            public bool? Value;   // null = never set in this save
+            public bool IsHeader;
+        }
+        private List<FlagRow> _flagRows = new List<FlagRow>();
+
+        private void RebuildFlagRows()
+        {
+            _flagRows.Clear();
+            var inSave = new Dictionary<string, bool>(StringComparer.Ordinal);
+            foreach (SaveHistory.Flag f in _savesFlags)
+            {
+                inSave[f.Id] = f.Value;
+            }
+
+            string filter = (_flagFilter ?? "").Trim();
+            bool Match(string id, string desc) =>
+                filter.Length == 0 ||
+                id.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                (desc != null && desc.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+
+            var groups = new List<string>();
+            var byGroup = new Dictionary<string, List<FlagRow>>(StringComparer.Ordinal);
+            void Add(string group, FlagRow row)
+            {
+                if (!byGroup.TryGetValue(group, out List<FlagRow> list))
+                {
+                    list = new List<FlagRow>();
+                    byGroup[group] = list;
+                    groups.Add(group);
+                }
+                list.Add(row);
+            }
+
+            var known = new HashSet<string>(StringComparer.Ordinal);
+            foreach (FlagCatalog.Entry e in FlagCatalog.Entries)
+            {
+                known.Add(e.Id);
+                if (!Match(e.Id, e.Description)) continue;
+                Add(e.Group, new FlagRow
+                {
+                    Id = e.Id, Group = e.Group, Description = e.Description,
+                    Value = inSave.TryGetValue(e.Id, out bool v) ? v : (bool?)null,
+                });
+            }
+            foreach (SaveHistory.Flag f in _savesFlags)
+            {
+                if (known.Contains(f.Id) || !Match(f.Id, null)) continue;
+                bool once = f.Id.StartsWith("Yarn.Internal.Once.", StringComparison.Ordinal);
+                if (once && !_showOnceLines) continue;
+                Add(once ? "Once-only dialogue lines" : "Other (in save, not in catalog)",
+                    new FlagRow { Id = f.Id, Value = f.Value, Description = once ? "one-time line already said" : "" });
+            }
+
+            foreach (string g in groups)
+            {
+                _flagRows.Add(new FlagRow { IsHeader = true, Id = g, Group = g });
+                _flagRows.AddRange(byGroup[g]);
+            }
+        }
+
+        private float FlagRowsHeight() => 40 + 34 + _flagRows.Count * 30 + (_flagClearConfirm ? 70 : 0) + 8;
         private static readonly Color MenuPanel = new Color(0.09f, 0.11f, 0.15f);
         private static readonly Color MenuInset = new Color(0.055f, 0.07f, 0.10f);
         private static readonly Color MenuAccent = new Color(0.32f, 0.78f, 0.72f);
@@ -84,6 +156,7 @@ namespace DragNWashLocalization
             _buttonStyle = MenuStyle(GUI.skin.button, new Color(0.88f, 0.92f, 0.95f));
             _buttonStyle.padding = new RectOffset(10, 10, 4, 4);
             _selectedButtonStyle = MenuStyle(_buttonStyle, MenuAccent);
+            _textFieldStyle = new GUIStyle(GUI.skin.textField) { font = _buttonStyle.font, fontSize = _buttonStyle.fontSize, alignment = TextAnchor.MiddleLeft };
         }
 
         private static void FillMenuRect(Rect rect, Color color)
@@ -338,6 +411,7 @@ namespace DragNWashLocalization
                 }
                 _savesList = _savesSlot != null ? SaveHistory.SnapshotsFor(_savesSlot) : new List<SaveHistory.Snapshot>();
                 _savesFlags = _savesSlot != null ? SaveHistory.ReadFlags(_savesSlot) : new List<SaveHistory.Flag>();
+                RebuildFlagRows();
             }
 
             float y = 8;
@@ -437,7 +511,7 @@ namespace DragNWashLocalization
             float footerHeight = _mutedLabelStyle.CalcHeight(footerText, innerWidth);
 
             var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - footerHeight - 12));
-            _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _savesList.Count * 36 + (_showFlags ? 38 + _savesFlags.Count * 30 : 0))), false, false);
+            _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _savesList.Count * 36 + (_showFlags ? FlagRowsHeight() : 0))), false, false);
             for (int i = 0; i < _savesList.Count; i++)
             {
                 SaveHistory.Snapshot s = _savesList[i];
@@ -452,15 +526,64 @@ namespace DragNWashLocalization
             if (_showFlags && _savesSlot != null)
             {
                 float fy = _savesList.Count * 36 + 8;
-                GUI.Label(new Rect(12, fy, innerWidth, 26), $"FLAGS  ({_savesFlags.Count})  click a value to toggle it", _labelStyle);
+                GUI.Label(new Rect(12, fy, innerWidth, 26), "EVENT FLAGS   click a value: unset -> true -> false", _labelStyle);
                 fy += 30;
-                for (int i = 0; i < _savesFlags.Count; i++)
+
+                // Search box, once-lines toggle, and the bulk reset.
+                string newFilter = GUI.TextField(new Rect(12, fy, Mathf.Max(80, innerWidth - 330), RowHeight), _flagFilter ?? "", _textFieldStyle);
+                if (newFilter != _flagFilter)
                 {
-                    SaveHistory.Flag f = _savesFlags[i];
-                    GUI.Label(new Rect(12, fy + i * 30, innerWidth - 110, RowHeight), f.Id, _labelStyle);
-                    if (GUI.Button(new Rect(innerWidth - 90, fy + i * 30, 78, RowHeight), f.Value ? "true" : "false", f.Value ? _selectedButtonStyle : _buttonStyle))
+                    _flagFilter = newFilter;
+                    RebuildFlagRows();
+                }
+                if (GUI.Button(new Rect(innerWidth - 310, fy, 120, RowHeight), _showOnceLines ? "Hide once-lines" : "Show once-lines", _buttonStyle))
+                {
+                    _showOnceLines = !_showOnceLines;
+                    RebuildFlagRows();
+                }
+                if (GUI.Button(new Rect(innerWidth - 182, fy, 170, RowHeight), "Reset all to false...", _buttonStyle))
+                {
+                    _flagClearConfirm = !_flagClearConfirm;
+                }
+                fy += 34;
+
+                if (_flagClearConfirm)
+                {
+                    GUI.Label(new Rect(12, fy, innerWidth - 24, 30),
+                        "Set every flag in this save to false (the level index is kept). The current save is snapshotted first. Continue?", _mutedLabelStyle);
+                    fy += 32;
+                    if (GUI.Button(new Rect(12, fy, 120, RowHeight), "Yes, reset", _buttonStyle))
                     {
-                        Log(SaveHistory.SetFlag(_savesSlot, f.Id, !f.Value));
+                        var all = new List<KeyValuePair<string, bool>>();
+                        foreach (SaveHistory.Flag f in _savesFlags) all.Add(new KeyValuePair<string, bool>(f.Id, false));
+                        Log(SaveHistory.SetFlags(_savesSlot, all, $"all {all.Count} flags set to false"));
+                        _flagClearConfirm = false;
+                        _savesRefreshAt = 0;
+                    }
+                    if (GUI.Button(new Rect(140, fy, 90, RowHeight), "Cancel", _buttonStyle))
+                    {
+                        _flagClearConfirm = false;
+                    }
+                    fy += 38;
+                }
+
+                for (int i = 0; i < _flagRows.Count; i++)
+                {
+                    FlagRow r = _flagRows[i];
+                    float ry = fy + i * 30;
+                    if (r.IsHeader)
+                    {
+                        GUI.Label(new Rect(12, ry + 4, innerWidth - 24, 26), r.Id.ToUpperInvariant(), _labelStyle);
+                        continue;
+                    }
+                    GUI.Label(new Rect(24, ry, Mathf.Max(60, innerWidth * 0.42f), RowHeight), r.Id, _labelStyle);
+                    GUI.Label(new Rect(24 + Mathf.Max(60, innerWidth * 0.42f), ry, Mathf.Max(40, innerWidth * 0.58f - 130), RowHeight), r.Description ?? "", _mutedLabelStyle);
+                    string shown = r.Value == null ? "unset" : (r.Value.Value ? "true" : "false");
+                    GUIStyle st = r.Value == true ? _selectedButtonStyle : _buttonStyle;
+                    if (GUI.Button(new Rect(innerWidth - 90, ry, 78, RowHeight), shown, st))
+                    {
+                        bool next = r.Value != true;   // unset -> true, true -> false, false -> true
+                        Log(SaveHistory.SetFlag(_savesSlot, r.Id, next));
                         _savesRefreshAt = 0;
                     }
                 }

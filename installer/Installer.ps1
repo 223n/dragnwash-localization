@@ -149,6 +149,8 @@ function Install-Plugin([string]$g, [string]$loc) {
     $dst = Get-PluginDir $g
     New-Item -ItemType Directory -Force -Path (Join-Path $dst 'Translations') | Out-Null
     Copy-Item -LiteralPath (Join-Path $Payload "$PluginFolderName.dll") -Destination $dst -Force
+    $cat = Join-Path $Payload 'FlagCatalog.csv'
+    if (Test-Path -LiteralPath $cat) { Copy-Item -LiteralPath $cat -Destination $dst -Force }
     $srcT = Join-Path $Payload 'Translations'
     Copy-Item -LiteralPath (Join-Path $srcT 'ignore.txt') -Destination (Join-Path $dst 'Translations') -Force
     Get-ChildItem -LiteralPath $srcT -Directory | ForEach-Object {
