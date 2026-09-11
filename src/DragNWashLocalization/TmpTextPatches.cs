@@ -173,7 +173,19 @@ namespace DragNWashLocalization
 
                     string source = kv.Value;
                     bool translated = TranslationStore.TryGetTranslation(source, out var translation);
+
+                    // The game's typewriter reveals dialogue by raising
+                    // maxVisibleCharacters up to the current text's length. If
+                    // that text was fully shown, lift the cap before swapping in
+                    // a longer string, or it comes out truncated ("HEY! This is th").
+                    int shownBefore = instance.textInfo != null ? instance.textInfo.characterCount : 0;
+                    bool fullyShown = instance.maxVisibleCharacters >= shownBefore;
+
                     instance.text = translated ? translation : source;
+                    if (fullyShown && instance.maxVisibleCharacters != int.MaxValue)
+                    {
+                        instance.maxVisibleCharacters = int.MaxValue;
+                    }
 
                     // Re-applying on a locale switch is exactly what the verbose
                     // log exists to show, but the suppression above bypasses the
