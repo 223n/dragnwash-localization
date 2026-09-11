@@ -45,7 +45,7 @@ $T = @{
     en = @{
         title = "Drag'n Wash Localization"; folder = 'Game folder'; browse = 'Browse...'
         language = 'Language'; install = 'Install / Update'; uninstall = 'Uninstall'
-        keepSaves = 'Keep save-history snapshots'; alsoBepInEx = 'Also remove BepInEx'
+        keepSaves = 'Keep save history and translation working files'; alsoBepInEx = 'Also remove BepInEx'
         notFound = 'Game not found. Pick the folder that contains DragNWash.exe.'
         running = 'Close the game first.'; noPayload = 'Plugin files are missing next to the installer. Extract the whole zip first.'
         stBep = 'BepInEx'; stMod = 'Mod'; yes = 'installed'; no = 'not installed'
@@ -55,7 +55,7 @@ $T = @{
     ja = @{
         title = "Drag'n Wash 日本語化 / 中文化"; folder = 'ゲームフォルダ'; browse = '参照...'
         language = '言語'; install = 'インストール / 更新'; uninstall = 'アンインストール'
-        keepSaves = 'セーブ履歴は残す'; alsoBepInEx = 'BepInEx も削除する'
+        keepSaves = 'セーブ履歴と翻訳作業ファイルは残す'; alsoBepInEx = 'BepInEx も削除する'
         notFound = 'ゲームが見つかりません。DragNWash.exe のあるフォルダを選んでください。'
         running = '先にゲームを終了してください。'; noPayload = 'インストーラーの隣にプラグインのファイルがありません。zip を丸ごと展開してから実行してください。'
         stBep = 'BepInEx'; stMod = 'Mod'; yes = '導入済み'; no = '未導入'
@@ -65,7 +65,7 @@ $T = @{
     zh = @{
         title = "Drag'n Wash 汉化 / 日本語化"; folder = '游戏文件夹'; browse = '浏览...'
         language = '语言'; install = '安装 / 更新'; uninstall = '卸载'
-        keepSaves = '保留存档历史'; alsoBepInEx = '同时删除 BepInEx'
+        keepSaves = '保留存档历史和翻译工作文件'; alsoBepInEx = '同时删除 BepInEx'
         notFound = '未找到游戏。请选择包含 DragNWash.exe 的文件夹。'
         running = '请先关闭游戏。'; noPayload = '安装器旁边缺少插件文件。请先完整解压 zip。'
         stBep = 'BepInEx'; stMod = 'Mod'; yes = '已安装'; no = '未安装'
@@ -182,10 +182,21 @@ function Set-PluginLocale([string]$g, [string]$loc) {
 function Uninstall-Plugin([string]$g, [bool]$keepSaves, [bool]$removeBep) {
     $dir = Get-PluginDir $g
     if (Test-Path -LiteralPath $dir) {
-        if ($keepSaves -and (Test-Path -LiteralPath (Join-Path $dir 'SaveHistory'))) {
-            Get-ChildItem -LiteralPath $dir -Force | Where-Object { $_.Name -ne 'SaveHistory' } |
+        $keep = @()
+        if ($keepSaves) {
+            if (Test-Path -LiteralPath (Join-Path $dir 'SaveHistory')) { $keep += 'SaveHistory' }
+            if (Test-Path -LiteralPath (Join-Path $dir 'Translations\_discovered')) { $keep += 'Translations\_discovered' }
+        }
+        if ($keep.Count -gt 0) {
+            # Keep the user's own data: save snapshots and translator working files.
+            Get-ChildItem -LiteralPath $dir -Force | Where-Object { $_.Name -ne 'SaveHistory' -and $_.Name -ne 'Translations' } |
                 Remove-Item -Recurse -Force
-            Log "Mod: removed (SaveHistory kept in $dir)"
+            $t = Join-Path $dir 'Translations'
+            if (Test-Path -LiteralPath $t) {
+                Get-ChildItem -LiteralPath $t -Force | Where-Object { $_.Name -ne '_discovered' } | Remove-Item -Recurse -Force
+                if (-not (Test-Path -LiteralPath (Join-Path $t '_discovered'))) { Remove-Item -LiteralPath $t -Recurse -Force }
+            }
+            Log "Mod: removed (kept: $($keep -join ', ') in $dir)"
         } else {
             Remove-Item -LiteralPath $dir -Recurse -Force
             Log "Mod: removed"
