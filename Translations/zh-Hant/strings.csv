@@ -1,0 +1,1862 @@
+key,section,node,order,speaker,translation
+# Language: 繁體中文 (zh-Hant)
+# Created by TomXV. Provisional translation, not reviewed by a native speaker:
+# some lines may read unnaturally. Corrections are welcome as pull requests.
+# Only the Japanese (ja) and Simplified Chinese (zh-Hans) files were supervised by the author.
+
+# ===== Level 1: Ryan (Sunny) | sets level_1 | ends level_1_complete =====
+# --- intro: Ryan_1_intro ---
+0da72197e898ebe1,L01 Ryan,Ryan_1_intro,1,Ryan,有人嗎？
+334d016f755cd6dc,L01 Ryan,Ryan_1_intro,2,Kobold,您好！
+dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,喔嗨！那個……
+30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,聽說這裡有狗頭人可以幫我洗澡？
+08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,是這裡嗎？
+32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,嗯！我就是<i>那位</i>狗頭人！
+d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,是的，歡迎光臨 Drag'N Wash！
+b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,哈哈，你確實是！
+84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Alexander,太好了！
+900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,我叫萊恩。那個……
+092808653667e9ff,L01 Ryan,Ryan_1_intro,11,Ryan,我要怎麼進去呀？
+0f3f0b7e817061e6,L01 Ryan,Ryan_1_intro,12,Kobold,請稍等，我去開門。
+b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,汪！
+273533e355fd12cf,L01 Ryan,Ryan_1_intro,14,Ryan,啊……？
+3faa3f1d46e0e544,L01 Ryan,Ryan_1_intro,15,Kobold,喔——我是說。我去開門！
+ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,啊，我看到那個按鈕了，瞭解！
+425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,好，我等著。謝謝。
+# --- phone: Ryan_1_PhoneTutorial ---
+8a15c5bd16af8e2a,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,您好，<i>「Drag'n'wash 223號加盟店」……</i>您和第一位顧客談過了嗎？
+276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,剛剛！
+d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,是的，已經談過了。
+38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,啊，很好。
+ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Alexander,……
+4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,那麼——祝您有個高效率的一天。
+693491dd1e43554f,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,您好，<i>「Drag'n'wash 223號加盟店」……</i>您弄清楚怎麼操作了嗎？
+3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,還沒。
+01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,我想我懂了！
+085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,啊……
+4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,那麼，請到窗口與您的顧客交談。
+18e83723472ff06b,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,之後當然還需要讓他們進來。
+bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,很好。那麼請務必到窗口迎接您的顧客。
+474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,好的！
+7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,祝您有個高效率的一天。
+# --- progress: Ryan_1_required ---
+098ac93ca7999f8c,L01 Ryan,Ryan_1_required,1,Ryan,所以你是有證照的洗龍師囉？
+7b999e621945fe90,L01 Ryan,Ryan_1_required,2,Kobold,是的！
+1cb7709c2b6cdc0b,L01 Ryan,Ryan_1_required,3,Kobold,我才做了幾個星期！
+9b9024cada67653e,L01 Ryan,Ryan_1_required,4,Ryan,喔真棒！
+fbd8fe3b49aed7c5,L01 Ryan,Ryan_1_required,5,Ryan,我平常在家用水管沖一沖就算了……
+3f742efbf9edb2ee,L01 Ryan,Ryan_1_required,6,Ryan,那對我們倆都是新體驗啦！
+e6c276d67e994ed5,L01 Ryan,Ryan_1_required,7,Ryan,老實說，沒想到這麼舒服。
+e99ba1a86146f1aa,L01 Ryan,Ryan_1_required,8,Ryan,能暫時逃離外面的一切，真好。
+# --- nag: Ryan_1_nag ---
+c2aa03c999eb7731,L01 Ryan,Ryan_1_nag,1,Ryan,嘿，我有話要說！
+5b798fca0ab51d6c,L01 Ryan,Ryan_1_nag,2,Ryan,你能到我看得見的地方來嗎。
+# --- jerkoff: ryan_jerk_off_no ---
+2e75bb6a3610c11b,L01 Ryan,ryan_jerk_off_no,1,Ryan,嘿——也許晚點再「動手」？
+# --- mount_start: ryan_mount_no ---
+91c3bf04fb99ce8b,L01 Ryan,ryan_mount_no,1,Ryan,唔，坐架我就不用了。
+# --- outro: Ryan_1_Outro ---
+0d26aa953ca02c41,L01 Ryan,Ryan_1_Outro,1,Ryan,我應該全乾淨了！
+699cdec6a62f5ff3,L01 Ryan,Ryan_1_Outro,2,Ryan,比用水管舒服多了。
+c3bbf19f280c6dde,L01 Ryan,Ryan_1_Outro,3,Kobold,不客氣。
+66984a1e53d3e869,L01 Ryan,Ryan_1_Outro,4,Kobold,嗯！隨時歡迎再來。
+d629b0ed3f97727c,L01 Ryan,Ryan_1_Outro,5,Ryan,我一定會把這地方告訴別人
+e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,6,Ryan,我一定會記住這地方的。
+29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,7,Ryan,哈哈。也對你「汪」一個。
+0712e97652e51758,L01 Ryan,Ryan_1_Outro,8,Ryan,我玩得很開心，那回頭見啦！
+17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,9,Ryan,能開門讓我出去嗎？
+1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,10,Kobold,謝謝！
+
+# ===== Level 2: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_1 ---
+d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>嘿！ </gradient><size=100%>這裡是洗澡的地方吧？"
+89714ef9a2dd4db5,L02 Conrad,Conrad_Intro_1,2,Conrad,我得洗得一塵不染。看來你就是幹這個的。<size=70%> 哈。
+198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,嗯，這邊請。
+d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,我們可以騰個位子。
+6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,好。不過得先開門。讓康拉德進去！
+# --- progress: Conrad_required_1 ---
+87e002767e44df8e,L02 Conrad,Conrad_required_1,1,Conrad,那<size=90%>麼<size=80%>麼<size=70%>麼<size=60%>麼……<size=100%>我在想
+2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,你們這裡也做<i>特殊收尾</i>吧？
+906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,我們這裡每次收尾都很特殊！
+c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,是說……那方面的事嗎？
+d704d8fd39dffd37,L02 Conrad,Conrad_required_1,5,Conrad,呃……那不是——
+c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,你們這裡會讓大塊頭的龍，<size=60%>比如我，<size=100%>射出來嗎？
+daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,哇——呃——<size=80%>喔。<size=60%>我們不——
+824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,喔，不做。
+b778e4a7f32732fb,L02 Conrad,Conrad_required_1,9,Conrad,什麼！？太扯了吧！你們連坐架都沒有……？
+96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,呃……<size=60%>沒有？
+175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,那你最好弄一個！
+fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,至少你還能用手。嘿。
+a29919179016a4e8,L02 Conrad,Conrad_required_1,13,Conrad,是喔？我連坐架都沒看見。
+6ec80eb8deb5afd8,L02 Conrad,Conrad_required_1,14,Kobold,喔……對，我們沒有。
+22706d3faee3b165,L02 Conrad,Conrad_required_1,15,Kobold,不，我們這裡不提供那種服務。
+4a8d1297fbe8f246,L02 Conrad,Conrad_required_1,16,Conrad,真可惜。最好改一改。
+# --- jerkoff: Conrad_1_JerkOff_Start ---
+6d4db2b6b39822b2,L02 Conrad,Conrad_1_JerkOff_Start,1,Conrad,喔，幹，爽。
+8fc6411ffc04a8f3,L02 Conrad,Conrad_1_JerkOff_Start,2,Conrad,繼續。
+# --- cum: Conrad_1_Cum ---
+e51f82fb1e4773ad,L02 Conrad,Conrad_1_Cum,1,Conrad,<size=140%> 爽死了！
+6d721d6e2ad2ae1c,L02 Conrad,Conrad_1_Cum,2,Conrad,<size=100%> 他媽的有夠爽！
+# --- mount_start: conrad_mount_no ---
+b902443f60bdba87,L02 Conrad,conrad_mount_no,1,Conrad,哇。呃。
+ccdcfc48472b3533,L02 Conrad,conrad_mount_no,2,Conrad,平常我肯定會答應用坐架。但現在不行。
+# --- outro: Conrad_Outro_1 ---
+2edaf16ee5b742a8,L02 Conrad,Conrad_Outro_1,1,Conrad,洗得還行。
+882508b81f97e7cf,L02 Conrad,Conrad_Outro_1,2,Conrad,不過我去過的其他洗澡店至少都有坐架
+51335374627e92a3,L02 Conrad,Conrad_Outro_1,3,Kobold,抱歉……
+598e348ffe7cc978,L02 Conrad,Conrad_Outro_1,4,Kobold,我會訂一個的，我保證！
+3eba607f0573bf98,L02 Conrad,Conrad_Outro_1,5,Conrad,別道歉！去弄個坐架！
+4e52b9a8b0ae1335,L02 Conrad,Conrad_Outro_1,6,Conrad,有自尊的洗澡師都知道怎麼取悅一條龍。
+25d0b6008550c533,L02 Conrad,Conrad_Outro_1,7,Kobold,好的。我會訂一個坐架。
+2e92d12d86bf03a5,L02 Conrad,Conrad_Outro_1,8,Conrad,好。行，放我出去吧。
+426726c5d08284a8,L02 Conrad,Conrad_Outro_1,9,Conrad,好，你最好這樣。要是我回來還沒有……
+28c3830dac3b9c5b,L02 Conrad,Conrad_Outro_1,10,Kobold,這是威脅嗎……？
+fac432bdcfb4b753,L02 Conrad,Conrad_Outro_1,11,Conrad,呃，不是，我只是會非常非常失望。
+ee7433c3dd161b65,L02 Conrad,Conrad_Outro_1,12,Conrad,總之——放我出去。
+
+# ===== Level 3: Alexander (Sunny) =====
+# --- intro: Alexander_1_intro ---
+dbca31128a900488,L03 Alexander,Alexander_1_intro,1,Alexander,晚安。貴店接待無預約的客人，對否？
+a6208f4370193b60,L03 Alexander,Alexander_1_intro,2,Kobold,接待的！您……是學院來的……？
+fdf9d60aca05c19e,L03 Alexander,Alexander_1_intro,3,Alexander,正是，閣下想必識得在下的紋章！在下教授鍊金術。
+12456a9c2599222e,L03 Alexander,Alexander_1_intro,4,Alexander,……而這門課，稍後便要開講。
+cccd2e909950ad59,L03 Alexander,Alexander_1_intro,5,Alexander,甚好。
+f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,6,Alexander,還請從速，學生可不會自己教自己。
+26f8788d21d9fd7d,L03 Alexander,Alexander_1_intro,7,Kobold,從沒幫當老師的龍洗過澡……哇。
+7cc55c8bb6442b93,L03 Alexander,Alexander_1_intro,8,Kobold,好的，我去開門！
+c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,9,Alexander,是教授——不過，是的。在下平素不去公共洗澡場所。
+8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,10,Alexander,謝過閣下。
+57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,11,Alexander,喔，另外，在下為這一身污穢致歉。
+da7509a323bc8646,L03 Alexander,Alexander_1_intro,12,Alexander,在下如今的處境實在令人遺憾……
+550840616bc8148d,L03 Alexander,Alexander_1_intro,13,Kobold,您……沒那麼髒。
+21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,14,Kobold,沒問題。我去幫您開門！
+14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,15,Alexander,不，在下確實很髒。
+65b94d53036df4ac,L03 Alexander,Alexander_1_intro,16,Alexander,可否請閣下開門？
+f602395a77ff68c4,L03 Alexander,Alexander_1_intro,17,Kobold,喔。好。抱歉。
+# --- progress: Alexander_1_required ---
+f8d26c6d83205a5d,L03 Alexander,Alexander_1_required,1,Alexander,說來……此處環境頗為宜人。甚是……無產階級。
+c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,無產——<i><size=70%>啥？
+3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold,謝謝您！
+90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,喔，就是……勞動階層的意思？
+55c80016618e1bc5,L03 Alexander,Alexander_1_required,5,Alexander,失禮，在下本意是說，在下很享受閣下的洗浴。
+02fa2a9691178177,L03 Alexander,Alexander_1_required,6,Alexander,當然
+32e117cdd1f56f3f,L03 Alexander,Alexander_1_required,7,Alexander,誰能想到此等場所竟如此便於大眾光顧！
+# --- jerkoff: alexander_jerk_off_no ---
+f33ca08a17779409,L03 Alexander,alexander_jerk_off_no,1,Alexander,<i>喔。</i>在下想在下還沒準備好。
+# --- mount_start: alexander_mount_no ---
+170ebd10775afd58,L03 Alexander,alexander_mount_no,1,Alexander,在下……不確定今天想用這個。
+# --- outro: Alexander_1_Outro ---
+d202075090a8960b,L03 Alexander,Alexander_1_Outro,1,Alexander,在下不得不說，閣下的手藝不遜於私人洗澡師。
+b6069e62e167364f,L03 Alexander,Alexander_1_Outro,2,Kobold,嗯嗯，我一向盡力而為。
+981447d1952fe850,L03 Alexander,Alexander_1_Outro,3,Alexander,哈哈，確乃一聲「汪」。
+5d7279822bcee7dd,L03 Alexander,Alexander_1_Outro,4,Alexander,在下的學生們該從閣下的敬業精神中學上一二！
+8117291ab8529b4f,L03 Alexander,Alexander_1_Outro,5,Alexander,在下實在願再多談，然而課程將近。
+dae0c0aa3ae01c37,L03 Alexander,Alexander_1_Outro,6,Alexander,……為此，在下謝過閣下。
+
+# ===== Level 4: Ryan (Sunny) =====
+# --- intro: Ryan_2_intro ---
+7825d92f67bdcdef,L04 Ryan,Ryan_2_intro,1,Ryan,又來啦！
+cd26586143766826,L04 Ryan,Ryan_2_intro,2,Kobold,嗨，萊恩！
+6a67a8866ec70c09,L04 Ryan,Ryan_2_intro,3,Ryan,嘿，很高興又回來了。
+921bd4effdaa2a2f,L04 Ryan,Ryan_2_intro,4,Ryan,哈……你真喜歡那個聲音呢。
+387d0da740d0826e,L04 Ryan,Ryan_2_intro,5,Ryan,我又需要洗個澡了。
+e542b800ecfc350a,L04 Ryan,Ryan_2_intro,6,Ryan,我想離開家一下。
+78b22bcc76942425,L04 Ryan,Ryan_2_intro,7,Ryan,我跟幾個朋友出去了。
+21abbb56e463a200,L04 Ryan,Ryan_2_intro,8,Ryan,玩麥克筆很好玩。
+da3405e1151a476e,L04 Ryan,Ryan_2_intro,9,Ryan,不過我覺得該洗乾淨了。
+41dc14e2cd744b1b,L04 Ryan,Ryan_2_intro,10,Kobold,喔，好的。請進。
+b231225bfcc08d4c,L04 Ryan,Ryan_2_intro,11,Kobold,一切都還好嗎？
+056b5511850d7220,L04 Ryan,Ryan_2_intro,12,Ryan,好，謝謝。
+b4e4d893367947a0,L04 Ryan,Ryan_2_intro,13,Ryan,嗯，沒事。抱歉。
+c9cdea9d31e53d5b,L04 Ryan,Ryan_2_intro,14,Ryan,就是今天有點難熬。希望洗個澡能好一點！
+ab74167fe23c9db5,L04 Ryan,Ryan_2_intro,15,Ryan,那個，門？
+5cbc0ceea57587db,L04 Ryan,Ryan_2_intro,16,Kobold,喔——對。馬上。
+08411b780900fb59,L04 Ryan,Ryan_2_intro,17,Kobold,當然。稍等！
+a386908e3024f35e,L04 Ryan,Ryan_2_intro,18,Ryan,太好了。
+# --- progress: Ryan_2_required ---
+580684f8909e025d,L04 Ryan,Ryan_2_required,1,Ryan,嘿。
+b4eff799a0271863,L04 Ryan,Ryan_2_required,2,Kobold,嗯？
+fad448038cd06268,L04 Ryan,Ryan_2_required,3,Kobold,怎麼了？
+a1dd2ff2d1ef6beb,L04 Ryan,Ryan_2_required,4,Ryan,我能問你個問題嗎？
+2acd4405a7f14ae3,L04 Ryan,Ryan_2_required,5,Kobold,您已經在問了，怎麼了？
+c10c037156053bfe,L04 Ryan,Ryan_2_required,6,Kobold,請說。
+4f6d869aa239596c,L04 Ryan,Ryan_2_required,7,Ryan,喔，對。抱歉。
+0fa0dff561f86016,L04 Ryan,Ryan_2_required,8,Ryan,就是……關於感情。
+9a38b89ed035e464,L04 Ryan,Ryan_2_required,9,Ryan,如果一段感情<i>那麼</i>坎坷，你知道它會結束。
+9b943020b9ae2658,L04 Ryan,Ryan_2_required,10,Ryan,你也什麼都試過了。
+954ba66a076849a5,L04 Ryan,Ryan_2_required,11,Ryan,那到底什麼時候該結束呢？
+f173e528733bb05a,L04 Ryan,Ryan_2_required,12,Kobold,唉——萊恩……
+7b102f547a549072,L04 Ryan,Ryan_2_required,13,Kobold,我……不確定能替您回答這個。
+d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,14,Ryan,我知道。我知道不該把這些倒給你。
+64973f6ac9ac08be,L04 Ryan,Ryan_2_required,15,Ryan,只是跟你在一起讓人很自在。
+93fa9e1a16f34a7d,L04 Ryan,Ryan_2_required,16,Ryan,你說得對……你不可能替我回答。
+797653f5e081152e,L04 Ryan,Ryan_2_required,17,Ryan,我只是很高興在這裡不會被評判。
+b11d41e01fefb995,L04 Ryan,Ryan_2_required,18,Kobold,謝謝。我也喜歡跟您在一起。
+c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,19,Kobold,希望一切會好起來。
+ebb96171ea7628a0,L04 Ryan,Ryan_2_required,20,Alexander,那就好。
+91c0e3e9014024af,L04 Ryan,Ryan_2_required,21,Ryan,我也是。
+# --- outro: Ryan_2_Outro ---
+cb57ee6155ed6ca5,L04 Ryan,Ryan_2_Outro,1,Ryan,好啦。全乾淨了。
+f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,抱歉剛才跟你倒了那麼多苦水。
+a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,沒關係！
+94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,我知道有時候日子不好過。
+4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Alexander,閣下甚是貼心。
+ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,要是像電影裡那麼簡單就好了。
+0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,隨時歡迎再來，萊恩。
+78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,如果您還想聊聊，我有時間。
+f204fcc6b711621e,L04 Ryan,Ryan_2_Outro,9,Ryan,我會的，謝謝。
+72eaafd8ad3f6b0d,L04 Ryan,Ryan_2_Outro,10,Ryan,你確定？不是什麼……開心的事。
+fe454a1e25772898,L04 Ryan,Ryan_2_Outro,11,Kobold,您說得對。我不該多問。
+513af1a2eeeef9b6,L04 Ryan,Ryan_2_Outro,12,Kobold,沒關係，您聽起來需要說說。
+f3ff11acd1b54309,L04 Ryan,Ryan_2_Outro,13,Ryan,沒事的。謝謝你。
+0b61ba409dc46906,L04 Ryan,Ryan_2_Outro,14,Ryan,嗯，你說得對。
+5459b9d74fb7a529,L04 Ryan,Ryan_2_Outro,15,Ryan,是這樣。我女朋友比我先到家。她是在家工作的龍。
+2cd54468954ee8c7,L04 Ryan,Ryan_2_Outro,16,Ryan,我回家的時候有點髒。她就對我吼。
+f7e4ec27dd7d6527,L04 Ryan,Ryan_2_Outro,17,Ryan,叫我去洗澡，表現得特別生氣。
+2880304176197c02,L04 Ryan,Ryan_2_Outro,18,Ryan,對我一身泥……<i>真的</i>很不高興。
+250b97243d1df1f7,L04 Ryan,Ryan_2_Outro,19,Kobold,所以您第一次才來這裡的？
+bc78d04f7d5861dc,L04 Ryan,Ryan_2_Outro,20,Kobold,她的反應聽起來有點過頭了。
+08a70054f59e703a,L04 Ryan,Ryan_2_Outro,21,Ryan,嗯……
+6079131a1c79adef,L04 Ryan,Ryan_2_Outro,22,Ryan,不過老實說，你幫了我很多。
+92536deee525f694,L04 Ryan,Ryan_2_Outro,23,Ryan,給了我思考的時間。
+c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,24,Ryan,我也是這麼想的。
+9ebcf8a46cc189b7,L04 Ryan,Ryan_2_Outro,25,Ryan,我覺得她是為了別的事不高興……
+8c3115a4e2a9a664,L04 Ryan,Ryan_2_Outro,26,Ryan,我只是不喜歡她拿我出氣。
+393d8e5925dc5937,L04 Ryan,Ryan_2_Outro,27,Ryan,總之——
+7258b4e037805024,L04 Ryan,Ryan_2_Outro,28,Ryan,謝謝你聽我說。
+951382e00968439d,L04 Ryan,Ryan_2_Outro,29,Kobold,隨時奉陪，萊恩。
+c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,30,Kobold,當然。很遺憾您經歷這些。
+553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,31,Ryan,沒事。我會想辦法的。
+bd7468846a30d095,L04 Ryan,Ryan_2_Outro,32,Kobold,我去幫您開門。
+a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,33,Ryan,好，再見！
+
+# ===== Level 5: Conrad (Rainy) | sets level_5 | ends MedkitCompleted, level_5_complete =====
+# --- intro: Conrad_Intro_2 ---
+ed1060b120921b51,L05 Conrad,Conrad_Intro_2,1,Conrad,你有急救包嗎？
+33b8a4a45ccc09d4,L05 Conrad,Conrad_Intro_2,2,Kobold,發生什麼事了！？
+0a1daca6a7ffe060,L05 Conrad,Conrad_Intro_2,3,Kobold,天啊，康拉德。您還好嗎？
+20e5d8710e635ec0,L05 Conrad,Conrad_Intro_2,4,Conrad,我沒必要告訴你。
+20e7bf03f9acda80,L05 Conrad,Conrad_Intro_2,5,Conrad,所以，你到底有沒有急救包？
+b5df9715ed2e91ed,L05 Conrad,Conrad_Intro_2,6,Conrad,我看起來像沒事嗎？
+b91e8be1b03d1b61,L05 Conrad,Conrad_Intro_2,7,Conrad,不。我不好。你到底有沒有急救包？
+f974998c16103aa0,L05 Conrad,Conrad_Intro_2,8,Kobold,有，我有一個。
+8ca82a3bb03f138c,L05 Conrad,Conrad_Intro_2,9,Kobold,有。但是，發生什麼事了？
+a94b34f629b2029a,L05 Conrad,Conrad_Intro_2,10,Conrad,快……開門就對了。
+# --- progress: Conrad_required_2 ---
+4356fa179bb80e09,L05 Conrad,Conrad_required_2,1,Conrad,我真是個白痴。
+d886f3d923f9c796,L05 Conrad,Conrad_required_2,2,Conrad,這種鳥事我一直在避免！
+ea8c1853a7d5966c,L05 Conrad,Conrad_required_2,3,Kobold,您想說說發生什麼事了嗎……？
+bded00d07cb1e457,L05 Conrad,Conrad_required_2,4,Kobold,很抱歉您受傷了……
+02f000041eb5ab82,L05 Conrad,Conrad_required_2,5,Conrad,才不！有夠丟臉。
+58356b98fdf40dc3,L05 Conrad,Conrad_required_2,6,Conrad,我不需要你同情！
+cb7847cb63566364,L05 Conrad,Conrad_required_2,7,Conrad,只是……
+b48f291ebc6b18fe,L05 Conrad,Conrad_required_2,8,Conrad,我討厭自己老是陷入這種處境。
+519b07c299436f2a,L05 Conrad,Conrad_required_2,9,Conrad,開始覺得是<i>我的</i>錯了。
+f5ad489eeba50b01,L05 Conrad,Conrad_required_2,10,Kobold,<i>這</i>不是您的錯，康拉德。
+6402f4608ceb7bbb,L05 Conrad,Conrad_required_2,11,Kobold,真的很抱歉您受傷了。是誰幹的？
+8e59613d6cd60464,L05 Conrad,Conrad_required_2,12,Conrad,這次我真覺得是我的錯……
+7058e362e43623f0,L05 Conrad,Conrad_required_2,13,Conrad,酒吧裡的一條龍……我太蠢了。管不住嘴。
+ea289ebcdd7e81ef,L05 Conrad,Conrad_required_2,14,Conrad,就是酒吧裡的一條龍。我太蠢了……管不住嘴。
+aff317c06781bc70,L05 Conrad,Conrad_required_2,15,Conrad,我搞不懂！為什麼我非得這樣？
+da5eed4c72eb1073,L05 Conrad,Conrad_required_2,16,Kobold,哪樣？
+193bb66a944990a8,L05 Conrad,Conrad_required_2,17,Kobold,我覺得您挺好的，康拉德。
+c69250ea092a7fcd,L05 Conrad,Conrad_required_2,18,Conrad,就……混蛋那樣？我知道跟我在一起很難受。
+c2f21da58e28df4f,L05 Conrad,Conrad_required_2,19,Conrad,你人真好。我不配。
+9c529e9f79f39a21,L05 Conrad,Conrad_required_2,20,Conrad,我是個混蛋。我知道。
+4b7317a793a0f728,L05 Conrad,Conrad_required_2,21,Conrad,抱歉剛才對你發火。
+c4c0c9950baa723f,L05 Conrad,Conrad_required_2,22,Conrad,你不該受那樣的對待。
+9fa8cd9193124e79,L05 Conrad,Conrad_required_2,23,Kobold,沒關係。您顯然經歷了很多。
+249133e0671a807b,L05 Conrad,Conrad_required_2,24,Kobold,沒事的。
+c61717fe95ec2b9c,L05 Conrad,Conrad_required_2,25,Conrad,那也不代表我該對你吼。
+652daa6043287e1b,L05 Conrad,Conrad_required_2,26,Conrad,不再找藉口了。
+65b4e7b9caad6028,L05 Conrad,Conrad_required_2,27,Conrad,不，有事。不再找藉口了。
+334ade0356dff453,L05 Conrad,Conrad_required_2,28,Conrad,我得變得更好。我<i>想</i>變得更好。
+1d190e45e1ddc239,L05 Conrad,Conrad_required_2,29,Conrad,只是……別告訴別人我說了這些。
+3969155d983b9b32,L05 Conrad,Conrad_required_2,30,Kobold,您的祕密我會保守的。
+bd7f2cf961e397ca,L05 Conrad,Conrad_required_2,31,Kobold,我不會說的。
+0cd12abef67edc64,L05 Conrad,Conrad_required_2,32,Conrad,……謝了。
+bbaef120c3a81475,L05 Conrad,Conrad_required_2,33,Conrad,還好你有急救包……你準備得真周全。
+# --- jerkoff: conrad_jerk_off_no ---
+f81a53c29135dfa5,L05 Conrad,conrad_jerk_off_no,1,Conrad,嘿，那個……現在不行。
+# --- outro: Conrad_Outro_2 ---
+7f9f3c8d0db46cbf,L05 Conrad,Conrad_Outro_2,1,Conrad,我已經感覺好多了。
+d4a62b147d5a622b,L05 Conrad,Conrad_Outro_2,2,Kobold,身體上還是心理上？
+0d49a74e82a2356a,L05 Conrad,Conrad_Outro_2,3,Conrad,都有。
+c38c5771c6cf6118,L05 Conrad,Conrad_Outro_2,4,Conrad,我也是。
+7e30c436a9112ecd,L05 Conrad,Conrad_Outro_2,5,Conrad,你……挺不錯的。
+229bd072e07a3d53,L05 Conrad,Conrad_Outro_2,6,Conrad,我是認真的。真的。
+ba15304b6e669701,L05 Conrad,Conrad_Outro_2,7,Kobold,我只是做了我覺得對的事。
+1fb463b57138c081,L05 Conrad,Conrad_Outro_2,8,Kobold,我覺得您也挺好的。改變自己很難。
+56c81331bdf0858e,L05 Conrad,Conrad_Outro_2,9,Conrad,希望我能從中學到點什麼。
+3e2cb05f5d39c6e5,L05 Conrad,Conrad_Outro_2,10,Conrad,謝了，但我會變得更好。我保證。
+8a3ca437a0d6d164,L05 Conrad,Conrad_Outro_2,11,Conrad,我不礙你事了……
+c90e3d1d20fadd0f,L05 Conrad,Conrad_Outro_2,12,Conrad,我一定會再來的。
+
+# ===== Level 6: Alexander (Night) | sets level_6_started =====
+# --- intro: Alexander_2_intro ---
+44aa15e695b4e0d5,L06 Alexander,Alexander_2_intro,1,Alexander,謝天謝地，貴店還開著。
+840851d0f7570dd9,L06 Alexander,Alexander_2_intro,2,Kobold,亞歷山大……？
+d786fe5166ed78b0,L06 Alexander,Alexander_2_intro,3,Kobold,呃……嚴格來說沒開。
+b5707c134254e827,L06 Alexander,Alexander_2_intro,4,Alexander,正是。在下急需清洗。情勢頗為危急！
+5962824d5ad2d472,L06 Alexander,Alexander_2_intro,5,Alexander,此事唯有閣下能辦。
+4006d568c80ab534,L06 Alexander,Alexander_2_intro,6,Alexander,在下願付雙倍。三倍——此事唯有閣下能辦！
+a17a2764777e0b60,L06 Alexander,Alexander_2_intro,7,Kobold,喔。那好吧，我們有開。
+1e5b9c4d7c7853fa,L06 Alexander,Alexander_2_intro,8,Alexander,甚好！
+e36d5a8ffbc61b8c,L06 Alexander,Alexander_2_intro,9,Kobold,發生什麼事了？
+c43599f1e3538c5c,L06 Alexander,Alexander_2_intro,10,Kobold,您怎麼這麼晚來？
+c63c466c3e28f286,L06 Alexander,Alexander_2_intro,11,Alexander,在下的同僚伊格威克斯教授，欲以在下為台座。
+dfb6e95e4715f76e,L06 Alexander,Alexander_2_intro,12,Alexander,在下應允了，因在下的身軀足夠高大。
+9da4c08f2c9d94f9,L06 Alexander,Alexander_2_intro,13,Alexander,然而……
+149351e2d565febf,L06 Alexander,Alexander_2_intro,14,Alexander,他的方法出了差錯。
+b54a89ba26aaeaa1,L06 Alexander,Alexander_2_intro,15,Kobold,他死了！？
+0ee302086c5ae61a,L06 Alexander,Alexander_2_intro,16,Kobold,他跑哪去了……？
+2cc9a59ae14e4845,L06 Alexander,Alexander_2_intro,17,Alexander,什麼？
+3b20ece829b0bd68,L06 Alexander,Alexander_2_intro,18,Alexander,沒有。
+93f6d587969b0e78,L06 Alexander,Alexander_2_intro,19,Alexander,在他自燃之後，在下確保給了他隱私。
+1d37ba6f405ce0fd,L06 Alexander,Alexander_2_intro,20,Alexander,他的肉身目前正在教職員休息室重組。
+27c227129d961114,L06 Alexander,Alexander_2_intro,21,Alexander,凡有自尊的巫師，皆隨身備有鳳凰羽。
+9e99fec970b38818,L06 Alexander,Alexander_2_intro,22,Kobold,對。鳳凰羽。當然了。
+0549826a698aad1c,L06 Alexander,Alexander_2_intro,23,Kobold,好。我去開店。稍等。
+9e85e9ab574cfc16,L06 Alexander,Alexander_2_intro,24,Alexander,在下忘了外行人的無知。抱歉。
+359439ec513e7e35,L06 Alexander,Alexander_2_intro,25,Kobold,嗯嗯，我去開門
+28fa9c1bb5161161,L06 Alexander,Alexander_2_intro,26,Alexander,請速速！在下的聲譽危在旦夕。
+# --- progress: Alexander_2_required ---
+cc99c01887a9b5f1,L06 Alexander,Alexander_2_required,1,Alexander,此番遭遇令在下深感難堪。
+e33e953efb157171,L06 Alexander,Alexander_2_required,2,Kobold,沒什麼大不了的。聽起來大家都沒事。
+c054502c35602985,L06 Alexander,Alexander_2_required,3,Kobold,不必難堪。
+98cbb728e5fb19f2,L06 Alexander,Alexander_2_required,4,Alexander,那從來不是在下的顧慮。在下乃是極為規避風險的龍。
+c1d152bd1a4b22f1,L06 Alexander,Alexander_2_required,5,Alexander,閣下此言甚是仁厚。
+0da1bbeb76d9ef60,L06 Alexander,Alexander_2_required,6,Alexander,然而，在下的<i>形象</i>遠比伊格威克斯轉瞬即逝的肉身更為長久。
+54021b5f26568c41,L06 Alexander,Alexander_2_required,7,Alexander,此乃在下憂慮之源……
+3a363409d3ae72f1,L06 Alexander,Alexander_2_required,8,Alexander,亦是閣下堪當此任的緣由！
+# --- outro: Alexander_2_Outro ---
+abc1043955962614,L06 Alexander,Alexander_2_Outro,1,Alexander,再度潔淨如新。感謝閣下在此時接待在下。
+2de23f0bdf3de327,L06 Alexander,Alexander_2_Outro,2,Kobold,錢……嗯……
+082cb158de32f2d9,L06 Alexander,Alexander_2_Outro,3,Kobold,不客氣。
+374214d86f810d53,L06 Alexander,Alexander_2_Outro,4,Alexander,哈，確是一種動力。
+7ff22bb553842005,L06 Alexander,Alexander_2_Outro,5,Alexander,至少如今不止於此了！
+01b524bd7165a166,L06 Alexander,Alexander_2_Outro,6,Alexander,在下從未料到會向他人吐露如此令人難堪之事。
+704866fd76bd9fb8,L06 Alexander,Alexander_2_Outro,7,Kobold,我隨時樂意幫忙。<i><size=70%> 尤其是幫一條大龍。
+dd573253630e8021,L06 Alexander,Alexander_2_Outro,8,Kobold,很高興您信任我。
+d6b066332b6d8b9a,L06 Alexander,Alexander_2_Outro,9,Alexander,閣下亦能從中獲得樂趣，在下甚為欣慰。
+762c20b866b7b263,L06 Alexander,Alexander_2_Outro,10,Alexander,我也是。
+5fc37d4eda289c06,L06 Alexander,Alexander_2_Outro,11,Alexander,在下不解，為何與閣下交談如此輕鬆。
+5a2661b79c536b73,L06 Alexander,Alexander_2_Outro,12,Alexander,眾人的目光皆承載著巨大的重量。
+0ddbb1a880fb5b54,L06 Alexander,Alexander_2_Outro,13,Alexander,閣下的目光則不然。甚是舒心。
+df9e3e9397757b17,L06 Alexander,Alexander_2_Outro,14,Kobold,期待什麼的最煩啦～。
+5b4ce4081cac21b5,L06 Alexander,Alexander_2_Outro,15,Kobold,只是做好我的工作！
+1acd1b8d362287ec,L06 Alexander,Alexander_2_Outro,16,Alexander,確實如此……
+cbbaf40d803468a2,L06 Alexander,Alexander_2_Outro,17,Alexander,閣下做得極好。
+
+# ===== Level 7: Ryan (Sunny) =====
+# --- intro: Ryan_3_intro ---
+49e50c5be7d1583e,L07 Ryan,Ryan_3_intro,1,Kobold,萊恩！
+346181d6c9954315,L07 Ryan,Ryan_3_intro,2,Kobold,歡迎回來！
+c1cff3dbff6bfce2,L07 Ryan,Ryan_3_intro,3,Ryan,是我。
+03810482331af8e2,L07 Ryan,Ryan_3_intro,4,Ryan,很高興來這裡。
+e1a42aae663ccf1f,L07 Ryan,Ryan_3_intro,5,Ryan,又來洗澡了。
+fc7ed7b68999fdae,L07 Ryan,Ryan_3_intro,6,Ryan,我……
+be0667bb01a8cd65,L07 Ryan,Ryan_3_intro,7,Ryan,算了。能開個門嗎？
+20ed966db540aaaf,L07 Ryan,Ryan_3_intro,8,Kobold,好，我去幫您開。
+6c0973b0166d3528,L07 Ryan,Ryan_3_intro,9,Kobold,萊恩？您確定沒事嗎……？
+8dff101cb2298f67,L07 Ryan,Ryan_3_intro,10,Ryan,不，不太好。
+1990b3ec8cd88a48,L07 Ryan,Ryan_3_intro,11,Ryan,我等一下告訴你。現在能先開門嗎？
+85fec70372b092bb,L07 Ryan,Ryan_3_intro,12,Conrad,對。
+33e04b2f805d0e1a,L07 Ryan,Ryan_3_intro,13,Kobold,好的。不過希望您沒事。
+f51bead488e14b65,L07 Ryan,Ryan_3_intro,14,Alexander,謝謝。
+aac215f048e8ee54,L07 Ryan,Ryan_3_intro,15,Ryan,我撐得住。
+# --- progress: Ryan_3_required ---
+eb256f4dcddfee94,L07 Ryan,Ryan_3_required,1,Ryan,關於剛才。
+1a17d73907f63be1,L07 Ryan,Ryan_3_required,2,Ryan,幾天前……
+87a781aa9b0c0136,L07 Ryan,Ryan_3_required,3,Ryan,我跟伴侶分手了……
+f68b8d76138a2a69,L07 Ryan,Ryan_3_required,4,Kobold,喔……我很遺憾。
+d6077ef6cdb59db1,L07 Ryan,Ryan_3_required,5,Kobold,哎，萊恩。
+d296154ff317814a,L07 Ryan,Ryan_3_required,6,Ryan,沒事。我必須這麼做。她沒讓我快樂。
+8a2e2803c1bc2ea7,L07 Ryan,Ryan_3_required,7,Ryan,我也沒讓她快樂。
+d9e1edc2e966ec26,L07 Ryan,Ryan_3_required,8,Ryan,不過再多的理由也不會讓人好受。
+769c31039308d04d,L07 Ryan,Ryan_3_required,9,Kobold,很高興您能做出對自己最好的選擇。
+460c50191c964260,L07 Ryan,Ryan_3_required,10,Kobold,結束一段關係從來都不容易。
+8825be71018f7f88,L07 Ryan,Ryan_3_required,11,Ryan,嗯。至少因為這樣我認識了你。
+3e43d550d0572c10,L07 Ryan,Ryan_3_required,12,Ryan,嗯……確實不容易。
+8948d011be56c311,L07 Ryan,Ryan_3_required,13,Ryan,不過，至少我認識了你！
+e484863d425a58e8,L07 Ryan,Ryan_3_required,14,Kobold,謝謝您，萊恩。我也很高興認識您
+1af4464c602a423a,L07 Ryan,Ryan_3_required,15,Conrad,哎唷，謝謝。
+e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,在這裡洗澡真的讓一切好受多了。
+94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,而且真的很舒服。
+# --- outro: Ryan_3_Outro ---
+01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,應該都洗完了。
+e7b753ddf576b075,L07 Ryan,Ryan_3_Outro,2,Ryan,謝謝你。你讓這一切好熬多了。
+021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,這裡隨時歡迎您，萊恩。
+dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,您是我最喜歡的客人之一！
+7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,你總是讓我覺得很受歡迎。
+c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,哎……謝謝。我把你當成……會很奇怪嗎……
+e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,一個很好的朋友？
+77876a1074c9c3f3,L07 Ryan,Ryan_3_Outro,8,Kobold,<size=70%><i>喔——</i>不，其實這樣很好。
+e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,我也把您當成好朋友
+29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,喔——太好了！
+51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,嘿嘿……謝謝。
+91c56a4e9213a4b0,L07 Ryan,Ryan_3_Outro,12,Ryan,好。我該不礙你事了。
+523791f6550c3508,L07 Ryan,Ryan_3_Outro,13,Ryan,我還會再來的，好嗎？
+667cadad21e120f0,L07 Ryan,Ryan_3_Outro,14,Kobold,好的！我去幫您開門。
+18f0197237db4a52,L07 Ryan,Ryan_3_Outro,15,Kobold,期待再見到您
+952d54adb781ab58,L07 Ryan,Ryan_3_Outro,16,Ryan,謝謝。回頭見。
+
+# ===== Level 8: Conrad (Sunny) | sets DeliveredMountFrame =====
+# --- intro: Conrad_Intro_3 ---
+c2ce80cda53b3e12,L08 Conrad,Conrad_Intro_3,1,Conrad,嘿，大哥。
+ef92f8b9796dcaad,L08 Conrad,Conrad_Intro_3,2,Kobold,我是……狗頭人。
+3faf8798d815fbcc,L08 Conrad,Conrad_Intro_3,3,Kobold,嗨，康拉德。
+fe810d1ef6bbca3f,L08 Conrad,Conrad_Intro_3,4,Conrad,呃……對。
+fe59e121f203b436,L08 Conrad,Conrad_Intro_3,5,Conrad,嘿。對。是我。
+a911f2d8e77038c7,L08 Conrad,Conrad_Intro_3,6,Conrad,看來你收到貨了，嗯？
+403e617f71fdbd7d,L08 Conrad,Conrad_Intro_3,7,Conrad,那些打開的箱子裡是什麼？
+2fa26a557574f06d,L08 Conrad,Conrad_Intro_3,8,Kobold,我收到了一個坐架。
+ba689238087b547e,L08 Conrad,Conrad_Intro_3,9,Kobold,是您要的坐架。
+a1d3f8d9c7e16f54,L08 Conrad,Conrad_Intro_3,10,Conrad,<size=160%>爽啦！
+24f5fb4981989960,L08 Conrad,Conrad_Intro_3,11,Conrad,<size=100%>我是說——不錯。
+086c8ec178979d9b,L08 Conrad,Conrad_Intro_3,12,Conrad,快讓我進去！我想試試那玩意！
+8b742c36f3da7059,L08 Conrad,Conrad_Intro_3,13,Kobold,好吧……
+3a1b28ba58f06ac8,L08 Conrad,Conrad_Intro_3,14,Kobold,我去開門。
+c2ac4efff25192d6,L08 Conrad,Conrad_Intro_3,15,Conrad,別……說得那麼勉強。
+faa0b4a641d866a4,L08 Conrad,Conrad_Intro_3,16,Conrad,走起來吧～！
+f030a371b944e9be,L08 Conrad,Conrad_Intro_3,17,Conrad,那當然！
+# --- phone: Conrad_3_PhoneTutorial ---
+eb8e96751da9e008,L08 Conrad,Conrad_3_PhoneTutorial,1,Phone,我們收到您的坐架申請了！
+4369749a5a3394e9,L08 Conrad,Conrad_3_PhoneTutorial,2,Kobold,什……？
+339397c0d1c1f21f,L08 Conrad,Conrad_3_PhoneTutorial,3,Phone,今早已經送到了，應該就在大門附近。
+f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,請用撬棍打開，然後放進儲藏室，可以嗎？
+435c7e974ca94c84,L08 Conrad,Conrad_3_PhoneTutorial,5,Phone,很好。祝您有個<i>高效率</i>的一天。
+# --- idle: Conrad_idle_3_1 ---
+37950c8a8db90865,L08 Conrad,Conrad_idle_3_1,1,Conrad,你要是把坐架幫我擺好，我就上。
+8f224115163c0dbe,L08 Conrad,Conrad_idle_3_1,2,Conrad,嘿，用手弄我那根——很爽的！
+785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,那個，能開個門嗎？
+# --- idle: Conrad_idle_3_2 ---
+c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,我喜歡你選的坐架。能拿過來嗎？
+100bc339b65689dd,L08 Conrad,Conrad_idle_3_2,2,Conrad,那麼。你要幫我打手槍嗎？
+7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,謝啦。真他媽爽。
+# --- jerkoff: Conrad_started_jerkoff_3 ---
+ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,啊對，就是這樣……繼續。
+# --- cum: Conrad_finished_jerkoff_3 ---
+10069c101bcc95c1,L08 Conrad,Conrad_finished_jerkoff_3,1,Conrad,……！
+82d37703a9140210,L08 Conrad,Conrad_finished_jerkoff_3,2,Conrad,靠，你這手真會弄。
+95be71f702fae4a6,L08 Conrad,Conrad_finished_jerkoff_3,3,Kobold,哈……<size=70%> 是啊。
+b60c2f975eedb833,L08 Conrad,Conrad_finished_jerkoff_3,4,Kobold,當然。我可是<i>專業的</i>。
+f9e0d3cba1f3548e,L08 Conrad,Conrad_finished_jerkoff_3,5,Conrad,狗頭人知道自己喜歡什麼，總是件好事。
+0eb2a1e25a35e85e,L08 Conrad,Conrad_finished_jerkoff_3,6,Conrad,我也是。
+83d081eadc40b86b,L08 Conrad,Conrad_finished_jerkoff_3,7,Conrad,專業被打手槍的。
+# --- cum: Conrad_Outro_3 | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+6f64e0cc9b162541,L08 Conrad,Conrad_Outro_3,1,Conrad,嘿，那個。我在想
+dd5acacdb6c59489,L08 Conrad,Conrad_Outro_3,2,Conrad,現在問可能有點怪。不過嘛。
+7f39f874a107d858,L08 Conrad,Conrad_Outro_3,3,Conrad,你知道什麼好玩的地方，或是可以一起混的人嗎？
+df48dbfe82678dea,L08 Conrad,Conrad_Outro_3,4,Kobold,"<gradient=""gold""><b> 我認識一條龍，萊恩。要我介紹你們認識嗎？ </b></gradient><size=70%>（解鎖康拉德/萊恩的關係，或萊恩戀愛線）"
+7b870878852ee72d,L08 Conrad,Conrad_Outro_3,5,Kobold,"<gradient=""gold""><b> 我不介意和您一起出去玩…… </b></gradient><size=70%>（解鎖康拉德戀愛線）"
+ac6820f366b18b44,L08 Conrad,Conrad_Outro_3,6,Conrad,另一條龍？我平常不太合群……
+de6f58682bdaacf9,L08 Conrad,Conrad_Outro_3,7,Kobold,不會的。萊恩是個很貼心的人。
+d4185d9f80a34228,L08 Conrad,Conrad_Outro_3,8,Kobold,別擔心，他人很好。
+9df619228ba627fc,L08 Conrad,Conrad_Outro_3,9,Conrad,好吧。那我想試試。
+d88679eede302f8e,L08 Conrad,Conrad_Outro_3,10,Kobold,下次見到他我一定問問。
+7984d45df6290f6c,L08 Conrad,Conrad_Outro_3,11,Kobold,我覺得他會喜歡現在的您！
+bf35fcb679c816dd,L08 Conrad,Conrad_Outro_3,12,Conrad,謝了。真的很感激
+d32db8ee98680d0f,L08 Conrad,Conrad_Outro_3,13,Conrad,希望如此。我真的想跟誰重新開始。
+8623a4b26a9521d8,L08 Conrad,Conrad_Outro_3,14,Conrad,不過我大概得走了。
+30dcd5391100eeba,L08 Conrad,Conrad_Outro_3,15,Conrad,謝謝你的建議！
+f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,不用謝。我去開門。
+404cba15a4acdcfe,L08 Conrad,Conrad_Outro_3,17,Kobold,當然。
+8bf9f7d2ecce0105,L08 Conrad,Conrad_Outro_3,18,Conrad,喔喔喔。
+8929fe2569ae7455,L08 Conrad,Conrad_Outro_3,19,Conrad,我想我會喜歡的！
+2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,你挺辣的。
+c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,……人也很好。
+296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,22,Kobold,我也覺得您很特別。
+7e00e03a0df3736e,L08 Conrad,Conrad_Outro_3,23,Conrad,這……是你第一次對我「汪」。
+c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,24,Kobold,狗頭人語裡，這是「你做得很好」的意思。
+6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,25,Conrad,喔……哈。我喜歡。
+8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,26,Conrad,聽你這麼說我很開心。
+e8ae0da9edb0a314,L08 Conrad,Conrad_Outro_3,27,Conrad,那麼。約個會怎麼樣？
+781cbcfcd7920f3f,L08 Conrad,Conrad_Outro_3,28,Kobold,有點快……不過我覺得可以！
+5f9a2b795615ba6a,L08 Conrad,Conrad_Outro_3,29,Kobold,好。
+508f3cf175389841,L08 Conrad,Conrad_Outro_3,30,Conrad,我想試試！
+c282dd1133ff96d4,L08 Conrad,Conrad_Outro_3,31,Conrad,好！那我晚點再來。
+bfc65061708379d6,L08 Conrad,Conrad_Outro_3,32,Kobold,<size=70%><i> 天啊，我剛約到一條龍。
+cf78ef26075ae223,L08 Conrad,Conrad_Outro_3,33,Kobold,好！我去開門。
+6b8aa4fb55221728,L08 Conrad,Conrad_Outro_3,34,Conrad,嗯？
+c395eb5878798c08,L08 Conrad,Conrad_Outro_3,35,Kobold,喔！沒什麼。我去開門。
+102e28eb7d17c7dd,L08 Conrad,Conrad_Outro_3,36,Conrad,喔，好。謝了。
+ca518354e1f14735,L08 Conrad,Conrad_Outro_3,37,Conrad,好，謝了。
+# --- cum: Conrad_finished_jerkoff_3 ---
+5dffcc40132f0ec4,L08 Conrad,Conrad_finished_jerkoff_3,8,Conrad,現在我盯上坐架了……
+45c2b89acdcfd55d,L08 Conrad,Conrad_finished_jerkoff_3,9,Conrad,讓我試試！
+57725c300be82fa5,L08 Conrad,Conrad_finished_jerkoff_3,10,Kobold,喔好。我去拿。
+1976e7477a26b680,L08 Conrad,Conrad_finished_jerkoff_3,11,Kobold,好的！
+9e50b8e48f012f1f,L08 Conrad,Conrad_finished_jerkoff_3,12,Conrad,爽啦
+# --- mount_start: Conrad_placed_mount_3 ---
+b9778eb1fe076168,L08 Conrad,Conrad_placed_mount_3,1,Conrad,哈！坐架在這裡！
+86b1b615d536c6c9,L08 Conrad,Conrad_placed_mount_3,2,Conrad,那<size=90%>麼<size=80%>麼<size=70%>麼<size=60%>麼……<size=100%>我不髒。但我<i>～很髒～</i>你懂吧？
+449244744c8bbd8a,L08 Conrad,Conrad_placed_mount_3,3,Kobold,所以您來就是為了……
+f8c28806b84cad3d,L08 Conrad,Conrad_placed_mount_3,4,Kobold,對。不算太貴。
+cd4ecc87775c0780,L08 Conrad,Conrad_placed_mount_3,5,Conrad,幹點什麼，最好再來個手槍。
+01e3f480dfe7930d,L08 Conrad,Conrad_placed_mount_3,6,Conrad,來個手槍，再幹這個坐架。
+7f9240260973e0ce,L08 Conrad,Conrad_placed_mount_3,7,Kobold,您……真直接。
+e0b48878cb57c01f,L08 Conrad,Conrad_placed_mount_3,8,Conrad,那當然！我知道我很……
+1bd882b6a6343777,L08 Conrad,Conrad_placed_mount_3,9,Conrad,不錯。
+557321787688acff,L08 Conrad,Conrad_placed_mount_3,10,Conrad,總之。現在就用這玩意！
+78e9c032e409d82d,L08 Conrad,Conrad_placed_mount_3,11,Conrad,哈，好。來給它開個張！
+# --- mount_finish: Conrad_finished_mount_3 ---
+81b18a3cc2f69ea7,L08 Conrad,Conrad_finished_mount_3,1,Conrad,呼。
+748b06c5c3f0552b,L08 Conrad,Conrad_finished_mount_3,2,Conrad,剛才。
+e92da2c203110197,L08 Conrad,Conrad_finished_mount_3,3,Conrad,剛才<i>真爽</i>。
+bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,您剛才真是拚了。
+67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,您看起來很享受。
+65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,我一向如此～
+5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,當然爽啊！
+91181a317c2e2e2c,L08 Conrad,Conrad_finished_mount_3,8,Kobold,那就好……接下來呢？
+ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,接下來，第二回合！
+18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,又來……？
+f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,不不，你是有證照的洗澡師對吧？
+5117686f8d936e47,L08 Conrad,Conrad_finished_mount_3,12,Conrad,表示你知道怎麼動手！
+a441237f7aea8d53,L08 Conrad,Conrad_finished_mount_3,13,Kobold,喔。<size=70%>好吧。
+d2e773775c5bf598,L08 Conrad,Conrad_finished_mount_3,14,Kobold,好。我這就來。
+d126a37255fb8144,L08 Conrad,Conrad_finished_mount_3,15,Conrad,哈。對。<size=70%><i>洗澡學校還教怎麼幫龍打手槍，真不錯……
+fba1924f5f79713e,L08 Conrad,Conrad_finished_mount_3,16,Conrad,好吧，祝你能用手把我整根握住。
+# --- mount_finish: Conrad_OutroDirty ---
+9b363afaa9dc8a5f,L08 Conrad,Conrad_OutroDirty,1,Conrad,我還髒著呢！
+44aa54eec876d22e,L08 Conrad,Conrad_OutroDirty,2,Kobold,啊，我的錯
+85d8ae405abc5722,L08 Conrad,Conrad_OutroDirty,3,Kobold,哎呀
+# --- mount_finish: Conrad_OutroSoapy ---
+d7bb84bfc322967e,L08 Conrad,Conrad_OutroSoapy,1,Conrad,我還一身泡沫呢！
+# --- mount_finish: ErrorHasOccurred ---
+9241fa9324783298,L08 Conrad,ErrorHasOccurred,1,ErrorHasOccurred,哎呀，出問題了
+fbc99d34c317d087,L08 Conrad,ErrorHasOccurred,2,ErrorHasOccurred,如果你看到這則訊息，請聯絡 nael 或提交錯誤回報
+be7e08152c8d1556,L08 Conrad,ErrorHasOccurred,3,ErrorHasOccurred,抱歉！
+# --- mount_finish: Conrad_Outro | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+c571db95fc1e4f78,L08 Conrad,Conrad_Outro,4,Conrad,啊，洗乾淨了，也輕鬆了。
+e374c1b3adfa0cf8,L08 Conrad,Conrad_Outro,5,Conrad,謝啦老兄，明天見。
+
+# ===== Level 9: Alexander (Sunny) =====
+# --- intro: Alexander_3_intro ---
+36cd0d2b83086eeb,L09 Alexander,Alexander_3_intro,1,Alexander,你好。
+bc15783521246457,L09 Alexander,Alexander_3_intro,2,Alexander,亞歷山大！
+3cbf350078abb1bf,L09 Alexander,Alexander_3_intro,3,Kobold,嘿，歡迎回來！
+516ad83185e96dfb,L09 Alexander,Alexander_3_intro,4,Alexander,哈哈，是的。見到閣下甚是欣喜。
+f1d9c9797985d9a2,L09 Alexander,Alexander_3_intro,5,Alexander,能回來甚是欣喜。
+9f59b5e841a0d2ad,L09 Alexander,Alexander_3_intro,6,Alexander,在下似乎弄得滿身墨水！
+fda3c419d5174cb2,L09 Alexander,Alexander_3_intro,7,Alexander,著實糟糕，不是嗎？
+b5d76009b084e709,L09 Alexander,Alexander_3_intro,8,Kobold,嗯，這就是我在這裡的原因！
+4f921c2b968fe884,L09 Alexander,Alexander_3_intro,9,Kobold,哇，您真的全身都是！
+256ae0739ddd2dbc,L09 Alexander,Alexander_3_intro,10,Alexander,正是！如今閣下是在下唯一願意讓其為在下洗浴的狗頭人。
+f114f26d23d53dc1,L09 Alexander,Alexander_3_intro,11,Kobold,哎呀，謝謝您，亞歷山大。
+1f01b93ae3777189,L09 Alexander,Alexander_3_intro,12,Kobold,您的私人洗澡師呢？
+92b7fef7172975fa,L09 Alexander,Alexander_3_intro,13,Alexander,當然！閣下經營著一家上好的店。
+df2a4df0381808af,L09 Alexander,Alexander_3_intro,14,Alexander,閣下不必擔憂。洗澡師工會……比在下更有權勢。
+1bdc19a56262fbc5,L09 Alexander,Alexander_3_intro,15,Alexander,<size=70%>在下仍在付他們薪水。
+b0134babb7e75550,L09 Alexander,Alexander_3_intro,16,Alexander,一個來見在下最喜愛的狗頭人的好藉口。
+7d926d6395419270,L09 Alexander,Alexander_3_intro,17,Kobold,哎呀……謝謝！
+6ad0fe6dcc2efa30,L09 Alexander,Alexander_3_intro,18,Alexander,當然，閣下經營著一家上好的店。
+f38b3b8fcf6bf031,L09 Alexander,Alexander_3_intro,19,Alexander,怎麼？由衷的讚美並無害處！
+350955b9410d95a5,L09 Alexander,Alexander_3_intro,20,Kobold,沒想到您是會弄得這麼髒的類型！
+3cf6fd8e7e50386c,L09 Alexander,Alexander_3_intro,21,Kobold,您怎麼滿身墨水？
+5d2cee363540fc7a,L09 Alexander,Alexander_3_intro,22,Alexander,在下……嗯。
+26b3089f5ee4a463,L09 Alexander,Alexander_3_intro,23,Alexander,在下<i>想</i>，在下定是<i>在來的路上</i>打翻了墨水瓶。著實笨拙！
+7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,24,Kobold,「想」、「在來的路上」？那您之前並沒有滿身墨水……
+b356a126e4318643,L09 Alexander,Alexander_3_intro,25,Alexander,喔。
+cd5592e5e3140daa,L09 Alexander,Alexander_3_intro,26,Alexander,對。
+2a0200c46ee1b662,L09 Alexander,Alexander_3_intro,27,Alexander,實話實說，在下是為了來此才弄髒的。
+b4d680dde83d7847,L09 Alexander,Alexander_3_intro,28,Kobold,哎呀。您不用滿身墨水也可以來打招呼呀！
+42d72aa4b0b39750,L09 Alexander,Alexander_3_intro,29,Kobold,喔！那我得讓您進來。我去開門。
+9eb8cd756595cf24,L09 Alexander,Alexander_3_intro,30,Alexander,當真？
+5f9846717183dcc1,L09 Alexander,Alexander_3_intro,31,Alexander,在下會記住的。在下習慣了凡事皆為交易。
+2ea5b920a0a9a519,L09 Alexander,Alexander_3_intro,32,Kobold,我隨時都很高興見到您。我去幫您開門。
+# --- progress: Alexander_3_required ---
+a59f7f35644dcdbb,L09 Alexander,Alexander_3_required,1,Alexander,伊格威克斯教授——在下那位稍早自焚的同僚。
+10b4110dad07d576,L09 Alexander,Alexander_3_required,2,Alexander,他已重返工作崗位。感謝閣下在那件事上的幫助。
+b8baebdff88a847f,L09 Alexander,Alexander_3_required,3,Kobold,是啊，一開始挺嚇人的。
+a2aff5b173ae96bb,L09 Alexander,Alexander_3_required,4,Kobold,那太好了。他沒事我很高興。
+4b29556a255aea95,L09 Alexander,Alexander_3_required,5,Alexander,所幸，自燃致死這一概念在現代社會已被徹底遏止。
+ababfd6e7703460e,L09 Alexander,Alexander_3_required,6,Alexander,正是。閣下能施以援手，在下甚為欣慰。
+69f278cd5a2eb111,L09 Alexander,Alexander_3_required,7,Alexander,……能與人如此暢所欲言，甚是奇妙。
+6221337862dcba2c,L09 Alexander,Alexander_3_required,8,Alexander,在下覺得對閣下可以暢所欲言。
+cecec36c55a564ee,L09 Alexander,Alexander_3_required,9,Kobold,什麼都可以？
+7dbde0758389bd7b,L09 Alexander,Alexander_3_required,10,Alexander,是的。如此坦率，令人振奮。
+9bc918ab274337a8,L09 Alexander,Alexander_3_required,11,Alexander,不知為何，這比任何人說的話都更顯真誠。
+35af415ffcb7f757,L09 Alexander,Alexander_3_required,12,Alexander,說來……
+c66fb72552f1fa4c,L09 Alexander,Alexander_3_required,13,Alexander,在下有一問。
+bbff7b98d6da7061,L09 Alexander,Alexander_3_required,14,Kobold,什麼問題？
+834032dfb827138e,L09 Alexander,Alexander_3_required,15,Kobold,怎麼了？
+71291e2e0c7ce300,L09 Alexander,Alexander_3_required,16,Alexander,閣下可否問<i>在下</i>一個問題？
+c8ac7dce03b1b9b7,L09 Alexander,Alexander_3_required,17,Kobold,什麼意思？
+10f232e68c0c0443,L09 Alexander,Alexander_3_required,18,Kobold,什麼樣的問題？
+5956cbc43e2c8c2b,L09 Alexander,Alexander_3_required,19,Alexander,在下只是希望閣下問在下一個問題。任何問題皆可。
+7bf3b1fff483809e,L09 Alexander,Alexander_3_required,20,Alexander,什麼都行。在下只是好奇。
+# --- progress: Alexander_questions ---
+9da08a79c3f86ee0,L09 Alexander,Alexander_questions,1,Kobold,教書是什麼感覺？
+337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold,您喜歡紫色嗎？
+70523c9a506d9676,L09 Alexander,Alexander_questions,3,Kobold,您喜歡自己這麼大嗎？
+3fbd83d375d6fa05,L09 Alexander,Alexander_questions,4,Kobold,數字7是什麼味道？
+767b6d6bdc5b806a,L09 Alexander,Alexander_questions,5,Kobold,您怎麼看我？
+8ed9fdad93b0f690,L09 Alexander,Alexander_questions,6,Kobold,您幸福嗎？
+e5263ec7185a5166,L09 Alexander,Alexander_questions,7,Kobold,您的紋章很酷。那是什麼？
+bc116106c2929c42,L09 Alexander,Alexander_questions,8,Kobold,我想問的就這些。
+a04d5511812a415b,L09 Alexander,Alexander_questions,9,Alexander,那是在下的夢想。
+6861f7c274e3de2c,L09 Alexander,Alexander_questions,10,Alexander,在下樂於以正面的方式參與如此多人的人生。
+8743d170a315e668,L09 Alexander,Alexander_questions,11,Alexander,……知道他們如此仰望在下，令人惶恐。
+7aebce70febcfb8c,L09 Alexander,Alexander_questions,12,Alexander,並非僅指身高上。
+0ad864ff0c0b3f21,L09 Alexander,Alexander_questions,13,Kobold,您教哪些課？
+24244e96851180ca,L09 Alexander,Alexander_questions,14,Kobold,您樹立了好榜樣。
+f58328ac8301872f,L09 Alexander,Alexander_questions,15,Alexander,主要是鍊金術。偶爾教世界史。
+771e997edf959694,L09 Alexander,Alexander_questions,16,Alexander,在下也在嘗試涉足社會科學。
+9986ef8860d34d9e,L09 Alexander,Alexander_questions,17,Alexander,這正是可怕之處。
+e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,在閣下身邊，在下不懼失敗，這令在下欣喜。
+818a4fe04a76ce19,L09 Alexander,Alexander_questions,19,Alexander,閣下問這個，是因為在下是薰衣草色的？
+54a1b0b8e5f6fa32,L09 Alexander,Alexander_questions,20,Kobold,對。
+046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,不是。
+b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,嗯，在下確實喜歡這顏色。但在下以為這與在下的體色無關。
+bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,在下確實喜歡這顏色。不過在下以為這與在下自身的體色無關。
+525ba3c4a2511183,L09 Alexander,Alexander_questions,24,Alexander,喔。甚好。
+3885f7429496059d,L09 Alexander,Alexander_questions,25,Alexander,喔。好吧。
+8133434681c5d0c2,L09 Alexander,Alexander_questions,26,Alexander,這是個難以回答的問題。
+a3e6072e41a2ff07,L09 Alexander,Alexander_questions,27,Alexander,在下享受其中一部分。受人尊敬是愉快的……
+b1ca0efdea534b71,L09 Alexander,Alexander_questions,28,Alexander,然而，那份尊敬伴隨著一種期待——要在下表現得如同外表一般。壓力著實巨大。
+186edb7d24ea9459,L09 Alexander,Alexander_questions,29,Kobold,在我面前您想怎樣都可以。
+1a6be1fd03e5ae6f,L09 Alexander,Alexander_questions,30,Kobold,我喜歡真實的您。
+08063aff652b7108,L09 Alexander,Alexander_questions,31,Alexander,閣下此言甚是仁厚。
+4f9390dd28090827,L09 Alexander,Alexander_questions,32,Alexander,在下想更敞開心扉。感覺甚好。
+b38834ce4594ad5c,L09 Alexander,Alexander_questions,33,Alexander,黃色的萊姆。
+5f6bb166b079c336,L09 Alexander,Alexander_questions,34,Kobold,不可能。
+aac4af2b645cf88e,L09 Alexander,Alexander_questions,35,Kobold,就像……檸檬？
+0ee250681eda1a08,L09 Alexander,Alexander_questions,36,Alexander,「完全可能」，在下對此再確定不過。
+b83a1658171971d7,L09 Alexander,Alexander_questions,37,Alexander,不。是黃色的萊姆。
+a87e0094e62cb429,L09 Alexander,Alexander_questions,38,Kobold,您才是教授。肯定是對的。
+e154199e27c1d4a3,L09 Alexander,Alexander_questions,39,Alexander,那是訴諸權威的謬誤。不過，是的。在下是對的。
+0c137b35abd3f637,L09 Alexander,Alexander_questions,40,Alexander,閣下……
+d4efe0db738b52b5,L09 Alexander,Alexander_questions,41,Alexander,是個異數。
+55c3e5daec20a64d,L09 Alexander,Alexander_questions,42,Kobold,啊？
+2c291db1ddbe2b9d,L09 Alexander,Alexander_questions,43,Kobold,這是好事嗎……？
+df2bc10ba434d57e,L09 Alexander,Alexander_questions,44,Alexander,意思是閣下獨一無二。
+019d328b739d99e6,L09 Alexander,Alexander_questions,45,Kobold,好的方面？
+c2667b3b3dc54c1a,L09 Alexander,Alexander_questions,46,Kobold,壞的方面？
+4f9b4a3cd9b0261a,L09 Alexander,Alexander_questions,47,Alexander,當然！閣下極好。
+ebb1884c75b23e27,L09 Alexander,Alexander_questions,48,Alexander,天啊！不不。閣下出類拔萃。
+3b2c32e616b24822,L09 Alexander,Alexander_questions,49,Alexander,正是。閣下是極好的相處對象。
+7e6a62b6d8659273,L09 Alexander,Alexander_questions,50,Alexander,閣下是在下遇到的第一個對在下唯一的期待是……
+c48241cd21bb0d91,L09 Alexander,Alexander_questions,51,Alexander,做在下自己。
+5a4d28241178ab01,L09 Alexander,Alexander_questions,52,Alexander,在下幸福。
+216bb6e650af4cfc,L09 Alexander,Alexander_questions,53,Alexander,在下以為，這部分歸功於閣下。
+91ff270d6aaba6a4,L09 Alexander,Alexander_questions,54,Kobold,可我只是您的洗澡師？
+f06f453ab3d6251f,L09 Alexander,Alexander_questions,55,Kobold,真貼心。
+8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,56,Alexander,在下知道。但能向某人敞開心扉，哪怕偶爾——
+61639ef55caefda4,L09 Alexander,Alexander_questions,57,Alexander,亦有奇效。
+22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,58,Alexander,能向某人敞開心扉，哪怕偶爾……
+439d8da114ab9162,L09 Alexander,Alexander_questions,59,Alexander,為此，在下謝過閣下。
+33d3f6495bad4d3c,L09 Alexander,Alexander_questions,60,Alexander,喔，在下頭上的紋章？
+91d69b4f1f9739cb,L09 Alexander,Alexander_questions,61,Alexander,許多人以為它是在下身體的一部分。
+dd0f2ff5e303f61a,L09 Alexander,Alexander_questions,62,Alexander,然而，它是裝飾品！在下的家族紋章。閣下要知道……
+7271f9e9b21e5401,L09 Alexander,Alexander_questions,63,Alexander,龍族歷史錯綜複雜。裝飾性紋章<size=85%>常常<size=70%>由龍佩戴，<size=55%>以表明所屬家族！<size=40%>這是其文化<size=35%>與家族傳承的有趣標誌。在下常思忖是否該繼續佩戴。<size=20%>但在龍族傳說中，文化與家族紐帶被視為重要之物！故在下必須遵循。<size=10%>水。土。火。氣。很久以前，四大國和諧共處。然而烈火國的進攻改變了一切。
+0006b6926947b91b,L09 Alexander,Alexander_questions,64,Kobold,您能再說一遍嗎？
+b6d573339ec0b66b,L09 Alexander,Alexander_questions,65,Alexander,啊，失禮，在下對此類事物頗為熱衷。
+9909f3ea3dffb93e,L09 Alexander,Alexander_questions,66,Alexander,閣下喜歡在下的紋章，在下甚為欣慰。
+e5bccc3a053371ce,L09 Alexander,Alexander_questions,67,Alexander,……不
+# --- progress: Alexander_3_required_end | if $has_asked_question ---
+c225b2626bb24d2c,L09 Alexander,Alexander_3_required_end,1,Alexander,謝過閣下相問。被問及私人問題，甚是愉快。
+# --- jerkoff: Alexander_3_JerkOff_Start ---
+8342e51e14980481,L09 Alexander,Alexander_3_JerkOff_Start,1,Alexander,哎呀——在下未料到閣下如此……親力親為
+ce664ef00487ef78,L09 Alexander,Alexander_3_JerkOff_Start,2,Alexander,<size=70%><i>請隨意繼續——</i>
+# --- cum: Alexander_3_Cum ---
+85503a54fcc74839,L09 Alexander,Alexander_3_Cum,1,Alexander,唔。那、那……頗失體面。
+afa89c59eece65b9,L09 Alexander,Alexander_3_Cum,2,Alexander,<size=70%><i>不過甚是舒服……謝過閣下。
+# --- outro: Alexander_3_Outro ---
+d96b34ffac75e750,L09 Alexander,Alexander_3_Outro,1,Alexander,在下<i>一塵不染</i>。
+6dae153117be9e8a,L09 Alexander,Alexander_3_Outro,2,Kobold,我從不漏掉任何角落。
+941f66ab23bc1b9b,L09 Alexander,Alexander_3_Outro,3,Alexander,在下深知。深層清潔自有其獨特的感受！
+4598878b44333749,L09 Alexander,Alexander_3_Outro,4,Alexander,這就是我想聽的。
+7ea92f17440d2fae,L09 Alexander,Alexander_3_Outro,5,Alexander,在下會再來的。能有閣下這樣的朋友，甚好。
+7bbef8475c6cdff7,L09 Alexander,Alexander_3_Outro,6,Kobold,期待很快再見到您。
+17d54d35bc089567,L09 Alexander,Alexander_3_Outro,7,Kobold,很高興您在這裡感到自在。
+
+# ===== Level 10: Ryan (Sunny) | ends PicnicCompleted =====
+# --- intro: Ryan_4_intro ---
+379060351b7eda00,L10 Ryan,Ryan_4_intro,1,Ryan,<b><i><size=130%>你把萊恩介紹給康拉德了嗎？
+8a798890fe938171,L10 Ryan,Ryan_4_intro,2,Kobold,是
+9390298f3fb0c5b1,L10 Ryan,Ryan_4_intro,3,Kobold,否
+578f5563ae25f1ce,L10 Ryan,Ryan_4_intro,4,Kobold,哇……您嘴裡叼的是什麼？
+c03386d6c9efb92a,L10 Ryan,Ryan_4_intro,5,Kobold,嘿萊恩，您拿的是什麼？
+d85dcd17cab55fde,L10 Ryan,Ryan_4_intro,6,Ryan,野餐籃……（含糊）
+b9c2f8ae41c83ebe,L10 Ryan,Ryan_4_intro,7,Ryan,話說不清楚……
+696058e475fae76a,L10 Ryan,Ryan_4_intro,8,Ryan,讓我進去？
+1f843189eaccc2b6,L10 Ryan,Ryan_4_intro,9,Kobold,喔！好。我去開門！
+9cc8b0255238b35e,L10 Ryan,Ryan_4_intro,10,Kobold,好的，我馬上幫您開。
+1facde273315d636,L10 Ryan,Ryan_4_intro,11,Ryan,謝啦（含糊）！
+# --- picnic: Ryan_egg_dialog | if $food_number ---
+ff7696a47d0cd4ed,L10 Ryan,Ryan_egg_dialog,1,Kobold,天啊，我還以為那顆蛋是裝飾品。
+76dddaed85a8d844,L10 Ryan,Ryan_egg_dialog,2,Kobold,那是什麼蛋？
+9fe69182b150b8b1,L10 Ryan,Ryan_egg_dialog,3,Ryan,啊？當然不是！
+f5d2571561dba2b0,L10 Ryan,Ryan_egg_dialog,4,Ryan,喔。你不習慣整顆吞下去。
+718beb6db0dae659,L10 Ryan,Ryan_egg_dialog,5,Ryan,那是最好的吃法！
+c03f60d1d7bd67e5,L10 Ryan,Ryan_egg_dialog,6,Ryan,呃……
+4a7cf2bb1bd01e0b,L10 Ryan,Ryan_egg_dialog,7,Ryan,藍色的……？
+640cee0646ecb66c,L10 Ryan,Ryan_egg_dialog,8,Ryan,我也不太清楚。是WingCo特價買的。
+f887a50c6f7d1edc,L10 Ryan,Ryan_egg_dialog,9,Ryan,不過真的很好吃！
+# --- picnic: ryan_food_dialogue ---
+8b555a411ea346ec,L10 Ryan,ryan_food_dialogue,1,Ryan,那個……我一直在想我的感情。
+03e1d33ec4a7f6e8,L10 Ryan,ryan_food_dialogue,2,Kobold,怎麼說？
+f1676448791feef6,L10 Ryan,ryan_food_dialogue,3,Ryan,就是，我未來的感情。
+9d2e28c9ae2ed8b4,L10 Ryan,ryan_food_dialogue,4,Ryan,我有點期待。
+91b32d6180935501,L10 Ryan,ryan_food_dialogue,5,Kobold,畢竟，您可是絕佳的對象。
+e5d632fba39e2f0f,L10 Ryan,ryan_food_dialogue,6,Kobold,我替您期待！
+d228097b23b352e6,L10 Ryan,ryan_food_dialogue,7,Ryan,哎唷你。我要臉紅了。
+d94d7310f7d31a45,L10 Ryan,ryan_food_dialogue,8,Ryan,真的很期待認識新的人。
+1121175da09c0008,L10 Ryan,ryan_food_dialogue,9,Ryan,那麼，再吃點？
+6ebac8131d5267ac,L10 Ryan,ryan_food_dialogue,10,Ryan,唔……
+d2c7e6789d89f523,L10 Ryan,ryan_food_dialogue,11,Ryan,我在想。
+67c0ce6aff865e1c,L10 Ryan,ryan_food_dialogue,12,Ryan,很難找到我現在圈子之外的人。
+d7f23a9907b74860,L10 Ryan,ryan_food_dialogue,13,Ryan,就是，我喜歡身邊的人，但那裡有太多包袱。
+99daac47d7b305f6,L10 Ryan,ryan_food_dialogue,14,Ryan,你懂吧？
+1b4b607607b8c988,L10 Ryan,ryan_food_dialogue,15,Kobold,有道理。
+dfcb7cbdb552d8f5,L10 Ryan,ryan_food_dialogue,16,Kobold,分手之後有這種感覺，我能理解。
+f574c59b56179de8,L10 Ryan,ryan_food_dialogue,17,Ryan,嗯，分手之後我一直在找些新的東西。
+0febbd04cce87646,L10 Ryan,ryan_food_dialogue,18,Ryan,也許是某個人？
+b7fca6004f2d5325,L10 Ryan,ryan_food_dialogue,19,Ryan,嗯。經歷那種事之後，很難理清圈子裡的關係。
+8da113ef266e587f,L10 Ryan,ryan_food_dialogue,20,Ryan,我願意去做。但我想要點新的。
+baf0df26ea4f2e81,L10 Ryan,ryan_food_dialogue,21,Ryan,也許是某個新的人……
+03ccd297eb346729,L10 Ryan,ryan_food_dialogue,22,Ryan,……關於我剛才說的。
+1032684d93c794bf,L10 Ryan,ryan_food_dialogue,23,Kobold,嗯？
+ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,24,Ryan,你認識什麼人可以聊聊嗎？就是……感情方面的事？
+0a7119cfe1246546,L10 Ryan,ryan_food_dialogue,25,Kobold,"<gradient=""gold""><b>我認識一條紅龍。我覺得您會喜歡他！ </b></gradient><size=70%>（讓萊恩和康拉德認識！）"
+4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,26,Kobold,"<gradient=""gold""><b>喔。呃。<size=70%> 我不介意……如果那個人是我的話。 </b></gradient><size=70%>（鎖定萊恩戀愛線！）"
+bb7a6be711206298,L10 Ryan,ryan_food_dialogue,27,Kobold,"<gradient=""gold""><b>我一時想不到誰。</b></gradient><size=70%>（鎖定康拉德戀愛線！）"
+a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,28,Kobold,喔？
+cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,29,Ryan,他是誰？
+ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,30,Kobold,是一條來我們店洗澡的、超級可愛的紅龍！
+4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,31,Kobold,他是一條紅龍。我覺得你們會喜歡彼此的！
+0ea02ee3f0c5673d,L10 Ryan,ryan_food_dialogue,32,Ryan,喔！我好像見過他。那個小小隻的，對吧？
+58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,33,Kobold,他比較喜歡「垂直方向有挑戰」這個說法……不過是的。
+3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,34,Kobold,嗯！他也在努力認識新的人。
+474246952e0d1e50,L10 Ryan,ryan_food_dialogue,35,Ryan,喔……
+fc4c4ac0587e24db,L10 Ryan,ryan_food_dialogue,36,Ryan,真可愛。
+c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,37,Ryan,喔，太好了。看來我們很像。
+82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,38,Ryan,我想見見他！
+b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,39,Kobold,那我來介紹你們認識。
+80c500f9c426d4cc,L10 Ryan,ryan_food_dialogue,40,Kobold,我好期待。我來介紹你們認識！
+ec786c9a7656b0f9,L10 Ryan,ryan_food_dialogue,41,Ryan,我也是，謝謝！
+028dbc8d077c611f,L10 Ryan,ryan_food_dialogue,42,Ryan,<i>喔……
+ae590830c4c03fd1,L10 Ryan,ryan_food_dialogue,43,Ryan,我想讓你也成為那個人。
+b4066b4e58df8005,L10 Ryan,ryan_food_dialogue,44,Kobold,所以這算是……我們的第一次約會？
+8c7e5a49ec8fd685,L10 Ryan,ryan_food_dialogue,45,Kobold,老實說，我暗戀您有一陣子了。
+710ea0057247cb51,L10 Ryan,ryan_food_dialogue,46,Ryan,應該是吧！
+de4d091acdb6059c,L10 Ryan,ryan_food_dialogue,47,Ryan,真的？哎唷，太甜了。
+35e3561cd36f36d6,L10 Ryan,ryan_food_dialogue,48,Ryan,我不知道有人能這麼輕易地這麼喜歡我。
+f05160456925af3f,L10 Ryan,ryan_food_dialogue,49,Ryan,對了，你很可愛。
+a01d64fcb9d7d3a5,L10 Ryan,ryan_food_dialogue,50,Kobold,嗯。<size=90%>喔——<size=80%>你懂的。我就是……<size=70%>哈哈。嗯。是的！
+65691ff38c85e57c,L10 Ryan,ryan_food_dialogue,51,Kobold,您也是！
+d323e565ed8ea749,L10 Ryan,ryan_food_dialogue,52,Ryan,我不是故意讓你慌張的！
+145e6a2d848267cb,L10 Ryan,ryan_food_dialogue,53,Ryan,我只是……很開心。
+0cc014df7d89d3e1,L10 Ryan,ryan_food_dialogue,54,Ryan,哎唷，謝謝。我這麼好看都是因為你幫我洗澡！
+eea7bdf3ab3f251c,L10 Ryan,ryan_food_dialogue,55,Ryan,我……很開心。
+d619413abc4a1de1,L10 Ryan,ryan_food_dialogue,56,Ryan,沒關係！
+c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,57,Ryan,那你呢？有在跟誰交往嗎？
+2374bdd10aea40ba,L10 Ryan,ryan_food_dialogue,58,Kobold,有一條紅龍，康拉德。他……脾氣火爆，但很可愛。
+58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,59,Kobold,有！康拉德，他超可愛。不過他肯定討厭我這麼說。
+3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,60,Ryan,喔，是我之前看到進來的那條小龍吧？
+882d8b921688234c,L10 Ryan,ryan_food_dialogue,61,Kobold,嘿！他只是……「垂直方向有挑戰」。
+871f43cb596daa39,L10 Ryan,ryan_food_dialogue,62,Kobold,嗯！就是他。
+eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,63,Ryan,喔，抱歉。
+dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,64,Ryan,他看起來很可愛！
+70300517b020a458,L10 Ryan,ryan_food_dialogue,65,Ryan,太好了，他很可愛！
+abe281ce74304803,L10 Ryan,ryan_food_dialogue,66,Ryan,嘿，那個，再次謝謝你。
+9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,67,Kobold,不客氣！等不及您見康拉德了。
+e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,68,Kobold,不，該謝謝您。我……真的很期待。
+1f50e1361eaeacbf,L10 Ryan,ryan_food_dialogue,69,Kobold,當然！謝謝您帶的食物。
+489184ee3c2573f9,L10 Ryan,ryan_food_dialogue,70,Ryan,哈，是啊。他聽起來很有趣。
+28f3547a6af39629,L10 Ryan,ryan_food_dialogue,71,Ryan,我一定告訴你進展，好嗎？
+fcd75c87b326482c,L10 Ryan,ryan_food_dialogue,72,Kobold,我很期待聽到！
+a66a9f98f63d5aaf,L10 Ryan,ryan_food_dialogue,73,Kobold,嗯。你們倆會很配的。
+39619dc71b15dfde,L10 Ryan,ryan_food_dialogue,74,Ryan,真開心……
+b2d03d0e5222d95c,L10 Ryan,ryan_food_dialogue,75,Ryan,很快再見，好嗎？
+17c800776b082018,L10 Ryan,ryan_food_dialogue,76,Kobold,希望如此！我去開門。
+56372773e401e131,L10 Ryan,ryan_food_dialogue,77,Kobold,好！謝謝您帶的食物。我去開門。
+97cffb9a377004b2,L10 Ryan,ryan_food_dialogue,78,Ryan,嗯……我從沒跟狗頭人約會過。
+50ce0561192b6b01,L10 Ryan,ryan_food_dialogue,79,Ryan,但我已經知道我很喜歡了。
+e823adcc22fd50c2,L10 Ryan,ryan_food_dialogue,80,Kobold,我很喜歡您。
+62e851c911a254bb,L10 Ryan,ryan_food_dialogue,81,Kobold,嗯，真的非常開心。
+773c0ce37ffbb546,L10 Ryan,ryan_food_dialogue,82,Ryan,嘿。嗯。我也喜歡你。
+1c6058ce1c7242cf,L10 Ryan,ryan_food_dialogue,83,Ryan,確實很開心。你真好。
+32e4e8851f8ac398,L10 Ryan,ryan_food_dialogue,84,Ryan,謝謝你陪我一起吃……
+0a94f0c3b65c425c,L10 Ryan,ryan_food_dialogue,85,Ryan,期待再見到你
+8c39f31ac476e20e,L10 Ryan,ryan_food_dialogue,86,Kobold,我一直很期待見到您。我去開門。
+db8848bda5df285f,L10 Ryan,ryan_food_dialogue,87,Kobold,您也是！我去開門。
+f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,88,Ryan,好！很快見。
+d48a9423f250312c,L10 Ryan,ryan_food_dialogue,89,Ryan,所以這個康拉德，看來你喜歡他？
+6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,90,Kobold,嘿嘿，是的。
+c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,91,Kobold,他很難搞。但是，我喜歡。
+a1bf90b10d887726,L10 Ryan,ryan_food_dialogue,92,Ryan,真可愛！
+6943d0645de48850,L10 Ryan,ryan_food_dialogue,93,Ryan,你最喜歡他哪一點？
+a695d517f16d1719,L10 Ryan,ryan_food_dialogue,94,Kobold,他，那個，超級雄偉。
+dbeb304df456a424,L10 Ryan,ryan_food_dialogue,95,Kobold,他脾氣急，但也很溫柔！
+3c29c25f0a23d26a,L10 Ryan,ryan_food_dialogue,96,Kobold,他很小隻，我喜歡跟他平視。
+0911d52bc2d9f70b,L10 Ryan,ryan_food_dialogue,97,Kobold,我喜歡……他這個人。
+4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,98,Ryan,喔……嗯，小一點的龍往往……會在別的地方補償。
+7859d5c981752171,L10 Ryan,ryan_food_dialogue,99,Ryan,嗯，我了解這種類型。
+d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,100,Ryan,有道理！小龍很好玩。
+00079873ed68f67e,L10 Ryan,ryan_food_dialogue,101,Ryan,哎唷……真甜
+fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,102,Ryan,你們倆進展如何一定要告訴我！
+37e125daa86112bd,L10 Ryan,ryan_food_dialogue,103,Ryan,謝謝你陪我一起吃，你是很好的朋友。
+120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,104,Kobold,謝謝您帶的食物！我去開門。
+94ddf87d22b36d07,L10 Ryan,ryan_food_dialogue,105,Kobold,您也是很好的朋友，我去開門。
+02ca8c073be8669d,L10 Ryan,ryan_food_dialogue,106,Ryan,好，回頭見！
+# --- picnic: Ryan_grab_basket ---
+3276ca6f923e3a2e,L10 Ryan,Ryan_grab_basket,1,Ryan,呸。謝謝你幫我拿。
+1790d1bc285d158f,L10 Ryan,Ryan_grab_basket,2,Kobold,您帶了吃的？
+fab7cff668586c9b,L10 Ryan,Ryan_grab_basket,3,Kobold,萊恩！您太貼心了。
+3f519f6990d85e4d,L10 Ryan,Ryan_grab_basket,4,Ryan,對！裡面的東西我們倆應該都能吃。
+38953523aa1d8dc9,L10 Ryan,Ryan_grab_basket,5,Ryan,嘿嘿，謝謝。裡面的東西我們倆應該都能吃。
+f44e62ce0d92a9c3,L10 Ryan,Ryan_grab_basket,6,Ryan,不過，分量可能有點……龍的尺寸。
+dbe7ccbf37aed06a,L10 Ryan,Ryan_grab_basket,7,Kobold,您怎麼帶了這麼多來？
+96082d9f598cc1db,L10 Ryan,Ryan_grab_basket,8,Kobold,您到底需不需要洗澡呀？
+5be9d07e2e19a321,L10 Ryan,Ryan_grab_basket,9,Ryan,給你的！
+eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> 也給我自己的。
+5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,不，我覺得不需要。
+dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,我就是來送吃的給你！
+7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,你幫了我這麼多，我想帶點好東西來。
+2fc5be91325a9449,L10 Ryan,Ryan_grab_basket,14,Ryan,希望沒打擾到你？
+097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,當然不介意！
+460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,16,Ryan,太好了，我很開心。
+6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,17,Ryan,那就是沒問題囉！我很開心。
+fe3e5d4e4925ddb6,L10 Ryan,Ryan_grab_basket,18,Ryan,那麼……吃東西？
+# --- picnic: Ryan_grapes_dialog | if $food_number ---
+46ca5d912bed1dcc,L10 Ryan,Ryan_grapes_dialog,1,Kobold,那些葡萄看起來很不錯。
+33f099ac348159d4,L10 Ryan,Ryan_grapes_dialog,2,Kobold,萊恩，梗是不能吃的——
+174343e1e975e68b,L10 Ryan,Ryan_grapes_dialog,3,Ryan,確實不錯！不過梗是我最喜歡的部分。
+976fdc62e4cbffcf,L10 Ryan,Ryan_grapes_dialog,4,Kobold,那不是……木頭嗎？
+8e4f1f66ab3b3860,L10 Ryan,Ryan_grapes_dialog,5,Kobold,沒試過。
+d053df82397c2f86,L10 Ryan,Ryan_grapes_dialog,6,Ryan,對，很好吃！
+c994875a9f5c8520,L10 Ryan,Ryan_grapes_dialog,7,Ryan,不過你最好別吃。
+025e9c74601a1a65,L10 Ryan,Ryan_grapes_dialog,8,Ryan,龍的胃比你的……強韌一點。
+b689b40a79b968df,L10 Ryan,Ryan_grapes_dialog,9,Ryan,你還是別吃了。
+8d834797bd163119,L10 Ryan,Ryan_grapes_dialog,10,Ryan,你得先有個龍的胃！
+27935fd7477eba77,L10 Ryan,Ryan_grapes_dialog,11,Ryan,誰說的？
+0b71d27200d13a33,L10 Ryan,Ryan_grapes_dialog,12,Kobold,我？
+47252f2c75dea9ef,L10 Ryan,Ryan_grapes_dialog,13,Kobold,生物學……？<size=70%> <i>大概吧？
+5af35db6f8fe39ad,L10 Ryan,Ryan_grapes_dialog,14,Ryan,呃……
+79436a008466d243,L10 Ryan,Ryan_grapes_dialog,15,Ryan,我可是不守規矩的！
+49e7a64aec55ff2a,L10 Ryan,Ryan_grapes_dialog,16,Ryan,別擔心，龍天生就什麼都能吃。
+5f82b968ccbb4aaa,L10 Ryan,Ryan_grapes_dialog,17,Ryan,我幾乎什麼都能消化。
+f9a3f85545840310,L10 Ryan,Ryan_grapes_dialog,18,Ryan,梗就是多出來的食物。
+53494acb38981cff,L10 Ryan,Ryan_grapes_dialog,19,Ryan,不過葡萄一直能滿足我某種特別的嘴饞。
+77e53d1b1d33b9f0,L10 Ryan,Ryan_grapes_dialog,20,Ryan,喔，好像蹭到臉上了。哎呀。
+# --- picnic: Ryan_ham_dialog | if $food_number ---
+cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,萊恩，那是骨頭！
+523a9690a00a7803,L10 Ryan,Ryan_ham_dialog,2,Kobold,您真的整個吃掉了……哇。
+618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,唔——嗯？
+5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,喔，那是我最喜歡的部分！
+7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,您到底是怎麼消化的？
+50017e1803bb849e,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> 好性感。
+f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,我是龍。
+b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,我應該什麼都能消化。
+a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,是喔？記住了……
+db22d9512845d515,L10 Ryan,Ryan_ham_dialog,10,Ryan,那是享受食物最好的方式。
+a5af381d1ec66e2a,L10 Ryan,Ryan_ham_dialog,11,Ryan,很有意思，你們兩條腿的總喜歡慢慢品嚐。
+180983e0a4f4e327,L10 Ryan,Ryan_ham_dialog,12,Ryan,但沒什麼比一大口吞下去更棒的了！
+# --- picnic: Ryan_melon_dialog | if $food_number ---
+e1d0d09daa3129d9,L10 Ryan,Ryan_melon_dialog,1,Ryan,那個差點太大了——
+8725851a4492f86f,L10 Ryan,Ryan_melon_dialog,2,Kobold,您連西瓜都沒切開。
+991947f3461b26a7,L10 Ryan,Ryan_melon_dialog,3,Kobold,味道怎麼樣？
+7d20121dc2fa0757,L10 Ryan,Ryan_melon_dialog,4,Ryan,嗯……
+41f87d2c55073e29,L10 Ryan,Ryan_melon_dialog,5,Ryan,哎呀。
+4fafd5a0c9f29d5f,L10 Ryan,Ryan_melon_dialog,6,Ryan,不過還是很棒！我喜歡它滑下去的感覺。
+dc8488830f9d7192,L10 Ryan,Ryan_melon_dialog,7,Ryan,我忘了咬，所以……沒味道？
+7dedd07a7558afa9,L10 Ryan,Ryan_melon_dialog,8,Ryan,不過滑下去的感覺很好！
+8b4a775ae776722a,L10 Ryan,Ryan_melon_dialog,9,Kobold,<size=70%> 哇。
+ef03f59f06da8fa4,L10 Ryan,Ryan_melon_dialog,10,Kobold,您的脖子能吞下這麼多，真不可思議。
+4fc09f2d61d5cc43,L10 Ryan,Ryan_melon_dialog,11,Ryan,狗頭人好像總是被我吃東西的樣子迷住。
+032ea150ccdf88be,L10 Ryan,Ryan_melon_dialog,12,Ryan,真可愛！
+aad3715a2f685dc3,L10 Ryan,Ryan_melon_dialog,13,Ryan,它天生就是為了整個吞東西的。
+b0a73a78b7d9045b,L10 Ryan,Ryan_melon_dialog,14,Kobold,<size=70%><i>是喔？
+30ff5a696a0def56,L10 Ryan,Ryan_melon_dialog,15,Ryan,嗯！
+901c77872c53d308,L10 Ryan,Ryan_melon_dialog,16,Ryan,對！很有用的。
+# --- jerkoff: Ryan_4_JerkOff_Start ---
+2d434662c42f6a6c,L10 Ryan,Ryan_4_JerkOff_Start,1,Ryan,你確定……？在食物前面？
+031703a96ac0df8c,L10 Ryan,Ryan_4_JerkOff_Start,2,Ryan,嘿……好吧。
+# --- cum: Ryan_4_Cum ---
+3b1c48772bd5889e,L10 Ryan,Ryan_4_Cum,1,Ryan,呼……真舒服……不過弄得有點髒。
+# --- mount_start: Ryan_4_Mount_Start ---
+2f31dcbcaa980550,L10 Ryan,Ryan_4_Mount_Start,1,Ryan,哇……你想讓我用那個？還有食物在呢？好吧！
+# --- mount_finish: Ryan_4_Mount_Finish ---
+833d21b8cd952764,L10 Ryan,Ryan_4_Mount_Finish,1,Ryan,弄得有點髒……不過值了。
+
+# ===== Level 11: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_4 ---
+a67959dc39353129,L11 Conrad,Conrad_Intro_4,1,Conrad,旗標狀態出錯了！
+c1a949184675fa92,L11 Conrad,Conrad_Intro_4,2,Conrad,請幫幫開發者……
+60f8f02dd7a80d00,L11 Conrad,Conrad_Intro_4,3,Kobold,（除錯）Conrad 和 Ryan 在一起了
+6e98155abad655c3,L11 Conrad,Conrad_Intro_4,4,Kobold,（除錯）玩家和 Conrad 在一起了
+9cf9d4fc71363f68,L11 Conrad,Conrad_Intro_4,5,Kobold,（除錯）玩家和 Ryan 在一起了
+67beed0c39e205b4,L11 Conrad,Conrad_Intro_4,6,Kobold,嘿，康拉德！
+d22e2236304b2ef0,L11 Conrad,Conrad_Intro_4,7,Kobold,什麼事讓您這麼開心？
+6183e901a5a22ddc,L11 Conrad,Conrad_Intro_4,8,Kobold,嘿，康拉德！
+3c0eb60cca3b1422,L11 Conrad,Conrad_Intro_4,9,Conrad,嘿，大狗頭人。
+ad13467d89f77645,L11 Conrad,Conrad_Intro_4,10,Conrad,你是不是弄了……
+25aab860a8266c4c,L11 Conrad,Conrad_Intro_4,11,Conrad,今天鱗片不一樣了？<size=70%><i>有這種說法嗎……？ </i><size=100%>你今天挺好看的。
+42e1b9a73c953f33,L11 Conrad,Conrad_Intro_4,12,Kobold,謝謝！那些……黏糊糊的是什麼？
+be118711068118d5,L11 Conrad,Conrad_Intro_4,13,Kobold,哈。康拉德，您也很好看。
+a4008861bf24c47d,L11 Conrad,Conrad_Intro_4,14,Kobold,沒有這種說法……不過謝謝您！
+a951e05bf8506af1,L11 Conrad,Conrad_Intro_4,15,Conrad,漿果。
+765af85f1bd7eafe,L11 Conrad,Conrad_Intro_4,16,Conrad,總之，
+199e91c738a75b4c,L11 Conrad,Conrad_Intro_4,17,Conrad,那當然！
+926069483fd35835,L11 Conrad,Conrad_Intro_4,18,Conrad,哈哈……是啊。我不太習慣誇人。
+8c9dc9229a7630ce,L11 Conrad,Conrad_Intro_4,19,Conrad,我就想快點洗個澡……能用上坐架就更好了。
+3ee865676f6e4c99,L11 Conrad,Conrad_Intro_4,20,Kobold,是喔？
+5fae46a5c8669c29,L11 Conrad,Conrad_Intro_4,21,Kobold,好的！我去開門。
+daa08f627cbbfb9e,L11 Conrad,Conrad_Intro_4,22,Conrad,對——不過你願意才行！
+20ee725c28fb397e,L11 Conrad,Conrad_Intro_4,23,Conrad,我盡量不逼人。
+374fe9cc22a15007,L11 Conrad,Conrad_Intro_4,24,Kobold,哎唷，我去幫您開門。
+ae53715099e0d53d,L11 Conrad,Conrad_Intro_4,25,Conrad,萊恩！我見到他了。
+caefb85b87a51126,L11 Conrad,Conrad_Intro_4,26,Kobold,真好！那些……黏糊糊的是什麼？
+0452c0f1847f4a72,L11 Conrad,Conrad_Intro_4,27,Kobold,怎麼樣？
+940b2bb279fbfd8a,L11 Conrad,Conrad_Intro_4,28,Conrad,謝謝你讓我跟萊恩認識。
+6c42e3202026a3e8,L11 Conrad,Conrad_Intro_4,29,Conrad,老實說，非常順利。
+91b34251e9ff7711,L11 Conrad,Conrad_Intro_4,30,Conrad,我從沒想過他那樣的會是我的菜……
+abc0fe0ceed24339,L11 Conrad,Conrad_Intro_4,31,Kobold,您得全都告訴我。
+ab20df82132f07cc,L11 Conrad,Conrad_Intro_4,32,Conrad,我會的。我就想快點洗個澡，今天也想用用坐架。
+17c5f180de5a8348,L11 Conrad,Conrad_Intro_4,33,Conrad,得為萊恩<i>練練</i>，你懂我意思吧。
+9912569ea696f8ed,L11 Conrad,Conrad_Intro_4,34,Kobold,康拉德！
+106f99c061d35f26,L11 Conrad,Conrad_Intro_4,35,Kobold,好——好。我去開門。
+f71200a57e2d1d7a,L11 Conrad,Conrad_Intro_4,36,Conrad,怎樣？熱身很重要的！
+65bee50d904e101d,L11 Conrad,Conrad_Intro_4,37,Conrad,嘿嘿。還好你有開。
+4d5dda82efc31458,L11 Conrad,Conrad_Intro_4,38,Conrad,想沖個澡。也想用用坐架。
+0ecdd0ec4c0cf66c,L11 Conrad,Conrad_Intro_4,39,Kobold,喔，好的。
+3252727dec6314c5,L11 Conrad,Conrad_Intro_4,40,Kobold,那些……黏糊糊的是什麼？
+91bc8d1d6dc8cdb7,L11 Conrad,Conrad_Intro_4,41,Conrad,嘿。對。
+1aced2f074444bdc,L11 Conrad,Conrad_Intro_4,42,Kobold,喔。好，我去開門。
+# --- progress: Conrad_required_4 ---
+a5965f548b64e3cf,L11 Conrad,Conrad_required_4,1,Conrad,嘿，我有個問題想問你。
+9ad0664c4ac1572a,L11 Conrad,Conrad_required_4,2,Kobold,什麼問題？
+d448809fdbbeaf11,L11 Conrad,Conrad_required_4,3,Kobold,喔——是喔？
+51dbc8c7be16145b,L11 Conrad,Conrad_required_4,4,Kobold,怎麼了，大哥？
+# --- progress: Conrad_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+e6071cb4e7c448c8,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,1,Conrad,我跟萊恩，今晚八成要去約會了。
+9ee7e6a6ebccf907,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,2,Conrad,你有什麼建議嗎？
+f7af2bd25c827e3d,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,3,Kobold,做您自己就好！
+a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,一定要洗得乾乾淨淨。<size=70%><i>嘿嘿。
+528e2755301df89e,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,5,Conrad,我在盡力了。
+71cfcccd17dc37fc,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,6,Conrad,目前為止還不錯，對吧？
+93a2ca86985333fe,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,7,Kobold,我覺得是！
+55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,如果萊恩那樣的人都對您有興趣，那您做得很好。
+162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,哈。要是有條狗頭人能幫我洗澡就好了。
+4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Kobold,要是有就好了。
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,<i>我會把您洗得一塵不染。
+7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Conrad,說正經的，你洗得絕對是最好的。
+207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,謝了。人帥心情就好！
+# --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+a8ee5e15400fc208,L11 Conrad,Conrad_4_Conrad_Romanced,1,Conrad,那個……約會。我想我差不多想去約個會了！
+f2f6817fb49621c2,L11 Conrad,Conrad_4_Conrad_Romanced,2,Kobold,我很樂意！
+82ddb728ff9d18a9,L11 Conrad,Conrad_4_Conrad_Romanced,3,Conrad,我在想，下禮拜找個時間出去？
+fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,4,Kobold,聽起來不錯。
+9a03666243082379,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,我不介意！
+67f68a72462bca9b,L11 Conrad,Conrad_4_Conrad_Romanced,6,Conrad,太好了！
+45ec6449f36fb5b9,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad,下次我來洗澡的時候，我們就去。
+ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,8,Kobold,我很期待！
+38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,就這麼說定了。
+de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,10,Alexander,我很期待。
+# --- progress: Conrad_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+8dc7f14f91542fe7,L11 Conrad,Conrad_Ryan_Romanced,1,Conrad,所以你跟萊恩，嗯？
+498cb71ee3e20098,L11 Conrad,Conrad_Ryan_Romanced,2,Kobold,喔，對！
+37d827f8025ee687,L11 Conrad,Conrad_Ryan_Romanced,3,Kobold,他很帥。
+64db0ca49ca9563d,L11 Conrad,Conrad_Ryan_Romanced,4,Kobold,他是我的夢中情龍。
+bdfc096fee84c4fb,L11 Conrad,Conrad_Ryan_Romanced,5,Conrad,我替你高興！
+cb24c38318e64595,L11 Conrad,Conrad_Ryan_Romanced,6,Conrad,聽起來是。
+0e5b54a94da4725b,L11 Conrad,Conrad_Ryan_Romanced,7,Kobold,您呢？有讓您心動的人嗎？
+5f9173229e51d947,L11 Conrad,Conrad_Ryan_Romanced,8,Kobold,是的，我也很開心。
+68fa6f383249196c,L11 Conrad,Conrad_Ryan_Romanced,9,Conrad,算有吧！我最近比較常出門了。
+e589607da4e2983d,L11 Conrad,Conrad_Ryan_Romanced,10,Conrad,認識了一隻獅鷲。跟我差不多大……
+d69f5ee422fdf377,L11 Conrad,Conrad_Ryan_Romanced,11,Conrad,我覺得他喜歡我。
+9aab87987aca7783,L11 Conrad,Conrad_Ryan_Romanced,12,Conrad,……<i><size=70%>至少我喜歡他。
+7b42e92a68e914e0,L11 Conrad,Conrad_Ryan_Romanced,13,Conrad,那就好。
+88b86bef7b86a770,L11 Conrad,Conrad_Ryan_Romanced,14,Conrad,對，他看起來挺對我胃口的。
+# --- jerkoff: Conrad_4_JerkOff_Start ---
+395b9d676b6c01c5,L11 Conrad,Conrad_4_JerkOff_Start,1,Conrad,喔——現在？行，我上。
+# --- cum: Conrad_4_Cum ---
+cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,嗯……這可比那些漿果爽多了。
+# --- mount_start: Conrad_4_Mount_Start ---
+9c4eeb4a7cc4c1e1,L11 Conrad,Conrad_4_Mount_Start,1,Conrad,嘿！坐架！爽啦。
+# --- mount_finish: Conrad_4_Mount_Finish ---
+307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,哈啊……這他媽是最棒的一次洗澡。
+# --- outro: Conrad_Outro_4 ---
+4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,您應該全乾淨了！
+5fa2cf3854ecc8d9,L11 Conrad,Conrad_Outro_4,2,Kobold,我想就這樣了。
+2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,洗乾淨的您真好看！
+d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,<i>我喜歡往您身上噴水。
+feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,好了！應該完成了。
+e2956ac74f8acb8e,L11 Conrad,Conrad_Outro_4,6,Kobold,我想每個角落都洗到了。
+# --- outro: Conrad_Outro_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+0fa2abeece5fd3de,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,1,Conrad,對！我感覺乾淨了。
+1b5f2f27de868c08,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,2,Conrad,嘿，那個，你覺得我跟萊恩<i>真的</i>能成嗎？
+ebc110388e3748fa,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Alexander,當然！
+5bc10e8175dc9422,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,4,Kobold,我希望能。
+3da3a77980cb9eb9,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,5,Conrad,希望你是對的。
+43e42fb816f1d2c2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,6,Conrad,對，我也是。他人真的很好。
+603a3749013e876b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,7,Conrad,經歷了那麼多，很難不緊張……
+189f4f64972cc1fe,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,8,Conrad,不過我可是個狠角色，沒問題的。
+40b8366766a655d6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,9,Conrad,希望吧。
+dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,不過我們第一次見面很棒！
+0a47996c4c389f39,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,11,Kobold,是喔？跟我說說！
+589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,太好了！第一次約會是什麼時候？
+56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,他打電話給我，我們見了面。他真他媽好。
+080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,他說我很隨和，我們約好要去約會……
+75cf2f29bcbf5908,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,所以我才來這裡！洗完澡就去見他。
+35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,洗完澡就去！
+d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,我們要去一家海鮮店——
+5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,俱樂部的位子我已經訂好了。
+6ffd2844813c419e,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,19,Kobold,那我得趕緊放您出去！
+d547385bcae74ca2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,20,Kobold,我替您高興。我去開門！
+9458fe24a9152c2b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,21,Conrad,哈……是啊，我很期待。
+83a4b4bd32149db8,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,22,Conrad,謝了，我也很期待。
+# --- outro: Conrad_Outro_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ad0500f8d2500c0f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,1,Conrad,一如既往地一塵不染。
+297d60c9e5c25580,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,2,Conrad,對了，我想好要去哪了。
+f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,3,Conrad,市區有家俱樂部。「翼」。我一直很喜歡那裡。
+5dcbc1f451fcc29d,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,4,Conrad,我在那一帶算是個人物。
+99c9d7ee0966d8d1,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,我能幫我們弄到看表演<i>最好</i>的位子。
+02f6a5560835daa6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,6,Kobold,哈，好啊。算我一份。
+7137eb7d65d8f4d8,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,7,Kobold,喔喔，那您肯定是個大人物。
+60c5caff4aee58e9,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,8,Conrad,幹，老兄，我超興奮的。
+d37d98f486ba54c5,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,9,Conrad,我這就開始準備。
+bf3d9317290e56b0,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,10,Conrad,下次我來的時候就訂好位子了！
+f11ccc8c0bd5ecbc,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,11,Conrad,能去開個門嗎？
+ffcc816df16993e6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,12,Conrad,那當然。
+c25790cd739260fd,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,13,Conrad,你才是大人物
+b18d301dab41755f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,14,Conrad,抱歉我不會調情。能開個門嗎？
+# --- outro: Conrad_Outro_4_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+6fe24a5cf11acb37,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,1,Conrad,對！一如既往地乾淨。
+8f0378325ead68c7,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,2,Conrad,你跟萊恩有什麼計畫嗎？
+a12011af4e943fb2,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,3,Kobold,還不確定。
+c3393181a97b4208,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,4,Kobold,我在想最近約個會。
+5ef95c64f52e6263,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,5,Conrad,好吧。你們倆看起來確實挺配的。
+6d8a46a5e1da81ef,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,6,Conrad,我真心希望一切順利！
+1884386d93b6fccd,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,7,Conrad,對！那就太棒了。
+c5cace2191af6925,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,8,Conrad,你們倆真的很配……
+9e806b93dd0d48fe,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,9,Conrad,希望一切順利。
+83a8afa550485db4,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,10,Conrad,應該就這樣了，能去開個門嗎？
+
+# ===== Level 12: Alexander (Rainy) =====
+# --- intro: Alexander_4_intro ---
+0248808ddaa3479e,L12 Alexander,Alexander_4_intro,1,Alexander,晚安！
+d3d306a15d158e29,L12 Alexander,Alexander_4_intro,2,Kobold,嗨——！嗨！
+68094c643e49d3c6,L12 Alexander,Alexander_4_intro,3,Kobold,嘿，亞歷山大！
+e8c921ab9051f110,L12 Alexander,Alexander_4_intro,4,Alexander,哈，一如既往地熱情。
+3b767556f3eeaa3b,L12 Alexander,Alexander_4_intro,5,Alexander,能回來真是太好了！
+96ed1471d1f86a4d,L12 Alexander,Alexander_4_intro,6,Alexander,今日的雨下個不停！
+429d93ef0fafbe8a,L12 Alexander,Alexander_4_intro,7,Alexander,氛圍倒是不錯。
+a9945cd0cd165325,L12 Alexander,Alexander_4_intro,8,Kobold,雨挺好的。
+7259414f82b0b97a,L12 Alexander,Alexander_4_intro,9,Kobold,我一直討厭下雨。
+bfad19e22f9652cc,L12 Alexander,Alexander_4_intro,10,Alexander,在下同意，不過仍希望方便時儘快讓在下進去。
+91a5c27ef059ab24,L12 Alexander,Alexander_4_intro,11,Alexander,在下能理解為何不喜它帶來的髒亂。
+882df59f0a75b295,L12 Alexander,Alexander_4_intro,12,Alexander,但這正是在下來此的原因！
+990e43e4f2687cdf,L12 Alexander,Alexander_4_intro,13,Kobold,好的！我去幫您開門。
+846b613e707ce00d,L12 Alexander,Alexander_4_intro,14,Kobold,汪！<size=70%>（門）
+1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,15,Alexander,嗯，在下理解為閣下要去開門？
+56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,16,Kobold,汪！<size=70%>（是）
+fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,17,Alexander,在下不解，為何突然能聽懂閣下的「汪」
+7a919cef111fe275,L12 Alexander,Alexander_4_intro,18,Kobold,汪！<size=70%>（那是因為你龍族心智中沉睡的部分，正在憶起你我兩族之間根植已久的語言橋梁。其中承載著狗頭人「汪」的深層含義與意圖。你突然的理解，不過是我們的聯繫隨時間加深，啟動了你心智的那一部分。）
+6d8c462224bca1b5,L12 Alexander,Alexander_4_intro,19,Kobold,汪！<size=70%>（不知道）
+8e7ead434fce5609,L12 Alexander,Alexander_4_intro,20,Alexander,可否請閣下開門……？
+19be549c91d82ff3,L12 Alexander,Alexander_4_intro,21,Alexander,好吧。在下等著！
+# --- progress: Alexander_4_required ---
+c19ca0647cc1a583,L12 Alexander,Alexander_4_required,1,Alexander,在下一直在想……
+6d9630067757f781,L12 Alexander,Alexander_4_required,2,Alexander,在下不禁注意到……那邊的裝置。
+7bd6925025a24288,L12 Alexander,Alexander_4_required,3,Alexander,那是坐架，對否？
+54b9fbcd575cd0a7,L12 Alexander,Alexander_4_required,4,Kobold,沒錯！
+1f5aad5cbae1a020,L12 Alexander,Alexander_4_required,5,Kobold,您想用嗎？
+36a85b3430aa6639,L12 Alexander,Alexander_4_required,6,Alexander,在下……在想……
+d2b8ae469c604bfb,L12 Alexander,Alexander_4_required,7,Alexander,在下能否，呃……
+577e4edfcd4fa53d,L12 Alexander,Alexander_4_required,8,Alexander,也許……
+4caa8162834de434,L12 Alexander,Alexander_4_required,9,Alexander,或許……
+d89de41838a75fa0,L12 Alexander,Alexander_4_required,10,Kobold,您想用的話完全可以！
+68ad27123e1df879,L12 Alexander,Alexander_4_required,11,Kobold,不用緊張，亞歷山大！
+6dece6f0ec399d4e,L12 Alexander,Alexander_4_required,12,Alexander,在下想，在下想試試？
+08ab3092d83ed1d3,L12 Alexander,Alexander_4_required,13,Alexander,在下知道。在下知道。
+81a4fcd2541ac990,L12 Alexander,Alexander_4_required,14,Alexander,在下想，在下想用一下？
+67c0f2a71f4ff613,L12 Alexander,Alexander_4_required,15,Alexander,呃……嗯……
+4640c27322f55d8c,L12 Alexander,Alexander_4_required,16,Alexander,或許……？
+9739b879143b91cf,L12 Alexander,Alexander_4_required,17,Alexander,只要閣下不介意——
+e2dce2bed173fba0,L12 Alexander,Alexander_4_required,18,Kobold,當然可以。多虧康拉德叫我弄了一個。
+f12929f0cef567d7,L12 Alexander,Alexander_4_required,19,Alexander,好吧好吧……那在下想用一下？
+76ea754cd53f21dc,L12 Alexander,Alexander_4_required,20,Alexander,康拉德……？
+18b51cf572e4b49a,L12 Alexander,Alexander_4_required,21,Kobold,我沒問題！
+334a54e73cf69dc1,L12 Alexander,Alexander_4_required,22,Kobold,我很樂意去幫您拿。
+7bd62126f382f565,L12 Alexander,Alexander_4_required,23,Alexander,嗯……謝過閣下。
+d2c15503eb28631b,L12 Alexander,Alexander_4_required,24,Alexander,好——謝謝。
+# --- jerkoff: Alexander_4_JerkOff_Start ---
+47122b215cc11a2b,L12 Alexander,Alexander_4_JerkOff_Start,1,Alexander,喔……在下想這也不錯～
+# --- cum: Alexander_4_Cum ---
+ed6a9612f44b19ea,L12 Alexander,Alexander_4_Cum,1,Alexander,呼……謝過閣下。
+# --- mount_start: Alexander_4_Mount_Start ---
+1db0bf44f69526fc,L12 Alexander,Alexander_4_Mount_Start,1,Alexander,坐架？在下……想是可以的！
+# --- mount_finish: Alexander_4_Mount_Finish ---
+76527d719ccc95a3,L12 Alexander,Alexander_4_Mount_Finish,1,Alexander,那……比在下預想的更舒服。
+# --- outro: Alexander_4_Outro ---
+35278dc46019f9b9,L12 Alexander,Alexander_4_Outro,1,Alexander,在下感覺好多了。
+5547ec33b10091a2,L12 Alexander,Alexander_4_Outro,2,Alexander,在下……知道此言有些突兀。
+3ce3dec2bd740757,L12 Alexander,Alexander_4_Outro,3,Alexander,但在下以為，閣下教會了在下一些東西。
+5eca8560307cac86,L12 Alexander,Alexander_4_Outro,4,Kobold,可您才是當老師的龍呀。
+419ecbf32abefda1,L12 Alexander,Alexander_4_Outro,5,Alexander,是教授，不過，是的。閣下確實教會了在下。
+0b1b8529d2c3c5fc,L12 Alexander,Alexander_4_Outro,6,Alexander,在下想，在下喜歡被照顧？
+4df2487e01509478,L12 Alexander,Alexander_4_Outro,7,Kobold,大多數人都喜歡！
+c9f8ba59379bb60a,L12 Alexander,Alexander_4_Outro,8,Kobold,我喜歡照顧您。
+93786b06bef36348,L12 Alexander,Alexander_4_Outro,9,Alexander,嗯，是的。在下的意思是更……原始的那種？
+b868cb066c4b572d,L12 Alexander,Alexander_4_Outro,10,Alexander,聽閣下這麼說甚好……不過，在下是指更……原始地被照顧？
+565a3630f0cfbcc5,L12 Alexander,Alexander_4_Outro,11,Alexander,在下喜歡閣下用手輕拍來指示在下該做什麼。
+1161a29c118dbaa6,L12 Alexander,Alexander_4_Outro,12,Alexander,在下喜歡閣下的自信。哪怕只是關乎洗浴。
+32c31015075eeede,L12 Alexander,Alexander_4_Outro,13,Alexander,哪怕只是片刻，放下掌控也甚是舒心。
+1651e2418c22d0c0,L12 Alexander,Alexander_4_Outro,14,Kobold,<size=70%> 一條大龍把主導權交給我。哇。
+bd051341e68cc04e,L12 Alexander,Alexander_4_Outro,15,Kobold,很高興能給您一個放鬆的地方。
+2e1f723e42b149be,L12 Alexander,Alexander_4_Outro,16,Alexander,頗為新奇，不是嗎？
+8212cbdd05d21f37,L12 Alexander,Alexander_4_Outro,17,Alexander,在下很快會再來，可好？謝過閣下的洗浴。
+b5f8ec9a6918d554,L12 Alexander,Alexander_4_Outro,18,Alexander,令人解脫。在下會再來的，可好？
+
+# ===== Level 13: Ryan (Sunny) =====
+# --- intro: Ryan_5_intro ---
+dcd95465ccb79997,L13 Ryan,Ryan_5_intro,1,Kobold,嘿，大個子。
+a4c1cb0899f204fc,L13 Ryan,Ryan_5_intro,2,Ryan,嘿……小個子！
+df50afc7f5e2d994,L13 Ryan,Ryan_5_intro,3,Kobold,我沒<i>那麼</i>小——
+8061d3d1aed7c531,L13 Ryan,Ryan_5_intro,4,Kobold,所以，是來洗澡的嗎？
+1107598aa9bc6c75,L13 Ryan,Ryan_5_intro,5,Ryan,喔，抱歉——
+061629ac669e11f8,L13 Ryan,Ryan_5_intro,6,Ryan,我只是想配合一下。見到你真高興！
+cdc7ebc001250566,L13 Ryan,Ryan_5_intro,7,Ryan,對！
+f8c3932b65e6bbb0,L13 Ryan,Ryan_5_intro,8,Ryan,嘿，狗頭人！
+4a5d3b88460afb6b,L13 Ryan,Ryan_5_intro,9,Ryan,我決定試試烘焙。
+b483e9c7e323807a,L13 Ryan,Ryan_5_intro,10,Ryan,我最近有很多空閒時間。
+afd9ef6045a7191c,L13 Ryan,Ryan_5_intro,11,Ryan,結果發現烘焙好髒呀！
+808f38835d1deb53,L13 Ryan,Ryan_5_intro,12,Ryan,我需要洗個澡。
+# --- intro: Ryan_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+efa367904267d1f9,L13 Ryan,Ryan_5_intro_ryan_romanced,1,Ryan,……為今晚的約會洗個澡。
+d510da8dc09c7bd7,L13 Ryan,Ryan_5_intro_ryan_romanced,2,Kobold,喔。對喔。
+cb4f55dc25088cef,L13 Ryan,Ryan_5_intro_ryan_romanced,3,Kobold,我很期待。
+63b5ec8a662e7e8f,L13 Ryan,Ryan_5_intro_ryan_romanced,4,Ryan,那還好我來提醒你了。
+60004e58bb12dd3c,L13 Ryan,Ryan_5_intro_ryan_romanced,5,Ryan,我在門口等著！
+# --- intro: Ryan_5_intro ---
+3ff66f86649ed3f4,L13 Ryan,Ryan_5_intro,13,Kobold,嘿，萊恩！
+bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,14,Ryan,嘿！我來洗澡。
+747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,15,Kobold,太好了，我去開門。
+1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,16,Kobold,好的！我迫不及待想跟您說康拉德的事。
+4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,17,Kobold,是的！我很快要跟他約會了。
+29301eae6840e128,L13 Ryan,Ryan_5_intro,18,Kobold,嗯嗯，得為跟他的約會做準備。
+154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,19,Ryan,好令人期待呀！
+e1867b98d8ce23bd,L13 Ryan,Ryan_5_intro,20,Ryan,進去再多跟我說說。
+10dc92e80220fe9b,L13 Ryan,Ryan_5_intro,21,Kobold,嘿——萊恩。
+b57c370a0fcc7045,L13 Ryan,Ryan_5_intro,22,Ryan,嘿！
+cd80a4a851309647,L13 Ryan,Ryan_5_intro,23,Kobold,您跟康拉德的約會怎麼樣？
+26eed1b65d0e1370,L13 Ryan,Ryan_5_intro,24,Kobold,快跟我說說您跟康拉德的事！
+b433dad7fc4cdb18,L13 Ryan,Ryan_5_intro,25,Ryan,很順利！
+cd235c4d7d27fbdb,L13 Ryan,Ryan_5_intro,26,Ryan,喔——好心急呀！
+7b1f5d058f2045c5,L13 Ryan,Ryan_5_intro,27,Ryan,我們出去吃了飯。聊得很開心。
+4932dbc11ab131d4,L13 Ryan,Ryan_5_intro,28,Ryan,然後一件事接著一件事……
+1a86226c86c7138f,L13 Ryan,Ryan_5_intro,29,Ryan,去了酒吧……氣氛熱了起來。接下來的事你能想像……<size=70%>哈……
+# --- progress: Ryan_5_Required_ryan_romanced | if $ryan_romanced ---
+e61676df3c022293,L13 Ryan,Ryan_5_Required_ryan_romanced,1,Ryan,那麼。今晚的約會……
+c022fa54258553ea,L13 Ryan,Ryan_5_Required_ryan_romanced,2,Ryan,你想去哪裡？
+6c0884e4717c5d5b,L13 Ryan,Ryan_5_Required_ryan_romanced,3,Kobold,您來決定！
+bbedb233b6bbe2ea,L13 Ryan,Ryan_5_Required_ryan_romanced,4,Kobold,我想出去吃飯。
+fb57b97d646f43c9,L13 Ryan,Ryan_5_Required_ryan_romanced,5,Kobold,您知道什麼好酒吧嗎？
+d2c0f4718541c240,L13 Ryan,Ryan_5_Required_ryan_romanced,6,Kobold,看電影怎麼樣？
+98ef145fb642c5b6,L13 Ryan,Ryan_5_Required_ryan_romanced,7,Ryan,也許我們可以……散散步？
+4bad2b5ecfe22c4a,L13 Ryan,Ryan_5_Required_ryan_romanced,8,Ryan,我特別喜歡讓人騎在我背上。
+6e8c399ff118f405,L13 Ryan,Ryan_5_Required_ryan_romanced,9,Ryan,你有興趣嗎？
+7da2aa0d4ef74597,L13 Ryan,Ryan_5_Required_ryan_romanced,10,Kobold,聽起來真好！
+db39ae73af1cfae5,L13 Ryan,Ryan_5_Required_ryan_romanced,11,Kobold,那不會有失身分嗎？
+3185b026252747c6,L13 Ryan,Ryan_5_Required_ryan_romanced,12,Ryan,我一直很喜歡馱著兩條腿的朋友們……
+d2994ff918a23d86,L13 Ryan,Ryan_5_Required_ryan_romanced,13,Ryan,那約會就這麼說定了，我好期待。
+3fdcf71c3e2f7ea0,L13 Ryan,Ryan_5_Required_ryan_romanced,14,Ryan,喔！不會的。很好玩的！
+8bacddc318adc2b9,L13 Ryan,Ryan_5_Required_ryan_romanced,15,Ryan,我經常馱著其他兩條腿的朋友呢。
+638c1801c65c6b0c,L13 Ryan,Ryan_5_Required_ryan_romanced,16,Ryan,我們一定能想到辦法的！到碼頭找我就行！
+25f86d817a092ae1,L13 Ryan,Ryan_5_Required_ryan_romanced,17,Ryan,嗯，聽起來不錯。
+38ae2aec596ab356,L13 Ryan,Ryan_5_Required_ryan_romanced,18,Ryan,你吃海鮮嗎？
+d7456d9e85366bc9,L13 Ryan,Ryan_5_Required_ryan_romanced,19,Kobold,吃。我喜歡魚！
+925a663e1b23d966,L13 Ryan,Ryan_5_Required_ryan_romanced,20,Kobold,唔，換點別的吧？
+14d1fddd0115ee0d,L13 Ryan,Ryan_5_Required_ryan_romanced,21,Ryan,喔，太好了。我超愛鮭魚。
+6b59acab736bd349,L13 Ryan,Ryan_5_Required_ryan_romanced,22,Ryan,呃，我是龍——不過……你懂我意思。
+334998266afc2476,L13 Ryan,Ryan_5_Required_ryan_romanced,23,Ryan,那約會就這麼說定了！先吃海鮮，然後看情況。
+a02af61e18efb0f0,L13 Ryan,Ryan_5_Required_ryan_romanced,24,Ryan,碼頭邊有家不錯的馬族餐廳。
+cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,25,Ryan,算是馬族融合料理……
+8771d66a0a1ace3e,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,我很喜歡！我覺得你也會喜歡的。
+8cceef523eb8c739,L13 Ryan,Ryan_5_Required_ryan_romanced,27,Ryan,那約會就這麼說定了！
+5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,28,Ryan,對了，市區有家不錯的店叫「翼」。
+4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,我覺得那裡挺合適的！他們每晚都有精彩的表演。
+ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,可以先去那裡，然後開個房……唔。
+435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,看電影應該也很好玩！
+0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,32,Ryan,你想看什麼電影？
+b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Kobold,葉汪：最後一汪
+45afe74b37ed6bb0,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Kobold,星際異攻龍2
+a881cd2440d13252,L13 Ryan,Ryan_5_Required_ryan_romanced,36,Ryan,喔，我聽說那部評價很好。
+00712e7d97f1872a,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Ryan,葉汪系列真的很老套……
+037e3c0c446d2b14,L13 Ryan,Ryan_5_Required_ryan_romanced,38,Ryan,不過跟你一起看我肯定會喜歡的！
+b1ac5509459ca2a4,L13 Ryan,Ryan_5_Required_ryan_romanced,39,Ryan,喔對，第一集我挺喜歡的。
+eb547bf48bc9637e,L13 Ryan,Ryan_5_Required_ryan_romanced,40,Ryan,那約會就這麼說定了。我好期待。
+# --- progress: Ryan_5_Required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+1f2c5ed668dc8972,L13 Ryan,Ryan_5_Required_conrad_romanced,1,Ryan,那麼，多跟我說說康拉德吧！
+522b54ddedc9ae6c,L13 Ryan,Ryan_5_Required_conrad_romanced,2,Kobold,他最近友善多了。
+9df47f9485e2d886,L13 Ryan,Ryan_5_Required_conrad_romanced,3,Kobold,他就像……一個被尖刺包著的大軟心腸。
+2e0446089ab2f237,L13 Ryan,Ryan_5_Required_conrad_romanced,4,Ryan,是喔？聽起來他有點火爆呢。
+eb926b4bc196ac32,L13 Ryan,Ryan_5_Required_conrad_romanced,5,Ryan,不過我了解這種類型……他們內心往往很柔軟。
+8ea9e02ddeed61e3,L13 Ryan,Ryan_5_Required_conrad_romanced,6,Kobold,對，他進步了很多。
+5085892250461c04,L13 Ryan,Ryan_5_Required_conrad_romanced,7,Kobold,嗯。我喜歡這點。
+53011f72775c8ca4,L13 Ryan,Ryan_5_Required_conrad_romanced,8,Ryan,聽你這麼說真好。
+4fbcc070e27c4736,L13 Ryan,Ryan_5_Required_conrad_romanced,9,Ryan,沒有什麼比一個會進步的男人更有魅力了！
+aa8e7dea9ad61538,L13 Ryan,Ryan_5_Required_conrad_romanced,10,Ryan,很高興你們倆處得好。
+390bea406a842664,L13 Ryan,Ryan_5_Required_conrad_romanced,11,Ryan,太棒了。很高興你們倆處得好。
+f147cd900de98aeb,L13 Ryan,Ryan_5_Required_conrad_romanced,12,Ryan,啊，對，那種類型挺可愛的。
+883fec192f3d1119,L13 Ryan,Ryan_5_Required_conrad_romanced,13,Ryan,聽說他最近進步了很多，對吧？
+b5060af9808e8c7c,L13 Ryan,Ryan_5_Required_conrad_romanced,14,Kobold,嗯，他在努力。
+702195668cf48039,L13 Ryan,Ryan_5_Required_conrad_romanced,15,Kobold,我覺得他以前的環境不好。現在好多了。
+1e681c01b417052f,L13 Ryan,Ryan_5_Required_conrad_romanced,16,Ryan,這就夠了，對吧？
+9056022b2085d3b7,L13 Ryan,Ryan_5_Required_conrad_romanced,17,Ryan,不過很高興你們倆處得好。
+932d7df9b58f5376,L13 Ryan,Ryan_5_Required_conrad_romanced,18,Ryan,那就好。
+# --- progress: Ryan_5_Required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e76e544c771880f3,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,1,Ryan,約會的時候康拉德一直在說你。
+2e21aa0b86c092fb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,2,Kobold,說什麼？
+271a662aed24f160,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,3,Ryan,跟我說了他被打的那次。
+1b0b214cb2df69ec,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,4,Ryan,我覺得你幫他的比你自己以為的多得多。
+ad14c398c575824b,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,5,Kobold,我只是在做我的工作！
+daddaa15545566ce,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,6,Ryan,是啊，但那一刻他需要有人在乎他。
+f03747feadc10e71,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,7,Ryan,據我了解，他已經……很久沒被人在乎過了。
+2ed3613575959ca6,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,8,Ryan,就算你只是在做工作……我覺得也幫了他很多。
+658add118bb17ed5,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,9,Ryan,所以，我替他謝謝你的在乎。
+8ca78aefdf9d3b44,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,10,Ryan,我知道他有時候火爆，會忘了跟人道謝。
+9176dd2bd815750c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,11,Kobold,哎……謝謝。
+5a4dcf1ccff086af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,12,Kobold,聽您這麼說我很開心。
+6db8bf6280f68edb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,13,Ryan,喔。還有一件事。
+49e6d82bb7d163af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,14,Ryan,約會之後我們還做了。
+e06e957ec854ab4c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,15,Kobold,<size=70%><i>哇……
+9b2ad1c8b149bf00,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,16,Ryan,哈，是啊。康拉德絕對很有經驗……
+bc156217e847a8df,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,17,Ryan,幹嘛啦。又沒什麼不對！我想你會想知道。
+# --- jerkoff: Ryan_5_JerkOff_Start ---
+9fec39c7cefbaca2,L13 Ryan,Ryan_5_JerkOff_Start,1,Ryan,嘿……今天手挺不安分的喔？
+# --- cum: Ryan_5_Cum ---
+6f8c64dde681ced5,L13 Ryan,Ryan_5_Cum,1,Ryan,呼……我正需要這個。謝謝。
+# --- mount_start: Ryan_5_Mount_Start ---
+c7f3dbd886d929a7,L13 Ryan,Ryan_5_Mount_Start,1,Ryan,坐架？好呀！
+# --- mount_finish: Ryan_5_Mount_Finish ---
+48ffbc93e2486713,L13 Ryan,Ryan_5_Mount_Finish,1,Ryan,呼……謝謝。
+# --- outro: Ryan_5_Outro_ryan_romanced | if $ryan_romanced ---
+6fc39ec69d974bb4,L13 Ryan,Ryan_5_Outro_ryan_romanced,1,Ryan,我想你每個角落都洗到了。
+c9e5fbe3317edd3f,L13 Ryan,Ryan_5_Outro_ryan_romanced,2,Ryan,你知道這代表什麼……
+f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,約會之夜！
+0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,4,Ryan,代表我準備好跟某位狗頭人約會了。
+e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,5,Ryan,我知道你得關店。我會把地址給你，我們在那裡碰頭，好嗎？
+6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Kobold,好呀！
+7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,我真的很期待。
+dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Ryan,好，你去開門，我先過去那裡！
+7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,9,Ryan,回頭見。
+# --- outro: Ryan_5_Outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+b050469dea41d597,L13 Ryan,Ryan_5_Outro_conrad_romanced,1,Ryan,謝謝你幫我。
+25ec1c59caa5e66c,L13 Ryan,Ryan_5_Outro_conrad_romanced,2,Kobold,我隨時樂意幫您洗澡！
+2a67fb93196e8722,L13 Ryan,Ryan_5_Outro_conrad_romanced,3,Ryan,喔——不只是洗澡。
+2140dcb75dc2d0f9,L13 Ryan,Ryan_5_Outro_conrad_romanced,4,Ryan,就是，所有的事。
+a6d4dab5c8699946,L13 Ryan,Ryan_5_Outro_conrad_romanced,5,Ryan,之前那次分手很難熬。
+1fd66775cea2eb4b,L13 Ryan,Ryan_5_Outro_conrad_romanced,6,Ryan,這裡是個很好的避風港。
+8f4dc96f133fa75c,L13 Ryan,Ryan_5_Outro_conrad_romanced,7,Ryan,而且我真的替你跟康拉德高興。
+8ed791569d35f02c,L13 Ryan,Ryan_5_Outro_conrad_romanced,8,Ryan,下次來再見，好嗎？
+d38d6a1844481871,L13 Ryan,Ryan_5_Outro_conrad_romanced,9,Kobold,見到您總是很開心，萊恩。
+c88980c837fb6592,L13 Ryan,Ryan_5_Outro_conrad_romanced,10,Kobold,我去幫您開門
+b1e1c4e40f4aaeec,L13 Ryan,Ryan_5_Outro_conrad_romanced,11,Ryan,你也是。謝謝你幫我洗澡。
+# --- outro: Ryan_5_Outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+c5f14714a1e0439c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,1,Ryan,這真是個美好的避風港……
+3eb55bf5de9c718b,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,2,Ryan,你還把康拉德介紹給了我。
+7aa8987bf569468c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,3,Ryan,他很棒。
+
+# ===== Level 14: Conrad (Night) =====
+# --- intro: Conrad_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ab4070df9f9d3980,L14 Conrad,Conrad_5_intro_ryan_romanced,1,Conrad,<size=140%>嘿，<size=100%>想洗個澡。
+8597b1ea1423580d,L14 Conrad,Conrad_5_intro_ryan_romanced,2,Kobold,嘿，康拉德。
+3ed1272125c54574,L14 Conrad,Conrad_5_intro_ryan_romanced,3,Kobold,這麼晚了，什麼風把您吹來了？
+d90de33a2137108a,L14 Conrad,Conrad_5_intro_ryan_romanced,4,Conrad,對，是我。
+2ca9d5b1cf89ccc8,L14 Conrad,Conrad_5_intro_ryan_romanced,5,Conrad,今晚要去市區。得洗得一塵不染。對了……
+f5ebf2a456433609,L14 Conrad,Conrad_5_intro_ryan_romanced,6,Conrad,聽說了你跟那個藍色大塊頭的事。叫萊恩對吧？
+061d649bf4c733b7,L14 Conrad,Conrad_5_intro_ryan_romanced,7,Conrad,肯定玩得不錯吧。
+4193e2b4730c89ad,L14 Conrad,Conrad_5_intro_ryan_romanced,8,Conrad,希望順利。
+63ecf81d4e111712,L14 Conrad,Conrad_5_intro_ryan_romanced,9,Kobold,很順利！謝謝關心。
+0c7c795d2dd5eb76,L14 Conrad,Conrad_5_intro_ryan_romanced,10,Kobold,挺順利的。
+ae61bf1949b59852,L14 Conrad,Conrad_5_intro_ryan_romanced,11,Conrad,好了！
+25ba5fd876754270,L14 Conrad,Conrad_5_intro_ryan_romanced,12,Conrad,康拉德要洗澡！
+# --- intro: Conrad_5_intro_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+76777c9ea422832b,L14 Conrad,Conrad_5_intro_conrad_romanced,1,Conrad,嘿，帥哥
+0b7efee62380b6cd,L14 Conrad,Conrad_5_intro_conrad_romanced,2,Conrad,我看起來怎麼樣？
+060982be63865e2c,L14 Conrad,Conrad_5_intro_conrad_romanced,3,Kobold,非常酷
+b6fff34d007d61c9,L14 Conrad,Conrad_5_intro_conrad_romanced,4,Kobold,呃……
+806a4d3418ed236d,L14 Conrad,Conrad_5_intro_conrad_romanced,5,Conrad,對吧！我就是！
+4bd075c280186208,L14 Conrad,Conrad_5_intro_conrad_romanced,6,Conrad,不過不適合約會。
+777560a71762cf9b,L14 Conrad,Conrad_5_intro_conrad_romanced,7,Conrad,那就為今晚的約會洗乾淨吧。
+364ea49c3b6c9895,L14 Conrad,Conrad_5_intro_conrad_romanced,8,Conrad,哈！
+3ef6b1f5eeda632e,L14 Conrad,Conrad_5_intro_conrad_romanced,9,Conrad,開個玩笑。
+ec760ba3440257aa,L14 Conrad,Conrad_5_intro_conrad_romanced,10,Conrad,好，那就為今晚的約會洗乾淨吧。
+300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,11,Kobold,得把您洗得一塵不染！
+260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Conrad,嘿……那當然。
+d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,13,Conrad,我幹勁十足。
+a652a464f67481de,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,我之前提的那家酒吧，位子已經訂好了。
+ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,晚上那氣氛真他媽讚。
+18ed0c57d649df67,L14 Conrad,Conrad_5_intro_conrad_romanced,16,Conrad,你會喜歡的。
+# --- intro: Conrad_5_intro_ryan_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+9ec8a28e82bf29dd,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,1,Conrad,嘿——。
+ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,什麼事讓您心情這麼好？
+9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,3,Conrad,我跟萊恩的約會……
+f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,真他媽讚！
+4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,抱歉來晚了。我的作息亂掉了。
+258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,不過我就是來洗個澡的。
+b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,7,Kobold,您得趕緊把萊恩的事全都告訴我。
+9ab1cc314a249eac,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,8,Kobold,好的！我去開門。
+1d28eb42dcdd879d,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,別擔心。我會的。
+# --- progress: Conrad_5_required_ryan_romanced | if $ryan_romanced ---
+189bf8eff795718a,L14 Conrad,Conrad_5_required_ryan_romanced,1,Conrad,嘿，抱歉來晚了。
+cf69f255df6f95af,L14 Conrad,Conrad_5_required_ryan_romanced,2,Kobold,沒關係。我大概一小時後才關門。
+3aa0d9279bff43d9,L14 Conrad,Conrad_5_required_ryan_romanced,3,Kobold,您什麼時候來都行！
+f135fa715daf4f0c,L14 Conrad,Conrad_5_required_ryan_romanced,4,Conrad,啊。那好，我收回那句抱歉。
+b127befdbae1da68,L14 Conrad,Conrad_5_required_ryan_romanced,5,Conrad,你跟萊恩的約會。
+e00a5000d0f2cd2a,L14 Conrad,Conrad_5_required_ryan_romanced,6,Conrad,那檔事怎麼樣。
+7bd3b05552e5bd75,L14 Conrad,Conrad_5_required_ryan_romanced,7,Kobold,喔。呃。<size=70%>挺好的。
+051b72b94276cf81,L14 Conrad,Conrad_5_required_ryan_romanced,8,Conrad,嘿，問問又沒什麼！
+d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,9,Conrad,聽起來是挺好的。
+83e2bb850a49b35e,L14 Conrad,Conrad_5_required_ryan_romanced,10,Conrad,哈，我猜也是。
+9f69f9b215b926ee,L14 Conrad,Conrad_5_required_ryan_romanced,11,Conrad,你確實很會用手。
+2c910bcdb2651bf0,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,我嫉妒了！
+9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,13,Conrad,……不是那種怪怪的意思。
+# --- progress: Conrad_5_required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+63b786e95b90bc5e,L14 Conrad,Conrad_5_required_conrad_romanced,1,Conrad,那麼。今晚。
+6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,2,Conrad,你該期待的。
+06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,3,Conrad,你絕對會喜歡。
+6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,4,Conrad,那一帶的燈光也很棒。
+95e9b7e01259ac1e,L14 Conrad,Conrad_5_required_conrad_romanced,5,Conrad,真的很有氣氛。
+66e39f6379268a82,L14 Conrad,Conrad_5_required_conrad_romanced,6,Kobold,把氣氛留到今晚吧！
+f9ae65b8ce359331,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,哈。好吧。
+1d1baaa8db27cb04,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,對了。
+ff84a4b13b8be2a4,L14 Conrad,Conrad_5_required_conrad_romanced,9,Conrad,等我洗乾淨，就先出發去把位子準備好。
+# --- progress: Conrad_5_required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+1598446fc49cdf80,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,1,Conrad,萊恩真是條好龍。
+e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold,他確實是。
+73f5014bc8782ad4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,3,Conrad,是啊，他對我特別好。
+953a9b287930c86a,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,4,Conrad,他……很體貼。也特別善解人意。
+41d3eda9c195fe48,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,5,Conrad,剛認識他的時候，我又犯了老毛病。
+42fb7bc16778c0a5,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,6,Conrad,……老實說，有點混蛋。
+66ad79997bc62825,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,7,Conrad,他就是……知道該說什麼，把我拉了回來。
+7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,8,Kobold,真好！
+98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,萊恩是個貼心的人
+7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Conrad,是啊……他真的很棒。
+5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,謝謝你把他介紹給我。
+# --- jerkoff: Conrad_5_JerkOff_Start ---
+c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,哈……現在要幫我打手槍？行啊。
+# --- cum: Conrad_5_Cum ---
+51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,幹……你真懂怎麼伺候一條龍！
+# --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
+311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,完成了！
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,<i>您一塵不染。
+2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,看來是。
+af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,爽啦。
+8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,謝謝你這麼晚還幫我洗澡。
+028e30f8adf6e6ad,L14 Conrad,Conrad_5_outro_ryan_romanced,6,Conrad,你跟萊恩的事得隨時告訴我，行嗎？
+a398eca1fb8d9924,L14 Conrad,Conrad_5_outro_ryan_romanced,7,Conrad,總之……
+234fc4abfc8d8619,L14 Conrad,Conrad_5_outro_ryan_romanced,8,Conrad,讓<i>大C</i>出去吧！
+a53a782390260e09,L14 Conrad,Conrad_5_outro_ryan_romanced,9,Kobold,大C……？
+8e369560d1581070,L14 Conrad,Conrad_5_outro_ryan_romanced,10,Kobold,好的，康拉德。
+f6b30f28e561466d,L14 Conrad,Conrad_5_outro_ryan_romanced,11,Conrad,呃……這綽號還是算了。
+ac2b2c6605839727,L14 Conrad,Conrad_5_outro_ryan_romanced,12,Conrad,哈……是啊……
+fc66fcc7fd7d0e4d,L14 Conrad,Conrad_5_outro_ryan_romanced,13,Conrad,行，回頭見！
+# --- outro: Conrad_5_outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+9333db61bcc08052,L14 Conrad,Conrad_5_outro_conrad_romanced,1,Conrad,全乾淨了……
+8b45593ada7894a3,L14 Conrad,Conrad_5_outro_conrad_romanced,2,Conrad,你知道這代表什麼。
+53e54ad7b23e6757,L14 Conrad,Conrad_5_outro_conrad_romanced,3,Kobold,約會之夜！
+4f319a155b3e572c,L14 Conrad,Conrad_5_outro_conrad_romanced,4,Kobold,我得先關店——
+f3296c9825518630,L14 Conrad,Conrad_5_outro_conrad_romanced,5,Conrad,你關店的時候我去幫你占位子。
+c215e512d572e96c,L14 Conrad,Conrad_5_outro_conrad_romanced,6,Conrad,我知道，我去幫你占位子！
+22d803e60de439a9,L14 Conrad,Conrad_5_outro_conrad_romanced,7,Conrad,好了！我準備好了。
+092af5ec90bd21c7,L14 Conrad,Conrad_5_outro_conrad_romanced,8,Conrad,今晚我在酒吧等你！
+# --- outro: Conrad_5_outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e079ff157877ea28,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,1,Conrad,我看你每個角落都洗到了！
+6749954edebda844,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,2,Conrad,我這就不礙你事了。
+2bc72fd03dd6d9e7,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,3,Conrad,謝謝你這麼晚還讓我進來。
+f001e3ed4df7e0ee,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,4,Kobold,不客氣！
+9d4a6cd35afcc17e,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,5,Kobold,隨時歡迎您，康拉德。
+5e4e2c64bc630fa1,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,6,Conrad,嗯……我會調整一下作息的……
+5c58c3e6d4c7dc65,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,7,Conrad,謝了。我每次來這裡都很開心。
+163137d1bff25904,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,8,Conrad,總之，能去開個門嗎？
+94d29a68cf0c8c31,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,9,Conrad,夜生活可不會自己開始！
+
+# ===== Level 15: Alexander (Sunny) =====
+# --- intro: Alexander_5_intro ---
+bc3d56d7794e4370,L15 Alexander,Alexander_5_intro,1,Kobold,嘿，亞歷山大。
+1bef44aeb393caf0,L15 Alexander,Alexander_5_intro,2,Kobold,嘿，大個子！
+2d8bd7d9bb5f85ba,L15 Alexander,Alexander_5_intro,3,Alexander,閣下好。
+b048841add4ee6cf,L15 Alexander,Alexander_5_intro,4,Alexander,在下前來洗浴。
+beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,5,Alexander,望閣下一切安好！
+906a59351176dc24,L15 Alexander,Alexander_5_intro,6,Kobold,是的！剛跟萊恩約會回來。
+2a75724b922176cf,L15 Alexander,Alexander_5_intro,7,Alexander,喔？在下見過的那條天藍色的龍？
+1f4da5e1dde7e17c,L15 Alexander,Alexander_5_intro,8,Alexander,得知閣下有了交往對象，甚是欣喜！
+50f1967e1e33cecf,L15 Alexander,Alexander_5_intro,9,Kobold,是的！剛跟康拉德約會回來。
+0738da2a76bc2231,L15 Alexander,Alexander_5_intro,10,Alexander,喔？那條小紅龍？
+896dc87e931d64eb,L15 Alexander,Alexander_5_intro,11,Kobold,很好！您來了就更好了。
+0786859cb08f5ef9,L15 Alexander,Alexander_5_intro,12,Kobold,我很好！
+414ed962f4c8a03a,L15 Alexander,Alexander_5_intro,13,Alexander,喔。那……太好了！
+10cdda610834ef77,L15 Alexander,Alexander_5_intro,14,Alexander,在下能來此，亦甚欣喜。
+346865d8c1dd9693,L15 Alexander,Alexander_5_intro,15,Alexander,甚好。
+f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,16,Alexander,總之，在下需要清洗。
+4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,17,Kobold,馬上！
+42dbc75670fc6105,L15 Alexander,Alexander_5_intro,18,Alexander,期待這次洗浴。
+# --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
+067e958be39127d9,L15 Alexander,Alexander_5_romance_route,1,Alexander,在下一直在想……
+4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,2,Alexander,閣下認為在下有魅力嗎？
+303f7b0a567bfb2b,L15 Alexander,Alexander_5_romance_route,3,Kobold,有。
+09141003dee8665c,L15 Alexander,Alexander_5_romance_route,4,Kobold,我覺得有！
+43c22d680a102c02,L15 Alexander,Alexander_5_romance_route,5,Kobold,我覺得您很好看。
+4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,6,Alexander,甚好！
+c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,7,Alexander,那……在下便自信多了。
+2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,8,Alexander,當真？
+8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,9,Alexander,那在下便自信多了。
+4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,10,Alexander,這便引出在下的下一個問題……
+96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,11,Alexander,閣下今晚可願與在下一同前往學院圖書館……？
+558dbfba7857e37d,L15 Alexander,Alexander_5_romance_route,12,Alexander,那便是一場……約會。按世人的說法。
+76eea215ea7ba450,L15 Alexander,Alexander_5_romance_route,13,Kobold,"<gradient=""gold""><b> 我不介意！ </b></gradient><size=70%>（將進入亞歷山大戀愛線！）"
+500188b2a2627768,L15 Alexander,Alexander_5_romance_route,14,Kobold,"<gradient=""gold""><b> 我今晚有事。抱歉。 </b></gradient><size=70%>（將不進入任何戀愛線！）"
+96b6a8b07a0781d0,L15 Alexander,Alexander_5_romance_route,15,Alexander,在下考慮向閣下提出此事已有一段時間了。
+942b49a7c66fb0bf,L15 Alexander,Alexander_5_romance_route,16,Alexander,啊。不必掛懷。
+b1cb9d9c9d3d9661,L15 Alexander,Alexander_5_romance_route,17,Alexander,好吧。那在下便不打擾洗浴了！
+# --- progress: Alexander_5_required ---
+861a7c80ccb8a4ba,L15 Alexander,Alexander_5_required,1,Alexander,那麼，閣下的約會如何？
+3481be04c35d76a2,L15 Alexander,Alexander_5_required,2,Kobold,很棒！萊恩是個貼心的人。
+d26f0d306552c44a,L15 Alexander,Alexander_5_required,3,Kobold,很棒。康拉德很狂野。好的那種狂野。
+cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,很好。我們做了。
+6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,甚好。閣下配得上一個正派的男人。
+9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,在下確信他亦覺得閣下可親！
+add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,謝謝，您也很可親！
+8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,8,Alexander,謝過閣下。此言甚是仁厚。
+a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,9,Alexander,哈，他似乎是狂野的類型。
+5bac15668ef9b115,L15 Alexander,Alexander_5_required,10,Alexander,閣下喜歡他，在下甚為欣慰。在下確信他亦覺得閣下可親。
+cb8f422bf973d563,L15 Alexander,Alexander_5_required,11,Alexander,想必你們二人甚是相配。
+# --- jerkoff: Alexander_5_JerkOff_Start ---
+caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> 甚是舒服……</i>
+# --- cum: Alexander_5_Cum ---
+3eb65bb3b11e901c,L15 Alexander,Alexander_5_Cum,1,Alexander,喔——抱歉弄髒了……
+# --- mount_start: Alexander_5_Mount_Start ---
+6df0c2c2617b9905,L15 Alexander,Alexander_5_Mount_Start,1,Alexander,哎呀。在下想在下可以用一下坐架！
+# --- mount_finish: Alexander_5_Mount_Finish ---
+31ea4258e44c77e4,L15 Alexander,Alexander_5_Mount_Finish,1,Alexander,唔……在下想在下正需要這個。謝過閣下。
+# --- outro: Alexander_5_Outro ---
+026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,謝過閣下的清洗。
+7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,今晚——在校園裡。圖書館是那座藍色尖頂的大樓。
+f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,走到龍用入口，在下會放閣下進來。
+5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,4,Kobold,我也是！
+6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,5,Kobold,聽起來真棒。
+ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,6,Alexander,確實頗為不錯。
+6068953467a952bf,L15 Alexander,Alexander_5_Outro,7,Alexander,在下這就不礙閣下的事了。謝過閣下的洗浴。
+7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,8,Alexander,今晚見。
+4f8eb9eeb14b2f7d,L15 Alexander,Alexander_5_Outro,9,Alexander,應該每個角落都洗到了。
+991fa15e47275ce0,L15 Alexander,Alexander_5_Outro,10,Alexander,謝過閣下的清洗！
+6d1255dd43802973,L15 Alexander,Alexander_5_Outro,11,Alexander,能結識閣下，在下甚是欣喜。
+5d5e0eafc7ef13d6,L15 Alexander,Alexander_5_Outro,12,Kobold,我也是。
+63b9a103362edd6c,L15 Alexander,Alexander_5_Outro,13,Kobold,哎呀，謝謝您，亞歷山大。
+6df8f8008c57cbac,L15 Alexander,Alexander_5_Outro,14,Alexander,總之，在下這就不礙閣下的事了。
+1cb7b221b7adda1c,L15 Alexander,Alexander_5_Outro,15,Alexander,再會！
+
+# ===== Cutscenes (started by game code) =====
+# --- Alexander_SexScene ---
+266f7a45346224eb,Cutscene,Alexander_SexScene,1,Alexander,我們可以就這樣躺著……
+43b91c684627d3b6,Cutscene,Alexander_SexScene,2,Alexander,一切都交給閣下？
+# --- Alexander_SexScene_Loop ---
+7d085d9765e3c5d6,Cutscene,Alexander_SexScene_Loop,1,Alexander,哎呀——
+f70738ec42aa401d,Cutscene,Alexander_SexScene_Loop,2,Alexander,閣下的手甚是靈巧
+328ad033a139998d,Cutscene,Alexander_SexScene_Loop,3,Alexander,嗯……
+5ec1f7e700f37c3d,Cutscene,Alexander_SexScene_Loop,4,Alexander,……
+# --- Alexander_SexScene_Cum | if $alexander_sexscene_loops ---
+08ab4c0c6ca5fe6f,Cutscene,Alexander_SexScene_Cum,1,Kobold,這樣好嗎？
+069e24aa896ea4cf,Cutscene,Alexander_SexScene_Cum,2,Alexander,好……正是如此。
+2c33dcef91e06624,Cutscene,Alexander_SexScene_Cum,3,Kobold,好。
+2d731f1625c8064f,Cutscene,Alexander_SexScene_Cum,4,Alexander,在下……已經很接近了
+4650860eb73dd16f,Cutscene,Alexander_SexScene_Cum,5,Kobold,再為我撐一會兒？
+860ede2808e2507c,Cutscene,Alexander_SexScene_Cum,6,Kobold,來吧！
+16c36baab1491eb1,Cutscene,Alexander_SexScene_Cum,7,Alexander,好、好吧。在下盡力。
+24537bfd61baf4a0,Cutscene,Alexander_SexScene_Cum,8,Alexander,在下恐怕無法再忍了
+a63eed0b6b6a78c7,Cutscene,Alexander_SexScene_Cum,9,Kobold,還不行。再等一下。
+35f5ee08b67fc0f5,Cutscene,Alexander_SexScene_Cum,10,Kobold,您準備好了就隨時釋放。
+82af5427ecb85c11,Cutscene,Alexander_SexScene_Cum,11,Alexander,是……
+847ec7301eab2bde,Cutscene,Alexander_SexScene_Cum,12,Alexander,呼……
+c958ed597f3ee7b9,Cutscene,Alexander_SexScene_Cum,13,Alexander,在下甚是享受。
+f3be3d62065c0791,Cutscene,Alexander_SexScene_Cum,14,Kobold,聽您這麼說我很高興。
+6a629fe795ac84d7,Cutscene,Alexander_SexScene_Cum,15,Kobold,接下來呢？
+4cc4342b97114697,Cutscene,Alexander_SexScene_Cum,16,Alexander,是的……但在下以為，我們需要清理地板。
+ee63118710aa5c5b,Cutscene,Alexander_SexScene_Cum,17,Alexander,我們需要清理地板……
+8319d1715d2a4149,Cutscene,Alexander_SexScene_Cum,18,Alexander,<i><size=70%>糟了……還有那些書
+# --- Conrad_SexScene ---
+b6d2d6ccb52c5166,Cutscene,Conrad_SexScene,1,Conrad,喔，幹！你還真敢玩！
+e5c48d779d6422b5,Cutscene,Conrad_SexScene,2,Kobold,唔！（對！）
+e0ecc38d8bbe3790,Cutscene,Conrad_SexScene,3,Conrad,嘴裡有東西別說話
+# --- Conrad_SexScene_Loop ---
+d7e01674d2776085,Cutscene,Conrad_SexScene_Loop,1,Conrad,我真不知道你是怎麼辦到的。
+9b277d164ba8a630,Cutscene,Conrad_SexScene_Loop,2,Conrad,不過我沒意見。
+73433af885509f84,Cutscene,Conrad_SexScene_Loop,3,Conrad,爽翻了
+# --- Conrad_SexScene_Cum | if $conrad_sexscene_loops ---
+fcfcfc2c31be11e5,Cutscene,Conrad_SexScene_Cum,1,Conrad,準備好了嗎？
+6b426873374bb7a4,Cutscene,Conrad_SexScene_Cum,2,Kobold,再等一下
+91213ceb7548b8dc,Cutscene,Conrad_SexScene_Cum,3,Kobold,準備好了！
+72e3cb39cf4a181a,Cutscene,Conrad_SexScene_Cum,4,Conrad,康拉德想撐多久就能撐多久
+3f2d1b3f808a4ec7,Cutscene,Conrad_SexScene_Cum,5,Conrad,你準備好了我隨時可以放開
+46438371960f0974,Cutscene,Conrad_SexScene_Cum,6,Kobold,還沒。
+d893ccbfc95475bc,Cutscene,Conrad_SexScene_Cum,7,Kobold,來吧！
+aa1a7618e29e4482,Cutscene,Conrad_SexScene_Cum,8,Conrad,嘿，我沒意見！
+aa116a5879e94072,Cutscene,Conrad_SexScene_Cum,9,Conrad,我服了。
+45a9ad3bf69b0498,Cutscene,Conrad_SexScene_Cum,10,Conrad,準備好回俱樂部了嗎？
+4db30f4a0f40d350,Cutscene,Conrad_SexScene_Cum,11,Kobold,我覺得好！
+# --- Ryan_Conrad_SexScene ---
+e86ce51d1dbf8280,Cutscene,Ryan_Conrad_SexScene,1,Ryan,萊恩：我從沒在外面做過
+848d254c8d63e6fb,Cutscene,Ryan_Conrad_SexScene,2,Conrad,康拉德：別擔心！
+3e0325398f9de675,Cutscene,Ryan_Conrad_SexScene,3,Conrad,康拉德：我常常這樣
+d55845869b2cd946,Cutscene,Ryan_Conrad_SexScene,4,Ryan,萊恩：確實挺刺激的
+# --- Ryan_Conrad_SexScene_Loop ---
+59a6f968c75b792f,Cutscene,Ryan_Conrad_SexScene_Loop,1,Conrad,康拉德：你玩得開心嗎？
+836b8c1db049dc01,Cutscene,Ryan_Conrad_SexScene_Loop,2,Ryan,萊恩：當然開心。擔心我呀？
+dd91f260275b5093,Cutscene,Ryan_Conrad_SexScene_Loop,3,Conrad,康拉德：康拉德只管自己爽
+bf095ea55cdeb898,Cutscene,Ryan_Conrad_SexScene_Loop,4,Conrad,康拉德：其實……我是說……
+5001d1e4b306b6d9,Cutscene,Ryan_Conrad_SexScene_Loop,5,Conrad,康拉德：我想讓這次順利
+4c3de56e34727c37,Cutscene,Ryan_Conrad_SexScene_Loop,6,Ryan,萊恩：我覺得非常順利
+06cb256bd506fa70,Cutscene,Ryan_Conrad_SexScene_Loop,7,Ryan,萊恩：我很喜歡
+2e028541c13b150b,Cutscene,Ryan_Conrad_SexScene_Loop,8,Conrad,康拉德：你真舒服
+# --- Ryan_Conrad_SexScene_Cum | if $ryan_conrad_sexscene_loops ---
+5142dd3610e4cc0c,Cutscene,Ryan_Conrad_SexScene_Cum,1,Conrad,康拉德：我要出來了
+357806c023d4c85e,Cutscene,Ryan_Conrad_SexScene_Cum,2,Kobold,讓他們繼續
+4e0f42eaaa70c70d,Cutscene,Ryan_Conrad_SexScene_Cum,3,Kobold,讓他們釋放
+d8e952b1635e3fe5,Cutscene,Ryan_Conrad_SexScene_Cum,4,Ryan,萊恩：我也快了……
+50504d8f1c0a5f1c,Cutscene,Ryan_Conrad_SexScene_Cum,5,Ryan,萊恩：哇……你真的只有身高是小的。
+e7a686aecb078b9e,Cutscene,Ryan_Conrad_SexScene_Cum,6,Conrad,康拉德：那當然！
+98087861fbfaa621,Cutscene,Ryan_Conrad_SexScene_Cum,7,Ryan,萊恩：真舒服
+be1dff750703beb9,Cutscene,Ryan_Conrad_SexScene_Cum,8,Conrad,康拉德：嗯
+# --- Ryan_SexScene ---
+caa123c912750ed2,Cutscene,Ryan_SexScene,1,Ryan,你確定塞得進去嗎？
+c8dda0f1b46383bc,Cutscene,Ryan_SexScene,2,Kobold,狗頭人很柔軟的。塞得進去。
+849b442f9a88c950,Cutscene,Ryan_SexScene,3,Kobold,汪
+88f476f3d6ebac8d,Cutscene,Ryan_SexScene,4,Ryan,好，要是不舒服什麼的就告訴我。
+# --- Ryan_SexScene_Loop ---
+48cf02e6d9e88966,Cutscene,Ryan_SexScene_Loop,1,Ryan,喔哇……
+8caf602c6f60f544,Cutscene,Ryan_SexScene_Loop,2,Ryan,這是我第一次跟狗頭人做。
+db7bd45c48fe49a2,Cutscene,Ryan_SexScene_Loop,3,Ryan,真的很舒服……
+# --- Ryan_SexScene_Cum | if $ryan_sexscene_loops ---
+eff478354f7f1b18,Cutscene,Ryan_SexScene_Cum,1,Ryan,我可能快了……
+ddfa0f7133303565,Cutscene,Ryan_SexScene_Cum,2,Kobold,請再撐一會兒
+f76c951c6c97d8cd,Cutscene,Ryan_SexScene_Cum,3,Kobold,來吧！
+27cb363532fd0324,Cutscene,Ryan_SexScene_Cum,4,Ryan,好，我可以
+685d8bfcf6988796,Cutscene,Ryan_SexScene_Cum,5,Ryan,很難忍住……
+8fdcf9b73762886e,Cutscene,Ryan_SexScene_Cum,6,Kobold,我還要更多！
+5128d4e4a722127f,Cutscene,Ryan_SexScene_Cum,7,Kobold,來吧！
+eb41a8966fdf7cfd,Cutscene,Ryan_SexScene_Cum,8,Ryan,你這樣只會讓我更難忍！
+9c78a3c6942a7982,Cutscene,Ryan_SexScene_Cum,9,Ryan,好，我可以的……
+b9ed3621fb6dfbef,Cutscene,Ryan_SexScene_Cum,10,Ryan,真的很開心。
+99955b75e0544165,Cutscene,Ryan_SexScene_Cum,11,Kobold,我也覺得
+ee60aadc2fcea44d,Cutscene,Ryan_SexScene_Cum,12,Ryan,你願意的話可以留下來。
+9d29fc6dcfe7c05d,Cutscene,Ryan_SexScene_Cum,13,Ryan,我訂了一晚。
+3736ec41338c7ad0,Cutscene,Ryan_SexScene_Cum,14,Kobold,我很樂意。
+
+# ===== Dragon reactions (started by game code) =====
+# --- DragonAlmostClean ---
+bae76fc276bb2030,Reaction,DragonAlmostClean,1,Dragon,喔，好多了，但我還是覺得髒。
+ce6aaf93738f317e,Reaction,DragonAlmostClean,2,Dragon,能再檢查一下我乾淨了沒嗎？
+16584052fd337f09,Reaction,DragonAlmostClean,3,Kobold,好的
+c54cbee211a25e14,Reaction,DragonAlmostClean,4,Kobold,好的
+# --- DragonAnnoyedByBuzzing ---
+d139edc8ffdc22b7,Reaction,DragonAnnoyedByBuzzing,1,Dragon,別鬧了，我們還沒洗完呢。對吧？
+631ef624f4506ea7,Reaction,DragonAnnoyedByBuzzing,2,Kobold,嘿嘿
+# --- DragonColdBalls ---
+e820f3ec0397737f,Reaction,DragonColdBalls,1,Dragon,喔！好冰！
+8408ed2f21e73811,Reaction,DragonColdBalls,2,Dragon,哇！好冰！
+46f3ba9fc7d04fa7,Reaction,DragonColdBalls,3,Dragon,嘶！冷水！
+00221b8a2772003a,Reaction,DragonColdBalls,4,Dragon,呀！
+# --- DragonConfusedAboutDismissal ---
+9b99cd22a6f3f85a,Reaction,DragonConfusedAboutDismissal,1,Dragon,喔，洗完了？
+7022570f87a73481,Reaction,DragonConfusedAboutDismissal,2,Dragon,我覺得你還漏了幾個地方……
+27db29faa5e11bb6,Reaction,DragonConfusedAboutDismissal,3,Kobold,哎呀，抱歉。
+4fff64bb7aeed72f,Reaction,DragonConfusedAboutDismissal,4,Kobold,我不知道那個按鈕是幹嘛的。
+b0869fc4ea46c5bd,Reaction,DragonConfusedAboutDismissal,5,Dragon,沒關係，
+cb554196ac99a428,Reaction,DragonConfusedAboutDismissal,6,Dragon,對，它會「嗶——」一聲，哈哈。
+345b04bed8d1a7e0,Reaction,DragonConfusedAboutDismissal,7,Dragon,總之還好你沒洗完，繼續吧！
+# --- DragonSatisfiedAndLeaves ---
+7a8942e2613fa23c,Reaction,DragonSatisfiedAndLeaves,1,Dragon,謝謝你幫我洗澡！！
+c92c35bb9f44dac4,Reaction,DragonSatisfiedAndLeaves,2,Dragon,以後能一起出去玩嗎？
+8aff5108a050bcfa,Reaction,DragonSatisfiedAndLeaves,3,Kobold,是的！
+2cb6318b9f4550a8,Reaction,DragonSatisfiedAndLeaves,4,Kobold,好！
+28454e931a2d3578,Reaction,DragonSatisfiedAndLeaves,5,Dragon,太好了！那回頭見！
+
+# ===== Unused nodes (not reachable in the current game) =====
+# --- Alexander_1 ---
+31c53bea307f49d0,Unused,Alexander_1,1,Alexander,在下當時正協助那位鍊金術士搆取高處的架子
+f00ea25690e17adf,Unused,Alexander_1,2,Alexander,在下聽到一聲巨響，伊格威克斯恐怕未能倖免。
+# --- Alexander_2 ---
+07874aa669e5cb8c,Unused,Alexander_2,1,Alexander,若再被發現違反規章，在下的聲譽便毀於一旦！
+cfe73695b2bdfe19,Unused,Alexander_2,2,Alexander,學院絕不能知道此事，明白否？
+27b11f3f6bf12fe9,Unused,Alexander_2,3,Kobold,哪個學院？
+2d3935f374b6474e,Unused,Alexander_2,4,Alexander,自然是伯恩斯威克社區奇術學院！
+7a5128354d6171d0,Unused,Alexander_2,5,Alexander,乃是擁有在下這般聲名顯赫的教授的、最負盛名的學院。此人便是：
+b34663a53a6541a7,Unused,Alexander_2,6,Alexander,甚好。在下可不能讓伯恩斯威克社區奇術學院得知，其最優秀的教授亞歷山大又惹出了一起事故。
+b39b95373bf40c36,Unused,Alexander_2,7,Alexander,哎呀糟了，就當在下沒說過！
+# --- Alexander_3 ---
+2501ad553fd20454,Unused,Alexander_3,1,Alexander,在下還需復活伊格威克斯，喔，何其難堪！
+7b282582fab597eb,Unused,Alexander_3,2,Alexander,藥劑師們會玷污在下的名聲數月之久。
+# --- Alexander_Dirty ---
+950b8260a6ca788f,Unused,Alexander_Dirty,1,Alexander,瞧瞧在下！在下會成為學生們的笑柄。
+97733f8db49fb168,Unused,Alexander_Dirty,2,Alexander,可否請閣下把伊格威克斯從在下背上刷掉？
+# --- Alexander_Idle1 ---
+6a4162b247e5aae1,Unused,Alexander_Idle1,1,Alexander,在下不敢相信伊格威克斯會犯下這般錯誤！
+5e971607fa926b31,Unused,Alexander_Idle1,2,Alexander,如今在下落得如此境地，啊！
+# --- Alexander_Idle2 ---
+2a1b4481e851f727,Unused,Alexander_Idle2,1,Alexander,在下特意繞路來做一次隱密的洗浴，在下確信沒被跟蹤。
+26974d0189f0d75c,Unused,Alexander_Idle2,2,Alexander,在下確信無人會知道……
+# --- Alexander_Idle3 ---
+db8cc14accf5dfe9,Unused,Alexander_Idle3,1,Alexander,啊，那些污垢確實有點刺痛，謝過閣下。
+# --- Alexander_Soapy ---
+e17d9103818204a4,Unused,Alexander_Soapy,1,Alexander,這肥皂不太配得上一位教授，閣下不覺得嗎？
+03c418e790b340c3,Unused,Alexander_Soapy,2,Alexander,沖洗完畢請告知在下。
+# --- Alexander_Intro ---
+f82f410ee41cad07,Unused,Alexander_Intro,1,Alexander,噓……！
+fedb00f6c13cec68,Unused,Alexander_Intro,2,Kobold,呃……您好？
+4359ca4e5c8fc816,Unused,Alexander_Intro,3,Kobold,誰在那裡？
+9e2816aaa10403b6,Unused,Alexander_Intro,4,Alexander,噓！在下不是本地人……
+8275f13b67a6687b,Unused,Alexander_Intro,5,Alexander,貴店現在有開嗎？
+7409deaefe456a49,Unused,Alexander_Intro,6,Alexander,呼！在下出了點事故，需要處理……隱密地。
+afb82d57a9c1ba48,Unused,Alexander_Intro,7,Alexander,請立即移開這道屏障，好讓在下進入。
+# --- Alexander_Outro ---
+0c2f6e570964b0c1,Unused,Alexander_Outro,1,Alexander,天啊，多虧閣下，在下有機會挽回這一局面。
+639110e1c4cc2914,Unused,Alexander_Outro,2,Alexander,說來，閣下可還記得在下任職的學院名稱？
+e35f2c7dd32a4059,Unused,Alexander_Outro,3,Kobold,伯恩斯威克社區奇術學院
+8e3a0c6c1c068e67,Unused,Alexander_Outro,4,Kobold,您在學院工作？
+7bf1556708efd0d8,Unused,Alexander_Outro,5,Kobold,不記得
+79acad09a68bf670,Unused,Alexander_Outro,6,Alexander,不！在下是說，是的，但為了在下的聲譽，還請閣下對在下來此一事守口如瓶。
+3730dccb6a6582be,Unused,Alexander_Outro,7,Alexander,什麼？在下是教授！閣下看不出在下的紋章嗎？
+56723edcd935d476,Unused,Alexander_Outro,8,Alexander,喔！
+e0723f4408ee3eda,Unused,Alexander_Outro,9,Alexander,在下明白閣下的用意了，謝過閣下。
+7973db48113175b5,Unused,Alexander_Outro,10,Alexander,甚好，感謝閣下的謹慎，在下這便前往藥劑師處。
+677412526f14044a,Unused,Alexander_Outro,12,Alexander,在下對此結果甚為滿意……
+# --- ConradBeatup_1 ---
+72f9c6536242f235,Unused,ConradBeatup_1,1,Kobold,如果您需要有人傾訴，我隨時都在。
+67410be84ad1b8ac,Unused,ConradBeatup_1,2,Kobold,這裡交給我，您別擔心。
+5b207ccbfd5d5679,Unused,ConradBeatup_1,3,Conrad,不……不用，沒事的……謝了。
+b2139b5e4dc27f14,Unused,ConradBeatup_1,4,Conrad,……謝了……
+# --- ConradBeatup_2 ---
+b841443b4a7e3b82,Unused,ConradBeatup_2,1,Conrad,嘿……謝謝你陪著我……
+02febaeeb5306c30,Unused,ConradBeatup_2,2,Conrad,有能靠得住的朋友，真好。
+# --- ConradBeatup_Idle1 ---
+7ff77420c3518210,Unused,ConradBeatup_Idle1,1,Conrad,……我還以為我們是好哥們，我們老是一起幹那檔事！
+13a3bd02487dab16,Unused,ConradBeatup_Idle1,2,Conrad,我搞不懂……
+# --- ConradBeatup_Idle2 ---
+861f99e073cd06e2,Unused,ConradBeatup_Idle2,1,Conrad,我裝得挺兇，其實就是條小龍……
+e375cf5dd6f03d34,Unused,ConradBeatup_Idle2,2,Conrad,他們做得太過分了。
+# --- ConradBeatup_Intro ---
+19aa373fb830a05c,Unused,ConradBeatup_Intro,1,Kobold,天啊，您受傷了！
+c7e055a695603f2b,Unused,ConradBeatup_Intro,2,Kobold,您還好嗎？
+e4e0397bea6600f5,Unused,ConradBeatup_Intro,3,Conrad,嘿……那個，我就想洗個澡。
+e36f54f748a69d3e,Unused,ConradBeatup_Intro,4,Kobold,……好，請進
+# --- ConradBeatup_OutroDirty ---
+e17652524a905f18,Unused,ConradBeatup_OutroDirty,1,Conrad,……好了？我還髒著呢……
+# --- ConradBeatup_OutroSoapy ---
+d0b060d51bc87feb,Unused,ConradBeatup_OutroSoapy,1,Conrad,……好了？我還一身泡沫呢……
+# --- Conrad_1 ---
+5a208b2886d87937,Unused,Conrad_1,1,Conrad,你們這裡也做「特殊收尾」嗎？
+d61259269b75dec9,Unused,Conrad_1,2,Kobold,那是什麼？
+1ea442a134b2a184,Unused,Conrad_1,3,Kobold,不
+335bcdceb30ec6b8,Unused,Conrad_1,4,Conrad,不不，老兄，這個你一定要做。我給的錢可不少！
+2f7cc8c297b8d283,Unused,Conrad_1,5,Conrad,太讚了！等著看你的手藝！
+9d1528cc1118e4dd,Unused,Conrad_1,6,Conrad,怎樣？好店都做這個！
+# --- Conrad_2 ---
+d892eb1f696177b4,Unused,Conrad_2,1,Conrad,這地方該翻新一下了，我知道它缺什麼！
+0eaacb4d2b730370,Unused,Conrad_2,2,Conrad,我認識個人，明天就能送份禮物過來，讓這裡煥然一新。
+# --- Conrad_5_Mount_Finish ---
+28a96495be7701ea,Unused,Conrad_5_Mount_Finish,1,Conrad,靠……每次都這麼爽。
+# --- Conrad_5_Mount_Start ---
+cda9c08deb782b6e,Unused,Conrad_5_Mount_Start,1,Conrad,<i>喔喔喔。</i>坐架？爽啦，老兄。
+# --- Conrad_Idle1 ---
+06b2c581e253753a,Unused,Conrad_Idle1,1,Conrad,人家都說我那根很粗，是真的嗎？
+ba07cdd711c7d570,Unused,Conrad_Idle1,2,Kobold,哎呀
+f2ea9d36d2c4032f,Unused,Conrad_Idle1,3,Kobold,我見過更大的
+25cdc596cd23bedb,Unused,Conrad_Idle1,4,Conrad,你該摸摸幫我確認一下
+c3565cd77a3dcba9,Unused,Conrad_Idle1,5,Conrad,但不是長在這種體型上的吧？？
+# --- Conrad_Intro ---
+bc1e29287f60b297,Unused,Conrad_Intro,1,Conrad,你好啊，老兄！
+f7a29676d9621163,Unused,Conrad_Intro,2,Conrad,康拉德要洗澡，有空位給他嗎？
+8339b88ae51a85f6,Unused,Conrad_Intro,3,Kobold,有，這邊請。
+255d982b3d4c772e,Unused,Conrad_Intro,4,Conrad,太讚了！
+# --- Mount_Alexander_2_6 ---
+dcc524605bec9fd8,Unused,Mount_Alexander_2_6,1,Alexander,這是……
+d010c18e5ff478ed,Unused,Mount_Alexander_2_6,2,Alexander,哎呀，不……
+f025190cb1adde9c,Unused,Mount_Alexander_2_6,3,Alexander,在下無意失禮，但必須婉拒
+eec9d16c87323040,Unused,Mount_Alexander_2_6,4,Alexander,這是常見的做法嗎？
+929e50391bfd0646,Unused,Mount_Alexander_2_6,5,Kobold,喔，是的
+b6547fc9d980c16e,Unused,Mount_Alexander_2_6,6,Kobold,不，其實我剛弄到
+40df3c9d9e1d5126,Unused,Mount_Alexander_2_6,7,Alexander,原來如此……
+d3acad6a7014a598,Unused,Mount_Alexander_2_6,8,Alexander,這感覺有傷風化
+ab5a3375052f41eb,Unused,Mount_Alexander_2_6,9,Alexander,不過在下不能說不好奇
+c5ba4f5f1cdff517,Unused,Mount_Alexander_2_6,10,Alexander,即便如此。這次還是算了
+# --- RyanDate_1 ---
+14ecee0afc63c845,Unused,RyanDate_1,1,Ryan,這次約會我好期待呀！
+90ba900c65607127,Unused,RyanDate_1,2,Ryan,我帶了西瓜、麵包、葡萄，還有些別的。
+# --- RyanDate_2 ---
+690cf2b49eb95f79,Unused,RyanDate_2,1,Ryan,你有什麼心事嗎？
+1648a912c46f7fec,Unused,RyanDate_2,2,Kobold,昨晚出了點事
+b3979a44b5b9376a,Unused,RyanDate_2,3,Ryan,哎呀！想聊聊嗎？
+02c33e4e3c09bc79,Unused,RyanDate_2,4,Kobold,康拉德出了點事，希望他沒事。
+7680ca7ff15f1566,Unused,RyanDate_2,5,Ryan,我也希望他沒事。
+# --- RyanDate_3 ---
+7ba9e65f61ca2369,Unused,RyanDate_3,1,Ryan,這個太好吃了！
+ff74b82dcb8a11d3,Unused,RyanDate_3,2,Kobold,哇，看您那樣吃東西真是一種體驗。
+5b14f19a86849ff5,Unused,RyanDate_3,3,Ryan,哪樣？
+42af2c2067728998,Unused,RyanDate_3,4,Ryan,喔，就是整個吞下去那樣？
+37f99dd7cbcf5b6f,Unused,RyanDate_3,5,Ryan,看情況啦！龍就是這樣的。
+# --- RyanDate_Idle1 ---
+bcda1f48383d915f,Unused,RyanDate_Idle1,1,Ryan,嘿嘿，能重新開始約會我好開心呀。
+# --- RyanDate_Intro ---
+d5be54b666b3d38f,Unused,RyanDate_Intro,1,Ryan,我一直在想你說的話，
+ffcaf369ac8b1a74,Unused,RyanDate_Intro,2,Ryan,就是關於重新開始約會那件事……
+89f52a0dc3d757c1,Unused,RyanDate_Intro,3,Kobold,嗯
+ecab929d37109ab0,Unused,RyanDate_Intro,4,Ryan,我知道你太忙了，所以乾脆把約會帶過來啦！
+92d9da0b0b22fd7a,Unused,RyanDate_Intro,5,Kobold,太好了！請進……
+# --- RyanDate_Outro ---
+638d7c049f321a6d,Unused,RyanDate_Outro,2,Ryan,太棒了！我對約會有信心多了。
+# --- RyanExploded_Intro ---
+8e87e6b28fb697c4,Unused,RyanExploded_Intro,1,Ryan,又來啦……
+53ca70e25fc42870,Unused,RyanExploded_Intro,2,Kobold,又是您？
+b99d68084de082b6,Unused,RyanExploded_Intro,3,Ryan,嘿嘿……嗯……抱歉……
+81f2cb133d548396,Unused,RyanExploded_Intro,4,Ryan,就是，我出了點小意外……
+d3e25fe68c13c02d,Unused,RyanExploded_Intro,5,Ryan,我聽到砰的一聲
+ce386faf68f3df7e,Unused,RyanExploded_Intro,6,Ryan,不知道那些東西飛到哪去了，但我感覺又髒了。
+60c1424a59a1c912,Unused,RyanExploded_Intro,7,Ryan,能再幫我洗一次嗎？
+917613bbf36e4b93,Unused,RyanExploded_Intro,8,Kobold,當然！這邊請！
+# --- RyanExploded_OutroDirty ---
+f2bdff14318fd81c,Unused,RyanExploded_OutroDirty,1,Ryan,我感覺身上還有些爆炸的污漬……
+6a1900ba2212696d,Unused,RyanExploded_OutroDirty,2,Ryan,能再洗洗嗎？
+85a39ab345d672ff,Unused,RyanExploded_OutroDirty,3,Kobold,好
+1562d2eeb95b795a,Unused,RyanExploded_OutroDirty,4,Kobold,抱歉
+3bcf70f39eca74f1,Unused,RyanExploded_OutroDirty,5,Ryan,沒事，謝謝！
+# --- RyanExploded_OutroSoapy ---
+9df62882448c291b,Unused,RyanExploded_OutroSoapy,1,Ryan,呃，我身上還全是泡沫呢！
+29d1991e26b1773d,Unused,RyanExploded_OutroSoapy,2,Ryan,能幫我沖掉嗎？
+# --- RyanExploded_Outro ---
+a45ce5a6357ad76f,Unused,RyanExploded_Outro,2,Ryan,呼，我還擔心又把事情搞砸了。
+ca1dd92cfbe2dcd5,Unused,RyanExploded_Outro,3,Ryan,這下他們永遠不會知道啦！
+# --- RyanMuddy_Dirty ---
+58246ed8cfcdfa19,Unused,RyanMuddy_Dirty,1,Ryan,對，我一身泥，我最愛在公園裡撒野啦。
+f27e94e23a2cc6eb,Unused,RyanMuddy_Dirty,2,Ryan,我還是很泥，能幫我打上肥皂就太好了。
+# --- RyanMuddy_Idle1 ---
+c24aaf031df991a1,Unused,RyanMuddy_Idle1,1,Ryan,那個，需要我動一下就說喔。
+8bb630e0c8dc64ac,Unused,RyanMuddy_Idle1,2,Ryan,用手碰我一下，我會盡量配合的。
+# --- RyanMuddy_Idle2 ---
+bcee068ce8220b8e,Unused,RyanMuddy_Idle2,1,Ryan,謝謝你幫我洗澡！
+2c4f3b41240d00cd,Unused,RyanMuddy_Idle2,2,Ryan,我一直很期待呢。
+# --- RyanMuddy_Idle3 ---
+e304ea7f521df3f2,Unused,RyanMuddy_Idle3,1,Ryan,洗完了就按按鈕吧。
+ac51ca95656fffdd,Unused,RyanMuddy_Idle3,2,Ryan,我是說牆上那個按鈕。
+# --- RyanMuddy_Idle4 ---
+8fd85e09be693fbf,Unused,RyanMuddy_Idle4,1,Ryan,麥克斯說我是條笨手笨腳的龍，
+d2261edb51b885d9,Unused,RyanMuddy_Idle4,2,Ryan,希望你能幫我證明他錯了！
+# --- RyanMuddy_Idle5 ---
+9df1eb0e35a5d36a,Unused,RyanMuddy_Idle5,1,Ryan,先打肥皂，再沖乾淨！
+5e7b1eae20d0fb72,Unused,RyanMuddy_Idle5,2,Ryan,至少我是這麼聽說的。
+# --- RyanMuddy_Soapy ---
+73d08af95ae8835e,Unused,RyanMuddy_Soapy,1,Ryan,我喜歡泡泡，癢癢的！
+83af94fb3d626970,Unused,RyanMuddy_Soapy,2,Ryan,不過看它們沖進下水道也很好玩呢。
+6bc811f815ef9e24,Unused,RyanMuddy_Soapy,3,Ryan,用牆上的噴頭把我沖乾淨吧。
+# --- RyanMuddy_Idle7 ---
+255bd9c513473506,Unused,RyanMuddy_Idle7,1,Ryan,哇，謝謝，好舒服。
+77ff00f75a7c2083,Unused,RyanMuddy_Idle7,2,Ryan,渾身是泥其實挺好玩的，直到它開始變乾。
+620caab5d90b8d3f,Unused,RyanMuddy_Idle7,3,Ryan,能洗掉真開心。
+# --- RyanMuddy_Idle8 ---
+afa88441bc4fc8d9,Unused,RyanMuddy_Idle8,1,Ryan,誰能想到一條龍能弄得這麼髒呢？
+2ea6d5d46861d1bf,Unused,RyanMuddy_Idle8,2,Ryan,我在森林裡撒野來著
+c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,直到麥克斯吼我，我才發現自己弄得多髒，哈哈。
+# --- RyanMuddy_Intro ---
+299e9d1e919c3a49,Unused,RyanMuddy_Intro,1,Ryan,聽說這裡有狗頭人可以幫我洗澡？
+05d9cdcce06b0c12,Unused,RyanMuddy_Intro,2,Kobold,我就是那位狗頭人。汪！
+213c112ac748eb9e,Unused,RyanMuddy_Intro,3,Ryan,太好了，那個，
+44beadf6316d890e,Unused,RyanMuddy_Intro,4,Ryan,喔我看到那個按鈕了，瞭解！
+af8d3a1f26de30ef,Unused,RyanMuddy_Intro,5,Ryan,謝謝，我等著！
+# --- RyanMuddy_Nag1 ---
+3605a9273b22288b,Unused,RyanMuddy_Nag1,1,Ryan,嘿，能到前面來讓我看見你嗎？
+720febc2a9d251aa,Unused,RyanMuddy_Nag1,2,Ryan,我有話要說！
+# --- RyanMuddy_Nag2 ---
+6852c864bbd2afef,Unused,RyanMuddy_Nag2,1,Ryan,我想面對面說話！
+0918205f97d74d78,Unused,RyanMuddy_Nag2,2,Ryan,你能到前面來，我就能說了。
+# --- RyanMuddy_Nag3 ---
+c8f453084718c8cc,Unused,RyanMuddy_Nag3,1,Ryan,別人跟我說過，跟小個子的人面對面說話才禮貌。
+# --- RyanMuddy_NaughtyTouch ---
+4d13604e28159e56,Unused,RyanMuddy_NaughtyTouch,1,Ryan,注意一下你的爪子往哪裡放好嗎？
+# --- RyanMuddy_Outro ---
+a46a0805bb6a5eda,Unused,RyanMuddy_Outro,1,Ryan,謝謝你這麼快就洗好了！
+168c7d0bb7743dec,Unused,RyanMuddy_Outro,2,Ryan,對了，要是你的伴侶把家裡弄得一團亂，你會生氣嗎？
+3ae7f278ef092258,Unused,RyanMuddy_Outro,3,Kobold,看情況
+0dfd80e1f981faca,Unused,RyanMuddy_Outro,4,Ryan,喔！嗯，也是……
+8f207ab27746c010,Unused,RyanMuddy_Outro,5,Ryan,我想是要看情況的。
+86b57f75d4c04b75,Unused,RyanMuddy_Outro,6,Ryan,我就知道你會站在我這邊
+# --- RyanMuddy_SmallTalk ---
+0bf9a145c66c512b,Unused,RyanMuddy_SmallTalk,1,Kobold,其實這是我第一次！
+4eb8bdb270c030ae,Unused,RyanMuddy_SmallTalk,2,Ryan,那對我們倆都是新體驗啦！
+ff152503516900ee,Unused,RyanMuddy_SmallTalk,3,Ryan,對我來說也是新的……
+13d1c29ec8784cae,Unused,RyanMuddy_SmallTalk,4,Ryan,沒想到這麼舒服。
+# --- Ryan_3_wont_use_mount ---
+9221ab210b374d30,Unused,Ryan_3_wont_use_mount,1,Ryan,喔——我現在不太想用那個。
+f3f18c2eea794920,Unused,Ryan_3_wont_use_mount,2,Ryan,也許以後……？
+
+# ===== UI and other text (not part of the dialogue script) =====
+bc1b88907d3b748a,UI,,,UI,音訊
+b3f848c2a09aa9ed,UI,,,UI,音樂音量
+de7b57b57b05d020,UI,,,UI,音效
+59a4a3f7f7caa060,UI,,,UI,環境音量
+31bcb8940fffb7d1,UI,,,UI,遊戲玩法
+a874fca87cdd5e4e,UI,,,UI,畫面
+d0db8b5e364b6989,UI,,,UI,設定
+28f9044138a54b95,UI,,,UI,新遊戲
+2a6b24ad28722034,UI,,,UI,製作人員
+b3eb37acb66ba4bb,UI,,,UI,離開
+76900f1bfd16c8d4,UI,,,UI,返回
+6a3041fb3ecba173,UI,,,UI,鏡頭視角
+d4055fafa3794fa8,UI,,,UI,解析度
+41ca171b0cbae01e,UI,,,UI,螢幕亮度
+42e7fdbd13ba2a01,UI,,,UI,目標影格率
+052810dae19607f5,UI,,,UI,垂直同步
+b63e857488f49396,UI,,,UI,視窗模式
+c461dbb2bab7d8bc,UI,,,UI,全螢幕
+4571896d8a4d4162,UI,,,UI,滑鼠靈敏度
+43ff6e9485bf371e,UI,,,UI,蹲下操作
+3d03a1dea561d0db,UI,,,UI,切換
+91d6e30620d99810,UI,,,UI,點按/長按
+8e685d5409b3a543,UI,,,UI,長按
+6c359dddb1d4c36e,UI,,,UI,提示圖示類型
+2316810a5de343dd,UI,,,UI,鍵盤
+0286249762f7c943,UI,,,UI,自動
+c77c3af22c6429b2,UI,,,UI,反鋸齒
+130011756125313c,UI,,,UI,開
+ca7981b46ecf2c17,UI,,,UI,關
+4883b7dfffb02e36,UI,,,UI,獨佔全螢幕
+da43a1983d819a4d,UI,,,UI,最大化視窗
+3f26603a2748fed3,UI,,,UI,視窗
+d640c7421da06661,UI,,,UI,繼續
+b6dcb96448c66497,UI,,,UI,載入中...
+f942d1e183d020b6,UI,,,UI,刪除存檔
+ffb3c5f2edc34373,UI,,,UI,暫停選單
+3e49dd16f3893026,UI,,,UI,清潔
+4b36f28b2cf37677,UI,,,UI,泡沫
+e4e9ab13fc711176,UI,,,UI,污垢
+c9c8bf1eae99e1dc,UI,,,UI,想聊天
+b98b0ff714ab5417,UI,,,UI,治療
+dde8c08738fe9e59,UI,,,UI,想要手交
+a462b8c590652563,UI,,,UI,輸入文字...
+bb23ec0586e24df5,UI,,,UI,是西瓜喔！
+fa6bb50727553976,UI,,,UI,好。
+77b845d22632a9ef,UI,,,UI,很高興見到你。
+ed172a475c84204f,UI,,,UI,我是教授！
+43cc9e298a30c3af,UI,,,UI,你們兩條腿的總喜歡慢慢品嚐食物呢。
+b735b39b4eea8b70,UI,,,Ryan,我從沒在外面做過
+c913913d57c38493,UI,,,Conrad,別擔心！
+d0ee8dcf7035040c,UI,,,Conrad,我常常這樣
+b00675617fbac31a,UI,,,Ryan,確實挺刺激的
+816c197dfe2ac7e7,UI,,,Conrad,我要出來了
+fb490e9880f63f05,UI,,,Ryan,我也快了……
+cb9cc6fadcf02cd5,UI,,,Ryan,哇……你真的只有身高是小的。
+b77039c811832311,UI,,,Ryan,真舒服
+cbc2935aebe3ca1f,UI,,,Conrad,嗯
+1b01a1658c9a5adf,UI,,,Conrad,你玩得開心嗎？
+0d8490d07a321596,UI,,,Ryan,當然開心。擔心我呀？
+3d42325316477a3a,UI,,,Conrad,康拉德只管自己爽
+2fafbe5f3e7ff469,UI,,,Conrad,其實……我是說……
+df9b23df54ab5518,UI,,,Conrad,我想讓這次順利
+b0bfa8fe9e70154c,UI,,,Ryan,我覺得非常順利
+46fa21135fd9811b,UI,,,Ryan,我很喜歡
+b439ffe3e5553ddc,UI,,,Conrad,你真舒服
+b92f91849d855b40,UI,,,UI,康拉德
+2d1e830624b2572a,UI,,,UI,萊恩
