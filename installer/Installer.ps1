@@ -219,8 +219,20 @@ function Uninstall-Plugin([string]$g, [bool]$keepSaves, [bool]$removeBep) {
             }
             $cl = Join-Path $g 'changelog.txt'
             if ((Test-Path -LiteralPath $cl) -and ((Get-Content -LiteralPath $cl -Raw) -match 'BepInEx|Doorstop|commits since v5')) { Remove-Item -LiteralPath $cl -Force }
-            Remove-Item -LiteralPath (Join-Path $g 'BepInEx') -Recurse -Force
-            Log "BepInEx: removed"
+            $bep = Join-Path $g 'BepInEx'
+            if ($keep.Count -gt 0) {
+                # The user's data lives inside BepInEx/plugins/<mod>/; take BepInEx
+                # apart around it instead of deleting the whole tree.
+                Get-ChildItem -LiteralPath $bep -Force | Where-Object { $_.Name -ne 'plugins' } | Remove-Item -Recurse -Force -ErrorAction Continue
+                $plugins = Join-Path $bep 'plugins'
+                if (Test-Path -LiteralPath $plugins) {
+                    Get-ChildItem -LiteralPath $plugins -Force | Where-Object { $_.Name -ne $PluginFolderName } | Remove-Item -Recurse -Force -ErrorAction Continue
+                }
+                Log "BepInEx: removed (your data stays in $dir)"
+            } else {
+                Remove-Item -LiteralPath $bep -Recurse -Force -ErrorAction Continue
+                Log "BepInEx: removed"
+            }
         }
     }
 }
