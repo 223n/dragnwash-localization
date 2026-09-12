@@ -519,6 +519,10 @@ fba1924f5f79713e,L08 Conrad,Conrad_finished_mount_3,16,Conrad,好吧，祝你能
 85d8ae405abc5722,L08 Conrad,Conrad_OutroDirty,3,Kobold,哎呀
 # --- mount_finish: Conrad_OutroSoapy ---
 d7bb84bfc322967e,L08 Conrad,Conrad_OutroSoapy,1,Conrad,我还一身泡沫呢！
+# --- mount_finish: ErrorHasOccurred ---
+9241fa9324783298,L08 Conrad,ErrorHasOccurred,1,ErrorHasOccurred,哎呀，出问题了
+fbc99d34c317d087,L08 Conrad,ErrorHasOccurred,2,ErrorHasOccurred,如果你看到这条，请联系 nael 或提交错误报告
+be7e08152c8d1556,L08 Conrad,ErrorHasOccurred,3,ErrorHasOccurred,抱歉！
 # --- mount_finish: Conrad_Outro | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
 c571db95fc1e4f78,L08 Conrad,Conrad_Outro,4,Conrad,啊，洗干净了，也轻松了。
 e374c1b3adfa0cf8,L08 Conrad,Conrad_Outro,5,Conrad,谢了老兄，明天见。
@@ -875,6 +879,11 @@ b0a73a78b7d9045b,L10 Ryan,Ryan_melon_dialog,14,Kobold,<size=70%><i>是吗？
 
 # ===== Level 11: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_4 ---
+a67959dc39353129,L11 Conrad,Conrad_Intro_4,1,Conrad,旗标状态出错了！
+c1a949184675fa92,L11 Conrad,Conrad_Intro_4,2,Conrad,请帮帮开发者……
+60f8f02dd7a80d00,L11 Conrad,Conrad_Intro_4,3,Kobold,（调试）Conrad 和 Ryan 在一起了
+6e98155abad655c3,L11 Conrad,Conrad_Intro_4,4,Kobold,（调试）玩家和 Conrad 在一起了
+9cf9d4fc71363f68,L11 Conrad,Conrad_Intro_4,5,Kobold,（调试）玩家和 Ryan 在一起了
 67beed0c39e205b4,L11 Conrad,Conrad_Intro_4,6,Kobold,嘿，康拉德！
 d22e2236304b2ef0,L11 Conrad,Conrad_Intro_4,7,Kobold,什么事让您这么开心？
 6183e901a5a22ddc,L11 Conrad,Conrad_Intro_4,8,Kobold,嘿，康拉德！
