@@ -14,9 +14,9 @@ menu keeps using Yu Gothic UI / Meiryo UI.
 
 Noto Sans JP: © 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font
 Name "Source". Licensed under the SIL Open Font License, Version 1.1
-(http://scripts.sil.org/OFL). The font is redistributed unmodified inside the
-bundle; the license text and reserved-name terms travel with it and apply to
-the copy in this repository and in the release zip.
+(http://scripts.sil.org/OFL). The full license text is in `OFL.txt` here and
+ships in the release zip as `dragnwash-menufont-LICENSE.txt` next to the
+bundle. The font is redistributed unmodified inside the bundle.
 
 ## Rebuilding
 

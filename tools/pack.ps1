@@ -13,6 +13,7 @@
 #     BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 #     BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv
 #     BepInEx/plugins/DragNWashLocalization/dragnwash-menufont.bundle
+#     BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 #     BepInEx/plugins/DragNWashLocalization/data/script_order.csv, level_flow.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
@@ -85,6 +86,7 @@ Copy-Item -LiteralPath $Dll -Destination $PluginDir
 Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
 # Menu font for systems whose OS fonts have no CJK glyphs (Steam Deck).
 Copy-Item -LiteralPath (Join-Path $Root 'assets/menufont/dragnwash-menufont.bundle') -Destination $PluginDir
+Copy-Item -LiteralPath (Join-Path $Root 'assets/menufont/OFL.txt') -Destination (Join-Path $PluginDir 'dragnwash-menufont-LICENSE.txt')
 # Play-order data (node names, line ids, hashes; no English).
 New-Item -ItemType Directory -Force -Path (Join-Path $PluginDir 'data') | Out-Null
 Copy-Item -Path (Join-Path $Root 'data/*.csv') -Destination (Join-Path $PluginDir 'data')
