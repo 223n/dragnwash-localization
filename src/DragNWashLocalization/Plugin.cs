@@ -28,6 +28,7 @@ namespace DragNWashLocalization
         internal static ConfigEntry<string> TargetLocale;
         internal static ConfigEntry<int> FlagPanelDebug;
         internal static ConfigEntry<string> MenuFontMode;
+        internal static ConfigEntry<bool> PreloadAllLocales;
         internal static ConfigEntry<bool> LogDiscoveredKeys;
         internal static ConfigEntry<bool> VerboseTextLog;
         internal static ConfigEntry<KeyboardShortcut> ToggleMenuKey;
@@ -165,6 +166,12 @@ namespace DragNWashLocalization
                 0,
                 "Troubleshooting only. Bit 1: no search box. Bit 2: no descriptions. Bit 4: no flag rows. Bit 8: no group headers.");
 
+            PreloadAllLocales = Config.Bind(
+                "Font",
+                "PreloadAllLocales",
+                false,
+                "Prepare the fonts of every installed language at startup rather than only the one in use. On Direct3D 12 this always happens, because loading a font while the game runs crashes that renderer; turning it on elsewhere makes the first switch to each language instant at the cost of a slower start.");
+
             HotReloadTranslations = Config.Bind(
                 "Debug",
                 "HotReloadTranslations",
@@ -173,11 +180,12 @@ namespace DragNWashLocalization
 
             RightToLeft.SetLocale(TargetLocale.Value);
             TranslationStore.Load(PluginDirectory, TargetLocale.Value);
-            FontFallback.EnsureCjkFallback();
-            // Rasterize every installed locale now: every glyph added later
-            // would be a runtime atlas texture upload, and on Direct3D 12 that
-            // upload is what freezes/crashes the game (see FontFallback).
-            FontFallback.Prewarm(TranslationStore.CollectAllLocalesTexts(PluginDirectory));
+            // Fonts are prepared off any render frame. On Direct3D 12 every
+            // installed language is prepared here, since a runtime atlas upload
+            // crashes that renderer; elsewhere only the language in use is, and
+            // the rest follow on a switch. See FontFallback.Startup.
+            FontFallback.Startup(PluginDirectory, TargetLocale.Value, TranslationStore.TranslatedTexts,
+                PreloadAllLocales != null && PreloadAllLocales.Value);
             HotReload.Track(PluginDirectory, TargetLocale.Value);
             SaveHistory.Configure(PluginDirectory, SaveHistoryKeep.Value);
             CreateMenuBackgroundTexture();
@@ -231,9 +239,13 @@ namespace DragNWashLocalization
                 TargetLocale.Value = locale;
                 RightToLeft.SetLocale(locale);
                 TranslationStore.Load(PluginDirectory, locale);
-                // No Prewarm here: all locales were rasterized at startup. Doing
-                // it mid-game would upload atlas textures on a frame the
-                // Direct3D 12 renderer is busy with, which freezes the game.
+                // On Direct3D 12 the fonts were all prepared at startup and this
+                // only reorders the fallback chain. Elsewhere a language seen for
+                // the first time is prepared here, in Update, in one batch.
+                if (FontFallback.SwitchTo(locale, TranslationStore.TranslatedTexts))
+                {
+                    WarmMenuFont();
+                }
                 TmpTextHook.RefreshAll();
                 HotReload.Track(PluginDirectory, locale);
                 Log($"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}");
@@ -450,6 +462,24 @@ namespace DragNWashLocalization
             catch
             {
                 return false;
+            }
+        }
+
+        // The activity log shows the current language's text through IMGUI,
+        // which keeps its own font texture. With fonts loaded per language, a
+        // switch brings in characters the menu font has never drawn, so warm
+        // them here - from Update, never from OnGUI, where the upload would be
+        // the Direct3D 12 crash.
+        private void WarmMenuFont()
+        {
+            if (_menuFont == null) return;
+            try
+            {
+                _menuFont.RequestCharactersInTexture(FontFallback.WarmedCharacters(), MenuFontSize, FontStyle.Normal);
+            }
+            catch (Exception ex)
+            {
+                Log($"Menu font warm-up failed: {ex.Message}");
             }
         }
 

@@ -2,6 +2,8 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.TextCore.LowLevel;
 
 namespace DragNWashLocalization
@@ -88,6 +90,21 @@ namespace DragNWashLocalization
             "DejaVu Sans",
         };
 
+        // Accented Latin (Esperanto's circumflexes, Polish, Portuguese) and
+        // Cyrillic are not always in the game's own font.
+        private static readonly string[] WesternCandidates =
+        {
+            "Segoe UI",
+            "Tahoma",
+            "Arial",
+            // macOS
+            "Helvetica Neue",
+            // Linux / Steam Deck
+            "Noto Sans",
+            "DejaVu Sans",
+            "Liberation Sans",
+        };
+
         // Hangul is not in the Japanese or Chinese fonts above (Yu Gothic and
         // YaHei have none), so Korean gets its own.
         private static readonly string[] KoreanCandidates =
@@ -103,58 +120,326 @@ namespace DragNWashLocalization
         };
 
         private static readonly List<TMP_FontAsset> Registered = new List<TMP_FontAsset>();
+        private static readonly Dictionary<TMP_FontAsset, string> GroupOfAsset =
+            new Dictionary<TMP_FontAsset, string>();
+        private static readonly HashSet<string> LoadedGroups = new HashSet<string>(StringComparer.Ordinal);
         private static readonly HashSet<char> Warmed = new HashSet<char>();
 
-        private static bool _installed;
+        // What each face turned out to have and to lack. A character is only
+        // ever asked of a face once; "lacks" means the font file has no glyph,
+        // so TMP will not try to rasterize it there at runtime either.
+        private static readonly Dictionary<TMP_FontAsset, HashSet<char>> HasOfAsset =
+            new Dictionary<TMP_FontAsset, HashSet<char>>();
+        private static readonly Dictionary<TMP_FontAsset, HashSet<char>> LacksOfAsset =
+            new Dictionary<TMP_FontAsset, HashSet<char>>();
 
-        public static void EnsureCjkFallback()
+        // Scripts each locale was found to use, in the order its chain wants them.
+        private static readonly Dictionary<string, List<string>> GroupsOfLocale =
+            new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
+
+        private static string _currentLocale = string.Empty;
+
+        private const string GroupJapanese = "Japanese";
+        private const string GroupSimplified = "Simplified Chinese";
+        private const string GroupTraditional = "Traditional Chinese";
+        private const string GroupKorean = "Korean";
+        private const string GroupHebrew = "Hebrew";
+        private const string GroupWestern = "Latin and Cyrillic";
+
+        // The order faces follow each other in, after the ones the current
+        // locale puts first. Warming and the runtime chain must agree on it.
+        private static readonly string[] CanonicalOrder =
         {
-            if (_installed)
-            {
-                return;
-            }
-            _installed = true;
+            GroupJapanese, GroupSimplified, GroupTraditional, GroupKorean, GroupHebrew, GroupWestern,
+        };
 
-            int pointSize = Plugin.FontAtlasPointSize != null
-                ? Plugin.FontAtlasPointSize.Value
-                : DefaultAtlasPointSize;
+        // Loading a new face or rasterizing into one while the game is running
+        // uploads atlas textures. On Direct3D 12 that upload crashes the game
+        // (UUM-140564 - switching to Chinese from the F1 menu did exactly that
+        // when fonts were loaded per language), so there every installed
+        // language is prepared at startup. Other graphics APIs handle runtime
+        // uploads, so there only the language in use is prepared, and the rest
+        // follow when the player switches.
+        public static bool RuntimeUploadsAreSafe =>
+            SystemInfo.graphicsDeviceType != GraphicsDeviceType.Direct3D12;
+
+        public static bool PreloadedEverything { get; private set; }
+
+        public static void Startup(string pluginDirectory, string locale, IEnumerable<string> currentTexts, bool forcePreloadAll)
+        {
+            _currentLocale = locale ?? string.Empty;
+            PreloadedEverything = forcePreloadAll || !RuntimeUploadsAreSafe;
+
+            if (PreloadedEverything)
+            {
+                Plugin.Log(RuntimeUploadsAreSafe
+                    ? "[font] Preparing every installed language at startup ([Font] PreloadAllLocales)."
+                    : "[font] Direct3D 12: preparing every installed language at startup, because loading a font mid-game crashes this renderer.");
+                Dictionary<string, List<string>> byLocale = TranslationStore.CollectTextsByLocale(pluginDirectory);
+                foreach (KeyValuePair<string, List<string>> kv in byLocale)
+                {
+                    PrepareLocale(kv.Key, kv.Value);
+                }
+            }
+            else
+            {
+                Plugin.Log("[font] Preparing only the current language; others load when selected.");
+            }
+
+            // The current locale last, so its texts also cover anything a
+            // translator has in memory that is not in the file on disk yet.
+            PrepareLocale(_currentLocale, currentTexts);
+            PublishFallbacks(_currentLocale);
+        }
+
+        // Returns true when anything was rasterized, so the caller knows the
+        // IMGUI menu font may need the new characters too.
+        public static bool SwitchTo(string locale, IEnumerable<string> texts)
+        {
+            _currentLocale = locale ?? string.Empty;
+            int before = Warmed.Count;
+            int facesBefore = Registered.Count;
+
+            if (!PreloadedEverything)
+            {
+                PrepareLocale(_currentLocale, texts);
+            }
+            else if (!GroupsOfLocale.ContainsKey(_currentLocale))
+            {
+                // A language folder added after startup. Preparing it would be
+                // the crash this whole mode exists to avoid.
+                Plugin.Log($"[font] {locale} was not installed at startup; restart the game to prepare its fonts.");
+            }
+
+            PublishFallbacks(_currentLocale);
+            return Warmed.Count != before || Registered.Count != facesBefore;
+        }
+
+        // Hot reload: a translator saved new text for the current language.
+        // Only characters no face has been asked for yet are rasterized, so an
+        // edit that reuses existing characters costs nothing.
+        public static void Prewarm(IEnumerable<string> texts)
+        {
+            PrepareLocale(_currentLocale, texts);
+            PublishFallbacks(_currentLocale);
+        }
+
+        private static void PrepareLocale(string locale, IEnumerable<string> texts)
+        {
+            var chars = new HashSet<char>();
+            bool kana = false, han = false, hangul = false, hebrew = false, western = false;
+            if (texts != null)
+            {
+                foreach (string text in texts)
+                {
+                    if (string.IsNullOrEmpty(text)) continue;
+                    foreach (char c in text)
+                    {
+                        // ASCII is covered by the game's own font assets and
+                        // never reaches the fallback chain.
+                        if (c <= 0x7F) continue;
+                        chars.Add(c);
+                        if (c >= 0x3040 && c <= 0x30FF) kana = true;
+                        else if ((c >= 0x4E00 && c <= 0x9FFF) || (c >= 0x3400 && c <= 0x4DBF) || (c >= 0xF900 && c <= 0xFAFF)) han = true;
+                        else if ((c >= 0xAC00 && c <= 0xD7A3) || (c >= 0x1100 && c <= 0x11FF) || (c >= 0x3130 && c <= 0x318F)) hangul = true;
+                        else if (c >= 0x0590 && c <= 0x05FF) hebrew = true;
+                        else if ((c >= 0x3000 && c <= 0x303F) || (c >= 0xFF00 && c <= 0xFFEF)) han = true;
+                        else western = true;
+                    }
+                }
+            }
+            if (chars.Count == 0) return;
+
+            List<string> groups;
+            if (!GroupsOfLocale.TryGetValue(locale, out groups))
+            {
+                groups = new List<string>();
+                GroupsOfLocale[locale] = groups;
+            }
+            void Need(string g) { if (!groups.Contains(g)) groups.Add(g); }
+            if (kana) Need(GroupJapanese);
+            if (han) Need(PreferredHanGroup(locale));
+            if (hangul) Need(GroupKorean);
+            if (hebrew) Need(GroupHebrew);
+            // A CJK face carries accented Latin and usually Cyrillic too; only
+            // ask for a Latin face up front when nothing else is involved.
+            if (western && groups.Count == 0) Need(GroupWestern);
+
+            int pointSize = Plugin.FontAtlasPointSize != null ? Plugin.FontAtlasPointSize.Value : DefaultAtlasPointSize;
+            foreach (string g in groups) LoadGroup(g, pointSize);
+
+            List<char> remaining = WarmAlongChain(ChainFor(locale), chars, locale);
+
+            // Characters no loaded face has: bring in the Latin face for them.
+            if (remaining.Count > 0 && !LoadedGroups.Contains(GroupWestern))
+            {
+                Plugin.Log($"[font] {locale}: {remaining.Count} character(s) are in none of its faces; adding a Latin face.");
+                LoadGroup(GroupWestern, pointSize);
+                Need(GroupWestern);
+                remaining = WarmAlongChain(ChainFor(locale), new HashSet<char>(remaining), locale);
+            }
+            if (remaining.Count > 0)
+            {
+                Plugin.Log($"[font] {locale}: {remaining.Count} character(s) have no glyph in any available font and will show as boxes.");
+            }
+
+            Warmed.UnionWith(chars);
+        }
+
+        // Walk the faces in the same order TMP will at runtime and rasterize
+        // each character into the first face whose font has it. The faces
+        // before that one lack the glyph in their font file, so TMP passes
+        // over them without trying to add it - which is what keeps a runtime
+        // upload from ever happening for these characters.
+        private static List<char> WarmAlongChain(List<TMP_FontAsset> chain, HashSet<char> chars, string locale)
+        {
+            var remaining = new List<char>(chars);
+            foreach (TMP_FontAsset face in chain)
+            {
+                if (remaining.Count == 0) break;
+                HashSet<char> has = SetOf(HasOfAsset, face);
+                HashSet<char> lacks = SetOf(LacksOfAsset, face);
+
+                var ask = new List<char>();
+                foreach (char c in remaining)
+                {
+                    if (!has.Contains(c) && !lacks.Contains(c)) ask.Add(c);
+                }
+                if (ask.Count > 0)
+                {
+                    try
+                    {
+                        face.TryAddCharacters(new string(ask.ToArray()), out string missing, includeFontFeatures: false);
+                        var absent = new HashSet<char>();
+                        if (!string.IsNullOrEmpty(missing))
+                        {
+                            foreach (char c in missing) absent.Add(c);
+                        }
+                        foreach (char c in ask)
+                        {
+                            if (absent.Contains(c)) lacks.Add(c); else has.Add(c);
+                        }
+                        Plugin.Log($"[font] {locale}: rasterized {ask.Count - absent.Count}/{ask.Count} characters into {face.name}.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Plugin.Log($"[font] Failed to rasterize into {face.name}: {ex.Message}");
+                        foreach (char c in ask) lacks.Add(c);
+                    }
+                }
+
+                var next = new List<char>();
+                foreach (char c in remaining)
+                {
+                    if (!has.Contains(c)) next.Add(c);
+                }
+                remaining = next;
+            }
+            return remaining;
+        }
+
+        private static HashSet<char> SetOf(Dictionary<TMP_FontAsset, HashSet<char>> map, TMP_FontAsset face)
+        {
+            HashSet<char> set;
+            if (!map.TryGetValue(face, out set))
+            {
+                set = new HashSet<char>();
+                map[face] = set;
+            }
+            return set;
+        }
+
+        // This locale's scripts first, then every other loaded face in the
+        // canonical order.
+        private static List<TMP_FontAsset> ChainFor(string locale)
+        {
+            var order = new List<string>();
+            List<string> groups;
+            if (GroupsOfLocale.TryGetValue(locale ?? string.Empty, out groups))
+            {
+                order.AddRange(groups);
+            }
+            foreach (string g in CanonicalOrder)
+            {
+                if (!order.Contains(g)) order.Add(g);
+            }
+
+            var chain = new List<TMP_FontAsset>();
+            foreach (string g in order)
+            {
+                foreach (TMP_FontAsset face in Registered)
+                {
+                    string fg;
+                    if (GroupOfAsset.TryGetValue(face, out fg) && fg == g && !chain.Contains(face))
+                    {
+                        chain.Add(face);
+                    }
+                }
+            }
+            return chain;
+        }
+
+        // Make TMP's global fallback chain match ChainFor(locale), keeping
+        // whatever the game had registered after ours.
+        private static void PublishFallbacks(string locale)
+        {
+            if (Registered.Count == 0) return;
+            List<TMP_FontAsset> final = ChainFor(locale);
+            List<TMP_FontAsset> existing = TMP_Settings.fallbackFontAssets ?? new List<TMP_FontAsset>();
+            foreach (TMP_FontAsset asset in existing)
+            {
+                if (asset != null && !Registered.Contains(asset)) final.Add(asset);
+            }
+            TMP_Settings.fallbackFontAssets = final;
+        }
+
+        private static string PreferredHanGroup(string locale)
+        {
+            string l = (locale ?? string.Empty).ToLowerInvariant();
+            if (l.StartsWith("ja")) return GroupJapanese;
+            if (l.StartsWith("zh-hant") || l.StartsWith("zh-tw") || l.StartsWith("zh-hk") || l.StartsWith("zh-mo")) return GroupTraditional;
+            if (l.StartsWith("zh")) return GroupSimplified;
+            if (l.StartsWith("ko")) return GroupKorean;
+            return GroupSimplified;
+        }
+
+        private static void LoadGroup(string group, int pointSize)
+        {
+            if (LoadedGroups.Contains(group)) return;
+            LoadedGroups.Add(group);
+
+            string[] candidates;
+            string[] files;
+            int ttcFace;
+            switch (group)
+            {
+                case GroupJapanese: candidates = JapaneseCandidates; files = JapaneseFiles; ttcFace = 0; break;
+                case GroupSimplified: candidates = ChineseCandidates; files = ChineseFiles; ttcFace = 2; break;
+                case GroupTraditional: candidates = TraditionalCandidates; files = TraditionalFiles; ttcFace = 3; break;
+                case GroupKorean: candidates = KoreanCandidates; files = KoreanFiles; ttcFace = 1; break;
+                case GroupHebrew: candidates = HebrewCandidates; files = HebrewFiles; ttcFace = 0; break;
+                default: candidates = WesternCandidates; files = WesternFiles; ttcFace = 0; break;
+            }
 
             int before = Registered.Count;
-            AddFirstAvailable(JapaneseCandidates, pointSize);
-            bool gotJapanese = Registered.Count > before;
-            before = Registered.Count;
-            AddFirstAvailable(ChineseCandidates, pointSize);
-            bool gotChinese = Registered.Count > before;
-            before = Registered.Count;
-            AddFirstAvailable(KoreanCandidates, pointSize);
-            bool gotKorean = Registered.Count > before;
-            before = Registered.Count;
-            AddFirstAvailable(TraditionalCandidates, pointSize);
-            bool gotTraditional = Registered.Count > before;
-            before = Registered.Count;
-            AddFirstAvailable(HebrewCandidates, pointSize);
-            bool gotHebrew = Registered.Count > before;
-
-            // Steam's Linux runtime container, macOS, and stripped-down systems
+            AddFirstAvailable(candidates, pointSize);
+            // Steam's Linux runtime container, macOS and stripped-down systems
             // do not always expose fonts by family name, but the files are
-            // still there. Try known paths (and a fonts/ folder next to the
-            // plugin, for anyone who wants to drop in their own).
-            if (!gotJapanese) gotJapanese = AddFirstFile(JapaneseFiles, 0, pointSize, "Japanese");
-            if (!gotChinese) gotChinese = AddFirstFile(ChineseFiles, 2, pointSize, "Chinese");
-            if (!gotKorean) gotKorean = AddFirstFile(KoreanFiles, 1, pointSize, "Korean");
-            if (!gotTraditional) gotTraditional = AddFirstFile(TraditionalFiles, 3, pointSize, "Traditional Chinese");
-            if (!gotHebrew) gotHebrew = AddFirstFile(HebrewFiles, 0, pointSize, "Hebrew");
-
-            if (Registered.Count == 0)
+            // still there. Try known paths, and a fonts/ folder next to the
+            // plugin for anyone who wants to drop in their own.
+            if (Registered.Count == before)
             {
-                Plugin.Log("WARNING: no CJK-capable OS font could be loaded. Japanese/Chinese/Korean text may render as missing glyphs.");
-                LogSystemFontNames();
-                return;
+                AddFirstFile(files, ttcFace, pointSize, group);
             }
-
-            List<TMP_FontAsset> fallbackList = TMP_Settings.fallbackFontAssets ?? new List<TMP_FontAsset>();
-            fallbackList.AddRange(Registered);
-            TMP_Settings.fallbackFontAssets = fallbackList;
+            if (Registered.Count == before)
+            {
+                Plugin.Log($"[font] No {group} font found on this system.");
+                LogSystemFontNames();
+            }
+            for (int i = before; i < Registered.Count; i++)
+            {
+                GroupOfAsset[Registered[i]] = group;
+            }
         }
 
         // (path, face index inside a .ttc). Face 0 of NotoSansCJK-*.ttc is JP,
@@ -209,6 +494,18 @@ namespace DragNWashLocalization
             "~/.local/share/fonts/NotoSansCJK-Regular.ttc",
             "/System/Library/Fonts/PingFang.ttc",
             "C:/Windows/Fonts/msjh.ttc",
+        };
+
+        private static readonly string[] WesternFiles =
+        {
+            "fonts/*latin*.ttf", "fonts/*latin*.otf",
+            "/run/host/fonts/TTF/DejaVuSans.ttf",
+            "/usr/share/fonts/TTF/DejaVuSans.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            "/usr/share/fonts/noto/NotoSans-Regular.ttf",
+            "/System/Library/Fonts/Helvetica.ttc",
+            "C:/Windows/Fonts/segoeui.ttf",
+            "C:/Windows/Fonts/arial.ttf",
         };
 
         private static readonly string[] HebrewFiles =
@@ -334,63 +631,6 @@ namespace DragNWashLocalization
                 Plugin.Log($"CJK fallback font registered: {family} (atlas point size {pointSize})");
                 return;
             }
-        }
-
-        // Rasterize every non-ASCII character the given texts contain, so no
-        // glyph has to be added to an atlas once gameplay is running. Call this
-        // from Update or Awake - never from OnGUI or any render callback, since
-        // the whole point is to keep atlas uploads away from frames the
-        // renderer is busy with.
-        public static void Prewarm(IEnumerable<string> texts)
-        {
-            if (Registered.Count == 0 || texts == null)
-            {
-                return;
-            }
-
-            var pending = new HashSet<char>();
-            foreach (string text in texts)
-            {
-                if (string.IsNullOrEmpty(text))
-                {
-                    continue;
-                }
-
-                foreach (char c in text)
-                {
-                    // ASCII is already covered by the game's own font assets,
-                    // so it never reaches the fallback chain.
-                    if (c > 0x7F && !Warmed.Contains(c))
-                    {
-                        pending.Add(c);
-                    }
-                }
-            }
-
-            if (pending.Count == 0)
-            {
-                return;
-            }
-
-            var buffer = new char[pending.Count];
-            pending.CopyTo(buffer);
-            string characters = new string(buffer);
-
-            foreach (TMP_FontAsset asset in Registered)
-            {
-                try
-                {
-                    asset.TryAddCharacters(characters, out string missing, includeFontFeatures: false);
-                    int missingCount = missing?.Length ?? 0;
-                    Plugin.Log($"Prewarmed {pending.Count - missingCount}/{pending.Count} characters into {asset.name}.");
-                }
-                catch (Exception ex)
-                {
-                    Plugin.Log($"Failed to prewarm {asset.name}: {ex.Message}");
-                }
-            }
-
-            Warmed.UnionWith(pending);
         }
 
         // The debug menu renders these same strings through IMGUI, which has its

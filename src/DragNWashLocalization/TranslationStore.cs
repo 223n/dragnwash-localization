@@ -92,6 +92,42 @@ namespace DragNWashLocalization
             }
         }
 
+        // The same texts as CollectAllLocalesTexts, grouped by locale folder,
+        // so fonts can be prepared per language.
+        public static Dictionary<string, List<string>> CollectTextsByLocale(string pluginDirectory)
+        {
+            var result = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
+            string translationsDir = Path.Combine(pluginDirectory, "Translations");
+            if (!Directory.Exists(translationsDir))
+            {
+                return result;
+            }
+            foreach (string localeDir in Directory.GetDirectories(translationsDir))
+            {
+                string name = Path.GetFileName(localeDir);
+                if (name.StartsWith("_")) continue;
+                string path = Path.Combine(localeDir, "strings.csv");
+                if (!File.Exists(path)) continue;
+                var texts = new List<string>();
+                try
+                {
+                    foreach (var row in CsvReader.ReadRows(path))
+                    {
+                        if (row.TryGetValue("translation", out var translation) && !string.IsNullOrEmpty(translation))
+                        {
+                            texts.Add(translation);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Plugin.Log($"[font] Could not read {path} for font preparation: {ex.Message}");
+                }
+                result[name] = texts;
+            }
+            return result;
+        }
+
         // Every string this locale can put on screen. FontFallback rasterizes
         // their glyphs up front so no atlas has to grow mid-gameplay.
         public static IEnumerable<string> TranslatedTexts => ByKey.Values;
