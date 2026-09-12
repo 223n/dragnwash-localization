@@ -184,6 +184,9 @@ namespace DragNWashLocalization
             CreateMenuFont();
 
             var harmony = new Harmony(PluginGuid);
+            CursorUnlock.Install(harmony);
+            VirtualClick.Install(harmony);
+            MenuText.Install(harmony);
             harmony.PatchAll();
 
             Logger.LogInfo($"DragNWashLocalization loaded. TargetLocale={TargetLocale.Value}, loaded entries={TranslationStore.EntryCount}, ignore patterns={IgnoreRules.PatternCount}, graphics={SystemInfo.graphicsDeviceType}");
@@ -210,6 +213,8 @@ namespace DragNWashLocalization
         private bool _pendingWorkingCopy;
         private string _pendingRestoreSlot;
         private SaveHistory.Snapshot _pendingRestoreSnapshot;
+
+        private bool _menuWasOpen;
 
         private void Update()
         {
@@ -239,6 +244,13 @@ namespace DragNWashLocalization
             if (ToggleMenuKey.Value.IsDown())
             {
                 _showMenu = !_showMenu;
+            }
+            // The menu can also be closed from its own X button, so track the
+            // state here rather than only on the key.
+            if (_showMenu != _menuWasOpen)
+            {
+                _menuWasOpen = _showMenu;
+                if (_showMenu) CursorUnlock.Hold(this); else { CursorUnlock.Release(); VirtualClick.Cancel(); }
             }
 
             if (DumpDialogueKey.Value.IsDown() || _pendingDump)
@@ -281,6 +293,14 @@ namespace DragNWashLocalization
                 // Rewrites the file; hot reload then re-reads it, which is a
                 // no-op for the table since every row resolves to the same key.
                 Log(TranslationStore.HashFileInPlace(PluginDirectory, TargetLocale.Value));
+            }
+
+            if (_showMenu)
+            {
+                CursorUnlock.Tick();
+                VirtualClick.Poll();
+                if (VirtualClick.UpdateDrag(ref _windowRect, 48, 58, 22))
+                    _windowRect = ClampMenuRect(_windowRect, Screen.width, Screen.height);
             }
 
             if (_pendingFlowDump)
@@ -465,6 +485,14 @@ namespace DragNWashLocalization
                         break;
                     }
                     Destroy(candidate);
+                }
+                if (_menuFont == null)
+                {
+                    // No OS font with CJK glyphs (Steam's Linux runtime): use the
+                    // Noto Sans JP asset shipped next to the plugin.
+                    Font bundled = MenuFontBundle.TryLoad(PluginDirectory);
+                    if (bundled != null && FontRenders(bundled)) _menuFont = bundled;
+                    else if (bundled != null) Log("Menu font: the bundled font does not render here either.");
                 }
                 if (_menuFont == null)
                 {

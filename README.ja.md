@@ -53,7 +53,14 @@ Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Ins
 4. Steam のゲームのプロパティ → 起動オプションに `./run_bepinex.sh %command%`
 5. 起動する。言語は `BepInEx/config/com.tomxv.dragnwash.localization.cfg` の `TargetLocale`（初回起動後に生成）で変えられます
 
-フォントは SteamOS 標準の Noto Sans CJK をファイルから直接読むので追加の準備は不要です。F1 メニューはキーボードが必要なので、Steam Input で F1 をボタンに割り当ててください。
+フォントの準備は不要です。ゲーム本編の文字は SteamOS 標準の Noto Sans CJK をファイルから直接読み、F1 メニューは同梱の Noto Sans JP（`dragnwash-menufont.bundle`）で描きます（Steam の Linux ランタイム内では Unity のメニュー描画から CJK フォントが見えないため）。
+
+Deck（ゲーミングモード）での F1 メニューの操作:
+
+- **F1** を Steam Input でボタンに割り当てて開く
+- 右トラックパッドかタッチ画面でポインタを合わせ、**A**・**R2**・トラックパッド押し込みのどれかで押す（Steam Input はトラックパッド押し込みをマウスクリックではなくスティック押し込みとして送るので、Mod 側で対応しています）
+- タイトルバーでボタンを押したまま動かすと移動、右下の角なら大きさ変更
+- スティックと十字キーで、ポインタが乗っている一覧をスクロール
 
 > [!NOTE]
 > **macOS** は未検証です。BepInEx の macOS 版と同じ手順で動く可能性があり、フォントは Hiragino / PingFang を探します。試した結果を Issue で教えてもらえると助かります。

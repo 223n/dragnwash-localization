@@ -2,6 +2,7 @@ using System.IO;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace DragNWashLocalization
 {
@@ -204,6 +205,9 @@ namespace DragNWashLocalization
 
             EnsureStyles();
             _windowRect = ClampMenuRect(_windowRect, Screen.width, Screen.height);
+            // Pad / trackpad presses that never reach IMGUI as mouse buttons
+            // (Steam Deck) are turned into clicks by VirtualClick.
+            VirtualClick.Observe(Event.current);
             Color previousColor = GUI.color;
             Color previousBackground = GUI.backgroundColor;
             Color previousContent = GUI.contentColor;
@@ -212,7 +216,9 @@ namespace DragNWashLocalization
                 GUI.color = Color.white;
                 GUI.backgroundColor = Color.white;
                 GUI.contentColor = Color.white;
+                MenuText.Begin(_menuFont, MenuFontSize);
                 _windowRect = GUI.Window(GetInstanceID(), _windowRect, DrawWindow, string.Empty, _windowStyle);
+                MenuText.End();
                 // GUI.Window returns its own rectangle after the callback. Apply
                 // a resize afterwards so that return value cannot undo it.
                 if (_requestedMenuSize.HasValue)
@@ -325,6 +331,7 @@ namespace DragNWashLocalization
             _logScroll.y = _logNeedsScroll ? maxScroll : Mathf.Clamp(_logScroll.y, 0, maxScroll);
             _logNeedsScroll = false;
 
+            if (VirtualClick.ApplyScroll(viewport, ref _logScroll)) { _followLog = false; _logNeedsScroll = false; }
             _logScroll = GUI.BeginScrollView(viewport, _logScroll,
                 new Rect(0, 0, contentWidth, Mathf.Max(viewport.height - 1, _logContentHeight)), false, true);
             if (count == 0)
@@ -343,6 +350,7 @@ namespace DragNWashLocalization
             FillMenuRect(area, MenuInset);
             float innerWidth = Mathf.Max(100, area.width - 36);
             const float contentHeight = 394;
+            VirtualClick.ApplyScroll(area, ref _localeScroll);
             _localeScroll = GUI.BeginScrollView(area, _localeScroll,
                 new Rect(0, 0, innerWidth, contentHeight + Mathf.Ceil(_availableLocales.Length / 3f) * 38), false, false);
             GUI.Label(new Rect(12, 8, innerWidth - 12, 26), "LANGUAGE", _labelStyle);
@@ -533,6 +541,7 @@ namespace DragNWashLocalization
             float footerHeight = _mutedLabelStyle.CalcHeight(footerText, innerWidth);
 
             var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - footerHeight - 12));
+            VirtualClick.ApplyScroll(view, ref _savesScroll);
             _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, _showFlags && _savesSlot != null ? FlagRowsHeight() : _savesList.Count * 36)), false, false);
             // The flag editor replaces the history list while it is open, so
             // the flags start at the top instead of below 30 snapshot rows.
@@ -663,13 +672,7 @@ namespace DragNWashLocalization
         // so the caller shows the locale code instead.
         private bool MenuFontCanDraw(string text)
         {
-            if (_menuFont == null || string.IsNullOrEmpty(text)) return true;
-            foreach (char c in text)
-            {
-                if (c < 128) continue;
-                if (!_menuFont.HasCharacter(c)) return false;
-            }
-            return true;
+            return MenuText.CanDraw(_menuFont, MenuFontSize, text);
         }
 
         // Shown on the language buttons; the folder name is what the config stores.

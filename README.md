@@ -53,7 +53,14 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
 4. In Steam, game properties → Launch options: `./run_bepinex.sh %command%`
 5. Start the game. Change the language in `BepInEx/config/com.tomxv.dragnwash.localization.cfg` (`TargetLocale`, created on first run).
 
-Fonts need no extra setup: the mod reads SteamOS's Noto Sans CJK straight from the font file. The F1 menu needs a keyboard, so bind F1 to a button with Steam Input.
+Fonts need no extra setup: the game text uses SteamOS's Noto Sans CJK straight from the font file, and the F1 menu draws with a bundled Noto Sans JP (`dragnwash-menufont.bundle`), because Steam's Linux runtime exposes no CJK font to Unity's menu system.
+
+Using the F1 menu on the Deck (Gaming Mode):
+
+- Bind **F1** to a button with Steam Input to open it.
+- Point with the right trackpad or the touchscreen. **A**, **R2**, or a trackpad click presses the button under the pointer (Steam Input sends the trackpad click as a stick press, not a mouse click, so the mod handles it).
+- Hold one of those buttons on the title bar to move the window, or on the bottom-right corner to resize it.
+- The sticks and the d-pad scroll whichever list the pointer is over.
 
 > [!NOTE]
 > **macOS** is untested. It may work with the macOS build of BepInEx and the same steps; the mod looks for Hiragino / PingFang there. Reports in the issues are welcome.

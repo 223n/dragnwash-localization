@@ -12,6 +12,7 @@
 #   release/DragNWashLocalization-<version>.zip
 #     BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 #     BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv
+#     BepInEx/plugins/DragNWashLocalization/dragnwash-menufont.bundle
 #     BepInEx/plugins/DragNWashLocalization/data/script_order.csv, level_flow.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
@@ -39,7 +40,8 @@ $Required = @(
     'Unity.TextMeshPro.dll', 'UnityEngine.UI.dll',
     'YarnSpinner.dll', 'YarnSpinner.Unity.dll',
     'UnityEngine.IMGUIModule.dll', 'UnityEngine.TextRenderingModule.dll',
-    'Unity.InputSystem.dll', 'UnityEngine.TextCoreFontEngineModule.dll'
+    'Unity.InputSystem.dll', 'UnityEngine.TextCoreFontEngineModule.dll',
+    'UnityEngine.AssetBundleModule.dll'
 )
 $Missing = $Required | Where-Object { -not (Test-Path -LiteralPath (Join-Path $SrcDir "libs/$_")) }
 if ($Missing) {
@@ -81,6 +83,8 @@ New-Item -ItemType Directory -Force -Path $TranslationsDir | Out-Null
 
 Copy-Item -LiteralPath $Dll -Destination $PluginDir
 Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
+# Menu font for systems whose OS fonts have no CJK glyphs (Steam Deck).
+Copy-Item -LiteralPath (Join-Path $Root 'assets/menufont/dragnwash-menufont.bundle') -Destination $PluginDir
 # Play-order data (node names, line ids, hashes; no English).
 New-Item -ItemType Directory -Force -Path (Join-Path $PluginDir 'data') | Out-Null
 Copy-Item -Path (Join-Path $Root 'data/*.csv') -Destination (Join-Path $PluginDir 'data')

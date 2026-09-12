@@ -151,6 +151,8 @@ function Install-Plugin([string]$g, [string]$loc) {
     Copy-Item -LiteralPath (Join-Path $Payload "$PluginFolderName.dll") -Destination $dst -Force
     $cat = Join-Path $Payload 'FlagCatalog.csv'
     if (Test-Path -LiteralPath $cat) { Copy-Item -LiteralPath $cat -Destination $dst -Force }
+    $fontBundle = Join-Path $Payload 'dragnwash-menufont.bundle'
+    if (Test-Path -LiteralPath $fontBundle) { Copy-Item -LiteralPath $fontBundle -Destination $dst -Force }
     $dataSrc = Join-Path $Payload 'data'
     if (Test-Path -LiteralPath $dataSrc) { New-Item -ItemType Directory -Force -Path (Join-Path $dst 'data') | Out-Null; Copy-Item -Path (Join-Path $dataSrc '*') -Destination (Join-Path $dst 'data') -Force }
     $srcT = Join-Path $Payload 'Translations'

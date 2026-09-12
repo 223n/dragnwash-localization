@@ -31,6 +31,7 @@
       libs/UnityEngine.IMGUIModule.dll     <- <Game>/DragNWash_Data/Managed/UnityEngine.IMGUIModule.dll
       libs/UnityEngine.TextRenderingModule.dll <- <Game>/DragNWash_Data/Managed/UnityEngine.TextRenderingModule.dll
       libs/Unity.InputSystem.dll           <- <Game>/DragNWash_Data/Managed/Unity.InputSystem.dll
+      libs/UnityEngine.AssetBundleModule.dll <- <Game>/DragNWash_Data/Managed/UnityEngine.AssetBundleModule.dll
       libs/UnityEngine.UI.dll              <- <Game>/DragNWash_Data/Managed/UnityEngine.UI.dll
   -->
   <ItemGroup>
@@ -84,6 +85,10 @@
     </Reference>
     <Reference Include="UnityEngine.TextCoreFontEngineModule">
       <HintPath>libs\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>libs\UnityEngine.AssetBundleModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
