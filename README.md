@@ -245,7 +245,7 @@ Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localiza
 
 ## Current status
 
-Released as v0.4.0 (thirteen languages, fonts prepared per language, an About tab, a bilingual installer), after v0.3.0 added Steam Deck support. The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
+Released as v0.4.0 (thirteen languages, fonts prepared per language, an About tab, an installer in English, Japanese and Chinese), after v0.3.0 added Steam Deck support. The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
 
