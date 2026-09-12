@@ -123,6 +123,7 @@ namespace DragNWashLocalization
 
         private static void LoadFile(string path, string label)
         {
+            try
             {
                 if (File.Exists(path))
                 {
@@ -156,6 +157,12 @@ namespace DragNWashLocalization
                         Plugin.Log($"[load] {badKeys} row(s) in {label} have a malformed key (expected {TranslationKey.Length} hex digits) and were skipped.");
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Typically a sharing violation from an editor holding the file
+                // exclusively. Keep going with whatever else loaded.
+                Plugin.Log($"[load] Could not read {label}: {ex.Message}. Close the program holding it and save the file again to hot reload.");
             }
         }
 

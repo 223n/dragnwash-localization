@@ -11,7 +11,14 @@ namespace DragNWashLocalization
     {
         public static IEnumerable<Dictionary<string, string>> ReadRows(string path)
         {
-            string text = File.ReadAllText(path, Encoding.UTF8);
+            // Shared read: translators keep these files open in Excel or an
+            // editor while the game runs, and an exclusive open would throw.
+            string text;
+            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete))
+            using (var reader = new StreamReader(fs, Encoding.UTF8, true))
+            {
+                text = reader.ReadToEnd();
+            }
             List<List<string>> records = Parse(text);
             if (records.Count == 0)
             {
