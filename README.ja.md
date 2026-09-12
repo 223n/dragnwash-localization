@@ -45,6 +45,9 @@
 
 ### Steam Deck / Linux（動作確認済み）
 
+> [!IMPORTANT]
+> Steam Deck での動作は **v0.3.0 以降**です。それより前のバージョンでも起動はしますが、Deck では F1 メニューを操作できません。
+
 Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Install.exe` は使えないので手動で入れます（デスクトップモードで作業）。
 
 1. [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip) をゲームフォルダ（`~/.local/share/Steam/steamapps/common/Drag'n Wash/`）に展開する
