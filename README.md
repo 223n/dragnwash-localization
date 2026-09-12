@@ -43,8 +43,20 @@ If you prefer to do it by hand, follow the manual steps below.
 > - If no window appears at all, double-click **`Install.cmd`** in the same folder instead. A console flashes for a moment and the same installer window opens.
 > - Failing that, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
 
+### Steam Deck / Linux (verified)
+
+Works with the native Linux build of the game and the Linux build of BepInEx. `Install.exe` does not apply here, so install by hand (Desktop Mode on the Deck):
+
+1. Extract [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip) into the game folder (`~/.local/share/Steam/steamapps/common/Drag'n Wash/`).
+2. Merge this mod's `BepInEx/` folder into the same place.
+3. Open `run_bepinex.sh`, set `executable_name="DragNWash"`, save, and run `chmod +x run_bepinex.sh`.
+4. In Steam, game properties → Launch options: `./run_bepinex.sh %command%`
+5. Start the game. Change the language in `BepInEx/config/com.tomxv.dragnwash.localization.cfg` (`TargetLocale`, created on first run).
+
+Fonts need no extra setup: the mod reads SteamOS's Noto Sans CJK straight from the font file. The F1 menu needs a keyboard, so bind F1 to a button with Steam Input.
+
 > [!NOTE]
-> **macOS / Linux / Steam Deck** are untested. The game has builds for them, but `Install.exe` is Windows-only, so install by hand (merge `BepInEx/` into the game folder) and follow BepInEx's own setup for that OS. The mod looks for the standard CJK fonts on macOS (Hiragino / PingFang) and Linux (Noto Sans CJK); if you try it, please report the result in an issue.
+> **macOS** is untested. It may work with the macOS build of BepInEx and the same steps; the mod looks for Hiragino / PingFang there. Reports in the issues are welcome.
 
 ### Manual installation
 

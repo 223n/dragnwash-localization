@@ -43,8 +43,20 @@
 > - 何も出ないときは、同じフォルダの **`Install.cmd`** をダブルクリックしてください。黒い窓が一瞬出るだけで、同じインストーラー画面が開きます
 > - それでも駄目なら、`Install.exe` を右クリック → プロパティ → 一番下の **「許可する」** にチェック → OK のあと、もう一度ダブルクリック
 
+### Steam Deck / Linux（動作確認済み）
+
+Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Install.exe` は使えないので手動で入れます（デスクトップモードで作業）。
+
+1. [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip) をゲームフォルダ（`~/.local/share/Steam/steamapps/common/Drag'n Wash/`）に展開する
+2. この Mod の zip の `BepInEx/` を同じ場所に重ねる
+3. `run_bepinex.sh` を開き、`executable_name="DragNWash"` にして保存。`chmod +x run_bepinex.sh` で実行権限を付ける
+4. Steam のゲームのプロパティ → 起動オプションに `./run_bepinex.sh %command%`
+5. 起動する。言語は `BepInEx/config/com.tomxv.dragnwash.localization.cfg` の `TargetLocale`（初回起動後に生成）で変えられます
+
+フォントは SteamOS 標準の Noto Sans CJK をファイルから直接読むので追加の準備は不要です。F1 メニューはキーボードが必要なので、Steam Input で F1 をボタンに割り当ててください。
+
 > [!NOTE]
-> **macOS / Linux / Steam Deck** は未検証です。ゲーム自体は各 OS 版がありますが、`Install.exe` は Windows 専用なので手動導入（`BepInEx/` をゲームフォルダに重ねる）になり、BepInEx 側の OS ごとの起動設定も必要です。日本語・中国語のフォントは macOS（Hiragino / PingFang）と Linux（Noto Sans CJK）の標準フォントを探すようにしてありますが、実機での動作報告があれば Issue でお知らせください。
+> **macOS** は未検証です。BepInEx の macOS 版と同じ手順で動く可能性があり、フォントは Hiragino / PingFang を探します。試した結果を Issue で教えてもらえると助かります。
 
 ### 手動で導入する
 
