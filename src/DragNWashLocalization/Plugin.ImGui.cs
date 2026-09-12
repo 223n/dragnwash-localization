@@ -117,7 +117,9 @@ namespace DragNWashLocalization
             {
                 font = _menuFont != null ? _menuFont : basis.font,
                 fontSize = MenuFontSize,
-                fontStyle = FontStyle.Normal,
+                // The bundled Noto Sans JP comes out thin in IMGUI; Unity's
+                // synthetic bold gives it the weight of the OS fonts.
+                fontStyle = _menuFontBold ? FontStyle.Bold : FontStyle.Normal,
                 richText = false
             };
             style.normal.textColor = textColor;

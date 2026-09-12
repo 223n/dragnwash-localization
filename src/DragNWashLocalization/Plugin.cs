@@ -23,6 +23,7 @@ namespace DragNWashLocalization
         // present time. See CreateMenuFont.
         private const int MaxLogLines = 100;
         private const int MenuFontSize = 14;
+        private static bool _menuFontBold;
 
         internal static ConfigEntry<string> TargetLocale;
         internal static ConfigEntry<int> FlagPanelDebug;
@@ -491,7 +492,7 @@ namespace DragNWashLocalization
                     // No OS font with CJK glyphs (Steam's Linux runtime): use the
                     // Noto Sans JP asset shipped next to the plugin.
                     Font bundled = MenuFontBundle.TryLoad(PluginDirectory);
-                    if (bundled != null && FontRenders(bundled)) _menuFont = bundled;
+                    if (bundled != null && FontRenders(bundled)) { _menuFont = bundled; _menuFontBold = true; }
                     else if (bundled != null) Log("Menu font: the bundled font does not render here either.");
                 }
                 if (_menuFont == null)
