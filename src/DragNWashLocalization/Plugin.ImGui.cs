@@ -342,7 +342,7 @@ namespace DragNWashLocalization
         {
             FillMenuRect(area, MenuInset);
             float innerWidth = Mathf.Max(100, area.width - 36);
-            const float contentHeight = 356;
+            const float contentHeight = 394;
             _localeScroll = GUI.BeginScrollView(area, _localeScroll,
                 new Rect(0, 0, innerWidth, contentHeight + Mathf.Ceil(_availableLocales.Length / 3f) * 38), false, false);
             GUI.Label(new Rect(12, 8, innerWidth - 12, 26), "LANGUAGE", _labelStyle);
@@ -393,6 +393,12 @@ namespace DragNWashLocalization
             {
                 _pendingHashFile = true;
                 _menuNotice = "See Activity log for the hashing result.";
+            }
+            y += 38;
+            if (GUI.Button(new Rect(12, y, innerWidth - 12, RowHeight), _pendingFlowDump ? "Flow export queued..." : "Export game flow (levels + dialogue graph)", _buttonStyle))
+            {
+                _pendingFlowDump = true;
+                _menuNotice = "See Activity log for the flow export result.";
             }
             y += 42;
             GUI.Label(new Rect(12, y, innerWidth - 12, 52),

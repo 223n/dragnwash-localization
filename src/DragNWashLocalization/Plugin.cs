@@ -199,6 +199,7 @@ namespace DragNWashLocalization
         private bool _inputBlockingBroken;
         private bool _pendingLayoutCheck;
         private bool _pendingHashFile;
+        private bool _pendingFlowDump;
         private bool _pendingWorkingCopy;
         private string _pendingRestoreSlot;
         private SaveHistory.Snapshot _pendingRestoreSnapshot;
@@ -273,6 +274,12 @@ namespace DragNWashLocalization
                 // Rewrites the file; hot reload then re-reads it, which is a
                 // no-op for the table since every row resolves to the same key.
                 Log(TranslationStore.HashFileInPlace(PluginDirectory, TargetLocale.Value));
+            }
+
+            if (_pendingFlowDump)
+            {
+                _pendingFlowDump = false;
+                Log(FlowDumper.Export(PluginDirectory));
             }
 
             if (_pendingLayoutCheck)
