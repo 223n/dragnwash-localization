@@ -56,15 +56,23 @@ $Strings = @{
         aboutBody = @'
 Drag'n Wash Localization {0}
 
-An unofficial fan-made localization mod.
+An unofficial fan-made multilingual localization mod.
 Not affiliated with the developers of Drag'n Wash.
 
-Created by TomXV
+Created by TomXV. All translation files by TomXV.
 github.com/TomXV/dragnwash-localization
 
-Translation files by TomXV. Japanese and Simplified Chinese
-were supervised by the author; the other language packs are
-provisional and were not reviewed by native speakers.
+Languages
+- Supervised by the author: Japanese, Simplified Chinese
+- Converted from the supervised Simplified Chinese:
+  Traditional Chinese
+- Provisional (not reviewed by native speakers): German,
+  French, Spanish, Brazilian Portuguese, Korean, Russian,
+  Polish, Hebrew
+- Just for fun: Esperanto, Toki Pona
+
+Provisional lines may read unnaturally. Corrections from
+native speakers are very welcome as pull requests.
 
 The mod is MIT licensed. The bundled menu font is Noto Sans JP
 under the SIL Open Font License 1.1.
@@ -84,14 +92,21 @@ under the SIL Open Font License 1.1.
         aboutBody = @'
 Drag'n Wash Localization {0}
 
-非公式のファンメイド翻訳Modです。
+非公式のファンメイド多言語翻訳Modです。
 ゲームの開発元とは関係ありません。
 
-制作: TomXV
+制作: TomXV（翻訳ファイルもすべて TomXV が作成）
 github.com/TomXV/dragnwash-localization
 
-翻訳ファイルはすべて TomXV が作成しています。日本語と簡体字中国語は
-作者が監修していますが、その他の言語はネイティブ監修のない仮翻訳です。
+対応言語
+- 作者が監修: 日本語、簡体字中国語
+- 監修済みの簡体字版から変換: 繁体字中国語
+- 仮翻訳（ネイティブ監修なし）: ドイツ語、フランス語、スペイン語、
+  ブラジルポルトガル語、韓国語、ロシア語、ポーランド語、ヘブライ語
+- 面白枠: エスペラント、トキポナ
+
+仮翻訳には不自然な言い回しがあり得ます。
+ネイティブの方からの修正 PR を歓迎します。
 
 ModのライセンスはMITです。同梱のメニュー用フォントは
 Noto Sans JP（SIL Open Font License 1.1）です。
@@ -111,14 +126,21 @@ Noto Sans JP（SIL Open Font License 1.1）です。
         aboutBody = @'
 Drag'n Wash Localization {0}
 
-非官方的爱好者制作的本地化Mod。
+非官方的爱好者制作的多语言本地化Mod。
 与游戏开发者无关。
 
-制作: TomXV
+制作: TomXV（翻译文件均由 TomXV 制作）
 github.com/TomXV/dragnwash-localization
 
-翻译文件均由 TomXV 制作。日语和简体中文由作者审校，
-其他语言为未经母语者审校的暂定翻译。
+支持的语言
+- 作者审校: 日语、简体中文
+- 由审校过的简体中文转换: 繁体中文
+- 暂定翻译（未经母语者审校）: 德语、法语、西班牙语、
+  巴西葡萄牙语、韩语、俄语、波兰语、希伯来语
+- 趣味: 世界语、道本语（Toki Pona）
+
+暂定翻译可能有不自然的表达。
+欢迎母语者通过 Pull Request 提交修正。
 
 Mod采用MIT许可证。随附的菜单字体为
 Noto Sans JP（SIL Open Font License 1.1）。

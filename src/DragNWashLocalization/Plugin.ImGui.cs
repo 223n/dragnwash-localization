@@ -298,13 +298,21 @@ namespace DragNWashLocalization
 
             Head("DRAG'N WASH LOCALIZATION");
             Body($"Version {version}" + (string.IsNullOrEmpty(build) ? "" : $"   (build {build})"));
-            Body("An unofficial fan-made localization mod. It is not affiliated with, endorsed by, or supported by the developers of Drag'n Wash.");
+            Body("An unofficial fan-made multilingual localization mod. It is not affiliated with, endorsed by, or supported by the developers of Drag'n Wash.");
             Body("");
 
             Head("CREDITS");
-            Body("Created by TomXV");
-            Body("Translation files by TomXV. Japanese and Simplified Chinese were supervised by the author; the other language packs are provisional and were not reviewed by native speakers, so some lines may read unnaturally.");
+            Body("Created by TomXV. All translation files by TomXV.");
             Body("Source, issues and translation contributions: github.com/TomXV/dragnwash-localization");
+            Body("");
+
+            Head("LANGUAGES");
+            Body("Supervised by the author: Japanese (ja), Simplified Chinese (zh-Hans).");
+            Body("Converted from the supervised Simplified Chinese: Traditional Chinese (zh-Hant).");
+            Body("Provisional, not reviewed by native speakers: German (de), French (fr), Spanish (es), Brazilian Portuguese (pt-BR), Korean (ko), Russian (ru), Polish (pl), Hebrew (he).");
+            Body("Just for fun: Esperanto (eo), Toki Pona (tok).");
+            Body("Provisional lines may read unnaturally. Native speakers: corrections are very welcome as pull requests.");
+            Body("Installed in this copy: " + string.Join(", ", _availableLocales ?? new string[0]));
             Body("");
 
             Head("LICENSE");
