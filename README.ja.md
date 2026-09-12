@@ -127,7 +127,7 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 
 リポジトリにはゲームの英語台本を含めない方針で、**製品版を持っている人だけが翻訳できる**仕組みです。
 各言語フォルダには表示名を書いた1行の `name.txt`（例: `日本語`）があり、インストーラーとゲーム内メニューに表示されます。
-Unity内部のキー名などを知る必要はありません。手順は [CONTRIBUTING.md](CONTRIBUTING.md) を参照。書式タグ（`<size=70%>`など）が原文に
+Unity内部のキー名などを知る必要はありません。手順は [CONTRIBUTING.ja.md](CONTRIBUTING.ja.md) を参照。書式タグ（`<size=70%>`など）が原文に
 含まれている場合は、タグ構造をそのまま残して中の文章だけ訳してください。
 
 ### 会話文をまとめて確認したい場合
@@ -249,7 +249,7 @@ CJKフォント表示、会話・UIの一括抽出、ゲーム内デバッグメ
 ## 翻訳に参加する
 
 コード不要で `Translations/<locale>/strings.csv` を編集するだけで参加できます。
-手順・書式・未翻訳の見つけ方は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+手順・書式・未翻訳の見つけ方は [CONTRIBUTING.ja.md](CONTRIBUTING.ja.md) を参照してください。
 
 ## 配布・リリース
 

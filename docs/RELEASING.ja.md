@@ -7,7 +7,7 @@
 **CI ではビルドできず、リリースはゲームを導入済みの環境でローカルに作成**して
 GitHub Releases へアップロードします。
 
-翻訳の追加だけであればビルド不要です。翻訳者は [CONTRIBUTING.md](../CONTRIBUTING.md)
+翻訳の追加だけであればビルド不要です。翻訳者は [CONTRIBUTING.ja.md](../CONTRIBUTING.ja.md)
 を参照してください。
 
 ## 前提
