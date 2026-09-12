@@ -27,7 +27,7 @@ Installing is really easy.
 
 The installer finds the game through Steam on its own (or lets you pick the folder). If BepInEx is not installed yet, it downloads the official 5.4.23.5 release, verifies its SHA-256, and unpacks it for you. Then just start the game from Steam.
 
-Languages: 日本語 / 简体中文 / English (no translation). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
+Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for German, French, Spanish, Brazilian Portuguese, Korean, Russian and Polish (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
 
 If you prefer to do it by hand, follow the manual steps below.
 
@@ -123,6 +123,26 @@ Set `TargetLocale` under `[General]` to an installed locale such as `ja` or `zh-
 - Confirm the exact DLL path shown above.
 - Open `BepInEx/LogOutput.log`. If the file does not exist, BepInEx itself is not loading. If it exists, search it for `DragNWashLocalization` and review the nearby error.
 - If opening Options causes a Direct3D 12 crash, use the Windows workaround described in [Crash when opening Options on Windows](#crash-when-opening-options-on-windows).
+
+## Language packs
+
+All translation files are written by TomXV and ship in the same zip; the installer and the F1 menu list every folder under `Translations/`.
+
+| Locale | Language | Status |
+| --- | --- | --- |
+| `ja` | 日本語 | Supervised by the author |
+| `zh-Hans` | 简体中文 | Supervised by the author |
+| `de` | Deutsch | Provisional |
+| `fr` | Français | Provisional |
+| `es` | Español | Provisional |
+| `pt-BR` | Português (Brasil) | Provisional |
+| `ko` | 한국어 | Provisional |
+| `ru` | Русский | Provisional |
+| `pl` | Polski | Provisional |
+| `en` | English | The game's original text (no translation) |
+
+> [!NOTE]
+> **Provisional** packs were not reviewed by a native speaker. They are complete and playable, but some lines may read unnaturally or miss a joke. Only Japanese and Simplified Chinese were supervised by the author. If you are a native speaker, corrections are very welcome as pull requests (see [CONTRIBUTING.md](CONTRIBUTING.md)); every `strings.csv` starts with a comment saying the same.
 
 ## For translators
 
