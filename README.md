@@ -8,6 +8,11 @@ The project aims to make it possible to add Japanese, Simplified Chinese, and ot
 
 See [docs/PLAN.md](docs/PLAN.md) for the technical research and implementation plan.
 
+> [!WARNING]
+> ## ⚠️ SPOILER WARNING ⚠️
+> **The CSV files under `Translations/` contain every conversation in the game, in story order.**
+> Opening them will spoil the story. Play through the game a few times first!
+
 ## Installation
 
 ### Quick install (recommended)
