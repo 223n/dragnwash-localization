@@ -120,8 +120,13 @@ namespace DragNWashLocalization
         };
 
         private static readonly List<TMP_FontAsset> Registered = new List<TMP_FontAsset>();
-        private static readonly Dictionary<TMP_FontAsset, string> GroupOfAsset =
-            new Dictionary<TMP_FontAsset, string>();
+        // Which face serves each script. Two scripts can share a face - Segoe UI
+        // covers both Hebrew and Latin/Cyrillic - and then share its atlas too.
+        private static readonly Dictionary<string, TMP_FontAsset> FaceOfGroup =
+            new Dictionary<string, TMP_FontAsset>(StringComparer.Ordinal);
+        // One face per font source (family name, or file path and face index).
+        private static readonly Dictionary<string, TMP_FontAsset> FaceBySource =
+            new Dictionary<string, TMP_FontAsset>(StringComparer.OrdinalIgnoreCase);
         private static readonly HashSet<string> LoadedGroups = new HashSet<string>(StringComparer.Ordinal);
         private static readonly HashSet<char> Warmed = new HashSet<char>();
 
@@ -206,9 +211,27 @@ namespace DragNWashLocalization
             }
             else if (!GroupsOfLocale.ContainsKey(_currentLocale))
             {
-                // A language folder added after startup. Preparing it would be
-                // the crash this whole mode exists to avoid.
-                Plugin.Log($"[font] {locale} was not installed at startup; restart the game to prepare its fonts.");
+                // A language folder added after startup. Preparing it now would
+                // be the crash this whole mode exists to avoid, so only say so
+                // when it has characters nothing has been prepared for (a
+                // plain-ASCII language like Toki Pona needs nothing).
+                int unprepared = 0;
+                var seen = new HashSet<char>();
+                if (texts != null)
+                {
+                    foreach (string text in texts)
+                    {
+                        if (string.IsNullOrEmpty(text)) continue;
+                        foreach (char c in text)
+                        {
+                            if (c > 0x7F && !Warmed.Contains(c) && seen.Add(c)) unprepared++;
+                        }
+                    }
+                }
+                if (unprepared > 0)
+                {
+                    Plugin.Log($"[font] {locale} was installed after startup and has {unprepared} character(s) no font was prepared for; restart the game to prepare them.");
+                }
             }
 
             PublishFallbacks(_currentLocale);
@@ -367,13 +390,10 @@ namespace DragNWashLocalization
             var chain = new List<TMP_FontAsset>();
             foreach (string g in order)
             {
-                foreach (TMP_FontAsset face in Registered)
+                TMP_FontAsset face;
+                if (FaceOfGroup.TryGetValue(g, out face) && face != null && !chain.Contains(face))
                 {
-                    string fg;
-                    if (GroupOfAsset.TryGetValue(face, out fg) && fg == g && !chain.Contains(face))
-                    {
-                        chain.Add(face);
-                    }
+                    chain.Add(face);
                 }
             }
             return chain;
@@ -421,25 +441,22 @@ namespace DragNWashLocalization
                 default: candidates = WesternCandidates; files = WesternFiles; ttcFace = 0; break;
             }
 
-            int before = Registered.Count;
-            AddFirstAvailable(candidates, pointSize);
+            TMP_FontAsset face = AddFirstAvailable(candidates, pointSize, group);
             // Steam's Linux runtime container, macOS and stripped-down systems
             // do not always expose fonts by family name, but the files are
             // still there. Try known paths, and a fonts/ folder next to the
             // plugin for anyone who wants to drop in their own.
-            if (Registered.Count == before)
+            if (face == null)
             {
-                AddFirstFile(files, ttcFace, pointSize, group);
+                face = AddFirstFile(files, ttcFace, pointSize, group);
             }
-            if (Registered.Count == before)
+            if (face == null)
             {
                 Plugin.Log($"[font] No {group} font found on this system.");
                 LogSystemFontNames();
+                return;
             }
-            for (int i = before; i < Registered.Count; i++)
-            {
-                GroupOfAsset[Registered[i]] = group;
-            }
+            FaceOfGroup[group] = face;
         }
 
         // (path, face index inside a .ttc). Face 0 of NotoSansCJK-*.ttc is JP,
@@ -522,13 +539,20 @@ namespace DragNWashLocalization
             "C:/Windows/Fonts/arial.ttf",
         };
 
-        private static bool AddFirstFile(string[] patterns, int ttcFace, int pointSize, string label)
+        private static TMP_FontAsset AddFirstFile(string[] patterns, int ttcFace, int pointSize, string label)
         {
             foreach (string pattern in patterns)
             {
                 foreach (string path in Expand(pattern))
                 {
                     int face = path.EndsWith(".ttc", StringComparison.OrdinalIgnoreCase) ? ttcFace : 0;
+                    string source = "file:" + path + "#" + face;
+                    TMP_FontAsset existing;
+                    if (FaceBySource.TryGetValue(source, out existing))
+                    {
+                        Plugin.Log($"[font] {label} shares the face already loaded from {path} (face {face}).");
+                        return existing;
+                    }
                     TMP_FontAsset asset;
                     try
                     {
@@ -545,11 +569,12 @@ namespace DragNWashLocalization
                     }
                     asset.name = "DragNWashLocalization_Fallback_" + label + "_" + Path.GetFileNameWithoutExtension(path);
                     Registered.Add(asset);
-                    Plugin.Log($"CJK fallback font registered from file: {path} (face {face}, atlas point size {pointSize})");
-                    return true;
+                    FaceBySource[source] = asset;
+                    Plugin.Log($"[font] {label}: loaded {path} (face {face}, atlas point size {pointSize}).");
+                    return asset;
                 }
             }
-            return false;
+            return null;
         }
 
         private static IEnumerable<string> Expand(string pattern)
@@ -605,10 +630,17 @@ namespace DragNWashLocalization
             }
         }
 
-        private static void AddFirstAvailable(string[] candidates, int pointSize)
+        private static TMP_FontAsset AddFirstAvailable(string[] candidates, int pointSize, string label)
         {
             foreach (string family in candidates)
             {
+                string source = "family:" + family;
+                TMP_FontAsset existing;
+                if (FaceBySource.TryGetValue(source, out existing))
+                {
+                    Plugin.Log($"[font] {label} shares the {family} face already loaded.");
+                    return existing;
+                }
                 TMP_FontAsset asset;
                 try
                 {
@@ -628,9 +660,11 @@ namespace DragNWashLocalization
 
                 asset.name = "DragNWashLocalization_Fallback_" + family.Replace(" ", "");
                 Registered.Add(asset);
-                Plugin.Log($"CJK fallback font registered: {family} (atlas point size {pointSize})");
-                return;
+                FaceBySource[source] = asset;
+                Plugin.Log($"[font] {label}: loaded {family} (atlas point size {pointSize}).");
+                return asset;
             }
+            return null;
         }
 
         // The debug menu renders these same strings through IMGUI, which has its
