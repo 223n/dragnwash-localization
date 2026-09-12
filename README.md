@@ -205,6 +205,7 @@ Press **F1** to toggle the debug window. The key is configurable. Drag the title
 - **Activity log:** Displays translation results and processing logs. `Follow: ON/OFF` controls automatic scrolling to the latest entry; scrolling manually disables following. `Clear log` clears the display and resets duplicate suppression. The log keeps the 100 most recent entries.
 - **Tools:** Switch the language without restarting (the buttons show each language's name from `name.txt`; **English** turns translation off). Export dialogue (`Export loaded dialogue`), UI text (`Export UI text`), or the working copy with English beside each line (`Export working copy`), rebuild the published file (`Hash for commit`), and run the layout check.
 - **Saves:** Restore an earlier save, step the level index, or toggle save flags. See below.
+- **About:** The version and build the mod is running, who made it, the license, and what this session loaded. Useful to quote in a bug report.
 
 The **Check translation layout** button exports strings at risk of overflowing their layout to `Translations/_discovered/layout_risks.csv`. Configure the threshold with `BepInEx/config/.../LayoutOverflowThreshold`; the default is `1.0`, meaning an exact fit.
 

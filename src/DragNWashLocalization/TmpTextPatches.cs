@@ -45,6 +45,7 @@ namespace DragNWashLocalization
                 if (instance != null && !ignored)
                 {
                     SourceByComponent[instance] = source;
+                    RightToLeft.Apply(instance);
                 }
 
                 if (translated)
@@ -116,6 +117,7 @@ namespace DragNWashLocalization
                 if (!ignored)
                 {
                     SourceByComponent[instance] = source;
+                    RightToLeft.Apply(instance);
                 }
 
                 if (translated)
@@ -181,6 +183,7 @@ namespace DragNWashLocalization
                     int shownBefore = instance.textInfo != null ? instance.textInfo.characterCount : 0;
                     bool fullyShown = instance.maxVisibleCharacters >= shownBefore;
 
+                    RightToLeft.Apply(instance);
                     instance.text = translated ? translation : source;
                     if (fullyShown && instance.maxVisibleCharacters != int.MaxValue)
                     {

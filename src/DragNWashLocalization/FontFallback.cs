@@ -59,6 +59,35 @@ namespace DragNWashLocalization
             "Noto Sans SC",
         };
 
+        // Simplified fonts cover most but not all Traditional characters, and
+        // the shapes differ; Taiwan/HK text deserves its own face.
+        private static readonly string[] TraditionalCandidates =
+        {
+            "Microsoft JhengHei UI",
+            "Microsoft JhengHei",
+            "MingLiU",
+            "PMingLiU",
+            // macOS
+            "PingFang TC",
+            // Linux / Steam Deck
+            "Noto Sans CJK TC",
+            "Noto Sans TC",
+        };
+
+        // No CJK font carries Hebrew, so the Hebrew pack needs its own.
+        private static readonly string[] HebrewCandidates =
+        {
+            "Segoe UI",
+            "Arial",
+            "David",
+            "Tahoma",
+            // macOS
+            "Arial Hebrew",
+            // Linux / Steam Deck (DejaVu is always present in Steam's runtime)
+            "Noto Sans Hebrew",
+            "DejaVu Sans",
+        };
+
         // Hangul is not in the Japanese or Chinese fonts above (Yu Gothic and
         // YaHei have none), so Korean gets its own.
         private static readonly string[] KoreanCandidates =
@@ -99,6 +128,12 @@ namespace DragNWashLocalization
             before = Registered.Count;
             AddFirstAvailable(KoreanCandidates, pointSize);
             bool gotKorean = Registered.Count > before;
+            before = Registered.Count;
+            AddFirstAvailable(TraditionalCandidates, pointSize);
+            bool gotTraditional = Registered.Count > before;
+            before = Registered.Count;
+            AddFirstAvailable(HebrewCandidates, pointSize);
+            bool gotHebrew = Registered.Count > before;
 
             // Steam's Linux runtime container, macOS, and stripped-down systems
             // do not always expose fonts by family name, but the files are
@@ -107,6 +142,8 @@ namespace DragNWashLocalization
             if (!gotJapanese) gotJapanese = AddFirstFile(JapaneseFiles, 0, pointSize, "Japanese");
             if (!gotChinese) gotChinese = AddFirstFile(ChineseFiles, 2, pointSize, "Chinese");
             if (!gotKorean) gotKorean = AddFirstFile(KoreanFiles, 1, pointSize, "Korean");
+            if (!gotTraditional) gotTraditional = AddFirstFile(TraditionalFiles, 3, pointSize, "Traditional Chinese");
+            if (!gotHebrew) gotHebrew = AddFirstFile(HebrewFiles, 0, pointSize, "Hebrew");
 
             if (Registered.Count == 0)
             {
@@ -160,6 +197,32 @@ namespace DragNWashLocalization
             "~/.local/share/fonts/NotoSansCJK-Regular.ttc",
             "/System/Library/Fonts/AppleSDGothicNeo.ttc",
             "C:/Windows/Fonts/malgun.ttf",
+        };
+
+        private static readonly string[] TraditionalFiles =
+        {
+            "fonts/*tc*.ttf", "fonts/*tc*.otf", "fonts/*.ttc",
+            "/run/host/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+            "~/.local/share/fonts/NotoSansCJK-Regular.ttc",
+            "/System/Library/Fonts/PingFang.ttc",
+            "C:/Windows/Fonts/msjh.ttc",
+        };
+
+        private static readonly string[] HebrewFiles =
+        {
+            "fonts/*he*.ttf", "fonts/*he*.otf",
+            "/run/host/fonts/noto/NotoSansHebrew-Regular.ttf",
+            "/usr/share/fonts/noto/NotoSansHebrew-Regular.ttf",
+            "/usr/share/fonts/truetype/noto/NotoSansHebrew-Regular.ttf",
+            "/run/host/fonts/TTF/DejaVuSans.ttf",
+            "/usr/share/fonts/TTF/DejaVuSans.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            "/System/Library/Fonts/Supplemental/Arial Hebrew.ttc",
+            "C:/Windows/Fonts/segoeui.ttf",
+            "C:/Windows/Fonts/arial.ttf",
         };
 
         private static bool AddFirstFile(string[] patterns, int ttcFace, int pointSize, string label)

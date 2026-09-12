@@ -41,7 +41,7 @@ $Payload = Join-Path (Split-Path -Parent $PSScriptRoot) "BepInEx\plugins\$Plugin
 $Lang = 'en'
 $ui = (Get-Culture).Name
 if ($ui -like 'ja*') { $Lang = 'ja' } elseif ($ui -like 'zh*') { $Lang = 'zh' }
-$T = @{
+$Strings = @{
     en = @{
         title = "Drag'n Wash Localization"; folder = 'Game folder'; browse = 'Browse...'
         language = 'Language'; install = 'Install / Update'; uninstall = 'Uninstall'
@@ -51,9 +51,27 @@ $T = @{
         stBep = 'BepInEx'; stMod = 'Mod'; yes = 'installed'; no = 'not installed'
         done = 'Done. Start the game from Steam.'; undone = 'Done. The mod has been removed.'
         pickFolder = "Select the Drag'n Wash folder"
+        uiLang = 'Installer language'; about = 'About'
+        aboutTitle = 'About this installer'
+        aboutBody = @'
+Drag'n Wash Localization {0}
+
+An unofficial fan-made localization mod.
+Not affiliated with the developers of Drag'n Wash.
+
+Created by TomXV
+github.com/TomXV/dragnwash-localization
+
+Translation files by TomXV. Japanese and Simplified Chinese
+were supervised by the author; the other language packs are
+provisional and were not reviewed by native speakers.
+
+The mod is MIT licensed. The bundled menu font is Noto Sans JP
+under the SIL Open Font License 1.1.
+'@
     }
     ja = @{
-        title = "Drag'n Wash 日本語化 / 中文化"; folder = 'ゲームフォルダ'; browse = '参照...'
+        title = "Drag'n Wash Localization"; folder = 'ゲームフォルダ'; browse = '参照...'
         language = '言語'; install = 'インストール / 更新'; uninstall = 'アンインストール'
         keepSaves = 'セーブ履歴と翻訳作業ファイルは残す'; alsoBepInEx = 'BepInEx も削除する'
         notFound = 'ゲームが見つかりません。DragNWash.exe のあるフォルダを選んでください。'
@@ -61,9 +79,26 @@ $T = @{
         stBep = 'BepInEx'; stMod = 'Mod'; yes = '導入済み'; no = '未導入'
         done = '完了しました。Steam からゲームを起動してください。'; undone = '完了しました。Mod を削除しました。'
         pickFolder = "Drag'n Wash のフォルダを選択"
+        uiLang = 'インストーラーの言語'; about = 'Mod情報'
+        aboutTitle = 'このModについて'
+        aboutBody = @'
+Drag'n Wash Localization {0}
+
+非公式のファンメイド翻訳Modです。
+ゲームの開発元とは関係ありません。
+
+制作: TomXV
+github.com/TomXV/dragnwash-localization
+
+翻訳ファイルはすべて TomXV が作成しています。日本語と簡体字中国語は
+作者が監修していますが、その他の言語はネイティブ監修のない仮翻訳です。
+
+ModのライセンスはMITです。同梱のメニュー用フォントは
+Noto Sans JP（SIL Open Font License 1.1）です。
+'@
     }
     zh = @{
-        title = "Drag'n Wash 汉化 / 日本語化"; folder = '游戏文件夹'; browse = '浏览...'
+        title = "Drag'n Wash Localization"; folder = '游戏文件夹'; browse = '浏览...'
         language = '语言'; install = '安装 / 更新'; uninstall = '卸载'
         keepSaves = '保留存档历史和翻译工作文件'; alsoBepInEx = '同时删除 BepInEx'
         notFound = '未找到游戏。请选择包含 DragNWash.exe 的文件夹。'
@@ -71,8 +106,26 @@ $T = @{
         stBep = 'BepInEx'; stMod = 'Mod'; yes = '已安装'; no = '未安装'
         done = '完成。请从 Steam 启动游戏。'; undone = '完成。Mod 已删除。'
         pickFolder = "选择 Drag'n Wash 文件夹"
+        uiLang = '安装器语言'; about = '关于'
+        aboutTitle = '关于本Mod'
+        aboutBody = @'
+Drag'n Wash Localization {0}
+
+非官方的爱好者制作的本地化Mod。
+与游戏开发者无关。
+
+制作: TomXV
+github.com/TomXV/dragnwash-localization
+
+翻译文件均由 TomXV 制作。日语和简体中文由作者审校，
+其他语言为未经母语者审校的暂定翻译。
+
+Mod采用MIT许可证。随附的菜单字体为
+Noto Sans JP（SIL Open Font License 1.1）。
+'@
     }
-}[$Lang]
+}
+$T = $Strings[$Lang]
 
 # ------------------------------------------------------------------ helpers --
 $script:LogSink = { param($m) Write-Host $m }
@@ -122,6 +175,13 @@ function Test-GameFolder([string]$p) { $p -and (Test-Path -LiteralPath (Join-Pat
 function Test-GameRunning { [bool](Get-Process -Name 'DragNWash' -ErrorAction SilentlyContinue) }
 function Test-BepInEx([string]$g) { Test-Path -LiteralPath (Join-Path $g 'BepInEx\core\BepInEx.dll') }
 function Get-PluginDir([string]$g) { Join-Path $g "BepInEx\plugins\$PluginFolderName" }
+function Get-PayloadVersion {
+    $dll = Join-Path $Payload "$PluginFolderName.dll"
+    if (-not (Test-Path -LiteralPath $dll)) { return $null }
+    $v = (Get-Item -LiteralPath $dll).VersionInfo.FileVersion
+    if ($v) { $v } else { $null }
+}
+
 function Get-InstalledVersion([string]$g) {
     $dll = Join-Path (Get-PluginDir $g) "$PluginFolderName.dll"
     if (-not (Test-Path -LiteralPath $dll)) { return $null }
@@ -273,7 +333,6 @@ Add-Type -AssemblyName System.Drawing
 
 $form = New-Object Windows.Forms.Form
 $form.Text = $T.title
-$form.ClientSize = New-Object Drawing.Size(520, 400)
 $form.FormBorderStyle = 'FixedDialog'; $form.MaximizeBox = $false; $form.StartPosition = 'CenterScreen'
 $form.Font = New-Object Drawing.Font('Segoe UI', 9)
 
@@ -281,32 +340,56 @@ $lblFolder = New-Object Windows.Forms.Label; $lblFolder.Text = $T.folder; $lblFo
 $txtFolder = New-Object Windows.Forms.TextBox; $txtFolder.Location = '12,34'; $txtFolder.Width = 410
 $btnBrowse = New-Object Windows.Forms.Button; $btnBrowse.Text = $T.browse; $btnBrowse.Location = '428,32'; $btnBrowse.Width = 80
 
+# Installer language, separate from the language being installed.
+$lblUi = New-Object Windows.Forms.Label; $lblUi.Text = $T.uiLang; $lblUi.Location = '286,14'; $lblUi.AutoSize = $true
+$cmbUi = New-Object Windows.Forms.ComboBox; $cmbUi.Location = '408,10'; $cmbUi.Width = 100
+$cmbUi.DropDownStyle = 'DropDownList'
+$UiLangs = @('en', 'ja', 'zh')
+[void]$cmbUi.Items.AddRange(@('English', '日本語', '中文'))
+$cmbUi.SelectedIndex = [Math]::Max(0, [Array]::IndexOf($UiLangs, $Lang))
+
 $lblStatus = New-Object Windows.Forms.Label; $lblStatus.Location = '12,64'; $lblStatus.AutoSize = $true
 
-$grpLang = New-Object Windows.Forms.GroupBox; $grpLang.Text = $T.language; $grpLang.Location = '12,92'; $grpLang.Size = '496,50'
-# One radio per shipped locale (name from Translations/<locale>/name.txt), plus English = off.
+# One radio per shipped locale (name from Translations/<locale>/name.txt), plus
+# English = off. There are more than a dozen now, so they wrap into rows.
+$grpLang = New-Object Windows.Forms.GroupBox; $grpLang.Text = $T.language; $grpLang.Location = '12,92'
+$locales = @(Get-AvailableLocales)
+$widest = 0
+foreach ($loc in $locales) {
+    $wpx = [Windows.Forms.TextRenderer]::MeasureText($loc.Name, $form.Font).Width
+    if ($wpx -gt $widest) { $widest = $wpx }
+}
+$colWidth = [Math]::Max(110, $widest + 34)
+$perRow = [Math]::Max(2, [Math]::Min(4, [Math]::Floor(472 / $colWidth)))
+$rowCount = [Math]::Max(1, [Math]::Ceiling($locales.Count / $perRow))
+$grpLang.Size = New-Object Drawing.Size(496, (24 + $rowCount * 24))
 $radios = @()
-$x = 12
-foreach ($loc in Get-AvailableLocales) {
+$index = 0
+foreach ($loc in $locales) {
     $rb = New-Object Windows.Forms.RadioButton
-    $rb.Text = $loc.Name; $rb.Tag = $loc.Code; $rb.Location = "$x,20"; $rb.AutoSize = $true
+    $rb.Text = $loc.Name; $rb.Tag = $loc.Code; $rb.AutoSize = $true
+    $rb.Location = New-Object Drawing.Point((12 + ($index % $perRow) * $colWidth), (18 + [Math]::Floor($index / $perRow) * 24))
     $grpLang.Controls.Add($rb); $radios += $rb
-    $x += [Math]::Max(90, [Windows.Forms.TextRenderer]::MeasureText($loc.Name, $form.Font).Width + 40)
+    $index++
 }
 $preferred = if ($Lang -eq 'zh') { 'zh-Hans' } elseif ($Lang -eq 'ja') { 'ja' } else { 'en' }
 $pick = $radios | Where-Object { $_.Tag -eq $preferred } | Select-Object -First 1
 if (-not $pick) { $pick = $radios[0] }
 $pick.Checked = $true
 
-$btnInstall = New-Object Windows.Forms.Button; $btnInstall.Text = $T.install; $btnInstall.Location = '12,154'; $btnInstall.Size = '200,36'
-$btnUninstall = New-Object Windows.Forms.Button; $btnUninstall.Text = $T.uninstall; $btnUninstall.Location = '308,154'; $btnUninstall.Size = '200,36'
-$chkKeep = New-Object Windows.Forms.CheckBox; $chkKeep.Text = $T.keepSaves; $chkKeep.Location = '308,196'; $chkKeep.AutoSize = $true; $chkKeep.Checked = $true
-$chkBep = New-Object Windows.Forms.CheckBox; $chkBep.Text = $T.alsoBepInEx; $chkBep.Location = '308,218'; $chkBep.AutoSize = $true
+$rowY = 92 + $grpLang.Height + 12
+$btnInstall = New-Object Windows.Forms.Button; $btnInstall.Text = $T.install; $btnInstall.Location = New-Object Drawing.Point(12, $rowY); $btnInstall.Size = '200,36'
+$btnUninstall = New-Object Windows.Forms.Button; $btnUninstall.Text = $T.uninstall; $btnUninstall.Location = New-Object Drawing.Point(308, $rowY); $btnUninstall.Size = '200,36'
+$btnAbout = New-Object Windows.Forms.Button; $btnAbout.Text = $T.about; $btnAbout.Location = New-Object Drawing.Point(220, $rowY); $btnAbout.Size = '80,36'
+$chkKeep = New-Object Windows.Forms.CheckBox; $chkKeep.Text = $T.keepSaves; $chkKeep.Location = New-Object Drawing.Point(308, ($rowY + 42)); $chkKeep.AutoSize = $true; $chkKeep.Checked = $true
+$chkBep = New-Object Windows.Forms.CheckBox; $chkBep.Text = $T.alsoBepInEx; $chkBep.Location = New-Object Drawing.Point(308, ($rowY + 64)); $chkBep.AutoSize = $true
 
-$txtLog = New-Object Windows.Forms.TextBox; $txtLog.Location = '12,246'; $txtLog.Size = '496,142'
+$logY = $rowY + 92
+$txtLog = New-Object Windows.Forms.TextBox; $txtLog.Location = New-Object Drawing.Point(12, $logY); $txtLog.Size = New-Object Drawing.Size(496, 142)
 $txtLog.Multiline = $true; $txtLog.ReadOnly = $true; $txtLog.ScrollBars = 'Vertical'; $txtLog.BackColor = 'White'
 
-$form.Controls.AddRange(@($lblFolder, $txtFolder, $btnBrowse, $lblStatus, $grpLang, $btnInstall, $btnUninstall, $chkKeep, $chkBep, $txtLog))
+$form.ClientSize = New-Object Drawing.Size(520, ($logY + 142 + 12))
+$form.Controls.AddRange(@($lblFolder, $txtFolder, $btnBrowse, $lblUi, $cmbUi, $lblStatus, $grpLang, $btnInstall, $btnAbout, $btnUninstall, $chkKeep, $chkBep, $txtLog))
 
 $script:LogSink = {
     param($m)
@@ -326,6 +409,32 @@ function Refresh-Status {
     $chkBep.Checked = $bep -and (Test-Path -LiteralPath (Join-Path $g "BepInEx\$MarkerName"))
 }
 
+function Show-About {
+    $ver = Get-PayloadVersion
+    $body = [string]::Format($T.aboutBody, $(if ($ver) { "v$ver" } else { '' })).Trim()
+    [Windows.Forms.MessageBox]::Show($form, $body, $T.aboutTitle, 'OK', 'Information') | Out-Null
+}
+
+function Update-Texts {
+    $form.Text = $T.title
+    $lblFolder.Text = $T.folder
+    $btnBrowse.Text = $T.browse
+    $lblUi.Text = $T.uiLang
+    $grpLang.Text = $T.language
+    $btnInstall.Text = $T.install
+    $btnUninstall.Text = $T.uninstall
+    $btnAbout.Text = $T.about
+    $chkKeep.Text = $T.keepSaves
+    $chkBep.Text = $T.alsoBepInEx
+    Refresh-Status
+}
+
+$cmbUi.Add_SelectedIndexChanged({
+    $script:Lang = $UiLangs[$cmbUi.SelectedIndex]
+    $script:T = $Strings[$script:Lang]
+    Update-Texts
+})
+$btnAbout.Add_Click({ Show-About })
 $txtFolder.Add_TextChanged({ Refresh-Status })
 $btnBrowse.Add_Click({
     $dlg = New-Object Windows.Forms.FolderBrowserDialog

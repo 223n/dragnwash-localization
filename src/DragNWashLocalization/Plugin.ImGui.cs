@@ -260,11 +260,14 @@ namespace DragNWashLocalization
                 _menuTab = 1;
             if (GUI.Button(new Rect(MenuPadding + 244, 84, 114, RowHeight), "Saves", _menuTab == 2 ? _selectedButtonStyle : _buttonStyle))
                 _menuTab = 2;
+            if (GUI.Button(new Rect(MenuPadding + 366, 84, 114, RowHeight), "About", _menuTab == 3 ? _selectedButtonStyle : _buttonStyle))
+                _menuTab = 3;
 
             var body = new Rect(MenuPadding, 126, bodyWidth, Mathf.Max(80, height - 164));
             if (_menuTab == 0) DrawActivityLog(body);
             else if (_menuTab == 1) DrawTools(body);
-            else DrawSaves(body);
+            else if (_menuTab == 2) DrawSaves(body);
+            else DrawAbout(body);
 
             GUI.Label(new Rect(MenuPadding, height - 30, width - 54, 24),
                 string.IsNullOrEmpty(_menuNotice) ? $"{ToggleMenuKey.Value}: toggle    |    Drag title to move    |    Drag corner to resize" : _menuNotice,
@@ -274,6 +277,97 @@ namespace DragNWashLocalization
             // Restrict dragging to the title, so text selection and scrolling
             // never start moving the entire window.
             GUI.DragWindow(new Rect(4, 0, width - 58, 48));
+        }
+
+        private Vector2 _aboutScroll;
+
+        // Everything here is ASCII on purpose. Rasterizing a glyph the menu
+        // font has not seen yet uploads a texture, and on Direct3D 12 an upload
+        // while the menu is open is what crashes the game (see FontFallback).
+        private void DrawAbout(Rect area)
+        {
+            FillMenuRect(area, MenuInset);
+            float innerWidth = Mathf.Max(100, area.width - 36);
+
+            string version = PluginVersion;
+            string build = BuildId();
+
+            var lines = new List<KeyValuePair<GUIStyle, string>>();
+            void Head(string t) => lines.Add(new KeyValuePair<GUIStyle, string>(_labelStyle, t));
+            void Body(string t) => lines.Add(new KeyValuePair<GUIStyle, string>(_wrappedLabelStyle, t));
+
+            Head("DRAG'N WASH LOCALIZATION");
+            Body($"Version {version}" + (string.IsNullOrEmpty(build) ? "" : $"   (build {build})"));
+            Body("An unofficial fan-made localization mod. It is not affiliated with, endorsed by, or supported by the developers of Drag'n Wash.");
+            Body("");
+
+            Head("CREDITS");
+            Body("Created by TomXV");
+            Body("Translation files by TomXV. Japanese and Simplified Chinese were supervised by the author; the other language packs are provisional and were not reviewed by native speakers, so some lines may read unnaturally.");
+            Body("Source, issues and translation contributions: github.com/TomXV/dragnwash-localization");
+            Body("");
+
+            Head("LICENSE");
+            Body("The mod is MIT licensed (see LICENSE in the repository).");
+            Body("The bundled menu font is Noto Sans JP, (c) 2014-2021 Adobe, with Reserved Font Name 'Source', under the SIL Open Font License 1.1. Its full text ships next to the plugin as dragnwash-menufont-LICENSE.txt.");
+            Body("");
+
+            Head("THIS SESSION");
+            Body($"Language: {TargetLocale.Value}    Entries loaded: {TranslationStore.EntryCount}");
+            Body($"Game: Unity {Application.unityVersion}    Graphics: {SystemInfo.graphicsDeviceType}");
+            Body($"Platform: {Application.platform}");
+            Body($"Plugin folder: {PluginDirectory}");
+
+            float contentHeight = 12;
+            var heights = new float[lines.Count];
+            for (int i = 0; i < lines.Count; i++)
+            {
+                heights[i] = string.IsNullOrEmpty(lines[i].Value)
+                    ? 10
+                    : lines[i].Key.CalcHeight(new GUIContent(lines[i].Value), innerWidth - 24);
+                contentHeight += heights[i] + 4;
+            }
+            contentHeight += RowHeight + 16;
+
+            VirtualClick.ApplyScroll(area, ref _aboutScroll);
+            _aboutScroll = GUI.BeginScrollView(area, _aboutScroll,
+                new Rect(0, 0, innerWidth, Mathf.Max(area.height, contentHeight)), false, false);
+            float y = 12;
+            for (int i = 0; i < lines.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(lines[i].Value))
+                {
+                    GUI.Label(new Rect(12, y, innerWidth - 24, heights[i]), lines[i].Value, lines[i].Key);
+                }
+                y += heights[i] + 4;
+            }
+            y += 6;
+            if (GUI.Button(new Rect(12, y, 260, RowHeight), "Copy the repository address", _buttonStyle))
+            {
+                GUIUtility.systemCopyBuffer = "https://github.com/TomXV/dragnwash-localization";
+                _menuNotice = "Repository address copied to the clipboard.";
+            }
+            GUI.EndScrollView();
+        }
+
+        // "0.3.1+<commit>" is stamped into the assembly at build time; show the
+        // commit so a bug report says exactly which build is running.
+        private static string BuildId()
+        {
+            try
+            {
+                var attr = (System.Reflection.AssemblyInformationalVersionAttribute)Attribute.GetCustomAttribute(
+                    typeof(Plugin).Assembly, typeof(System.Reflection.AssemblyInformationalVersionAttribute));
+                string v = attr != null ? attr.InformationalVersion : null;
+                int plus = v != null ? v.IndexOf('+') : -1;
+                if (plus < 0) return string.Empty;
+                string commit = v.Substring(plus + 1);
+                return commit.Length > 7 ? commit.Substring(0, 7) : commit;
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
 
         private void DrawActivityLog(Rect area)

@@ -220,6 +220,7 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
   原文つき作業ファイルの書き出し（`Export working copy`）、公開ファイルの作り直し（`Hash for commit`）、
   レイアウトチェックもここから行います。
 - **Saves**: セーブの巻き戻し、レベル番号の変更、フラグの反転。後述。
+- **About**: 動いている版とビルド、制作者、ライセンス、今回の起動で読み込んだ内容。不具合報告のときにそのまま引用できます。
 
 **Check translation layout** ボタンで、レイアウト崩れリスクのある文字列を
 `Translations/_discovered/layout_risks.csv` に書き出せます（しきい値は

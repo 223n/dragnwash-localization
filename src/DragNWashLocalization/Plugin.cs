@@ -93,43 +93,43 @@ namespace DragNWashLocalization
                 "General",
                 "TargetLocale",
                 "ja",
-                "Translations/<TargetLocale>/ 以下のファイルを読み込みます。例: ja, zh-Hans。en を指定すると翻訳せず英語のままになります");
+                "Loads the files under Translations/<TargetLocale>/. For example ja, zh-Hans. Set en to leave the game in its original English: the mod stays installed but translates nothing.");
 
             LogDiscoveredKeys = Config.Bind(
                 "Debug",
                 "LogDiscoveredKeys",
                 true,
-                "未翻訳のテキストを Translations/_discovered/strings.csv に自動記録するか");
+                "Record text that has no translation yet in Translations/_discovered/strings.csv.");
 
             VerboseTextLog = Config.Bind(
                 "Debug",
                 "VerboseTextLog",
                 true,
-                "TMPテキストの置き換え結果（成功／未対応）をデバッグメニューのログに逐次表示するか");
+                "Log every text replacement, translated or not, in the activity log of the debug menu.");
 
             ToggleMenuKey = Config.Bind(
                 "Debug",
                 "ToggleMenuKey",
                 new KeyboardShortcut(KeyCode.F1),
-                "デバッグメニュー（言語切り替え・会話ログ抽出・ログ表示）の表示切り替え");
+                "Shows and hides the debug menu: language switching, dialogue export and the activity log.");
 
             DumpDialogueKey = Config.Bind(
                 "Debug",
                 "DumpDialogueKey",
                 new KeyboardShortcut(KeyCode.F6),
-                "ロード済みの全会話行を Translations/_discovered/dialogue_lines.csv に書き出す");
+                "Writes every dialogue line the game has loaded to Translations/_discovered/dialogue_lines.csv.");
 
             DumpUiTextKey = Config.Bind(
                 "Debug",
                 "DumpUiTextKey",
                 new KeyboardShortcut(KeyCode.F7),
-                "読み込み済みの全UIテキスト（非表示のメニューを含む）を Translations/_discovered/ui_texts.csv に書き出す");
+                "Writes every UI string the game has loaded, hidden menus included, to Translations/_discovered/ui_texts.csv.");
 
             FontAtlasPointSize = Config.Bind(
                 "Font",
                 "AtlasPointSize",
                 80,
-                "CJKフォールバックフォントのアトラス解像度（サンプリングポイントサイズ）。大きいほど文字が鮮明になります。グリフは起動時にまとめて生成するので、上げても実行中の負荷は増えず、起動時のアトラス生成が少し重くなるだけです");
+                "Atlas sampling point size for the fallback fonts. Higher is sharper. Every glyph is rasterized at startup, so raising this costs a little loading time rather than performance during play.");
 
             // Renamed from LayoutRiskThreshold: that compared the translation's
             // character width against the source's, so 1.4 meant "40% longer".
@@ -139,19 +139,19 @@ namespace DragNWashLocalization
                 "Debug",
                 "LayoutOverflowThreshold",
                 1.0,
-                "訳文が必要とする大きさがコンテナのこの倍率を超えると、はみ出しとして Translations/_discovered/layout_risks.csv に記録します（1.0 = ちょうど収まる）");
+                "When a translation needs more than this multiple of the space its container gives it, the line is recorded as an overflow risk in Translations/_discovered/layout_risks.csv. 1.0 means it fits exactly.");
 
             SaveHistoryEnabled = Config.Bind(
                 "Debug",
                 "SaveHistoryEnabled",
                 true,
-                "セーブが書き込まれるたびに BepInEx/plugins/DragNWashLocalization/SaveHistory/ に世代コピーを残し、F1 の Saves タブから任意の世代へ戻せるようにする");
+                "Keep a copy under BepInEx/plugins/DragNWashLocalization/SaveHistory/ every time the game writes a save, so any earlier one can be restored from the Saves tab of the F1 menu.");
 
             SaveHistoryKeep = Config.Bind(
                 "Debug",
                 "SaveHistoryKeep",
                 30,
-                "スロットごとに残す世代数");
+                "How many generations to keep per save slot.");
 
             MenuFontMode = Config.Bind(
                 "Debug",
@@ -169,8 +169,9 @@ namespace DragNWashLocalization
                 "Debug",
                 "HotReloadTranslations",
                 true,
-                "現在の言語の strings.csv が保存されたら、再起動なしで読み直して画面に反映する");
+                "Reload the current language's strings.csv when it is saved and apply it on screen without restarting the game.");
 
+            RightToLeft.SetLocale(TargetLocale.Value);
             TranslationStore.Load(PluginDirectory, TargetLocale.Value);
             FontFallback.EnsureCjkFallback();
             // Rasterize every installed locale now: every glyph added later
@@ -228,6 +229,7 @@ namespace DragNWashLocalization
                 _pendingLocale = null;
 
                 TargetLocale.Value = locale;
+                RightToLeft.SetLocale(locale);
                 TranslationStore.Load(PluginDirectory, locale);
                 // No Prewarm here: all locales were rasterized at startup. Doing
                 // it mid-game would upload atlas textures on a frame the
