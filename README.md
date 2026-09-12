@@ -187,6 +187,10 @@ See [docs/RELEASING.md](docs/RELEASING.md) for instructions on building and dist
 
 Because the game-derived reference assemblies cannot be committed, releases are built locally and uploaded to GitHub Releases.
 
+## A note to the developers
+
+This is an unofficial fan project and is not affiliated with Gator Dragon Games. It contains no game assets and no script text: English lines are stored only as SHA-256 hashes, and the game's files are never modified (BepInEx loads the plugin at runtime). If you are a member of the development team and have any concerns, please open an issue on this repository or contact the maintainer, and the project will be adjusted or taken down as you prefer.
+
 ## License
 
 See [LICENSE](LICENSE) for the plugin's code license. This repository does not include assets or code from the game. Translations are treated as contributions from their respective translators.
