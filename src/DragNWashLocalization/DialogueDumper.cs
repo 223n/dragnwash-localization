@@ -348,7 +348,7 @@ namespace DragNWashLocalization
             }
         }
 
-        private static Dictionary<string, string> ReadBaseLocalization(YarnProject project)
+        internal static Dictionary<string, string> ReadBaseLocalization(YarnProject project)
         {
             var result = new Dictionary<string, string>(StringComparer.Ordinal);
             Localization baseLocalization = project.baseLocalization;

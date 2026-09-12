@@ -220,7 +220,9 @@ namespace DragNWashLocalization
                 return $"[hash] {locale}/strings.csv not found.";
             }
 
-            var lines = new List<string>();
+            // key -> (speaker, translation), first occurrence wins, input order kept.
+            var rows = new Dictionary<string, KeyValuePair<string, string>>(StringComparer.Ordinal);
+            var inputOrder = new List<string>();
             int converted = 0, kept = 0, dropped = 0;
             foreach (var row in CsvReader.ReadRows(input))
             {
@@ -228,6 +230,10 @@ namespace DragNWashLocalization
                 if (key == null)
                 {
                     dropped++;
+                    continue;
+                }
+                if (rows.ContainsKey(key))
+                {
                     continue;
                 }
                 if (source != null)
@@ -246,20 +252,43 @@ namespace DragNWashLocalization
                 {
                     speaker = source != null ? SpeakerLookup.For(source) : SpeakerLookup.ForKey(key);
                 }
-                lines.Add(key + "," + CsvReader.Escape(speaker ?? string.Empty) + "," + CsvReader.Escape(translation ?? string.Empty));
+                rows[key] = new KeyValuePair<string, string>(speaker ?? string.Empty, translation ?? string.Empty);
+                inputOrder.Add(key);
             }
 
+            ScriptOrder.Data order = ScriptOrder.Load(pluginDirectory);
             using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
             {
-                writer.WriteLine("key,speaker,translation");
-                foreach (string line in lines)
+                writer.WriteLine("key,section,node,order,speaker,translation");
+                if (order == null)
                 {
-                    writer.WriteLine(line);
+                    foreach (string key in inputOrder)
+                    {
+                        writer.WriteLine(key + ",,,," + CsvReader.Escape(rows[key].Key) + "," + CsvReader.Escape(rows[key].Value));
+                    }
+                }
+                else
+                {
+                    ScriptOrder.WriteOrdered(writer, order, inputOrder, (key, e) =>
+                    {
+                        string speaker = string.IsNullOrEmpty(rows[key].Key) ? e.Speaker : rows[key].Key;
+                        writer.WriteLine(key + "," + CsvReader.Escape(e.Section) + "," + CsvReader.Escape(e.Node) + "," + e.Order + "," + CsvReader.Escape(speaker) + "," + CsvReader.Escape(rows[key].Value));
+                    }, out List<string> leftovers);
+                    if (leftovers.Count > 0)
+                    {
+                        writer.WriteLine();
+                        writer.WriteLine("# ===== UI and other text (not part of the dialogue script) =====");
+                        foreach (string key in leftovers)
+                        {
+                            writer.WriteLine(key + ",UI,,," + CsvReader.Escape(string.IsNullOrEmpty(rows[key].Key) ? "UI" : rows[key].Key) + "," + CsvReader.Escape(rows[key].Value));
+                        }
+                    }
                 }
             }
 
             string from = input == working ? " from the working copy" : string.Empty;
-            return $"[hash] {locale}/strings.csv written{from}: {converted} row(s) converted from English, {kept} already hashed, {dropped} malformed dropped. No source text in the published file.";
+            string ordered = order == null ? " No script order data found, so rows keep their input order." : $" Ordered by {Path.GetFileName(Path.GetDirectoryName(order.Source))}/script_order.csv.";
+            return $"[hash] {locale}/strings.csv written{from}: {converted} row(s) converted from English, {kept} already hashed, {dropped} malformed dropped. No source text in the published file.{ordered}";
         }
 
         // The discovery file is appended to while playing, so without this it

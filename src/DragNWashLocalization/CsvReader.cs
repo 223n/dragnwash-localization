@@ -63,6 +63,15 @@ namespace DragNWashLocalization
                     continue;
                 }
 
+                // A '#' at the very start of a record is a comment line
+                // (section headers in the published files); skip to EOL.
+                if (c == '#' && fields.Count == 0 && field.Length == 0)
+                {
+                    while (i < len && text[i] != '\n') i++;
+                    i++;
+                    continue;
+                }
+
                 switch (c)
                 {
                     case '"':
@@ -78,6 +87,13 @@ namespace DragNWashLocalization
                         i++;
                         break;
                     case '\n':
+                        // A blank line is not a record (the published files use
+                        // them to space out section headers).
+                        if (fields.Count == 0 && field.Length == 0)
+                        {
+                            i++;
+                            break;
+                        }
                         fields.Add(field.ToString());
                         field.Clear();
                         records.Add(fields);

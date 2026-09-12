@@ -6,7 +6,9 @@ Run by CI on every pull request and usable locally:
     python tools/check-translations.py
 
 A published Translations/<locale>/strings.csv must:
-  - have the header  key,speaker,translation  (speaker: who says the line)
+  - have the header  key,section,node,order,speaker,translation
+    (older key,speaker,translation and key,translation are still accepted)
+  - lines starting with '#' are section headers and are ignored
   - key: 16 lowercase hex digits (SHA-256 prefix of the source string)
   - no duplicate keys, no empty translations
   - contain no English source text (a source_en column is the tell)
@@ -20,6 +22,7 @@ import sys
 from pathlib import Path
 
 KEY = re.compile(r"^[0-9a-f]{16}$")
+IDENT = re.compile(r"^(?:[A-Za-z0-9_]*|L\d\d [A-Za-z]+|UI)$")
 ROOT = Path(__file__).resolve().parent.parent
 TRANSLATIONS = ROOT / "Translations"
 
@@ -27,17 +30,23 @@ TRANSLATIONS = ROOT / "Translations"
 def check_file(path: Path) -> list[str]:
     problems = []
     with io.open(path, encoding="utf-8-sig", newline="") as f:
-        reader = csv.reader(f)
+        reader = csv.reader(line for line in f if line.strip() and not line.startswith("#"))
         try:
             header = next(reader)
         except StopIteration:
             return [f"{path}: empty file"]
-        if header not in (["key", "speaker", "translation"], ["key", "translation"]):
+        accepted = (
+            ["key", "section", "node", "order", "speaker", "translation"],
+            ["key", "speaker", "translation"],
+            ["key", "translation"],
+        )
+        if header not in accepted:
             problems.append(
                 f"{path}: header is {header!r}; the published file must be "
-                f"'key,speaker,translation' (run tools/hash-strings.ps1 before committing)"
+                f"'key,section,node,order,speaker,translation' (run tools/hash-strings.ps1 before committing)"
             )
             return problems
+        col = {name: i for i, name in enumerate(header)}
         width = len(header)
         seen = {}
         for n, row in enumerate(reader, start=2):
@@ -54,6 +63,10 @@ def check_file(path: Path) -> list[str]:
             seen.setdefault(key, n)
             if not translation.strip():
                 problems.append(f"{path}:{n}: empty translation")
+            # section/node are game-internal identifiers, never sentences.
+            for name in ("section", "node"):
+                if name in col and not IDENT.match(row[col[name]]):
+                    problems.append(f"{path}:{n}: {name} does not look like an identifier")
     return problems
 
 

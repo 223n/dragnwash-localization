@@ -124,46 +124,55 @@ namespace DragNWashLocalization
                     }
                 }
 
-                // Script order first so a translator reads conversations in
-                // sequence; then anything in the file the game has not shown.
-                var emitted = new HashSet<string>(StringComparer.Ordinal);
-                var lines = new List<string>();
-                int resolved = 0, unresolved = 0, untranslated = 0;
-                void Emit(string key)
-                {
-                    if (!emitted.Add(key)) return;
-                    sources.TryGetValue(key, out string src);
-                    translations.TryGetValue(key, out string tr);
-                    if (src != null) resolved++; else unresolved++;
-                    if (string.IsNullOrEmpty(tr)) untranslated++;
-                    speakers.TryGetValue(key, out string who);
-                    if (who == null && src != null) who = "UI";
-                    lines.Add(key + "," + CsvReader.Escape(who ?? string.Empty) + "," + CsvReader.Escape(src ?? string.Empty) + "," + CsvReader.Escape(tr ?? string.Empty));
-                }
-                foreach (string key in scriptOrder)
-                {
-                    if (translations.ContainsKey(key) || !string.IsNullOrEmpty(sources[key]))
-                    {
-                        Emit(key);
-                    }
-                }
-                foreach (string key in fileOrder)
-                {
-                    Emit(key);
-                }
+                // Every key worth a row: what the game has loaded plus what the
+                // file already holds. Then write them in play order with section
+                // headers; keys the order does not know go last (UI and such).
+                var all = new List<string>();
+                var seen = new HashSet<string>(StringComparer.Ordinal);
+                foreach (string key in scriptOrder) if (seen.Add(key)) all.Add(key);
+                foreach (string key in fileOrder) if (seen.Add(key)) all.Add(key);
 
+                int written = 0, resolved = 0, unresolved = 0, untranslated = 0;
                 string path = PathFor(pluginDirectory, locale);
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
+                ScriptOrder.Data order = ScriptOrder.Load(pluginDirectory);
                 using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
                 {
-                    writer.WriteLine("key,speaker,source_en,translation");
-                    foreach (string line in lines)
+                    writer.WriteLine("key,section,node,order,speaker,source_en,translation");
+                    void Emit(string key, string section, string node, string ord, string fallbackSpeaker)
                     {
-                        writer.WriteLine(line);
+                        sources.TryGetValue(key, out string src);
+                        translations.TryGetValue(key, out string tr);
+                        if (src != null) resolved++; else unresolved++;
+                        if (string.IsNullOrEmpty(tr)) untranslated++;
+                        speakers.TryGetValue(key, out string who);
+                        if (string.IsNullOrEmpty(who)) who = fallbackSpeaker;
+                        if (string.IsNullOrEmpty(who) && src != null) who = "UI";
+                        writer.WriteLine(key + "," + CsvReader.Escape(section) + "," + CsvReader.Escape(node) + "," + ord + "," + CsvReader.Escape(who ?? string.Empty) + "," + CsvReader.Escape(src ?? string.Empty) + "," + CsvReader.Escape(tr ?? string.Empty));
+                        written++;
+                    }
+                    List<string> leftovers;
+                    if (order == null)
+                    {
+                        leftovers = all;
+                    }
+                    else
+                    {
+                        ScriptOrder.WriteOrdered(writer, order, all, (key, e) => Emit(key, e.Section, e.Node, e.Order.ToString(), e.Speaker), out leftovers);
+                        if (leftovers.Count > 0)
+                        {
+                            writer.WriteLine();
+                            writer.WriteLine("# ===== UI and other text (not part of the dialogue script) =====");
+                        }
+                    }
+                    foreach (string key in leftovers)
+                    {
+                        Emit(key, order == null ? "" : "UI", "", "", "");
                     }
                 }
 
-                return $"[working] Wrote {lines.Count} row(s) to _discovered/{FileNameFor(locale)}: {resolved} with English, {unresolved} whose text the game has not loaded, {untranslated} still untranslated. Edit this file; hot reload applies it. Hash it before committing.";
+                string ordered = order == null ? " No script order data found (Export game flow with a level loaded), so rows are in discovery order." : "";
+                return $"[working] Wrote {written} row(s) to _discovered/{FileNameFor(locale)}: {resolved} with English, {unresolved} whose text the game has not loaded, {untranslated} still untranslated.{ordered} Edit this file; hot reload applies it. Hash it before committing.";
             }
             catch (Exception ex)
             {

@@ -34,62 +34,127 @@ namespace DragNWashLocalization
             log.Append(ExportLevelFlow(Path.Combine(dir, "level_flow.csv")));
             log.Append("  ");
             log.Append(ExportGraph(Path.Combine(dir, "dialogue_graph.csv")));
+            log.Append("  ");
+            log.Append(ScriptOrder.Generate(pluginDirectory));
             return log.ToString();
         }
 
-        // ---------------------------------------------------------------- levels
-        private static string ExportLevelFlow(string path)
+        internal sealed class LevelInfo
         {
+            public string Asset;
+            public int Index;
+            public string Dragon, Intro, Phone, Outro, Jerkoff, Cum, MountStart, MountFinish, SpawnFlag, Weather, PlayerSpawn;
+            public string[] Progress = new string[0], Idle = new string[0], Nag = new string[0], SetFlags = new string[0], EndFlags = new string[0];
+
+            public IEnumerable<string> NodesFor(string phase)
+            {
+                switch (phase)
+                {
+                    case "intro": return One(Intro);
+                    case "phone": return One(Phone);
+                    case "progress": return Progress;
+                    case "idle": return Idle;
+                    case "nag": return Nag;
+                    case "jerkoff": return One(Jerkoff);
+                    case "cum": return One(Cum);
+                    case "mount_start": return One(MountStart);
+                    case "mount_finish": return One(MountFinish);
+                    case "outro": return One(Outro);
+                    default: return new string[0];
+                }
+            }
+
+            private static IEnumerable<string> One(string s) => string.IsNullOrEmpty(s) ? new string[0] : new[] { s };
+        }
+
+        // Every level the LevelFlow asset defines, whatever the player's
+        // progress: the asset holds all of them.
+        public static List<LevelInfo> ReadLevels(out string error)
+        {
+            error = null;
             Type flowType = AccessTools.TypeByName("LevelFlow");
             if (flowType == null)
             {
-                return "[flow] LevelFlow type not found.";
+                error = "LevelFlow type not found.";
+                return null;
             }
-
             UnityEngine.Object[] flows = Resources.FindObjectsOfTypeAll(flowType);
             if (flows.Length == 0)
             {
-                return "[flow] No LevelFlow asset is loaded (load a save first).";
+                error = "No LevelFlow asset is loaded (load a save first).";
+                return null;
             }
-
-            var rows = new List<string>();
-            int total = 0;
+            var list = new List<LevelInfo>();
             foreach (UnityEngine.Object flow in flows)
             {
                 int count = (int)Call(flow, "GetLevelCount");
                 for (int i = 0; i < count; i++)
                 {
                     object dragon = Call(flow, "GetDragonDescriptor", i);
-                    string dragonName = dragon == null ? "" : (ReadField(dragon, "name") as string ?? ((UnityEngine.Object)dragon).name);
-                    rows.Add(string.Join(",", new[]
+                    list.Add(new LevelInfo
                     {
-                        Csv(flow.name), i.ToString(), Csv(dragonName),
-                        Csv(Str(Call(flow, "GetDialogIntro", i))),
-                        Csv(Join(Call(flow, "GetProgressDialogs", i))),
-                        Csv(Join(Call(flow, "GetIdleDialogs", i))),
-                        Csv(Join(NagDialogs(flow, i))),
-                        Csv(Str(Call(flow, "GetPhoneDialog", i))),
-                        Csv(Str(Call(flow, "GetDialogOutro", i))),
-                        Csv(Str(Call(flow, "GetDragonStartJerkingOffDialog", i))),
-                        Csv(Str(Call(flow, "GetDragonCumDialog", i))),
-                        Csv(Str(Call(flow, "GetDragonStartMountDialogue", i))),
-                        Csv(Str(Call(flow, "GetDragonFinishMountDialogue", i))),
-                        Csv(Str(Call(flow, "GetDragonSpawnFlag", i))),
-                        Csv(Join(Call(flow, "GetSetFlags", i))),
-                        Csv(Join(Call(flow, "GetEndFlags", i))),
-                        Csv(Str(Call(flow, "GetWeatherState", i))),
-                        Csv(Str(Call(flow, "GetPlayerSpawnTransformName", i))),
-                    }));
-                    total++;
+                        Asset = flow.name, Index = i,
+                        Dragon = dragon == null ? "" : (ReadField(dragon, "name") as string ?? ((UnityEngine.Object)dragon).name),
+                        Intro = Str(Call(flow, "GetDialogIntro", i)),
+                        Progress = Arr(Call(flow, "GetProgressDialogs", i)),
+                        Idle = Arr(Call(flow, "GetIdleDialogs", i)),
+                        Nag = Arr(NagDialogs(flow, i)),
+                        Phone = Str(Call(flow, "GetPhoneDialog", i)),
+                        Outro = Str(Call(flow, "GetDialogOutro", i)),
+                        Jerkoff = Str(Call(flow, "GetDragonStartJerkingOffDialog", i)),
+                        Cum = Str(Call(flow, "GetDragonCumDialog", i)),
+                        MountStart = Str(Call(flow, "GetDragonStartMountDialogue", i)),
+                        MountFinish = Str(Call(flow, "GetDragonFinishMountDialogue", i)),
+                        SpawnFlag = Str(Call(flow, "GetDragonSpawnFlag", i)),
+                        SetFlags = Arr(Call(flow, "GetSetFlags", i)),
+                        EndFlags = Arr(Call(flow, "GetEndFlags", i)),
+                        Weather = Str(Call(flow, "GetWeatherState", i)),
+                        PlayerSpawn = Str(Call(flow, "GetPlayerSpawnTransformName", i)),
+                    });
                 }
             }
+            return list;
+        }
+
+        private static string[] Arr(object o)
+        {
+            if (o is IEnumerable e && !(o is string))
+            {
+                return e.Cast<object>().Select(x => x?.ToString() ?? "").Where(s => s.Length > 0).ToArray();
+            }
+            return string.IsNullOrEmpty(Str(o)) ? new string[0] : new[] { Str(o) };
+        }
+
+        // ---------------------------------------------------------------- levels
+        private static string ExportLevelFlow(string path)
+        {
+            List<LevelInfo> levels = ReadLevels(out string error);
+            if (levels == null)
+            {
+                return "[flow] " + error;
+            }
+
+            var rows = new List<string>();
+            int total = 0;
+            foreach (LevelInfo lv in levels)
+            {
+                rows.Add(string.Join(",", new[]
+                {
+                    Csv(lv.Asset), lv.Index.ToString(), Csv(lv.Dragon), Csv(lv.Intro),
+                    Csv(string.Join(" | ", lv.Progress)), Csv(string.Join(" | ", lv.Idle)), Csv(string.Join(" | ", lv.Nag)),
+                    Csv(lv.Phone), Csv(lv.Outro), Csv(lv.Jerkoff), Csv(lv.Cum), Csv(lv.MountStart), Csv(lv.MountFinish),
+                    Csv(lv.SpawnFlag), Csv(string.Join(" | ", lv.SetFlags)), Csv(string.Join(" | ", lv.EndFlags)), Csv(lv.Weather), Csv(lv.PlayerSpawn),
+                }));
+                total++;
+            }
+            int flowCount = levels.Select(l => l.Asset).Distinct().Count();
 
             using (var w = new StreamWriter(path, false, Encoding.UTF8))
             {
                 w.WriteLine("flow_asset,level,dragon,intro,progress_dialogs,idle_dialogs,nag_dialogs,phone,outro,jerkoff_dialog,cum_dialog,mount_start,mount_finish,spawn_flag,set_flags,end_flags,weather,player_spawn");
                 foreach (string r in rows) w.WriteLine(r);
             }
-            return $"[flow] Wrote {total} level(s) from {flows.Length} LevelFlow asset(s) -> {path}";
+            return $"[flow] Wrote {total} level(s) from {flowCount} LevelFlow asset(s) -> {path}";
         }
 
         private static object NagDialogs(object flow, int level)

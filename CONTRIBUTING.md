@@ -29,13 +29,25 @@ Unity の内部キー名やプログラミングの知識は一切不要です�
 
 ## 翻訳ファイルの形式
 
-`Translations/<locale>/strings.csv` は公開用の3列 CSV です。作業中は原文つきの行を**同じファイルに混在**させても読めます。
+`Translations/<locale>/strings.csv` は公開用の CSV で、**ゲームで流れる順**に並び、`#` の見出しで区切られています。作業中は原文つきの行を**同じファイルに混在**させても読めます。
 
 ```csv
-key,speaker,translation
-bc1b88907d3b748a,UI,オプション
-5d0a…,Conrad,ああ？
+key,section,node,order,speaker,translation
+
+# ===== Level 1: Ryan (Sunny) | sets level_1 | ends level_1_complete =====
+# --- intro: Ryan_1_intro ---
+5d0a…,L01 Ryan,Ryan_1_intro,1,Ryan,よお。ここが洗い屋か？
+# --- phone: Ryan_1_PhoneTutorial | if $has_talked_to_ryan ---
+…
+# ===== UI and other text (not part of the dialogue script) =====
+bc1b88907d3b748a,UI,,,UI,オプション
 ```
+
+- `section` … `L01 Ryan` のようなレベル番号とドラゴン名、または `Cutscene` / `Reaction` / `Unused` / `UI`
+- `node` / `order` … Yarn の会話ノード名と、その中での順番。分岐先のノードは親の直後に置かれます
+- `#` 行 … 見出し。読み込み時は無視されるので自由に残せます。`| if $変数` は分岐条件のヒントです
+- 並び順は `data/script_order.csv`（ノード名・行 ID・ハッシュ・話者だけ。英語なし）で決まり、
+  ゲーム内 **Export game flow** で再生成できます（ゲームの更新時にメンテナーが行います）
 
 ```csv
 source_en,translation
@@ -59,8 +71,8 @@ F6 / F7 の出力には `key` 列と `source_en` 列の両方が入っている�
 `Translations/_discovered/<locale>.working.csv` に展開されます：
 
 ```csv
-key,speaker,source_en,translation
-bc1b88907d3b748a,UI,Options,オプション
+key,section,node,order,speaker,source_en,translation
+5d0a…,L01 Ryan,Ryan_1_intro,1,Ryan,Hey. This the cleaning place?,よお。ここが洗い屋か？
 ```
 
 会話は**ゲーム内の実行順**に並び、`speaker` 列に**誰の台詞か**（Conrad / Ryan / Alexander、
@@ -145,7 +157,7 @@ Fキーや自動記録で `Translations/_discovered/` に CSV として出力さ
 
 - `source_en` が実際に画面に表示される英文と**完全一致**しているか（大文字小文字・
   前後の空白・書式タグまで）。
-- **ハッシュ化済みか**（`strings.csv` が `key,speaker,translation` の3列で、`source_en` の行が残っていないか）。
+- **ハッシュ化済みか**（`strings.csv` の列が `key,section,node,order,speaker,translation` で、`source_en` の行が残っていないか）。
 - 書式タグの構造が原文と一致しているか。
 - 重複行や `translation` が空の行を入れていないか。
 - 1つの PR は1言語・まとまりのある範囲に絞ってください。

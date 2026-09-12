@@ -1,19 +1,25 @@
 <#
 .SYNOPSIS
-  Convert a Translations/<locale>/strings.csv from source_en rows to key rows.
+  Rebuild Translations/<locale>/strings.csv in the published form.
 
 .DESCRIPTION
-  The repository does not carry the game's English text. Each row of a
-  published strings.csv is keyed by the first 16 hex digits of SHA-256 over
-  the UTF-8 bytes of the exact source string. Translators work locally with
-  plain source_en rows (the plugin accepts both layouts in one file) and run
-  this before committing. Rows already in key form pass through unchanged.
+  The repository does not carry the game's English text. Each published row is
+  keyed by the first 16 hex digits of SHA-256 over the UTF-8 bytes of the exact
+  source string. Translators work locally with source_en rows (a working copy
+  from the in-game menu, or plain source_en,translation rows) and run this
+  before committing. Rows already in key form pass through unchanged.
 
-  Identical to the in-game "Hash strings.csv for commit" button.
+  Rows are written in the order the game plays them, with '#' section
+  headers, using data/script_order.csv and data/level_flow.csv from the
+  repository (generated in-game by F1 -> Tools -> Export game flow). Keys the
+  order does not know (UI text) go last. No game installation is needed.
+
+  Identical to the in-game "Hash for commit" button.
 
 .PARAMETER Path
-  The strings.csv to rewrite in place. Defaults to every locale under
-  Translations/ next to this script's repository root.
+  The strings.csv (or working copy) to convert. Defaults to every locale under
+  Translations/. When a locale's working copy exists under
+  Translations/_discovered/<locale>.working.csv it is used as the input.
 #>
 [CmdletBinding()]
 param(
@@ -21,12 +27,12 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+$root = Split-Path -Parent $PSScriptRoot
 
 function Get-Key([string]$text) {
   $sha = [System.Security.Cryptography.SHA256]::Create()
   try {
-    $bytes = [System.Text.Encoding]::UTF8.GetBytes($text)
-    $digest = $sha.ComputeHash($bytes)
+    $digest = $sha.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($text))
     return (($digest[0..7] | ForEach-Object { $_.ToString('x2') }) -join '')
   } finally { $sha.Dispose() }
 }
@@ -37,20 +43,55 @@ function Escape-Csv([string]$v) {
   return $v
 }
 
-if (-not $Path) {
-  $root = Split-Path -Parent $PSScriptRoot
-  $Path = Get-ChildItem -Path (Join-Path $root 'Translations') -Directory |
-    Where-Object { $_.Name -notlike '_*' } |
-    ForEach-Object { Join-Path $_.FullName 'strings.csv' } |
-    Where-Object { Test-Path $_ }
+# Import-Csv cannot skip comment lines, so strip them first.
+function Read-Csv([string]$file) {
+  $lines = [System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8) | Where-Object { -not $_.StartsWith('#') }
+  if ($lines.Count -lt 2) { return @() }
+  return ($lines | ConvertFrom-Csv)
 }
 
-foreach ($file in $Path) {
-  $rows = Import-Csv -Path $file -Encoding UTF8
+# ---- play order ------------------------------------------------------------
+$order = @(); $levels = @{}
+$orderFile = Join-Path $root 'data/script_order.csv'
+$flowFile = Join-Path $root 'data/level_flow.csv'
+if (Test-Path $orderFile) { $order = @(Read-Csv $orderFile) }
+if (Test-Path $flowFile) {
+  foreach ($l in Read-Csv $flowFile) {
+    $idx = [int]$l.level
+    $sec = ('L{0:00} {1}' -f ($idx + 1), $l.dragon)
+    $h = 'Level {0}: {1}' -f ($idx + 1), $l.dragon
+    if ($l.weather) { $h += " ($($l.weather))" }
+    if ($l.set_flags) { $h += ' | sets ' + ($l.set_flags -replace ' \| ', ', ') }
+    if ($l.end_flags) { $h += ' | ends ' + ($l.end_flags -replace ' \| ', ', ') }
+    $levels[$sec] = $h
+  }
+}
+function Section-Title([string]$s) {
+  switch ($s) {
+    'Cutscene' { 'Cutscenes (started by game code)' }
+    'Reaction' { 'Dragon reactions (started by game code)' }
+    'Unused'   { 'Unused nodes (not reachable in the current game)' }
+    default    { if ($levels.ContainsKey($s)) { $levels[$s] } else { $s } }
+  }
+}
+
+# ---- inputs ----------------------------------------------------------------
+$targets = @()
+if ($Path) {
+  foreach ($p in $Path) { $targets += @{ Input = $p; Output = $p } }
+} else {
+  Get-ChildItem -Path (Join-Path $root 'Translations') -Directory | Where-Object { $_.Name -notlike '_*' } | ForEach-Object {
+    $out = Join-Path $_.FullName 'strings.csv'
+    $work = Join-Path $root ('Translations/_discovered/' + $_.Name + '.working.csv')
+    $in = if (Test-Path $work) { $work } else { $out }
+    if (Test-Path $in) { $targets += @{ Input = $in; Output = $out } }
+  }
+}
+
+foreach ($t in $targets) {
+  $rows = @{}; $inputOrder = New-Object System.Collections.Generic.List[string]
   $converted = 0; $kept = 0; $dropped = 0
-  $out = New-Object System.Text.StringBuilder
-  [void]$out.AppendLine('key,speaker,translation')
-  foreach ($r in $rows) {
+  foreach ($r in Read-Csv $t.Input) {
     $key = if ($r.PSObject.Properties['key']) { ([string]$r.key).Trim().ToLowerInvariant() } else { '' }
     $src = if ($r.PSObject.Properties['source_en']) { [string]$r.source_en } else { '' }
     if ($src -ne '') {
@@ -62,9 +103,43 @@ foreach ($file in $Path) {
     } else {
       $dropped++; continue
     }
+    if ($rows.ContainsKey($key)) { continue }
     $who = if ($r.PSObject.Properties['speaker']) { [string]$r.speaker } else { '' }
-    [void]$out.AppendLine($key + ',' + (Escape-Csv $who) + ',' + (Escape-Csv ([string]$r.translation)))
+    $tr = if ($r.PSObject.Properties['translation']) { [string]$r.translation } else { '' }
+    if ($tr -eq '') { continue }   # nothing to publish for an untranslated line
+    $rows[$key] = @{ Speaker = $who; Translation = $tr }
+    $inputOrder.Add($key)
   }
-  [System.IO.File]::WriteAllText($file, $out.ToString(), (New-Object System.Text.UTF8Encoding $false))
-  Write-Host ("{0}: {1} converted, {2} already hashed, {3} malformed dropped" -f $file, $converted, $kept, $dropped)
+
+  $out = New-Object System.Text.StringBuilder
+  [void]$out.AppendLine('key,section,node,order,speaker,translation')
+  $done = New-Object System.Collections.Generic.HashSet[string]
+  $lastSection = $null; $lastNode = $null
+  foreach ($e in $order) {
+    $k = ([string]$e.key).Trim().ToLowerInvariant()
+    if (-not $rows.ContainsKey($k) -or $done.Contains($k)) { continue }
+    if ($e.section -ne $lastSection) {
+      [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== ' + (Section-Title $e.section) + ' =====')
+      $lastSection = $e.section; $lastNode = $null
+    }
+    if ($e.node -ne $lastNode) {
+      $title = $(if ($e.phase) { $e.phase + ': ' } else { '' }) + $e.node + $(if ($e.condition) { ' | if ' + $e.condition } else { '' })
+      [void]$out.AppendLine('# --- ' + $title + ' ---')
+      $lastNode = $e.node
+    }
+    $who = if ($rows[$k].Speaker) { $rows[$k].Speaker } else { $e.speaker }
+    [void]$out.AppendLine($k + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
+    [void]$done.Add($k)
+  }
+  $left = @($inputOrder | Where-Object { -not $done.Contains($_) })
+  if ($left.Count -gt 0) {
+    if ($order.Count -gt 0) { [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== UI and other text (not part of the dialogue script) =====') }
+    foreach ($k in $left) {
+      $who = if ($rows[$k].Speaker) { $rows[$k].Speaker } else { 'UI' }
+      $sec = if ($order.Count -gt 0) { 'UI' } else { '' }
+      [void]$out.AppendLine($k + ',' + $sec + ',,,' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
+    }
+  }
+  [System.IO.File]::WriteAllText($t.Output, $out.ToString(), (New-Object System.Text.UTF8Encoding $false))
+  Write-Host ("{0} <- {1}: {2} converted, {3} already hashed, {4} malformed dropped, {5} in play order, {6} other" -f $t.Output, $t.Input, $converted, $kept, $dropped, $done.Count, $left.Count)
 }
