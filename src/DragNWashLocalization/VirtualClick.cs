@@ -55,8 +55,10 @@ namespace DragNWashLocalization
         {
             bool press = false;
             bool held = false;
-            Mouse mouse = Mouse.current;
-            if (mouse != null && mouse.leftButton.wasPressedThisFrame) press = true;
+            // Pad buttons only. A real mouse click already reaches IMGUI as a
+            // MouseDown/MouseUp pair; treating it as a pad press too made every
+            // menu button fire twice on Windows (a level step moved by two, a
+            // flag toggle flipped straight back).
             Gamepad pad = Gamepad.current;
             if (pad != null)
             {
@@ -82,7 +84,9 @@ namespace DragNWashLocalization
                 _dragMode = DragMode.None;
                 _dragDecided = false;
             }
-            _held = held || (mouse != null && mouse.leftButton.isPressed);
+            // The mouse drags the window through IMGUI itself; adding it here
+            // would move the window twice as far.
+            _held = held;
             if (!_held) { _dragMode = DragMode.None; _dragDecided = false; }
         }
 
