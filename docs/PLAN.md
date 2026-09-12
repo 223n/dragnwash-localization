@@ -421,3 +421,13 @@ The built DLL was deployed to the game's BepInEx plugin directory, and its SHA-2
 - Language switching, dialogue export, and layout checking continue to execute from `Update`.
 - Every control uses the same prewarmed font and size. The log renders as one label, and its joined text and wrapped height are recalculated only after content changes. `OnGUI` performs no new `Texture2D` creation, `Apply`, or file I/O.
 - The Release build succeeded. At the time of this entry, in-game appearance, interaction, and crash testing awaited user confirmation.
+
+## Language packs and per-language fonts (2026-09-13)
+
+- Added provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish, Hebrew, Esperanto and Toki Pona. The English source was taken from the in-game F6 export; UI strings with no dialogue source were recovered by hashing candidate English against the keys. Each pack keeps the `ja` file's play order and opens with a comment saying it is provisional.
+- Fonts are chosen from the characters each locale uses (kana, Han, Hangul, Hebrew, other non-ASCII), with the locale name deciding which Han face to prefer. Korean, Traditional Chinese and Hebrew gained their own faces, and a Latin face is loaded only when no other face covers a character.
+- Each character is rasterized once, into the first face of its locale's fallback chain that has the glyph, and TMP's global chain is published in that same order, so TMP never meets a face that would add the glyph at runtime.
+- Loading faces on demand crashed Direct3D 12 on a runtime language switch (`D3D12ScratchAllocator::DestroyScratch`, UUM-140564). On Direct3D 12 every installed locale is therefore prepared at startup and a switch only reorders the chain; Vulkan and Direct3D 11 prepare locales on demand. Verified with repeated switches on Windows (Direct3D 12) and on the Steam Deck (Vulkan).
+- Hebrew uses TMP's per-component right-to-left switch, flipped for every translated component while an RTL locale is loaded.
+- F1 menu: About tab. Installer: its own language picker and an About box. The configuration descriptions are in English.
+- Fixed: the Steam Deck pad support also treated real mouse clicks as pad presses, so every F1 menu button fired twice with a mouse.

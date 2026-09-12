@@ -118,7 +118,13 @@ Exclusions only affect discovery. Lookup happens first, so a row in `strings.csv
 
 ## Adding a locale
 
-Add a folder under `Translations/<locale>/` with a `strings.csv` (and a `name.txt`). Follow the existing naming (`ja`, `zh-Hans`). The plugin detects folders automatically.
+Add a folder under `Translations/<locale>/` with a `strings.csv` (and a `name.txt`). Use a BCP 47 style name like the existing ones (`ja`, `zh-Hans`, `zh-Hant`, `pt-BR`, `ko`). The plugin detects folders automatically.
+
+Fonts are chosen from the characters in your file, so most scripts need nothing extra: Japanese, Chinese (Simplified and Traditional), Korean, Cyrillic, accented Latin and Hebrew all have a font on Windows and the Steam Deck. Right-to-left languages (`he`, `ar`, `fa`, `ur`, `yi`) are drawn right to left automatically; keep the file in normal typing order and avoid Latin words or digits inside a line, because those come out reversed. For a script the plugin has no font for, put a `.ttf`/`.otf` in a `fonts/` folder next to the plugin DLL.
+
+## Improving a provisional language
+
+Every pack except Japanese and Simplified Chinese is provisional: complete, but not reviewed by a native speaker. If you speak one of them, a review is the most valuable contribution there is. Fix lines in a pull request; once a whole pack has been read through by a native speaker, update the comment at the top of its `strings.csv` and its row in the README's language table in the same pull request.
 
 ## Checking your work
 

@@ -2,9 +2,9 @@
 
 [日本語](README.ja.md)
 
-An unofficial BepInEx-based localization mod for [Drag'n Wash](https://store.steampowered.com/app/4739660/).
+An unofficial BepInEx-based multilingual localization mod for [Drag'n Wash](https://store.steampowered.com/app/4739660/).
 
-The project aims to make it possible to add Japanese, Simplified Chinese, and other languages in the future without writing code.
+It plays the game in many languages (see [Language packs](#language-packs)), and anyone can add or improve a language by editing CSV files, without writing code.
 
 See [docs/PLAN.md](docs/PLAN.md) for the technical research and implementation plan.
 
@@ -27,7 +27,7 @@ Installing is really easy.
 
 The installer finds the game through Steam on its own (or lets you pick the folder). If BepInEx is not installed yet, it downloads the official 5.4.23.5 release, verifies its SHA-256, and unpacks it for you. Then just start the game from Steam.
 
-Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for German, French, Spanish, Brazilian Portuguese, Korean, Russian and Polish (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
+Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish and Hebrew, and for fun Esperanto and Toki Pona (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
 
 If you prefer to do it by hand, follow the manual steps below.
 
@@ -56,7 +56,7 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
 4. In Steam, game properties → Launch options: `./run_bepinex.sh %command%`
 5. Start the game. Change the language in `BepInEx/config/com.tomxv.dragnwash.localization.cfg` (`TargetLocale`, created on first run).
 
-Fonts need no extra setup: the game text uses SteamOS's Noto Sans CJK straight from the font file (Japanese, Chinese and Korean faces), and the F1 menu draws with a bundled Noto Sans JP (`dragnwash-menufont.bundle`), because Steam's Linux runtime exposes no CJK font to Unity's menu system.
+Fonts need no extra setup: the game text uses SteamOS's Noto Sans CJK straight from the font file (Japanese, Chinese and Korean faces), and the F1 menu draws with a bundled Noto Sans JP (`dragnwash-menufont.bundle`), because Steam's Linux runtime exposes no CJK font to Unity's menu system. That menu font has no Hangul or Hebrew, so on the Deck those languages show their locale code on the F1 language buttons; the game itself displays them normally.
 
 Using the F1 menu on the Deck (Gaming Mode):
 
@@ -105,7 +105,7 @@ Do not leave the ZIP itself or an extra `DragNWashLocalization-<version>` direct
 
 ### 4. Launch and verify
 
-Start Drag'n Wash. Japanese is selected by default. Press **F1** to open the localization menu; under **Tools**, you can switch between the installed languages without restarting.
+Start Drag'n Wash. A manual install starts in Japanese (the installer uses the language you picked). Press **F1** to open the localization menu; under **Tools**, you can switch between the installed languages without restarting.
 
 A successful installation also produces a `DragNWashLocalization` startup entry in `BepInEx/LogOutput.log`.
 
@@ -132,6 +132,7 @@ All translation files are written by TomXV and ship in the same zip; the install
 | --- | --- | --- |
 | `ja` | 日本語 | Supervised by the author |
 | `zh-Hans` | 简体中文 | Supervised by the author |
+| `zh-Hant` | 繁體中文 | Provisional, converted from the supervised Simplified Chinese with Taiwan wording |
 | `de` | Deutsch | Provisional |
 | `fr` | Français | Provisional |
 | `es` | Español | Provisional |
@@ -139,6 +140,9 @@ All translation files are written by TomXV and ship in the same zip; the install
 | `ko` | 한국어 | Provisional |
 | `ru` | Русский | Provisional |
 | `pl` | Polski | Provisional |
+| `he` | עברית | Provisional, drawn right to left |
+| `eo` | Esperanto | Provisional, just for fun |
+| `tok` | toki pona | Provisional, just for fun (a 137-word language, so expect it to be loose) |
 | `en` | English | The game's original text (no translation) |
 
 > [!NOTE]
@@ -229,7 +233,9 @@ The same tab also has a **PROGRESS** editor: step the level index back or forwar
 
 A crash in `D3D12ScratchAllocator::DestroyScratch` has been observed when opening Options with Unity 6000.3.14f1 and DirectX 12. Unity has an official issue report with the same stack trace: [UUM-140564](https://issuetracker.unity.com/issues/10698). Because this is a native rendering bug, it cannot be prevented by catching exceptions in the translation hook.
 
-The bug is triggered when textures are allocated or uploaded at runtime. The plugin generates Japanese glyphs together at startup to avoid atlas updates during gameplay, and this has been verified on an actual system to prevent the crash while continuing to use Direct3D 12. No configuration is required.
+The bug is triggered when textures are allocated or uploaded at runtime. On Direct3D 12 the plugin therefore prepares the fonts of every installed language at startup, so neither gameplay nor switching language from the F1 menu adds anything to a font atlas. Each character is rasterized only into the one font its language uses, which keeps that startup work small. This has been verified on an actual system, including repeated language switches. No configuration is required.
+
+Other graphics APIs (Direct3D 11, Vulkan on the Steam Deck) handle runtime uploads, so there only the language in use is prepared and the others load when you pick them. Set `[Font] PreloadAllLocales = true` to prepare everything at startup there too.
 
 If the game still crashes, open Steam and go to **Drag'n Wash → Properties → General → Launch Options**, add `-force-d3d11`, and restart the game. This bypasses the issue by switching the graphics API. The option is part of [Unity's standard command-line arguments](https://docs.unity3d.com/6000.3/Documentation/Manual/PlayerCommandLineArguments.html), and it does not modify the game's DLLs or save data.
 
@@ -239,7 +245,7 @@ Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localiza
 
 ## Current status
 
-Released as v0.2.0 (translation files in play order, flag catalog and editor, one-click installer, English pass-through). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
+Released as v0.3.0 (Steam Deck support). Since then: provisional language packs, fonts prepared per language, an About tab, and an installer language picker. The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
 

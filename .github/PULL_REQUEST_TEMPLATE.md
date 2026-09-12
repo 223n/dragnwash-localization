@@ -1,11 +1,13 @@
-## 内容
+## What / 内容
 
-<!-- 何を訳した／直したか。言語と、会話なら node 名や場面（例: Conrad_1_intro） -->
+<!-- What you translated or fixed: the language, and for dialogue the node or scene (e.g. Conrad_1_intro).
+     何を訳した／直したか。言語と、会話なら node 名や場面（例: Conrad_1_intro） -->
 
-## チェックリスト
+## Checklist / チェックリスト
 
-- [ ] `Translations/<locale>/strings.csv` は **ハッシュ化済み**（`key,section,node,order,speaker,translation` の列で、`source_en` の行が残っていない。F1 → Tools → Hash for commit か `tools/hash-strings.ps1` で作る）
-- [ ] 実機で表示を確認した（F1 → Tools で言語を切り替え、または保存してホットリロード）
-- [ ] 書式タグ（`<size=…>` `<i>` `<gradient=…>`）の構造を原文と同じに保った
-- [ ] キャラクターの口調は [docs/TRANSLATION_STYLE.md](../docs/TRANSLATION_STYLE.md) に沿っている
-- [ ] `Translations/_discovered/`（作業コピーや書き出しファイル）は含めていない
+- [ ] `Translations/<locale>/strings.csv` is **hashed**: columns `key,section,node,order,speaker,translation`, no `source_en` rows left (F1 → Tools → Hash for commit, or `tools/hash-strings.ps1`) / **ハッシュ化済み**で `source_en` の行が残っていない
+- [ ] Checked in the game (switch language in F1 → Tools, or save and let it hot-reload) / 実機で表示を確認した
+- [ ] Formatting tags (`<size=…>` `<i>` `<gradient=…>`) keep the same structure as the source / 書式タグの構造を原文と同じに保った
+- [ ] Character voices follow [docs/TRANSLATION_STYLE.md](../docs/TRANSLATION_STYLE.md) / キャラクターの口調がスタイルガイドに沿っている
+- [ ] Nothing from `Translations/_discovered/` (working copies, exports) is included / `_discovered/` のファイルを含めていない
+- [ ] If this is a native-speaker review of a provisional pack: the header comment and README table are updated / 仮翻訳のネイティブレビューなら、先頭コメントと README の一覧も更新した
