@@ -176,7 +176,7 @@ Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localiza
 
 ## Current status
 
-Released as v0.1.1 (one-click installer, English pass-through, save progress editor). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
+Released as v0.2.0 (translation files in play order, flag catalog and editor, one-click installer, English pass-through). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
 

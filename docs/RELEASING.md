@@ -41,6 +41,9 @@ BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/name.txt
+BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv
+BepInEx/plugins/DragNWashLocalization/data/script_order.csv
+BepInEx/plugins/DragNWashLocalization/data/level_flow.csv
 Install.exe
 installer/Installer.ps1
 README.md

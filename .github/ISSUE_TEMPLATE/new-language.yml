@@ -19,5 +19,5 @@ body:
     attributes:
       label: 確認
       options:
-        - label: 製品版のゲームを所有しており、F6 / F7 で原文を取得できる
+        - label: 製品版のゲームを所有しており、ゲーム内の F1 → Tools → Export working copy で原文を取得できる
           required: true
