@@ -56,7 +56,7 @@ Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Ins
 4. Steam のゲームのプロパティ → 起動オプションに `./run_bepinex.sh %command%`
 5. 起動する。言語は `BepInEx/config/com.tomxv.dragnwash.localization.cfg` の `TargetLocale`（初回起動後に生成）で変えられます
 
-フォントの準備は不要です。ゲーム本編の文字は SteamOS 標準の Noto Sans CJK をファイルから直接読み、F1 メニューは同梱の Noto Sans JP（`dragnwash-menufont.bundle`）で描きます（Steam の Linux ランタイム内では Unity のメニュー描画から CJK フォントが見えないため）。
+フォントの準備は不要です。ゲーム本編の文字は SteamOS 標準の Noto Sans CJK をファイルから直接読み（日本語・中国語・韓国語の各書体）、F1 メニューは同梱の Noto Sans JP（`dragnwash-menufont.bundle`）で描きます（Steam の Linux ランタイム内では Unity のメニュー描画から CJK フォントが見えないため）。
 
 Deck（ゲーミングモード）での F1 メニューの操作:
 

@@ -59,6 +59,20 @@ namespace DragNWashLocalization
             "Noto Sans SC",
         };
 
+        // Hangul is not in the Japanese or Chinese fonts above (Yu Gothic and
+        // YaHei have none), so Korean gets its own.
+        private static readonly string[] KoreanCandidates =
+        {
+            "Malgun Gothic",
+            "맑은 고딕",
+            "Gulim",
+            // macOS
+            "Apple SD Gothic Neo",
+            // Linux / Steam Deck
+            "Noto Sans CJK KR",
+            "Noto Sans KR",
+        };
+
         private static readonly List<TMP_FontAsset> Registered = new List<TMP_FontAsset>();
         private static readonly HashSet<char> Warmed = new HashSet<char>();
 
@@ -82,6 +96,9 @@ namespace DragNWashLocalization
             before = Registered.Count;
             AddFirstAvailable(ChineseCandidates, pointSize);
             bool gotChinese = Registered.Count > before;
+            before = Registered.Count;
+            AddFirstAvailable(KoreanCandidates, pointSize);
+            bool gotKorean = Registered.Count > before;
 
             // Steam's Linux runtime container, macOS, and stripped-down systems
             // do not always expose fonts by family name, but the files are
@@ -89,10 +106,11 @@ namespace DragNWashLocalization
             // plugin, for anyone who wants to drop in their own).
             if (!gotJapanese) gotJapanese = AddFirstFile(JapaneseFiles, 0, pointSize, "Japanese");
             if (!gotChinese) gotChinese = AddFirstFile(ChineseFiles, 2, pointSize, "Chinese");
+            if (!gotKorean) gotKorean = AddFirstFile(KoreanFiles, 1, pointSize, "Korean");
 
             if (Registered.Count == 0)
             {
-                Plugin.Log("WARNING: no CJK-capable OS font could be loaded. Japanese/Chinese text may render as missing glyphs.");
+                Plugin.Log("WARNING: no CJK-capable OS font could be loaded. Japanese/Chinese/Korean text may render as missing glyphs.");
                 LogSystemFontNames();
                 return;
             }
@@ -130,6 +148,18 @@ namespace DragNWashLocalization
             "~/.local/share/fonts/NotoSansCJK-Regular.ttc",
             "/System/Library/Fonts/PingFang.ttc",
             "C:/Windows/Fonts/msyh.ttc",
+        };
+
+        private static readonly string[] KoreanFiles =
+        {
+            "fonts/*kr*.ttf", "fonts/*kr*.otf", "fonts/*.ttc",
+            "/run/host/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+            "~/.local/share/fonts/NotoSansCJK-Regular.ttc",
+            "/System/Library/Fonts/AppleSDGothicNeo.ttc",
+            "C:/Windows/Fonts/malgun.ttf",
         };
 
         private static bool AddFirstFile(string[] patterns, int ttcFace, int pointSize, string label)

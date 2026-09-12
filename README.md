@@ -56,7 +56,7 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
 4. In Steam, game properties → Launch options: `./run_bepinex.sh %command%`
 5. Start the game. Change the language in `BepInEx/config/com.tomxv.dragnwash.localization.cfg` (`TargetLocale`, created on first run).
 
-Fonts need no extra setup: the game text uses SteamOS's Noto Sans CJK straight from the font file, and the F1 menu draws with a bundled Noto Sans JP (`dragnwash-menufont.bundle`), because Steam's Linux runtime exposes no CJK font to Unity's menu system.
+Fonts need no extra setup: the game text uses SteamOS's Noto Sans CJK straight from the font file (Japanese, Chinese and Korean faces), and the F1 menu draws with a bundled Noto Sans JP (`dragnwash-menufont.bundle`), because Steam's Linux runtime exposes no CJK font to Unity's menu system.
 
 Using the F1 menu on the Deck (Gaming Mode):
 
