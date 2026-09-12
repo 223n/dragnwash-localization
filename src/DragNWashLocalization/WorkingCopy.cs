@@ -39,15 +39,14 @@ namespace DragNWashLocalization
             {
                 string localeDir = Path.Combine(pluginDirectory, "Translations", locale);
                 string published = Path.Combine(localeDir, "strings.csv");
-                if (!File.Exists(published))
-                {
-                    return $"[working] {locale}/strings.csv not found.";
-                }
+                // A brand-new language has no published file yet; the working
+                // copy then starts empty, with every line the game can show.
+                bool fresh = !File.Exists(published);
 
                 // key -> translation, in file order.
                 var translations = new Dictionary<string, string>(StringComparer.Ordinal);
                 var fileOrder = new List<string>();
-                foreach (var row in CsvReader.ReadRows(published))
+                foreach (var row in fresh ? new List<Dictionary<string, string>>() : CsvReader.ReadRows(published))
                 {
                     row.TryGetValue("key", out string key);
                     row.TryGetValue("source_en", out string src);
@@ -172,6 +171,7 @@ namespace DragNWashLocalization
                 }
 
                 string ordered = order == null ? " No script order data found (Export game flow with a level loaded), so rows are in discovery order." : "";
+                if (fresh) ordered = $" {locale}/strings.csv did not exist, so this is a fresh start with every line the game has loaded." + ordered;
                 return $"[working] Wrote {written} row(s) to _discovered/{FileNameFor(locale)}: {resolved} with English, {unresolved} whose text the game has not loaded, {untranslated} still untranslated.{ordered} Edit this file; hot reload applies it. Hash it before committing.";
             }
             catch (Exception ex)
