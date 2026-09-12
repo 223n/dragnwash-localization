@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-[Drag'n Wash](https://store.steampowered.com/) 用の BepInEx ベースの非公式ローカライズ Mod です。
+[Drag'n Wash](https://store.steampowered.com/app/4739660/) 用の BepInEx ベースの非公式ローカライズ Mod です。
 日本語・簡体字中国語（今後他言語も歓迎）への翻訳を、コードを書かずに追加できるようにすることを
 目指しています。
 
@@ -30,6 +30,11 @@
 言語は 日本語 / 简体中文 / English（翻訳しない）から選べます。同じ画面に「アンインストール」ボタンもあり、セーブ履歴は既定で残します。インストーラーが入れた BepInEx は、他の Mod がなければ一緒に消せます。
 
 手動で導入したい場合は、以下の手順に従ってください。
+
+### 動画で見る
+
+![導入手順の動画](docs/media/install-guide-full.gif)
+
 
 > [!NOTE]
 > **`Install.exe` を押しても何も起きない、または「Windows によって PC が保護されました」と出る場合**

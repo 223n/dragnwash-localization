@@ -2,7 +2,7 @@
 
 [日本語](README.ja.md)
 
-An unofficial BepInEx-based localization mod for [Drag'n Wash](https://store.steampowered.com/).
+An unofficial BepInEx-based localization mod for [Drag'n Wash](https://store.steampowered.com/app/4739660/).
 
 The project aims to make it possible to add Japanese, Simplified Chinese, and other languages in the future without writing code.
 
@@ -30,6 +30,11 @@ The installer finds the game through Steam on its own (or lets you pick the fold
 Languages: 日本語 / 简体中文 / English (no translation). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
 
 If you prefer to do it by hand, follow the manual steps below.
+
+### How to install (video)
+
+![Install guide video](docs/media/install-guide-full-en.gif)
+
 
 > [!NOTE]
 > **If nothing happens when you run `Install.exe`, or Windows says "Windows protected your PC"**
