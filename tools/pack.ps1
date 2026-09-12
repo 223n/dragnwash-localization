@@ -16,6 +16,7 @@
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
 #     Install.exe                <- double-click installer / uninstaller (no console)
+#     Install.cmd                <- same window, for when Install.exe is blocked
 #     installer/Installer.ps1
 #     README.md
 param(
@@ -106,6 +107,8 @@ Copy-Item -LiteralPath (Join-Path $Root 'README.md') -Destination $Stage
 # ships with .NET Framework 4 on every Windows machine.
 New-Item -ItemType Directory -Force -Path (Join-Path $Stage 'installer') | Out-Null
 Copy-Item -LiteralPath (Join-Path $Root 'installer/Installer.ps1') -Destination (Join-Path $Stage 'installer')
+# Fallback for machines where SmartScreen or policy stops the unsigned exe.
+Copy-Item -LiteralPath (Join-Path $Root 'installer/Install.cmd') -Destination $Stage
 $Csc = Join-Path $env:WINDIR 'Microsoft.NET' | Join-Path -ChildPath 'Framework64' | Join-Path -ChildPath 'v4.0.30319' | Join-Path -ChildPath 'csc.exe'
 if (-not (Test-Path -LiteralPath $Csc)) { throw "C# compiler not found at $Csc (needed to build Install.exe)." }
 $LauncherExe = Join-Path $Stage 'Install.exe'

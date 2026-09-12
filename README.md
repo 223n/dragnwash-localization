@@ -32,10 +32,11 @@ Languages: 日本語 / 简体中文 / English (no translation). The same window 
 If you prefer to do it by hand, follow the manual steps below.
 
 > [!NOTE]
-> **If Windows says "Windows protected your PC" and nothing happens**
-> `Install.exe` is a small unsigned program, so Windows SmartScreen may stop it the first time. Click **More info → Run anyway**.
-> If no window appears at all, right-click `Install.exe` → Properties → tick **Unblock** at the bottom → OK, then double-click it again.
-> As a last resort, open PowerShell in the extracted folder and run `powershell -ExecutionPolicy Bypass -STA -File .\installer\Installer.ps1`, which opens the same window.
+> **If nothing happens when you run `Install.exe`, or Windows says "Windows protected your PC"**
+> `Install.exe` is a small unsigned program, so Windows SmartScreen may stop it the first time.
+> - If the warning appears, click **More info → Run anyway**.
+> - If no window appears at all, double-click **`Install.cmd`** in the same folder instead. A console flashes for a moment and the same installer window opens.
+> - Failing that, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
 
 ### Manual installation
 
