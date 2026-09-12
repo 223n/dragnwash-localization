@@ -318,6 +318,12 @@ A flag editor was considered, but restoring correctly would require knowing flag
 - **Typewriter fix.** Replacing on-screen text on a locale switch or hot reload left `maxVisibleCharacters` at the old text's length, truncating longer text ("HEY! This is th"). The cap is lifted when the previous text was fully shown.
 - **Versioning.** The csproj now emits assembly attributes (`Version`/`FileVersion`), and releases are built after the commit and tag so the informational version carries the tagged commit.
 
+## Play-ordered translation files, v0.2.0 (2026-09-12)
+
+- The game's `LevelFlow` asset (15 levels, all present regardless of progress) and the Yarn program are exported in-game (`FlowDumper`, `ScriptOrder.Generate`) into `data/script_order.csv`: node names, line ids, hashes and speakers, no English. `Hash for commit`, the working copy and `tools/hash-strings.ps1` order rows by it and print `#` section headers; `CsvReader` and the CI check skip comments and blank lines. The in-game and PowerShell outputs were verified byte-identical.
+- Static audit of the flow found no unreachable references on the live path; 40 "untranslated" lines were developer debris (test node, Yarn separators, error text). The error/debug lines were translated in case a broken flag state shows them.
+- Level 14's mount dialogues point at the `Conrad_4_Mount_*` nodes while `Conrad_5_Mount_*` exist unused; reported as a likely game data mistake, not touched.
+
 ## Phases
 
 - **Phase 0:** Create the repository and finalize the plan — complete.
