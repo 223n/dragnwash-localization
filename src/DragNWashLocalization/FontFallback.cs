@@ -1,6 +1,8 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.TextCore.LowLevel;
 
 namespace DragNWashLocalization
 {
@@ -74,18 +76,143 @@ namespace DragNWashLocalization
                 ? Plugin.FontAtlasPointSize.Value
                 : DefaultAtlasPointSize;
 
+            int before = Registered.Count;
             AddFirstAvailable(JapaneseCandidates, pointSize);
+            bool gotJapanese = Registered.Count > before;
+            before = Registered.Count;
             AddFirstAvailable(ChineseCandidates, pointSize);
+            bool gotChinese = Registered.Count > before;
+
+            // Steam's Linux runtime container, macOS, and stripped-down systems
+            // do not always expose fonts by family name, but the files are
+            // still there. Try known paths (and a fonts/ folder next to the
+            // plugin, for anyone who wants to drop in their own).
+            if (!gotJapanese) gotJapanese = AddFirstFile(JapaneseFiles, 0, pointSize, "Japanese");
+            if (!gotChinese) gotChinese = AddFirstFile(ChineseFiles, 2, pointSize, "Chinese");
 
             if (Registered.Count == 0)
             {
                 Plugin.Log("WARNING: no CJK-capable OS font could be loaded. Japanese/Chinese text may render as missing glyphs.");
+                LogSystemFontNames();
                 return;
             }
 
             List<TMP_FontAsset> fallbackList = TMP_Settings.fallbackFontAssets ?? new List<TMP_FontAsset>();
             fallbackList.AddRange(Registered);
             TMP_Settings.fallbackFontAssets = fallbackList;
+        }
+
+        // (path, face index inside a .ttc). Face 0 of NotoSansCJK-*.ttc is JP,
+        // 1 KR, 2 SC, 3 TC. "~" expands to the home directory; "fonts/" is
+        // relative to the plugin folder.
+        private static readonly string[] JapaneseFiles =
+        {
+            "fonts/*jp*.ttf", "fonts/*jp*.otf", "fonts/*.ttc", "fonts/*.ttf", "fonts/*.otf",
+            "/run/host/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+            "~/.local/share/fonts/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/truetype/noto/NotoSansJP-Regular.ttf",
+            "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc",
+            "/System/Library/Fonts/Hiragino Sans GB.ttc",
+            "C:/Windows/Fonts/YuGothM.ttc",
+            "C:/Windows/Fonts/msgothic.ttc",
+        };
+
+        private static readonly string[] ChineseFiles =
+        {
+            "fonts/*sc*.ttf", "fonts/*sc*.otf", "fonts/*.ttc",
+            "/run/host/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+            "~/.local/share/fonts/NotoSansCJK-Regular.ttc",
+            "/System/Library/Fonts/PingFang.ttc",
+            "C:/Windows/Fonts/msyh.ttc",
+        };
+
+        private static bool AddFirstFile(string[] patterns, int ttcFace, int pointSize, string label)
+        {
+            foreach (string pattern in patterns)
+            {
+                foreach (string path in Expand(pattern))
+                {
+                    int face = path.EndsWith(".ttc", StringComparison.OrdinalIgnoreCase) ? ttcFace : 0;
+                    TMP_FontAsset asset;
+                    try
+                    {
+                        asset = TMP_FontAsset.CreateFontAsset(path, face, pointSize, 9, GlyphRenderMode.SDFAA, 1024, 1024);
+                    }
+                    catch (Exception ex)
+                    {
+                        Plugin.Log($"CJK fallback font file '{path}' could not be loaded: {ex.Message}");
+                        continue;
+                    }
+                    if (asset == null)
+                    {
+                        continue;
+                    }
+                    asset.name = "DragNWashLocalization_Fallback_" + label + "_" + Path.GetFileNameWithoutExtension(path);
+                    Registered.Add(asset);
+                    Plugin.Log($"CJK fallback font registered from file: {path} (face {face}, atlas point size {pointSize})");
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private static IEnumerable<string> Expand(string pattern)
+        {
+            string home = Environment.GetEnvironmentVariable("HOME") ?? Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            if (pattern.StartsWith("~/", StringComparison.Ordinal))
+            {
+                pattern = Path.Combine(home, pattern.Substring(2));
+            }
+            else if (pattern.StartsWith("fonts/", StringComparison.Ordinal))
+            {
+                pattern = Path.Combine(Plugin.PluginDirectory, pattern);
+            }
+
+            string dir = Path.GetDirectoryName(pattern);
+            string file = Path.GetFileName(pattern);
+            if (string.IsNullOrEmpty(dir) || !Directory.Exists(dir))
+            {
+                yield break;
+            }
+            if (file.IndexOf('*') < 0)
+            {
+                if (File.Exists(pattern)) yield return pattern;
+                yield break;
+            }
+            string[] matches;
+            try { matches = Directory.GetFiles(dir, file); } catch { yield break; }
+            Array.Sort(matches, StringComparer.OrdinalIgnoreCase);
+            foreach (string m in matches) yield return m;
+        }
+
+        private static void LogSystemFontNames()
+        {
+            try
+            {
+                string[] names = FontEngine.GetSystemFontNames() ?? new string[0];
+                var cjk = new List<string>();
+                foreach (string n in names)
+                {
+                    if (n.IndexOf("CJK", StringComparison.OrdinalIgnoreCase) >= 0 || n.IndexOf("Noto", StringComparison.OrdinalIgnoreCase) >= 0
+                        || n.IndexOf("Gothic", StringComparison.OrdinalIgnoreCase) >= 0 || n.IndexOf("Hei", StringComparison.OrdinalIgnoreCase) >= 0
+                        || n.IndexOf("Hiragino", StringComparison.OrdinalIgnoreCase) >= 0 || n.IndexOf("PingFang", StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        cjk.Add(n);
+                        if (cjk.Count >= 12) break;
+                    }
+                }
+                Plugin.Log($"[font] The system reports {names.Length} font families; CJK-looking ones: {(cjk.Count == 0 ? "(none)" : string.Join(", ", cjk))}");
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[font] Could not list system fonts: {ex.Message}");
+            }
         }
 
         private static void AddFirstAvailable(string[] candidates, int pointSize)

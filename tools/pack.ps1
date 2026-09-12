@@ -39,7 +39,7 @@ $Required = @(
     'Unity.TextMeshPro.dll', 'UnityEngine.UI.dll',
     'YarnSpinner.dll', 'YarnSpinner.Unity.dll',
     'UnityEngine.IMGUIModule.dll', 'UnityEngine.TextRenderingModule.dll',
-    'Unity.InputSystem.dll'
+    'Unity.InputSystem.dll', 'UnityEngine.TextCoreFontEngineModule.dll'
 )
 $Missing = $Required | Where-Object { -not (Test-Path -LiteralPath (Join-Path $SrcDir "libs/$_")) }
 if ($Missing) {
