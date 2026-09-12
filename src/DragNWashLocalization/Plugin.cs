@@ -412,8 +412,11 @@ namespace DragNWashLocalization
         {
             try
             {
-                _menuFont = Font.CreateDynamicFontFromOSFont("Yu Gothic UI", MenuFontSize)
-                            ?? Font.CreateDynamicFontFromOSFont("Meiryo UI", MenuFontSize);
+                foreach (string name in new[] { "Yu Gothic UI", "Meiryo UI", "Hiragino Sans", "PingFang SC", "Noto Sans CJK JP", "Noto Sans CJK SC" })
+                {
+                    _menuFont = Font.CreateDynamicFontFromOSFont(name, MenuFontSize);
+                    if (_menuFont != null) break;
+                }
                 if (_menuFont == null)
                 {
                     return;

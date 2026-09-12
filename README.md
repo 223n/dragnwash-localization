@@ -43,6 +43,9 @@ If you prefer to do it by hand, follow the manual steps below.
 > - If no window appears at all, double-click **`Install.cmd`** in the same folder instead. A console flashes for a moment and the same installer window opens.
 > - Failing that, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
 
+> [!NOTE]
+> **macOS / Linux / Steam Deck** are untested. The game has builds for them, but `Install.exe` is Windows-only, so install by hand (merge `BepInEx/` into the game folder) and follow BepInEx's own setup for that OS. The mod looks for the standard CJK fonts on macOS (Hiragino / PingFang) and Linux (Noto Sans CJK); if you try it, please report the result in an issue.
+
 ### Manual installation
 
 ### What you need

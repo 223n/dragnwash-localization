@@ -35,6 +35,12 @@ namespace DragNWashLocalization
             "Meiryo UI",
             "Meiryo",
             "MS Gothic",
+            // macOS
+            "Hiragino Sans",
+            "Hiragino Kaku Gothic ProN",
+            // Linux / Steam Deck (Proton exposes fontconfig fonts)
+            "Noto Sans CJK JP",
+            "Noto Sans JP",
         };
 
         private static readonly string[] ChineseCandidates =
@@ -43,6 +49,12 @@ namespace DragNWashLocalization
             "Microsoft YaHei",
             "SimHei",
             "SimSun",
+            // macOS
+            "PingFang SC",
+            "Hiragino Sans GB",
+            // Linux / Steam Deck
+            "Noto Sans CJK SC",
+            "Noto Sans SC",
         };
 
         private static readonly List<TMP_FontAsset> Registered = new List<TMP_FontAsset>();
