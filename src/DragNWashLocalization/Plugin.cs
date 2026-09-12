@@ -26,6 +26,7 @@ namespace DragNWashLocalization
 
         internal static ConfigEntry<string> TargetLocale;
         internal static ConfigEntry<int> FlagPanelDebug;
+        internal static ConfigEntry<string> MenuFontMode;
         internal static ConfigEntry<bool> LogDiscoveredKeys;
         internal static ConfigEntry<bool> VerboseTextLog;
         internal static ConfigEntry<KeyboardShortcut> ToggleMenuKey;
@@ -150,6 +151,12 @@ namespace DragNWashLocalization
                 "SaveHistoryKeep",
                 30,
                 "スロットごとに残す世代数");
+
+            MenuFontMode = Config.Bind(
+                "Debug",
+                "MenuFontMode",
+                "auto",
+                "Font for the F1 menu: auto (OS font with fallback), builtin (Unity's built-in font), skin (leave the IMGUI skin font alone).");
 
             FlagPanelDebug = Config.Bind(
                 "Debug",
@@ -408,18 +415,66 @@ namespace DragNWashLocalization
         // D3D12ScratchAllocator::ReleaseExcessScratch during PresentFrame, so
         // the frame that opens the menu is exactly the wrong one to do this on.
         // Own the font instead of relying on GUI.skin's, and fill it here.
+        private static bool FontRenders(Font font)
+        {
+            try
+            {
+                font.RequestCharactersInTexture("A", MenuFontSize, FontStyle.Normal);
+                return font.HasCharacter('A')
+                       && font.GetCharacterInfo('A', out CharacterInfo info, MenuFontSize, FontStyle.Normal)
+                       && info.advance > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void CreateMenuFont()
         {
             try
             {
-                foreach (string name in new[] { "Yu Gothic UI", "Meiryo UI", "Hiragino Sans", "PingFang SC", "Noto Sans CJK JP", "Noto Sans CJK SC" })
+                string mode = MenuFontMode != null ? MenuFontMode.Value : "auto";
+                if (mode == "skin")
                 {
-                    _menuFont = Font.CreateDynamicFontFromOSFont(name, MenuFontSize);
-                    if (_menuFont != null) break;
+                    Log("Menu font: skin (config)");
+                    return;
+                }
+                if (mode == "builtin")
+                {
+                    _menuFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                    Log("Menu font: built-in (config) -> " + (_menuFont != null ? _menuFont.name : "null"));
+                    if (_menuFont == null) return;
+                }
+                // Unity hands back a Font even when the OS has no such family
+                // (the menu then draws nothing, which is what happened inside
+                // Steam's Linux runtime), so check that a glyph really renders
+                // before trusting a candidate.
+                var installed = new HashSet<string>(Font.GetOSInstalledFontNames() ?? new string[0], StringComparer.OrdinalIgnoreCase);
+                foreach (string name in _menuFont != null ? new string[0] : new[] { "Yu Gothic UI", "Meiryo UI", "Hiragino Sans", "PingFang SC", "Noto Sans CJK JP", "Noto Sans CJK SC" })
+                {
+                    // A name the OS does not list yields a Font that measures but
+                    // never draws (seen inside Steam's Linux runtime), so skip it.
+                    if (installed.Count > 0 && !installed.Contains(name)) continue;
+                    Font candidate = Font.CreateDynamicFontFromOSFont(name, MenuFontSize);
+                    if (candidate == null) continue;
+                    if (FontRenders(candidate))
+                    {
+                        _menuFont = candidate;
+                        Log($"Menu font: {name}");
+                        break;
+                    }
+                    Destroy(candidate);
                 }
                 if (_menuFont == null)
                 {
-                    return;
+                    // Unity's built-in font always renders ASCII; CJK labels in
+                    // the menu will be blank on this system, but it stays usable.
+                    _menuFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                    Log(_menuFont != null
+                        ? "Menu font: none of the OS fonts render here; using Unity's built-in font (ASCII only)."
+                        : "Menu font: no usable font found; the menu will use the default skin font.");
+                    if (_menuFont == null) return;
                 }
 
                 var ascii = new StringBuilder();
@@ -444,6 +499,20 @@ namespace DragNWashLocalization
                     catalog.Append(e.Id).Append(e.Group).Append(e.Description);
                 }
                 _menuFont.RequestCharactersInTexture(catalog.ToString(), MenuFontSize, FontStyle.Normal);
+
+                // Diagnostics for systems where the menu draws no text.
+                try
+                {
+                    string[] osFonts = Font.GetOSInstalledFontNames() ?? new string[0];
+                    Texture tex = _menuFont.material != null ? _menuFont.material.mainTexture : null;
+                    Material mat = _menuFont.material;
+                    Shader textShader = Shader.Find("GUI/Text Shader");
+                    Log($"Menu font check: OS reports {osFonts.Length} fonts [{string.Join(", ", osFonts)}]; dynamic={_menuFont.dynamic}; names=[{string.Join(", ", _menuFont.fontNames ?? new string[0])}]; atlas={(tex == null ? "none" : tex.width + "x" + tex.height + " " + tex.GetType().Name)}; glyph A={( _menuFont.GetCharacterInfo('A', out CharacterInfo ci, MenuFontSize, FontStyle.Normal) ? ci.advance.ToString() : "missing")}; material={(mat == null ? "none" : mat.name + " / " + (mat.shader == null ? "no shader" : mat.shader.name + (mat.shader.isSupported ? "" : " (UNSUPPORTED)")))}; GUI/Text Shader={(textShader == null ? "missing" : (textShader.isSupported ? "ok" : "unsupported"))}");
+                }
+                catch (Exception ex)
+                {
+                    Log($"Menu font check failed: {ex.Message}");
+                }
             }
             catch (Exception ex)
             {

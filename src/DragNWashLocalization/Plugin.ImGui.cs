@@ -353,6 +353,7 @@ namespace DragNWashLocalization
                 string locale = _availableLocales[i];
                 bool selected = locale == TargetLocale.Value;
                 string label = LocaleDisplayName(locale);
+                if (!MenuFontCanDraw(label)) label = locale;
                 if (GUI.Button(new Rect(12 + (i % 3) * (buttonWidth + 8), y + (i / 3) * 38, buttonWidth, RowHeight),
                     selected ? label + "  [active]" : label, selected ? _selectedButtonStyle : _buttonStyle))
                 {
@@ -657,6 +658,20 @@ namespace DragNWashLocalization
             }
         }
     
+        // True when every character of the text has a glyph in the menu font.
+        // With Unity's built-in font (no CJK), "日本語" would draw as nothing,
+        // so the caller shows the locale code instead.
+        private bool MenuFontCanDraw(string text)
+        {
+            if (_menuFont == null || string.IsNullOrEmpty(text)) return true;
+            foreach (char c in text)
+            {
+                if (c < 128) continue;
+                if (!_menuFont.HasCharacter(c)) return false;
+            }
+            return true;
+        }
+
         // Shown on the language buttons; the folder name is what the config stores.
         // Translators set the name in Translations/<locale>/name.txt.
         private static readonly Dictionary<string, string> _localeNames = new Dictionary<string, string>();
