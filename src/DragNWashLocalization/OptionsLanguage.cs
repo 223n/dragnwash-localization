@@ -93,7 +93,8 @@ namespace DragNWashLocalization
 
         // Called from Update. SettingsManager lives in the first scene, so this
         // keeps trying for a while and then gives up quietly.
-        public static void Tick(string[] locales, Func<string, string> displayName, string currentLocale, Action<string> request)
+        public static void Tick(string[] locales, Func<string, string> displayName, Func<string> currentLocale,
+            Action<string, bool> request, Action commit)
         {
             if (_finished || Time.frameCount % 30 != 0)
             {
@@ -150,8 +151,8 @@ namespace DragNWashLocalization
                 setting.hideFlags = HideFlags.DontUnloadUnusedAsset;
                 labelField.SetValue(setting, new ScriptableSettingString(LabelText));
                 setting.group = group;
-                setting.Configure(locales, names, request);
-                setting.Sync(currentLocale, notify: false);
+                setting.Configure(locales, names, request, commit, currentLocale());
+                setting.Sync(currentLocale(), notify: false, committed: true);
 
                 // Not SettingsManager.AddSetting: that re-sorts the whole list
                 // with an unstable sort and can shuffle the game's own rows.
@@ -178,11 +179,11 @@ namespace DragNWashLocalization
 
         // Keep the dropdown showing the language after a switch made
         // anywhere else (the F1 menu, a hot reload).
-        public static void Sync(string locale)
+        public static void Sync(string locale, bool committed)
         {
             if (_setting != null)
             {
-                _setting.Sync(locale, notify: true);
+                _setting.Sync(locale, notify: true, committed: committed);
             }
         }
 
@@ -231,19 +232,31 @@ namespace DragNWashLocalization
     }
 
     // The dropdown the game's spawner turns into a row. Its value is the index
-    // of the selected locale; the choice itself is stored in the BepInEx config
-    // like the F1 menu's, so Save and Load do not touch PlayerPrefs.
+    // of the selected locale. It follows the game's own Options flow
+    // (SaveButtonOnlyAppearOnChanges), where every setting applies at once and
+    // Save makes it stick:
+    //   pick an entry  -> the language switches right away, as a preview, and
+    //                     the change brings up the game's Save button;
+    //   Save           -> the language in use is written to the config;
+    //   Back unsaved   -> the game calls Load, which switches back to the last
+    //                     saved language.
+    // The config file only ever holds a saved choice, so quitting mid-preview
+    // starts the next session in the saved language.
     internal sealed class ModLanguageSetting : SettingDropdown
     {
         private string[] _locales = new string[0];
-        private Action<string> _request;
+        private Action<string, bool> _request;
+        private Action _commit;
+        private string _committed;
 
         internal int Count => _locales.Length;
 
-        internal void Configure(string[] locales, string[] names, Action<string> request)
+        internal void Configure(string[] locales, string[] names, Action<string, bool> request, Action commit, string committed)
         {
             _locales = locales;
             _request = request;
+            _commit = commit;
+            _committed = committed;
             dropdownOptions = new ScriptableSettingString[names.Length];
             for (int i = 0; i < names.Length; i++)
             {
@@ -251,14 +264,14 @@ namespace DragNWashLocalization
             }
         }
 
-        // The player picked an entry.
+        // The player picked an entry: preview it.
         public override void SetValue(int value)
         {
             if (_locales.Length == 0) return;
             value = Mathf.Clamp(value, 0, _locales.Length - 1);
             if (value == selectedValue) return;
             selectedValue = value;
-            _request?.Invoke(_locales[value]);
+            _request?.Invoke(_locales[value], false);
             NotifyChange();
         }
 
@@ -267,12 +280,37 @@ namespace DragNWashLocalization
             return selectedValue;
         }
 
-        internal void Sync(string locale, bool notify)
+        // committed: the switch was a saved one (the F1 menu, Save), not a preview.
+        internal void Sync(string locale, bool notify, bool committed)
         {
+            if (committed && !string.IsNullOrEmpty(locale))
+            {
+                _committed = locale;
+            }
             int index = Array.IndexOf(_locales, locale);
             if (index < 0 || index == selectedValue) return;
             selectedValue = index;
             if (notify) NotifyChange();
+        }
+
+        // Save pressed: keep the language now in use.
+        public override void Save()
+        {
+            if (_locales.Length == 0) return;
+            string picked = _locales[Mathf.Clamp(selectedValue, 0, _locales.Length - 1)];
+            if (picked == _committed) return;
+            _committed = picked;
+            _commit?.Invoke();
+        }
+
+        // Back without saving: return to the saved language.
+        public override void Load()
+        {
+            if (_locales.Length == 0 || string.IsNullOrEmpty(_committed)) return;
+            string picked = _locales[Mathf.Clamp(selectedValue, 0, _locales.Length - 1)];
+            if (picked == _committed) return;
+            _request?.Invoke(_committed, true);
+            Sync(_committed, notify: true, committed: true);
         }
 
         // "Set Default" resets the game's settings, not this one. The language
@@ -280,14 +318,6 @@ namespace DragNWashLocalization
         // is no "default" to go back to, and switching languages behind the
         // player's back would be a surprise.
         public override void ResetToDefault()
-        {
-        }
-
-        public override void Save()
-        {
-        }
-
-        public override void Load()
         {
         }
     }

@@ -470,6 +470,7 @@ namespace DragNWashLocalization
                     selected ? label + "  [active]" : label, selected ? _selectedButtonStyle : _buttonStyle))
                 {
                     _pendingLocale = locale;
+                    _pendingLocalePersist = true;
                     _menuNotice = "See Activity log for the language change result.";
                 }
             }
