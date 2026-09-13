@@ -720,3 +720,11 @@ TMPフックは画面に出る全文字列を拾うため、スライダーの�
 - デスクトップモードでは kdialog、ターミナルでは通常の入力で操作する。英語・日本語・中国語。`--uninstall` は Windows 版と同じ振る舞い（セーブ履歴を残し、スクリプトが入れた BepInEx かつ他のプラグインがない場合だけ BepInEx を消し、起動オプションを戻す）。
 - Steam は終了時に `localconfig.vdf` を書き戻すため、起動オプションは Steam を閉じた状態でだけ書き換える。`steam -shutdown` を送り（事前に確認、既定は「はい」。`--close-steam` で確認を省略）、`~/.steam/steam.pid` のプロセスが消えるまで最大 90 秒待ってから書き換え、Steam を起動し直す。できなかった手順は最後のダイアログに一覧表示し、実行内容は `~/.local/state/dragnwash-localization/installer.log` に記録する。
 - Deck 上の隔離した Steam 環境で、新規導入、更新、既存の起動オプション、データを残したアンインストール、ターミナルでの言語選択を確認した。
+
+## macOS（2026-09-13）
+
+- 借りた Apple M3 Pro / macOS 26.6.2 で、BepInEx 5.4.23.5 `macos_universal`（Doorstop 4.5.0）を試した。ゲーム（`DragNWash.app`、Unity 6000.3.14f1、Mono、x86_64/arm64 のユニバーサル）は Hardened Runtime なしのアドホック署名なので、`DYLD_INSERT_LIBRARIES` は効き、`libdoorstop.dylib` はプロセスに読み込まれる。
+- それでも BepInEx は起動しない。`LogOutput.log` も `config/` もできず、`Player.log` にも何も出ない。Apple シリコンのままでも `ARCHPREFERENCE="x86_64,arm64"`（Rosetta）でも同じ。
+- NeighTools/UnityDoorstop#108 と一致する。Unity 6.3 の `UnityPlayer.dylib` は chained fixups のみで、Doorstop の `plthook_osx.c` がそのヘッダをゼロとして読み、`dlsym` をフックできないため `mono_jit_init_version` に割り込めない。未マージの PR #110 が修正をうたっている。Issue に添付された有志ビルドの dylib は使っていない。
+- `run_bepinex.sh` は `executable_name` を現在のディレクトリ基準で確認するので、手で起動するときはゲームフォルダから実行する必要がある。Steam の外から起動すると `SteamAPI_Init() failed` が出る。
+- 方針: 修正の入った BepInEx が出るまで macOS は非対応と明記し、出たら再検証する。

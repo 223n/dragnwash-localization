@@ -87,8 +87,8 @@ Deck で言語を変えるときは、コントローラーで **Options → 言
 - タイトルバーでボタンを押したまま動かすと移動、右下の角なら大きさ変更
 - スティックと十字キーで、ポインタが乗っている一覧をスクロール
 
-> [!NOTE]
-> **macOS** は未検証です。BepInEx の macOS 版と同じ手順で動く可能性があり、フォントは Hiragino / PingFang を探します。試した結果を Issue で教えてもらえると助かります。
+> [!WARNING]
+> **macOS では現在動作しません。** Drag'n Wash は Unity 6.3 で作られていて、BepInEx 5.4.23.5 が macOS で使う読み込み役（Doorstop）が、まだ Unity 6.3 のゲームに割り込めません（[NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)）。Doorstop 自体はゲームに読み込まれますが BepInEx が起動せず、`BepInEx/LogOutput.log` も `BepInEx/config` も作られないまま、ゲームは英語で始まります。Apple M3 Pro / macOS 26.6 で、Apple シリコンのままでも Rosetta でも同じ結果になることを確認しました。BepInEx 側の問題なので、この Mod からは回避できません。修正の入った BepInEx が出たら、あらためて macOS で試します。
 
 ### 手動で導入する
 

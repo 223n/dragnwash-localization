@@ -446,3 +446,11 @@ The built DLL was deployed to the game's BepInEx plugin directory, and its SHA-2
 - Uses kdialog in Desktop Mode and plain prompts in a terminal; English, Japanese and Chinese. `--uninstall` mirrors the Windows installer (keeps save history, removes BepInEx only if the script installed it and no other plugin exists, then restores the launch options).
 - Steam rewrites `localconfig.vdf` on exit, so launch options are edited only with Steam closed: the script sends `steam -shutdown` (asks first, default yes; `--close-steam` skips), waits up to 90 s for the pid in `~/.steam/steam.pid` to go, edits, and starts Steam again. Anything it could not do is listed in the final dialog, and each run is logged to `~/.local/state/dragnwash-localization/installer.log`.
 - Tested on the Deck against a sandboxed Steam tree: fresh install, update, existing launch options, uninstall with kept data, and the terminal picker.
+
+## macOS (2026-09-13)
+
+- Tested on a borrowed Apple M3 Pro, macOS 26.6.2, with BepInEx 5.4.23.5 `macos_universal` (Doorstop 4.5.0). The game (`DragNWash.app`, Unity 6000.3.14f1, Mono, universal x86_64/arm64) is only ad-hoc signed without Hardened Runtime, so `DYLD_INSERT_LIBRARIES` is honoured and `libdoorstop.dylib` does load into the process.
+- BepInEx still never starts: no `LogOutput.log`, no `config/`, nothing in `Player.log`. Same natively and with `ARCHPREFERENCE="x86_64,arm64"` (Rosetta).
+- Matches NeighTools/UnityDoorstop#108: Unity 6.3 ships `UnityPlayer.dylib` with chained fixups only, Doorstop's `plthook_osx.c` reads the fixups header as zeros and never hooks `dlsym`, so `mono_jit_init_version` is not intercepted. Unmerged PR #110 claims to fix it; a community-built dylib in the issue was not used.
+- `run_bepinex.sh` checks `executable_name` relative to the current directory, so it must be run from the game folder when started by hand. Launched outside Steam the game logs `SteamAPI_Init() failed`.
+- Decision: document macOS as not working until a BepInEx release carries the Doorstop fix, then retest.

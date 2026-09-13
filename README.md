@@ -87,8 +87,8 @@ To change language on the Deck, use **Options → Language (Mod)** with the cont
 - Hold one of those buttons on the title bar to move the window, or on the bottom-right corner to resize it.
 - The sticks and the d-pad scroll whichever list the pointer is over.
 
-> [!NOTE]
-> **macOS** is untested. It may work with the macOS build of BepInEx and the same steps; the mod looks for Hiragino / PingFang there. Reports in the issues are welcome.
+> [!WARNING]
+> **macOS does not work at the moment.** Drag'n Wash is built with Unity 6.3, and the Doorstop loader that BepInEx 5.4.23.5 uses on macOS cannot hook Unity 6.3 games yet ([NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)). Doorstop loads into the game, but BepInEx never starts: no `BepInEx/LogOutput.log` and no `BepInEx/config` appear, and the game runs in English. This was checked on an Apple M3 Pro with macOS 26.6, both natively and under Rosetta. It is a BepInEx-side problem, so nothing in this mod can work around it; once a BepInEx release carries the fix, macOS will be tested again.
 
 ### Manual installation
 
