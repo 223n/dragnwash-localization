@@ -461,6 +461,23 @@ launch_options_state() {  # yes when every profile that knows the game has the w
     if [ "$known" -eq 1 ] && [ "$missing" -eq 0 ]; then echo yes; else echo no; fi
 }
 
+start_steam() {
+    # Start Steam in its own app-steam-*.scope. A plain child would stay in the
+    # cgroup of whatever ran this script (Dolphin names it after the script),
+    # and the desktop portal would then take Steam for install-steamdeck.sh and
+    # ask "Share screen with" again instead of using Steam's saved permission.
+    local unit
+    unit="app-steam-$(od -An -N8 -tx8 /dev/urandom | tr -d ' \n').scope"
+    if command -v systemd-run >/dev/null 2>&1 &&
+        systemd-run --user --scope --quiet true >/dev/null 2>&1; then
+        log "starting Steam in $unit"
+        (nohup systemd-run --user --scope --quiet --slice=app.slice --unit="$unit" steam >/dev/null 2>&1 &) || true
+    else
+        log "systemd-run not usable; starting Steam directly"
+        (nohup steam >/dev/null 2>&1 &) || true
+    fi
+}
+
 with_steam_closed() {  # with_steam_closed set|remove ; returns 0 if applied
     local action="$1" was_running=0
     if steam_running; then
@@ -493,7 +510,7 @@ with_steam_closed() {  # with_steam_closed set|remove ; returns 0 if applied
     log "launch option $action: edit returned $rc"
     if [ "$was_running" -eq 1 ]; then
         log "starting Steam again"
-        (nohup steam >/dev/null 2>&1 &) || true
+        start_steam
     fi
     return "$rc"
 }
