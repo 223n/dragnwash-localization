@@ -142,15 +142,18 @@ t() {
         ja:lo_same) echo "起動オプション: 設定済み" ;;
         zh:lo_same) echo "启动选项：已设置" ;;
         *:lo_same) echo "Launch option: already set" ;;
-        ja:lo_ask) echo "Steam の起動オプションを自動で設定するには、Steam を一度終了する必要があります。Steam を終了して設定しますか？（終了後、Steam を再起動します）" ;;
-        zh:lo_ask) echo "要自动设置 Steam 启动选项，需要先关闭 Steam。现在关闭 Steam 并设置吗？（设置后会重新启动 Steam）" ;;
-        *:lo_ask) echo "Setting the Steam launch option automatically needs Steam to be closed. Close Steam and set it now? (Steam is started again afterwards)" ;;
+        ja:lo_ask) echo "Steam の起動オプションを自動で変更するには、Steam を一度終了する必要があります。Steam を終了して変更しますか？（変更後、Steam を再起動します）" ;;
+        zh:lo_ask) echo "要自动修改 Steam 启动选项，需要先关闭 Steam。现在关闭 Steam 并修改吗？（修改后会重新启动 Steam）" ;;
+        *:lo_ask) echo "Changing the Steam launch option automatically needs Steam to be closed. Close Steam and change it now? (Steam is started again afterwards)" ;;
         ja:lo_manual) echo "起動オプションは手動で設定してください: Steam でゲームのプロパティ → 起動オプション に次を入力" ;;
         zh:lo_manual) echo "请手动设置启动选项：在 Steam 中打开游戏属性 → 启动选项，输入以下内容" ;;
         *:lo_manual) echo "Set the launch option by hand: in Steam, game Properties → Launch Options, enter" ;;
         ja:lo_done) echo "起動オプションを設定しました:" ;;
         zh:lo_done) echo "启动选项已设置：" ;;
         *:lo_done) echo "Launch option set:" ;;
+        ja:lo_manual_remove) echo "起動オプションは手動で元に戻してください: Steam でゲームのプロパティ → 起動オプション から ./run_bepinex.sh を消す" ;;
+        zh:lo_manual_remove) echo "请手动恢复启动选项：在 Steam 中打开游戏属性 → 启动选项，删除 ./run_bepinex.sh" ;;
+        *:lo_manual_remove) echo "Restore the launch option by hand: in Steam, game Properties → Launch Options, remove ./run_bepinex.sh" ;;
         ja:lo_removed) echo "起動オプションを元に戻しました" ;;
         zh:lo_removed) echo "启动选项已恢复" ;;
         *:lo_removed) echo "Launch option restored" ;;
@@ -166,9 +169,9 @@ t() {
         ja:keep) echo "セーブ履歴と翻訳作業ファイルは残しますか？" ;;
         zh:keep) echo "保留存档历史和翻译工作文件吗？" ;;
         *:keep) echo "Keep save history and translation working files?" ;;
-        ja:rmbep) echo "BepInEx も削除しますか？（このインストーラーが入れて、他の Mod がない場合のみ）" ;;
-        zh:rmbep) echo "同时删除 BepInEx 吗？（仅当由本安装器安装且没有其他 Mod 时）" ;;
-        *:rmbep) echo "Also remove BepInEx? (only if this installer put it there and no other mod uses it)" ;;
+        ja:rmbep) echo "BepInEx も削除しますか？（BepInEx を使う Mod はほかにありません）" ;;
+        zh:rmbep) echo "同时删除 BepInEx 吗？（没有其他使用 BepInEx 的 Mod）" ;;
+        *:rmbep) echo "Also remove BepInEx? (no other mod uses it)" ;;
         ja:bep_kept) echo "BepInEx: 他の Mod があるため残しました" ;;
         zh:bep_kept) echo "BepInEx：存在其他 Mod，已保留" ;;
         *:bep_kept) echo "BepInEx: kept, other mods use it" ;;
@@ -399,6 +402,16 @@ edit_launch_options() {  # edit_launch_options set|remove ; 0 if any profile cha
     [ "$changed" -eq 1 ]
 }
 
+launch_options_any() {  # yes when at least one profile has the wrapper
+    local vdf rc
+    for vdf in "$HOME/.local/share/Steam/userdata"/*/config/localconfig.vdf; do
+        [ -f "$vdf" ] || continue
+        rc=0; vdf_tool "$vdf" check || rc=$?
+        [ "$rc" -eq 0 ] && { echo yes; return; }
+    done
+    echo no
+}
+
 launch_options_state() {  # yes when every profile that knows the game has the wrapper
     local vdf rc known=0 missing=0
     for vdf in "$HOME/.local/share/Steam/userdata"/*/config/localconfig.vdf; do
@@ -597,12 +610,25 @@ $GAME_DIR" 1 || exit 1
     fi
     rm -f "$GAME_DIR/BepInEx/config/$CFG_NAME"
 
-    if [ -f "$GAME_DIR/BepInEx/$MARKER" ]; then
-        if [ "$REMOVE_BEPINEX" -eq 1 ] || { [ "$ASSUME_YES" -eq 0 ] && ask_yes "$(t rmbep)" 0; }; then
-            others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null | head -1)"
-            if [ -n "$others" ]; then
-                say "$(t bep_kept)"
-            else
+    # BepInEx and the launch option only matter to other mods now. If there
+    # are none, offer to remove BepInEx whoever installed it (the default
+    # follows whether this script did), and take ./run_bepinex.sh out of the
+    # launch options either way: the wrapper would only load an empty
+    # plugin folder, and without the BepInEx files it would stop the game
+    # from starting at all.
+    others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null | head -1)"
+    if [ -n "$others" ]; then
+        say "$(t bep_kept)"
+    else
+        if [ -f "$GAME_DIR/BepInEx/core/BepInEx.dll" ]; then
+            default_remove=0; [ -f "$GAME_DIR/BepInEx/$MARKER" ] && default_remove=1
+            remove_bep=0
+            if [ "$REMOVE_BEPINEX" -eq 1 ]; then
+                remove_bep=1
+            elif [ "$ASSUME_YES" -eq 0 ] && ask_yes "$(t rmbep)" "$default_remove"; then
+                remove_bep=1
+            fi
+            if [ "$remove_bep" -eq 1 ]; then
                 rm -f "$GAME_DIR/run_bepinex.sh" "$GAME_DIR/libdoorstop.so" "$GAME_DIR/.doorstop_version"
                 if [ -f "$GAME_DIR/changelog.txt" ] && grep -qi 'bepinex\|doorstop' "$GAME_DIR/changelog.txt"; then rm -f "$GAME_DIR/changelog.txt"; fi
                 if [ "$keep" -eq 1 ] && [ -d "$dir" ]; then
@@ -612,8 +638,14 @@ $GAME_DIR" 1 || exit 1
                     rm -rf "$GAME_DIR/BepInEx"
                 fi
                 say "$(t bep_removed)"
-                if with_steam_closed remove; then say "$(t lo_removed)"; fi
             fi
+        fi
+        if [ "$(launch_options_any)" = no ]; then
+            :   # nothing to take out
+        elif with_steam_closed remove; then
+            say "$(t lo_removed)"
+        else
+            say "$(t lo_manual_remove)"
         fi
     fi
     finish_message "$(t undone)"
