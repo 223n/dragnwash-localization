@@ -51,6 +51,7 @@ BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 BepInEx/plugins/DragNWashLocalization/data/script_order.csv
 BepInEx/plugins/DragNWashLocalization/data/level_flow.csv
 Install.exe
+install-steamdeck.sh
 installer/Installer.ps1
 README.md
 ```

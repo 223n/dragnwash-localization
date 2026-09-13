@@ -48,13 +48,33 @@
 > [!IMPORTANT]
 > Steam Deck での動作は **v0.3.0 以降**です。それより前のバージョンでも起動はしますが、Deck では F1 メニューを操作できません。
 
-Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Install.exe` は使えないので手動で入れます（デスクトップモードで作業）。
+Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Install.exe` は Windows 用なので、Deck ではインストールスクリプトを使います。
+
+**インストールスクリプト（推奨）**。デスクトップモードで作業します。
+
+1. [Releases ページ](https://github.com/TomXV/dragnwash-localization/releases)から zip をダウンロードして展開する（右クリック → 展開）
+2. 展開したフォルダを開き、何もない所を右クリックして **ここでターミナルを開く** を選ぶ
+3. 次の 1 行を入力して Enter
+
+   ```bash
+   bash install-steamdeck.sh
+   ```
+
+4. 言語を選ぶ。起動オプションを設定するため Steam を一度終了する必要があり、その前に確認が出ます（設定後に Steam を起動し直します）
+5. ゲームモードに戻ってゲームを起動する。言語はあとから **Options → 言語（Mod）** で変えられます
+
+スクリプトは、Steam のライブラリ（SD カードも含む）からゲームを探し、公式の Linux 版 BepInEx 5.4.23.5 をダウンロードして SHA-256 で検証し、`run_bepinex.sh` の `executable_name="DragNWash"` を設定し、Mod をコピーし、ゲームの起動オプションに `./run_bepinex.sh %command%` を追加します（すでに設定しているオプションは残します）。もう一度実行すると更新になります。`bash install-steamdeck.sh --uninstall` で削除でき、セーブ履歴は残し、BepInEx も消す場合は起動オプションを元に戻します。
+
+<details>
+<summary>Deck に手動で導入する場合</summary>
 
 1. [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip) をゲームフォルダ（`~/.local/share/Steam/steamapps/common/Drag'n Wash/`）に展開する
 2. この Mod の zip の `BepInEx/` を同じ場所に重ねる
 3. `run_bepinex.sh` を開き、`executable_name="DragNWash"` にして保存。`chmod +x run_bepinex.sh` で実行権限を付ける
 4. Steam のゲームのプロパティ → 起動オプションに `./run_bepinex.sh %command%`
-5. 起動する。言語は `BepInEx/config/com.tomxv.dragnwash.localization.cfg` の `TargetLocale`（初回起動後に生成）で変えられます
+5. 起動する。言語は **Options → 言語（Mod）** で変えられます
+
+</details>
 
 フォントの準備は不要です。ゲーム本編の文字は SteamOS 標準の Noto Sans CJK をファイルから直接読み（日本語・中国語・韓国語の各書体）、F1 メニューは同梱の Noto Sans JP（`dragnwash-menufont.bundle`）で描きます（Steam の Linux ランタイム内では Unity のメニュー描画から CJK フォントが見えないため）。このメニュー用フォントにはハングルとヘブライ文字がないので、Deck の F1 の言語ボタンではこの 2 言語はロケールコードで表示されます。ゲーム本編は通常どおり表示されます。
 

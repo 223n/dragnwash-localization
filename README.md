@@ -48,13 +48,33 @@ If you prefer to do it by hand, follow the manual steps below.
 > [!IMPORTANT]
 > Steam Deck support requires **v0.3.0 or later**. Earlier versions run on the Deck but the F1 menu cannot be operated there.
 
-Works with the native Linux build of the game and the Linux build of BepInEx. `Install.exe` does not apply here, so install by hand (Desktop Mode on the Deck):
+Works with the native Linux build of the game and the Linux build of BepInEx. `Install.exe` is for Windows; on the Deck use the install script instead.
+
+**Install script (recommended)**, in Desktop Mode:
+
+1. Download the zip from the [Releases page](https://github.com/TomXV/dragnwash-localization/releases) and extract it (right-click → Extract).
+2. Open the extracted folder, right-click an empty spot and choose **Open Terminal Here**.
+3. Type the following and press Enter:
+
+   ```bash
+   bash install-steamdeck.sh
+   ```
+
+4. Pick a language. Steam has to close for a moment so the launch option can be set; the script asks first and starts Steam again.
+5. Go back to Gaming Mode and start the game. Change language later in **Options → Language (Mod)**.
+
+The script finds the game in your Steam libraries (including an SD card), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256, sets `executable_name="DragNWash"` in `run_bepinex.sh`, copies the mod, and adds `./run_bepinex.sh %command%` to the game's launch options while keeping any options you already had. Running it again updates the mod. `bash install-steamdeck.sh --uninstall` removes it, keeping your save history, and restores the launch options when BepInEx goes too.
+
+<details>
+<summary>Manual installation on the Deck</summary>
 
 1. Extract [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip) into the game folder (`~/.local/share/Steam/steamapps/common/Drag'n Wash/`).
 2. Merge this mod's `BepInEx/` folder into the same place.
 3. Open `run_bepinex.sh`, set `executable_name="DragNWash"`, save, and run `chmod +x run_bepinex.sh`.
 4. In Steam, game properties → Launch options: `./run_bepinex.sh %command%`
-5. Start the game. Change the language in `BepInEx/config/com.tomxv.dragnwash.localization.cfg` (`TargetLocale`, created on first run).
+5. Start the game. Change the language in **Options → Language (Mod)**.
+
+</details>
 
 Fonts need no extra setup: the game text uses SteamOS's Noto Sans CJK straight from the font file (Japanese, Chinese and Korean faces), and the F1 menu draws with a bundled Noto Sans JP (`dragnwash-menufont.bundle`), because Steam's Linux runtime exposes no CJK font to Unity's menu system. That menu font has no Hangul or Hebrew, so on the Deck those languages show their locale code on the F1 language buttons; the game itself displays them normally.
 
