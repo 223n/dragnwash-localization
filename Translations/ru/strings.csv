@@ -14,7 +14,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"О, привет! эм.."
 32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,Ага! Я и есть <i>тот самый</i> кобольд!
 d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,"Да, добро пожаловать в Drag'N Wash!"
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"Ха-ха, это точно!"
-84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Alexander,Чудесно!
+84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Чудесно!
 900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,Меня зовут Райан. Так...
 092808653667e9ff,L01 Ryan,Ryan_1_intro,11,Ryan,как мне зайти?
 0f3f0b7e817061e6,L01 Ryan,Ryan_1_intro,12,Kobold,"Секундочку, мне нужно открыть ворота."
@@ -28,7 +28,7 @@ ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"А, вижу там кнопку
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,Только что!
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"Да, поговорил."
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"А, хорошо."
-ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Alexander,...
+ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,В таком случае... Продуктивного дня.
 693491dd1e43554f,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Здравствуйте, <i>«Франшиза Drag'n'wash 223»...</i> Вы уже разобрались, как взаимодействовать с предметами?"
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,Не-а.
@@ -60,12 +60,12 @@ c2aa03c999eb7731,L01 Ryan,Ryan_1_nag,1,Ryan,"Эй, я хочу кое-что с�
 699cdec6a62f5ff3,L01 Ryan,Ryan_1_Outro,2,Ryan,Это было куда приятнее шланга.
 c3bbf19f280c6dde,L01 Ryan,Ryan_1_Outro,3,Kobold,Всегда пожалуйста.
 66984a1e53d3e869,L01 Ryan,Ryan_1_Outro,4,Kobold,Ага! Приходите в любое время.
-d629b0ed3f97727c,L01 Ryan,Ryan_1_Outro,5,Ryan,Обязательно расскажу другим об этом месте
-e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,6,Ryan,Я точно буду иметь это место в виду.
-29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,7,Ryan,Ха-ха. И тебе «Yip».
-0712e97652e51758,L01 Ryan,Ryan_1_Outro,8,Ryan,"Ну, мне тут понравилось, до встречи!"
-17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,9,Ryan,"Откроешь ворота, чтобы меня выпустить?"
-1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,10,Kobold,Спасибо!
+d629b0ed3f97727c,L01 Ryan,Ryan_1_Outro,6,Ryan,Обязательно расскажу другим об этом месте
+e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,Я точно буду иметь это место в виду.
+29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,8,Ryan,Ха-ха. И тебе «Yip».
+0712e97652e51758,L01 Ryan,Ryan_1_Outro,9,Ryan,"Ну, мне тут понравилось, до встречи!"
+17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,10,Ryan,"Откроешь ворота, чтобы меня выпустить?"
+1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,12,Ryan/Conrad/Kobold/Dragon,Спасибо!
 
 # ===== Level 2: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_1 ---
@@ -118,25 +118,25 @@ ee7433c3dd161b65,L02 Conrad,Conrad_Outro_1,12,Conrad,Короче... Выпус�
 # --- intro: Alexander_1_intro ---
 dbca31128a900488,L03 Alexander,Alexander_1_intro,1,Alexander,"Добрый вечер. В этом заведении принимают без записи, верно?"
 a6208f4370193b60,L03 Alexander,Alexander_1_intro,2,Kobold,Принимаем! Вы... из колледжа...?
-fdf9d60aca05c19e,L03 Alexander,Alexander_1_intro,3,Alexander,"Именно так, вы, должно быть, узнали мой герб! Я преподаю алхимию."
-12456a9c2599222e,L03 Alexander,Alexander_1_intro,4,Alexander,"... Занятие, которое мне предстоит вести совсем скоро."
-cccd2e909950ad59,L03 Alexander,Alexander_1_intro,5,Alexander,Превосходно.
-f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,6,Alexander,"Мне нужно управиться быстро, студенты сами себя не обучат."
-26f8788d21d9fd7d,L03 Alexander,Alexander_1_intro,7,Kobold,Никогда не мыл дракона-учителя... ух ты.
-7cc55c8bb6442b93,L03 Alexander,Alexander_1_intro,8,Kobold,"Хорошо, я открою ворота!"
-c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,9,Alexander,Профессора... Но да. Я обычно не хожу в общественные мойки.
-8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,10,Alexander,Благодарю вас.
-57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,11,Alexander,"О, и прошу прощения за то, что я совершенно грязен."
-da7509a323bc8646,L03 Alexander,Alexander_1_intro,12,Alexander,"Прискорбное положение, в котором я оказался..."
-550840616bc8148d,L03 Alexander,Alexander_1_intro,13,Kobold,Вы... не такой уж и грязный.
-21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,14,Kobold,Без проблем. Сейчас открою вам ворота!
-14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,15,Alexander,"Нет, грязен."
-65b94d53036df4ac,L03 Alexander,Alexander_1_intro,16,Alexander,Не откроете ли вы ворота?
-f602395a77ff68c4,L03 Alexander,Alexander_1_intro,17,Kobold,Ой. да. Простите.
+fdf9d60aca05c19e,L03 Alexander,Alexander_1_intro,4,Alexander,"Именно так, вы, должно быть, узнали мой герб! Я преподаю алхимию."
+12456a9c2599222e,L03 Alexander,Alexander_1_intro,5,Alexander,"... Занятие, которое мне предстоит вести совсем скоро."
+cccd2e909950ad59,L03 Alexander,Alexander_1_intro,6,Alexander,Превосходно.
+f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,"Мне нужно управиться быстро, студенты сами себя не обучат."
+26f8788d21d9fd7d,L03 Alexander,Alexander_1_intro,8,Kobold,Никогда не мыл дракона-учителя... ух ты.
+7cc55c8bb6442b93,L03 Alexander,Alexander_1_intro,9,Kobold,"Хорошо, я открою ворота!"
+c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,Профессора... Но да. Я обычно не хожу в общественные мойки.
+8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,Благодарю вас.
+57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,"О, и прошу прощения за то, что я совершенно грязен."
+da7509a323bc8646,L03 Alexander,Alexander_1_intro,13,Alexander,"Прискорбное положение, в котором я оказался..."
+550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,Вы... не такой уж и грязный.
+21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,Без проблем. Сейчас открою вам ворота!
+14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,"Нет, грязен."
+65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,Не откроете ли вы ворота?
+f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,Ой. да. Простите.
 # --- progress: Alexander_1_required ---
 f8d26c6d83205a5d,L03 Alexander,Alexander_1_required,1,Alexander,Знаете... Здешняя обстановка весьма приятна. Очень... пролетарская.
 c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,проле... <i><size=70%>чего?
-3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold,Спасибо!
+3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,Спасибо!
 90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,"О, ну... рабочий класс?"
 55c80016618e1bc5,L03 Alexander,Alexander_1_required,5,Alexander,"Простите, я хотел сказать, что мне нравится ваша мойка."
 02fa2a9691178177,L03 Alexander,Alexander_1_required,6,Alexander,Разумеется
@@ -147,32 +147,32 @@ f33ca08a17779409,L03 Alexander,alexander_jerk_off_no,1,Alexander,"<i>О.</i> Н�
 170ebd10775afd58,L03 Alexander,alexander_mount_no,1,Alexander,"Я... не уверен, что хотел бы воспользоваться этим сегодня."
 # --- outro: Alexander_1_Outro ---
 d202075090a8960b,L03 Alexander,Alexander_1_Outro,1,Alexander,"Должен сказать, вы справились не хуже частных мойщиков."
-b6069e62e167364f,L03 Alexander,Alexander_1_Outro,2,Kobold,"Ммм-гм, я всегда стараюсь изо всех сил."
-981447d1952fe850,L03 Alexander,Alexander_1_Outro,3,Alexander,"Ха-ха, воистину «Yip»."
-5d7279822bcee7dd,L03 Alexander,Alexander_1_Outro,4,Alexander,Моим студентам стоило бы поучиться у вас трудолюбию!
-8117291ab8529b4f,L03 Alexander,Alexander_1_Outro,5,Alexander,"Я бы с радостью побеседовал ещё, право слово, но скоро занятие."
-dae0c0aa3ae01c37,L03 Alexander,Alexander_1_Outro,6,Alexander,...Благодарю вас за это.
+b6069e62e167364f,L03 Alexander,Alexander_1_Outro,3,Kobold,"Ммм-гм, я всегда стараюсь изо всех сил."
+981447d1952fe850,L03 Alexander,Alexander_1_Outro,4,Alexander,"Ха-ха, воистину «Yip»."
+5d7279822bcee7dd,L03 Alexander,Alexander_1_Outro,5,Alexander,Моим студентам стоило бы поучиться у вас трудолюбию!
+8117291ab8529b4f,L03 Alexander,Alexander_1_Outro,6,Alexander,"Я бы с радостью побеседовал ещё, право слово, но скоро занятие."
+dae0c0aa3ae01c37,L03 Alexander,Alexander_1_Outro,7,Alexander,...Благодарю вас за это.
 
 # ===== Level 4: Ryan (Sunny) =====
 # --- intro: Ryan_2_intro ---
 7825d92f67bdcdef,L04 Ryan,Ryan_2_intro,1,Ryan,И снова привет!
 cd26586143766826,L04 Ryan,Ryan_2_intro,2,Kobold,"Привет, Райан!"
-6a67a8866ec70c09,L04 Ryan,Ryan_2_intro,3,Ryan,"Привет, рад вернуться."
-921bd4effdaa2a2f,L04 Ryan,Ryan_2_intro,4,Ryan,Хах... тебе правда нравится этот звук.
-387d0da740d0826e,L04 Ryan,Ryan_2_intro,5,Ryan,Мне снова нужна мойка.
-e542b800ecfc350a,L04 Ryan,Ryan_2_intro,6,Ryan,Пытаюсь ненадолго выбраться из дома.
-78b22bcc76942425,L04 Ryan,Ryan_2_intro,7,Ryan,Погулял с друзьями.
-21abbb56e463a200,L04 Ryan,Ryan_2_intro,8,Ryan,Маркеры были прикольные.
-da3405e1151a476e,L04 Ryan,Ryan_2_intro,9,Ryan,"Но, думаю, пора отмыться."
-41dc14e2cd744b1b,L04 Ryan,Ryan_2_intro,10,Kobold,"О, конечно. Заходите."
-b231225bfcc08d4c,L04 Ryan,Ryan_2_intro,11,Kobold,Всё в порядке?
-056b5511850d7220,L04 Ryan,Ryan_2_intro,12,Ryan,"Хорошо, спасибо."
-b4e4d893367947a0,L04 Ryan,Ryan_2_intro,13,Ryan,"Да, всё нормально. Извини."
-c9cdea9d31e53d5b,L04 Ryan,Ryan_2_intro,14,Ryan,"Просто тяжёлый день. Надеюсь, это поможет!"
-ab74167fe23c9db5,L04 Ryan,Ryan_2_intro,15,Ryan,"Так, эм, ворота?"
-5cbc0ceea57587db,L04 Ryan,Ryan_2_intro,16,Kobold,Ой... Да. Уже бегу.
-08411b780900fb59,L04 Ryan,Ryan_2_intro,17,Kobold,Конечно. Одну минутку!
-a386908e3024f35e,L04 Ryan,Ryan_2_intro,18,Ryan,Отлично.
+6a67a8866ec70c09,L04 Ryan,Ryan_2_intro,4,Ryan,"Привет, рад вернуться."
+921bd4effdaa2a2f,L04 Ryan,Ryan_2_intro,5,Ryan,Хах... тебе правда нравится этот звук.
+387d0da740d0826e,L04 Ryan,Ryan_2_intro,6,Ryan,Мне снова нужна мойка.
+e542b800ecfc350a,L04 Ryan,Ryan_2_intro,7,Ryan,Пытаюсь ненадолго выбраться из дома.
+78b22bcc76942425,L04 Ryan,Ryan_2_intro,8,Ryan,Погулял с друзьями.
+21abbb56e463a200,L04 Ryan,Ryan_2_intro,9,Ryan,Маркеры были прикольные.
+da3405e1151a476e,L04 Ryan,Ryan_2_intro,10,Ryan,"Но, думаю, пора отмыться."
+41dc14e2cd744b1b,L04 Ryan,Ryan_2_intro,11,Kobold,"О, конечно. Заходите."
+b231225bfcc08d4c,L04 Ryan,Ryan_2_intro,12,Kobold,Всё в порядке?
+056b5511850d7220,L04 Ryan,Ryan_2_intro,13,Ryan,"Хорошо, спасибо."
+b4e4d893367947a0,L04 Ryan,Ryan_2_intro,14,Ryan,"Да, всё нормально. Извини."
+c9cdea9d31e53d5b,L04 Ryan,Ryan_2_intro,15,Ryan,"Просто тяжёлый день. Надеюсь, это поможет!"
+ab74167fe23c9db5,L04 Ryan,Ryan_2_intro,17,Ryan,"Так, эм, ворота?"
+5cbc0ceea57587db,L04 Ryan,Ryan_2_intro,18,Kobold,Ой... Да. Уже бегу.
+08411b780900fb59,L04 Ryan,Ryan_2_intro,19,Kobold,Конечно. Одну минутку!
+a386908e3024f35e,L04 Ryan,Ryan_2_intro,20,Ryan,Отлично.
 # --- progress: Ryan_2_required ---
 580684f8909e025d,L04 Ryan,Ryan_2_required,1,Ryan,Эй.
 b4eff799a0271863,L04 Ryan,Ryan_2_required,2,Kobold,Хм?
@@ -184,23 +184,23 @@ c10c037156053bfe,L04 Ryan,Ryan_2_required,6,Kobold,Конечно.
 0fa0dff561f86016,L04 Ryan,Ryan_2_required,8,Ryan,"Так вот, насчёт... отношений."
 9a38b89ed035e464,L04 Ryan,Ryan_2_required,9,Ryan,"Если отношения <i>настолько</i> тряские и ты знаешь, что они закончатся."
 9b943020b9ae2658,L04 Ryan,Ryan_2_required,10,Ryan,И ты уже всё перепробовал.
-954ba66a076849a5,L04 Ryan,Ryan_2_required,11,Ryan,Когда их на самом деле пора заканчивать?
-f173e528733bb05a,L04 Ryan,Ryan_2_required,12,Kobold,Ох... Райан...
-7b102f547a549072,L04 Ryan,Ryan_2_required,13,Kobold,"Я... не уверен, что могу ответить на это за тебя."
-d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,14,Ryan,"Знаю. Знаю, что не стоит вываливать это на тебя."
-64973f6ac9ac08be,L04 Ryan,Ryan_2_required,15,Ryan,Просто с тобой очень спокойно.
-93fa9e1a16f34a7d,L04 Ryan,Ryan_2_required,16,Ryan,"Ты прав... Конечно, ты не можешь."
-797653f5e081152e,L04 Ryan,Ryan_2_required,17,Ryan,"Я просто рад, что здесь меня не осуждают."
-b11d41e01fefb995,L04 Ryan,Ryan_2_required,18,Kobold,Спасибо. Мне с тобой тоже хорошо.
-c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,19,Kobold,"Надеюсь, всё наладится."
-ebb96171ea7628a0,L04 Ryan,Ryan_2_required,20,Alexander,Я рад.
-91c0e3e9014024af,L04 Ryan,Ryan_2_required,21,Ryan,я тоже.
+954ba66a076849a5,L04 Ryan,Ryan_2_required,12,Ryan,Когда их на самом деле пора заканчивать?
+f173e528733bb05a,L04 Ryan,Ryan_2_required,13,Kobold,Ох... Райан...
+7b102f547a549072,L04 Ryan,Ryan_2_required,14,Kobold,"Я... не уверен, что могу ответить на это за тебя."
+d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,15,Ryan,"Знаю. Знаю, что не стоит вываливать это на тебя."
+64973f6ac9ac08be,L04 Ryan,Ryan_2_required,16,Ryan,Просто с тобой очень спокойно.
+93fa9e1a16f34a7d,L04 Ryan,Ryan_2_required,17,Ryan,"Ты прав... Конечно, ты не можешь."
+797653f5e081152e,L04 Ryan,Ryan_2_required,18,Ryan,"Я просто рад, что здесь меня не осуждают."
+b11d41e01fefb995,L04 Ryan,Ryan_2_required,20,Kobold,Спасибо. Мне с тобой тоже хорошо.
+c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,21,Kobold,"Надеюсь, всё наладится."
+ebb96171ea7628a0,L04 Ryan,Ryan_2_required,22,Ryan/Kobold/Alexander,Я рад.
+91c0e3e9014024af,L04 Ryan,Ryan_2_required,23,Ryan,я тоже.
 # --- outro: Ryan_2_Outro ---
 cb57ee6155ed6ca5,L04 Ryan,Ryan_2_Outro,1,Ryan,Ну вот. Весь чистый.
 f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,"Прости, что вывалил на тебя всё это раньше."
 a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,Всё в порядке!
 94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,"Я знаю, бывает нелегко."
-4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Alexander,Ты очень милый.
+4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,Ты очень милый.
 ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,"Жаль, что это не так просто, как в кино."
 0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,"Приходи в любое время, Райан."
 78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,"Если хочешь ещё поговорить об этом, у меня есть минутка."
@@ -219,16 +219,16 @@ bc78d04f7d5861dc,L04 Ryan,Ryan_2_Outro,20,Kobold,"Звучит так, будт�
 08a70054f59e703a,L04 Ryan,Ryan_2_Outro,21,Ryan,Ага...
 6079131a1c79adef,L04 Ryan,Ryan_2_Outro,22,Ryan,"Но, честно, ты мне очень помог."
 92536deee525f694,L04 Ryan,Ryan_2_Outro,23,Ryan,Дал время подумать.
-c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,24,Ryan,Я тоже так подумал.
-9ebcf8a46cc189b7,L04 Ryan,Ryan_2_Outro,25,Ryan,"Мне кажется, она расстроена из-за чего-то другого..."
-8c3115a4e2a9a664,L04 Ryan,Ryan_2_Outro,26,Ryan,"Мне просто не нравится, что она срывается на мне."
-393d8e5925dc5937,L04 Ryan,Ryan_2_Outro,27,Ryan,В общем...
-7258b4e037805024,L04 Ryan,Ryan_2_Outro,28,Ryan,"Спасибо, что выслушал."
-951382e00968439d,L04 Ryan,Ryan_2_Outro,29,Kobold,"Всегда пожалуйста, Райан."
-c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,30,Kobold,"Конечно. Жаль, что тебе приходится через это проходить."
-553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,31,Ryan,Ничего. Я что-нибудь придумаю.
-bd7468846a30d095,L04 Ryan,Ryan_2_Outro,32,Kobold,Пойду открою тебе ворота.
-a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,33,Ryan,"Ладно, пока!"
+c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,25,Ryan,Я тоже так подумал.
+9ebcf8a46cc189b7,L04 Ryan,Ryan_2_Outro,26,Ryan,"Мне кажется, она расстроена из-за чего-то другого..."
+8c3115a4e2a9a664,L04 Ryan,Ryan_2_Outro,27,Ryan,"Мне просто не нравится, что она срывается на мне."
+393d8e5925dc5937,L04 Ryan,Ryan_2_Outro,31,Ryan,В общем...
+7258b4e037805024,L04 Ryan,Ryan_2_Outro,32,Ryan,"Спасибо, что выслушал."
+951382e00968439d,L04 Ryan,Ryan_2_Outro,33,Kobold,"Всегда пожалуйста, Райан."
+c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,34,Kobold,"Конечно. Жаль, что тебе приходится через это проходить."
+553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,36,Ryan,Ничего. Я что-нибудь придумаю.
+bd7468846a30d095,L04 Ryan,Ryan_2_Outro,37,Kobold,Пойду открою тебе ворота.
+a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,38,Ryan,"Ладно, пока!"
 
 # ===== Level 5: Conrad (Rainy) | sets level_5 | ends MedkitCompleted, level_5_complete =====
 # --- intro: Conrad_Intro_2 ---
@@ -248,49 +248,49 @@ d886f3d923f9c796,L05 Conrad,Conrad_required_2,2,Conrad,"Это как раз т�
 ea8c1853a7d5966c,L05 Conrad,Conrad_required_2,3,Kobold,"Хочешь рассказать, что случилось...?"
 bded00d07cb1e457,L05 Conrad,Conrad_required_2,4,Kobold,"Мне жаль, что тебе досталось..."
 02f000041eb5ab82,L05 Conrad,Conrad_required_2,5,Conrad,"Хер там! Стыдно, блин."
-58356b98fdf40dc3,L05 Conrad,Conrad_required_2,6,Conrad,Не нужна мне твоя жалость!
-cb7847cb63566364,L05 Conrad,Conrad_required_2,7,Conrad,Просто...
-b48f291ebc6b18fe,L05 Conrad,Conrad_required_2,8,Conrad,"Ненавижу, что я вечно влипаю в такие истории."
-519b07c299436f2a,L05 Conrad,Conrad_required_2,9,Conrad,"Начинает казаться, что это <i>моя</i> вина."
-f5ad489eeba50b01,L05 Conrad,Conrad_required_2,10,Kobold,"<i>В этом</i> ты не виноват, Конрад."
-6402f4608ceb7bbb,L05 Conrad,Conrad_required_2,11,Kobold,"Мне правда жаль, что тебе досталось. Кто это сделал?"
-8e59613d6cd60464,L05 Conrad,Conrad_required_2,12,Conrad,"В этот раз, кажется, правда моя..."
-7058e362e43623f0,L05 Conrad,Conrad_required_2,13,Conrad,Один дрейк в баре... Я сглупил. Не смог заткнуться.
-ea289ebcdd7e81ef,L05 Conrad,Conrad_required_2,14,Conrad,Да какой-то дрейк в баре. Сглупил... Не смог заткнуться.
-aff317c06781bc70,L05 Conrad,Conrad_required_2,15,Conrad,Я не понимаю! Почему я должен так себя вести?
-da5eed4c72eb1073,L05 Conrad,Conrad_required_2,16,Kobold,Как «так»?
-193bb66a944990a8,L05 Conrad,Conrad_required_2,17,Kobold,"По-моему, ты классный, Конрад."
-c69250ea092a7fcd,L05 Conrad,Conrad_required_2,18,Conrad,"Ну... как мудак? Я знаю, что со мной хреново рядом."
-c2f21da58e28df4f,L05 Conrad,Conrad_required_2,19,Conrad,"Ты добрый. Это больше, чем я заслуживаю."
-9c529e9f79f39a21,L05 Conrad,Conrad_required_2,20,Conrad,Я мудак. Сам знаю.
-4b7317a793a0f728,L05 Conrad,Conrad_required_2,21,Conrad,"Прости, что рявкнул на тебя раньше."
-c4c0c9950baa723f,L05 Conrad,Conrad_required_2,22,Conrad,Ты этого не заслужил.
-9fa8cd9193124e79,L05 Conrad,Conrad_required_2,23,Kobold,Всё нормально. Тебе явно сейчас непросто.
-249133e0671a807b,L05 Conrad,Conrad_required_2,24,Kobold,Всё в порядке.
-c61717fe95ec2b9c,L05 Conrad,Conrad_required_2,25,Conrad,"Это не значит, что мне нужно на тебя орать."
-652daa6043287e1b,L05 Conrad,Conrad_required_2,26,Conrad,Хватит отмазок.
-65b4e7b9caad6028,L05 Conrad,Conrad_required_2,27,Conrad,"Нет, не в порядке. Хватит отмазок."
-334ade0356dff453,L05 Conrad,Conrad_required_2,28,Conrad,Мне нужно стать лучше. Я <i>хочу </i>стать лучше.
-1d190e45e1ddc239,L05 Conrad,Conrad_required_2,29,Conrad,"Только эм... Никому не говори, что я всё это наговорил."
-3969155d983b9b32,L05 Conrad,Conrad_required_2,30,Kobold,Твой секрет в надёжных лапах.
-bd7f2cf961e397ca,L05 Conrad,Conrad_required_2,31,Kobold,Не скажу.
-0cd12abef67edc64,L05 Conrad,Conrad_required_2,32,Conrad,...Спасибо.
-bbaef120c3a81475,L05 Conrad,Conrad_required_2,33,Conrad,"И хорошо, что у тебя есть аптечка... Ты хорошо подготовлен."
+58356b98fdf40dc3,L05 Conrad,Conrad_required_2,7,Conrad,Не нужна мне твоя жалость!
+cb7847cb63566364,L05 Conrad,Conrad_required_2,9,Conrad,Просто...
+b48f291ebc6b18fe,L05 Conrad,Conrad_required_2,10,Conrad,"Ненавижу, что я вечно влипаю в такие истории."
+519b07c299436f2a,L05 Conrad,Conrad_required_2,11,Conrad,"Начинает казаться, что это <i>моя</i> вина."
+f5ad489eeba50b01,L05 Conrad,Conrad_required_2,12,Kobold,"<i>В этом</i> ты не виноват, Конрад."
+6402f4608ceb7bbb,L05 Conrad,Conrad_required_2,13,Kobold,"Мне правда жаль, что тебе досталось. Кто это сделал?"
+8e59613d6cd60464,L05 Conrad,Conrad_required_2,14,Conrad,"В этот раз, кажется, правда моя..."
+7058e362e43623f0,L05 Conrad,Conrad_required_2,15,Conrad,Один дрейк в баре... Я сглупил. Не смог заткнуться.
+ea289ebcdd7e81ef,L05 Conrad,Conrad_required_2,16,Conrad,Да какой-то дрейк в баре. Сглупил... Не смог заткнуться.
+aff317c06781bc70,L05 Conrad,Conrad_required_2,17,Conrad,Я не понимаю! Почему я должен так себя вести?
+da5eed4c72eb1073,L05 Conrad,Conrad_required_2,18,Kobold,Как «так»?
+193bb66a944990a8,L05 Conrad,Conrad_required_2,19,Kobold,"По-моему, ты классный, Конрад."
+c69250ea092a7fcd,L05 Conrad,Conrad_required_2,20,Conrad,"Ну... как мудак? Я знаю, что со мной хреново рядом."
+c2f21da58e28df4f,L05 Conrad,Conrad_required_2,21,Conrad,"Ты добрый. Это больше, чем я заслуживаю."
+9c529e9f79f39a21,L05 Conrad,Conrad_required_2,22,Conrad,Я мудак. Сам знаю.
+4b7317a793a0f728,L05 Conrad,Conrad_required_2,23,Conrad,"Прости, что рявкнул на тебя раньше."
+c4c0c9950baa723f,L05 Conrad,Conrad_required_2,24,Conrad,Ты этого не заслужил.
+9fa8cd9193124e79,L05 Conrad,Conrad_required_2,25,Kobold,Всё нормально. Тебе явно сейчас непросто.
+249133e0671a807b,L05 Conrad,Conrad_required_2,26,Kobold,Всё в порядке.
+c61717fe95ec2b9c,L05 Conrad,Conrad_required_2,27,Conrad,"Это не значит, что мне нужно на тебя орать."
+652daa6043287e1b,L05 Conrad,Conrad_required_2,28,Conrad,Хватит отмазок.
+65b4e7b9caad6028,L05 Conrad,Conrad_required_2,29,Conrad,"Нет, не в порядке. Хватит отмазок."
+334ade0356dff453,L05 Conrad,Conrad_required_2,30,Conrad,Мне нужно стать лучше. Я <i>хочу </i>стать лучше.
+1d190e45e1ddc239,L05 Conrad,Conrad_required_2,31,Conrad,"Только эм... Никому не говори, что я всё это наговорил."
+3969155d983b9b32,L05 Conrad,Conrad_required_2,32,Kobold,Твой секрет в надёжных лапах.
+bd7f2cf961e397ca,L05 Conrad,Conrad_required_2,33,Kobold,Не скажу.
+0cd12abef67edc64,L05 Conrad,Conrad_required_2,34,Conrad,...Спасибо.
+bbaef120c3a81475,L05 Conrad,Conrad_required_2,35,Conrad,"И хорошо, что у тебя есть аптечка... Ты хорошо подготовлен."
 # --- jerkoff: conrad_jerk_off_no ---
 f81a53c29135dfa5,L05 Conrad,conrad_jerk_off_no,1,Conrad,"Эй, э... Не сейчас."
 # --- outro: Conrad_Outro_2 ---
 7f9f3c8d0db46cbf,L05 Conrad,Conrad_Outro_2,1,Conrad,Мне уже намного лучше.
 d4a62b147d5a622b,L05 Conrad,Conrad_Outro_2,2,Kobold,физически или эмоционально?
-0d49a74e82a2356a,L05 Conrad,Conrad_Outro_2,3,Conrad,"И так, и так."
-c38c5771c6cf6118,L05 Conrad,Conrad_Outro_2,4,Conrad,Я тоже.
-7e30c436a9112ecd,L05 Conrad,Conrad_Outro_2,5,Conrad,Ты... классный.
-229bd072e07a3d53,L05 Conrad,Conrad_Outro_2,6,Conrad,Серьёзно. Правда.
-ba15304b6e669701,L05 Conrad,Conrad_Outro_2,7,Kobold,"Я просто делаю то, что считаю правильным."
-1fb463b57138c081,L05 Conrad,Conrad_Outro_2,8,Kobold,Ты тоже классный. Работать над собой трудно.
-56c81331bdf0858e,L05 Conrad,Conrad_Outro_2,9,Conrad,"Надеюсь, я смогу этому научиться."
-3e2cb05f5d39c6e5,L05 Conrad,Conrad_Outro_2,10,Conrad,"Спасибо, но я стану лучше. Обещаю."
-8a3ca437a0d6d164,L05 Conrad,Conrad_Outro_2,11,Conrad,Не буду больше мозолить тебе глаза...
-c90e3d1d20fadd0f,L05 Conrad,Conrad_Outro_2,12,Conrad,Я обязательно вернусь.
+0d49a74e82a2356a,L05 Conrad,Conrad_Outro_2,4,Conrad,"И так, и так."
+c38c5771c6cf6118,L05 Conrad,Conrad_Outro_2,5,Conrad/Ryan,Я тоже.
+7e30c436a9112ecd,L05 Conrad,Conrad_Outro_2,6,Conrad,Ты... классный.
+229bd072e07a3d53,L05 Conrad,Conrad_Outro_2,7,Conrad,Серьёзно. Правда.
+ba15304b6e669701,L05 Conrad,Conrad_Outro_2,8,Kobold,"Я просто делаю то, что считаю правильным."
+1fb463b57138c081,L05 Conrad,Conrad_Outro_2,9,Kobold,Ты тоже классный. Работать над собой трудно.
+56c81331bdf0858e,L05 Conrad,Conrad_Outro_2,10,Conrad,"Надеюсь, я смогу этому научиться."
+3e2cb05f5d39c6e5,L05 Conrad,Conrad_Outro_2,11,Conrad,"Спасибо, но я стану лучше. Обещаю."
+8a3ca437a0d6d164,L05 Conrad,Conrad_Outro_2,12,Conrad,Не буду больше мозолить тебе глаза...
+c90e3d1d20fadd0f,L05 Conrad,Conrad_Outro_2,13,Conrad,Я обязательно вернусь.
 
 # ===== Level 6: Alexander (Night) | sets level_6_started =====
 # --- intro: Alexander_2_intro ---
@@ -350,21 +350,21 @@ cbbaf40d803468a2,L06 Alexander,Alexander_2_Outro,17,Alexander,И делаете 
 
 # ===== Level 7: Ryan (Sunny) =====
 # --- intro: Ryan_3_intro ---
-49e50c5be7d1583e,L07 Ryan,Ryan_3_intro,1,Kobold,Райан!
-346181d6c9954315,L07 Ryan,Ryan_3_intro,2,Kobold,С возвращением!
-c1cff3dbff6bfce2,L07 Ryan,Ryan_3_intro,3,Ryan,Это я.
-03810482331af8e2,L07 Ryan,Ryan_3_intro,4,Ryan,Рад быть здесь.
-e1a42aae663ccf1f,L07 Ryan,Ryan_3_intro,5,Ryan,Пришёл ещё раз помыться.
-fc7ed7b68999fdae,L07 Ryan,Ryan_3_intro,6,Ryan,Я...
-be0667bb01a8cd65,L07 Ryan,Ryan_3_intro,7,Ryan,Неважно. Откроешь ворота?
-20ed966db540aaaf,L07 Ryan,Ryan_3_intro,8,Kobold,"Да, сейчас открою."
-6c0973b0166d3528,L07 Ryan,Ryan_3_intro,9,Kobold,"Райан? ты уверен, что всё в порядке...?"
-8dff101cb2298f67,L07 Ryan,Ryan_3_intro,10,Ryan,"Нет, не совсем."
-1990b3ec8cd88a48,L07 Ryan,Ryan_3_intro,11,Ryan,Расскажу чуть позже. Можешь пока просто открыть ворота?
-85fec70372b092bb,L07 Ryan,Ryan_3_intro,12,Conrad,Ага.
-33e04b2f805d0e1a,L07 Ryan,Ryan_3_intro,13,Kobold,"Ладно. Но надеюсь, ты в порядке."
-f51bead488e14b65,L07 Ryan,Ryan_3_intro,14,Alexander,Спасибо.
-aac215f048e8ee54,L07 Ryan,Ryan_3_intro,15,Ryan,Справлюсь.
+49e50c5be7d1583e,L07 Ryan,Ryan_3_intro,2,Kobold,Райан!
+346181d6c9954315,L07 Ryan,Ryan_3_intro,3,Kobold,С возвращением!
+c1cff3dbff6bfce2,L07 Ryan,Ryan_3_intro,4,Ryan,Это я.
+03810482331af8e2,L07 Ryan,Ryan_3_intro,5,Ryan,Рад быть здесь.
+e1a42aae663ccf1f,L07 Ryan,Ryan_3_intro,6,Ryan,Пришёл ещё раз помыться.
+fc7ed7b68999fdae,L07 Ryan,Ryan_3_intro,7,Ryan,Я...
+be0667bb01a8cd65,L07 Ryan,Ryan_3_intro,8,Ryan,Неважно. Откроешь ворота?
+20ed966db540aaaf,L07 Ryan,Ryan_3_intro,9,Kobold,"Да, сейчас открою."
+6c0973b0166d3528,L07 Ryan,Ryan_3_intro,10,Kobold,"Райан? ты уверен, что всё в порядке...?"
+8dff101cb2298f67,L07 Ryan,Ryan_3_intro,12,Ryan,"Нет, не совсем."
+1990b3ec8cd88a48,L07 Ryan,Ryan_3_intro,13,Ryan,Расскажу чуть позже. Можешь пока просто открыть ворота?
+85fec70372b092bb,L07 Ryan,Ryan_3_intro,14,Kobold/Conrad,Ага.
+33e04b2f805d0e1a,L07 Ryan,Ryan_3_intro,15,Kobold,"Ладно. Но надеюсь, ты в порядке."
+f51bead488e14b65,L07 Ryan,Ryan_3_intro,16,Ryan/Conrad/Alexander,Спасибо.
+aac215f048e8ee54,L07 Ryan,Ryan_3_intro,17,Ryan,Справлюсь.
 # --- progress: Ryan_3_required ---
 eb256f4dcddfee94,L07 Ryan,Ryan_3_required,1,Ryan,"Насчёт того, что было раньше."
 1a17d73907f63be1,L07 Ryan,Ryan_3_required,2,Ryan,Несколько дней назад...
@@ -380,7 +380,7 @@ d9e1edc2e966ec26,L07 Ryan,Ryan_3_required,8,Ryan,Но никакие оправ�
 3e43d550d0572c10,L07 Ryan,Ryan_3_required,12,Ryan,Да... Совсем нелегко.
 8948d011be56c311,L07 Ryan,Ryan_3_required,13,Ryan,Но зато я познакомился с тобой!
 e484863d425a58e8,L07 Ryan,Ryan_3_required,14,Kobold,"Спасибо, Райан. Я тоже рад, что познакомился с тобой"
-1af4464c602a423a,L07 Ryan,Ryan_3_required,15,Conrad,"Ох, спасибо."
+1af4464c602a423a,L07 Ryan,Ryan_3_required,15,Kobold/Conrad,"Ох, спасибо."
 e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,Эти мойки правда всё облегчают.
 94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,К тому же они очень приятные.
 # --- outro: Ryan_3_Outro ---
@@ -418,14 +418,14 @@ a1d3f8d9c7e16f54,L08 Conrad,Conrad_Intro_3,10,Conrad,"<size=160%>ОХРЕНЕТ�
 8b742c36f3da7059,L08 Conrad,Conrad_Intro_3,13,Kobold,Ладно...
 3a1b28ba58f06ac8,L08 Conrad,Conrad_Intro_3,14,Kobold,Пойду открою ворота.
 c2ac4efff25192d6,L08 Conrad,Conrad_Intro_3,15,Conrad,Не... говори это таким тоном.
-faa0b4a641d866a4,L08 Conrad,Conrad_Intro_3,16,Conrad,Погнали~!
-f030a371b944e9be,L08 Conrad,Conrad_Intro_3,17,Conrad,Ещё бы!
+faa0b4a641d866a4,L08 Conrad,Conrad_Intro_3,17,Conrad,Погнали~!
+f030a371b944e9be,L08 Conrad,Conrad_Intro_3,18,Conrad/Ryan,Ещё бы!
 # --- phone: Conrad_3_PhoneTutorial ---
 eb8e96751da9e008,L08 Conrad,Conrad_3_PhoneTutorial,1,Phone,Мы получили ваш запрос на станок!
 4369749a5a3394e9,L08 Conrad,Conrad_3_PhoneTutorial,2,Kobold,Чт..?
 339397c0d1c1f21f,L08 Conrad,Conrad_3_PhoneTutorial,3,Phone,"Он прибыл этим утром, должен быть рядом с воротами."
 f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,"Вскройте ящик ломом и уберите станок на склад, будьте добры."
-435c7e974ca94c84,L08 Conrad,Conrad_3_PhoneTutorial,5,Phone,Чудесно. <i>Продуктивного</i> дня.
+435c7e974ca94c84,L08 Conrad,Conrad_3_PhoneTutorial,6,Phone,Чудесно. <i>Продуктивного</i> дня.
 # --- idle: Conrad_idle_3_1 ---
 37950c8a8db90865,L08 Conrad,Conrad_idle_3_1,1,Conrad,"Поставь мне станок, и я за него возьмусь."
 8f224115163c0dbe,L08 Conrad,Conrad_idle_3_1,2,Conrad,"Эй, поработай руками с моим членом... это приятно!"
@@ -439,11 +439,11 @@ ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,"А, да, вот 
 # --- cum: Conrad_finished_jerkoff_3 ---
 10069c101bcc95c1,L08 Conrad,Conrad_finished_jerkoff_3,1,Conrad,...!
 82d37703a9140210,L08 Conrad,Conrad_finished_jerkoff_3,2,Conrad,"Чёрт, а ты умеешь работать руками."
-95be71f702fae4a6,L08 Conrad,Conrad_finished_jerkoff_3,3,Kobold,Хах... <size=70%> ага.
-b60c2f975eedb833,L08 Conrad,Conrad_finished_jerkoff_3,4,Kobold,"Конечно, умею. Я же <i>профессионал</i>."
-f9e0d3cba1f3548e,L08 Conrad,Conrad_finished_jerkoff_3,5,Conrad,"Всегда хорошо, когда кобольд знает, что ему нравится."
-0eb2a1e25a35e85e,L08 Conrad,Conrad_finished_jerkoff_3,6,Conrad,Я тоже.
-83d081eadc40b86b,L08 Conrad,Conrad_finished_jerkoff_3,7,Conrad,В получении дрочки.
+95be71f702fae4a6,L08 Conrad,Conrad_finished_jerkoff_3,5,Kobold,Хах... <size=70%> ага.
+b60c2f975eedb833,L08 Conrad,Conrad_finished_jerkoff_3,6,Kobold,"Конечно, умею. Я же <i>профессионал</i>."
+f9e0d3cba1f3548e,L08 Conrad,Conrad_finished_jerkoff_3,7,Conrad,"Всегда хорошо, когда кобольд знает, что ему нравится."
+0eb2a1e25a35e85e,L08 Conrad,Conrad_finished_jerkoff_3,8,Conrad,Я тоже.
+83d081eadc40b86b,L08 Conrad,Conrad_finished_jerkoff_3,10,Conrad,В получении дрочки.
 # --- cum: Conrad_Outro_3 | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
 6f64e0cc9b162541,L08 Conrad,Conrad_Outro_3,1,Conrad,"Эй, слушай. Я тут подумал"
 dd5acacdb6c59489,L08 Conrad,Conrad_Outro_3,2,Conrad,"Может, странно спрашивать об этом сейчас. Но-о-о."
@@ -466,28 +466,28 @@ f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,Не за что. Откр�
 8929fe2569ae7455,L08 Conrad,Conrad_Outro_3,19,Conrad,"Думаю, мне бы это понравилось!"
 2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,Ты довольно горячий.
 c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...и добрый.
-296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,22,Kobold,"Я тоже думаю, что ты особенный."
-7e00e03a0df3736e,L08 Conrad,Conrad_Outro_3,23,Conrad,"Это... первый раз, когда ты йипнул для меня."
-c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,24,Kobold,"По-кобольдски это значит, что ты молодец."
-6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,25,Conrad,О... хах. Мне нравится.
-8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,26,Conrad,Приятно такое слышать.
-e8ae0da9edb0a314,L08 Conrad,Conrad_Outro_3,27,Conrad,Ну что. Как насчёт свидания?
-781cbcfcd7920f3f,L08 Conrad,Conrad_Outro_3,28,Kobold,"Быстро ты... Но, думаю, да!"
-5f9a2b795615ba6a,L08 Conrad,Conrad_Outro_3,29,Kobold,Да.
-508f3cf175389841,L08 Conrad,Conrad_Outro_3,30,Conrad,"Думаю, я хотел бы попробовать!"
-c282dd1133ff96d4,L08 Conrad,Conrad_Outro_3,31,Conrad,Отлично! Тогда я вернусь позже.
-bfc65061708379d6,L08 Conrad,Conrad_Outro_3,32,Kobold,"<size=70%><i> охренеть, я только что выбил свидание с драконом."
-cf78ef26075ae223,L08 Conrad,Conrad_Outro_3,33,Kobold,Ага! Открою ворота.
-6b8aa4fb55221728,L08 Conrad,Conrad_Outro_3,34,Conrad,Хмм?
-c395eb5878798c08,L08 Conrad,Conrad_Outro_3,35,Kobold,О! ничего. Открою ворота.
-102e28eb7d17c7dd,L08 Conrad,Conrad_Outro_3,36,Conrad,"А, ладно. Спасибо."
-ca518354e1f14735,L08 Conrad,Conrad_Outro_3,37,Conrad,"Ладно, спасибо."
+296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,"Я тоже думаю, что ты особенный."
+7e00e03a0df3736e,L08 Conrad,Conrad_Outro_3,24,Conrad,"Это... первый раз, когда ты йипнул для меня."
+c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,"По-кобольдски это значит, что ты молодец."
+6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,О... хах. Мне нравится.
+8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,Приятно такое слышать.
+e8ae0da9edb0a314,L08 Conrad,Conrad_Outro_3,28,Conrad,Ну что. Как насчёт свидания?
+781cbcfcd7920f3f,L08 Conrad,Conrad_Outro_3,29,Kobold,"Быстро ты... Но, думаю, да!"
+5f9a2b795615ba6a,L08 Conrad,Conrad_Outro_3,30,Kobold,Да.
+508f3cf175389841,L08 Conrad,Conrad_Outro_3,31,Conrad,"Думаю, я хотел бы попробовать!"
+c282dd1133ff96d4,L08 Conrad,Conrad_Outro_3,32,Conrad,Отлично! Тогда я вернусь позже.
+bfc65061708379d6,L08 Conrad,Conrad_Outro_3,33,Kobold,"<size=70%><i> охренеть, я только что выбил свидание с драконом."
+cf78ef26075ae223,L08 Conrad,Conrad_Outro_3,34,Kobold,Ага! Открою ворота.
+6b8aa4fb55221728,L08 Conrad,Conrad_Outro_3,35,Conrad,Хмм?
+c395eb5878798c08,L08 Conrad,Conrad_Outro_3,36,Kobold,О! ничего. Открою ворота.
+102e28eb7d17c7dd,L08 Conrad,Conrad_Outro_3,37,Conrad,"А, ладно. Спасибо."
+ca518354e1f14735,L08 Conrad,Conrad_Outro_3,38,Conrad,"Ладно, спасибо."
 # --- cum: Conrad_finished_jerkoff_3 ---
-5dffcc40132f0ec4,L08 Conrad,Conrad_finished_jerkoff_3,8,Conrad,Теперь я поглядываю на станок...
-45c2b89acdcfd55d,L08 Conrad,Conrad_finished_jerkoff_3,9,Conrad,Дай-ка попробую!
-57725c300be82fa5,L08 Conrad,Conrad_finished_jerkoff_3,10,Kobold,"А, ладно. Пойду принесу."
-1976e7477a26b680,L08 Conrad,Conrad_finished_jerkoff_3,11,Kobold,Конечно!
-9e50b8e48f012f1f,L08 Conrad,Conrad_finished_jerkoff_3,12,Conrad,"Охренеть, да"
+5dffcc40132f0ec4,L08 Conrad,Conrad_finished_jerkoff_3,11,Conrad,Теперь я поглядываю на станок...
+45c2b89acdcfd55d,L08 Conrad,Conrad_finished_jerkoff_3,12,Conrad,Дай-ка попробую!
+57725c300be82fa5,L08 Conrad,Conrad_finished_jerkoff_3,13,Kobold,"А, ладно. Пойду принесу."
+1976e7477a26b680,L08 Conrad,Conrad_finished_jerkoff_3,14,Kobold/Ryan,Конечно!
+9e50b8e48f012f1f,L08 Conrad,Conrad_finished_jerkoff_3,15,Conrad,"Охренеть, да"
 # --- mount_start: Conrad_placed_mount_3 ---
 b9778eb1fe076168,L08 Conrad,Conrad_placed_mount_3,1,Conrad,Ха! Вот и станок!
 86b1b615d536c6c9,L08 Conrad,Conrad_placed_mount_3,2,Conrad,"Та<size=90%>а<size=80%>а<size=70%>а<size=60%>ак... <size=100%>Я не грязный. Но я <i>~пошлый~</i>, понимаешь?"
@@ -498,8 +498,8 @@ cd4ecc87775c0780,L08 Conrad,Conrad_placed_mount_3,5,Conrad,"Трахнуть ч�
 7f9240260973e0ce,L08 Conrad,Conrad_placed_mount_3,7,Kobold,Ты... очень прямолинейный.
 e0b48878cb57c01f,L08 Conrad,Conrad_placed_mount_3,8,Conrad,"Конечно! Я знаю, что я очень..."
 1bd882b6a6343777,L08 Conrad,Conrad_placed_mount_3,9,Conrad,Крутой.
-557321787688acff,L08 Conrad,Conrad_placed_mount_3,10,Conrad,Короче. Пойду опробую эту штуку!
-78e9c032e409d82d,L08 Conrad,Conrad_placed_mount_3,11,Conrad,"Ха, отлично. Давай обкатаем эту штуку!"
+557321787688acff,L08 Conrad,Conrad_placed_mount_3,11,Conrad,Короче. Пойду опробую эту штуку!
+78e9c032e409d82d,L08 Conrad,Conrad_placed_mount_3,12,Conrad,"Ха, отлично. Давай обкатаем эту штуку!"
 # --- mount_finish: Conrad_finished_mount_3 ---
 81b18a3cc2f69ea7,L08 Conrad,Conrad_finished_mount_3,1,Conrad,Ух ты.
 748b06c5c3f0552b,L08 Conrad,Conrad_finished_mount_3,2,Conrad,Это.
@@ -533,8 +533,8 @@ e374c1b3adfa0cf8,L08 Conrad,Conrad_Outro,5,Conrad,"Спасибо, братан,
 
 # ===== Level 9: Alexander (Sunny) =====
 # --- intro: Alexander_3_intro ---
-36cd0d2b83086eeb,L09 Alexander,Alexander_3_intro,1,Alexander,Приветствую.
-bc15783521246457,L09 Alexander,Alexander_3_intro,2,Alexander,Александр!
+36cd0d2b83086eeb,L09 Alexander,Alexander_3_intro,1,Alexander/Conrad,Приветствую.
+bc15783521246457,L09 Alexander,Alexander_3_intro,2,Kobold/Alexander,Александр!
 3cbf350078abb1bf,L09 Alexander,Alexander_3_intro,3,Kobold,"Здравствуйте, с возвращением!"
 516ad83185e96dfb,L09 Alexander,Alexander_3_intro,4,Alexander,"Ха-ха, да. Рад вас видеть."
 f1d9c9797985d9a2,L09 Alexander,Alexander_3_intro,5,Alexander,Рад вернуться.
@@ -550,21 +550,21 @@ df2a4df0381808af,L09 Alexander,Alexander_3_intro,14,Alexander,Не беспок�
 1bdc19a56262fbc5,L09 Alexander,Alexander_3_intro,15,Alexander,<size=70%>Они по-прежнему у меня на жалованье.
 b0134babb7e75550,L09 Alexander,Alexander_3_intro,16,Alexander,Весьма удачный повод повидать моего любимого кобольда.
 7d926d6395419270,L09 Alexander,Alexander_3_intro,17,Kobold,Ох... Спасибо!
-6ad0fe6dcc2efa30,L09 Alexander,Alexander_3_intro,18,Alexander,"Разумеется, у вас прекрасное заведение."
-f38b3b8fcf6bf031,L09 Alexander,Alexander_3_intro,19,Alexander,Что? От искреннего комплимента ещё никому не было вреда!
-350955b9410d95a5,L09 Alexander,Alexander_3_intro,20,Kobold,"Никогда бы не подумал, что вы из тех, кто может так испачкаться!"
-3cf6fd8e7e50386c,L09 Alexander,Alexander_3_intro,21,Kobold,"Как вышло, что вы весь в чернилах?"
-5d2cee363540fc7a,L09 Alexander,Alexander_3_intro,22,Alexander,Я... хм.
-26b3089f5ee4a463,L09 Alexander,Alexander_3_intro,23,Alexander,"Я <i>полагаю </i>, что, должно быть, опрокинул чернильницу <i>по дороге сюда</i>. Весьма неловко с моей стороны!"
-7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,24,Kobold,"«Полагаю», «по дороге сюда»? Значит, раньше вы в чернилах не были..."
-b356a126e4318643,L09 Alexander,Alexander_3_intro,25,Alexander,О.
-cd5592e5e3140daa,L09 Alexander,Alexander_3_intro,26,Alexander,Верно.
-2a0200c46ee1b662,L09 Alexander,Alexander_3_intro,27,Alexander,"По правде говоря, я испачкался, чтобы прийти сюда."
-b4d680dde83d7847,L09 Alexander,Alexander_3_intro,28,Kobold,"Ну-у-у. Не нужно обливаться чернилами, чтобы зайти поздороваться!"
-42d72aa4b0b39750,L09 Alexander,Alexander_3_intro,29,Kobold,О! Тогда мне лучше вас впустить. Пойду открою ворота.
-9eb8cd756595cf24,L09 Alexander,Alexander_3_intro,30,Alexander,В самом деле?
-5f9846717183dcc1,L09 Alexander,Alexander_3_intro,31,Alexander,"Буду иметь в виду. Я привык, что всё строится на сделках."
-2ea5b920a0a9a519,L09 Alexander,Alexander_3_intro,32,Kobold,Я всегда рад вас видеть. Пойду открою вам ворота.
+6ad0fe6dcc2efa30,L09 Alexander,Alexander_3_intro,19,Alexander,"Разумеется, у вас прекрасное заведение."
+f38b3b8fcf6bf031,L09 Alexander,Alexander_3_intro,20,Alexander,Что? От искреннего комплимента ещё никому не было вреда!
+350955b9410d95a5,L09 Alexander,Alexander_3_intro,21,Kobold,"Никогда бы не подумал, что вы из тех, кто может так испачкаться!"
+3cf6fd8e7e50386c,L09 Alexander,Alexander_3_intro,22,Kobold,"Как вышло, что вы весь в чернилах?"
+5d2cee363540fc7a,L09 Alexander,Alexander_3_intro,23,Alexander,Я... хм.
+26b3089f5ee4a463,L09 Alexander,Alexander_3_intro,24,Alexander,"Я <i>полагаю </i>, что, должно быть, опрокинул чернильницу <i>по дороге сюда</i>. Весьма неловко с моей стороны!"
+7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,25,Kobold,"«Полагаю», «по дороге сюда»? Значит, раньше вы в чернилах не были..."
+b356a126e4318643,L09 Alexander,Alexander_3_intro,26,Alexander/Kobold/Ryan,О.
+cd5592e5e3140daa,L09 Alexander,Alexander_3_intro,27,Alexander,Верно.
+2a0200c46ee1b662,L09 Alexander,Alexander_3_intro,29,Alexander,"По правде говоря, я испачкался, чтобы прийти сюда."
+b4d680dde83d7847,L09 Alexander,Alexander_3_intro,30,Kobold,"Ну-у-у. Не нужно обливаться чернилами, чтобы зайти поздороваться!"
+42d72aa4b0b39750,L09 Alexander,Alexander_3_intro,31,Kobold,О! Тогда мне лучше вас впустить. Пойду открою ворота.
+9eb8cd756595cf24,L09 Alexander,Alexander_3_intro,32,Alexander,В самом деле?
+5f9846717183dcc1,L09 Alexander,Alexander_3_intro,33,Alexander,"Буду иметь в виду. Я привык, что всё строится на сделках."
+2ea5b920a0a9a519,L09 Alexander,Alexander_3_intro,34,Kobold,Я всегда рад вас видеть. Пойду открою вам ворота.
 # --- progress: Alexander_3_required ---
 a59f7f35644dcdbb,L09 Alexander,Alexander_3_required,1,Alexander,"Профессор Игвикс... Мой коллега, который недавно самовоспламенился."
 10b4110dad07d576,L09 Alexander,Alexander_3_required,2,Alexander,Он уже вернулся к работе. Спасибо за помощь со всем этим.
@@ -575,20 +575,20 @@ ababfd6e7703460e,L09 Alexander,Alexander_3_required,6,Alexander,"Именно. �
 69f278cd5a2eb111,L09 Alexander,Alexander_3_required,7,Alexander,...Странно иметь возможность говорить с кем-то столь свободно.
 6221337862dcba2c,L09 Alexander,Alexander_3_required,8,Alexander,"Мне кажется, я мог бы сказать вам что угодно."
 cecec36c55a564ee,L09 Alexander,Alexander_3_required,9,Kobold,Что угодно?
-7dbde0758389bd7b,L09 Alexander,Alexander_3_required,10,Alexander,Да. Такая откровенность бодрит.
-9bc918ab274337a8,L09 Alexander,Alexander_3_required,11,Alexander,"Отчего-то это кажется честнее всего, что говорят другие."
-35af415ffcb7f757,L09 Alexander,Alexander_3_required,12,Alexander,Скажите...
-c66fb72552f1fa4c,L09 Alexander,Alexander_3_required,13,Alexander,У меня есть вопрос.
-bbff7b98d6da7061,L09 Alexander,Alexander_3_required,14,Kobold,Какой?
-834032dfb827138e,L09 Alexander,Alexander_3_required,15,Kobold,Что такое?
-71291e2e0c7ce300,L09 Alexander,Alexander_3_required,16,Alexander,Не могли бы вы задать вопрос <i>мне</i>?
-c8ac7dce03b1b9b7,L09 Alexander,Alexander_3_required,17,Kobold,В смысле?
-10f232e68c0c0443,L09 Alexander,Alexander_3_required,18,Kobold,Какой вопрос?
-5956cbc43e2c8c2b,L09 Alexander,Alexander_3_required,19,Alexander,"Я лишь хочу, чтобы вы задали мне вопрос. Любой вопрос."
-7bf3b1fff483809e,L09 Alexander,Alexander_3_required,20,Alexander,Что угодно. Мне просто любопытно.
+7dbde0758389bd7b,L09 Alexander,Alexander_3_required,11,Alexander,Да. Такая откровенность бодрит.
+9bc918ab274337a8,L09 Alexander,Alexander_3_required,12,Alexander,"Отчего-то это кажется честнее всего, что говорят другие."
+35af415ffcb7f757,L09 Alexander,Alexander_3_required,13,Alexander,Скажите...
+c66fb72552f1fa4c,L09 Alexander,Alexander_3_required,14,Alexander,У меня есть вопрос.
+bbff7b98d6da7061,L09 Alexander,Alexander_3_required,15,Kobold,Какой?
+834032dfb827138e,L09 Alexander,Alexander_3_required,16,Kobold,Что такое?
+71291e2e0c7ce300,L09 Alexander,Alexander_3_required,17,Alexander,Не могли бы вы задать вопрос <i>мне</i>?
+c8ac7dce03b1b9b7,L09 Alexander,Alexander_3_required,18,Kobold,В смысле?
+10f232e68c0c0443,L09 Alexander,Alexander_3_required,19,Kobold,Какой вопрос?
+5956cbc43e2c8c2b,L09 Alexander,Alexander_3_required,20,Alexander,"Я лишь хочу, чтобы вы задали мне вопрос. Любой вопрос."
+7bf3b1fff483809e,L09 Alexander,Alexander_3_required,21,Alexander,Что угодно. Мне просто любопытно.
 # --- progress: Alexander_questions ---
 9da08a79c3f86ee0,L09 Alexander,Alexander_questions,1,Kobold,Каково это — преподавать?
-337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold,Вам нравится фиолетовый?
+337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold/Alexander,Вам нравится фиолетовый?
 70523c9a506d9676,L09 Alexander,Alexander_questions,3,Kobold,Вам нравится быть большим?
 3fbd83d375d6fa05,L09 Alexander,Alexander_questions,4,Kobold,Какова на вкус цифра 7?
 767b6d6bdc5b806a,L09 Alexander,Alexander_questions,5,Kobold,Что вы обо мне думаете?
@@ -610,50 +610,50 @@ e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,"Мне нрав
 046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,Не-а.
 b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,"Что ж, цвет мне и впрямь нравится. Но полагаю, это никак не связано с моим окрасом."
 bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,"Цвет мне и впрямь нравится. Хотя полагаю, это никак не связано с моим собственным окрасом."
-525ba3c4a2511183,L09 Alexander,Alexander_questions,24,Alexander,О. хорошо.
-3885f7429496059d,L09 Alexander,Alexander_questions,25,Alexander,О. Ясно.
-8133434681c5d0c2,L09 Alexander,Alexander_questions,26,Alexander,На этот вопрос непросто ответить.
-a3e6072e41a2ff07,L09 Alexander,Alexander_questions,27,Alexander,Кое-что мне в этом нравится. Уважение приятно...
-b1ca0efdea534b71,L09 Alexander,Alexander_questions,28,Alexander,"Однако вместе с уважением приходит ожидание, что я буду вести себя так, как выгляжу. Это невероятно утомительно."
-186edb7d24ea9459,L09 Alexander,Alexander_questions,29,Kobold,Со мной вы можете вести себя как угодно.
-1a6be1fd03e5ae6f,L09 Alexander,Alexander_questions,30,Kobold,"Вы нравитесь мне таким, какой вы есть."
-08063aff652b7108,L09 Alexander,Alexander_questions,31,Alexander,Весьма любезно с вашей стороны.
-4f9390dd28090827,L09 Alexander,Alexander_questions,32,Alexander,Я хочу быть более открытым. Это приятно.
-b38834ce4594ad5c,L09 Alexander,Alexander_questions,33,Alexander,Жёлтый лайм.
-5f6bb166b079c336,L09 Alexander,Alexander_questions,34,Kobold,Да ладно.
-aac4af2b645cf88e,L09 Alexander,Alexander_questions,35,Kobold,Типа... лимон?
-0ee250681eda1a08,L09 Alexander,Alexander_questions,36,Alexander,«Не ладно». Ни в чём я не уверен так твёрдо.
-b83a1658171971d7,L09 Alexander,Alexander_questions,37,Alexander,"Нет. Лайм, который жёлтый."
-a87e0094e62cb429,L09 Alexander,Alexander_questions,38,Kobold,"Вы тут профессор. Значит, так и есть."
-e154199e27c1d4a3,L09 Alexander,Alexander_questions,39,Alexander,Это ошибка апелляции к авторитету. Но да. Я прав.
-0c137b35abd3f637,L09 Alexander,Alexander_questions,40,Alexander,Вы...
-d4efe0db738b52b5,L09 Alexander,Alexander_questions,41,Alexander,Аномалия.
-55c3e5daec20a64d,L09 Alexander,Alexander_questions,42,Kobold,А?
-2c291db1ddbe2b9d,L09 Alexander,Alexander_questions,43,Kobold,Это хорошо...?
-df2bc10ba434d57e,L09 Alexander,Alexander_questions,44,Alexander,"В том смысле, что вы уникальны."
-019d328b739d99e6,L09 Alexander,Alexander_questions,45,Kobold,В хорошем смысле?
-c2667b3b3dc54c1a,L09 Alexander,Alexander_questions,46,Kobold,В плохом смысле?
-4f9b4a3cd9b0261a,L09 Alexander,Alexander_questions,47,Alexander,Разумеется! Вы чудесны.
-ebb1884c75b23e27,L09 Alexander,Alexander_questions,48,Alexander,Звёзды с вами! Нет-нет. Вы великолепны.
-3b2c32e616b24822,L09 Alexander,Alexander_questions,49,Alexander,Именно. Рядом с вами прекрасно находиться.
-7e6a62b6d8659273,L09 Alexander,Alexander_questions,50,Alexander,"Вы первый, кого я встретил, чьё единственное ожидание от меня — быть..."
-c48241cd21bb0d91,L09 Alexander,Alexander_questions,51,Alexander,Собой.
-5a4d28241178ab01,L09 Alexander,Alexander_questions,52,Alexander,Счастлив.
-216bb6e650af4cfc,L09 Alexander,Alexander_questions,53,Alexander,"Полагаю, отчасти благодаря вам."
-91ff270d6aaba6a4,L09 Alexander,Alexander_questions,54,Kobold,Но я же всего лишь ваш мойщик?
-f06f453ab3d6251f,L09 Alexander,Alexander_questions,55,Kobold,Это очень мило.
-8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,56,Alexander,"Я знаю. Но возможность открыться кому-то, пусть даже изредка..."
-61639ef55caefda4,L09 Alexander,Alexander_questions,57,Alexander,Это творит чудеса.
-22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,58,Alexander,"Возможность открыться кому-то, пусть даже изредка..."
-439d8da114ab9162,L09 Alexander,Alexander_questions,59,Alexander,Благодарю вас за это.
-33d3f6495bad4d3c,L09 Alexander,Alexander_questions,60,Alexander,"О, герб вокруг моей головы?"
-91d69b4f1f9739cb,L09 Alexander,Alexander_questions,61,Alexander,"Многие думают, что это часть моего тела."
-dd0f2ff5e303f61a,L09 Alexander,Alexander_questions,62,Alexander,Однако это украшение! Мой фамильный герб. Видите ли...
-7271f9e9b21e5401,L09 Alexander,Alexander_questions,63,Alexander,"История драконов сложна. Декоративные гербы <size=85%> часто <size=70%> носят драконы, чтобы <size=55%>обозначить, к какой семье они принадлежат! <size=40%> Это интересный знак их культурного <size=35%> и семейного наследия. Я часто задавался вопросом, стоит ли мне продолжать носить свой. <size=20%> Но культурные и семейные узы считаются важными в преданиях драконов! так что я обязан следовать таким вещам. <size=10%> Вода. Земля. Огонь. Воздух. Давным-давно четыре народа жили в мире. Но всё изменилось, когда народ Огня развязал войну."
-0006b6926947b91b,L09 Alexander,Alexander_questions,64,Kobold,Можете повторить?
-b6d573339ec0b66b,L09 Alexander,Alexander_questions,65,Alexander,"Ах, простите, я увлекаюсь такими вещами."
-9909f3ea3dffb93e,L09 Alexander,Alexander_questions,66,Alexander,"Я рад, что вам нравится мой герб."
-e5bccc3a053371ce,L09 Alexander,Alexander_questions,67,Alexander,...Нет
+525ba3c4a2511183,L09 Alexander,Alexander_questions,27,Alexander,О. хорошо.
+3885f7429496059d,L09 Alexander,Alexander_questions,29,Alexander,О. Ясно.
+8133434681c5d0c2,L09 Alexander,Alexander_questions,31,Alexander,На этот вопрос непросто ответить.
+a3e6072e41a2ff07,L09 Alexander,Alexander_questions,32,Alexander,Кое-что мне в этом нравится. Уважение приятно...
+b1ca0efdea534b71,L09 Alexander,Alexander_questions,33,Alexander,"Однако вместе с уважением приходит ожидание, что я буду вести себя так, как выгляжу. Это невероятно утомительно."
+186edb7d24ea9459,L09 Alexander,Alexander_questions,34,Kobold,Со мной вы можете вести себя как угодно.
+1a6be1fd03e5ae6f,L09 Alexander,Alexander_questions,35,Kobold,"Вы нравитесь мне таким, какой вы есть."
+08063aff652b7108,L09 Alexander,Alexander_questions,36,Alexander,Весьма любезно с вашей стороны.
+4f9390dd28090827,L09 Alexander,Alexander_questions,37,Alexander,Я хочу быть более открытым. Это приятно.
+b38834ce4594ad5c,L09 Alexander,Alexander_questions,38,Alexander,Жёлтый лайм.
+5f6bb166b079c336,L09 Alexander,Alexander_questions,39,Kobold,Да ладно.
+aac4af2b645cf88e,L09 Alexander,Alexander_questions,40,Kobold,Типа... лимон?
+0ee250681eda1a08,L09 Alexander,Alexander_questions,41,Alexander,«Не ладно». Ни в чём я не уверен так твёрдо.
+b83a1658171971d7,L09 Alexander,Alexander_questions,42,Alexander,"Нет. Лайм, который жёлтый."
+a87e0094e62cb429,L09 Alexander,Alexander_questions,43,Kobold,"Вы тут профессор. Значит, так и есть."
+e154199e27c1d4a3,L09 Alexander,Alexander_questions,45,Alexander,Это ошибка апелляции к авторитету. Но да. Я прав.
+0c137b35abd3f637,L09 Alexander,Alexander_questions,47,Alexander,Вы...
+d4efe0db738b52b5,L09 Alexander,Alexander_questions,48,Alexander,Аномалия.
+55c3e5daec20a64d,L09 Alexander,Alexander_questions,49,Kobold,А?
+2c291db1ddbe2b9d,L09 Alexander,Alexander_questions,50,Kobold,Это хорошо...?
+df2bc10ba434d57e,L09 Alexander,Alexander_questions,51,Alexander,"В том смысле, что вы уникальны."
+019d328b739d99e6,L09 Alexander,Alexander_questions,52,Kobold,В хорошем смысле?
+c2667b3b3dc54c1a,L09 Alexander,Alexander_questions,53,Kobold,В плохом смысле?
+4f9b4a3cd9b0261a,L09 Alexander,Alexander_questions,54,Alexander,Разумеется! Вы чудесны.
+ebb1884c75b23e27,L09 Alexander,Alexander_questions,55,Alexander,Звёзды с вами! Нет-нет. Вы великолепны.
+3b2c32e616b24822,L09 Alexander,Alexander_questions,56,Alexander,Именно. Рядом с вами прекрасно находиться.
+7e6a62b6d8659273,L09 Alexander,Alexander_questions,57,Alexander,"Вы первый, кого я встретил, чьё единственное ожидание от меня — быть..."
+c48241cd21bb0d91,L09 Alexander,Alexander_questions,58,Alexander,Собой.
+5a4d28241178ab01,L09 Alexander,Alexander_questions,59,Alexander,Счастлив.
+216bb6e650af4cfc,L09 Alexander,Alexander_questions,60,Alexander,"Полагаю, отчасти благодаря вам."
+91ff270d6aaba6a4,L09 Alexander,Alexander_questions,61,Kobold,Но я же всего лишь ваш мойщик?
+f06f453ab3d6251f,L09 Alexander,Alexander_questions,62,Kobold,Это очень мило.
+8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,63,Alexander,"Я знаю. Но возможность открыться кому-то, пусть даже изредка..."
+61639ef55caefda4,L09 Alexander,Alexander_questions,64,Alexander,Это творит чудеса.
+22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,66,Alexander,"Возможность открыться кому-то, пусть даже изредка..."
+439d8da114ab9162,L09 Alexander,Alexander_questions,68,Alexander,Благодарю вас за это.
+33d3f6495bad4d3c,L09 Alexander,Alexander_questions,69,Alexander,"О, герб вокруг моей головы?"
+91d69b4f1f9739cb,L09 Alexander,Alexander_questions,70,Alexander,"Многие думают, что это часть моего тела."
+dd0f2ff5e303f61a,L09 Alexander,Alexander_questions,71,Alexander,Однако это украшение! Мой фамильный герб. Видите ли...
+7271f9e9b21e5401,L09 Alexander,Alexander_questions,72,Alexander,"История драконов сложна. Декоративные гербы <size=85%> часто <size=70%> носят драконы, чтобы <size=55%>обозначить, к какой семье они принадлежат! <size=40%> Это интересный знак их культурного <size=35%> и семейного наследия. Я часто задавался вопросом, стоит ли мне продолжать носить свой. <size=20%> Но культурные и семейные узы считаются важными в преданиях драконов! так что я обязан следовать таким вещам. <size=10%> Вода. Земля. Огонь. Воздух. Давным-давно четыре народа жили в мире. Но всё изменилось, когда народ Огня развязал войну."
+0006b6926947b91b,L09 Alexander,Alexander_questions,74,Kobold,Можете повторить?
+b6d573339ec0b66b,L09 Alexander,Alexander_questions,75,Alexander,"Ах, простите, я увлекаюсь такими вещами."
+9909f3ea3dffb93e,L09 Alexander,Alexander_questions,76,Alexander,"Я рад, что вам нравится мой герб."
+e5bccc3a053371ce,L09 Alexander,Alexander_questions,77,Alexander,...Нет
 # --- progress: Alexander_3_required_end | if $has_asked_question ---
 c225b2626bb24d2c,L09 Alexander,Alexander_3_required_end,1,Alexander,"Спасибо, что спросили. Приятно, когда задают личные вопросы."
 # --- jerkoff: Alexander_3_JerkOff_Start ---
@@ -665,11 +665,11 @@ afa89c59eece65b9,L09 Alexander,Alexander_3_Cum,2,Alexander,<size=70%><i>но э�
 # --- outro: Alexander_3_Outro ---
 d96b34ffac75e750,L09 Alexander,Alexander_3_Outro,1,Alexander,Я <i>безупречно чист</i>.
 6dae153117be9e8a,L09 Alexander,Alexander_3_Outro,2,Kobold,Я никогда не пропускаю ни пятнышка.
-941f66ab23bc1b9b,L09 Alexander,Alexander_3_Outro,3,Alexander,Мне это прекрасно известно. Глубокую чистку ни с чем не спутаешь!
-4598878b44333749,L09 Alexander,Alexander_3_Outro,4,Alexander,Вот это я люблю слышать.
-7ea92f17440d2fae,L09 Alexander,Alexander_3_Outro,5,Alexander,Я ещё вернусь. Приятно иметь вас в друзьях.
-7bbef8475c6cdff7,L09 Alexander,Alexander_3_Outro,6,Kobold,Буду ждать скорой встречи.
-17d54d35bc089567,L09 Alexander,Alexander_3_Outro,7,Kobold,"Я рад, что вам здесь уютно."
+941f66ab23bc1b9b,L09 Alexander,Alexander_3_Outro,4,Alexander,Мне это прекрасно известно. Глубокую чистку ни с чем не спутаешь!
+4598878b44333749,L09 Alexander,Alexander_3_Outro,5,Alexander,Вот это я люблю слышать.
+7ea92f17440d2fae,L09 Alexander,Alexander_3_Outro,6,Alexander,Я ещё вернусь. Приятно иметь вас в друзьях.
+7bbef8475c6cdff7,L09 Alexander,Alexander_3_Outro,7,Kobold,Буду ждать скорой встречи.
+17d54d35bc089567,L09 Alexander,Alexander_3_Outro,8,Kobold,"Я рад, что вам здесь уютно."
 
 # ===== Level 10: Ryan (Sunny) | ends PicnicCompleted =====
 # --- intro: Ryan_4_intro ---
@@ -702,105 +702,105 @@ f1676448791feef6,L10 Ryan,ryan_food_dialogue,3,Ryan,"Ну, о будущем м�
 91b32d6180935501,L10 Ryan,ryan_food_dialogue,5,Kobold,"Ну, ты просто находка."
 e5d632fba39e2f0f,L10 Ryan,ryan_food_dialogue,6,Kobold,Я рад за тебя!
 d228097b23b352e6,L10 Ryan,ryan_food_dialogue,7,Ryan,"Ой, ну ты. Так и вгонишь в краску."
-d94d7310f7d31a45,L10 Ryan,ryan_food_dialogue,8,Ryan,Очень хочу найти новых людей.
-1121175da09c0008,L10 Ryan,ryan_food_dialogue,9,Ryan,"Ну что, ещё еды?"
-6ebac8131d5267ac,L10 Ryan,ryan_food_dialogue,10,Ryan,Хмм...
-d2c7e6789d89f523,L10 Ryan,ryan_food_dialogue,11,Ryan,Я тут подумал.
-67c0ce6aff865e1c,L10 Ryan,ryan_food_dialogue,12,Ryan,Трудно найти кого-то за пределами моего нынешнего круга.
-d7f23a9907b74860,L10 Ryan,ryan_food_dialogue,13,Ryan,"Типа, я люблю тех, кто рядом, но там много всякого груза."
-99daac47d7b305f6,L10 Ryan,ryan_food_dialogue,14,Ryan,Понимаешь?
-1b4b607607b8c988,L10 Ryan,ryan_food_dialogue,15,Kobold,Логично.
-dfcb7cbdb552d8f5,L10 Ryan,ryan_food_dialogue,16,Kobold,"Понимаю, почему после расставания так себя чувствуешь, да."
-f574c59b56179de8,L10 Ryan,ryan_food_dialogue,17,Ryan,"Да, с самого расставания я ищу что-то новое."
-0febbd04cce87646,L10 Ryan,ryan_food_dialogue,18,Ryan,"Может, кого-то?"
-b7fca6004f2d5325,L10 Ryan,ryan_food_dialogue,19,Ryan,Да. После такого трудно распутывать общие компании.
-8da113ef266e587f,L10 Ryan,ryan_food_dialogue,20,Ryan,Я готов это делать. Но хочется чего-то нового.
-baf0df26ea4f2e81,L10 Ryan,ryan_food_dialogue,21,Ryan,"Может, кого-то нового..."
-03ccd297eb346729,L10 Ryan,ryan_food_dialogue,22,Ryan,"...Насчёт того, что я говорил раньше."
-1032684d93c794bf,L10 Ryan,ryan_food_dialogue,23,Kobold,Да?
-ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,24,Ryan,"Ты не знаешь, с кем бы я мог поговорить? Ну... насчёт отношений и всего такого?"
-0a7119cfe1246546,L10 Ryan,ryan_food_dialogue,25,Kobold,"<gradient=""gold""><b>Я знаю одного красного дракона. Думаю, он тебе понравится! </b></gradient><size=70%> (Сводит Райана с Конрадом!)"
-4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,26,Kobold,"<gradient=""gold""><b>О. Эм. <size=70%> Я бы не против... если бы этим кем-то был я. </b></gradient><size=70%> (Закрепляет роман с Райаном!)"
-bb7a6be711206298,L10 Ryan,ryan_food_dialogue,27,Kobold,"<gradient=""gold""><b>Так сходу никто в голову не приходит.</b></gradient><size=70%> (Закрепляет роман с Конрадом!)"
-a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,28,Kobold,О?
-cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,29,Ryan,Кто это?
-ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,30,Kobold,"Это ОЧЕНЬ милый красный дрейк, который ходит к нам на мойку!"
-4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,31,Kobold,"Он красный дракон. Думаю, вы друг другу понравитесь!"
-0ea02ee3f0c5673d,L10 Ryan,ryan_food_dialogue,32,Ryan,"О! Кажется, я его видел. Такой маленький, да?"
-58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,33,Kobold,Он предпочитает «вертикально обделённый»... Но да.
-3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,34,Kobold,Ага! он хочет познакомиться с новыми людьми.
-474246952e0d1e50,L10 Ryan,ryan_food_dialogue,35,Ryan,О...
-fc4c4ac0587e24db,L10 Ryan,ryan_food_dialogue,36,Ryan,Это очень мило.
-c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,37,Ryan,"О, чудесно. Похоже, мы похожи."
-82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,38,Ryan,"Думаю, я хотел бы с ним познакомиться!"
-b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,39,Kobold,Тогда я вас сведу.
-80c500f9c426d4cc,L10 Ryan,ryan_food_dialogue,40,Kobold,Я так рад. Я вас сведу!
-ec786c9a7656b0f9,L10 Ryan,ryan_food_dialogue,41,Ryan,"Я тоже, спасибо!"
-028dbc8d077c611f,L10 Ryan,ryan_food_dialogue,42,Ryan,<i>О...
-ae590830c4c03fd1,L10 Ryan,ryan_food_dialogue,43,Ryan,"Думаю, я бы хотел, чтобы этим кем-то был ты."
-b4066b4e58df8005,L10 Ryan,ryan_food_dialogue,44,Kobold,Так это типа... наше первое свидание?
-8c7e5a49ec8fd685,L10 Ryan,ryan_food_dialogue,45,Kobold,Если честно. Ты мне уже давно нравишься.
-710ea0057247cb51,L10 Ryan,ryan_food_dialogue,46,Ryan,Похоже на то!
-de4d091acdb6059c,L10 Ryan,ryan_food_dialogue,47,Ryan,"Правда? Ох, это очень мило."
-35e3561cd36f36d6,L10 Ryan,ryan_food_dialogue,48,Ryan,"Я не знал, что кому-то я могу так легко и сильно понравиться."
-f05160456925af3f,L10 Ryan,ryan_food_dialogue,49,Ryan,"Ты, кстати, милый."
-a01d64fcb9d7d3a5,L10 Ryan,ryan_food_dialogue,50,Kobold,Ага. <size=90%>Ой... <size=80%>ну знаешь. Я типа... <size=70%>Ха-ха. Ага. Угу!
-65691ff38c85e57c,L10 Ryan,ryan_food_dialogue,51,Kobold,Ты тоже!
-d323e565ed8ea749,L10 Ryan,ryan_food_dialogue,52,Ryan,Я не хотел тебя смутить!
-145e6a2d848267cb,L10 Ryan,ryan_food_dialogue,53,Ryan,Я просто... Счастлив.
-0cc014df7d89d3e1,L10 Ryan,ryan_food_dialogue,54,Ryan,"Ох, спасибо. Я так хорошо выгляжу только благодаря твоим мойкам!"
-eea7bdf3ab3f251c,L10 Ryan,ryan_food_dialogue,55,Ryan,Я... Счастлив.
-d619413abc4a1de1,L10 Ryan,ryan_food_dialogue,56,Ryan,Всё нормально!
-c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,57,Ryan,А ты как? Ты с кем-нибудь встречаешься?
-2374bdd10aea40ba,L10 Ryan,ryan_food_dialogue,58,Kobold,"Есть один красный дракон, Конрад. Он... вспыльчивый, но милый."
-58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,59,Kobold,"Да! Конрад, он просто прелесть. Хотя он бы взбесился, что я так сказал."
-3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,60,Ryan,"О, это тот маленький дрейк, которого я недавно видел на входе, да?"
-882d8b921688234c,L10 Ryan,ryan_food_dialogue,61,Kobold,Эй! Он просто... «вертикально обделённый».
-871f43cb596daa39,L10 Ryan,ryan_food_dialogue,62,Kobold,Ага! это он.
-eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,63,Ryan,"Ой, извини."
-dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,64,Ryan,"Он, похоже, милый!"
-70300517b020a458,L10 Ryan,ryan_food_dialogue,65,Ryan,"Это чудесно, он милый!"
-abe281ce74304803,L10 Ryan,ryan_food_dialogue,66,Ryan,"Эй, эм, ещё раз спасибо."
-9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,67,Kobold,Без проблем! Не терпится познакомить тебя с Конрадом.
-e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,68,Kobold,"Нет, это тебе спасибо. Я... Очень рад."
-1f50e1361eaeacbf,L10 Ryan,ryan_food_dialogue,69,Kobold,Конечно! Спасибо за еду.
-489184ee3c2573f9,L10 Ryan,ryan_food_dialogue,70,Ryan,"Ха, ага. Звучит весело."
-28f3547a6af39629,L10 Ryan,ryan_food_dialogue,71,Ryan,"Обязательно расскажу, как всё пройдёт, ага?"
-fcd75c87b326482c,L10 Ryan,ryan_food_dialogue,72,Kobold,Мне не терпится услышать!
-a66a9f98f63d5aaf,L10 Ryan,ryan_food_dialogue,73,Kobold,Ага. Вы будете милой парочкой.
-39619dc71b15dfde,L10 Ryan,ryan_food_dialogue,74,Ryan,Это было приятно...
-b2d03d0e5222d95c,L10 Ryan,ryan_food_dialogue,75,Ryan,"Скоро увидимся, да?"
-17c800776b082018,L10 Ryan,ryan_food_dialogue,76,Kobold,Надеюсь! Пойду открою ворота.
-56372773e401e131,L10 Ryan,ryan_food_dialogue,77,Kobold,Да! Спасибо за еду. Пойду открою ворота.
-97cffb9a377004b2,L10 Ryan,ryan_food_dialogue,78,Ryan,Да... Я никогда раньше не ходил на свидание с кобольдом.
-50ce0561192b6b01,L10 Ryan,ryan_food_dialogue,79,Ryan,"Но уже знаю, что мне это очень нравится."
-e823adcc22fd50c2,L10 Ryan,ryan_food_dialogue,80,Kobold,Ты мне очень нравишься.
-62e851c911a254bb,L10 Ryan,ryan_food_dialogue,81,Kobold,"Да, это было супер приятно."
-773c0ce37ffbb546,L10 Ryan,ryan_food_dialogue,82,Ryan,Хех. Ага. Ты мне тоже нравишься.
-1c6058ce1c7242cf,L10 Ryan,ryan_food_dialogue,83,Ryan,Правда было. Ты чудесный.
-32e4e8851f8ac398,L10 Ryan,ryan_food_dialogue,84,Ryan,"Спасибо, что разделил со мной еду..."
-0a94f0c3b65c425c,L10 Ryan,ryan_food_dialogue,85,Ryan,Жду не дождусь снова тебя увидеть
-8c39f31ac476e20e,L10 Ryan,ryan_food_dialogue,86,Kobold,Я всегда жду встречи с тобой. Пойду открою ворота.
-db8848bda5df285f,L10 Ryan,ryan_food_dialogue,87,Kobold,Я тоже! Пойду открою ворота.
-f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,88,Ryan,Хорошо! До скорого.
-d48a9423f250312c,L10 Ryan,ryan_food_dialogue,89,Ryan,"Так этот Конрад, похоже, он тебе нравится?"
-6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,90,Kobold,"Хе-хе, ага."
-c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,91,Kobold,Его многовато. Но мне это нравится.
-a1bf90b10d887726,L10 Ryan,ryan_food_dialogue,92,Ryan,Это мило!
-6943d0645de48850,L10 Ryan,ryan_food_dialogue,93,Ryan,Что тебе в нём нравится больше всего?
-a695d517f16d1719,L10 Ryan,ryan_food_dialogue,94,Kobold,У него типа. ОГРОМНЫЙ.
-dbeb304df456a424,L10 Ryan,ryan_food_dialogue,95,Kobold,"Он резкий, но и нежный тоже!"
-3c29c25f0a23d26a,L10 Ryan,ryan_food_dialogue,96,Kobold,"Он маленький, мне нравится быть с ним на одном уровне глаз."
-0911d52bc2d9f70b,L10 Ryan,ryan_food_dialogue,97,Kobold,Мне нравится... он.
-4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,98,Ryan,"О... Да, драконы поменьше обычно... Компенсируют."
-7859d5c981752171,L10 Ryan,ryan_food_dialogue,99,Ryan,"Ммм, да, знаю такой типаж."
-d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,100,Ryan,"Логично! Да, маленькие дрейки — это весело."
-00079873ed68f67e,L10 Ryan,ryan_food_dialogue,101,Ryan,Ох... Это очень мило
-fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,102,Ryan,"Обязательно расскажи, как у вас двоих всё сложится!"
-37e125daa86112bd,L10 Ryan,ryan_food_dialogue,103,Ryan,"Спасибо, что разделил со мной еду, ты отличный друг."
-120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,104,Kobold,Спасибо за еду! Пойду открою ворота.
-94ddf87d22b36d07,L10 Ryan,ryan_food_dialogue,105,Kobold,"Ты тоже хороший друг, пойду открою ворота."
-02ca8c073be8669d,L10 Ryan,ryan_food_dialogue,106,Ryan,"Ладно, увидимся!"
+d94d7310f7d31a45,L10 Ryan,ryan_food_dialogue,9,Ryan,Очень хочу найти новых людей.
+1121175da09c0008,L10 Ryan,ryan_food_dialogue,10,Ryan,"Ну что, ещё еды?"
+6ebac8131d5267ac,L10 Ryan,ryan_food_dialogue,11,Ryan,Хмм...
+d2c7e6789d89f523,L10 Ryan,ryan_food_dialogue,13,Ryan,Я тут подумал.
+67c0ce6aff865e1c,L10 Ryan,ryan_food_dialogue,14,Ryan,Трудно найти кого-то за пределами моего нынешнего круга.
+d7f23a9907b74860,L10 Ryan,ryan_food_dialogue,15,Ryan,"Типа, я люблю тех, кто рядом, но там много всякого груза."
+99daac47d7b305f6,L10 Ryan,ryan_food_dialogue,16,Ryan,Понимаешь?
+1b4b607607b8c988,L10 Ryan,ryan_food_dialogue,17,Kobold,Логично.
+dfcb7cbdb552d8f5,L10 Ryan,ryan_food_dialogue,18,Kobold,"Понимаю, почему после расставания так себя чувствуешь, да."
+f574c59b56179de8,L10 Ryan,ryan_food_dialogue,19,Ryan,"Да, с самого расставания я ищу что-то новое."
+0febbd04cce87646,L10 Ryan,ryan_food_dialogue,20,Ryan,"Может, кого-то?"
+b7fca6004f2d5325,L10 Ryan,ryan_food_dialogue,22,Ryan,Да. После такого трудно распутывать общие компании.
+8da113ef266e587f,L10 Ryan,ryan_food_dialogue,23,Ryan,Я готов это делать. Но хочется чего-то нового.
+baf0df26ea4f2e81,L10 Ryan,ryan_food_dialogue,24,Ryan,"Может, кого-то нового..."
+03ccd297eb346729,L10 Ryan,ryan_food_dialogue,25,Ryan,"...Насчёт того, что я говорил раньше."
+1032684d93c794bf,L10 Ryan,ryan_food_dialogue,26,Kobold,Да?
+ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,27,Ryan,"Ты не знаешь, с кем бы я мог поговорить? Ну... насчёт отношений и всего такого?"
+0a7119cfe1246546,L10 Ryan,ryan_food_dialogue,28,Kobold,"<gradient=""gold""><b>Я знаю одного красного дракона. Думаю, он тебе понравится! </b></gradient><size=70%> (Сводит Райана с Конрадом!)"
+4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,29,Kobold,"<gradient=""gold""><b>О. Эм. <size=70%> Я бы не против... если бы этим кем-то был я. </b></gradient><size=70%> (Закрепляет роман с Райаном!)"
+bb7a6be711206298,L10 Ryan,ryan_food_dialogue,30,Kobold,"<gradient=""gold""><b>Так сходу никто в голову не приходит.</b></gradient><size=70%> (Закрепляет роман с Конрадом!)"
+a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,31,Ryan/Alexander/Kobold,О?
+cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,32,Ryan,Кто это?
+ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,"Это ОЧЕНЬ милый красный дрейк, который ходит к нам на мойку!"
+4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,34,Kobold,"Он красный дракон. Думаю, вы друг другу понравитесь!"
+0ea02ee3f0c5673d,L10 Ryan,ryan_food_dialogue,35,Ryan,"О! Кажется, я его видел. Такой маленький, да?"
+58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,Он предпочитает «вертикально обделённый»... Но да.
+3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,Ага! он хочет познакомиться с новыми людьми.
+474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,О...
+fc4c4ac0587e24db,L10 Ryan,ryan_food_dialogue,39,Ryan,Это очень мило.
+c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,"О, чудесно. Похоже, мы похожи."
+82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,"Думаю, я хотел бы с ним познакомиться!"
+b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,Тогда я вас сведу.
+80c500f9c426d4cc,L10 Ryan,ryan_food_dialogue,43,Kobold,Я так рад. Я вас сведу!
+ec786c9a7656b0f9,L10 Ryan,ryan_food_dialogue,45,Ryan,"Я тоже, спасибо!"
+028dbc8d077c611f,L10 Ryan,ryan_food_dialogue,47,Ryan,<i>О...
+ae590830c4c03fd1,L10 Ryan,ryan_food_dialogue,48,Ryan,"Думаю, я бы хотел, чтобы этим кем-то был ты."
+b4066b4e58df8005,L10 Ryan,ryan_food_dialogue,49,Kobold,Так это типа... наше первое свидание?
+8c7e5a49ec8fd685,L10 Ryan,ryan_food_dialogue,50,Kobold,Если честно. Ты мне уже давно нравишься.
+710ea0057247cb51,L10 Ryan,ryan_food_dialogue,51,Ryan,Похоже на то!
+de4d091acdb6059c,L10 Ryan,ryan_food_dialogue,52,Ryan,"Правда? Ох, это очень мило."
+35e3561cd36f36d6,L10 Ryan,ryan_food_dialogue,53,Ryan,"Я не знал, что кому-то я могу так легко и сильно понравиться."
+f05160456925af3f,L10 Ryan,ryan_food_dialogue,54,Ryan,"Ты, кстати, милый."
+a01d64fcb9d7d3a5,L10 Ryan,ryan_food_dialogue,55,Kobold,Ага. <size=90%>Ой... <size=80%>ну знаешь. Я типа... <size=70%>Ха-ха. Ага. Угу!
+65691ff38c85e57c,L10 Ryan,ryan_food_dialogue,56,Kobold,Ты тоже!
+d323e565ed8ea749,L10 Ryan,ryan_food_dialogue,57,Ryan,Я не хотел тебя смутить!
+145e6a2d848267cb,L10 Ryan,ryan_food_dialogue,58,Ryan,Я просто... Счастлив.
+0cc014df7d89d3e1,L10 Ryan,ryan_food_dialogue,59,Ryan,"Ох, спасибо. Я так хорошо выгляжу только благодаря твоим мойкам!"
+eea7bdf3ab3f251c,L10 Ryan,ryan_food_dialogue,60,Ryan,Я... Счастлив.
+d619413abc4a1de1,L10 Ryan,ryan_food_dialogue,61,Ryan,Всё нормально!
+c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,А ты как? Ты с кем-нибудь встречаешься?
+2374bdd10aea40ba,L10 Ryan,ryan_food_dialogue,63,Kobold,"Есть один красный дракон, Конрад. Он... вспыльчивый, но милый."
+58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,"Да! Конрад, он просто прелесть. Хотя он бы взбесился, что я так сказал."
+3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"О, это тот маленький дрейк, которого я недавно видел на входе, да?"
+882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,Эй! Он просто... «вертикально обделённый».
+871f43cb596daa39,L10 Ryan,ryan_food_dialogue,67,Kobold,Ага! это он.
+eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"Ой, извини."
+dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,"Он, похоже, милый!"
+70300517b020a458,L10 Ryan,ryan_food_dialogue,70,Ryan,"Это чудесно, он милый!"
+abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,"Эй, эм, ещё раз спасибо."
+9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,Без проблем! Не терпится познакомить тебя с Конрадом.
+e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,"Нет, это тебе спасибо. Я... Очень рад."
+1f50e1361eaeacbf,L10 Ryan,ryan_food_dialogue,74,Kobold,Конечно! Спасибо за еду.
+489184ee3c2573f9,L10 Ryan,ryan_food_dialogue,75,Ryan,"Ха, ага. Звучит весело."
+28f3547a6af39629,L10 Ryan,ryan_food_dialogue,76,Ryan,"Обязательно расскажу, как всё пройдёт, ага?"
+fcd75c87b326482c,L10 Ryan,ryan_food_dialogue,77,Kobold,Мне не терпится услышать!
+a66a9f98f63d5aaf,L10 Ryan,ryan_food_dialogue,78,Kobold,Ага. Вы будете милой парочкой.
+39619dc71b15dfde,L10 Ryan,ryan_food_dialogue,79,Ryan,Это было приятно...
+b2d03d0e5222d95c,L10 Ryan,ryan_food_dialogue,80,Ryan,"Скоро увидимся, да?"
+17c800776b082018,L10 Ryan,ryan_food_dialogue,81,Kobold,Надеюсь! Пойду открою ворота.
+56372773e401e131,L10 Ryan,ryan_food_dialogue,82,Kobold,Да! Спасибо за еду. Пойду открою ворота.
+97cffb9a377004b2,L10 Ryan,ryan_food_dialogue,83,Ryan,Да... Я никогда раньше не ходил на свидание с кобольдом.
+50ce0561192b6b01,L10 Ryan,ryan_food_dialogue,84,Ryan,"Но уже знаю, что мне это очень нравится."
+e823adcc22fd50c2,L10 Ryan,ryan_food_dialogue,85,Kobold,Ты мне очень нравишься.
+62e851c911a254bb,L10 Ryan,ryan_food_dialogue,86,Kobold,"Да, это было супер приятно."
+773c0ce37ffbb546,L10 Ryan,ryan_food_dialogue,87,Ryan,Хех. Ага. Ты мне тоже нравишься.
+1c6058ce1c7242cf,L10 Ryan,ryan_food_dialogue,88,Ryan,Правда было. Ты чудесный.
+32e4e8851f8ac398,L10 Ryan,ryan_food_dialogue,89,Ryan,"Спасибо, что разделил со мной еду..."
+0a94f0c3b65c425c,L10 Ryan,ryan_food_dialogue,90,Ryan,Жду не дождусь снова тебя увидеть
+8c39f31ac476e20e,L10 Ryan,ryan_food_dialogue,91,Kobold,Я всегда жду встречи с тобой. Пойду открою ворота.
+db8848bda5df285f,L10 Ryan,ryan_food_dialogue,92,Kobold,Я тоже! Пойду открою ворота.
+f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,Хорошо! До скорого.
+d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,"Так этот Конрад, похоже, он тебе нравится?"
+6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,"Хе-хе, ага."
+c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,Его многовато. Но мне это нравится.
+a1bf90b10d887726,L10 Ryan,ryan_food_dialogue,97,Ryan,Это мило!
+6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,Что тебе в нём нравится больше всего?
+a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,У него типа. ОГРОМНЫЙ.
+dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"Он резкий, но и нежный тоже!"
+3c29c25f0a23d26a,L10 Ryan,ryan_food_dialogue,101,Kobold,"Он маленький, мне нравится быть с ним на одном уровне глаз."
+0911d52bc2d9f70b,L10 Ryan,ryan_food_dialogue,102,Kobold,Мне нравится... он.
+4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,"О... Да, драконы поменьше обычно... Компенсируют."
+7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,"Ммм, да, знаю такой типаж."
+d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,"Логично! Да, маленькие дрейки — это весело."
+00079873ed68f67e,L10 Ryan,ryan_food_dialogue,106,Ryan,Ох... Это очень мило
+fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,"Обязательно расскажи, как у вас двоих всё сложится!"
+37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,"Спасибо, что разделил со мной еду, ты отличный друг."
+120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,Спасибо за еду! Пойду открою ворота.
+94ddf87d22b36d07,L10 Ryan,ryan_food_dialogue,110,Kobold,"Ты тоже хороший друг, пойду открою ворота."
+02ca8c073be8669d,L10 Ryan,ryan_food_dialogue,111,Ryan,"Ладно, увидимся!"
 # --- picnic: Ryan_grab_basket ---
 3276ca6f923e3a2e,L10 Ryan,Ryan_grab_basket,1,Ryan,"Блэ. Спасибо, что забрал."
 1790d1bc285d158f,L10 Ryan,Ryan_grab_basket,2,Kobold,Ты принёс еду?
@@ -817,9 +817,9 @@ dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,Я просто пришёл 
 7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,"Подумал, что стоит принести что-нибудь приятное после всего, что ты сделал."
 2fc5be91325a9449,L10 Ryan,Ryan_grab_basket,14,Ryan,"Надеюсь, это нормально?"
 097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,"Конечно, нормально!"
-460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,16,Ryan,"Отлично, я рад."
-6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,17,Ryan,"Значит, нормально! Я рад."
-fe3e5d4e4925ddb6,L10 Ryan,Ryan_grab_basket,18,Ryan,Ну что... Еда?
+460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,"Отлично, я рад."
+6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,"Значит, нормально! Я рад."
+fe3e5d4e4925ddb6,L10 Ryan,Ryan_grab_basket,19,Ryan,Ну что... Еда?
 # --- picnic: Ryan_grapes_dialog | if $food_number ---
 46ca5d912bed1dcc,L10 Ryan,Ryan_grapes_dialog,1,Kobold,Виноград выглядел вкусно.
 33f099ac348159d4,L10 Ryan,Ryan_grapes_dialog,2,Kobold,"Райан, веточки вообще-то не едят..."
@@ -869,8 +869,8 @@ ef03f59f06da8fa4,L10 Ryan,Ryan_melon_dialog,10,Kobold,"С ума сойти, с�
 032ea150ccdf88be,L10 Ryan,Ryan_melon_dialog,12,Ryan,Это умилительно!
 aad3715a2f685dc3,L10 Ryan,Ryan_melon_dialog,13,Ryan,"Она создана, чтобы глотать всё целиком."
 b0a73a78b7d9045b,L10 Ryan,Ryan_melon_dialog,14,Kobold,<size=70%><i>Да?
-30ff5a696a0def56,L10 Ryan,Ryan_melon_dialog,15,Ryan,Угу!
-901c77872c53d308,L10 Ryan,Ryan_melon_dialog,16,Ryan,Ага! это удобно.
+30ff5a696a0def56,L10 Ryan,Ryan_melon_dialog,16,Ryan,Угу!
+901c77872c53d308,L10 Ryan,Ryan_melon_dialog,18,Ryan,Ага! это удобно.
 # --- jerkoff: Ryan_4_JerkOff_Start ---
 2d434662c42f6a6c,L10 Ryan,Ryan_4_JerkOff_Start,1,Ryan,Ты уверен...? Прямо перед едой?
 031703a96ac0df8c,L10 Ryan,Ryan_4_JerkOff_Start,2,Ryan,Хех... ладно.
@@ -883,8 +883,8 @@ b0a73a78b7d9045b,L10 Ryan,Ryan_melon_dialog,14,Kobold,<size=70%><i>Да?
 
 # ===== Level 11: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_4 ---
-a67959dc39353129,L11 Conrad,Conrad_Intro_4,1,Conrad,Что-то пошло не так с флагами!
-c1a949184675fa92,L11 Conrad,Conrad_Intro_4,2,Conrad,"Помогите разработчикам, пожалуйста.."
+a67959dc39353129,L11 Conrad,Conrad_Intro_4,1,Conrad/Ryan/Alexander,Что-то пошло не так с флагами!
+c1a949184675fa92,L11 Conrad,Conrad_Intro_4,2,Conrad/Ryan/Alexander,"Помогите разработчикам, пожалуйста.."
 60f8f02dd7a80d00,L11 Conrad,Conrad_Intro_4,3,Kobold,конрад сошёлся с райаном
 6e98155abad655c3,L11 Conrad,Conrad_Intro_4,4,Kobold,игрок сошёлся с конрадом
 9cf9d4fc71363f68,L11 Conrad,Conrad_Intro_4,5,Kobold,игрок сошёлся с райаном
@@ -898,38 +898,38 @@ ad13467d89f77645,L11 Conrad,Conrad_Intro_4,10,Conrad,"Ты что-то сдел�
 be118711068118d5,L11 Conrad,Conrad_Intro_4,13,Kobold,"Ха. Конрад, ты тоже хорошо выглядишь."
 a4008861bf24c47d,L11 Conrad,Conrad_Intro_4,14,Kobold,Так не бывает... Но спасибо!
 a951e05bf8506af1,L11 Conrad,Conrad_Intro_4,15,Conrad,Ягоды.
-765af85f1bd7eafe,L11 Conrad,Conrad_Intro_4,16,Conrad,"Короче,"
-199e91c738a75b4c,L11 Conrad,Conrad_Intro_4,17,Conrad,Ещё бы!
-926069483fd35835,L11 Conrad,Conrad_Intro_4,18,Conrad,Ха-ха... Ага. Я не особо привык делать комплименты.
-8c9dc9229a7630ce,L11 Conrad,Conrad_Intro_4,19,Conrad,"Мне просто нужна быстрая мойка... Может, и станок был бы кстати."
-3ee865676f6e4c99,L11 Conrad,Conrad_Intro_4,20,Kobold,Да ну?
-5fae46a5c8669c29,L11 Conrad,Conrad_Intro_4,21,Kobold,Конечно! Пойду открою ворота.
-daa08f627cbbfb9e,L11 Conrad,Conrad_Intro_4,22,Conrad,Ага... Но только если ты сам хочешь!
-20ee725c28fb397e,L11 Conrad,Conrad_Intro_4,23,Conrad,Стараюсь не наглеть.
-374fe9cc22a15007,L11 Conrad,Conrad_Intro_4,24,Kobold,"Ох, пойду открою тебе ворота."
-ae53715099e0d53d,L11 Conrad,Conrad_Intro_4,25,Conrad,Райан! Я с ним встретился.
-caefb85b87a51126,L11 Conrad,Conrad_Intro_4,26,Kobold,Класс! А что это за... Жижа?
-0452c0f1847f4a72,L11 Conrad,Conrad_Intro_4,27,Kobold,Как всё прошло?
-940b2bb279fbfd8a,L11 Conrad,Conrad_Intro_4,28,Conrad,"Спасибо, что свёл меня с Райаном."
-6c42e3202026a3e8,L11 Conrad,Conrad_Intro_4,29,Conrad,"Честно, очень хорошо."
-91b34251e9ff7711,L11 Conrad,Conrad_Intro_4,30,Conrad,"Никогда бы не подумал, что кто-то вроде него окажется в моём вкусе..."
-abc0fe0ceed24339,L11 Conrad,Conrad_Intro_4,31,Kobold,Ты обязан мне всё рассказать.
-ab20df82132f07cc,L11 Conrad,Conrad_Intro_4,32,Conrad,"Расскажу. Мне просто нужна быстрая мойка, и я бы не отказался сегодня от станка."
-17c5f180de5a8348,L11 Conrad,Conrad_Intro_4,33,Conrad,"Надо <i>потренироваться</i> перед Райаном, если понимаешь, о чём я."
-9912569ea696f8ed,L11 Conrad,Conrad_Intro_4,34,Kobold,Конрад!
-106f99c061d35f26,L11 Conrad,Conrad_Intro_4,35,Kobold,"Ладно, ладно. Пойду открою ворота."
-f71200a57e2d1d7a,L11 Conrad,Conrad_Intro_4,36,Conrad,"Чего-о? Полезно убедиться, что ты разогрет!"
-65bee50d904e101d,L11 Conrad,Conrad_Intro_4,37,Conrad,"Эй-эй. Рад, что вы открыты."
-4d5dda82efc31458,L11 Conrad,Conrad_Intro_4,38,Conrad,"Хочу, чтоб меня окатили из шланга. И станок бы тоже не помешал."
-0ecdd0ec4c0cf66c,L11 Conrad,Conrad_Intro_4,39,Kobold,"О-о-о, ладненько."
-3252727dec6314c5,L11 Conrad,Conrad_Intro_4,40,Kobold,А что это за... Жижа?
-91bc8d1d6dc8cdb7,L11 Conrad,Conrad_Intro_4,41,Conrad,Хех. Ага.
-1aced2f074444bdc,L11 Conrad,Conrad_Intro_4,42,Kobold,"А. Ладно, пойду открою ворота."
+765af85f1bd7eafe,L11 Conrad,Conrad_Intro_4,17,Conrad,"Короче,"
+199e91c738a75b4c,L11 Conrad,Conrad_Intro_4,18,Conrad,Ещё бы!
+926069483fd35835,L11 Conrad,Conrad_Intro_4,19,Conrad,Ха-ха... Ага. Я не особо привык делать комплименты.
+8c9dc9229a7630ce,L11 Conrad,Conrad_Intro_4,20,Conrad,"Мне просто нужна быстрая мойка... Может, и станок был бы кстати."
+3ee865676f6e4c99,L11 Conrad,Conrad_Intro_4,21,Kobold/Ryan,Да ну?
+5fae46a5c8669c29,L11 Conrad,Conrad_Intro_4,22,Kobold,Конечно! Пойду открою ворота.
+daa08f627cbbfb9e,L11 Conrad,Conrad_Intro_4,23,Conrad,Ага... Но только если ты сам хочешь!
+20ee725c28fb397e,L11 Conrad,Conrad_Intro_4,24,Conrad,Стараюсь не наглеть.
+374fe9cc22a15007,L11 Conrad,Conrad_Intro_4,25,Kobold,"Ох, пойду открою тебе ворота."
+ae53715099e0d53d,L11 Conrad,Conrad_Intro_4,28,Conrad,Райан! Я с ним встретился.
+caefb85b87a51126,L11 Conrad,Conrad_Intro_4,29,Kobold,Класс! А что это за... Жижа?
+0452c0f1847f4a72,L11 Conrad,Conrad_Intro_4,30,Kobold,Как всё прошло?
+940b2bb279fbfd8a,L11 Conrad,Conrad_Intro_4,33,Conrad,"Спасибо, что свёл меня с Райаном."
+6c42e3202026a3e8,L11 Conrad,Conrad_Intro_4,34,Conrad,"Честно, очень хорошо."
+91b34251e9ff7711,L11 Conrad,Conrad_Intro_4,35,Conrad,"Никогда бы не подумал, что кто-то вроде него окажется в моём вкусе..."
+abc0fe0ceed24339,L11 Conrad,Conrad_Intro_4,36,Kobold,Ты обязан мне всё рассказать.
+ab20df82132f07cc,L11 Conrad,Conrad_Intro_4,37,Conrad,"Расскажу. Мне просто нужна быстрая мойка, и я бы не отказался сегодня от станка."
+17c5f180de5a8348,L11 Conrad,Conrad_Intro_4,38,Conrad,"Надо <i>потренироваться</i> перед Райаном, если понимаешь, о чём я."
+9912569ea696f8ed,L11 Conrad,Conrad_Intro_4,39,Kobold,Конрад!
+106f99c061d35f26,L11 Conrad,Conrad_Intro_4,40,Kobold,"Ладно, ладно. Пойду открою ворота."
+f71200a57e2d1d7a,L11 Conrad,Conrad_Intro_4,41,Conrad,"Чего-о? Полезно убедиться, что ты разогрет!"
+65bee50d904e101d,L11 Conrad,Conrad_Intro_4,43,Conrad,"Эй-эй. Рад, что вы открыты."
+4d5dda82efc31458,L11 Conrad,Conrad_Intro_4,44,Conrad,"Хочу, чтоб меня окатили из шланга. И станок бы тоже не помешал."
+0ecdd0ec4c0cf66c,L11 Conrad,Conrad_Intro_4,45,Kobold,"О-о-о, ладненько."
+3252727dec6314c5,L11 Conrad,Conrad_Intro_4,47,Kobold,А что это за... Жижа?
+91bc8d1d6dc8cdb7,L11 Conrad,Conrad_Intro_4,48,Conrad,Хех. Ага.
+1aced2f074444bdc,L11 Conrad,Conrad_Intro_4,54,Kobold,"А. Ладно, пойду открою ворота."
 # --- progress: Conrad_required_4 ---
 a5965f548b64e3cf,L11 Conrad,Conrad_required_4,1,Conrad,"Слушай, у меня к тебе вопрос."
 9ad0664c4ac1572a,L11 Conrad,Conrad_required_4,2,Kobold,Да ну?
-d448809fdbbeaf11,L11 Conrad,Conrad_required_4,3,Kobold,Да ну-у-у?
-51dbc8c7be16145b,L11 Conrad,Conrad_required_4,4,Kobold,"Что такое, здоровяк?"
+d448809fdbbeaf11,L11 Conrad,Conrad_required_4,4,Kobold,Да ну-у-у?
+51dbc8c7be16145b,L11 Conrad,Conrad_required_4,5,Kobold,"Что такое, здоровяк?"
 # --- progress: Conrad_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 e6071cb4e7c448c8,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,1,Conrad,"С Райаном — я почти уверен, что сегодня вечером у нас будет свидание."
 9ee7e6a6ebccf907,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,2,Conrad,Есть какие-нибудь советы?
@@ -939,22 +939,22 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,"Убедис
 71cfcccd17dc37fc,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,6,Conrad,"Но пока всё идёт хорошо, да?"
 93a2ca86985333fe,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,7,Kobold,"Думаю, да!"
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Если кто-то вроде Райана заинтересовался, ты отлично справляешься."
-162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,"Ха. Вот бы был кобольд, который мог бы меня отмыть."
-4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Kobold,Вот бы.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,"Я позабочусь, чтобы ты был <i>безупречно чист."
-7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Conrad,"Шутки в сторону, твоя мойка точно лучшая."
-207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,Спасибо. Хорошо выглядишь — хорошо себя чувствуешь!
+162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,"Ха. Вот бы был кобольд, который мог бы меня отмыть."
+4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Вот бы.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,"Я позабочусь, чтобы ты был <i>безупречно чист."
+7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Шутки в сторону, твоя мойка точно лучшая."
+207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,Спасибо. Хорошо выглядишь — хорошо себя чувствуешь!
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 a8ee5e15400fc208,L11 Conrad,Conrad_4_Conrad_Romanced,1,Conrad,"Так... Свидание. Думаю, я бы хотел сходить на него поскорее!"
-f2f6817fb49621c2,L11 Conrad,Conrad_4_Conrad_Romanced,2,Kobold,С удовольствием!
-82ddb728ff9d18a9,L11 Conrad,Conrad_4_Conrad_Romanced,3,Conrad,"Я тут подумал. Может, сходим куда-нибудь на следующей неделе?"
-fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,4,Kobold,Звучит здорово.
-9a03666243082379,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,Я не против!
-67f68a72462bca9b,L11 Conrad,Conrad_4_Conrad_Romanced,6,Conrad,Отлично!
-45ec6449f36fb5b9,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad,"Когда в следующий раз приду на мойку, тогда и пойдём."
-ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,8,Kobold,Мне бы этого хотелось!
-38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,Договорились.
-de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,10,Alexander,Мне не терпится.
+f2f6817fb49621c2,L11 Conrad,Conrad_4_Conrad_Romanced,3,Kobold,С удовольствием!
+82ddb728ff9d18a9,L11 Conrad,Conrad_4_Conrad_Romanced,4,Conrad,"Я тут подумал. Может, сходим куда-нибудь на следующей неделе?"
+fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,Звучит здорово.
+9a03666243082379,L11 Conrad,Conrad_4_Conrad_Romanced,6,Kobold,Я не против!
+67f68a72462bca9b,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad/Ryan,Отлично!
+45ec6449f36fb5b9,L11 Conrad,Conrad_4_Conrad_Romanced,8,Conrad,"Когда в следующий раз приду на мойку, тогда и пойдём."
+ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,Мне бы этого хотелось!
+38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,10,Kobold,Договорились.
+de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,11,Conrad/Kobold/Alexander,Мне не терпится.
 # --- progress: Conrad_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 8dc7f14f91542fe7,L11 Conrad,Conrad_Ryan_Romanced,1,Conrad,"Так ты и Райан, а?"
 498cb71ee3e20098,L11 Conrad,Conrad_Ryan_Romanced,2,Kobold,"О, да!"
@@ -962,14 +962,14 @@ de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,10,Alexander,Мне не т
 64db0ca49ca9563d,L11 Conrad,Conrad_Ryan_Romanced,4,Kobold,Он дракон моей мечты.
 bdfc096fee84c4fb,L11 Conrad,Conrad_Ryan_Romanced,5,Conrad,Я рад за тебя!
 cb24c38318e64595,L11 Conrad,Conrad_Ryan_Romanced,6,Conrad,Похоже на то.
-0e5b54a94da4725b,L11 Conrad,Conrad_Ryan_Romanced,7,Kobold,А ты как? Есть кто-нибудь интересный?
-5f9173229e51d947,L11 Conrad,Conrad_Ryan_Romanced,8,Kobold,"Да, я тоже рад."
-68fa6f383249196c,L11 Conrad,Conrad_Ryan_Romanced,9,Conrad,Вроде того! Я стал чаще выбираться.
-e589607da4e2983d,L11 Conrad,Conrad_Ryan_Romanced,10,Conrad,Нашёл одного грифона. Примерно моего роста...
-d69f5ee422fdf377,L11 Conrad,Conrad_Ryan_Romanced,11,Conrad,"Кажется, я ему нравлюсь."
-9aab87987aca7783,L11 Conrad,Conrad_Ryan_Romanced,12,Conrad,...<i><size=70%>Он-то мне точно нравится.
-7b42e92a68e914e0,L11 Conrad,Conrad_Ryan_Romanced,13,Conrad,Приятно слышать.
-88b86bef7b86a770,L11 Conrad,Conrad_Ryan_Romanced,14,Conrad,"Ага, похоже, он умеет задеть за живое."
+0e5b54a94da4725b,L11 Conrad,Conrad_Ryan_Romanced,8,Kobold,А ты как? Есть кто-нибудь интересный?
+5f9173229e51d947,L11 Conrad,Conrad_Ryan_Romanced,9,Kobold,"Да, я тоже рад."
+68fa6f383249196c,L11 Conrad,Conrad_Ryan_Romanced,10,Conrad,Вроде того! Я стал чаще выбираться.
+e589607da4e2983d,L11 Conrad,Conrad_Ryan_Romanced,11,Conrad,Нашёл одного грифона. Примерно моего роста...
+d69f5ee422fdf377,L11 Conrad,Conrad_Ryan_Romanced,12,Conrad,"Кажется, я ему нравлюсь."
+9aab87987aca7783,L11 Conrad,Conrad_Ryan_Romanced,13,Conrad,...<i><size=70%>Он-то мне точно нравится.
+7b42e92a68e914e0,L11 Conrad,Conrad_Ryan_Romanced,14,Conrad,Приятно слышать.
+88b86bef7b86a770,L11 Conrad,Conrad_Ryan_Romanced,15,Conrad,"Ага, похоже, он умеет задеть за живое."
 # --- jerkoff: Conrad_4_JerkOff_Start ---
 395b9d676b6c01c5,L11 Conrad,Conrad_4_JerkOff_Start,1,Conrad,"О... Прямо сейчас? Лады, я за."
 # --- cum: Conrad_4_Cum ---
@@ -988,7 +988,7 @@ e2956ac74f8acb8e,L11 Conrad,Conrad_Outro_4,6,Kobold,"Кажется, ни одн
 # --- outro: Conrad_Outro_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 0fa2abeece5fd3de,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,1,Conrad,Ага! Чувствую себя чистым.
 1b5f2f27de868c08,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,2,Conrad,"Эй, э, как думаешь, у нас с Райаном <i>правда</i> всё получится?"
-ebc110388e3748fa,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Alexander,Конечно!
+ebc110388e3748fa,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Kobold/Alexander,Конечно!
 5bc10e8175dc9422,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,4,Kobold,Надеюсь.
 3da3a77980cb9eb9,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,5,Conrad,"Надеюсь, ты прав."
 43e42fb816f1d2c2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,6,Conrad,"Ага, я тоже. Он правда хороший."
@@ -1011,18 +1011,18 @@ d547385bcae74ca2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,20,Kobold,Я р�
 # --- outro: Conrad_Outro_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 ad0500f8d2500c0f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,1,Conrad,"Чувствую себя безупречно чистым, как всегда."
 297d60c9e5c25580,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,2,Conrad,"О, и я придумал, куда пойти."
-f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,3,Conrad,Есть один клуб в центре. «Wings». Моё старое любимое место.
-5dcbc1f451fcc29d,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,4,Conrad,Я там вроде как большая шишка.
-99c9d7ee0966d8d1,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,Я мог бы достать нам <i>лучшие</i> места на их шоу.
-02f6a5560835daa6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,6,Kobold,"Ха, ладно. Я в деле."
-7137eb7d65d8f4d8,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,7,Kobold,"О-о-о, значит, и правда большая шишка."
-60c5caff4aee58e9,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,8,Conrad,"Блин, чувак, я так заряжен."
-d37d98f486ba54c5,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,9,Conrad,Начну готовиться.
-bf3d9317290e56b0,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,10,Conrad,"Когда приду в следующий раз, у меня уже будет бронь!"
-f11ccc8c0bd5ecbc,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,11,Conrad,Откроешь ворота?
-ffcc816df16993e6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,12,Conrad,Ещё бы.
-c25790cd739260fd,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,13,Conrad,Это ты большая шишка
-b18d301dab41755f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,14,Conrad,"Прости, я плохо флиртую. Откроешь ворота?"
+f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,Есть один клуб в центре. «Wings». Моё старое любимое место.
+5dcbc1f451fcc29d,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,6,Conrad,Я там вроде как большая шишка.
+99c9d7ee0966d8d1,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,7,Conrad,Я мог бы достать нам <i>лучшие</i> места на их шоу.
+02f6a5560835daa6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,8,Kobold,"Ха, ладно. Я в деле."
+7137eb7d65d8f4d8,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,9,Kobold,"О-о-о, значит, и правда большая шишка."
+60c5caff4aee58e9,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,10,Conrad,"Блин, чувак, я так заряжен."
+d37d98f486ba54c5,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,11,Conrad,Начну готовиться.
+bf3d9317290e56b0,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,12,Conrad,"Когда приду в следующий раз, у меня уже будет бронь!"
+f11ccc8c0bd5ecbc,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,13,Conrad,Откроешь ворота?
+ffcc816df16993e6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,14,Conrad,Ещё бы.
+c25790cd739260fd,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,16,Conrad,Это ты большая шишка
+b18d301dab41755f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,17,Conrad,"Прости, я плохо флиртую. Откроешь ворота?"
 # --- outro: Conrad_Outro_4_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 6fe24a5cf11acb37,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,1,Conrad,"Ага! чистый, как всегда."
 8f0378325ead68c7,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,2,Conrad,У тебя есть какие-нибудь планы с райаном?
@@ -1047,17 +1047,17 @@ e8c921ab9051f110,L12 Alexander,Alexander_4_intro,4,Alexander,"Ха, как вс�
 a9945cd0cd165325,L12 Alexander,Alexander_4_intro,8,Kobold,Дождь — это приятно.
 7259414f82b0b97a,L12 Alexander,Alexander_4_intro,9,Kobold,Я всегда ненавидел дождь.
 bfad19e22f9652cc,L12 Alexander,Alexander_4_intro,10,Alexander,"Согласен, хотя я всё же хотел бы, чтобы меня впустили, как только будет удобно."
-91a5c27ef059ab24,L12 Alexander,Alexander_4_intro,11,Alexander,"Полагаю, я понимаю нелюбовь к грязи, которую он может развести."
-882df59f0a75b295,L12 Alexander,Alexander_4_intro,12,Alexander,Но для этого я здесь и нахожусь!
-990e43e4f2687cdf,L12 Alexander,Alexander_4_intro,13,Kobold,Хорошо! Пойду открою вам ворота.
-846b613e707ce00d,L12 Alexander,Alexander_4_intro,14,Kobold,Yip! <size=70%>(Ворота)
-1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,15,Alexander,"Ммм, я так понимаю, это значит, что вы откроете ворота?"
-56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,16,Kobold,Yip! <size=70%>(Да)
-fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,17,Alexander,"Не понимаю, почему я вдруг стал понимать ваши «Yip»"
-7a919cef111fe275,L12 Alexander,Alexander_4_intro,18,Kobold,"Yip! <size=70%>(Это потому, что дремлющая часть вашего драконьего разума вспоминает глубоко заложенный языковой мост между вашим родом и моим. В нём заключён глубинный смысл и намерение кобольдских «Yip». Это внезапное понимание — просто следствие того, что наша связь со временем крепнет и пробуждает эту часть вашего разума.)"
-6d8c462224bca1b5,L12 Alexander,Alexander_4_intro,19,Kobold,Yip! <size=70%>(хз)
-8e7ead434fce5609,L12 Alexander,Alexander_4_intro,20,Alexander,Не откроете ли вы ворота...?
-19be549c91d82ff3,L12 Alexander,Alexander_4_intro,21,Alexander,"Что ж, справедливо. Буду ждать!"
+91a5c27ef059ab24,L12 Alexander,Alexander_4_intro,12,Alexander,"Полагаю, я понимаю нелюбовь к грязи, которую он может развести."
+882df59f0a75b295,L12 Alexander,Alexander_4_intro,13,Alexander,Но для этого я здесь и нахожусь!
+990e43e4f2687cdf,L12 Alexander,Alexander_4_intro,14,Kobold,Хорошо! Пойду открою вам ворота.
+846b613e707ce00d,L12 Alexander,Alexander_4_intro,15,Kobold,Yip! <size=70%>(Ворота)
+1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,17,Alexander,"Ммм, я так понимаю, это значит, что вы откроете ворота?"
+56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,18,Kobold,Yip! <size=70%>(Да)
+fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,19,Alexander,"Не понимаю, почему я вдруг стал понимать ваши «Yip»"
+7a919cef111fe275,L12 Alexander,Alexander_4_intro,20,Kobold,"Yip! <size=70%>(Это потому, что дремлющая часть вашего драконьего разума вспоминает глубоко заложенный языковой мост между вашим родом и моим. В нём заключён глубинный смысл и намерение кобольдских «Yip». Это внезапное понимание — просто следствие того, что наша связь со временем крепнет и пробуждает эту часть вашего разума.)"
+6d8c462224bca1b5,L12 Alexander,Alexander_4_intro,21,Kobold,Yip! <size=70%>(хз)
+8e7ead434fce5609,L12 Alexander,Alexander_4_intro,24,Alexander,Не откроете ли вы ворота...?
+19be549c91d82ff3,L12 Alexander,Alexander_4_intro,25,Alexander,"Что ж, справедливо. Буду ждать!"
 # --- progress: Alexander_4_required ---
 c19ca0647cc1a583,L12 Alexander,Alexander_4_required,1,Alexander,Я тут размышлял...
 6d9630067757f781,L12 Alexander,Alexander_4_required,2,Alexander,Я не мог не заметить то... устройство вон там.
@@ -1073,16 +1073,16 @@ d89de41838a75fa0,L12 Alexander,Alexander_4_required,10,Kobold,Если хоти�
 6dece6f0ec399d4e,L12 Alexander,Alexander_4_required,12,Alexander,"Думаю, я бы хотел?"
 08ab3092d83ed1d3,L12 Alexander,Alexander_4_required,13,Alexander,Знаю. Знаю.
 81a4fcd2541ac990,L12 Alexander,Alexander_4_required,14,Alexander,"Думаю, я бы хотел им воспользоваться?"
-67c0f2a71f4ff613,L12 Alexander,Alexander_4_required,15,Alexander,Э... эм...
-4640c27322f55d8c,L12 Alexander,Alexander_4_required,16,Alexander,Возможно...?
-9739b879143b91cf,L12 Alexander,Alexander_4_required,17,Alexander,Только если это уместно...
-e2dce2bed173fba0,L12 Alexander,Alexander_4_required,18,Kobold,"Конечно, уместно. Спасибо Конраду, что заставил меня его купить."
-f12929f0cef567d7,L12 Alexander,Alexander_4_required,19,Alexander,"Хорошо, хорошо... Тогда, думаю, я бы хотел им воспользоваться?"
-76ea754cd53f21dc,L12 Alexander,Alexander_4_required,20,Alexander,Конраду...?
-18b51cf572e4b49a,L12 Alexander,Alexander_4_required,21,Kobold,Я не против!
-334a54e73cf69dc1,L12 Alexander,Alexander_4_required,22,Kobold,С радостью принесу его вам.
-7bd62126f382f565,L12 Alexander,Alexander_4_required,23,Alexander,Мгм... Благодарю.
-d2c15503eb28631b,L12 Alexander,Alexander_4_required,24,Alexander,Хорошо... Спасибо.
+67c0f2a71f4ff613,L12 Alexander,Alexander_4_required,16,Alexander,Э... эм...
+4640c27322f55d8c,L12 Alexander,Alexander_4_required,17,Alexander,Возможно...?
+9739b879143b91cf,L12 Alexander,Alexander_4_required,18,Alexander,Только если это уместно...
+e2dce2bed173fba0,L12 Alexander,Alexander_4_required,20,Kobold,"Конечно, уместно. Спасибо Конраду, что заставил меня его купить."
+f12929f0cef567d7,L12 Alexander,Alexander_4_required,21,Alexander,"Хорошо, хорошо... Тогда, думаю, я бы хотел им воспользоваться?"
+76ea754cd53f21dc,L12 Alexander,Alexander_4_required,22,Alexander,Конраду...?
+18b51cf572e4b49a,L12 Alexander,Alexander_4_required,25,Kobold,Я не против!
+334a54e73cf69dc1,L12 Alexander,Alexander_4_required,26,Kobold,С радостью принесу его вам.
+7bd62126f382f565,L12 Alexander,Alexander_4_required,27,Alexander,Мгм... Благодарю.
+d2c15503eb28631b,L12 Alexander,Alexander_4_required,28,Alexander,Хорошо... Спасибо.
 # --- jerkoff: Alexander_4_JerkOff_Start ---
 47122b215cc11a2b,L12 Alexander,Alexander_4_JerkOff_Start,1,Alexander,"О... Полагаю, это вполне приемлемо~"
 # --- cum: Alexander_4_Cum ---
@@ -1095,60 +1095,60 @@ ed6a9612f44b19ea,L12 Alexander,Alexander_4_Cum,1,Alexander,уфф... Благо�
 35278dc46019f9b9,L12 Alexander,Alexander_4_Outro,1,Alexander,Мне намного лучше.
 5547ec33b10091a2,L12 Alexander,Alexander_4_Outro,2,Alexander,"Я... Знаю, что это не к месту."
 3ce3dec2bd740757,L12 Alexander,Alexander_4_Outro,3,Alexander,"Но, думаю, вы меня кое-чему научили."
-5eca8560307cac86,L12 Alexander,Alexander_4_Outro,4,Kobold,Но это же вы дракон-учитель.
-419ecbf32abefda1,L12 Alexander,Alexander_4_Outro,5,Alexander,"Профессор, но да. Научили."
-0b1b8529d2c3c5fc,L12 Alexander,Alexander_4_Outro,6,Alexander,"Кажется, мне нравится, когда обо мне заботятся?"
-4df2487e01509478,L12 Alexander,Alexander_4_Outro,7,Kobold,Большинству нравится!
-c9f8ba59379bb60a,L12 Alexander,Alexander_4_Outro,8,Kobold,Мне нравится заботиться о вас.
-93786b06bef36348,L12 Alexander,Alexander_4_Outro,9,Alexander,"Что ж, да. Но я имею в виду нечто более... Первобытное?"
-b868cb066c4b572d,L12 Alexander,Alexander_4_Outro,10,Alexander,Приятно это слышать... Но я имею в виду заботу более... Первобытную?
-565a3630f0cfbcc5,L12 Alexander,Alexander_4_Outro,11,Alexander,"Мне нравится, когда вы указываете мне, что делать, одним похлопыванием ладони."
-1161a29c118dbaa6,L12 Alexander,Alexander_4_Outro,12,Alexander,Мне нравится ваша уверенность в себе. Пусть даже речь лишь о мытье.
-32c31015075eeede,L12 Alexander,Alexander_4_Outro,13,Alexander,"Приятно отпустить контроль, хотя бы на мгновение."
-1651e2418c22d0c0,L12 Alexander,Alexander_4_Outro,14,Kobold,<size=70%> Большой дракон отдаёт мне контроль. Воу.
-bd051341e68cc04e,L12 Alexander,Alexander_4_Outro,15,Kobold,"Я рад дать вам место, где можно расслабиться."
-2e1f723e42b149be,L12 Alexander,Alexander_4_Outro,16,Alexander,"Это весьма необычно, не правда ли?"
-8212cbdd05d21f37,L12 Alexander,Alexander_4_Outro,17,Alexander,"Я скоро вернусь, хорошо? Благодарю за мытьё."
-b5f8ec9a6918d554,L12 Alexander,Alexander_4_Outro,18,Alexander,"Это освобождает. Я вернусь, хорошо?"
+5eca8560307cac86,L12 Alexander,Alexander_4_Outro,5,Kobold,Но это же вы дракон-учитель.
+419ecbf32abefda1,L12 Alexander,Alexander_4_Outro,6,Alexander,"Профессор, но да. Научили."
+0b1b8529d2c3c5fc,L12 Alexander,Alexander_4_Outro,7,Alexander,"Кажется, мне нравится, когда обо мне заботятся?"
+4df2487e01509478,L12 Alexander,Alexander_4_Outro,8,Kobold,Большинству нравится!
+c9f8ba59379bb60a,L12 Alexander,Alexander_4_Outro,9,Kobold,Мне нравится заботиться о вас.
+93786b06bef36348,L12 Alexander,Alexander_4_Outro,10,Alexander,"Что ж, да. Но я имею в виду нечто более... Первобытное?"
+b868cb066c4b572d,L12 Alexander,Alexander_4_Outro,11,Alexander,Приятно это слышать... Но я имею в виду заботу более... Первобытную?
+565a3630f0cfbcc5,L12 Alexander,Alexander_4_Outro,12,Alexander,"Мне нравится, когда вы указываете мне, что делать, одним похлопыванием ладони."
+1161a29c118dbaa6,L12 Alexander,Alexander_4_Outro,13,Alexander,Мне нравится ваша уверенность в себе. Пусть даже речь лишь о мытье.
+32c31015075eeede,L12 Alexander,Alexander_4_Outro,14,Alexander,"Приятно отпустить контроль, хотя бы на мгновение."
+1651e2418c22d0c0,L12 Alexander,Alexander_4_Outro,15,Kobold,<size=70%> Большой дракон отдаёт мне контроль. Воу.
+bd051341e68cc04e,L12 Alexander,Alexander_4_Outro,16,Kobold,"Я рад дать вам место, где можно расслабиться."
+2e1f723e42b149be,L12 Alexander,Alexander_4_Outro,17,Alexander,"Это весьма необычно, не правда ли?"
+8212cbdd05d21f37,L12 Alexander,Alexander_4_Outro,18,Alexander,"Я скоро вернусь, хорошо? Благодарю за мытьё."
+b5f8ec9a6918d554,L12 Alexander,Alexander_4_Outro,19,Alexander,"Это освобождает. Я вернусь, хорошо?"
 
 # ===== Level 13: Ryan (Sunny) =====
 # --- intro: Ryan_5_intro ---
-dcd95465ccb79997,L13 Ryan,Ryan_5_intro,1,Kobold,"Привет, здоровяк."
-a4c1cb0899f204fc,L13 Ryan,Ryan_5_intro,2,Ryan,Привет... малыш!
-df50afc7f5e2d994,L13 Ryan,Ryan_5_intro,3,Kobold,Я не <i>такой уж</i> малыш...
-8061d3d1aed7c531,L13 Ryan,Ryan_5_intro,4,Kobold,"Ну что, пришёл помыться?"
-1107598aa9bc6c75,L13 Ryan,Ryan_5_intro,5,Ryan,"Ой, прости..."
-061629ac669e11f8,L13 Ryan,Ryan_5_intro,6,Ryan,Просто пытался подыграть. Рад тебя видеть!
-cdc7ebc001250566,L13 Ryan,Ryan_5_intro,7,Ryan,Ага!
-f8c3932b65e6bbb0,L13 Ryan,Ryan_5_intro,8,Ryan,"Привет, кобольд!"
-4a5d3b88460afb6b,L13 Ryan,Ryan_5_intro,9,Ryan,Я решил попробовать печь.
-b483e9c7e323807a,L13 Ryan,Ryan_5_intro,10,Ryan,В последнее время у меня много свободного времени.
-afd9ef6045a7191c,L13 Ryan,Ryan_5_intro,11,Ryan,"Оказалось, выпечка — грязное дело!"
-808f38835d1deb53,L13 Ryan,Ryan_5_intro,12,Ryan,Мне бы не помешала мойка.
+dcd95465ccb79997,L13 Ryan,Ryan_5_intro,6,Kobold,"Привет, здоровяк."
+a4c1cb0899f204fc,L13 Ryan,Ryan_5_intro,8,Ryan,Привет... малыш!
+df50afc7f5e2d994,L13 Ryan,Ryan_5_intro,9,Kobold,Я не <i>такой уж</i> малыш...
+8061d3d1aed7c531,L13 Ryan,Ryan_5_intro,10,Kobold,"Ну что, пришёл помыться?"
+1107598aa9bc6c75,L13 Ryan,Ryan_5_intro,11,Ryan,"Ой, прости..."
+061629ac669e11f8,L13 Ryan,Ryan_5_intro,12,Ryan,Просто пытался подыграть. Рад тебя видеть!
+cdc7ebc001250566,L13 Ryan,Ryan_5_intro,13,Ryan,Ага!
+f8c3932b65e6bbb0,L13 Ryan,Ryan_5_intro,14,Ryan,"Привет, кобольд!"
+4a5d3b88460afb6b,L13 Ryan,Ryan_5_intro,15,Ryan,Я решил попробовать печь.
+b483e9c7e323807a,L13 Ryan,Ryan_5_intro,16,Ryan,В последнее время у меня много свободного времени.
+afd9ef6045a7191c,L13 Ryan,Ryan_5_intro,17,Ryan,"Оказалось, выпечка — грязное дело!"
+808f38835d1deb53,L13 Ryan,Ryan_5_intro,18,Ryan,Мне бы не помешала мойка.
 # --- intro: Ryan_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 efa367904267d1f9,L13 Ryan,Ryan_5_intro_ryan_romanced,1,Ryan,...Мойка перед нашим свиданием сегодня вечером.
 d510da8dc09c7bd7,L13 Ryan,Ryan_5_intro_ryan_romanced,2,Kobold,ОЙ. ТОЧНО.
 cb4f55dc25088cef,L13 Ryan,Ryan_5_intro_ryan_romanced,3,Kobold,Мне очень не терпится.
 63b5ec8a662e7e8f,L13 Ryan,Ryan_5_intro_ryan_romanced,4,Ryan,"Тогда хорошо, что я здесь и могу напомнить."
-60004e58bb12dd3c,L13 Ryan,Ryan_5_intro_ryan_romanced,5,Ryan,Буду ждать ворот!
+60004e58bb12dd3c,L13 Ryan,Ryan_5_intro_ryan_romanced,6,Ryan,Буду ждать ворот!
 # --- intro: Ryan_5_intro ---
-3ff66f86649ed3f4,L13 Ryan,Ryan_5_intro,13,Kobold,"Привет, Райан!"
-bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,14,Ryan,Привет! Я на мойку.
-747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,15,Kobold,"Отлично, пойду открою ворота."
-1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,16,Kobold,Конечно! Мне не терпится рассказать тебе про Конрада.
-4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,17,Kobold,Ага! Скоро иду с ним на свидание.
-29301eae6840e128,L13 Ryan,Ryan_5_intro,18,Kobold,"Мммгм, надо готовиться к свиданию с ним."
-154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,19,Ryan,Как здорово!
-e1867b98d8ce23bd,L13 Ryan,Ryan_5_intro,20,Ryan,Расскажешь подробнее внутри.
-10dc92e80220fe9b,L13 Ryan,Ryan_5_intro,21,Kobold,"Приве-е-ет, Райан."
-b57c370a0fcc7045,L13 Ryan,Ryan_5_intro,22,Ryan,Привет!
-cd80a4a851309647,L13 Ryan,Ryan_5_intro,23,Kobold,Как прошло свидание с Конрадом?
-26eed1b65d0e1370,L13 Ryan,Ryan_5_intro,24,Kobold,РАССКАЖИ МНЕ ПРО ВАС С КОНРАДОМ!
-b433dad7fc4cdb18,L13 Ryan,Ryan_5_intro,25,Ryan,Прошло отлично!
-cd235c4d7d27fbdb,L13 Ryan,Ryan_5_intro,26,Ryan,Ого... Какой нетерпеливый!
-7b1f5d058f2045c5,L13 Ryan,Ryan_5_intro,27,Ryan,Мы сходили поесть. Хорошо поболтали.
-4932dbc11ab131d4,L13 Ryan,Ryan_5_intro,28,Ryan,Слово за слово...
-1a86226c86c7138f,L13 Ryan,Ryan_5_intro,29,Ryan,"Пошли в бар... Стало жарко. Можешь представить, что было дальше... <size=70%>Хах..."
+3ff66f86649ed3f4,L13 Ryan,Ryan_5_intro,19,Kobold,"Привет, Райан!"
+bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,20,Ryan,Привет! Я на мойку.
+747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,24,Kobold,"Отлично, пойду открою ворота."
+1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,25,Kobold,Конечно! Мне не терпится рассказать тебе про Конрада.
+4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,28,Kobold,Ага! Скоро иду с ним на свидание.
+29301eae6840e128,L13 Ryan,Ryan_5_intro,29,Kobold,"Мммгм, надо готовиться к свиданию с ним."
+154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,30,Ryan,Как здорово!
+e1867b98d8ce23bd,L13 Ryan,Ryan_5_intro,31,Ryan,Расскажешь подробнее внутри.
+10dc92e80220fe9b,L13 Ryan,Ryan_5_intro,33,Kobold,"Приве-е-ет, Райан."
+b57c370a0fcc7045,L13 Ryan,Ryan_5_intro,34,Ryan,Привет!
+cd80a4a851309647,L13 Ryan,Ryan_5_intro,38,Kobold,Как прошло свидание с Конрадом?
+26eed1b65d0e1370,L13 Ryan,Ryan_5_intro,39,Kobold,РАССКАЖИ МНЕ ПРО ВАС С КОНРАДОМ!
+b433dad7fc4cdb18,L13 Ryan,Ryan_5_intro,40,Ryan,Прошло отлично!
+cd235c4d7d27fbdb,L13 Ryan,Ryan_5_intro,41,Ryan,Ого... Какой нетерпеливый!
+7b1f5d058f2045c5,L13 Ryan,Ryan_5_intro,43,Ryan,Мы сходили поесть. Хорошо поболтали.
+4932dbc11ab131d4,L13 Ryan,Ryan_5_intro,44,Ryan,Слово за слово...
+1a86226c86c7138f,L13 Ryan,Ryan_5_intro,45,Ryan,"Пошли в бар... Стало жарко. Можешь представить, что было дальше... <size=70%>Хах..."
 # --- progress: Ryan_5_Required_ryan_romanced | if $ryan_romanced ---
 e61676df3c022293,L13 Ryan,Ryan_5_Required_ryan_romanced,1,Ryan,Так. Наше свидание сегодня вечером...
 c022fa54258553ea,L13 Ryan,Ryan_5_Required_ryan_romanced,2,Ryan,Куда бы ты хотел пойти?
@@ -1161,34 +1161,34 @@ d2c0f4718541c240,L13 Ryan,Ryan_5_Required_ryan_romanced,6,Kobold,Как насч
 6e8c399ff118f405,L13 Ryan,Ryan_5_Required_ryan_romanced,9,Ryan,Тебя бы это заинтересовало?
 7da2aa0d4ef74597,L13 Ryan,Ryan_5_Required_ryan_romanced,10,Kobold,Звучит чудесно!
 db39ae73af1cfae5,L13 Ryan,Ryan_5_Required_ryan_romanced,11,Kobold,Разве это не унизительно?
-3185b026252747c6,L13 Ryan,Ryan_5_Required_ryan_romanced,12,Ryan,Я всегда любил катать своих двуногих друзей...
-d2994ff918a23d86,L13 Ryan,Ryan_5_Required_ryan_romanced,13,Ryan,"Значит, это свидание, мне не терпится."
-3fdcf71c3e2f7ea0,L13 Ryan,Ryan_5_Required_ryan_romanced,14,Ryan,"О! Нет, вовсе нет. Это весело!"
-8bacddc318adc2b9,L13 Ryan,Ryan_5_Required_ryan_romanced,15,Ryan,Я постоянно катаю других своих двуногих друзей.
-638c1801c65c6b0c,L13 Ryan,Ryan_5_Required_ryan_romanced,16,Ryan,"Уверен, мы что-нибудь придумаем! просто встретимся на пирсе!"
-25f86d817a092ae1,L13 Ryan,Ryan_5_Required_ryan_romanced,17,Ryan,"Да, звучит неплохо."
-38ae2aec596ab356,L13 Ryan,Ryan_5_Required_ryan_romanced,18,Ryan,Как ты относишься к морепродуктам?
-d7456d9e85366bc9,L13 Ryan,Ryan_5_Required_ryan_romanced,19,Kobold,Да. Я люблю рыбу!
-925a663e1b23d966,L13 Ryan,Ryan_5_Required_ryan_romanced,20,Kobold,"Хммм, может, что-нибудь другое?"
-14d1fddd0115ee0d,L13 Ryan,Ryan_5_Required_ryan_romanced,21,Ryan,"О, отлично. Я большой любитель лосося."
-6b59acab736bd349,L13 Ryan,Ryan_5_Required_ryan_romanced,22,Ryan,"Ну, я дракон... но... Ты понял, о чём я."
-334998266afc2476,L13 Ryan,Ryan_5_Required_ryan_romanced,23,Ryan,"Значит, это свидание! Морепродукты, а дальше по обстоятельствам."
-a02af61e18efb0f0,L13 Ryan,Ryan_5_Required_ryan_romanced,24,Ryan,Я знаю приличное лошадиное заведение у пирса.
-cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,25,Ryan,Это типа фьюжн лошадиной кухни...
-8771d66a0a1ace3e,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,"Мне нравится! Думаю, тебе тоже понравится."
-8cceef523eb8c739,L13 Ryan,Ryan_5_Required_ryan_romanced,27,Ryan,"Значит, это свидание!"
-5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,28,Ryan,"О да, есть одно хорошее место в центре под названием «Wings»."
-4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,"Думаю, это было бы неплохое место! Там каждый вечер хорошие шоу."
-ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,"Можно сходить туда, а потом снять номер в отеле... Хмм."
-435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,"Думаю, кино — это весело!"
-0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,32,Ryan,Какой фильм ты имеешь в виду?
-b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Kobold,Yip-Мен — Последний Yip
-45afe74b37ed6bb0,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Kobold,Драконы галактики 2
-a881cd2440d13252,L13 Ryan,Ryan_5_Required_ryan_romanced,36,Ryan,"О, я слышал о нём хорошие отзывы."
-00712e7d97f1872a,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Ryan,Фильмы про Yip-Мена такие банальные...
-037e3c0c446d2b14,L13 Ryan,Ryan_5_Required_ryan_romanced,38,Ryan,"Но уверен, с тобой мне понравится!"
-b1ac5509459ca2a4,L13 Ryan,Ryan_5_Required_ryan_romanced,39,Ryan,"О да, первая часть мне понравилась."
-eb547bf48bc9637e,L13 Ryan,Ryan_5_Required_ryan_romanced,40,Ryan,"Значит, это свидание. Мне не терпится."
+3185b026252747c6,L13 Ryan,Ryan_5_Required_ryan_romanced,13,Ryan,Я всегда любил катать своих двуногих друзей...
+d2994ff918a23d86,L13 Ryan,Ryan_5_Required_ryan_romanced,14,Ryan,"Значит, это свидание, мне не терпится."
+3fdcf71c3e2f7ea0,L13 Ryan,Ryan_5_Required_ryan_romanced,15,Ryan,"О! Нет, вовсе нет. Это весело!"
+8bacddc318adc2b9,L13 Ryan,Ryan_5_Required_ryan_romanced,16,Ryan,Я постоянно катаю других своих двуногих друзей.
+638c1801c65c6b0c,L13 Ryan,Ryan_5_Required_ryan_romanced,17,Ryan,"Уверен, мы что-нибудь придумаем! просто встретимся на пирсе!"
+25f86d817a092ae1,L13 Ryan,Ryan_5_Required_ryan_romanced,18,Ryan,"Да, звучит неплохо."
+38ae2aec596ab356,L13 Ryan,Ryan_5_Required_ryan_romanced,19,Ryan,Как ты относишься к морепродуктам?
+d7456d9e85366bc9,L13 Ryan,Ryan_5_Required_ryan_romanced,20,Kobold,Да. Я люблю рыбу!
+925a663e1b23d966,L13 Ryan,Ryan_5_Required_ryan_romanced,21,Kobold,"Хммм, может, что-нибудь другое?"
+14d1fddd0115ee0d,L13 Ryan,Ryan_5_Required_ryan_romanced,22,Ryan,"О, отлично. Я большой любитель лосося."
+6b59acab736bd349,L13 Ryan,Ryan_5_Required_ryan_romanced,23,Ryan,"Ну, я дракон... но... Ты понял, о чём я."
+334998266afc2476,L13 Ryan,Ryan_5_Required_ryan_romanced,24,Ryan,"Значит, это свидание! Морепродукты, а дальше по обстоятельствам."
+a02af61e18efb0f0,L13 Ryan,Ryan_5_Required_ryan_romanced,25,Ryan,Я знаю приличное лошадиное заведение у пирса.
+cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,Это типа фьюжн лошадиной кухни...
+8771d66a0a1ace3e,L13 Ryan,Ryan_5_Required_ryan_romanced,27,Ryan,"Мне нравится! Думаю, тебе тоже понравится."
+8cceef523eb8c739,L13 Ryan,Ryan_5_Required_ryan_romanced,28,Ryan,"Значит, это свидание!"
+5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,"О да, есть одно хорошее место в центре под названием «Wings»."
+4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,"Думаю, это было бы неплохое место! Там каждый вечер хорошие шоу."
+ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,"Можно сходить туда, а потом снять номер в отеле... Хмм."
+435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Ryan,"Думаю, кино — это весело!"
+0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Ryan,Какой фильм ты имеешь в виду?
+b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Kobold,Yip-Мен — Последний Yip
+45afe74b37ed6bb0,L13 Ryan,Ryan_5_Required_ryan_romanced,38,Kobold,Драконы галактики 2
+a881cd2440d13252,L13 Ryan,Ryan_5_Required_ryan_romanced,39,Ryan,"О, я слышал о нём хорошие отзывы."
+00712e7d97f1872a,L13 Ryan,Ryan_5_Required_ryan_romanced,41,Ryan,Фильмы про Yip-Мена такие банальные...
+037e3c0c446d2b14,L13 Ryan,Ryan_5_Required_ryan_romanced,42,Ryan,"Но уверен, с тобой мне понравится!"
+b1ac5509459ca2a4,L13 Ryan,Ryan_5_Required_ryan_romanced,43,Ryan,"О да, первая часть мне понравилась."
+eb547bf48bc9637e,L13 Ryan,Ryan_5_Required_ryan_romanced,45,Ryan,"Значит, это свидание. Мне не терпится."
 # --- progress: Ryan_5_Required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
 1f2c5ed668dc8972,L13 Ryan,Ryan_5_Required_conrad_romanced,1,Ryan,"Так, расскажи мне побольше о конраде!"
 522b54ddedc9ae6c,L13 Ryan,Ryan_5_Required_conrad_romanced,2,Kobold,В последнее время он стал намного добрее.
@@ -1210,22 +1210,22 @@ b5060af9808e8c7c,L13 Ryan,Ryan_5_Required_conrad_romanced,14,Kobold,"Угу, о�
 932d7df9b58f5376,L13 Ryan,Ryan_5_Required_conrad_romanced,18,Ryan,Приятно слышать.
 # --- progress: Ryan_5_Required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
 e76e544c771880f3,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,1,Ryan,Конрад говорил о тебе на нашем свидании.
-2e21aa0b86c092fb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,2,Kobold,О чём именно?
-271a662aed24f160,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,3,Ryan,"Рассказал мне про тот раз, когда его избили."
-1b0b214cb2df69ec,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,4,Ryan,"Думаю, ты помог ему гораздо больше, чем думаешь."
-ad14c398c575824b,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,5,Kobold,Я просто делал свою работу!
-daddaa15545566ce,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,6,Ryan,"Конечно, но в тот момент ему был нужен кто-то, кому не всё равно."
-f03747feadc10e71,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,7,Ryan,"О нём... Ну, давно никто не заботился, насколько я понял."
-2ed3613575959ca6,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,8,Ryan,"Пусть ты просто делал свою работу... Думаю, это ему очень помогло."
-658add118bb17ed5,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,9,Ryan,"Так что спасибо от его имени за то, что тебе не всё равно."
-8ca78aefdf9d3b44,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,10,Ryan,"Я знаю, он бывает вспыльчивым и забывает благодарить людей."
-9176dd2bd815750c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,11,Kobold,Ох... Спасибо.
-5a4dcf1ccff086af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,12,Kobold,Мне приятно это слышать.
-6db8bf6280f68edb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,13,Ryan,О. И ещё кое-что.
-49e6d82bb7d163af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,14,Ryan,После свидания у нас ещё был секс.
-e06e957ec854ab4c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,15,Kobold,<size=70%><i>Воу...
-9b2ad1c8b149bf00,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,16,Ryan,"Ха, ага. Конрад определённо опытный..."
-bc156217e847a8df,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,17,Ryan,"Чего-о. Ничего такого в этом нет! подумал, тебе будет интересно."
+2e21aa0b86c092fb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,3,Kobold,О чём именно?
+271a662aed24f160,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,4,Ryan,"Рассказал мне про тот раз, когда его избили."
+1b0b214cb2df69ec,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,5,Ryan,"Думаю, ты помог ему гораздо больше, чем думаешь."
+ad14c398c575824b,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,7,Kobold,Я просто делал свою работу!
+daddaa15545566ce,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,8,Ryan,"Конечно, но в тот момент ему был нужен кто-то, кому не всё равно."
+f03747feadc10e71,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,9,Ryan,"О нём... Ну, давно никто не заботился, насколько я понял."
+2ed3613575959ca6,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,10,Ryan,"Пусть ты просто делал свою работу... Думаю, это ему очень помогло."
+658add118bb17ed5,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,11,Ryan,"Так что спасибо от его имени за то, что тебе не всё равно."
+8ca78aefdf9d3b44,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,12,Ryan,"Я знаю, он бывает вспыльчивым и забывает благодарить людей."
+9176dd2bd815750c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,13,Kobold,Ох... Спасибо.
+5a4dcf1ccff086af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,14,Kobold,Мне приятно это слышать.
+6db8bf6280f68edb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,15,Ryan,О. И ещё кое-что.
+49e6d82bb7d163af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,16,Ryan,После свидания у нас ещё был секс.
+e06e957ec854ab4c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,17,Kobold,<size=70%><i>Воу...
+9b2ad1c8b149bf00,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,19,Ryan,"Ха, ага. Конрад определённо опытный..."
+bc156217e847a8df,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,20,Ryan,"Чего-о. Ничего такого в этом нет! подумал, тебе будет интересно."
 # --- jerkoff: Ryan_5_JerkOff_Start ---
 9fec39c7cefbaca2,L13 Ryan,Ryan_5_JerkOff_Start,1,Ryan,"Хех... Сегодня руки распускаешь, да?"
 # --- cum: Ryan_5_Cum ---
@@ -1238,28 +1238,28 @@ c7f3dbd886d929a7,L13 Ryan,Ryan_5_Mount_Start,1,Ryan,Станок? Конечно
 6fc39ec69d974bb4,L13 Ryan,Ryan_5_Outro_ryan_romanced,1,Ryan,"Кажется, ты не пропустил ни пятнышка."
 c9e5fbe3317edd3f,L13 Ryan,Ryan_5_Outro_ryan_romanced,2,Ryan,"Знаешь, что это значит..."
 f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,ВЕЧЕР СВИДАНИЯ!
-0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,4,Ryan,"Значит, я готов пойти на свидание с одним кобольдом."
-e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,5,Ryan,"Я знаю, тебе нужно закрыть лавочку. Я скину тебе адрес, и встретимся уже там, ага?"
-6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Kobold,Отлично!
-7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,Я очень этого жду.
-dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Ryan,"Ладно, открывай ворота, а я пойду на место!"
-7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,9,Ryan,До скорого.
+0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Ryan,"Значит, я готов пойти на свидание с одним кобольдом."
+e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,"Я знаю, тебе нужно закрыть лавочку. Я скину тебе адрес, и встретимся уже там, ага?"
+6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Kobold,Отлично!
+7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,10,Ryan,Я очень этого жду.
+dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,12,Ryan,"Ладно, открывай ворота, а я пойду на место!"
+7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,13,Ryan,До скорого.
 # --- outro: Ryan_5_Outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
-b050469dea41d597,L13 Ryan,Ryan_5_Outro_conrad_romanced,1,Ryan,"Спасибо, что помог мне."
-25ec1c59caa5e66c,L13 Ryan,Ryan_5_Outro_conrad_romanced,2,Kobold,Я всегда рад тебя помыть!
-2a67fb93196e8722,L13 Ryan,Ryan_5_Outro_conrad_romanced,3,Ryan,О... Не только с мойкой.
-2140dcb75dc2d0f9,L13 Ryan,Ryan_5_Outro_conrad_romanced,4,Ryan,"Ну, в целом."
-a6d4dab5c8699946,L13 Ryan,Ryan_5_Outro_conrad_romanced,5,Ryan,"Расставание, через которое я прошёл, было тяжёлым."
-1fd66775cea2eb4b,L13 Ryan,Ryan_5_Outro_conrad_romanced,6,Ryan,Здесь было хорошо отвлечься.
-8f4dc96f133fa75c,L13 Ryan,Ryan_5_Outro_conrad_romanced,7,Ryan,И я очень рад за вас с Конрадом.
-8ed791569d35f02c,L13 Ryan,Ryan_5_Outro_conrad_romanced,8,Ryan,"Увидимся, когда приду в следующий раз, ага?"
-d38d6a1844481871,L13 Ryan,Ryan_5_Outro_conrad_romanced,9,Kobold,"Я всегда рад тебя видеть, Райан."
-c88980c837fb6592,L13 Ryan,Ryan_5_Outro_conrad_romanced,10,Kobold,Пойду открою тебе ворота
-b1e1c4e40f4aaeec,L13 Ryan,Ryan_5_Outro_conrad_romanced,11,Ryan,Я тебя тоже. Спасибо за мойку.
+b050469dea41d597,L13 Ryan,Ryan_5_Outro_conrad_romanced,2,Ryan,"Спасибо, что помог мне."
+25ec1c59caa5e66c,L13 Ryan,Ryan_5_Outro_conrad_romanced,3,Kobold,Я всегда рад тебя помыть!
+2a67fb93196e8722,L13 Ryan,Ryan_5_Outro_conrad_romanced,5,Ryan,О... Не только с мойкой.
+2140dcb75dc2d0f9,L13 Ryan,Ryan_5_Outro_conrad_romanced,6,Ryan,"Ну, в целом."
+a6d4dab5c8699946,L13 Ryan,Ryan_5_Outro_conrad_romanced,7,Ryan,"Расставание, через которое я прошёл, было тяжёлым."
+1fd66775cea2eb4b,L13 Ryan,Ryan_5_Outro_conrad_romanced,8,Ryan,Здесь было хорошо отвлечься.
+8f4dc96f133fa75c,L13 Ryan,Ryan_5_Outro_conrad_romanced,9,Ryan,И я очень рад за вас с Конрадом.
+8ed791569d35f02c,L13 Ryan,Ryan_5_Outro_conrad_romanced,10,Ryan,"Увидимся, когда приду в следующий раз, ага?"
+d38d6a1844481871,L13 Ryan,Ryan_5_Outro_conrad_romanced,11,Kobold,"Я всегда рад тебя видеть, Райан."
+c88980c837fb6592,L13 Ryan,Ryan_5_Outro_conrad_romanced,12,Kobold,Пойду открою тебе ворота
+b1e1c4e40f4aaeec,L13 Ryan,Ryan_5_Outro_conrad_romanced,13,Ryan,Я тебя тоже. Спасибо за мойку.
 # --- outro: Ryan_5_Outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
-c5f14714a1e0439c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,1,Ryan,Здесь было чудесно отвлечься...
-3eb55bf5de9c718b,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,2,Ryan,А ещё ты познакомил меня с Конрадом.
-7aa8987bf569468c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,3,Ryan,Он классный.
+c5f14714a1e0439c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,8,Ryan,Здесь было чудесно отвлечься...
+3eb55bf5de9c718b,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,9,Ryan,А ещё ты познакомил меня с Конрадом.
+7aa8987bf569468c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,10,Ryan,Он классный.
 
 # ===== Level 14: Conrad (Night) =====
 # --- intro: Conrad_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1273,8 +1273,8 @@ f5ebf2a456433609,L14 Conrad,Conrad_5_intro_ryan_romanced,6,Conrad,"Слышал 
 4193e2b4730c89ad,L14 Conrad,Conrad_5_intro_ryan_romanced,8,Conrad,"Надеюсь, всё прошло хорошо."
 63ecf81d4e111712,L14 Conrad,Conrad_5_intro_ryan_romanced,9,Kobold,"Так и есть! Спасибо, что спросил."
 0c7c795d2dd5eb76,L14 Conrad,Conrad_5_intro_ryan_romanced,10,Kobold,Всё прошло хорошо.
-ae61bf1949b59852,L14 Conrad,Conrad_5_intro_ryan_romanced,11,Conrad,А теперь!
-25ba5fd876754270,L14 Conrad,Conrad_5_intro_ryan_romanced,12,Conrad,Конраду нужна мойка!
+ae61bf1949b59852,L14 Conrad,Conrad_5_intro_ryan_romanced,12,Conrad,А теперь!
+25ba5fd876754270,L14 Conrad,Conrad_5_intro_ryan_romanced,13,Conrad,Конраду нужна мойка!
 # --- intro: Conrad_5_intro_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 76777c9ea422832b,L14 Conrad,Conrad_5_intro_conrad_romanced,1,Conrad,"Привет, красавчик"
 0b7efee62380b6cd,L14 Conrad,Conrad_5_intro_conrad_romanced,2,Conrad,Как я выгляжу?
@@ -1286,58 +1286,58 @@ b6fff34d007d61c9,L14 Conrad,Conrad_5_intro_conrad_romanced,4,Kobold,Эээ..
 364ea49c3b6c9895,L14 Conrad,Conrad_5_intro_conrad_romanced,8,Conrad,Ха!
 3ef6b1f5eeda632e,L14 Conrad,Conrad_5_intro_conrad_romanced,9,Conrad,Просто дурачусь.
 ec760ba3440257aa,L14 Conrad,Conrad_5_intro_conrad_romanced,10,Conrad,"Ладно, тогда давай смоем это перед нашим свиданием сегодня вечером."
-300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,11,Kobold,"Надо убедиться, что ты безупречно чист!"
-260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Conrad,Хех... Ещё бы.
-d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,13,Conrad,Я заряжен.
-a652a464f67481de,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,"Уже забронировал места в том баре, о котором говорил."
-ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,Атмосфера там ночью охуенная.
-18ed0c57d649df67,L14 Conrad,Conrad_5_intro_conrad_romanced,16,Conrad,Тебе понравится.
+300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Kobold,"Надо убедиться, что ты безупречно чист!"
+260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,Хех... Ещё бы.
+d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,Я заряжен.
+a652a464f67481de,L14 Conrad,Conrad_5_intro_conrad_romanced,16,Conrad,"Уже забронировал места в том баре, о котором говорил."
+ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,Атмосфера там ночью охуенная.
+18ed0c57d649df67,L14 Conrad,Conrad_5_intro_conrad_romanced,18,Conrad,Тебе понравится.
 # --- intro: Conrad_5_intro_ryan_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 9ec8a28e82bf29dd,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,1,Conrad,Приве-е-ет.
 ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,Чего это ты в таком хорошем настроении?
-9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,3,Conrad,Моё свидание с Райаном было...
-f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,Чертовски хорошим!
-4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,"Прости, что так поздно. Режим сна полетел к чертям."
-258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,Но я просто на мойку.
-b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,7,Kobold,Ты должен скоро рассказать мне все подробности про Райана.
-9ab1cc314a249eac,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,8,Kobold,Ладно! Пойду открою ворота.
-1d28eb42dcdd879d,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,Не волнуйся. Расскажу.
+9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,Моё свидание с Райаном было...
+f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,Чертовски хорошим!
+4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,"Прости, что так поздно. Режим сна полетел к чертям."
+258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,Но я просто на мойку.
+b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,Ты должен скоро рассказать мне все подробности про Райана.
+9ab1cc314a249eac,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,12,Kobold,Ладно! Пойду открою ворота.
+1d28eb42dcdd879d,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,13,Conrad,Не волнуйся. Расскажу.
 # --- progress: Conrad_5_required_ryan_romanced | if $ryan_romanced ---
 189bf8eff795718a,L14 Conrad,Conrad_5_required_ryan_romanced,1,Conrad,"Эй, прости, что так поздно."
 cf69f255df6f95af,L14 Conrad,Conrad_5_required_ryan_romanced,2,Kobold,Ничего. Я закрываюсь примерно через час.
 3aa0d9279bff43d9,L14 Conrad,Conrad_5_required_ryan_romanced,3,Kobold,Ты можешь приходить когда угодно!
 f135fa715daf4f0c,L14 Conrad,Conrad_5_required_ryan_romanced,4,Conrad,"А. Ладно, тогда беру извинения назад."
-b127befdbae1da68,L14 Conrad,Conrad_5_required_ryan_romanced,5,Conrad,Твоё свидание с Райаном.
-e00a5000d0f2cd2a,L14 Conrad,Conrad_5_required_ryan_romanced,6,Conrad,Как секс.
-7bd3b05552e5bd75,L14 Conrad,Conrad_5_required_ryan_romanced,7,Kobold,О. Эм. <size=70%>Хорошо.
-051b72b94276cf81,L14 Conrad,Conrad_5_required_ryan_romanced,8,Conrad,"Эй, ничего такого в том, чтобы спросить!"
-d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,9,Conrad,"Значит, было хорошо."
-83e2bb850a49b35e,L14 Conrad,Conrad_5_required_ryan_romanced,10,Conrad,"Ха, представляю."
-9f69f9b215b926ee,L14 Conrad,Conrad_5_required_ryan_romanced,11,Conrad,Ты ведь и правда умеешь работать руками.
-2c910bcdb2651bf0,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,Завидую!
-9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,13,Conrad,"...Но не в плохом, стрёмном смысле."
+b127befdbae1da68,L14 Conrad,Conrad_5_required_ryan_romanced,6,Conrad,Твоё свидание с Райаном.
+e00a5000d0f2cd2a,L14 Conrad,Conrad_5_required_ryan_romanced,8,Conrad,Как секс.
+7bd3b05552e5bd75,L14 Conrad,Conrad_5_required_ryan_romanced,10,Kobold,О. Эм. <size=70%>Хорошо.
+051b72b94276cf81,L14 Conrad,Conrad_5_required_ryan_romanced,11,Conrad,"Эй, ничего такого в том, чтобы спросить!"
+d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,"Значит, было хорошо."
+83e2bb850a49b35e,L14 Conrad,Conrad_5_required_ryan_romanced,13,Conrad,"Ха, представляю."
+9f69f9b215b926ee,L14 Conrad,Conrad_5_required_ryan_romanced,14,Conrad,Ты ведь и правда умеешь работать руками.
+2c910bcdb2651bf0,L14 Conrad,Conrad_5_required_ryan_romanced,15,Conrad,Завидую!
+9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,16,Conrad,"...Но не в плохом, стрёмном смысле."
 # --- progress: Conrad_5_required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
 63b786e95b90bc5e,L14 Conrad,Conrad_5_required_conrad_romanced,1,Conrad,Так. Сегодня вечером.
-6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,2,Conrad,Так и должно быть.
-06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,3,Conrad,Тебе очень понравится.
-6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,4,Conrad,Огни в том районе тоже отличные.
-95e9b7e01259ac1e,L14 Conrad,Conrad_5_required_conrad_romanced,5,Conrad,Прямо создают настроение.
-66e39f6379268a82,L14 Conrad,Conrad_5_required_conrad_romanced,6,Kobold,Прибереги своё создание настроения на вечер!
-f9ae65b8ce359331,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,Ха. Ладно.
-1d1baaa8db27cb04,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,О да.
-ff84a4b13b8be2a4,L14 Conrad,Conrad_5_required_conrad_romanced,9,Conrad,"Как только отмоюсь, пойду готовить наше место."
+6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,6,Conrad,Так и должно быть.
+06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,Тебе очень понравится.
+6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,Огни в том районе тоже отличные.
+95e9b7e01259ac1e,L14 Conrad,Conrad_5_required_conrad_romanced,9,Conrad,Прямо создают настроение.
+66e39f6379268a82,L14 Conrad,Conrad_5_required_conrad_romanced,10,Kobold,Прибереги своё создание настроения на вечер!
+f9ae65b8ce359331,L14 Conrad,Conrad_5_required_conrad_romanced,12,Conrad,Ха. Ладно.
+1d1baaa8db27cb04,L14 Conrad,Conrad_5_required_conrad_romanced,13,Conrad,О да.
+ff84a4b13b8be2a4,L14 Conrad,Conrad_5_required_conrad_romanced,14,Conrad,"Как только отмоюсь, пойду готовить наше место."
 # --- progress: Conrad_5_required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
 1598446fc49cdf80,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,1,Conrad,Райан такой хороший дракон.
-e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold,Это правда.
-73f5014bc8782ad4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,3,Conrad,"Ага, он так добр ко мне."
-953a9b287930c86a,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,4,Conrad,Он... Внимательный. И очень понимающий.
-41d3eda9c195fe48,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,5,Conrad,"Когда я встретил его впервые, я скатился к своему старому сценарию."
-42fb7bc16778c0a5,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,6,Conrad,"... Вёл себя как придурок, если честно."
-66ad79997bc62825,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,7,Conrad,"А он просто... Знал, что сказать, чтобы выдернуть меня из всего этого."
-7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,8,Kobold,Это очень здорово!
-98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,Райан — просто прелесть
-7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Conrad,Ага... Он правда замечательный.
-5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,"Спасибо, что познакомил меня с ним."
+e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold/Conrad,Это правда.
+73f5014bc8782ad4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,4,Conrad,"Ага, он так добр ко мне."
+953a9b287930c86a,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,5,Conrad,Он... Внимательный. И очень понимающий.
+41d3eda9c195fe48,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,6,Conrad,"Когда я встретил его впервые, я скатился к своему старому сценарию."
+42fb7bc16778c0a5,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,7,Conrad,"... Вёл себя как придурок, если честно."
+66ad79997bc62825,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,8,Conrad,"А он просто... Знал, что сказать, чтобы выдернуть меня из всего этого."
+7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,Это очень здорово!
+98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Kobold,Райан — просто прелесть
+7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,Ага... Он правда замечательный.
+5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,13,Conrad,"Спасибо, что познакомил меня с ним."
 # --- jerkoff: Conrad_5_JerkOff_Start ---
 c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Ха... Собираешься мне подрочить? Я не против.
 # --- cum: Conrad_5_Cum ---
@@ -1353,18 +1353,18 @@ a398eca1fb8d9924,L14 Conrad,Conrad_5_outro_ryan_romanced,7,Conrad,Короче..
 234fc4abfc8d8619,L14 Conrad,Conrad_5_outro_ryan_romanced,8,Conrad,Выпусти <i>большого К</i> отсюда!
 a53a782390260e09,L14 Conrad,Conrad_5_outro_ryan_romanced,9,Kobold,большого К...?
 8e369560d1581070,L14 Conrad,Conrad_5_outro_ryan_romanced,10,Kobold,"Ладно, Конрад."
-f6b30f28e561466d,L14 Conrad,Conrad_5_outro_ryan_romanced,11,Conrad,"Да-а-а, это прозвище я оставлять не буду."
-ac2b2c6605839727,L14 Conrad,Conrad_5_outro_ryan_romanced,12,Conrad,Ха... Ага...
-fc66fcc7fd7d0e4d,L14 Conrad,Conrad_5_outro_ryan_romanced,13,Conrad,"Ладно, увидимся!"
+f6b30f28e561466d,L14 Conrad,Conrad_5_outro_ryan_romanced,12,Conrad,"Да-а-а, это прозвище я оставлять не буду."
+ac2b2c6605839727,L14 Conrad,Conrad_5_outro_ryan_romanced,13,Conrad,Ха... Ага...
+fc66fcc7fd7d0e4d,L14 Conrad,Conrad_5_outro_ryan_romanced,14,Conrad,"Ладно, увидимся!"
 # --- outro: Conrad_5_outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
 9333db61bcc08052,L14 Conrad,Conrad_5_outro_conrad_romanced,1,Conrad,Весь чистый...
 8b45593ada7894a3,L14 Conrad,Conrad_5_outro_conrad_romanced,2,Conrad,"Знаешь, что это значит."
 53e54ad7b23e6757,L14 Conrad,Conrad_5_outro_conrad_romanced,3,Kobold,Вечер свидания!
 4f319a155b3e572c,L14 Conrad,Conrad_5_outro_conrad_romanced,4,Kobold,Мне сначала нужно закрыть лавочку...
-f3296c9825518630,L14 Conrad,Conrad_5_outro_conrad_romanced,5,Conrad,"Тогда я займу тебе место, пока ты закрываешься."
-c215e512d572e96c,L14 Conrad,Conrad_5_outro_conrad_romanced,6,Conrad,"Знаю, я займу тебе место!"
-22d803e60de439a9,L14 Conrad,Conrad_5_outro_conrad_romanced,7,Conrad,Ладно! Я готов идти.
-092af5ec90bd21c7,L14 Conrad,Conrad_5_outro_conrad_romanced,8,Conrad,Буду ждать тебя вечером в баре!
+f3296c9825518630,L14 Conrad,Conrad_5_outro_conrad_romanced,6,Conrad,"Тогда я займу тебе место, пока ты закрываешься."
+c215e512d572e96c,L14 Conrad,Conrad_5_outro_conrad_romanced,7,Conrad,"Знаю, я займу тебе место!"
+22d803e60de439a9,L14 Conrad,Conrad_5_outro_conrad_romanced,8,Conrad,Ладно! Я готов идти.
+092af5ec90bd21c7,L14 Conrad,Conrad_5_outro_conrad_romanced,9,Conrad,Буду ждать тебя вечером в баре!
 # --- outro: Conrad_5_outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
 e079ff157877ea28,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,1,Conrad,"Кажется, ты не пропустил ни пятнышка!"
 6749954edebda844,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,2,Conrad,Не буду больше мозолить тебе глаза.
@@ -1378,42 +1378,42 @@ f001e3ed4df7e0ee,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,4,Kobold,Без 
 
 # ===== Level 15: Alexander (Sunny) =====
 # --- intro: Alexander_5_intro ---
-bc3d56d7794e4370,L15 Alexander,Alexander_5_intro,1,Kobold,"Привет, Александр."
-1bef44aeb393caf0,L15 Alexander,Alexander_5_intro,2,Kobold,"Привет, здоровяк!"
-2d8bd7d9bb5f85ba,L15 Alexander,Alexander_5_intro,3,Alexander,Здравствуйте.
-b048841add4ee6cf,L15 Alexander,Alexander_5_intro,4,Alexander,Я пришёл помыться.
-beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,5,Alexander,"Надеюсь, у вас всё хорошо!"
-906a59351176dc24,L15 Alexander,Alexander_5_intro,6,Kobold,Ага! Только что был на свидании с Райаном.
-2a75724b922176cf,L15 Alexander,Alexander_5_intro,7,Alexander,"Вот как? Тот небесно-голубой дрейк, которого я здесь видел?"
-1f4da5e1dde7e17c,L15 Alexander,Alexander_5_intro,8,Alexander,"Чудесно слышать, что вы с кем-то встречаетесь!"
-50f1967e1e33cecf,L15 Alexander,Alexander_5_intro,9,Kobold,Ага! Только что был на свидании с Конрадом.
-0738da2a76bc2231,L15 Alexander,Alexander_5_intro,10,Alexander,Вот как? Тот маленький красный дрейк?
-896dc87e931d64eb,L15 Alexander,Alexander_5_intro,11,Kobold,"Да! А теперь, когда ты здесь, ещё лучше."
-0786859cb08f5ef9,L15 Alexander,Alexander_5_intro,12,Kobold,У меня всё хорошо!
-414ed962f4c8a03a,L15 Alexander,Alexander_5_intro,13,Alexander,О. Это... Чудесно!
-10cdda610834ef77,L15 Alexander,Alexander_5_intro,14,Alexander,Я тоже рад быть здесь.
-346865d8c1dd9693,L15 Alexander,Alexander_5_intro,15,Alexander,Чудесно слышать.
-f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,16,Alexander,"Как бы то ни было, мне нужно помыться."
-4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,17,Kobold,Уже бегу!
-42dbc75670fc6105,L15 Alexander,Alexander_5_intro,18,Alexander,С нетерпением жду мытья.
+bc3d56d7794e4370,L15 Alexander,Alexander_5_intro,6,Kobold,"Привет, Александр."
+1bef44aeb393caf0,L15 Alexander,Alexander_5_intro,7,Kobold,"Привет, здоровяк!"
+2d8bd7d9bb5f85ba,L15 Alexander,Alexander_5_intro,8,Alexander,Здравствуйте.
+b048841add4ee6cf,L15 Alexander,Alexander_5_intro,10,Alexander,Я пришёл помыться.
+beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,"Надеюсь, у вас всё хорошо!"
+906a59351176dc24,L15 Alexander,Alexander_5_intro,12,Kobold,Ага! Только что был на свидании с Райаном.
+2a75724b922176cf,L15 Alexander,Alexander_5_intro,13,Alexander,"Вот как? Тот небесно-голубой дрейк, которого я здесь видел?"
+1f4da5e1dde7e17c,L15 Alexander,Alexander_5_intro,14,Alexander,"Чудесно слышать, что вы с кем-то встречаетесь!"
+50f1967e1e33cecf,L15 Alexander,Alexander_5_intro,15,Kobold,Ага! Только что был на свидании с Конрадом.
+0738da2a76bc2231,L15 Alexander,Alexander_5_intro,16,Alexander,Вот как? Тот маленький красный дрейк?
+896dc87e931d64eb,L15 Alexander,Alexander_5_intro,18,Kobold,"Да! А теперь, когда ты здесь, ещё лучше."
+0786859cb08f5ef9,L15 Alexander,Alexander_5_intro,19,Kobold,У меня всё хорошо!
+414ed962f4c8a03a,L15 Alexander,Alexander_5_intro,20,Alexander,О. Это... Чудесно!
+10cdda610834ef77,L15 Alexander,Alexander_5_intro,21,Alexander,Я тоже рад быть здесь.
+346865d8c1dd9693,L15 Alexander,Alexander_5_intro,22,Alexander,Чудесно слышать.
+f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"Как бы то ни было, мне нужно помыться."
+4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,Уже бегу!
+42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,С нетерпением жду мытья.
 # --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
-067e958be39127d9,L15 Alexander,Alexander_5_romance_route,1,Alexander,Я тут размышлял...
-4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,2,Alexander,"Вы полагаете, что я привлекателен?"
-303f7b0a567bfb2b,L15 Alexander,Alexander_5_romance_route,3,Kobold,ДА.
-09141003dee8665c,L15 Alexander,Alexander_5_romance_route,4,Kobold,Ещё как!
-43c22d680a102c02,L15 Alexander,Alexander_5_romance_route,5,Kobold,"По-моему, ты хорош собой."
-4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,6,Alexander,Я рад!
-c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,7,Alexander,Это... придаёт мне куда больше уверенности в себе.
-2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,8,Alexander,Правда?
-8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,9,Alexander,Тогда это придаёт мне куда больше уверенности в себе.
-4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,10,Alexander,Это подводит меня к следующему вопросу...
-96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,11,Alexander,Не желаете ли составить мне компанию в библиотеке колледжа сегодня вечером...?
-558dbfba7857e37d,L15 Alexander,Alexander_5_romance_route,12,Alexander,Это было бы... свидание. Как сказало бы большинство.
-76eea215ea7ba450,L15 Alexander,Alexander_5_romance_route,13,Kobold,"<gradient=""gold""><b> Я бы не против! </b></gradient><size=70%> (Ведёт к роману с Александром!)"
-500188b2a2627768,L15 Alexander,Alexander_5_romance_route,14,Kobold,"<gradient=""gold""><b> Сегодня вечером я буду занят. Простите. </b></gradient><size=70%> (Ведёт к отсутствию романа!)"
-96b6a8b07a0781d0,L15 Alexander,Alexander_5_romance_route,15,Alexander,Я уже давно подумывал спросить вас об этом.
-942b49a7c66fb0bf,L15 Alexander,Alexander_5_romance_route,16,Alexander,А. Не беспокойтесь.
-b1cb9d9c9d3d9661,L15 Alexander,Alexander_5_romance_route,17,Alexander,Очень хорошо. Тогда не буду мешать мойке!
+067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,Я тут размышлял...
+4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,"Вы полагаете, что я привлекателен?"
+303f7b0a567bfb2b,L15 Alexander,Alexander_5_romance_route,6,Kobold,ДА.
+09141003dee8665c,L15 Alexander,Alexander_5_romance_route,7,Kobold,Ещё как!
+43c22d680a102c02,L15 Alexander,Alexander_5_romance_route,8,Kobold,"По-моему, ты хорош собой."
+4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,Я рад!
+c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,Это... придаёт мне куда больше уверенности в себе.
+2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,Правда?
+8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,Тогда это придаёт мне куда больше уверенности в себе.
+4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,Это подводит меня к следующему вопросу...
+96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,Не желаете ли составить мне компанию в библиотеке колледжа сегодня вечером...?
+558dbfba7857e37d,L15 Alexander,Alexander_5_romance_route,18,Alexander,Это было бы... свидание. Как сказало бы большинство.
+76eea215ea7ba450,L15 Alexander,Alexander_5_romance_route,19,Kobold,"<gradient=""gold""><b> Я бы не против! </b></gradient><size=70%> (Ведёт к роману с Александром!)"
+500188b2a2627768,L15 Alexander,Alexander_5_romance_route,20,Kobold,"<gradient=""gold""><b> Сегодня вечером я буду занят. Простите. </b></gradient><size=70%> (Ведёт к отсутствию романа!)"
+96b6a8b07a0781d0,L15 Alexander,Alexander_5_romance_route,22,Alexander,Я уже давно подумывал спросить вас об этом.
+942b49a7c66fb0bf,L15 Alexander,Alexander_5_romance_route,23,Alexander,А. Не беспокойтесь.
+b1cb9d9c9d3d9661,L15 Alexander,Alexander_5_romance_route,24,Alexander,Очень хорошо. Тогда не буду мешать мойке!
 # --- progress: Alexander_5_required ---
 861a7c80ccb8a4ba,L15 Alexander,Alexander_5_required,1,Alexander,"Итак, как прошло ваше свидание?"
 3481be04c35d76a2,L15 Alexander,Alexander_5_required,2,Kobold,Отлично! Райан — просто прелесть.
@@ -1422,10 +1422,10 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,Хорошо. У н
 6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,Это хорошо. Вы заслуживаете достойного мужчину.
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,"Уверен, он тоже находит вас приятным!"
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,Спасибо! Вы тоже приятный!
-8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,8,Alexander,Благодарю. Очень любезно с вашей стороны.
-a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,9,Alexander,"Ха, он и впрямь похож на дикий тип."
-5bac15668ef9b115,L15 Alexander,Alexander_5_required,10,Alexander,"Я рад, что он вам по душе. Уверен, он находит вас приятным."
-cb8f422bf973d563,L15 Alexander,Alexander_5_required,11,Alexander,"Должно быть, вы двое — хорошая пара."
+8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,Благодарю. Очень любезно с вашей стороны.
+a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"Ха, он и впрямь похож на дикий тип."
+5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,"Я рад, что он вам по душе. Уверен, он находит вас приятным."
+cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,"Должно быть, вы двое — хорошая пара."
 # --- jerkoff: Alexander_5_JerkOff_Start ---
 caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> как приятно...</i>
 # --- cum: Alexander_5_Cum ---
@@ -1438,18 +1438,18 @@ caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> как 
 026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,Спасибо за мойку.
 7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,"Сегодня вечером, в кампусе. Библиотека — большое здание с синим шпилем."
 f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,"Подойдите к драконьему входу, и я вас впущу."
-5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,4,Kobold,Я тоже!
-6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,5,Kobold,Звучит очень круто.
-ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,6,Alexander,Это и впрямь довольно круто.
-6068953467a952bf,L15 Alexander,Alexander_5_Outro,7,Alexander,Не буду больше мозолить вам глаза. Спасибо за мойку.
-7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,8,Alexander,До вечера.
-4f8eb9eeb14b2f7d,L15 Alexander,Alexander_5_Outro,9,Alexander,"Кажется, это было последнее пятнышко."
-991fa15e47275ce0,L15 Alexander,Alexander_5_Outro,10,Alexander,Спасибо за мойку!
-6d1255dd43802973,L15 Alexander,Alexander_5_Outro,11,Alexander,"Я счастлив, что познакомился с вами."
-5d5e0eafc7ef13d6,L15 Alexander,Alexander_5_Outro,12,Kobold,Я тоже.
-63b9a103362edd6c,L15 Alexander,Alexander_5_Outro,13,Kobold,"Ой, спасибо, Александр."
-6df8f8008c57cbac,L15 Alexander,Alexander_5_Outro,14,Alexander,"Как бы то ни было, не буду больше мозолить вам глаза."
-1cb7b221b7adda1c,L15 Alexander,Alexander_5_Outro,15,Alexander,До свидания!
+5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,Я тоже!
+6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,Звучит очень круто.
+ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,Это и впрямь довольно круто.
+6068953467a952bf,L15 Alexander,Alexander_5_Outro,9,Alexander,Не буду больше мозолить вам глаза. Спасибо за мойку.
+7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,10,Alexander,До вечера.
+4f8eb9eeb14b2f7d,L15 Alexander,Alexander_5_Outro,11,Alexander,"Кажется, это было последнее пятнышко."
+991fa15e47275ce0,L15 Alexander,Alexander_5_Outro,12,Alexander,Спасибо за мойку!
+6d1255dd43802973,L15 Alexander,Alexander_5_Outro,13,Alexander,"Я счастлив, что познакомился с вами."
+5d5e0eafc7ef13d6,L15 Alexander,Alexander_5_Outro,14,Kobold,Я тоже.
+63b9a103362edd6c,L15 Alexander,Alexander_5_Outro,15,Kobold,"Ой, спасибо, Александр."
+6df8f8008c57cbac,L15 Alexander,Alexander_5_Outro,16,Alexander,"Как бы то ни было, не буду больше мозолить вам глаза."
+1cb7b221b7adda1c,L15 Alexander,Alexander_5_Outro,17,Alexander,До свидания!
 
 # ===== Cutscenes (started by game code) =====
 # --- Alexander_SexScene ---
@@ -1459,7 +1459,7 @@ ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,6,Alexander,Это и впря�
 7d085d9765e3c5d6,Cutscene,Alexander_SexScene_Loop,1,Alexander,Боже...
 f70738ec42aa401d,Cutscene,Alexander_SexScene_Loop,2,Alexander,У вас очень умелые руки
 328ad033a139998d,Cutscene,Alexander_SexScene_Loop,3,Alexander,ммм..
-5ec1f7e700f37c3d,Cutscene,Alexander_SexScene_Loop,4,Alexander,..
+5ec1f7e700f37c3d,Cutscene,Alexander_SexScene_Loop,4,Alexander/Conrad/Ryan,..
 # --- Alexander_SexScene_Cum | if $alexander_sexscene_loops ---
 08ab4c0c6ca5fe6f,Cutscene,Alexander_SexScene_Cum,1,Kobold,Так хорошо?
 069e24aa896ea4cf,Cutscene,Alexander_SexScene_Cum,2,Alexander,Хорошо... Именно так.
@@ -1518,10 +1518,10 @@ bf095ea55cdeb898,Cutscene,Ryan_Conrad_SexScene_Loop,4,Conrad,Конрад: Во�
 357806c023d4c85e,Cutscene,Ryan_Conrad_SexScene_Cum,2,Kobold,Они продолжают
 4e0f42eaaa70c70d,Cutscene,Ryan_Conrad_SexScene_Cum,3,Kobold,Они кончают
 d8e952b1635e3fe5,Cutscene,Ryan_Conrad_SexScene_Cum,4,Ryan,"Райан: Кажется, я тоже близко.."
-50504d8f1c0a5f1c,Cutscene,Ryan_Conrad_SexScene_Cum,5,Ryan,"Райан: Ого.. Рост — и правда единственное, что в тебе маленькое."
-e7a686aecb078b9e,Cutscene,Ryan_Conrad_SexScene_Cum,6,Conrad,"Конрад: Ещё бы, чёрт возьми!"
-98087861fbfaa621,Cutscene,Ryan_Conrad_SexScene_Cum,7,Ryan,Райан: Было приятно
-be1dff750703beb9,Cutscene,Ryan_Conrad_SexScene_Cum,8,Conrad,Конрад: Ага
+50504d8f1c0a5f1c,Cutscene,Ryan_Conrad_SexScene_Cum,7,Ryan,"Райан: Ого.. Рост — и правда единственное, что в тебе маленькое."
+e7a686aecb078b9e,Cutscene,Ryan_Conrad_SexScene_Cum,8,Conrad,"Конрад: Ещё бы, чёрт возьми!"
+98087861fbfaa621,Cutscene,Ryan_Conrad_SexScene_Cum,9,Ryan,Райан: Было приятно
+be1dff750703beb9,Cutscene,Ryan_Conrad_SexScene_Cum,10,Conrad,Конрад: Ага
 # --- Ryan_SexScene ---
 caa123c912750ed2,Cutscene,Ryan_SexScene,1,Ryan,"Ты уверен, что он поместится?"
 c8dda0f1b46383bc,Cutscene,Ryan_SexScene,2,Kobold,Кобольды очень гибкие. Поместится.
@@ -1578,16 +1578,16 @@ c92c35bb9f44dac4,Reaction,DragonSatisfiedAndLeaves,2,Dragon,"Может, пот�
 
 # ===== Unused nodes (not reachable in the current game) =====
 # --- Alexander_1 ---
-31c53bea307f49d0,Unused,Alexander_1,1,Alexander,Я помогал алхимику дотянуться до высокой полки
+31c53bea307f49d0,Unused,Alexander_1,1,Alexander/Ryan,Я помогал алхимику дотянуться до высокой полки
 f00ea25690e17adf,Unused,Alexander_1,2,Alexander,"Я услышал громкий хлопок. Не думаю, что Игвикс уцелел."
 # --- Alexander_2 ---
 07874aa669e5cb8c,Unused,Alexander_2,1,Alexander,"Если нас поймают на нарушении ещё одного правила, моя репутация будет уничтожена!"
 cfe73695b2bdfe19,Unused,Alexander_2,2,Alexander,"Колледж не должен об этом узнать, хорошо?"
 27b11f3f6bf12fe9,Unused,Alexander_2,3,Kobold,Какой колледж?
-2d3935f374b6474e,Unused,Alexander_2,4,Alexander,"Бернсвикский общественный колледж тауматургии, разумеется!"
-7a5128354d6171d0,Unused,Alexander_2,5,Alexander,"Престижнейший колледж, где работают престижные профессора вроде меня:"
-b34663a53a6541a7,Unused,Alexander_2,6,Alexander,"Хорошо. Нельзя допустить, чтобы Бернсвикский общественный колледж тауматургии узнал, что его лучший профессор Александр устроил очередной инцидент."
-b39b95373bf40c36,Unused,Alexander_2,7,Alexander,"Ох, ёлки, забудьте, что я это сказал!"
+2d3935f374b6474e,Unused,Alexander_2,5,Alexander,"Бернсвикский общественный колледж тауматургии, разумеется!"
+7a5128354d6171d0,Unused,Alexander_2,6,Alexander,"Престижнейший колледж, где работают престижные профессора вроде меня:"
+b34663a53a6541a7,Unused,Alexander_2,9,Alexander,"Хорошо. Нельзя допустить, чтобы Бернсвикский общественный колледж тауматургии узнал, что его лучший профессор Александр устроил очередной инцидент."
+b39b95373bf40c36,Unused,Alexander_2,11,Alexander,"Ох, ёлки, забудьте, что я это сказал!"
 # --- Alexander_3 ---
 2501ad553fd20454,Unused,Alexander_3,1,Alexander,"Мне придётся воскрешать Игвикса, какой позор!"
 7b282582fab597eb,Unused,Alexander_3,2,Alexander,Аптекарь будет чернить моё имя месяцами.
@@ -1611,8 +1611,8 @@ fedb00f6c13cec68,Unused,Alexander_Intro,2,Kobold,Э... Здравствуйте?
 4359ca4e5c8fc816,Unused,Alexander_Intro,3,Kobold,Кто там?
 9e2816aaa10403b6,Unused,Alexander_Intro,4,Alexander,Тсс! Я не из этих мест...
 8275f13b67a6687b,Unused,Alexander_Intro,5,Alexander,Вы сейчас открыты?
-7409deaefe456a49,Unused,Alexander_Intro,6,Alexander,"Фух! Со мной приключилась неприятность, с которой нужно разобраться... негласно."
-afb82d57a9c1ba48,Unused,Alexander_Intro,7,Alexander,"Уберите эту преграду немедленно, дабы я мог войти."
+7409deaefe456a49,Unused,Alexander_Intro,7,Alexander,"Фух! Со мной приключилась неприятность, с которой нужно разобраться... негласно."
+afb82d57a9c1ba48,Unused,Alexander_Intro,8,Alexander,"Уберите эту преграду немедленно, дабы я мог войти."
 # --- Alexander_Outro ---
 0c2f6e570964b0c1,Unused,Alexander_Outro,1,Alexander,"Боже, благодаря вам у меня есть шанс исправить положение."
 639110e1c4cc2914,Unused,Alexander_Outro,2,Alexander,"Скажите, вы помните название колледжа, где я работаю?"
@@ -1624,12 +1624,12 @@ e35f2c7dd32a4059,Unused,Alexander_Outro,3,Kobold,Бернсвикский общ
 56723edcd935d476,Unused,Alexander_Outro,8,Alexander,О!
 e0723f4408ee3eda,Unused,Alexander_Outro,9,Alexander,"Я понимаю, что вы делаете, благодарю."
 7973db48113175b5,Unused,Alexander_Outro,10,Alexander,"Что ж, отлично, я ценю вашу деликатность. Отправлюсь в аптеку."
-677412526f14044a,Unused,Alexander_Outro,12,Alexander,Я весьма доволен результатом..
+677412526f14044a,Unused,Alexander_Outro,14,Alexander,Я весьма доволен результатом..
 # --- ConradBeatup_1 ---
-72f9c6536242f235,Unused,ConradBeatup_1,1,Kobold,"Я рядом, если тебе нужно с кем-то поговорить."
-67410be84ad1b8ac,Unused,ConradBeatup_1,2,Kobold,"Я обо всём позабочусь, не волнуйся."
-5b207ccbfd5d5679,Unused,ConradBeatup_1,3,Conrad,"Нет.. Нет, всё нормально... спасибо."
-b2139b5e4dc27f14,Unused,ConradBeatup_1,4,Conrad,... Спасибо..
+72f9c6536242f235,Unused,ConradBeatup_1,2,Kobold,"Я рядом, если тебе нужно с кем-то поговорить."
+67410be84ad1b8ac,Unused,ConradBeatup_1,3,Kobold,"Я обо всём позабочусь, не волнуйся."
+5b207ccbfd5d5679,Unused,ConradBeatup_1,4,Conrad,"Нет.. Нет, всё нормально... спасибо."
+b2139b5e4dc27f14,Unused,ConradBeatup_1,5,Conrad,... Спасибо..
 # --- ConradBeatup_2 ---
 b841443b4a7e3b82,Unused,ConradBeatup_2,1,Conrad,"Эй, спасибо, что ты рядом..."
 02febaeeb5306c30,Unused,ConradBeatup_2,2,Conrad,"Хорошо, когда есть друзья, на которых можно положиться."
@@ -1640,10 +1640,10 @@ b841443b4a7e3b82,Unused,ConradBeatup_2,1,Conrad,"Эй, спасибо, что т
 861f99e073cd06e2,Unused,ConradBeatup_Idle2,1,Conrad,"Я строю из себя крутого, но я маленький дракон..."
 e375cf5dd6f03d34,Unused,ConradBeatup_Idle2,2,Conrad,Они перегнули палку.
 # --- ConradBeatup_Intro ---
-19aa373fb830a05c,Unused,ConradBeatup_Intro,1,Kobold,"Боже, ты ранен!"
-c7e055a695603f2b,Unused,ConradBeatup_Intro,2,Kobold,Ты в порядке?
-e4e0397bea6600f5,Unused,ConradBeatup_Intro,3,Conrad,"Эй, э, мне просто нужна мойка."
-e36f54f748a69d3e,Unused,ConradBeatup_Intro,4,Kobold,"...Ладно, заходи"
+19aa373fb830a05c,Unused,ConradBeatup_Intro,2,Kobold,"Боже, ты ранен!"
+c7e055a695603f2b,Unused,ConradBeatup_Intro,3,Kobold,Ты в порядке?
+e4e0397bea6600f5,Unused,ConradBeatup_Intro,4,Conrad,"Эй, э, мне просто нужна мойка."
+e36f54f748a69d3e,Unused,ConradBeatup_Intro,5,Kobold,"...Ладно, заходи"
 # --- ConradBeatup_OutroDirty ---
 e17652524a905f18,Unused,ConradBeatup_OutroDirty,1,Conrad,... ты закончил? Я всё ещё грязный..
 # --- ConradBeatup_OutroSoapy ---
@@ -1651,10 +1651,10 @@ d0b060d51bc87feb,Unused,ConradBeatup_OutroSoapy,1,Conrad,... ты закончи
 # --- Conrad_1 ---
 5a208b2886d87937,Unused,Conrad_1,1,Conrad,А «особые концовки» у вас тут тоже делают?
 d61259269b75dec9,Unused,Conrad_1,2,Kobold,Что это?
-1ea442a134b2a184,Unused,Conrad_1,3,Kobold,Нет
-335bcdceb30ec6b8,Unused,Conrad_1,4,Conrad,"Ага, не-а. Братан, тебе надо этим заняться. Я хорошо заплачу!"
-2f7cc8c297b8d283,Unused,Conrad_1,5,Conrad,"Зашибись! Жду не дождусь поглядеть, как ты работаешь!"
-9d1528cc1118e4dd,Unused,Conrad_1,6,Conrad,Чего? Во всех лучших заведениях это делают!
+1ea442a134b2a184,Unused,Conrad_1,4,Kobold,Нет
+335bcdceb30ec6b8,Unused,Conrad_1,5,Conrad,"Ага, не-а. Братан, тебе надо этим заняться. Я хорошо заплачу!"
+2f7cc8c297b8d283,Unused,Conrad_1,6,Conrad,"Зашибись! Жду не дождусь поглядеть, как ты работаешь!"
+9d1528cc1118e4dd,Unused,Conrad_1,7,Conrad,Чего? Во всех лучших заведениях это делают!
 # --- Conrad_2 ---
 d892eb1f696177b4,Unused,Conrad_2,1,Conrad,"Этому месту не помешал бы ремонт, и я знаю, что ему нужно!"
 0eaacb4d2b730370,Unused,Conrad_2,2,Conrad,"У меня есть чувак, который завтра подкинет подарочек, чтобы тут всё приукрасить."
@@ -1672,7 +1672,7 @@ c3565cd77a3dcba9,Unused,Conrad_Idle1,5,Conrad,"Но не в такой мале�
 bc1e29287f60b297,Unused,Conrad_Intro,1,Conrad,"Здорово, братан!"
 f7a29676d9621163,Unused,Conrad_Intro,2,Conrad,"Конраду нужна мойка, найдётся для него местечко?"
 8339b88ae51a85f6,Unused,Conrad_Intro,3,Kobold,"Да, сюда, пожалуйста."
-255d982b3d4c772e,Unused,Conrad_Intro,4,Conrad,Заебись!
+255d982b3d4c772e,Unused,Conrad_Intro,5,Conrad,Заебись!
 # --- Mount_Alexander_2_6 ---
 dcc524605bec9fd8,Unused,Mount_Alexander_2_6,1,Alexander,Что это..
 d010c18e5ff478ed,Unused,Mount_Alexander_2_6,2,Alexander,"О боже, нет.."
@@ -1702,22 +1702,22 @@ ff74b82dcb8a11d3,Unused,RyanDate_3,2,Kobold,"Ого, смотреть, как т
 # --- RyanDate_Idle1 ---
 bcda1f48383d915f,Unused,RyanDate_Idle1,1,Ryan,"Хе-хе, мне не терпится снова вернуться к свиданиям."
 # --- RyanDate_Intro ---
-d5be54b666b3d38f,Unused,RyanDate_Intro,1,Ryan,"Я думал о том, что ты сказал,"
-ffcaf369ac8b1a74,Unused,RyanDate_Intro,2,Ryan,"ну, насчёт того, чтобы снова начать ходить на свидания..."
-89f52a0dc3d757c1,Unused,RyanDate_Intro,3,Kobold,Ага
-ecab929d37109ab0,Unused,RyanDate_Intro,4,Ryan,"Я знал, что ты слишком занят, так что решил принести свидание к тебе!"
-92d9da0b0b22fd7a,Unused,RyanDate_Intro,5,Kobold,Класс! Заходи..
+d5be54b666b3d38f,Unused,RyanDate_Intro,2,Ryan,"Я думал о том, что ты сказал,"
+ffcaf369ac8b1a74,Unused,RyanDate_Intro,3,Ryan,"ну, насчёт того, чтобы снова начать ходить на свидания..."
+89f52a0dc3d757c1,Unused,RyanDate_Intro,4,Kobold,Ага
+ecab929d37109ab0,Unused,RyanDate_Intro,5,Ryan,"Я знал, что ты слишком занят, так что решил принести свидание к тебе!"
+92d9da0b0b22fd7a,Unused,RyanDate_Intro,6,Kobold,Класс! Заходи..
 # --- RyanDate_Outro ---
-638d7c049f321a6d,Unused,RyanDate_Outro,2,Ryan,Это было чудесно! Теперь свидания меня куда меньше пугают.
+638d7c049f321a6d,Unused,RyanDate_Outro,4,Ryan,Это было чудесно! Теперь свидания меня куда меньше пугают.
 # --- RyanExploded_Intro ---
 8e87e6b28fb697c4,Unused,RyanExploded_Intro,1,Ryan,Привет ещё раз..
-53ca70e25fc42870,Unused,RyanExploded_Intro,2,Kobold,Опять ты?
-b99d68084de082b6,Unused,RyanExploded_Intro,3,Ryan,хе.. ага.. прости..
-81f2cb133d548396,Unused,RyanExploded_Intro,4,Ryan,"В общем, со мной приключилась неприятность.."
-d3e25fe68c13c02d,Unused,RyanExploded_Intro,5,Ryan,Я услышал громкий хлопок
-ce386faf68f3df7e,Unused,RyanExploded_Intro,6,Ryan,"Не знаю, куда они делись, но я снова чувствую себя грязным."
-60c1424a59a1c912,Unused,RyanExploded_Intro,7,Ryan,Не мог бы ты снова меня отмыть?
-917613bbf36e4b93,Unused,RyanExploded_Intro,8,Kobold,Конечно! Проходи!
+53ca70e25fc42870,Unused,RyanExploded_Intro,3,Kobold,Опять ты?
+b99d68084de082b6,Unused,RyanExploded_Intro,5,Ryan,хе.. ага.. прости..
+81f2cb133d548396,Unused,RyanExploded_Intro,6,Ryan,"В общем, со мной приключилась неприятность.."
+d3e25fe68c13c02d,Unused,RyanExploded_Intro,8,Ryan,Я услышал громкий хлопок
+ce386faf68f3df7e,Unused,RyanExploded_Intro,9,Ryan,"Не знаю, куда они делись, но я снова чувствую себя грязным."
+60c1424a59a1c912,Unused,RyanExploded_Intro,10,Ryan,Не мог бы ты снова меня отмыть?
+917613bbf36e4b93,Unused,RyanExploded_Intro,11,Kobold,Конечно! Проходи!
 # --- RyanExploded_OutroDirty ---
 f2bdff14318fd81c,Unused,RyanExploded_OutroDirty,1,Ryan,"Кажется, на мне ещё осталась копоть от взрыва..."
 6a1900ba2212696d,Unused,RyanExploded_OutroDirty,2,Ryan,Помоешь ещё?
@@ -1728,8 +1728,8 @@ f2bdff14318fd81c,Unused,RyanExploded_OutroDirty,1,Ryan,"Кажется, на м�
 9df62882448c291b,Unused,RyanExploded_OutroSoapy,1,Ryan,"Э, я всё ещё весь в пене!"
 29d1991e26b1773d,Unused,RyanExploded_OutroSoapy,2,Ryan,Можешь смыть?
 # --- RyanExploded_Outro ---
-a45ce5a6357ad76f,Unused,RyanExploded_Outro,2,Ryan,"Фух, я боялся, что снова всё испорчу."
-ca1dd92cfbe2dcd5,Unused,RyanExploded_Outro,3,Ryan,Теперь они никогда не узнают!
+a45ce5a6357ad76f,Unused,RyanExploded_Outro,4,Ryan,"Фух, я боялся, что снова всё испорчу."
+ca1dd92cfbe2dcd5,Unused,RyanExploded_Outro,5,Ryan,Теперь они никогда не узнают!
 # --- RyanMuddy_Dirty ---
 58246ed8cfcdfa19,Unused,RyanMuddy_Dirty,1,Ryan,"Ага, короче, я весь в грязи и всё такое, обожаю носиться по городскому парку."
 f27e94e23a2cc6eb,Unused,RyanMuddy_Dirty,2,Ryan,"Я всё ещё очень грязный, было бы здорово, если бы ты меня намылил."
@@ -1761,11 +1761,11 @@ afa88441bc4fc8d9,Unused,RyanMuddy_Idle8,1,Ryan,"Кто бы мог подума�
 2ea6d5d46861d1bf,Unused,RyanMuddy_Idle8,2,Ryan,Я носился по лесу
 c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,"Понял, как сильно перепачкался, только когда Макс на меня наорал, ха-ха."
 # --- RyanMuddy_Intro ---
-299e9d1e919c3a49,Unused,RyanMuddy_Intro,1,Ryan,"Я слышал, тут внизу есть кобольды, которые могут меня помыть?"
-05d9cdcce06b0c12,Unused,RyanMuddy_Intro,2,Kobold,Я — ТОТ САМЫЙ кобольд. Yip!
-213c112ac748eb9e,Unused,RyanMuddy_Intro,3,Ryan,"Отлично, так, э,"
-44beadf6316d890e,Unused,RyanMuddy_Intro,4,Ryan,"А, вижу кнопку, понял!"
-af8d3a1f26de30ef,Unused,RyanMuddy_Intro,5,Ryan,"Спасибо, я подожду!"
+299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,"Я слышал, тут внизу есть кобольды, которые могут меня помыть?"
+05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,Я — ТОТ САМЫЙ кобольд. Yip!
+213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,"Отлично, так, э,"
+44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,"А, вижу кнопку, понял!"
+af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,"Спасибо, я подожду!"
 # --- RyanMuddy_Nag1 ---
 3605a9273b22288b,Unused,RyanMuddy_Nag1,1,Ryan,"Эй, можешь подойти спереди, чтобы я тебя видел?"
 720febc2a9d251aa,Unused,RyanMuddy_Nag1,2,Ryan,Мне нужно кое-что сказать!
@@ -1779,15 +1779,15 @@ c8f453084718c8cc,Unused,RyanMuddy_Nag3,1,Ryan,"Мне говорили, что �
 # --- RyanMuddy_Outro ---
 a46a0805bb6a5eda,Unused,RyanMuddy_Outro,1,Ryan,Спасибо за быструю мойку!
 168c7d0bb7743dec,Unused,RyanMuddy_Outro,2,Ryan,"Кстати, ты бы разозлился, если бы твой партнёр устроил дома беспорядок?"
-3ae7f278ef092258,Unused,RyanMuddy_Outro,3,Kobold,Смотря какой
-0dfd80e1f981faca,Unused,RyanMuddy_Outro,4,Ryan,"О! Да, это логично..."
-8f207ab27746c010,Unused,RyanMuddy_Outro,5,Ryan,"Наверное, зависит от обстоятельств."
-86b57f75d4c04b75,Unused,RyanMuddy_Outro,6,Ryan,"Я знал, что ты меня поддержишь"
+3ae7f278ef092258,Unused,RyanMuddy_Outro,4,Kobold,Смотря какой
+0dfd80e1f981faca,Unused,RyanMuddy_Outro,6,Ryan,"О! Да, это логично..."
+8f207ab27746c010,Unused,RyanMuddy_Outro,7,Ryan,"Наверное, зависит от обстоятельств."
+86b57f75d4c04b75,Unused,RyanMuddy_Outro,8,Ryan,"Я знал, что ты меня поддержишь"
 # --- RyanMuddy_SmallTalk ---
-0bf9a145c66c512b,Unused,RyanMuddy_SmallTalk,1,Kobold,"Вообще-то, это мой первый раз!"
-4eb8bdb270c030ae,Unused,RyanMuddy_SmallTalk,2,Ryan,"О, так это ново для нас обоих!"
-ff152503516900ee,Unused,RyanMuddy_SmallTalk,3,Ryan,Для меня это тоже впервые...
-13d1c29ec8784cae,Unused,RyanMuddy_SmallTalk,4,Ryan,"Удивительно, как это приятно."
+0bf9a145c66c512b,Unused,RyanMuddy_SmallTalk,3,Kobold,"Вообще-то, это мой первый раз!"
+4eb8bdb270c030ae,Unused,RyanMuddy_SmallTalk,5,Ryan,"О, так это ново для нас обоих!"
+ff152503516900ee,Unused,RyanMuddy_SmallTalk,6,Ryan,Для меня это тоже впервые...
+13d1c29ec8784cae,Unused,RyanMuddy_SmallTalk,7,Ryan,"Удивительно, как это приятно."
 # --- Ryan_3_wont_use_mount ---
 9221ab210b374d30,Unused,Ryan_3_wont_use_mount,1,Ryan,О... Мне сейчас не очень хочется этим пользоваться.
 f3f18c2eea794920,Unused,Ryan_3_wont_use_mount,2,Ryan,"Может, позже...?"
