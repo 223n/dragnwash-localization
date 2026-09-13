@@ -19,7 +19,7 @@ Whatever you put in `Translations/<locale>/name.txt` is shown as the language's 
 
 1. Fork this repository.
 2. Add or fix translations in `Translations/<locale>/strings.csv`.
-3. Commit and open a pull request.
+3. Commit and open a pull request (see [Writing the pull request](#writing-the-pull-request) for the title and description).
 
 ## File format
 
@@ -125,7 +125,9 @@ Fonts are chosen from the characters in your file, so most scripts need nothing 
 
 ## Improving a provisional language
 
-Every pack except Japanese and Simplified Chinese is provisional: complete, but not reviewed by a native speaker. If you speak one of them, a review is the most valuable contribution there is. Fix lines in a pull request; once a whole pack has been read through by a native speaker, update the comment at the top of its `strings.csv` and its row in the README's language table in the same pull request.
+Every pack except Japanese and Simplified Chinese is provisional: complete, but not reviewed by a native speaker. If you speak one of them, a review is the most valuable contribution there is. Fix lines in a pull request; once a whole pack has been read through by a native speaker, update the comment at the top of its `strings.csv` and its row in the README's language table in the same pull request. If that feels like too much, just say in the pull request that the whole pack was reviewed, and the maintainer will update both.
+
+If you only change the `translation` column of the published `strings.csv` and leave the other columns as they are, the file stays hashed and needs no *Hash for commit*. To see the English next to each line while you review, use the working copy described in [Working with the English beside each line](#working-with-the-english-beside-each-line-recommended).
 
 ## Checking your work
 
@@ -139,6 +141,12 @@ Every pack except Japanese and Simplified Chinese is provisional: complete, but 
 - Tag structure matches the source.
 - No duplicate rows, no rows with an empty `translation`.
 - One language and a coherent scope per pull request.
+
+## Writing the pull request
+
+- **Title:** start with the locale code in brackets, then say what changed. For example `[ko] Fix the Korean translation`, `[ko] Native review of levels 1-3`, or `[de] Translate the Options row`. English, Japanese or your own language are all fine.
+- **Description:** the pull request template fills in by itself. Under *What*, write the language and which part you changed (levels, scenes such as `Conrad_1_intro`, or UI), then tick the checklist items that apply and leave the rest unticked.
+- **After opening it:** the automatic translation check runs. If it fails, a comment in English lists the reasons with file and line numbers, and it updates itself when you push a fix. The maintainer then reviews the pull request. Questions are welcome in the pull request, in English or Japanese.
 
 ## Rules
 
