@@ -43,6 +43,14 @@ If you prefer to do it by hand, follow the manual steps below.
 > - If no window appears at all, double-click **`Install.cmd`** in the same folder instead. A console flashes for a moment and the same installer window opens.
 > - Failing that, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
 
+> [!WARNING]
+> **If Windows Security (Microsoft Defender) detects `Install.exe` as "Trojan:Script/Wacatac.B!ml"**
+> This is a false positive. The `!ml` suffix means a machine-learning model guessed the file looks suspicious, not that it matched known malware. `Install.exe` is a small unsigned program that only starts the installer window (a PowerShell script) without a console window, and that way of starting a script resembles what malware does. Its source is public: [`installer/Launcher.cs`](installer/Launcher.cs) and [`installer/Installer.ps1`](installer/Installer.ps1).
+> - First make sure the zip you downloaded is genuine: run `Get-FileHash <path to the zip>` in PowerShell and compare it with the `sha256` shown next to the zip on [Releases](https://github.com/TomXV/dragnwash-localization/releases). If it does not match, delete the file and do not use it.
+> - If it matches, open the detection in Windows Security → **Protection history** and choose **Actions → Allow on device**. There is no need to turn Windows Security off.
+> - If you would rather not allow it, use the manual installation steps below instead.
+> - Do not use copies from anywhere other than this repository's Releases page.
+
 ### Windows on ARM (verified)
 
 On ARM Windows PCs such as Snapdragon X laptops, install with the same `Install.exe` steps; the mod works (the game itself runs as x64 under emulation).
