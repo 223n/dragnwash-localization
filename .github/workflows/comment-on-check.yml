@@ -40,6 +40,10 @@ jobs:
             add(/duplicate key/, '**Duplicate keys.** The same line appears more than once; keep one translation per key.');
             add(/empty translation/, '**Empty translations.** Leave a line out rather than committing it blank; the game then falls back to English for it.');
             add(/expected \d+ fields/, '**Malformed rows.** Some rows have the wrong number of columns, usually an unquoted comma or line break inside the translation. Wrap such values in double quotes.');
+            add(/does not look like an identifier/, '**Unexpected text in `section` or `node`.** These columns hold game identifiers such as `L01 Ryan` or `Ryan_1_intro`. Keep them exactly as exported and edit only the `translation` column.');
+            add(/no strings\.csv/, '**A language folder has no `strings.csv`.** Every folder under `Translations/` needs one; add the file or remove the empty folder.');
+            add(/empty file/, '**An empty `strings.csv`.** The file needs at least the header line `key,section,node,order,speaker,translation`.');
+            if (hints.length === 0) hints.push('The full report below lists each problem with its file and line number.');
 
             let body;
             if (status === '0') {
