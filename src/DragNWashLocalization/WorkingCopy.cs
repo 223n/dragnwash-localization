@@ -46,12 +46,20 @@ namespace DragNWashLocalization
                 // key -> translation, in file order.
                 var translations = new Dictionary<string, string>(StringComparer.Ordinal);
                 var fileOrder = new List<string>();
+                // line:xxxxxxxx -> translation, for rows that translate one line only.
+                var lineTranslations = new Dictionary<string, string>(StringComparer.Ordinal);
                 foreach (var row in fresh ? new List<Dictionary<string, string>>() : CsvReader.ReadRows(published))
                 {
                     row.TryGetValue("key", out string key);
                     row.TryGetValue("source_en", out string src);
                     row.TryGetValue("translation", out string tr);
-                    key = key?.Trim().ToLowerInvariant();
+                    key = key?.Trim();
+                    if (TranslationKey.LooksLikeLineId(key))
+                    {
+                        if (!string.IsNullOrEmpty(tr)) lineTranslations[key] = tr;
+                        continue;
+                    }
+                    key = key?.ToLowerInvariant();
                     if (string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(src))
                     {
                         key = TranslationStore.KeyFor(src);
@@ -131,7 +139,7 @@ namespace DragNWashLocalization
                 foreach (string key in scriptOrder) if (seen.Add(key)) all.Add(key);
                 foreach (string key in fileOrder) if (seen.Add(key)) all.Add(key);
 
-                int written = 0, resolved = 0, unresolved = 0, untranslated = 0;
+                int written = 0, resolved = 0, unresolved = 0, untranslated = 0, lineRows = 0;
                 string path = PathFor(pluginDirectory, locale);
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
                 ScriptOrder.Data order = ScriptOrder.Load(pluginDirectory);
@@ -144,7 +152,9 @@ namespace DragNWashLocalization
                         translations.TryGetValue(key, out string tr);
                         if (src != null) resolved++; else unresolved++;
                         if (string.IsNullOrEmpty(tr)) untranslated++;
-                        speakers.TryGetValue(key, out string who);
+                        // Every character who says this English, from the script order.
+                        string who = order?.SpeakersFor(key);
+                        if (string.IsNullOrEmpty(who)) speakers.TryGetValue(key, out who);
                         if (string.IsNullOrEmpty(who)) who = fallbackSpeaker;
                         if (string.IsNullOrEmpty(who) && src != null) who = "UI";
                         writer.WriteLine(key + "," + CsvReader.Escape(section) + "," + CsvReader.Escape(node) + "," + ord + "," + CsvReader.Escape(who ?? string.Empty) + "," + CsvReader.Escape(src ?? string.Empty) + "," + CsvReader.Escape(tr ?? string.Empty));
@@ -157,7 +167,20 @@ namespace DragNWashLocalization
                     }
                     else
                     {
-                        ScriptOrder.WriteOrdered(writer, order, all, (key, e) => Emit(key, e.Section, e.Node, e.Order.ToString(), e.Speaker), out leftovers);
+                        // Where several characters say the same English, every
+                        // occurrence also gets a line-ID row (empty until a
+                        // translator wants that line to differ).
+                        ScriptOrder.WriteOrdered(writer, order, all, (key, e) => Emit(key, e.Section, e.Node, e.Order.ToString(), e.Speaker),
+                            e => order.IsShared(e.Key) || lineTranslations.ContainsKey(e.LineId),
+                            e =>
+                            {
+                                sources.TryGetValue(e.Key, out string src);
+                                lineTranslations.TryGetValue(e.LineId, out string tr);
+                                lineTranslations.Remove(e.LineId);
+                                writer.WriteLine(e.LineId + "," + CsvReader.Escape(e.Section) + "," + CsvReader.Escape(e.Node) + "," + e.Order + "," + CsvReader.Escape(e.Speaker) + "," + CsvReader.Escape(src ?? string.Empty) + "," + CsvReader.Escape(tr ?? string.Empty));
+                                lineRows++;
+                            },
+                            out leftovers);
                         if (leftovers.Count > 0)
                         {
                             writer.WriteLine();
@@ -168,11 +191,23 @@ namespace DragNWashLocalization
                     {
                         Emit(key, order == null ? "" : "UI", "", "", "");
                     }
+                    // Line-ID rows the script order does not know (the game
+                    // changed, or no order data): keep them rather than lose work.
+                    if (lineTranslations.Count > 0)
+                    {
+                        writer.WriteLine();
+                        writer.WriteLine("# ===== Per-line translations not found in the script order =====");
+                        foreach (KeyValuePair<string, string> kv in lineTranslations)
+                        {
+                            writer.WriteLine(kv.Key + ",,,,,," + CsvReader.Escape(kv.Value));
+                            lineRows++;
+                        }
+                    }
                 }
 
                 string ordered = order == null ? " No script order data found (Export game flow with a level loaded), so rows are in discovery order." : "";
                 if (fresh) ordered = $" {locale}/strings.csv did not exist, so this is a fresh start with every line the game has loaded." + ordered;
-                return $"[working] Wrote {written} row(s) to _discovered/{FileNameFor(locale)}: {resolved} with English, {unresolved} whose text the game has not loaded, {untranslated} still untranslated.{ordered} Edit this file; hot reload applies it. Hash it before committing.";
+                return $"[working] Wrote {written} row(s) to _discovered/{FileNameFor(locale)}: {resolved} with English, {unresolved} whose text the game has not loaded, {untranslated} still untranslated, plus {lineRows} per-line row(s) for English said by more than one character.{ordered} Edit this file; hot reload applies it. Hash it before committing.";
             }
             catch (Exception ex)
             {

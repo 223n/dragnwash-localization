@@ -199,6 +199,7 @@ namespace DragNWashLocalization
             VirtualClick.Install(harmony);
             MenuText.Install(harmony);
             OptionsLanguage.Install(harmony);
+            LineIdContext.Install(harmony);
             harmony.PatchAll();
 
             Logger.LogInfo($"DragNWashLocalization loaded. TargetLocale={TargetLocale.Value}, loaded entries={TranslationStore.EntryCount}, ignore patterns={IgnoreRules.PatternCount}, graphics={SystemInfo.graphicsDeviceType}");

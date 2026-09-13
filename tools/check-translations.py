@@ -9,7 +9,8 @@ A published Translations/<locale>/strings.csv must:
   - have the header  key,section,node,order,speaker,translation
     (older key,speaker,translation and key,translation are still accepted)
   - lines starting with '#' are section headers and are ignored
-  - key: 16 lowercase hex digits (SHA-256 prefix of the source string)
+  - key: 16 lowercase hex digits (SHA-256 prefix of the source string), or a
+    Yarn line ID such as line:6046bedf for a row that translates one line only
   - no duplicate keys, no empty translations
   - contain no English source text (a source_en column is the tell)
 and nothing under Translations/_discovered/ may be committed - the working
@@ -22,6 +23,7 @@ import sys
 from pathlib import Path
 
 KEY = re.compile(r"^[0-9a-f]{16}$")
+LINE_ID = re.compile(r"^line:[A-Za-z0-9_.\-]{1,59}$")
 IDENT = re.compile(r"^(?:[A-Za-z0-9_]*|L\d\d [A-Za-z]+|UI)$")
 ROOT = Path(__file__).resolve().parent.parent
 TRANSLATIONS = ROOT / "Translations"
@@ -72,10 +74,10 @@ def check_file(path: Path) -> list[str]:
             problems.append(f"{name}:{n}: expected {width} fields, got {len(row)}")
             continue
         key, translation = row[0], row[-1]
-        if not KEY.match(key):
+        if not KEY.match(key) and not LINE_ID.match(key):
             # Deliberately do not echo the key: on a public repository the
             # report is visible, and a plain-text key is the game's script.
-            problems.append(f"{name}:{n}: key is not 16 lowercase hex digits")
+            problems.append(f"{name}:{n}: key is not 16 lowercase hex digits or a line ID")
         if key in seen:
             problems.append(f"{name}:{n}: duplicate key (see line {seen[key]})")
         seen.setdefault(key, n)

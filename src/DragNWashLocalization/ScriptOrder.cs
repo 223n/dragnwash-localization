@@ -54,6 +54,37 @@ namespace DragNWashLocalization
             public List<Entry> Entries = new List<Entry>();
             public Dictionary<string, LevelMeta> Levels = new Dictionary<string, LevelMeta>(StringComparer.Ordinal);
             public string Source;
+
+            // key -> every speaker of that English, in play order ("Ryan/Alexander").
+            private Dictionary<string, List<string>> _speakers;
+
+            private void BuildSpeakers()
+            {
+                _speakers = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+                foreach (Entry e in Entries)
+                {
+                    if (string.IsNullOrEmpty(e.Speaker)) continue;
+                    if (!_speakers.TryGetValue(e.Key, out List<string> list))
+                    {
+                        _speakers[e.Key] = list = new List<string>();
+                    }
+                    if (!list.Contains(e.Speaker)) list.Add(e.Speaker);
+                }
+            }
+
+            public string SpeakersFor(string key)
+            {
+                if (_speakers == null) BuildSpeakers();
+                return _speakers.TryGetValue(key, out List<string> list) ? string.Join("/", list) : string.Empty;
+            }
+
+            // The same English is said by more than one character, so a
+            // translator may want a line-ID row for each occurrence.
+            public bool IsShared(string key)
+            {
+                if (_speakers == null) BuildSpeakers();
+                return _speakers.TryGetValue(key, out List<string> list) && list.Count > 1;
+            }
         }
 
         private static readonly string[] PhaseOrder =
@@ -98,7 +129,11 @@ namespace DragNWashLocalization
 
             var entries = new List<Entry>();
             var visited = new HashSet<string>(StringComparer.Ordinal);
-            var emittedKeys = new HashSet<string>(StringComparer.Ordinal);
+            // Every occurrence is recorded, not only the first per English
+            // string: an English line said by several characters needs each
+            // line ID for per-line translations. Writers still print one hash
+            // row per key, at its first occurrence.
+            var emittedLines = new HashSet<string>(StringComparer.Ordinal);
 
             void Walk(string section, string phase, string nodeName, string condition)
             {
@@ -137,8 +172,8 @@ namespace DragNWashLocalization
                 void Emit(string lineId, string kind)
                 {
                     if (!textById.TryGetValue(lineId, out string text) || text.Length == 0) return;
+                    if (!emittedLines.Add(lineId)) return;
                     string key = TranslationStore.KeyFor(text);
-                    if (!emittedKeys.Add(key)) return;
                     order++;
                     entries.Add(new Entry
                     {
@@ -253,11 +288,22 @@ namespace DragNWashLocalization
         // does not know are handed back for the caller to append.
         public static void WriteOrdered(TextWriter w, Data data, ICollection<string> keysPresent, Action<string, Entry> emit, out List<string> leftovers)
         {
+            WriteOrdered(w, data, keysPresent, emit, null, null, out leftovers);
+        }
+
+        // As above, and also calls emitLine(entry) at every occurrence for
+        // which wantLine(entry) is true, under the same headers, right after
+        // the hash row when both fall on the same occurrence.
+        public static void WriteOrdered(TextWriter w, Data data, ICollection<string> keysPresent, Action<string, Entry> emit,
+            Func<Entry, bool> wantLine, Action<Entry> emitLine, out List<string> leftovers)
+        {
             var done = new HashSet<string>(StringComparer.Ordinal);
             string lastSection = null, lastNode = null;
             foreach (Entry e in data.Entries)
             {
-                if (!keysPresent.Contains(e.Key) || done.Contains(e.Key)) continue;
+                bool hashRow = keysPresent.Contains(e.Key) && !done.Contains(e.Key);
+                bool lineRow = emitLine != null && !string.IsNullOrEmpty(e.LineId) && wantLine(e);
+                if (!hashRow && !lineRow) continue;
                 if (e.Section != lastSection)
                 {
                     string header = data.Levels.TryGetValue(e.Section, out LevelMeta meta) ? meta.Header : SectionTitle(e.Section);
@@ -273,8 +319,15 @@ namespace DragNWashLocalization
                     w.WriteLine("# --- " + title + " ---");
                     lastNode = e.Node;
                 }
-                emit(e.Key, e);
-                done.Add(e.Key);
+                if (hashRow)
+                {
+                    emit(e.Key, e);
+                    done.Add(e.Key);
+                }
+                if (lineRow)
+                {
+                    emitLine(e);
+                }
             }
             leftovers = keysPresent.Where(k => !done.Contains(k)).ToList();
         }
