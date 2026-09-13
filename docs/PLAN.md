@@ -438,3 +438,11 @@ The built DLL was deployed to the game's BepInEx plugin directory, and its SHA-2
 - It follows the game's own Options flow (`SaveButtonOnlyAppearOnChanges`): picking a language switches at once without writing the config, Save writes it, and Back without saving calls `Load`, which switches back to the saved language. The F1 menu still switches and saves immediately.
 - The dropdown list is made tall enough for ten entries, the row label is translated in every pack, the language names are excluded from the untranslated list, and their glyphs are prepared at startup for Direct3D 12.
 - Verified with a mouse on Windows and with the controller on the Steam Deck.
+
+## Steam Deck install script (2026-09-13)
+
+- `install-steamdeck.sh` (zip root, LF endings enforced by `.gitattributes`) does the manual Deck steps: finds the game through `libraryfolders.vdf` and the app manifest, downloads the Linux BepInEx 5.4.23.5 and checks SHA-256 `e538560b...`, sets `executable_name`, copies the mod, writes `TargetLocale`, and adds `./run_bepinex.sh %command%` to `LaunchOptions` in each profile's `localconfig.vdf`, wrapping existing options instead of replacing them.
+- Steam rewrites `localconfig.vdf` on exit, so the launch option is only edited with Steam closed (`~/.steam/steam.pid`); the script asks before `steam -shutdown` and restarts Steam afterwards, and never closes Steam when run with `--yes`. A backup is kept as `localconfig.vdf.dragnwash-backup`.
+- Uses kdialog in Desktop Mode and plain prompts in a terminal; English, Japanese and Chinese. `--uninstall` mirrors the Windows installer (keeps save history, removes BepInEx only if the script installed it and no other plugin exists, then restores the launch options).
+- Steam rewrites `localconfig.vdf` on exit, so launch options are edited only with Steam closed: the script sends `steam -shutdown` (asks first, default yes; `--close-steam` skips), waits up to 90 s for the pid in `~/.steam/steam.pid` to go, edits, and starts Steam again. Anything it could not do is listed in the final dialog, and each run is logged to `~/.local/state/dragnwash-localization/installer.log`.
+- Tested on the Deck against a sandboxed Steam tree: fresh install, update, existing launch options, uninstall with kept data, and the terminal picker.
