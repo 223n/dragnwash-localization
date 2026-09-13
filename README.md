@@ -43,6 +43,18 @@ If you prefer to do it by hand, follow the manual steps below.
 > - If no window appears at all, double-click **`Install.cmd`** in the same folder instead. A console flashes for a moment and the same installer window opens.
 > - Failing that, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
 
+### Windows on ARM (verified)
+
+On ARM Windows PCs such as Snapdragon X laptops, install with the same `Install.exe` steps; the mod works (the game itself runs as x64 under emulation).
+
+> [!IMPORTANT]
+> **The game does not render correctly on DirectX 12 there, so add `-force-d3d11` to its Steam launch options.** This happens without the mod too; it is a problem in the game, not in this mod.
+> - With an older GPU driver the game crashes right after the splash screen.
+> - With the latest driver it no longer crashes, but 3D is not drawn.
+>
+> In Steam, right-click the game → **Properties** → **Launch Options**, enter `-force-d3d11`, and the game starts on DirectX 11 and plays normally.
+> Verified on an ASUS ProArt PZ13 (Snapdragon X Plus / Adreno X1-45).
+
 ### Steam Deck / Linux (verified)
 
 > [!IMPORTANT]
