@@ -1,5 +1,8 @@
 # strings.csv をゲームの進行順に並べる計画（事前調査と設計）
 
+> [!NOTE]
+> この計画は v0.2.0 で実装済みです。経緯の記録として残しています。現在の仕組みは [PLAN.ja.md](PLAN.ja.md) の「進行順の翻訳ファイル、v0.2.0」と [CONTRIBUTING.ja.md](../CONTRIBUTING.ja.md) を参照してください。
+
 作成日: 2026-09-12。実機から書き出した `level_flow.csv`（LevelFlow アセット）と
 `dialogue_graph.csv`（Yarn コンパイル済みプログラム 8,619 命令 / 195 ノード）に基づく。
 書き出しは F1 → Tools → **Export game flow** で再現できる（セーブをロードした状態で押す）。

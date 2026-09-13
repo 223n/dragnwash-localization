@@ -279,7 +279,7 @@ The same tab also has a **PROGRESS** editor: step the level index back or forwar
 
 A crash in `D3D12ScratchAllocator::DestroyScratch` has been observed when opening Options with Unity 6000.3.14f1 and DirectX 12. Unity has an official issue report with the same stack trace: [UUM-140564](https://issuetracker.unity.com/issues/10698). Because this is a native rendering bug, it cannot be prevented by catching exceptions in the translation hook.
 
-The bug is triggered when textures are allocated or uploaded at runtime. On Direct3D 12 the plugin therefore prepares the fonts of every installed language at startup, so neither gameplay nor switching language from the F1 menu adds anything to a font atlas. Each character is rasterized only into the one font its language uses, which keeps that startup work small. This has been verified on an actual system, including repeated language switches. No configuration is required.
+The bug is triggered when textures are allocated or uploaded at runtime. On Direct3D 12 the plugin therefore prepares the fonts of every installed language at startup, so neither gameplay nor switching language from Options or the F1 menu adds anything to a font atlas. Each character is rasterized only into the one font its language uses, which keeps that startup work small. This has been verified on an actual system, including repeated language switches. No configuration is required.
 
 Other graphics APIs (Direct3D 11, Vulkan on the Steam Deck) handle runtime uploads, so there only the language in use is prepared and the others load when you pick them. Set `[Font] PreloadAllLocales = true` to prepare everything at startup there too.
 
@@ -291,7 +291,7 @@ Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localiza
 
 ## Current status
 
-Released as v0.5.0 (change language from the game's own Options screen). v0.4.0 brought thirteen languages, per-language fonts, an About tab and an installer in English, Japanese and Chinese; v0.3.0 added Steam Deck support. The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
+Released as v0.5.0 (change language from the game's own Options screen). v0.4.0 brought thirteen languages, per-language fonts, an About tab and an installer in English, Japanese and Chinese; v0.3.0 added Steam Deck support. Windows on ARM has been verified too (the game itself needs `-force-d3d11` there). macOS does not work at the moment because of a known BepInEx-side issue (see the note under [Steam Deck / Linux](#steam-deck--linux-verified)). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
 

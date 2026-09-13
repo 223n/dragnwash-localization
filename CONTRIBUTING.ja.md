@@ -4,7 +4,7 @@
 
 Drag'n Wash Localization は、コードを書かずに **CSV を編集するだけ**で翻訳に参加できる
 Mod です。この文書は翻訳に参加したい方向けのガイドです。プラグイン本体の開発者向けの
-ビルド・配布手順は [docs/RELEASING.md](docs/RELEASING.md) を参照してください。
+ビルド・配布手順は [docs/RELEASING.ja.md](docs/RELEASING.ja.md) を参照してください。
 
 ## 必要なもの
 

@@ -1,4 +1,4 @@
-# Releasing
+# リリース手順
 
 [English](RELEASING.md)
 
