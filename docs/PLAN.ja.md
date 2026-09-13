@@ -728,3 +728,4 @@ TMPフックは画面に出る全文字列を拾うため、スライダーの�
 - NeighTools/UnityDoorstop#108 と一致する。Unity 6.3 の `UnityPlayer.dylib` は chained fixups のみで、Doorstop の `plthook_osx.c` がそのヘッダをゼロとして読み、`dlsym` をフックできないため `mono_jit_init_version` に割り込めない。未マージの PR #110 が修正をうたっている。Issue に添付された有志ビルドの dylib は使っていない。
 - `run_bepinex.sh` は `executable_name` を現在のディレクトリ基準で確認するので、手で起動するときはゲームフォルダから実行する必要がある。Steam の外から起動すると `SteamAPI_Init() failed` が出る。
 - 方針: 修正の入った BepInEx が出るまで macOS は非対応と明記し、出たら再検証する。
+- 実験的なインストーラー `installer/experimental/install-macos.sh` を用意した。Deck 用スクリプトの macOS 版で、`executable_name` に `.app` のフルパスを設定し、起動オプションは JavaScript for Automation で書き換え、Steam は `steam://exit` で終了し、UnityDoorstop#107 の arch 対策と「動作確認」モードを持つ。リリースの zip には入れておらず、Mac ではまだ実行していない。修正版の BepInEx が出たら `BEPINEX_URL` / `BEPINEX_SHA256` を差し替え、`KNOWN_ISSUE=0` にして試してから同梱する。

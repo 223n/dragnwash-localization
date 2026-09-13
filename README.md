@@ -89,6 +89,8 @@ To change language on the Deck, use **Options → Language (Mod)** with the cont
 
 > [!WARNING]
 > **macOS does not work at the moment.** Drag'n Wash is built with Unity 6.3, and the Doorstop loader that BepInEx 5.4.23.5 uses on macOS cannot hook Unity 6.3 games yet ([NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)). Doorstop loads into the game, but BepInEx never starts: no `BepInEx/LogOutput.log` and no `BepInEx/config` appear, and the game runs in English. This was checked on an Apple M3 Pro with macOS 26.6, both natively and under Rosetta. It is a BepInEx-side problem, so nothing in this mod can work around it; once a BepInEx release carries the fix, macOS will be tested again.
+>
+> An **experimental** macOS install script is kept in the repository for that day: [`installer/experimental/install-macos.sh`](installer/experimental/install-macos.sh). It does the same job as the Steam Deck script (BepInEx for macOS, the mod, the language, and the Steam launch option), plus a **Check** mode that tells whether the mod loaded after you start the game. It has not been run on a Mac yet, warns about the issue above before installing, and is not in the release zip.
 
 ### Manual installation
 
