@@ -33,6 +33,15 @@ namespace DragNWashLocalization
 
         private static readonly List<Regex> Patterns = new List<Regex>();
 
+        // Whole strings the mod itself puts on screen, such as language names
+        // in the Options dropdown, which are not game text to translate.
+        private static readonly HashSet<string> Exact = new HashSet<string>(StringComparer.Ordinal);
+
+        public static void AddExact(string text)
+        {
+            if (!string.IsNullOrEmpty(text)) Exact.Add(text.Trim());
+        }
+
         // Loaded once; the rules do not depend on the selected locale.
         private static bool _loaded;
 
@@ -100,6 +109,11 @@ namespace DragNWashLocalization
 
             string trimmed = text.Trim();
             if (trimmed.Length == 0)
+            {
+                return true;
+            }
+
+            if (Exact.Contains(trimmed))
             {
                 return true;
             }

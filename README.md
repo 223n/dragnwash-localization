@@ -58,7 +58,7 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
 
 Fonts need no extra setup: the game text uses SteamOS's Noto Sans CJK straight from the font file (Japanese, Chinese and Korean faces), and the F1 menu draws with a bundled Noto Sans JP (`dragnwash-menufont.bundle`), because Steam's Linux runtime exposes no CJK font to Unity's menu system. That menu font has no Hangul or Hebrew, so on the Deck those languages show their locale code on the F1 language buttons; the game itself displays them normally.
 
-Using the F1 menu on the Deck (Gaming Mode):
+To change language on the Deck, use **Options → Language (Mod)** with the controller; no F1 key is needed. For the translator tools in the F1 menu (Gaming Mode):
 
 - Bind **F1** to a button with Steam Input to open it.
 - Point with the right trackpad or the touchscreen. **A**, **R2**, or a trackpad click presses the button under the pointer (Steam Input sends the trackpad click as a stick press, not a mouse click, so the mod handles it).
@@ -105,7 +105,9 @@ Do not leave the ZIP itself or an extra `DragNWashLocalization-<version>` direct
 
 ### 4. Launch and verify
 
-Start Drag'n Wash. A manual install starts in Japanese (the installer uses the language you picked). Press **F1** to open the localization menu; under **Tools**, you can switch between the installed languages without restarting.
+Start Drag'n Wash. A manual install starts in Japanese (the installer uses the language you picked).
+
+To change language, open **Options** and use **Language (Mod)** at the end of the Gameplay section. Picking a language switches the game to it right away; press **Save** to keep it, or **Back** to return to the saved language. It works with a mouse or a gamepad, including on the Steam Deck. The **F1** menu's **Tools** tab can also switch language, and saves the choice at once.
 
 A successful installation also produces a `DragNWashLocalization` startup entry in `BepInEx/LogOutput.log`.
 
@@ -115,7 +117,7 @@ To change the default language manually, close the game and edit:
 BepInEx/config/com.tomxv.dragnwash.localization.cfg
 ```
 
-Set `TargetLocale` under `[General]` to an installed locale such as `ja` or `zh-Hans`, then start the game again. `en` keeps the game's original English text (the mod stays installed but translates nothing); the installer and the in-game F1 menu offer the same choice.
+Set `TargetLocale` under `[General]` to an installed locale such as `ja` or `zh-Hans`, then start the game again. `en` keeps the game's original English text (the mod stays installed but translates nothing); the installer, Options → Language (Mod) and the F1 menu offer the same choice.
 
 ### If the mod does not load
 

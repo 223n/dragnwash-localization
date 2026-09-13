@@ -184,19 +184,21 @@ namespace DragNWashLocalization
             // installed language is prepared here, since a runtime atlas upload
             // crashes that renderer; elsewhere only the language in use is, and
             // the rest follow on a switch. See FontFallback.Startup.
+            // Locale names first: the Options dropdown shows every one of them
+            // at once, so their glyphs are prepared with the fonts.
+            RefreshAvailableLocales();
             FontFallback.Startup(PluginDirectory, TargetLocale.Value, TranslationStore.TranslatedTexts,
-                PreloadAllLocales != null && PreloadAllLocales.Value);
+                PreloadAllLocales != null && PreloadAllLocales.Value, LocaleNamesForFonts());
             HotReload.Track(PluginDirectory, TargetLocale.Value);
             SaveHistory.Configure(PluginDirectory, SaveHistoryKeep.Value);
             CreateMenuBackgroundTexture();
-            // Locales first: the font warm-up below needs their display names.
-            RefreshAvailableLocales();
             CreateMenuFont();
 
             var harmony = new Harmony(PluginGuid);
             CursorUnlock.Install(harmony);
             VirtualClick.Install(harmony);
             MenuText.Install(harmony);
+            OptionsLanguage.Install(harmony);
             harmony.PatchAll();
 
             Logger.LogInfo($"DragNWashLocalization loaded. TargetLocale={TargetLocale.Value}, loaded entries={TranslationStore.EntryCount}, ignore patterns={IgnoreRules.PatternCount}, graphics={SystemInfo.graphicsDeviceType}");
@@ -213,6 +215,45 @@ namespace DragNWashLocalization
 
         private float _nextDiscoveredFlushTime;
         private string _pendingLocale;
+        // False for a switch that should not be written to the config yet: the
+        // Options dropdown previews a language until Save is pressed.
+        private bool _pendingLocalePersist = true;
+        private Func<string, string> _displayNameFunc;
+        private Action<string, bool> _requestLocaleFunc;
+        private Action _commitLocaleFunc;
+        private Func<string> _currentLocaleFunc;
+
+        // Language chosen in the Options dropdown. Applied in Update like every
+        // other switch; persist=false keeps it out of the config file until the
+        // player presses Save.
+        private void RequestLocale(string locale, bool persist)
+        {
+            if (string.IsNullOrEmpty(locale) || locale == TargetLocale.Value) return;
+            _pendingLocale = locale;
+            _pendingLocalePersist = persist;
+        }
+
+        // Save pressed in Options: write the language now in use to the config.
+        private void CommitLocale()
+        {
+            try
+            {
+                Config.Save();
+                Log($"Language {TargetLocale.Value} saved from the Options screen.");
+            }
+            catch (Exception ex)
+            {
+                Log($"Could not save the language setting: {ex.Message}");
+            }
+        }
+
+        private IEnumerable<KeyValuePair<string, string>> LocaleNamesForFonts()
+        {
+            foreach (string locale in _availableLocales)
+            {
+                yield return new KeyValuePair<string, string>(locale, LocaleDisplayName(locale));
+            }
+        }
         private bool _pendingDump;
         private bool _pendingUiDump;
         private bool _pointerGrabbedByMenu;
@@ -234,9 +275,23 @@ namespace DragNWashLocalization
             if (_pendingLocale != null)
             {
                 string locale = _pendingLocale;
+                bool persist = _pendingLocalePersist;
                 _pendingLocale = null;
+                _pendingLocalePersist = true;
 
-                TargetLocale.Value = locale;
+                if (persist)
+                {
+                    TargetLocale.Value = locale;
+                }
+                else
+                {
+                    // Change the value in memory only; the file keeps the last
+                    // confirmed language until CommitLocale.
+                    bool saveOnSet = Config.SaveOnConfigSet;
+                    Config.SaveOnConfigSet = false;
+                    try { TargetLocale.Value = locale; }
+                    finally { Config.SaveOnConfigSet = saveOnSet; }
+                }
                 RightToLeft.SetLocale(locale);
                 TranslationStore.Load(PluginDirectory, locale);
                 // On Direct3D 12 the fonts were all prepared at startup and this
@@ -247,6 +302,7 @@ namespace DragNWashLocalization
                     WarmMenuFont();
                 }
                 TmpTextHook.RefreshAll();
+                OptionsLanguage.Sync(locale, committed: persist);
                 HotReload.Track(PluginDirectory, locale);
                 Log($"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}");
             }
@@ -255,6 +311,11 @@ namespace DragNWashLocalization
             {
                 HotReload.Tick(PluginDirectory, TargetLocale.Value);
             }
+
+            OptionsLanguage.Tick(_availableLocales, _displayNameFunc ?? (_displayNameFunc = LocaleDisplayName),
+                _currentLocaleFunc ?? (_currentLocaleFunc = () => TargetLocale.Value),
+                _requestLocaleFunc ?? (_requestLocaleFunc = RequestLocale),
+                _commitLocaleFunc ?? (_commitLocaleFunc = CommitLocale));
 
             if (ToggleMenuKey.Value.IsDown())
             {
@@ -424,6 +485,10 @@ namespace DragNWashLocalization
                     .Where(name => !name.StartsWith("_") && name != "en")
                     .OrderBy(name => name, StringComparer.Ordinal))
                 .ToArray();
+            foreach (string locale in _availableLocales)
+            {
+                IgnoreRules.AddExact(LocaleDisplayName(locale));
+            }
         }
 
         private GUIStyle _windowStyle;

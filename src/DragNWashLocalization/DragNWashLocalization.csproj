@@ -32,6 +32,8 @@
       libs/UnityEngine.TextRenderingModule.dll <- <Game>/DragNWash_Data/Managed/UnityEngine.TextRenderingModule.dll
       libs/Unity.InputSystem.dll           <- <Game>/DragNWash_Data/Managed/Unity.InputSystem.dll
       libs/UnityEngine.AssetBundleModule.dll <- <Game>/DragNWash_Data/Managed/UnityEngine.AssetBundleModule.dll
+      libs/Naelstrof.UnityScriptableSettings.dll <- <Game>/DragNWash_Data/Managed/Naelstrof.UnityScriptableSettings.dll
+      libs/Unity.Localization.dll          <- <Game>/DragNWash_Data/Managed/Unity.Localization.dll
       libs/UnityEngine.UI.dll              <- <Game>/DragNWash_Data/Managed/UnityEngine.UI.dll
   -->
   <ItemGroup>
@@ -89,6 +91,14 @@
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
       <HintPath>libs\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Naelstrof.UnityScriptableSettings">
+      <HintPath>libs\Naelstrof.UnityScriptableSettings.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>libs\Unity.Localization.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">

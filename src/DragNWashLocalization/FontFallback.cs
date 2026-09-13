@@ -170,10 +170,22 @@ namespace DragNWashLocalization
 
         public static bool PreloadedEverything { get; private set; }
 
-        public static void Startup(string pluginDirectory, string locale, IEnumerable<string> currentTexts, bool forcePreloadAll)
+        public static void Startup(string pluginDirectory, string locale, IEnumerable<string> currentTexts, bool forcePreloadAll,
+            IEnumerable<KeyValuePair<string, string>> localeNames = null)
         {
             _currentLocale = locale ?? string.Empty;
             PreloadedEverything = forcePreloadAll || !RuntimeUploadsAreSafe;
+
+            // The Options dropdown lists every installed language by its own
+            // name (한국어, עברית ...) all at once, whichever language is in
+            // use, so those few characters are prepared on every renderer.
+            if (localeNames != null)
+            {
+                foreach (KeyValuePair<string, string> kv in localeNames)
+                {
+                    PrepareLocale(kv.Key, new[] { kv.Value });
+                }
+            }
 
             if (PreloadedEverything)
             {
