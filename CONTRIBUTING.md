@@ -145,7 +145,7 @@ If you only change the `translation` column of the published `strings.csv` and l
 ## Writing the pull request
 
 - **Title:** start with the locale code in brackets, then say what changed. For example `[ko] Fix the Korean translation`, `[ko] Native review of levels 1-3`, or `[de] Translate the Options row`. English, Japanese or your own language are all fine.
-- **Description:** the pull request template fills in by itself. Under *What*, write the language and which part you changed (levels, scenes such as `Conrad_1_intro`, or UI), then tick the checklist items that apply and leave the rest unticked.
+- **Description:** the pull request template fills in by itself. Under *What*, write the language and which part you changed (levels, scenes such as `Conrad_1_intro`, or UI), then tick the checklist items that apply and leave the rest unticked. Under *Credit*, say whether you want to be credited and, if so, the name (and optional link) to show.
 - **After opening it:** the automatic translation check runs. If it fails, a comment in English lists the reasons with file and line numbers, and it updates itself when you push a fix. The maintainer then reviews the pull request. Questions are welcome in the pull request, in English or Japanese. If the check fails, see [If the automatic check fails](#if-the-automatic-check-fails).
 
 ## If the automatic check fails
