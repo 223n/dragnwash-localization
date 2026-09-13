@@ -2,8 +2,9 @@
 # Drag'n Wash Localization - installer / uninstaller for Steam Deck and Linux.
 #
 # Run it from the extracted release folder, in Desktop Mode:
-#   bash install-steamdeck.sh              install or update
-#   bash install-steamdeck.sh --uninstall  remove the mod
+#   bash install-steamdeck.sh              asks whether to install or uninstall
+#   bash install-steamdeck.sh --install    install or update straight away
+#   bash install-steamdeck.sh --uninstall  remove the mod straight away
 #
 # What it does (the same as the manual steps in the README):
 #   1. finds Drag'n Wash in your Steam libraries
@@ -14,8 +15,9 @@
 #   5. sets the Steam launch option ./run_bepinex.sh %command%
 #      (Steam has to be closed for that; you are asked first)
 #
-# Options: --uninstall  --lang <locale>  --game-dir <path>  --yes (no questions,
-#          use defaults)  --remove-bepinex (with --uninstall)  --ui en|ja|zh
+# Options: --install  --uninstall  --lang <locale>  --game-dir <path>
+#          --yes (no questions, use defaults; installs unless --uninstall)
+#          --remove-bepinex (with --uninstall)  --ui en|ja|zh
 set -euo pipefail
 
 APP_ID=4739660
@@ -30,7 +32,7 @@ LAUNCH_OPTION="./run_bepinex.sh %command%"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PAYLOAD="$HERE/BepInEx/plugins/$PLUGIN"
 
-MODE=install
+MODE=""
 LANG_CHOICE=""
 GAME_DIR=""
 ASSUME_YES=0
@@ -39,6 +41,7 @@ UI=""
 
 while [ $# -gt 0 ]; do
     case "$1" in
+        --install) MODE=install ;;
         --uninstall) MODE=uninstall ;;
         --lang) LANG_CHOICE="${2:-}"; shift ;;
         --game-dir) GAME_DIR="${2:-}"; shift ;;
@@ -184,6 +187,30 @@ t() {
         ja:confirm_uninstall) echo "次のフォルダから Mod を削除します。よろしいですか？" ;;
         zh:confirm_uninstall) echo "将从以下文件夹删除 Mod。继续吗？" ;;
         *:confirm_uninstall) echo "Remove the mod from this folder?" ;;
+        ja:action) echo "何をしますか？" ;;
+        zh:action) echo "要执行什么操作？" ;;
+        *:action) echo "What would you like to do?" ;;
+        ja:act_install) echo "インストール / 更新" ;;
+        zh:act_install) echo "安装 / 更新" ;;
+        *:act_install) echo "Install / Update" ;;
+        ja:act_uninstall) echo "アンインストール" ;;
+        zh:act_uninstall) echo "卸载" ;;
+        *:act_uninstall) echo "Uninstall" ;;
+        ja:st_bep) echo "BepInEx" ;;
+        zh:st_bep) echo "BepInEx" ;;
+        *:st_bep) echo "BepInEx" ;;
+        ja:st_mod) echo "Mod" ;;
+        zh:st_mod) echo "Mod" ;;
+        *:st_mod) echo "Mod" ;;
+        ja:st_yes) echo "導入済み" ;;
+        zh:st_yes) echo "已安装" ;;
+        *:st_yes) echo "installed" ;;
+        ja:st_no) echo "未導入" ;;
+        zh:st_no) echo "未安装" ;;
+        *:st_no) echo "not installed" ;;
+        ja:nothing) echo "Mod は導入されていません。" ;;
+        zh:nothing) echo "尚未安装 Mod。" ;;
+        *:nothing) echo "The mod is not installed." ;;
         *) echo "$key" ;;
     esac
 }
@@ -416,6 +443,31 @@ if [ -z "$GAME_DIR" ]; then GAME_DIR="$(find_game || true)"; fi
 say "Game: $GAME_DIR"
 if pgrep -x "$GAME_BIN" >/dev/null 2>&1; then fail "$(t running)"; fi
 
+if [ -z "$MODE" ]; then
+    have_bep="$(t st_no)"; [ -f "$GAME_DIR/BepInEx/core/BepInEx.dll" ] && have_bep="$(t st_yes)"
+    have_mod="$(t st_no)"; [ -f "$GAME_DIR/BepInEx/plugins/$PLUGIN/$PLUGIN.dll" ] && have_mod="$(t st_yes)"
+    status="$(t st_bep): $have_bep    $(t st_mod): $have_mod"
+    if [ "$ASSUME_YES" -eq 1 ]; then
+        MODE=install
+    elif [ "$GUI" -eq 1 ]; then
+        MODE="$(kdialog --title "$(t title)" --menu "$GAME_DIR
+$status
+
+$(t action)" install "$(t act_install)" uninstall "$(t act_uninstall)")" || exit 1
+    else
+        say "$status"
+        say "$(t action)"
+        say "  1) $(t act_install)"
+        say "  2) $(t act_uninstall)"
+        read -r -p "> " pick || pick=""
+        case "$pick" in
+            2) MODE=uninstall ;;
+            1|"") MODE=install ;;
+            *) exit 1 ;;
+        esac
+    fi
+fi
+
 if [ "$MODE" = install ]; then
     [ -f "$PAYLOAD/$PLUGIN.dll" ] || fail "$(t nopayload)"
 
@@ -519,6 +571,10 @@ $GAME_DIR" 1 || exit 1
 
     finish_message "$(t done)"
 else
+    if [ ! -d "$GAME_DIR/BepInEx/plugins/$PLUGIN" ] && [ ! -f "$GAME_DIR/BepInEx/config/$CFG_NAME" ]; then
+        finish_message "$(t nothing)"
+        exit 0
+    fi
     ask_yes "$(t confirm_uninstall)
 $GAME_DIR" 1 || exit 1
 

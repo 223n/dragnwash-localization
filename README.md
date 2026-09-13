@@ -60,10 +60,10 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
    bash install-steamdeck.sh
    ```
 
-4. Pick a language. Steam has to close for a moment so the launch option can be set; the script asks first and starts Steam again.
+4. Choose **Install / Update**, then pick a language. Steam has to close for a moment so the launch option can be set; the script asks first and starts Steam again.
 5. Go back to Gaming Mode and start the game. Change language later in **Options → Language (Mod)**.
 
-The script finds the game in your Steam libraries (including an SD card), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256, sets `executable_name="DragNWash"` in `run_bepinex.sh`, copies the mod, and adds `./run_bepinex.sh %command%` to the game's launch options while keeping any options you already had. Running it again updates the mod. `bash install-steamdeck.sh --uninstall` removes it, keeping your save history, and restores the launch options when BepInEx goes too.
+The script finds the game in your Steam libraries (including an SD card), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256, sets `executable_name="DragNWash"` in `run_bepinex.sh`, copies the mod, and adds `./run_bepinex.sh %command%` to the game's launch options while keeping any options you already had. To update or remove the mod, run the same command again and choose **Install / Update** or **Uninstall**. Uninstalling keeps your save history, and restores the launch options when BepInEx goes too. `--install` and `--uninstall` skip the question.
 
 <details>
 <summary>Manual installation on the Deck</summary>

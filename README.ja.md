@@ -60,10 +60,10 @@ Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Ins
    bash install-steamdeck.sh
    ```
 
-4. 言語を選ぶ。起動オプションを設定するため Steam を一度終了する必要があり、その前に確認が出ます（設定後に Steam を起動し直します）
+4. **インストール / 更新** を選び、言語を選ぶ。起動オプションを設定するため Steam を一度終了する必要があり、その前に確認が出ます（設定後に Steam を起動し直します）
 5. ゲームモードに戻ってゲームを起動する。言語はあとから **Options → 言語（Mod）** で変えられます
 
-スクリプトは、Steam のライブラリ（SD カードも含む）からゲームを探し、公式の Linux 版 BepInEx 5.4.23.5 をダウンロードして SHA-256 で検証し、`run_bepinex.sh` の `executable_name="DragNWash"` を設定し、Mod をコピーし、ゲームの起動オプションに `./run_bepinex.sh %command%` を追加します（すでに設定しているオプションは残します）。もう一度実行すると更新になります。`bash install-steamdeck.sh --uninstall` で削除でき、セーブ履歴は残し、BepInEx も消す場合は起動オプションを元に戻します。
+スクリプトは、Steam のライブラリ（SD カードも含む）からゲームを探し、公式の Linux 版 BepInEx 5.4.23.5 をダウンロードして SHA-256 で検証し、`run_bepinex.sh` の `executable_name="DragNWash"` を設定し、Mod をコピーし、ゲームの起動オプションに `./run_bepinex.sh %command%` を追加します（すでに設定しているオプションは残します）。更新や削除も同じコマンドで実行し、**インストール / 更新** か **アンインストール** を選びます。アンインストールではセーブ履歴を残し、BepInEx も消す場合は起動オプションを元に戻します。`--install` や `--uninstall` を付けると、この質問を飛ばせます。
 
 <details>
 <summary>Deck に手動で導入する場合</summary>
