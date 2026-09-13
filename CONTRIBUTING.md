@@ -146,7 +146,35 @@ If you only change the `translation` column of the published `strings.csv` and l
 
 - **Title:** start with the locale code in brackets, then say what changed. For example `[ko] Fix the Korean translation`, `[ko] Native review of levels 1-3`, or `[de] Translate the Options row`. English, Japanese or your own language are all fine.
 - **Description:** the pull request template fills in by itself. Under *What*, write the language and which part you changed (levels, scenes such as `Conrad_1_intro`, or UI), then tick the checklist items that apply and leave the rest unticked.
-- **After opening it:** the automatic translation check runs. If it fails, a comment in English lists the reasons with file and line numbers, and it updates itself when you push a fix. The maintainer then reviews the pull request. Questions are welcome in the pull request, in English or Japanese.
+- **After opening it:** the automatic translation check runs. If it fails, a comment in English lists the reasons with file and line numbers, and it updates itself when you push a fix. The maintainer then reviews the pull request. Questions are welcome in the pull request, in English or Japanese. If the check fails, see [If the automatic check fails](#if-the-automatic-check-fails).
+
+## If the automatic check fails
+
+Every pull request runs `tools/check-translations.py`. When it finds a problem, the pull request gets a comment in English that explains the reasons, with a **Full report** listing each problem as `file:line: message`. The line number is the line in the file as you see it in an editor. Push a fix to the same branch and the check runs again; the comment is updated, not duplicated.
+
+You can run the same check before pushing (Python 3.9 or later):
+
+```bash
+python tools/check-translations.py
+```
+
+It prints `translations OK` when everything passes.
+
+| Message in the report | What it means | How to fix it |
+|---|---|---|
+| `header is [...]; the published file must be ...` | The file is still a working copy (it has a `source_en` column) | Run **F1 → Tools → Hash for commit** or `tools/hash-strings.ps1`, then commit the rebuilt `strings.csv` |
+| `key is not 16 lowercase hex digits` | A key is not a hash: English text was put in the key column, or the key was edited | Rebuild with *Hash for commit*. Never edit the `key` column by hand |
+| `must not be committed (contains source text)` | A file from `Translations/_discovered/` or a `strings.local.csv` is in the pull request | Remove it from the pull request with `git rm --cached <file>` and commit; keep the file locally if you still need it |
+| `duplicate key (see line N)` | The same line appears twice | Keep one row per key and delete the other |
+| `empty translation` | A row has an empty `translation` | Fill it in, or delete the row so the game shows the English |
+| `expected 6 fields, got N` | The row has the wrong number of columns | Wrap values that contain `,`, a line break or `"` in double quotes, and write `"` inside them as `""` |
+| `section does not look like an identifier` / `node does not look like an identifier` | These columns were edited, or the columns shifted | Put back the values from `main` and change only `translation` |
+| `no strings.csv` | A language folder has no `strings.csv` | Add the file, or remove the empty folder |
+| `empty file` | `strings.csv` has no header line | Start the file with `key,section,node,order,speaker,translation` |
+
+The check does not compare formatting tags with the source; reviewers look at those.
+
+**Spreadsheet apps can break the file on save.** Excel may turn keys that look like numbers (for example `12345e6789012345`) into scientific notation, change the encoding, or change quoting. Prefer a text editor such as VS Code, or LibreOffice with every column set to *Text*, and save as UTF-8 CSV.
 
 ## Rules
 

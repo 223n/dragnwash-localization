@@ -185,7 +185,35 @@ Fキーや自動記録で `Translations/_discovered/` に CSV として出力さ
 
 - **タイトル:** 先頭に言語コードを角かっこで付けて、何を変えたかを書きます。例: `[ko] 韓国語訳の修正`、`[ko] レベル1〜3のネイティブチェック`、`[de] Options の項目名を翻訳`。英語・日本語・その言語のどれで書いても構いません。
 - **本文:** PR を作ると、記入用のテンプレートが自動で入ります。「What / 内容」に言語と直した範囲（レベル、`Conrad_1_intro` のような場面、UI など）を書き、チェックリストは当てはまるものにだけチェックを入れてください。
-- **送ったあと:** 翻訳の自動チェックが走ります。問題があれば、理由とファイル・行番号が英語のコメントで届き、修正を push すると同じコメントが更新されます。そのあとメンテナーがレビューします。質問は PR に英語か日本語で気軽に書いてください。
+- **送ったあと:** 翻訳の自動チェックが走ります。問題があれば、理由とファイル・行番号が英語のコメントで届き、修正を push すると同じコメントが更新されます。そのあとメンテナーがレビューします。質問は PR に英語か日本語で気軽に書いてください。チェックで止められたときは「[自動チェックで止められたとき](#自動チェックで止められたとき)」を参照してください。
+
+## 自動チェックで止められたとき
+
+すべての PR で `tools/check-translations.py` が実行されます。問題が見つかると、PR に英語のコメントが付き、理由の説明と、`ファイル:行: メッセージ` の形で問題を一覧にした **Full report** が表示されます。行番号は、エディタで開いたときのファイルの行番号です。同じブランチに修正を push するとチェックがやり直され、コメントは増えずに同じものが更新されます。
+
+push する前に、手元で同じチェックを実行することもできます（Python 3.9 以降）。
+
+```bash
+python tools/check-translations.py
+```
+
+問題がなければ `translations OK` と表示されます。
+
+| レポートのメッセージ | 意味 | 直し方 |
+|---|---|---|
+| `header is [...]; the published file must be ...` | ファイルが作業コピーのまま（`source_en` 列がある） | **F1 → Tools → Hash for commit** か `tools/hash-strings.ps1` を実行し、作り直した `strings.csv` をコミットする |
+| `key is not 16 lowercase hex digits` | key がハッシュになっていない。key の列に英文が入っているか、key を書き換えている | *Hash for commit* で作り直す。`key` 列は手で編集しない |
+| `must not be committed (contains source text)` | `Translations/_discovered/` のファイルか `strings.local.csv` が PR に入っている | `git rm --cached <ファイル>` で PR から外してコミットする（手元のファイルは残せます） |
+| `duplicate key (see line N)` | 同じ行が 2 回ある | key ごとに 1 行だけ残し、もう一方を消す |
+| `empty translation` | `translation` が空の行がある | 訳を入れるか、行ごと消す（その行は英語で表示されます） |
+| `expected 6 fields, got N` | 列の数が合わない行がある | `,`・改行・`"` を含む値をダブルクォートで囲み、中の `"` は `""` と書く |
+| `section does not look like an identifier` / `node does not look like an identifier` | この列を編集したか、列がずれている | `main` の値に戻し、`translation` 列だけを直す |
+| `no strings.csv` | 言語フォルダに `strings.csv` がない | ファイルを追加するか、空のフォルダを消す |
+| `empty file` | `strings.csv` に見出し行がない | 先頭に `key,section,node,order,speaker,translation` を書く |
+
+書式タグが原文と同じ構造かどうかは、このチェックでは調べていません。レビューで確認します。
+
+**表計算ソフトは、保存するときにファイルを壊すことがあります。** Excel は、数字に見える key（例: `12345e6789012345`）を指数表記に変えたり、文字コードやクォートを変えたりすることがあります。VS Code などのテキストエディタか、すべての列を「テキスト」にした LibreOffice を使い、UTF-8 の CSV で保存してください。
 
 ## ルール
 
