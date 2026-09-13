@@ -47,12 +47,13 @@ BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 BepInEx/plugins/DragNWashLocalization/data/script_order.csv
 BepInEx/plugins/DragNWashLocalization/data/level_flow.csv
 Install.exe
+Install.cmd
 install-steamdeck.sh
 installer/Installer.ps1
 README.md
 ```
 
-`Install.exe` is a small console-less launcher compiled by `pack.ps1` with the C# compiler that ships with .NET Framework 4 (`%WINDIR%\Microsoft.NET\Framework644.0.30319\csc.exe`); nothing extra needs to be installed. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works.
+`Install.exe` is a small console-less launcher compiled by `pack.ps1` with the C# compiler that ships with .NET Framework 4 (`%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe`); nothing extra needs to be installed. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works. `Install.cmd` opens the same installer window on machines where SmartScreen or a policy blocks the unsigned `Install.exe`. `install-steamdeck.sh` is the Steam Deck / Linux installer and must keep LF line endings (enforced by `.gitattributes`). The experimental macOS script in `installer/experimental/` is not packaged.
 
 To install it, extract the archive into the game directory and merge the included `BepInEx/` directory.
 
@@ -60,7 +61,8 @@ To install it, extract the archive into the game directory and merge the include
 
 - Confirm that the Release build produces no warnings or errors.
 - Extract the ZIP and confirm that the DLL and `Translations/` directory are in the correct locations.
-- If possible, launch the game once with a clean BepInEx installation and verify the F1 menu and language switching.
+- If possible, launch the game once with a clean BepInEx installation and verify the F1 menu and language switching, including **Options → Language (Mod)** (pick, Save, Back).
+- When the installers changed, run `Install.exe` (install and uninstall) on Windows, and `install-steamdeck.sh` on a Steam Deck.
 
 ### 4. Create the GitHub Release
 
@@ -72,7 +74,11 @@ gh release create v0.2.0 release/DragNWashLocalization-0.2.0.zip `
 
 Use tags prefixed with `v`, such as `v0.2.0`. You may also use the GitHub web interface: open Releases, draft a new release, create the tag, and upload the ZIP.
 
-The release notes must state that **BepInEx is required separately** and mention the `-force-d3d11` workaround for crashes under Direct3D 12. See the [README](../README.md).
+The release notes should say that `Install.exe` and `install-steamdeck.sh` download BepInEx automatically, while a manual installation needs BepInEx 5 separately, and should list the supported platforms. See the [README](../README.md).
+
+## Rebuilding a published release
+
+Do not move a tag that has already been pushed. If a published release has to be rebuilt (for example to add a file to its zip), delete the GitHub release and its tag first, then tag the new commit, build, and create the release again as above. Deleting the release resets its download count. If the release was a pre-release, decide before publishing whether the new one should be the latest release.
 
 ## Why releases are not built in CI
 

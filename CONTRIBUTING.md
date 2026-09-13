@@ -13,7 +13,7 @@ You do not need to know Unity's internal keys or how to program. While working y
 
 ### Language display name (`name.txt`)
 
-Whatever you put in `Translations/<locale>/name.txt` is shown on the language buttons in the in-game F1 menu and in the installer (for example `ja/name.txt` → `日本語`, `zh-Hans/name.txt` → `中文`). One line, UTF-8. Without the file the folder name is shown. Adding a language is just a folder, a `strings.csv` and a `name.txt`.
+Whatever you put in `Translations/<locale>/name.txt` is shown as the language's name in the game's **Options → Language (Mod)** list, on the language buttons in the F1 menu, and in the installers (Windows and Steam Deck) (for example `ja/name.txt` → `日本語`, `zh-Hans/name.txt` → `中文`). One line, UTF-8. Without the file the folder name is shown. Adding a language is just a folder, a `strings.csv` and a `name.txt`.
 
 ## Basic flow
 
@@ -57,9 +57,10 @@ The plugin hashes the English text it is about to show and looks it up, so both 
 ### Starting a new language
 
 1. Create `Translations/<locale>/` (for example `ko`) and write the display name into `name.txt` (for example `한국어`).
-2. Start the game and pick the new language under F1 → Tools (the screen stays English, there are no translations yet).
+2. Start the game and pick the new language in **Options → Language (Mod)** or under F1 → Tools (the screen stays English, there are no translations yet).
 3. Press **F1 → Tools → Export working copy**. Even without a `strings.csv` you get an empty working copy, `_discovered/<locale>.working.csv`, listing every line the game has loaded with its English text.
 4. Continue as in "Working with the English beside each line". Lines show up in the game as you translate them.
+5. Translate the Options row label `Language (Mod)` too (key `e3becbaee46cc0df`). Keep "(Mod)" or your language's equivalent so players can tell it is this mod's setting, not the game's. It appears in the working copy and in the F7 export once you have opened Options.
 
 ### Working with the English beside each line (recommended)
 
@@ -128,7 +129,7 @@ Every pack except Japanese and Simplified Chinese is provisional: complete, but 
 
 ## Checking your work
 
-- Open the debug window with **F1** in the game and switch languages on the **Tools** tab; the screen updates without a restart.
+- Switch languages in **Options → Language (Mod)** (Save keeps the choice, Back returns to the saved language) or on the **Tools** tab of the **F1** debug window; the screen updates without a restart.
 - **Check translation layout** on the Tools tab writes strings at risk of overflowing to `_discovered/layout_risks.csv` (`source_en,translation,axis,required_px,available_px,ratio,object_path`). A larger `ratio` means more overflow; shorten the translation or rephrase.
 
 ## Before opening a pull request

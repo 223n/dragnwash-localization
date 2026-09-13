@@ -17,8 +17,8 @@ Unity の内部キー名やプログラミングの知識は一切不要です�
 
 ### 言語の表示名（`name.txt`）
 
-`Translations/<locale>/name.txt` に書いた文字列が、ゲーム内 F1 メニューの言語ボタンと
-インストーラーの言語選択にそのまま表示されます（例: `ja/name.txt` → `日本語`、
+`Translations/<locale>/name.txt` に書いた文字列が、ゲームの **Options →「言語（Mod）」** の一覧、
+F1 メニューの言語ボタン、インストーラー（Windows・Steam Deck）の言語選択にそのまま表示されます（例: `ja/name.txt` → `日本語`、
 `zh-Hans/name.txt` → `中文`）。1行だけ、UTF-8 で保存してください。ファイルがなければ
 フォルダ名が表示されます。新しい言語を追加するときは、フォルダ・`strings.csv`・`name.txt`
 の3つを作れば完了です。
@@ -70,10 +70,11 @@ F6 / F7 の出力には `key` 列と `source_en` 列の両方が入っている�
 ### 新しい言語を始める
 
 1. `Translations/<locale>/` フォルダを作り（例: `ko`）、`name.txt` に表示名（例: `한국어`）を書く
-2. ゲームを起動し、F1 → Tools の言語一覧で新しい言語を選ぶ（まだ訳が 0 件なので画面は英語のまま）
+2. ゲームを起動し、**Options →「言語（Mod）」** か F1 → Tools の言語一覧で新しい言語を選ぶ（まだ訳が 0 件なので画面は英語のまま）
 3. **F1 → Tools → Export working copy** を押す。`strings.csv` がなくても、ゲームが持つ全行の英語原文を並べた
    空の作業コピー `_discovered/<locale>.working.csv` ができる
 4. あとは下記「原文を並べて作業する」と同じ。訳した行から順に画面へ反映される
+5. Options の項目名 `Language (Mod)`（キー `e3becbaee46cc0df`）も訳す。ゲーム本来の設定ではなく Mod の設定だと分かるように、「(Mod)」かその言語での言い方を残す。一度 Options を開くと、作業コピーと F7 の書き出しに出てくる
 
 ### 原文を並べて作業する（推奨）
 
@@ -163,8 +164,8 @@ Fキーや自動記録で `Translations/_discovered/` に CSV として出力さ
 
 ## 動作確認
 
-- ゲーム内 **F1** でデバッグウィンドウを開き、**Tools** タブで言語を切り替えると
-  再起動なしで表示が切り替わります。
+- ゲームの **Options →「言語（Mod）」**（Save で確定、Back で保存済みの言語に戻る）か、
+  **F1** のデバッグウィンドウの **Tools** タブで言語を切り替えると、再起動なしで表示が切り替わります。
 - Tools の **Check translation layout** で、レイアウト崩れリスクのある文字列が
   `_discovered/layout_risks.csv`（`source_en,translation,axis,required_px,available_px,ratio,object_path`）
   に出力されます。`ratio` が大きいものほどはみ出しが大きいので、訳文を短くする等で調整してください。

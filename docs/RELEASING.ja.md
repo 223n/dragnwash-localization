@@ -38,7 +38,7 @@ Remove-Item -Recurse -Force src/DragNWashLocalization/obj, src/DragNWashLocaliza
 pwsh tools/pack.ps1
 ```
 
-`release/DragNWashLocalization-<version>.zip` が生成されます。中身は
+`release/DragNWashLocalization-<version>.zip` が生成されます。中身は次のとおりです。
 
 ```
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
@@ -51,21 +51,22 @@ BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 BepInEx/plugins/DragNWashLocalization/data/script_order.csv
 BepInEx/plugins/DragNWashLocalization/data/level_flow.csv
 Install.exe
+Install.cmd
 install-steamdeck.sh
 installer/Installer.ps1
 README.md
 ```
 
-`Install.exe` は `pack.ps1` が .NET Framework 4 付属の C# コンパイラ（`%WINDIR%\Microsoft.NET\Framework644.0.30319\csc.exe`）で生成する、コンソールを持たない小さな起動用プログラムです。追加のインストールは不要です。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。
-
-です。ゲームフォルダに展開して `BepInEx/` にマージするだけで導入できます。
+`Install.exe` は `pack.ps1` が .NET Framework 4 付属の C# コンパイラ（`%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe`）で生成する、コンソールを持たない小さな起動用プログラムです。追加のインストールは不要です。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。`Install.cmd` は、SmartScreen やポリシーで署名なしの `Install.exe` が止められる環境向けに、同じインストーラー画面を開きます。`install-steamdeck.sh` は Steam Deck / Linux 用のインストーラーで、改行コードは LF のままにする必要があります（`.gitattributes` で固定）。`installer/experimental/` の実験的な macOS 用スクリプトは zip に入れません。
 
 ### 3. 検証する
 
 - Release ビルドの警告・エラーが0であること。
 - zip を展開して、DLL と `Translations/` が正しい位置にあること。
-- 可能ならクリーンな BepInEx 導入で一度起動し、F1 メニュー・言語切り替えが
-  動くことを確認します。
+- 可能ならクリーンな BepInEx 導入で一度起動し、F1 メニュー・言語切り替え・
+  **Options →「言語（Mod）」**（選択・Save・Back）が動くことを確認します。
+- インストーラーを変更した場合は、Windows で `Install.exe`（インストールとアンインストール）、
+  Steam Deck で `install-steamdeck.sh` を実行して確認します。
 
 ### 4. GitHub Release を作る
 
@@ -78,9 +79,13 @@ gh release create v0.2.0 release/DragNWashLocalization-0.2.0.zip `
 タグ名は `v` 付き（`v0.2.0`）で統一します。Web UI からでも構いません
 （Releases → Draft a new release → タグ作成 → zip をアップロード）。
 
-リリースノートには、**BepInEx が別途必要**であることと、Direct3D 12 で
-クラッシュする場合の `-force-d3d11` 回避策を併記してください
+リリースノートには、`Install.exe` と `install-steamdeck.sh` は BepInEx を自動で導入すること、
+手動で導入する場合は BepInEx 5 が別途必要なこと、対応環境を書いてください
 （[README](../README.ja.md) 参照）。
+
+## 公開済みのリリースを作り直す
+
+公開済み（push 済み）のタグは付け替えません。公開済みのリリースを作り直す場合（zip にファイルを追加するなど）は、先に GitHub のリリースとタグを削除してから、新しいコミットにタグを付け、上の手順どおりにビルドしてリリースを作り直します。リリースを削除するとダウンロード数はリセットされます。元がプレリリースだった場合は、作り直すリリースを最新版（Latest）にするかどうかを公開前に決めてください。
 
 ## なぜ CI で自動ビルドしないのか
 
