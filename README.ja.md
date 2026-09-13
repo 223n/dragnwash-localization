@@ -172,7 +172,7 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 
 ## 言語パック
 
-翻訳ファイルはすべて TomXV が作成し、同じ zip に同梱しています。インストーラーと F1 メニューは `Translations/` 配下のフォルダを自動で一覧にします。
+翻訳ファイルは TomXV が作成し、同じ zip に同梱しています。言語パックを改善してくれた協力者は、下の表のその言語の行に記載します（[協力者のクレジット](CONTRIBUTING.ja.md#協力者のクレジット)参照）。インストーラーと F1 メニューは `Translations/` 配下のフォルダを自動で一覧にします。
 
 | ロケール | 言語 | 状態 |
 | --- | --- | --- |

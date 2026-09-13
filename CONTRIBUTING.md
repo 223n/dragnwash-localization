@@ -181,3 +181,14 @@ The check does not compare formatting tags with the source; reviewers look at th
 - Never commit the game's assets or code (copyright).
 - Never commit `Translations/_discovered/`.
 - Translations are credited to their translators (see [LICENSE](LICENSE)).
+
+## Credits for contributors
+
+Say in the pull request's *Credit* section whether you want to be credited, and under which name. If you do, the maintainer adds the credit in a separate commit after merging, so you do not need to change anything for it. The credit appears in:
+
+- the language's row in the README's language pack table
+- the comment at the top of the pack's `strings.csv`
+- the notes of the release that includes your change
+- the About screens of the in-game F1 menu and the installer (from the next release on)
+
+How the pack's status is written (for example whether a partial review changes "provisional") is decided per pull request. If you would rather not be credited, nothing is added; your commits still show in the repository history.

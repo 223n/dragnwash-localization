@@ -172,7 +172,7 @@ Set `TargetLocale` under `[General]` to an installed locale such as `ja` or `zh-
 
 ## Language packs
 
-All translation files are written by TomXV and ship in the same zip; the installer and the F1 menu list every folder under `Translations/`.
+The translation files were written by TomXV and ship in the same zip; contributors who improve a pack are credited in its row below (see [Credits for contributors](CONTRIBUTING.md#credits-for-contributors)). The installer and the F1 menu list every folder under `Translations/`.
 
 | Locale | Language | Status |
 | --- | --- | --- |
