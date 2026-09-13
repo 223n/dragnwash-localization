@@ -17,7 +17,8 @@
 #
 # Options: --install  --uninstall  --lang <locale>  --game-dir <path>
 #          --yes (no questions, use defaults; installs unless --uninstall)
-#          --remove-bepinex (with --uninstall)  --ui en|ja|zh
+#          --remove-bepinex (with --uninstall)  --close-steam (close Steam
+#          without asking when the launch option has to change)  --ui en|ja|zh
 set -euo pipefail
 
 APP_ID=4739660
@@ -37,7 +38,9 @@ LANG_CHOICE=""
 GAME_DIR=""
 ASSUME_YES=0
 REMOVE_BEPINEX=0
+CLOSE_STEAM=0
 UI=""
+WARNINGS=""
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -47,6 +50,7 @@ while [ $# -gt 0 ]; do
         --game-dir) GAME_DIR="${2:-}"; shift ;;
         --yes|-y) ASSUME_YES=1 ;;
         --remove-bepinex) REMOVE_BEPINEX=1 ;;
+        --close-steam) CLOSE_STEAM=1 ;;
         --ui) UI="${2:-}"; shift ;;
         -h|--help) sed -n '2,20p' "$0"; exit 0 ;;
         *) echo "Unknown option: $1" >&2; exit 2 ;;
@@ -142,15 +146,27 @@ t() {
         ja:lo_same) echo "起動オプション: 設定済み" ;;
         zh:lo_same) echo "启动选项：已设置" ;;
         *:lo_same) echo "Launch option: already set" ;;
-        ja:lo_ask) echo "Steam の起動オプションを自動で変更するには、Steam を一度終了する必要があります。Steam を終了して変更しますか？（変更後、Steam を再起動します）" ;;
-        zh:lo_ask) echo "要自动修改 Steam 启动选项，需要先关闭 Steam。现在关闭 Steam 并修改吗？（修改后会重新启动 Steam）" ;;
-        *:lo_ask) echo "Changing the Steam launch option automatically needs Steam to be closed. Close Steam and change it now? (Steam is started again afterwards)" ;;
+        ja:lo_ask) echo "Steam の起動オプションを変更するため、Steam を一度終了します。Steam は起動中に起動オプションを上書きするので、終了しないと変更が反映されません。変更後に Steam を自動で起動し直します。
+
+Steam を終了して続けますか？（「いいえ」の場合は、起動オプションを手動で変更してください）" ;;
+        zh:lo_ask) echo "要修改 Steam 启动选项，需要先关闭 Steam。Steam 运行时会覆盖启动选项，不关闭则修改不会生效。修改后会自动重新启动 Steam。
+
+关闭 Steam 并继续吗？（选择“否”则需要手动修改启动选项）" ;;
+        *:lo_ask) echo "Steam will be closed briefly to change the launch option. Steam overwrites launch options while it runs, so the change only sticks with Steam closed. Steam is started again afterwards.
+
+Close Steam and continue? (If not, change the launch option by hand.)" ;;
         ja:lo_manual) echo "起動オプションは手動で設定してください: Steam でゲームのプロパティ → 起動オプション に次を入力" ;;
         zh:lo_manual) echo "请手动设置启动选项：在 Steam 中打开游戏属性 → 启动选项，输入以下内容" ;;
         *:lo_manual) echo "Set the launch option by hand: in Steam, game Properties → Launch Options, enter" ;;
         ja:lo_done) echo "起動オプションを設定しました:" ;;
         zh:lo_done) echo "启动选项已设置：" ;;
         *:lo_done) echo "Launch option set:" ;;
+        ja:attention) echo "【要確認】うまくいかなかった手順があります:" ;;
+        zh:attention) echo "【请注意】有步骤未能完成：" ;;
+        *:attention) echo "Something needs your attention:" ;;
+        ja:steam_slow_remove) echo "Steam が終了しなかったため、起動オプションを変更できませんでした。" ;;
+        zh:steam_slow_remove) echo "Steam 没有退出，无法修改启动选项。" ;;
+        *:steam_slow_remove) echo "Steam did not exit, so the launch option could not be changed." ;;
         ja:lo_manual_remove) echo "起動オプションは手動で元に戻してください: Steam でゲームのプロパティ → 起動オプション から ./run_bepinex.sh を消す" ;;
         zh:lo_manual_remove) echo "请手动恢复启动选项：在 Steam 中打开游戏属性 → 启动选项，删除 ./run_bepinex.sh" ;;
         *:lo_manual_remove) echo "Restore the launch option by hand: in Steam, game Properties → Launch Options, remove ./run_bepinex.sh" ;;
@@ -160,9 +176,9 @@ t() {
         ja:steam_wait) echo "Steam の終了を待っています..." ;;
         zh:steam_wait) echo "正在等待 Steam 退出..." ;;
         *:steam_wait) echo "Waiting for Steam to exit..." ;;
-        ja:steam_slow) echo "Steam が終了しませんでした。起動オプションは手動で設定してください。" ;;
-        zh:steam_slow) echo "Steam 没有退出。请手动设置启动选项。" ;;
-        *:steam_slow) echo "Steam did not exit. Set the launch option by hand." ;;
+        ja:steam_slow) echo "Steam が終了しなかったため、起動オプションを設定できませんでした。" ;;
+        zh:steam_slow) echo "Steam 没有退出，无法设置启动选项。" ;;
+        *:steam_slow) echo "Steam did not exit, so the launch option could not be set." ;;
         ja:done) echo "完了しました。ゲームモードに戻って、Steam からゲームを起動してください。言語はゲームの Options →「言語（Mod）」でも変えられます。" ;;
         zh:done) echo "完成。请回到游戏模式，从 Steam 启动游戏。也可以在游戏的 Options →「语言（Mod）」中更改语言。" ;;
         *:done) echo "Done. Go back to Gaming Mode and start the game from Steam. You can also change language in the game's Options → Language (Mod)." ;;
@@ -224,7 +240,13 @@ if [ "$ASSUME_YES" -eq 0 ] && command -v kdialog >/dev/null 2>&1 && { [ -n "${DI
     GUI=1
 fi
 
-say() { echo "$*"; }
+LOG="${XDG_STATE_HOME:-$HOME/.local/state}/dragnwash-localization/installer.log"
+mkdir -p "$(dirname "$LOG")" 2>/dev/null || true
+log() { printf '%s %s\n' "$(date '+%F %T')" "$*" >> "$LOG" 2>/dev/null || true; }
+say() { echo "$*"; log "$*"; }
+warn() { say "$*"; WARNINGS="${WARNINGS}${WARNINGS:+
+
+}$*"; }
 fail() {
     echo "ERROR: $*" >&2
     if [ "$GUI" -eq 1 ]; then kdialog --title "$(t title)" --error "$*" >/dev/null 2>&1 || true; fi
@@ -243,8 +265,22 @@ ask_yes() {  # ask_yes "question" default(1=yes,0=no)
     esac
 }
 finish_message() {
-    say "$1"
-    if [ "$GUI" -eq 1 ]; then kdialog --title "$(t title)" --msgbox "$1" >/dev/null 2>&1 || true; fi
+    local text="$1"
+    if [ -n "$WARNINGS" ]; then
+        text="$(t attention)
+
+$WARNINGS
+
+$1"
+    fi
+    say "$text"
+    if [ "$GUI" -eq 1 ]; then
+        if [ -n "$WARNINGS" ]; then
+            kdialog --title "$(t title)" --sorry "$text" >/dev/null 2>&1 || true
+        else
+            kdialog --title "$(t title)" --msgbox "$text" >/dev/null 2>&1 || true
+        fi
+    fi
 }
 
 # ------------------------------------------------------------ discovery ----
@@ -428,27 +464,42 @@ launch_options_state() {  # yes when every profile that knows the game has the w
 with_steam_closed() {  # with_steam_closed set|remove ; returns 0 if applied
     local action="$1" was_running=0
     if steam_running; then
-        ask_yes "$(t lo_ask)" 0 || return 1
+        log "Steam is running (pid $(cat "$HOME/.steam/steam.pid" 2>/dev/null)); launch option change needs it closed"
+        if [ "$CLOSE_STEAM" -eq 1 ]; then
+            log "closing Steam without asking (--close-steam)"
+        elif ! ask_yes "$(t lo_ask)" 1; then
+            log "user chose not to close Steam"
+            return 2
+        fi
         was_running=1
+        log "running: steam -shutdown"
         steam -shutdown >/dev/null 2>&1 || true
         say "$(t steam_wait)"
         local i
-        for i in $(seq 1 60); do
+        for i in $(seq 1 90); do
             steam_running || break
             sleep 1
         done
-        if steam_running; then say "$(t steam_slow)"; return 1; fi
-        sleep 2
+        if steam_running; then
+            log "Steam still running after 90 s"
+            return 3
+        fi
+        log "Steam exited"
+        # Steam writes its config on the way out; give that a moment.
+        sleep 3
     fi
     local rc=0
     edit_launch_options "$action" || rc=$?
+    log "launch option $action: edit returned $rc"
     if [ "$was_running" -eq 1 ]; then
+        log "starting Steam again"
         (nohup steam >/dev/null 2>&1 &) || true
     fi
     return "$rc"
 }
 
 # ------------------------------------------------------------------ main ----
+log "---- start: $0 $* (mode=${MODE:-ask}, ui=$UI, gui=$GUI)"
 say "== $(t title)"
 
 if [ -z "$GAME_DIR" ]; then GAME_DIR="$(find_game || true)"; fi
@@ -575,11 +626,16 @@ $GAME_DIR" 1 || exit 1
     # Steam launch option
     if [ "$(launch_options_state)" = yes ]; then
         say "$(t lo_same)"
-    elif with_steam_closed set; then
-        say "$(t lo_done) $LAUNCH_OPTION"
     else
-        say "$(t lo_manual):"
-        say "  $LAUNCH_OPTION"
+        rc=0; with_steam_closed set || rc=$?
+        case "$rc" in
+            0) say "$(t lo_done) $LAUNCH_OPTION" ;;
+            3) warn "$(t steam_slow)
+$(t lo_manual):
+  $LAUNCH_OPTION" ;;
+            *) warn "$(t lo_manual):
+  $LAUNCH_OPTION" ;;
+        esac
     fi
 
     finish_message "$(t done)"
@@ -641,11 +697,15 @@ $GAME_DIR" 1 || exit 1
             fi
         fi
         if [ "$(launch_options_any)" = no ]; then
-            :   # nothing to take out
-        elif with_steam_closed remove; then
-            say "$(t lo_removed)"
+            log "no launch option to take out"
         else
-            say "$(t lo_manual_remove)"
+            rc=0; with_steam_closed remove || rc=$?
+            case "$rc" in
+                0) say "$(t lo_removed)" ;;
+                3) warn "$(t steam_slow_remove)
+$(t lo_manual_remove)" ;;
+                *) warn "$(t lo_manual_remove)" ;;
+            esac
         fi
     fi
     finish_message "$(t undone)"

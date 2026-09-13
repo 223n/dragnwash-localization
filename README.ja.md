@@ -65,6 +65,8 @@ Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Ins
 
 スクリプトは、Steam のライブラリ（SD カードも含む）からゲームを探し、公式の Linux 版 BepInEx 5.4.23.5 をダウンロードして SHA-256 で検証し、`run_bepinex.sh` の `executable_name="DragNWash"` を設定し、Mod をコピーし、ゲームの起動オプションに `./run_bepinex.sh %command%` を追加します（すでに設定しているオプションは残します）。更新や削除も同じコマンドで実行し、**インストール / 更新** か **アンインストール** を選びます。アンインストールではセーブ履歴を残し、BepInEx を使う Mod がほかになければ起動オプションから `./run_bepinex.sh` を外し、BepInEx も消すか確認します。`--install` や `--uninstall` を付けると、この質問を飛ばせます。
 
+Steam は起動中に起動オプションを上書きするため、起動オプションを変更するときは Steam を一度終了して書き換え、Steam を起動し直します（事前に確認します。`--close-steam` を付けると確認を飛ばせます）。できなかった手順があれば、最後のダイアログに表示し、手動で変更する内容を案内します。実行内容は `~/.local/state/dragnwash-localization/installer.log` に記録されます。
+
 <details>
 <summary>Deck に手動で導入する場合</summary>
 

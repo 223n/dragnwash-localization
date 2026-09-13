@@ -718,4 +718,5 @@ TMPフックは画面に出る全文字列を拾うため、スライダーの�
 - `install-steamdeck.sh`（zip の直下。改行コードは `.gitattributes` で LF に固定）が Deck の手動手順を行う。`libraryfolders.vdf` とアプリのマニフェストからゲームを探し、Linux 版 BepInEx 5.4.23.5 をダウンロードして SHA-256（`e538560b...`）を検証し、`executable_name` を設定し、Mod をコピーし、`TargetLocale` を書き、各プロファイルの `localconfig.vdf` の `LaunchOptions` に `./run_bepinex.sh %command%` を追加する。既存のオプションは置き換えずに包む。
 - Steam は終了時に `localconfig.vdf` を書き戻すので、起動オプションは Steam を閉じた状態でのみ編集する（`~/.steam/steam.pid` で判定）。`steam -shutdown` の前に確認し、終わったら Steam を起動し直す。`--yes` では Steam を閉じない。バックアップを `localconfig.vdf.dragnwash-backup` に残す。
 - デスクトップモードでは kdialog、ターミナルでは通常の入力で操作する。英語・日本語・中国語。`--uninstall` は Windows 版と同じ振る舞い（セーブ履歴を残し、スクリプトが入れた BepInEx かつ他のプラグインがない場合だけ BepInEx を消し、起動オプションを戻す）。
+- Steam は終了時に `localconfig.vdf` を書き戻すため、起動オプションは Steam を閉じた状態でだけ書き換える。`steam -shutdown` を送り（事前に確認、既定は「はい」。`--close-steam` で確認を省略）、`~/.steam/steam.pid` のプロセスが消えるまで最大 90 秒待ってから書き換え、Steam を起動し直す。できなかった手順は最後のダイアログに一覧表示し、実行内容は `~/.local/state/dragnwash-localization/installer.log` に記録する。
 - Deck 上の隔離した Steam 環境で、新規導入、更新、既存の起動オプション、データを残したアンインストール、ターミナルでの言語選択を確認した。

@@ -65,6 +65,8 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
 
 The script finds the game in your Steam libraries (including an SD card), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256, sets `executable_name="DragNWash"` in `run_bepinex.sh`, copies the mod, and adds `./run_bepinex.sh %command%` to the game's launch options while keeping any options you already had. To update or remove the mod, run the same command again and choose **Install / Update** or **Uninstall**. Uninstalling keeps your save history, takes `./run_bepinex.sh` back out of the launch options when no other BepInEx mod needs it, and offers to remove BepInEx as well. `--install` and `--uninstall` skip the question.
 
+Steam rewrites launch options while it is running, so when the launch option has to change the script closes Steam, edits it, and starts Steam again (it asks first; `--close-steam` skips that question). If a step could not be done, the final dialog says so and tells you what to change by hand. Each run is logged to `~/.local/state/dragnwash-localization/installer.log`.
+
 <details>
 <summary>Manual installation on the Deck</summary>
 
