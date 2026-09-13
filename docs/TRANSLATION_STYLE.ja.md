@@ -63,6 +63,10 @@ folks / guy を「人」と訳すと全員が人間になってしまうので�
 | crest | 紋章 |
 | "Burnswick Community College of Thaumaturgy" | バーンズウィック・コミュニティ・サマタージー大学 |
 
+## 複数のキャラが話す台詞
+
+`speaker` 列に複数のキャラが並ぶ行（`Ryan/Alexander`）の訳は、その全員に使われる。まずは全員の口調に収まる言い方を選ぶ。どうしても収まらない場合は、共有の行は多く話すキャラに合わせて訳し、ほかのキャラの分は台詞 ID の行で訳し分ける（[CONTRIBUTING.ja.md](../CONTRIBUTING.ja.md#複数のキャラが話す台詞) 参照）。
+
 ## 書式タグ
 
 `<size=70%>` / `<gradient="gold">` / `<i>` / `<b>` などの TMP タグは**構造をそのまま残し、

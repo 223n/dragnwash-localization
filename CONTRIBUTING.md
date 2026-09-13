@@ -48,7 +48,8 @@ Options,Optionen
 ```
 
 - `key` … the first 16 hex digits of the SHA-256 of the source text. **Only this form is committed.** The repository never carries the game's English script, so nobody without the game can read the script or translate without the source in front of them.
-- `speaker` … who says the line (Conrad / Ryan / Alexander / Kobold = the player's choice / Phone / UI). Filled in automatically from the script structure.
+- `speaker` … who says the line (Conrad / Ryan / Alexander / Kobold = the player's choice / Phone / UI). Filled in automatically from the script structure; English said by several characters lists all of them (`Ryan/Alexander`).
+- A `key` can also be a Yarn line ID such as `line:6046bedf`. Such a row translates that one line only; see [Lines said by more than one character](#lines-said-by-more-than-one-character).
 - `source_en` … the exact English text shown in the game (matched exactly). **Use this while working**: saving the file hot-reloads it into the running game.
 - `translation` … your text.
 
@@ -74,6 +75,24 @@ key,section,node,order,speaker,source_en,translation
 Conversations are in **play order** and the `speaker` column says **who is talking** (Conrad / Ryan / Alexander, Kobold for the player's choices, Phone for calls from head office, UI for interface text), which helps keep each character's voice consistent. `source_en` is filled from the script and UI the game currently has loaded (load a save first so all dialogue is present). Edit and save this file and hot reload shows the result immediately. It lives under `_discovered/`, so it never goes into the repository.
 
 Running inside the game is the ownership check; there is no separate login.
+
+### Lines said by more than one character
+
+A row keyed by hash translates **every** line with that English. A few short lines are said by different characters: `Wonderful!` is Ryan's in level 1 and Alexander's in level 5. Such a row lists every speaker, for example `Ryan/Alexander`, and one translation then has to fit all of them.
+
+When it cannot, give a line its own translation. The working copy puts an empty row keyed by the Yarn **line ID** at every place a shared line is spoken:
+
+```csv
+key,section,node,order,speaker,source_en,translation
+84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Wonderful!,Wonderful translation for everyone
+line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,Wonderful!,Ryan's own translation
+line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Wonderful!,
+```
+
+- Fill in only the line rows you want to differ. A line row with a translation wins for that one line; every other place keeps the hash row.
+- Empty line rows are fine to leave: *Hash for commit* publishes only the ones you filled in, at their place in the script.
+- Line IDs come from the game's script. If a game update changes one, that line quietly falls back to the hash row.
+- Line rows work for dialogue and options, not for UI text.
 
 ### Hash before committing
 
@@ -163,7 +182,7 @@ It prints `translations OK` when everything passes.
 | Message in the report | What it means | How to fix it |
 |---|---|---|
 | `header is [...]; the published file must be ...` | The file is still a working copy (it has a `source_en` column) | Run **F1 → Tools → Hash for commit** or `tools/hash-strings.ps1`, then commit the rebuilt `strings.csv` |
-| `key is not 16 lowercase hex digits` | A key is not a hash: English text was put in the key column, or the key was edited | Rebuild with *Hash for commit*. Never edit the `key` column by hand |
+| `key is not 16 lowercase hex digits or a line ID` | A key is neither a hash nor a line ID: English text was put in the key column, or the key was edited | Rebuild with *Hash for commit*. Never edit the `key` column by hand |
 | `must not be committed (contains source text)` | A file from `Translations/_discovered/` or a `strings.local.csv` is in the pull request | Remove it from the pull request with `git rm --cached <file>` and commit; keep the file locally if you still need it |
 | `duplicate key (see line N)` | The same line appears twice | Keep one row per key and delete the other |
 | `empty translation` | A row has an empty `translation` | Fill it in, or delete the row so the game shows the English |

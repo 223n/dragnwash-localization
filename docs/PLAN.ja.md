@@ -729,3 +729,11 @@ TMPフックは画面に出る全文字列を拾うため、スライダーの�
 - `run_bepinex.sh` は `executable_name` を現在のディレクトリ基準で確認するので、手で起動するときはゲームフォルダから実行する必要がある。Steam の外から起動すると `SteamAPI_Init() failed` が出る。
 - 方針: 修正の入った BepInEx が出るまで macOS は非対応と明記し、出たら再検証する。
 - 実験的なインストーラー `installer/experimental/install-macos.sh` を用意した。Deck 用スクリプトの macOS 版で、`executable_name` に `.app` のフルパスを設定し、起動オプションは JavaScript for Automation で書き換え、Steam は `steam://exit` で終了し、UnityDoorstop#107 の arch 対策と「動作確認」モードを持つ。リリースの zip には入れておらず、Mac ではまだ実行していない。修正版の BepInEx が出たら `BEPINEX_URL` / `BEPINEX_SHA256` を差し替え、`KNOWN_ISSUE=0` にして試してから同梱する。
+
+## 台詞 ID ごとの訳（2026-09-14）
+
+- TMP フックには英文しか届かないため、複数のキャラが話す同じ英文には訳が 1 つしか付けられなかった（29 種類、会話 1839 行のうち 142 行）。
+- `LineIdContext` が `LinePresenter.RunLineAsync` と `OptionItem.Option` の setter に Prefix を入れ、TMP 部品がこれから表示する台詞 ID を覚える。その台詞の文字列がそのまま届いたときは、`strings.csv` の `line:<ID>` の行がハッシュの行より優先される。`RefreshAll`（言語切り替え）でも同じ。
+- `data/script_order.csv` を全出現（1839 行）にし、作業コピーは共有されている台詞の各位置に空の `line:` 行を出す。*Hash for commit* と `tools/hash-strings.ps1` は訳の入った行だけを該当位置に書き出す。ハッシュの行の話者は、パックの値ではなく台本データから全員分（`Ryan/Alexander`）を付ける。
+- 2 つのハッシュ化ツールは、パック先頭のコメントを残し、空の訳を出さないようにした。チェックは `line:` の key を受け付ける。
+- Windows 版で、ゲームの LinePresenter と OptionsPresenter、言語切り替えを含めて確認した。詳細は `docs/PER_LINE_TRANSLATION.ja.md`。
