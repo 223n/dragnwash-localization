@@ -52,13 +52,53 @@ while [ $# -gt 0 ]; do
 done
 
 # ----------------------------------------------------------------- strings --
-if [ -z "$UI" ]; then
-    case "${LC_ALL:-${LC_MESSAGES:-${LANG:-}}}" in
-        ja*) UI=ja ;;
-        zh*) UI=zh ;;
-        *) UI=en ;;
+# Which language to talk in, and which translation to preselect.
+#   1. The desktop's language, when it is not English. Prompts exist in
+#      English, Japanese and Chinese; for the other packs only the
+#      preselected language follows.
+#   2. Otherwise Steam's own language. Desktop Mode on a Deck is English
+#      unless someone changed it in System Settings, while Steam itself is
+#      often set to the player's language, and that is what they see in
+#      Gaming Mode.
+#   3. English.
+DEFAULT_LOCALE=en
+detect_ui() {
+    local v
+    for v in "${LC_ALL:-}" "${LC_MESSAGES:-}" "${LANGUAGE:-}" "${LANG:-}"; do
+        case "$v" in
+            ja*) echo "ja ja"; return ;;
+            zh_TW*|zh_HK*|zh_MO*|zh-Hant*) echo "zh zh-Hant"; return ;;
+            zh*) echo "zh zh-Hans"; return ;;
+            # No prompts in these languages, but preselect their pack.
+            ko*) echo "en ko"; return ;;
+            de*) echo "en de"; return ;;
+            fr*) echo "en fr"; return ;;
+            es*) echo "en es"; return ;;
+            pt_BR*|pt-BR*) echo "en pt-BR"; return ;;
+            ru*) echo "en ru"; return ;;
+            pl*) echo "en pl"; return ;;
+            he*|iw*) echo "en he"; return ;;
+            eo*) echo "en eo"; return ;;
+        esac
+    done
+    local steam_lang
+    steam_lang="$(sed -n 's/^[[:space:]]*"language"[[:space:]]*"\([^"]*\)".*/\1/p' "$HOME/.steam/registry.vdf" 2>/dev/null | head -1)"
+    case "$steam_lang" in
+        japanese) echo "ja ja" ;;
+        schinese) echo "zh zh-Hans" ;;
+        tchinese) echo "zh zh-Hant" ;;
+        koreana) echo "en ko" ;;
+        german) echo "en de" ;;
+        french) echo "en fr" ;;
+        spanish|latam) echo "en es" ;;
+        brazilian) echo "en pt-BR" ;;
+        russian) echo "en ru" ;;
+        polish) echo "en pl" ;;
+        *) echo "en en" ;;
     esac
-fi
+}
+read -r DETECTED_UI DEFAULT_LOCALE < <(detect_ui)
+[ -n "$UI" ] || UI="$DETECTED_UI"
 
 t() {
     local key="$1"
@@ -381,8 +421,8 @@ if [ "$MODE" = install ]; then
 
     # Language
     if [ -z "$LANG_CHOICE" ]; then
-        default=en
-        case "$UI" in ja) default=ja ;; zh) default=zh-Hans ;; esac
+        default="$DEFAULT_LOCALE"
+        if [ "$default" != en ] && [ ! -d "$PAYLOAD/Translations/$default" ]; then default=en; fi
         if [ "$ASSUME_YES" -eq 1 ]; then
             LANG_CHOICE="$default"
         elif [ "$GUI" -eq 1 ]; then
