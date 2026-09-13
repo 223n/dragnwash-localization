@@ -184,19 +184,21 @@ namespace DragNWashLocalization
             // installed language is prepared here, since a runtime atlas upload
             // crashes that renderer; elsewhere only the language in use is, and
             // the rest follow on a switch. See FontFallback.Startup.
+            // Locale names first: the Options dropdown shows every one of them
+            // at once, so their glyphs are prepared with the fonts.
+            RefreshAvailableLocales();
             FontFallback.Startup(PluginDirectory, TargetLocale.Value, TranslationStore.TranslatedTexts,
-                PreloadAllLocales != null && PreloadAllLocales.Value);
+                PreloadAllLocales != null && PreloadAllLocales.Value, LocaleNamesForFonts());
             HotReload.Track(PluginDirectory, TargetLocale.Value);
             SaveHistory.Configure(PluginDirectory, SaveHistoryKeep.Value);
             CreateMenuBackgroundTexture();
-            // Locales first: the font warm-up below needs their display names.
-            RefreshAvailableLocales();
             CreateMenuFont();
 
             var harmony = new Harmony(PluginGuid);
             CursorUnlock.Install(harmony);
             VirtualClick.Install(harmony);
             MenuText.Install(harmony);
+            OptionsLanguage.Install(harmony);
             harmony.PatchAll();
 
             Logger.LogInfo($"DragNWashLocalization loaded. TargetLocale={TargetLocale.Value}, loaded entries={TranslationStore.EntryCount}, ignore patterns={IgnoreRules.PatternCount}, graphics={SystemInfo.graphicsDeviceType}");
@@ -213,6 +215,24 @@ namespace DragNWashLocalization
 
         private float _nextDiscoveredFlushTime;
         private string _pendingLocale;
+        private Func<string, string> _displayNameFunc;
+        private Action<string> _requestLocaleFunc;
+
+        // Language chosen outside the F1 menu (the Options dropdown). Applied
+        // in Update like every other switch.
+        private void RequestLocale(string locale)
+        {
+            if (string.IsNullOrEmpty(locale) || locale == TargetLocale.Value) return;
+            _pendingLocale = locale;
+        }
+
+        private IEnumerable<KeyValuePair<string, string>> LocaleNamesForFonts()
+        {
+            foreach (string locale in _availableLocales)
+            {
+                yield return new KeyValuePair<string, string>(locale, LocaleDisplayName(locale));
+            }
+        }
         private bool _pendingDump;
         private bool _pendingUiDump;
         private bool _pointerGrabbedByMenu;
@@ -247,6 +267,7 @@ namespace DragNWashLocalization
                     WarmMenuFont();
                 }
                 TmpTextHook.RefreshAll();
+                OptionsLanguage.Sync(locale);
                 HotReload.Track(PluginDirectory, locale);
                 Log($"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}");
             }
@@ -255,6 +276,9 @@ namespace DragNWashLocalization
             {
                 HotReload.Tick(PluginDirectory, TargetLocale.Value);
             }
+
+            OptionsLanguage.Tick(_availableLocales, _displayNameFunc ?? (_displayNameFunc = LocaleDisplayName),
+                TargetLocale.Value, _requestLocaleFunc ?? (_requestLocaleFunc = RequestLocale));
 
             if (ToggleMenuKey.Value.IsDown())
             {
@@ -424,6 +448,10 @@ namespace DragNWashLocalization
                     .Where(name => !name.StartsWith("_") && name != "en")
                     .OrderBy(name => name, StringComparer.Ordinal))
                 .ToArray();
+            foreach (string locale in _availableLocales)
+            {
+                IgnoreRules.AddExact(LocaleDisplayName(locale));
+            }
         }
 
         private GUIStyle _windowStyle;
