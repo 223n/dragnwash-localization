@@ -113,7 +113,7 @@ namespace DragNWashLocalization
                 // Any character the edit introduced would otherwise be
                 // rasterized on first render - a runtime atlas upload, the
                 // Direct3D 12 crash path. Only the new ones get added here.
-                FontFallback.Prewarm(TranslationStore.TranslatedTexts);
+                DragNWash.ModFramework.Assets.GameFonts.Prepare(locale, TranslationStore.TranslatedTexts);
                 TmpTextHook.RefreshAll();
 
                 // Logged after RefreshAll so the diff sits at the bottom of
