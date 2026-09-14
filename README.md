@@ -169,6 +169,7 @@ Set `TargetLocale` under `[General]` to an installed locale such as `ja` or `zh-
 - Confirm the exact DLL path shown above.
 - Open `BepInEx/LogOutput.log`. If the file does not exist, BepInEx itself is not loading. If it exists, search it for `DragNWashLocalization` and review the nearby error.
 - If opening Options causes a Direct3D 12 crash, use the Windows workaround described in [Crash when opening Options on Windows](#crash-when-opening-options-on-windows).
+- If you previously installed a translation that overwrites the game's files (for example files copied into `DragNWash_Data`), the game's English is gone and this mod finds nothing to translate. Restore the original files first: right-click the game in Steam → **Properties** → **Installed Files** → **Verify integrity of game files**, then install this mod again. Such translations also stop working, or break, when the game updates; this mod does not change any game files.
 
 ## Language packs
 
