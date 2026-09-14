@@ -1884,3 +1884,8 @@ b9d0dd131d07b5ad,UI,,,UI,"Gemeinsame Werkzeuge für Drag'n Wash-Mods, darunter d
 eda662e0b5033180,UI,,,UI,Nicht geladen. Nicht zusammen nutzbar mit
 a8d12a246b72d98c,UI,,,UI,Nicht geladen. Der Grund steht in BepInEx/LogOutput.log.
 7c862b0749e737c4,UI,,,UI,Preloader-Patcher. Läuft vor anderen Mods und kann hier nicht ausgeschaltet werden.
+74a883a037bc227f,UI,,,UI,Einstellungen
+21b111cbfe6e8fca,UI,,,UI,Standard
+bc5b45ae7b60692a,UI,,,UI,Auf Standard zurücksetzen
+67529e7fdc6098a0,UI,,,UI,Sofort gespeichert. Manche Mods übernehmen eine Änderung erst nach einem Neustart.
+3d19e2d0333d7b19,UI,,,UI,Das lässt sich in der Konfigurationsdatei des Mods in BepInEx/config ändern.

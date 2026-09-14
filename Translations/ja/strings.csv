@@ -1914,3 +1914,8 @@ b9d0dd131d07b5ad,UI,,,UI,Drag'n Wash の Mod で共通して使う機能をま�
 eda662e0b5033180,UI,,,UI,読み込まれていません。一緒に使えない Mod：
 a8d12a246b72d98c,UI,,,UI,読み込まれていません。理由は BepInEx/LogOutput.log を確認してください。
 7c862b0749e737c4,UI,,,UI,プリローダーパッチャーです。ほかの Mod より先に動くため、ここではオフにできません。
+74a883a037bc227f,UI,,,UI,設定
+21b111cbfe6e8fca,UI,,,UI,既定値
+bc5b45ae7b60692a,UI,,,UI,既定値に戻す
+67529e7fdc6098a0,UI,,,UI,すぐに保存されます。Mod によっては、再起動するまで変更が反映されません。
+3d19e2d0333d7b19,UI,,,UI,この項目は、BepInEx/config にある Mod の設定ファイルで変更してください。

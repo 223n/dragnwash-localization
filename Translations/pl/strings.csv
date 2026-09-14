@@ -1881,3 +1881,8 @@ b9d0dd131d07b5ad,UI,,,UI,"Wspólne narzędzia dla modów do Drag'n Wash, w tym t
 eda662e0b5033180,UI,,,UI,Niewczytany. Nie działa razem z
 a8d12a246b72d98c,UI,,,UI,Niewczytany. Przyczyna jest w BepInEx/LogOutput.log.
 7c862b0749e737c4,UI,,,UI,Patcher preloadera. Działa przed innymi modami i nie można go tu wyłączyć.
+74a883a037bc227f,UI,,,UI,Ustawienia
+21b111cbfe6e8fca,UI,,,UI,Domyślnie
+bc5b45ae7b60692a,UI,,,UI,Przywróć domyślne
+67529e7fdc6098a0,UI,,,UI,Zapisano od razu. Niektóre mody uwzględniają zmianę dopiero po ponownym uruchomieniu.
+3d19e2d0333d7b19,UI,,,UI,Zmień to w pliku konfiguracyjnym moda w BepInEx/config.

@@ -1879,3 +1879,8 @@ b9d0dd131d07b5ad,UI,,,UI,"Herramientas compartidas para mods de Drag'n Wash, inc
 eda662e0b5033180,UI,,,UI,No cargado. No puede funcionar junto con
 a8d12a246b72d98c,UI,,,UI,No cargado. El motivo está en BepInEx/LogOutput.log.
 7c862b0749e737c4,UI,,,UI,Parche de precarga. Se ejecuta antes que otros mods y no se puede desactivar aquí.
+74a883a037bc227f,UI,,,UI,Ajustes
+21b111cbfe6e8fca,UI,,,UI,Predeterminado
+bc5b45ae7b60692a,UI,,,UI,Restablecer valor predeterminado
+67529e7fdc6098a0,UI,,,UI,Se guarda al momento. Algunos mods solo aplican un cambio tras reiniciar.
+3d19e2d0333d7b19,UI,,,UI,Cámbialo en el archivo de configuración del mod en BepInEx/config.

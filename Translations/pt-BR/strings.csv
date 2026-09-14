@@ -1883,3 +1883,8 @@ b9d0dd131d07b5ad,UI,,,UI,"Ferramentas compartilhadas para mods de Drag'n Wash, i
 eda662e0b5033180,UI,,,UI,Não carregado. Não funciona junto com
 a8d12a246b72d98c,UI,,,UI,Não carregado. O motivo está em BepInEx/LogOutput.log.
 7c862b0749e737c4,UI,,,UI,Patcher de pré-carregamento. Roda antes dos outros mods e não pode ser desligado aqui.
+74a883a037bc227f,UI,,,UI,Configurações
+21b111cbfe6e8fca,UI,,,UI,Padrão
+bc5b45ae7b60692a,UI,,,UI,Restaurar padrão
+67529e7fdc6098a0,UI,,,UI,Salvo na hora. Alguns mods só aplicam a mudança depois de reiniciar.
+3d19e2d0333d7b19,UI,,,UI,Altere isso no arquivo de configuração do mod em BepInEx/config.

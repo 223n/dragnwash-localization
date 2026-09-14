@@ -1879,3 +1879,8 @@ b9d0dd131d07b5ad,UI,,,UI,"Outils communs aux mods de Drag'n Wash, dont cet écra
 eda662e0b5033180,UI,,,UI,Non chargé. Il ne peut pas fonctionner avec
 a8d12a246b72d98c,UI,,,UI,Non chargé. La raison figure dans BepInEx/LogOutput.log.
 7c862b0749e737c4,UI,,,UI,Patcheur de préchargement. Il s'exécute avant les autres mods et ne peut pas être désactivé ici.
+74a883a037bc227f,UI,,,UI,Paramètres
+21b111cbfe6e8fca,UI,,,UI,Par défaut
+bc5b45ae7b60692a,UI,,,UI,Rétablir la valeur par défaut
+67529e7fdc6098a0,UI,,,UI,Enregistré immédiatement. Certains mods n'appliquent un changement qu'après un redémarrage.
+3d19e2d0333d7b19,UI,,,UI,"Modifiez-le dans le fichier de configuration du mod, dans BepInEx/config."

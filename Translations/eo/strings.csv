@@ -1878,3 +1878,8 @@ b9d0dd131d07b5ad,UI,,,UI,"Komunaj iloj por modifoj de Drag'n Wash, inkluzive de 
 eda662e0b5033180,UI,,,UI,Ne ŝargita. Ĝi ne funkcias kune kun
 a8d12a246b72d98c,UI,,,UI,Ne ŝargita. La kialo estas en BepInEx/LogOutput.log.
 7c862b0749e737c4,UI,,,UI,Antaŭŝarga fliko. Ĝi funkcias antaŭ aliaj modifoj kaj ne estas malŝaltebla ĉi tie.
+74a883a037bc227f,UI,,,UI,Agordoj
+21b111cbfe6e8fca,UI,,,UI,Defaŭlto
+bc5b45ae7b60692a,UI,,,UI,Restarigi defaŭlton
+67529e7fdc6098a0,UI,,,UI,Konservita tuj. Kelkaj modifoj uzas ŝanĝon nur post restarto.
+3d19e2d0333d7b19,UI,,,UI,Ŝanĝu ĉi tion en la agorda dosiero de la modifo en BepInEx/config.
