@@ -44,7 +44,7 @@ namespace DragNWashLocalization
                 if (instance != null && LineIdContext.TryGetTranslation(instance, source, out string perLine, out string lineId))
                 {
                     SourceByComponent[instance] = source;
-                    RightToLeft.Apply(instance);
+                    RightToLeft.Apply(instance, perLine);
                     text = perLine;
                     if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
                         TranslationStore.IsFirstApplication(lineId + "|" + source))
@@ -60,8 +60,10 @@ namespace DragNWashLocalization
                 if (instance != null && !ignored)
                 {
                     SourceByComponent[instance] = source;
-                    RightToLeft.Apply(instance);
                 }
+                // Every text is checked, not only tracked ones: a component that
+                // showed Hebrew may be reused for a name or a number.
+                RightToLeft.Apply(instance, translated ? translation : source);
 
                 if (translated)
                 {
@@ -132,8 +134,8 @@ namespace DragNWashLocalization
                 if (!ignored)
                 {
                     SourceByComponent[instance] = source;
-                    RightToLeft.Apply(instance);
                 }
+                RightToLeft.Apply(instance, translated ? translation : source);
 
                 if (translated)
                 {
@@ -204,7 +206,7 @@ namespace DragNWashLocalization
                     int shownBefore = instance.textInfo != null ? instance.textInfo.characterCount : 0;
                     bool fullyShown = instance.maxVisibleCharacters >= shownBefore;
 
-                    RightToLeft.Apply(instance);
+                    RightToLeft.Apply(instance, translated ? translation : source);
                     instance.text = translated ? translation : source;
                     if (fullyShown && instance.maxVisibleCharacters != int.MaxValue)
                     {
