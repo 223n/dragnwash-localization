@@ -1897,3 +1897,12 @@ b439ffe3e5553ddc,UI,,,Conrad,너 기분 좋다
 b92f91849d855b40,UI,,,UI,콘래드
 2d1e830624b2572a,UI,,,UI,라이언
 e3becbaee46cc0df,UI,,,UI,언어 (Mod)
+6e58b577a084052a,UI,,,UI,모드
+4850b174b713d88c,UI,,,UI,필수
+37fe885f1406e372,UI,,,UI,다음 실행부터 끄기
+9cc5c7f026ce0ca7,UI,,,UI,다음 실행부터 켜기
+fa20beae3754ffb1,UI,,,UI,다른 모드가 이 모드를 필요로 합니다. 그래도 끄려면 끄기를 한 번 더 누르세요.
+d57274b504a45b33,UI,,,UI,BepInEx/plugins 밖에 설치되어 있어 여기서는 끌 수 없습니다
+fd35647f8ecb2f7d,UI,,,UI,필요로 하는 모드
+b9d0dd131d07b5ad,UI,,,UI,Drag'n Wash 모드들이 함께 쓰는 기능 모음입니다. 이 모드 화면도 그중 하나입니다.
+1236e3be635f17c7,UI,,,UI,"Drag'n Wash를 13개 언어로 즐길 수 있게 합니다. 대사, 선택지, UI, 설정을 번역합니다."

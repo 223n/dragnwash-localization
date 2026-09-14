@@ -1866,3 +1866,12 @@ b439ffe3e5553ddc,UI,,,Conrad,"Putain, c'est bon"
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Langue (Mod)
+6e58b577a084052a,UI,,,UI,Mods
+4850b174b713d88c,UI,,,UI,Requis
+37fe885f1406e372,UI,,,UI,Désactivé au prochain lancement
+9cc5c7f026ce0ca7,UI,,,UI,Activé au prochain lancement
+fa20beae3754ffb1,UI,,,UI,D'autres mods ont besoin de celui-ci. Appuyez de nouveau sur Désactivé pour le désactiver quand même.
+d57274b504a45b33,UI,,,UI,"Installé hors de BepInEx/plugins, impossible de le désactiver ici"
+fd35647f8ecb2f7d,UI,,,UI,Requis par
+b9d0dd131d07b5ad,UI,,,UI,"Outils communs aux mods de Drag'n Wash, dont cet écran des mods."
+1236e3be635f17c7,UI,,,UI,"Jouez à Drag'n Wash en 13 langues. Traduit les dialogues, les choix, l'interface et les options."

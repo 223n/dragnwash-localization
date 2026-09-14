@@ -12,6 +12,7 @@ using UnityEngine.InputSystem;
 namespace DragNWashLocalization
 {
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
+    [BepInDependency(ModFrameworkInfo.FrameworkGuid, BepInDependency.DependencyFlags.SoftDependency)]
     public partial class Plugin : BaseUnityPlugin
     {
         public const string PluginGuid = "com.tomxv.dragnwash.localization";
@@ -89,6 +90,7 @@ namespace DragNWashLocalization
         {
             _instance = this;
             PluginDirectory = Path.GetDirectoryName(Info.Location);
+            ModFrameworkInfo.Register();
 
             TargetLocale = Config.Bind(
                 "General",

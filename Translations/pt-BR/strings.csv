@@ -1870,3 +1870,12 @@ b439ffe3e5553ddc,UI,,,Conrad,Você é gostoso
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Idioma (Mod)
+6e58b577a084052a,UI,,,UI,Mods
+4850b174b713d88c,UI,,,UI,Obrigatório
+37fe885f1406e372,UI,,,UI,Desligado a partir da próxima inicialização
+9cc5c7f026ce0ca7,UI,,,UI,Ligado a partir da próxima inicialização
+fa20beae3754ffb1,UI,,,UI,Outros mods precisam deste. Pressione Desligado de novo para desligá-lo mesmo assim.
+d57274b504a45b33,UI,,,UI,"Instalado fora de BepInEx/plugins, então não pode ser desligado aqui"
+fd35647f8ecb2f7d,UI,,,UI,Necessário para
+b9d0dd131d07b5ad,UI,,,UI,"Ferramentas compartilhadas para mods de Drag'n Wash, incluindo esta tela de mods."
+1236e3be635f17c7,UI,,,UI,"Jogue Drag'n Wash em 13 idiomas. Traduz diálogos, escolhas, interface e opções."

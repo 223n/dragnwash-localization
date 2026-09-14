@@ -1871,3 +1871,12 @@ b439ffe3e5553ddc,UI,,,Conrad,Du fühlst dich gut an.
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Sprache (Mod)
+6e58b577a084052a,UI,,,UI,Mods
+4850b174b713d88c,UI,,,UI,Erforderlich
+37fe885f1406e372,UI,,,UI,Ab dem nächsten Start aus
+9cc5c7f026ce0ca7,UI,,,UI,Ab dem nächsten Start an
+fa20beae3754ffb1,UI,,,UI,"Andere Mods brauchen diesen Mod. Drücke noch einmal auf Aus, um ihn trotzdem auszuschalten."
+d57274b504a45b33,UI,,,UI,"Außerhalb von BepInEx/plugins installiert, kann hier nicht ausgeschaltet werden"
+fd35647f8ecb2f7d,UI,,,UI,Benötigt von
+b9d0dd131d07b5ad,UI,,,UI,"Gemeinsame Werkzeuge für Drag'n Wash-Mods, darunter dieser Mods-Bildschirm."
+1236e3be635f17c7,UI,,,UI,"Spiele Drag'n Wash in 13 Sprachen. Übersetzt Dialoge, Antworten, Oberfläche und Optionen."

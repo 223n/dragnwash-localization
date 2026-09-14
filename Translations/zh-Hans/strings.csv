@@ -1883,3 +1883,12 @@ b439ffe3e5553ddc,UI,,,Conrad,你真舒服
 b92f91849d855b40,UI,,,UI,康拉德
 2d1e830624b2572a,UI,,,UI,莱恩
 e3becbaee46cc0df,UI,,,UI,语言（Mod）
+6e58b577a084052a,UI,,,UI,模组
+4850b174b713d88c,UI,,,UI,必需
+37fe885f1406e372,UI,,,UI,下次启动时关闭
+9cc5c7f026ce0ca7,UI,,,UI,下次启动时开启
+fa20beae3754ffb1,UI,,,UI,其他模组需要这个模组。如仍要关闭，请再按一次“关”。
+d57274b504a45b33,UI,,,UI,安装在 BepInEx/plugins 之外，无法在此关闭
+fd35647f8ecb2f7d,UI,,,UI,需要它的模组
+b9d0dd131d07b5ad,UI,,,UI,Drag'n Wash 模组共用的工具，包括这个模组界面。
+1236e3be635f17c7,UI,,,UI,让 Drag'n Wash 支持 13 种语言。翻译对话、选项、界面和设置。
