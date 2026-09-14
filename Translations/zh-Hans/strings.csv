@@ -1903,3 +1903,6 @@ bc5b45ae7b60692a,UI,,,UI,恢复默认值
 3d19e2d0333d7b19,UI,,,UI,请在 BepInEx/config 中该模组的配置文件里修改此项。
 dc20b3d5d2cddf82,UI,,,UI,库
 77777bd04fb7c9ae,UI,,,UI,在此游戏版本中不可用：
+014659ab9d98c8fe,UI,,,UI,冲突
+02e19c617a19bae7,UI,,,UI,修改了相同游戏代码的模组：
+61ec4dc622c31ea9,UI,,,UI,修改了相同游戏代码且可能覆盖其效果的模组：

@@ -1891,3 +1891,6 @@ bc5b45ae7b60692a,UI,,,UI,Auf Standard zurücksetzen
 3d19e2d0333d7b19,UI,,,UI,Das lässt sich in der Konfigurationsdatei des Mods in BepInEx/config ändern.
 dc20b3d5d2cddf82,UI,,,UI,Bibliothek
 77777bd04fb7c9ae,UI,,,UI,In dieser Spielversion nicht verfügbar:
+014659ab9d98c8fe,UI,,,UI,Konflikt
+02e19c617a19bae7,UI,,,UI,Ändert denselben Spielcode wie:
+61ec4dc622c31ea9,UI,,,UI,Ändert denselben Spielcode wie diese Mods und kann sie überschreiben:

@@ -1907,3 +1907,6 @@ bc5b45ae7b60692a,UI,,,UI,恢復預設值
 3d19e2d0333d7b19,UI,,,UI,請在 BepInEx/config 中該模組的設定檔裡修改此項。
 dc20b3d5d2cddf82,UI,,,UI,函式庫
 77777bd04fb7c9ae,UI,,,UI,在此遊戲版本中無法使用：
+014659ab9d98c8fe,UI,,,UI,衝突
+02e19c617a19bae7,UI,,,UI,修改了相同遊戲程式碼的模組：
+61ec4dc622c31ea9,UI,,,UI,修改了相同遊戲程式碼且可能覆蓋其效果的模組：

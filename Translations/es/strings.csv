@@ -1886,3 +1886,6 @@ bc5b45ae7b60692a,UI,,,UI,Restablecer valor predeterminado
 3d19e2d0333d7b19,UI,,,UI,Cámbialo en el archivo de configuración del mod en BepInEx/config.
 dc20b3d5d2cddf82,UI,,,UI,Biblioteca
 77777bd04fb7c9ae,UI,,,UI,No disponible en esta versión del juego:
+014659ab9d98c8fe,UI,,,UI,Conflicto
+02e19c617a19bae7,UI,,,UI,Modifica el mismo código del juego que:
+61ec4dc622c31ea9,UI,,,UI,Modifica el mismo código del juego que estos mods y puede anularlos:

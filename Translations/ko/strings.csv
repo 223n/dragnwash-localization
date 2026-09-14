@@ -1917,3 +1917,6 @@ bc5b45ae7b60692a,UI,,,UI,기본값으로 되돌리기
 3d19e2d0333d7b19,UI,,,UI,이 항목은 BepInEx/config에 있는 모드 설정 파일에서 바꾸세요.
 dc20b3d5d2cddf82,UI,,,UI,라이브러리
 77777bd04fb7c9ae,UI,,,UI,이 게임 버전에서 쓸 수 없는 기능:
+014659ab9d98c8fe,UI,,,UI,충돌
+02e19c617a19bae7,UI,,,UI,같은 게임 코드를 바꾸는 모드:
+61ec4dc622c31ea9,UI,,,UI,같은 게임 코드를 바꾸며 덮어쓸 수 있는 모드:
