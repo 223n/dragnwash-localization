@@ -1884,3 +1884,5 @@ a8d12a246b72d98c,UI,,,UI,Non chargé. La raison figure dans BepInEx/LogOutput.lo
 bc5b45ae7b60692a,UI,,,UI,Rétablir la valeur par défaut
 67529e7fdc6098a0,UI,,,UI,Enregistré immédiatement. Certains mods n'appliquent un changement qu'après un redémarrage.
 3d19e2d0333d7b19,UI,,,UI,"Modifiez-le dans le fichier de configuration du mod, dans BepInEx/config."
+dc20b3d5d2cddf82,UI,,,UI,Bibliothèque
+77777bd04fb7c9ae,UI,,,UI,Indisponible sur cette version du jeu :

@@ -1919,3 +1919,5 @@ a8d12a246b72d98c,UI,,,UI,読み込まれていません。理由は BepInEx/LogO
 bc5b45ae7b60692a,UI,,,UI,既定値に戻す
 67529e7fdc6098a0,UI,,,UI,すぐに保存されます。Mod によっては、再起動するまで変更が反映されません。
 3d19e2d0333d7b19,UI,,,UI,この項目は、BepInEx/config にある Mod の設定ファイルで変更してください。
+dc20b3d5d2cddf82,UI,,,UI,ライブラリ
+77777bd04fb7c9ae,UI,,,UI,このゲームのバージョンでは使えない機能：

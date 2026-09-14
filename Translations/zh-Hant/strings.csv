@@ -1905,3 +1905,5 @@ a8d12a246b72d98c,UI,,,UI,未載入。原因請查看 BepInEx/LogOutput.log。
 bc5b45ae7b60692a,UI,,,UI,恢復預設值
 67529e7fdc6098a0,UI,,,UI,已立即儲存。部分模組需要重新啟動後才會套用變更。
 3d19e2d0333d7b19,UI,,,UI,請在 BepInEx/config 中該模組的設定檔裡修改此項。
+dc20b3d5d2cddf82,UI,,,UI,函式庫
+77777bd04fb7c9ae,UI,,,UI,在此遊戲版本中無法使用：

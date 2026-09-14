@@ -1889,3 +1889,5 @@ a8d12a246b72d98c,UI,,,UI,Nicht geladen. Der Grund steht in BepInEx/LogOutput.log
 bc5b45ae7b60692a,UI,,,UI,Auf Standard zurücksetzen
 67529e7fdc6098a0,UI,,,UI,Sofort gespeichert. Manche Mods übernehmen eine Änderung erst nach einem Neustart.
 3d19e2d0333d7b19,UI,,,UI,Das lässt sich in der Konfigurationsdatei des Mods in BepInEx/config ändern.
+dc20b3d5d2cddf82,UI,,,UI,Bibliothek
+77777bd04fb7c9ae,UI,,,UI,In dieser Spielversion nicht verfügbar:

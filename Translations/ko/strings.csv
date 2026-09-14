@@ -1915,3 +1915,5 @@ a8d12a246b72d98c,UI,,,UI,로드되지 않았습니다. 이유는 BepInEx/LogOutp
 bc5b45ae7b60692a,UI,,,UI,기본값으로 되돌리기
 67529e7fdc6098a0,UI,,,UI,바로 저장됩니다. 일부 모드는 다시 시작해야 변경이 적용됩니다.
 3d19e2d0333d7b19,UI,,,UI,이 항목은 BepInEx/config에 있는 모드 설정 파일에서 바꾸세요.
+dc20b3d5d2cddf82,UI,,,UI,라이브러리
+77777bd04fb7c9ae,UI,,,UI,이 게임 버전에서 쓸 수 없는 기능:
