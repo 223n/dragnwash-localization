@@ -94,3 +94,5 @@ gh release create v0.2.0 release/DragNWashLocalization-0.2.0.zip `
 ビルドに必要なゲームの DLL（`UnityEngine.CoreModule.dll` や `YarnSpinner.dll` など）を
 リポジトリに含めることができないため、GitHub Actions 上でコンパイルできません。
 そのためビルドはローカルで行い、成果物（zip）だけをリリースへ添付します。
+
+- ゲームがアップデートされたら、`tools/game-fingerprints.py` で新しいビルドのファイルを `ci/game-fingerprints.json` に追加し（Windows と Steam Deck の両方）、Drag'n Wash ModFramework にもコピーしてください。CI はリポジトリのすべてのファイルをこれと照合し、ゲームのファイルの混入を拒否します。

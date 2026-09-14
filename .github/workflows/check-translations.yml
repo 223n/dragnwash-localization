@@ -32,6 +32,8 @@ jobs:
             report.txt
             pr-number.txt
             status.txt
+      - name: Compare every file with the fingerprints of real game installs
+        run: python tools/check-game-files.py
       - name: Fail if the check found problems
         if: steps.validate.outputs.status != '0'
         run: exit 1
