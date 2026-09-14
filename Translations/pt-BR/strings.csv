@@ -1837,6 +1837,7 @@ da43a1983d819a4d,UI,,,UI,Janela Maximizada
 d640c7421da06661,UI,,,UI,Continuar
 b6dcb96448c66497,UI,,,UI,CARREGANDO...
 f942d1e183d020b6,UI,,,UI,APAGAR SAVE
+fae07a8540ff237b,UI,,,UI,Excluir o save mesmo?
 ffb3c5f2edc34373,UI,,,UI,Menu de Pausa
 3e49dd16f3893026,UI,,,UI,LIMPO
 4b36f28b2cf37677,UI,,,UI,ENSABOADO
@@ -1889,4 +1890,9 @@ bc5b45ae7b60692a,UI,,,UI,Restaurar padrão
 67529e7fdc6098a0,UI,,,UI,Salvo na hora. Alguns mods só aplicam a mudança depois de reiniciar.
 3d19e2d0333d7b19,UI,,,UI,Altere isso no arquivo de configuração do mod em BepInEx/config.
 dc20b3d5d2cddf82,UI,,,UI,Biblioteca
+e0aaa77caac35ceb,UI,,,UI,Permite que os mods vejam e substituam o texto antes que o jogo o mostre.
+e33072d0f0267e46,UI,,,UI,"Avisa os mods qual fala ou escolha está prestes a aparecer, com o ID da fala e quem está falando."
+e6af4688a3314648,UI,,,UI,"Uma janela compartilhada dentro do jogo (F1) onde os mods adicionam abas para suas ferramentas de desenvolvimento e depuração. Funciona com mouse, controle e no Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Fontes para textos que as fontes do jogo não conseguem mostrar, e carregamento de texturas e pacotes de recursos, feitos de um jeito que não trava o Direct3D 12."
+507e6f82c57c2096,UI,,,UI,"Lê e altera os espaços de salvamento e as flags de eventos do jogo, e guarda uma cópia de cada versão de cada save para que qualquer mudança possa ser desfeita."
 77777bd04fb7c9ae,UI,,,UI,Indisponível nesta versão do jogo:

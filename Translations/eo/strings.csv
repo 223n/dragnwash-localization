@@ -1832,6 +1832,7 @@ da43a1983d819a4d,UI,,,UI,Maksimumigita fenestro
 d640c7421da06661,UI,,,UI,Daŭrigi
 b6dcb96448c66497,UI,,,UI,ŜARGANTE...
 f942d1e183d020b6,UI,,,UI,FORIGI KONSERVON
+fae07a8540ff237b,UI,,,UI,Ĉu vere forigi la konservon?
 ffb3c5f2edc34373,UI,,,UI,Paŭza menuo
 3e49dd16f3893026,UI,,,UI,PURA
 4b36f28b2cf37677,UI,,,UI,SAPUMITA
@@ -1884,4 +1885,9 @@ bc5b45ae7b60692a,UI,,,UI,Restarigi defaŭlton
 67529e7fdc6098a0,UI,,,UI,Konservita tuj. Kelkaj modifoj uzas ŝanĝon nur post restarto.
 3d19e2d0333d7b19,UI,,,UI,Ŝanĝu ĉi tion en la agorda dosiero de la modifo en BepInEx/config.
 dc20b3d5d2cddf82,UI,,,UI,Biblioteko
+e0aaa77caac35ceb,UI,,,UI,Ebligas al modifaĵoj vidi kaj anstataŭigi tekston antaŭ ol la ludo montras ĝin.
+e33072d0f0267e46,UI,,,UI,"Sciigas modifaĵojn, kiu dialoga linio aŭ elekto tuj montriĝos, kun ĝia linia identigilo kaj parolanto."
+e6af4688a3314648,UI,,,UI,"Komuna fenestro en la ludo (F1), kie modifaĵoj aldonas langetojn por siaj programistaj kaj sencimigaj iloj. Uzebla per muso, ludregilo kaj sur Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Tiparoj por teksto, kiun la propraj tiparoj de la ludo ne povas montri, kaj ŝargado de teksturoj kaj valoraĵaj pakoj, farataj tiel, ke Direct3D 12 ne kolapsas."
+507e6f82c57c2096,UI,,,UI,"Legas kaj ŝanĝas la konservojn kaj eventajn flagojn de la ludo, kaj tenas kopion de ĉiu versio de ĉiu konservo, por ke ĉiu ŝanĝo estu malfarebla."
 77777bd04fb7c9ae,UI,,,UI,Ne disponebla en ĉi tiu versio de la ludo:

@@ -1835,6 +1835,7 @@ da43a1983d819a4d,UI,,,UI,Zmaksymalizowane okno
 d640c7421da06661,UI,,,UI,Wznów
 b6dcb96448c66497,UI,,,UI,WCZYTYWANIE...
 f942d1e183d020b6,UI,,,UI,USUŃ ZAPIS
+fae07a8540ff237b,UI,,,UI,Na pewno usunąć zapis?
 ffb3c5f2edc34373,UI,,,UI,Menu pauzy
 3e49dd16f3893026,UI,,,UI,CZYSTY
 4b36f28b2cf37677,UI,,,UI,W PIANIE
@@ -1887,4 +1888,9 @@ bc5b45ae7b60692a,UI,,,UI,Przywróć domyślne
 67529e7fdc6098a0,UI,,,UI,Zapisano od razu. Niektóre mody uwzględniają zmianę dopiero po ponownym uruchomieniu.
 3d19e2d0333d7b19,UI,,,UI,Zmień to w pliku konfiguracyjnym moda w BepInEx/config.
 dc20b3d5d2cddf82,UI,,,UI,Biblioteka
+e0aaa77caac35ceb,UI,,,UI,"Pozwala modom zobaczyć i podmienić tekst, zanim gra go wyświetli."
+e33072d0f0267e46,UI,,,UI,"Informuje mody, która kwestia dialogu lub który wybór zaraz się pojawi, wraz z identyfikatorem kwestii i mówcą."
+e6af4688a3314648,UI,,,UI,"Wspólne okno w grze (F1), w którym mody dodają karty ze swoimi narzędziami deweloperskimi i do debugowania. Obsługa myszą, padem i na Steam Decku."
+3839cc8c85e0dab6,UI,,,UI,"Czcionki dla tekstu, którego nie potrafią wyświetlić czcionki gry, oraz wczytywanie tekstur i paczek zasobów tak, by Direct3D 12 się nie wysypywał."
+507e6f82c57c2096,UI,,,UI,"Odczytuje i zmienia sloty zapisu i flagi zdarzeń gry oraz zachowuje kopię każdej wersji każdego zapisu, aby każdą zmianę można było cofnąć."
 77777bd04fb7c9ae,UI,,,UI,Niedostępne w tej wersji gry:

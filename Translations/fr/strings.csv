@@ -1833,6 +1833,7 @@ da43a1983d819a4d,UI,,,UI,Fenêtre maximisée
 d640c7421da06661,UI,,,UI,Reprendre
 b6dcb96448c66497,UI,,,UI,CHARGEMENT...
 f942d1e183d020b6,UI,,,UI,SUPPRIMER LA SAUVEGARDE
+fae07a8540ff237b,UI,,,UI,Supprimer vraiment la sauvegarde ?
 ffb3c5f2edc34373,UI,,,UI,Menu pause
 3e49dd16f3893026,UI,,,UI,PROPRE
 4b36f28b2cf37677,UI,,,UI,SAVONNEUX
@@ -1885,4 +1886,9 @@ bc5b45ae7b60692a,UI,,,UI,Rétablir la valeur par défaut
 67529e7fdc6098a0,UI,,,UI,Enregistré immédiatement. Certains mods n'appliquent un changement qu'après un redémarrage.
 3d19e2d0333d7b19,UI,,,UI,"Modifiez-le dans le fichier de configuration du mod, dans BepInEx/config."
 dc20b3d5d2cddf82,UI,,,UI,Bibliothèque
+e0aaa77caac35ceb,UI,,,UI,Permet aux mods de voir et de remplacer le texte avant que le jeu ne l'affiche.
+e33072d0f0267e46,UI,,,UI,"Indique aux mods quelle réplique ou quel choix va s'afficher, avec son identifiant de ligne et son locuteur."
+e6af4688a3314648,UI,,,UI,"Une fenêtre commune dans le jeu (F1) où les mods ajoutent des onglets pour leurs outils de développement et de débogage. Utilisable à la souris, à la manette et sur Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Des polices pour le texte que les polices du jeu ne peuvent pas afficher, et le chargement de textures et de bundles de ressources, faits pour ne pas planter Direct3D 12."
+507e6f82c57c2096,UI,,,UI,"Lit et modifie les emplacements de sauvegarde et les indicateurs d'événements du jeu, et garde une copie de chaque version de chaque sauvegarde pour pouvoir annuler toute modification."
 77777bd04fb7c9ae,UI,,,UI,Indisponible sur cette version du jeu :

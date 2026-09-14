@@ -1833,6 +1833,7 @@ da43a1983d819a4d,UI,,,UI,Ventana maximizada
 d640c7421da06661,UI,,,UI,Continuar
 b6dcb96448c66497,UI,,,UI,CARGANDO...
 f942d1e183d020b6,UI,,,UI,BORRAR PARTIDA
+fae07a8540ff237b,UI,,,UI,¿Seguro que quieres borrar la partida?
 ffb3c5f2edc34373,UI,,,UI,Menú de pausa
 3e49dd16f3893026,UI,,,UI,LIMPIO
 4b36f28b2cf37677,UI,,,UI,ENJABONADO
@@ -1885,4 +1886,9 @@ bc5b45ae7b60692a,UI,,,UI,Restablecer valor predeterminado
 67529e7fdc6098a0,UI,,,UI,Se guarda al momento. Algunos mods solo aplican un cambio tras reiniciar.
 3d19e2d0333d7b19,UI,,,UI,Cámbialo en el archivo de configuración del mod en BepInEx/config.
 dc20b3d5d2cddf82,UI,,,UI,Biblioteca
+e0aaa77caac35ceb,UI,,,UI,Permite a los mods ver y reemplazar el texto antes de que el juego lo muestre.
+e33072d0f0267e46,UI,,,UI,"Avisa a los mods de qué línea de diálogo o respuesta está a punto de mostrarse, con su ID de línea y quién habla."
+e6af4688a3314648,UI,,,UI,"Una ventana compartida dentro del juego (F1) donde los mods añaden pestañas para sus herramientas de desarrollo y depuración. Se usa con ratón, mando y en Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Fuentes para el texto que las fuentes del juego no pueden mostrar, y carga de texturas y paquetes de recursos, hechas de forma que Direct3D 12 no se cierre."
+507e6f82c57c2096,UI,,,UI,"Lee y cambia las partidas guardadas y los indicadores de eventos del juego, y guarda una copia de cada versión de cada partida para poder deshacer cualquier cambio."
 77777bd04fb7c9ae,UI,,,UI,No disponible en esta versión del juego:

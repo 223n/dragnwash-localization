@@ -1838,6 +1838,7 @@ da43a1983d819a4d,UI,,,UI,Maximiertes Fenster
 d640c7421da06661,UI,,,UI,Fortsetzen
 b6dcb96448c66497,UI,,,UI,LADEN...
 f942d1e183d020b6,UI,,,UI,SPIELSTAND LÖSCHEN
+fae07a8540ff237b,UI,,,UI,Spielstand wirklich löschen?
 ffb3c5f2edc34373,UI,,,UI,Pausenmenü
 3e49dd16f3893026,UI,,,UI,SAUBER
 4b36f28b2cf37677,UI,,,UI,EINGESEIFT
@@ -1890,4 +1891,9 @@ bc5b45ae7b60692a,UI,,,UI,Auf Standard zurücksetzen
 67529e7fdc6098a0,UI,,,UI,Sofort gespeichert. Manche Mods übernehmen eine Änderung erst nach einem Neustart.
 3d19e2d0333d7b19,UI,,,UI,Das lässt sich in der Konfigurationsdatei des Mods in BepInEx/config ändern.
 dc20b3d5d2cddf82,UI,,,UI,Bibliothek
+e0aaa77caac35ceb,UI,,,UI,"Lässt Mods Texte sehen und ersetzen, bevor das Spiel sie anzeigt."
+e33072d0f0267e46,UI,,,UI,"Teilt Mods mit, welche Dialogzeile oder Antwort gleich angezeigt wird, mit Zeilen-ID und Sprecher."
+e6af4688a3314648,UI,,,UI,"Ein gemeinsames Fenster im Spiel (F1), in dem Mods Tabs für ihre Entwickler- und Debug-Werkzeuge hinzufügen. Bedienbar mit Maus, Gamepad und auf dem Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Schriftarten für Text, den die Schriftarten des Spiels nicht darstellen können, und Laden von Texturen und Asset-Bundles, ohne dass Direct3D 12 abstürzt."
+507e6f82c57c2096,UI,,,UI,"Liest und ändert die Spielstände und Ereignis-Flags des Spiels und behält eine Kopie jeder Version jedes Spielstands, damit sich jede Änderung rückgängig machen lässt."
 77777bd04fb7c9ae,UI,,,UI,In dieser Spielversion nicht verfügbar:
