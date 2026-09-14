@@ -300,6 +300,15 @@ The plugin startup entry in `BepInEx/LogOutput.log` reports the graphics API cur
 
 Lowering `[Fonts] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.modframework.assets.cfg` reduces the number of font atlases. Raising it produces sharper text. The default is 80.
 
+## Freeze after switching windows in Exclusive fullscreen (Windows)
+
+With **Window Mode** set to **Exclusive** on DirectX 12, switching to another window (Alt+Tab, or clicking another window) and coming back can freeze the game, which then crashes. The crash reports show Unity's DirectX 12 swap chain stuck while Windows takes the game out of exclusive fullscreen or back into it (`D3D12SwapChain::Present` fails with `887a0001`, often after `D3D12Fence::Wait ... May cause crash` in the log). No mod code is running at that moment; it is a problem in the game's graphics code, not in this mod.
+
+To avoid it, do one of these:
+
+- Add `-force-d3d11` to the launch options: in Steam, **Drag'n Wash → Properties → General → Launch Options**. Verified: with it, switching windows in Exclusive fullscreen no longer freezes.
+- Set **Window Mode** to **Fullscreen** instead of **Exclusive**. Only exclusive fullscreen changes the display mode when you switch windows, so this should avoid it too (not tested yet).
+
 ## Current status
 
 Released as v1.0.0, which runs on [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) and adds the Mods screen. v0.6.2 stopped "Hash for commit" from dropping rows when the working copy is from before a game update, and translated "Really Delete Save?". v0.6.1 fixed names and other untranslated text showing backwards in Hebrew. v0.6.0 added per-line translations (English said by several characters can be translated differently for each of them; checked with the game update of September 14, 2026). v0.5.0 added changing language from the game's own Options screen; v0.4.0 brought thirteen languages, per-language fonts, an About tab and an installer in English, Japanese and Chinese; v0.3.0 added Steam Deck support. Windows on ARM has been verified too (the game itself needs `-force-d3d11` there). macOS does not work at the moment because of a known BepInEx-side issue (see the note under [Steam Deck / Linux](#steam-deck--linux-verified)). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
