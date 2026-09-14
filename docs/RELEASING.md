@@ -85,3 +85,5 @@ Do not move a tag that has already been pushed. If a published release has to be
 ## Why releases are not built in CI
 
 The game DLLs required for compilation, including `UnityEngine.CoreModule.dll` and `YarnSpinner.dll`, cannot be included in the repository. GitHub Actions therefore cannot compile the plugin. Builds are created locally, and only the resulting ZIP is attached to a release.
+
+- After a game update, add the new build's files to `ci/game-fingerprints.json` with `tools/game-fingerprints.py`, on Windows and on the Steam Deck, and copy the file to Drag'n Wash ModFramework too. CI compares every file in the repository with it and refuses copies of the game's files.
