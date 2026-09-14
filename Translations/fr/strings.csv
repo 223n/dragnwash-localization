@@ -1893,3 +1893,6 @@ e6af4688a3314648,UI,,,UI,"Une fenêtre commune dans le jeu (F1) où les mods ajo
 3839cc8c85e0dab6,UI,,,UI,"Des polices pour le texte que les polices du jeu ne peuvent pas afficher, et le chargement de textures et de bundles de ressources, faits pour ne pas planter Direct3D 12."
 507e6f82c57c2096,UI,,,UI,"Lit et modifie les emplacements de sauvegarde et les indicateurs d'événements du jeu, et garde une copie de chaque version de chaque sauvegarde pour pouvoir annuler toute modification."
 77777bd04fb7c9ae,UI,,,UI,Indisponible sur cette version du jeu :
+014659ab9d98c8fe,UI,,,UI,Conflit
+02e19c617a19bae7,UI,,,UI,Modifie le même code du jeu que :
+61ec4dc622c31ea9,UI,,,UI,Modifie le même code du jeu que ces mods et peut les court-circuiter :

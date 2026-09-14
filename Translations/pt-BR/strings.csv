@@ -1897,3 +1897,6 @@ e6af4688a3314648,UI,,,UI,"Uma janela compartilhada dentro do jogo (F1) onde os m
 3839cc8c85e0dab6,UI,,,UI,"Fontes para textos que as fontes do jogo não conseguem mostrar, e carregamento de texturas e pacotes de recursos, feitos de um jeito que não trava o Direct3D 12."
 507e6f82c57c2096,UI,,,UI,"Lê e altera os espaços de salvamento e as flags de eventos do jogo, e guarda uma cópia de cada versão de cada save para que qualquer mudança possa ser desfeita."
 77777bd04fb7c9ae,UI,,,UI,Indisponível nesta versão do jogo:
+014659ab9d98c8fe,UI,,,UI,Conflito
+02e19c617a19bae7,UI,,,UI,Altera o mesmo código do jogo que:
+61ec4dc622c31ea9,UI,,,UI,Altera o mesmo código do jogo que estes mods e pode sobrepô-los:

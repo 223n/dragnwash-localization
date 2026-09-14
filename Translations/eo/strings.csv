@@ -1892,3 +1892,6 @@ e6af4688a3314648,UI,,,UI,"Komuna fenestro en la ludo (F1), kie modifaĵoj aldona
 3839cc8c85e0dab6,UI,,,UI,"Tiparoj por teksto, kiun la propraj tiparoj de la ludo ne povas montri, kaj ŝargado de teksturoj kaj valoraĵaj pakoj, farataj tiel, ke Direct3D 12 ne kolapsas."
 507e6f82c57c2096,UI,,,UI,"Legas kaj ŝanĝas la konservojn kaj eventajn flagojn de la ludo, kaj tenas kopion de ĉiu versio de ĉiu konservo, por ke ĉiu ŝanĝo estu malfarebla."
 77777bd04fb7c9ae,UI,,,UI,Ne disponebla en ĉi tiu versio de la ludo:
+014659ab9d98c8fe,UI,,,UI,Konflikto
+02e19c617a19bae7,UI,,,UI,Ŝanĝas la saman ludkodon kiel:
+61ec4dc622c31ea9,UI,,,UI,Ŝanĝas la saman ludkodon kiel ĉi tiuj modifoj kaj eble superregas ilin:

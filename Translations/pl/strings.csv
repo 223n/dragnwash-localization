@@ -1895,3 +1895,6 @@ e6af4688a3314648,UI,,,UI,"Wspólne okno w grze (F1), w którym mody dodają kart
 3839cc8c85e0dab6,UI,,,UI,"Czcionki dla tekstu, którego nie potrafią wyświetlić czcionki gry, oraz wczytywanie tekstur i paczek zasobów tak, by Direct3D 12 się nie wysypywał."
 507e6f82c57c2096,UI,,,UI,"Odczytuje i zmienia sloty zapisu i flagi zdarzeń gry oraz zachowuje kopię każdej wersji każdego zapisu, aby każdą zmianę można było cofnąć."
 77777bd04fb7c9ae,UI,,,UI,Niedostępne w tej wersji gry:
+014659ab9d98c8fe,UI,,,UI,Konflikt
+02e19c617a19bae7,UI,,,UI,Zmienia ten sam kod gry co:
+61ec4dc622c31ea9,UI,,,UI,Zmienia ten sam kod gry co te mody i może je zastąpić:

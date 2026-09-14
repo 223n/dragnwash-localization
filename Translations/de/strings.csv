@@ -1898,3 +1898,6 @@ e6af4688a3314648,UI,,,UI,"Ein gemeinsames Fenster im Spiel (F1), in dem Mods Tab
 3839cc8c85e0dab6,UI,,,UI,"Schriftarten für Text, den die Schriftarten des Spiels nicht darstellen können, und Laden von Texturen und Asset-Bundles, ohne dass Direct3D 12 abstürzt."
 507e6f82c57c2096,UI,,,UI,"Liest und ändert die Spielstände und Ereignis-Flags des Spiels und behält eine Kopie jeder Version jedes Spielstands, damit sich jede Änderung rückgängig machen lässt."
 77777bd04fb7c9ae,UI,,,UI,In dieser Spielversion nicht verfügbar:
+014659ab9d98c8fe,UI,,,UI,Konflikt
+02e19c617a19bae7,UI,,,UI,Ändert denselben Spielcode wie:
+61ec4dc622c31ea9,UI,,,UI,Ändert denselben Spielcode wie diese Mods und kann sie überschreiben:

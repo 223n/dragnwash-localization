@@ -1893,3 +1893,6 @@ e6af4688a3314648,UI,,,UI,"Una ventana compartida dentro del juego (F1) donde los
 3839cc8c85e0dab6,UI,,,UI,"Fuentes para el texto que las fuentes del juego no pueden mostrar, y carga de texturas y paquetes de recursos, hechas de forma que Direct3D 12 no se cierre."
 507e6f82c57c2096,UI,,,UI,"Lee y cambia las partidas guardadas y los indicadores de eventos del juego, y guarda una copia de cada versión de cada partida para poder deshacer cualquier cambio."
 77777bd04fb7c9ae,UI,,,UI,No disponible en esta versión del juego:
+014659ab9d98c8fe,UI,,,UI,Conflicto
+02e19c617a19bae7,UI,,,UI,Modifica el mismo código del juego que:
+61ec4dc622c31ea9,UI,,,UI,Modifica el mismo código del juego que estos mods y puede anularlos:
