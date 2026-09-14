@@ -23,6 +23,15 @@ Whatever you put in `Translations/<locale>/name.txt` is shown as the language's 
 
 ## File format
 
+> [!IMPORTANT]
+> **The CSV notation changed in v0.6.0.** Files from earlier versions still load, but note the differences when you work on a current file:
+> - **Line-ID rows:** besides the 16-digit hash, the `key` column can hold a Yarn line ID such as `line:6046bedf`. Such a row translates that one line only (see [Lines said by more than one character](#lines-said-by-more-than-one-character)).
+> - **Several speakers:** the `speaker` column of a line said by more than one character lists all of them, separated by `/` (`Ryan/Alexander`).
+> - **Working copy:** it contains extra line-ID rows with an empty translation at every shared line. Leave them empty unless you want that line to differ.
+> - **`order`:** it now counts every line in a conversation, so the numbers differ from files made before v0.6.0. The column is only for reading; nothing to fix.
+>
+> Use the v0.6.0 plugin or later and the tools in this repository for translation work. The v0.5.0 tools do not know line-ID rows and turn them into broken hash rows. Players on older versions are not affected: they simply ignore line-ID rows.
+
 `Translations/<locale>/strings.csv` is the published file. Rows are ordered **the way the game plays them** and grouped under `#` headers. While working, rows with the English text may sit **in the same file**.
 
 ```csv
