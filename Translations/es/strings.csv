@@ -1896,3 +1896,9 @@ e6af4688a3314648,UI,,,UI,"Una ventana compartida dentro del juego (F1) donde los
 014659ab9d98c8fe,UI,,,UI,Conflicto
 02e19c617a19bae7,UI,,,UI,Modifica el mismo código del juego que:
 61ec4dc622c31ea9,UI,,,UI,Modifica el mismo código del juego que estos mods y puede anularlos:
+c1c1009d3f37ec05,UI,,,UI,Actualización
+4168cfb8a090a98c,UI,,,UI,Nueva versión disponible:
+cd6c9851e91ad7b6,UI,,,UI,Abrir la página de la versión
+22e2bada8f1c65cd,UI,,,UI,Actualizaciones
+f26f3275e735bdf6,UI,,,UI,Buscar actualizaciones
+a6a1b13028fd8c9c,UI,,,UI,"Una vez al día, pregunta a GitHub si los mods que indican su repositorio de GitHub tienen una versión más reciente. No se envía nada sobre ti ni sobre tu juego."

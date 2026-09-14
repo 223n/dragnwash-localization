@@ -20,6 +20,8 @@ namespace DragNWashLocalization
                     Description = Description,
                     Authors = new[] { "TomXV" },
                     Website = "https://github.com/TomXV/dragnwash-localization",
+                    // The Mods screen tells players when a newer release is out.
+                    UpdateRepository = "TomXV/dragnwash-localization",
                 });
             }
             catch (Exception ex)
