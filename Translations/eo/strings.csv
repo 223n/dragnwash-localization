@@ -12,7 +12,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"Ho, saluton! Nu..."
 30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,"Mi aŭdis, ke ĉi tie malsupre estas koboldoj, kiuj povus lavi min?"
 08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,Ĉu ĉi tiu estas la ĝusta loko?
 32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,Mhm! Mi estas <i>la</i> koboldo!
-d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,"Jes, bonvenon al Drag'N Wash!"
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"Jes, bonvenon al Drag'N Wash!"
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"Haha, tio vi certe estas!"
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Mirinde!
 900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,Mia nomo estas Ryan. Do...
@@ -24,18 +24,18 @@ b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,Jip!
 ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"Ha, mi vidas la butonon tie, komprenite!"
 425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"Bone, mi atendos. Dankon."
 # --- phone: Ryan_1_PhoneTutorial ---
-8a15c5bd16af8e2a,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Saluton, <i>'Drag'n'wash franĉizo 223'...</i> Ĉu vi jam parolis kun via unua kliento?"
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Saluton, <i>'Drag'n'wash franĉizo 223'...</i> Ĉu vi jam parolis kun via unua kliento?"
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,Ĵus faris!
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"Jes, mi parolis."
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"Ha, bone."
 ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,Do- Havu produktivan tagon.
-693491dd1e43554f,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Saluton, <i>'Drag'n'wash franĉizo 223'...</i> Ĉu vi jam eltrovis kiel interagi?"
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Saluton, <i>'Drag'n'wash franĉizo 223'...</i> Ĉu vi jam eltrovis kiel interagi?"
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,Ne.
 01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,"Mi kredas, ke mi komprenis!"
 085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,Ha...
 4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,"Nu, iru al la fenestro kaj parolu kun via kliento."
-18e83723472ff06b,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,"Poste vi devos enlasi ilin, kompreneble."
+af789b5c60f24630,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,"Poste vi devos enlasi ilin, kompreneble."
 bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,Bonege. Do nepre iru saluti vian klienton ĉe la fenestro.
 474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,Bone!
 7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,Havu produktivan tagon.
@@ -70,7 +70,7 @@ e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,Mi certe memoros ĉi tiun lokon.
 # ===== Level 2: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_1 ---
 d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>HE! </gradient><size=100%>Ĉi tiu estas la lavejo, ĉu?"
-89714ef9a2dd4db5,L02 Conrad,Conrad_Intro_1,2,Conrad,Mi devas esti senmakula. Ŝajnas ke por tio vi ekzistas. <size=70%> Ha.
+e2b71fbe0e3a8220,L02 Conrad,Conrad_Intro_1,2,Conrad,Mi devas esti senmakula. Ŝajnas ke por tio vi ekzistas. <size=70%> Ha.
 198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,"Mhm, ĉi tien, mi petas."
 d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,Ni povas trovi liberan tempon por vi.
 6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,Bonege. Sed vi devas malfermi la pordegon. Enlasu Conrad!
@@ -79,11 +79,11 @@ d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,Ni povas trovi liberan tempo
 2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,"Vi ankaŭ faras <i>specialajn finaĵojn</i> ĉi tie, ĉu ne?"
 906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,Ĉiu finaĵo ĉi tie estas speciala!
 c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,Ĉu... seksaj aferoj?
-d704d8fd39dffd37,L02 Conrad,Conrad_required_1,5,Conrad,Ee... Tio ne estas-
+0c503978e6cd3a78,L02 Conrad,Conrad_required_1,5,Conrad,Ee... Tio ne estas-
 c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,"Ĉu vi igas grandajn drakojn, <size=60%>kiel min, <size=100%>ĉuri ĉi tie?"
 daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,Va- he- <size=80%>oa. <size=60%>ni ne-
 824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,"Ho, ne."
-b778e4a7f32732fb,L02 Conrad,Conrad_required_1,9,Conrad,Kion!? tio estas terura! Vi eĉ ne havas stablon...?
+33cb9fb42cd6a080,L02 Conrad,Conrad_required_1,9,Conrad,Kion!? tio estas terura! Vi eĉ ne havas stablon...?
 96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,nu... <size=60%>ne?
 175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,"Nu, do vi prefere akiru unu!"
 fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,Almenaŭ vi ankoraŭ povas uzi viajn manojn. He.
@@ -127,14 +127,14 @@ f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,"Mi bezonos, ke tio
 c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,"Profesoron- Sed, jes. Kutime mi ne vizitas publikajn lavejojn."
 8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,Mi dankas vin.
 57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,"Ho, kaj mi pardonpetas pro tio, ke mi estas absolute malpurega."
-da7509a323bc8646,L03 Alexander,Alexander_1_intro,13,Alexander,"Estas bedaŭrinda stato, en kiu mi troviĝas..."
+c44510120d3f5f7e,L03 Alexander,Alexander_1_intro,13,Alexander,"Estas bedaŭrinda stato, en kiu mi troviĝas..."
 550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,Vi... ne estas tiom malpura.
 21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,Neniu problemo. Mi tuj prizorgos la pordegon por vi!
 14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,"Ne, mi ja estas."
 65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,Ĉu vi bonvolus malfermi la pordegon?
 f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,Ho. jes. Pardonu.
 # --- progress: Alexander_1_required ---
-f8d26c6d83205a5d,L03 Alexander,Alexander_1_required,1,Alexander,Sciu... Ĉi tiu medio estas sufiĉe agrabla. Tre... proleta.
+8bb197f659df9e12,L03 Alexander,Alexander_1_required,1,Alexander,Sciu... Ĉi tiu medio estas sufiĉe agrabla. Tre... proleta.
 c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,prole- <i><size=70%>kio?
 3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,Dankon!
 90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,"Ho, kvazaŭ... laborista klaso?"
@@ -385,13 +385,13 @@ e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,Ĉi tiuj lavadoj vere plifacil
 94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,Krome ili sentiĝas vere agrable.
 # --- outro: Ryan_3_Outro ---
 01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,"Mi estas sufiĉe certa, ke tio estis ĉio."
-e7b753ddf576b075,L07 Ryan,Ryan_3_Outro,2,Ryan,Dankon. Vi multe plifaciligas la travivadon de ĉio ĉi.
+26fef1581467462d,L07 Ryan,Ryan_3_Outro,2,Ryan,Dankon. Vi multe plifaciligas la travivadon de ĉio ĉi.
 021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,"Vi ĉiam estas bonvena ĉi tie, Ryan."
 dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,Vi estas unu el miaj plej ŝatataj klientoj!
 7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,Vi ĉiam igas min senti min bonvena.
 c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,"Aj... Dankon. Ĉu estas strange, ke mi konsideras vin..."
 e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,Vere bona amiko?
-77876a1074c9c3f3,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>oa-</i> ne, tio estas fakte vere bonega."
+674d9f74349966ca,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>oa-</i> ne, tio estas fakte vere bonega."
 e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,Ankaŭ mi konsideras vin bona amiko
 29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,Ho- mi ĝojas!
 51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,Aaj... dankon.
@@ -432,7 +432,7 @@ f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,"Uzu la levstangon po
 785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,"Do, nu, ĉu vi malfermus la pordegon?"
 # --- idle: Conrad_idle_3_2 ---
 c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,"Mi ŝatas la stablon, kiun vi elektis. Ĉu vi prenus ĝin?"
-100bc339b65689dd,L08 Conrad,Conrad_idle_3_2,2,Conrad,Dooo. Ĉu vi masturbos min?
+4557c47a615d9810,L08 Conrad,Conrad_idle_3_2,2,Conrad,Dooo. Ĉu vi masturbos min?
 7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,Dankon pro tio. Sentiĝis damne bone.
 # --- jerkoff: Conrad_started_jerkoff_3 ---
 ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,"Ha jes, jen la ĝusta afero.. daŭrigu."
@@ -467,7 +467,7 @@ f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,Ne necesas danki. Mi prizor
 2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,Vi estas sufiĉe seksalloga.
 c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...kaj afabla.
 296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,Ankaŭ mi opinias vin speciala.
-7e00e03a0df3736e,L08 Conrad,Conrad_Outro_3,24,Conrad,"Tio... estas la unua fojo, kiam vi jipis por mi."
+17cf3cc7179b6817,L08 Conrad,Conrad_Outro_3,24,Conrad,"Tio... estas la unua fojo, kiam vi jipis por mi."
 c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,Ĝi signifas 'vi bone laboras' en koboldlingvo.
 6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,Ho... ha. Tio plaĉas al mi.
 8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,Bonfaras al mi aŭdi tion.
@@ -508,7 +508,7 @@ bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,Vi vere fervoris pr
 67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,"Ŝajnis, ke vi bone ĝuis vin."
 65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,Mi ĉiam ĝuas~
 5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,"Diable, jes, mi ĝuis!"
-91181a317c2e2e2c,L08 Conrad,Conrad_finished_mount_3,8,Kobold,Tio bonas... Kaj nun?
+d45c21a765584d3b,L08 Conrad,Conrad_finished_mount_3,8,Kobold,Tio bonas... Kaj nun?
 ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,"Nun, dua raŭndo!"
 18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,Denove...?
 f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,"Ne ne, vi estas atestita purigisto, ĉu ne?"
@@ -730,7 +730,7 @@ ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,"Li estas VERE ĉarma ru�
 58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,Li preferas 'vertikale defiata'... Sed jes.
 3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,Mhm! li provas renkonti novajn homojn.
 474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,Ho...
-fc4c4ac0587e24db,L10 Ryan,ryan_food_dialogue,39,Ryan,Tio estas vere ĉarma.
+ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,Tio estas vere ĉarma.
 c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,"Ho, mirinde. Ŝajnas, ke ni similas."
 82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,"Mi kredas, ke mi volus renkonti lin!"
 b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,Do mi kunigos vin du.
@@ -756,10 +756,10 @@ c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,Sed kio pri vi? ĉu vi renk
 58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,"Jes! Conrad, li estas adorinda. Kvankam li malamus, ke mi diris tion."
 3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"Ho, jen la eta virdrako, kiun mi vidis enveni antaŭ iom, ĉu ne?"
 882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,He! Li estas nur... 'vertikale defiata'.
-871f43cb596daa39,L10 Ryan,ryan_food_dialogue,67,Kobold,Mhm! jen li.
+1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,Mhm! jen li.
 eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"Ho, pardonu."
 dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,Li ŝajnas ĉarma!
-70300517b020a458,L10 Ryan,ryan_food_dialogue,70,Ryan,"Tio estas mirinda, li estas ĉarma!"
+94ff2c4b836f0aef,L10 Ryan,ryan_food_dialogue,70,Ryan,"Tio estas mirinda, li estas ĉarma!"
 abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,"He, nu, dankon denove."
 9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,"Neniu problemo! Mi apenaŭ povas atendi, ke vi renkontu Conrad."
 e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,"Ne, mi dankas vin. Mi... vere ĝojas."
@@ -786,7 +786,7 @@ f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,Bone! Ĝis baldaŭ.
 d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,"Do tiu Conrad, ŝajnas, ke li plaĉas al vi?"
 6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,Hehe jes.
 c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,Li estas iom tro multe. Sed tio plaĉas al mi.
-a1bf90b10d887726,L10 Ryan,ryan_food_dialogue,97,Ryan,Tio estas ĉarma!
+6525ecb4cd0f0eea,L10 Ryan,ryan_food_dialogue,97,Ryan,Tio estas ĉarma!
 6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,Kio estas via plej ŝatata parto pri li?
 a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,"Li havas, nu. ENORMEGAN kacon."
 dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"Li estas akratona, sed ankaŭ tenera!"
@@ -795,7 +795,7 @@ dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"Li estas akratona, sed 
 4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,"Ho... Jes, pli etaj drakoj emas... kompensi."
 7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,"Mmm, jes, mi konas la tipon."
 d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,"Havas sencon! Jes, etaj virdrakoj estas amuzaj."
-00079873ed68f67e,L10 Ryan,ryan_food_dialogue,106,Ryan,Aj... Tio estas vere dolĉa
+97a18e09f3f990c5,L10 Ryan,ryan_food_dialogue,106,Ryan,Aj... Tio estas vere dolĉa
 fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,"Vi devos rakonti al mi, kiel vi du sukcesos!"
 37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,"Dankon, ke vi dividis manĝaĵon kun mi, vi estas bonega amiko."
 120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,Dankon pro la manĝaĵo! Mi iros al la pordego.
@@ -815,7 +815,7 @@ eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> Kaj por mi.
 5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,"Ne, mi kredas ke ne."
 dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,Mi estas ĉi tie nur por alporti al vi manĝaĵon!
 7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,"Mi pensis alporti ion agrablan post ĉio, kion vi faris."
-2fc5be91325a9449,L10 Ryan,Ryan_grab_basket,14,Ryan,"Mi esperas, ke tio konvenas?"
+414c0f3bb81740f3,L10 Ryan,Ryan_grab_basket,14,Ryan,"Mi esperas, ke tio konvenas?"
 097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,Kompreneble jes!
 460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,"Bonege, mi ĝojas."
 6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,"Tio certe signifas, ke jes! Mi ĝojas."
@@ -847,7 +847,7 @@ cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,"RYAN, LA OSTO!"
 618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,Mmf- Hm?
 5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,"Ho, tio estas mia plej ŝatata parto!"
 7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,Kiel vi eĉ digestas tion?
-50017e1803bb849e,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> tio estas seksalloga.
+846f850b875979d4,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> tio estas seksalloga.
 f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,Mi estas drako.
 b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,"Mi estas sufiĉe certa, ke mi povas digesti ion ajn."
 a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,Ĉu jes? Bone scii...
@@ -980,7 +980,7 @@ cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,Nnnf... Tio estis multe pli bo
 307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,Haah. Ĉi tiu estas la plej bona fika lavejo.
 # --- outro: Conrad_Outro_4 ---
 4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,Vi devus esti tute pura!
-5fa2cf3854ecc8d9,L11 Conrad,Conrad_Outro_4,2,Kobold,"Mi kredas, ke jen ĉio."
+4a93a020168bbd0d,L11 Conrad,Conrad_Outro_4,2,Kobold,"Mi kredas, ke jen ĉio."
 2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,Vi aspektas bone tiel pura!
 d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,<i>Mi ŝatas ŝprucigi akvon sur vin.
 feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,Bone! Tio devus esti ĉio.
@@ -1000,7 +1000,7 @@ dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,Sed ni
 589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,Tio estas bonega! kiam estas via unua rendevuo?
 56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,"Li vokis min, ni renkontiĝis. Li estas vere damne afabla."
 080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,"Li diris, ke mi estas trankvila, ni planis rendevuon..."
-75cf2f29bcbf5908,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,Kaj tial mi estas ĉi tie! Post ĉi tiu lavado mi ekiros por vidi lin.
+d98ca4f1aac91861,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,Kaj tial mi estas ĉi tie! Post ĉi tiu lavado mi ekiros por vidi lin.
 35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,Tuj post ĉi tiu lavado!
 d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,Ni iros al iu marmanĝaĵa restoracio-
 5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,Mi jam rezervis lokon ĉe la klubo.
@@ -1423,7 +1423,7 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,Estis bone. Ni seks
 6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,Tio estas bona. Vi meritas decan viron.
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,"Mi certas, ke ankaŭ li trovas vin agrabla!"
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,"Dankon, ankaŭ vi estas agrabla!"
-8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,Dankon. Estas afable de vi diri tion.
+01cb42db52da342d,L15 Alexander,Alexander_5_required,9,Alexander,Dankon. Estas afable de vi diri tion.
 a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"Ha, li ŝajnas esti de la sovaĝa speco."
 5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,"Mi ĝojas, ke vi ĝuas lian kompanion. Mi certas, ke li trovas vin agrabla."
 cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,"Tio certe signifas, ke vi du bone kongruas."
@@ -1764,6 +1764,7 @@ c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,"Mi nur konsciis, kian malordon m
 # --- RyanMuddy_Intro ---
 299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,"Mi aŭdis, ke ĉi tie estas koboldoj, kiuj povas lavi min?"
 05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,Mi estas LA koboldo. Jip!
+d12499a3f17512de,Unused,RyanMuddy_Intro,7,Kobold,"Jes, bonvenon al Drag'N Wash!"
 213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,"Bonege, do, ee,"
 44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,"Ho, mi vidas la butonon tie, komprenite!"
 af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,"Dankon, mi atendos!"
@@ -1818,6 +1819,8 @@ c461dbb2bab7d8bc,UI,,,UI,Tutekrane
 91d6e30620d99810,UI,,,UI,Tuŝeti/Teni
 8e685d5409b3a543,UI,,,UI,Teni
 6c359dddb1d4c36e,UI,,,UI,Konsilaj simboloj
+fd9baf7f335aa154,UI,,,UI,Inversigi vertikalan rigardon
+4d654c19179796ef,UI,,,UI,Ŝprucilo: malpli da movo
 2316810a5de343dd,UI,,,UI,Klavaro
 0286249762f7c943,UI,,,UI,Aŭtomate
 c77c3af22c6429b2,UI,,,UI,Glatigo

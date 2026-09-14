@@ -12,7 +12,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"a, toki! n..."
 30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,mi kute e ni: jan lili li lon anpa ni. ona li ken telo e mi.
 08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,ni li ma pona anu seme?
 32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,n a! mi li <i>jan lili</i> a!
-d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,lon. o kama pona tawa tomo Telo Akula!
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,lon. o kama pona tawa tomo Telo Akula!
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,a a! lon a! sina jan lili a!
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,ni li pona mute a!
 900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,mi jan Lajan. n...
@@ -24,18 +24,18 @@ b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,jip!
 ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"a, mi lukin e nena. mi sona!"
 425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,pona. mi awen. sina pona.
 # --- phone: Ryan_1_PhoneTutorial ---
-8a15c5bd16af8e2a,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,toki. <i>ni li tomo Telo Akula nanpa 223...</i> sina toki ala toki tawa jan esun nanpa wan sina?
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,toki. <i>ni li tomo Telo Akula nanpa 223...</i> sina toki ala toki tawa jan esun nanpa wan sina?
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,mi pini toki a!
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,lon. mi toki tawa ona.
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,a. pona.
 ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,ni la- o pali pona lon tenpo suno ni.
-693491dd1e43554f,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,toki. <i>ni li tomo Telo Akula nanpa 223...</i> sina sona ala sona e nasin pali?
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,toki. <i>ni li tomo Telo Akula nanpa 223...</i> sina sona ala sona e nasin pali?
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,ala.
 01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,mi sona a!
 085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,a...
 4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,ni la o tawa lupa lukin. o toki tawa jan esun sina.
-18e83723472ff06b,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,tenpo kama la sina wile open e lupa tawa ona.
+af789b5c60f24630,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,tenpo kama la sina wile open e lupa tawa ona.
 bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,pona mute. ni la o tawa lupa lukin. o toki pona tawa jan esun sina.
 474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,pona!
 7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,o pali pona lon tenpo suno ni.
@@ -70,7 +70,7 @@ e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,mi awen sona e tomo ni lon lawa mi
 # ===== Level 2: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_1 ---
 d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>o kute a! </gradient><size=100%>ni li tomo telo, anu seme?"
-89714ef9a2dd4db5,L02 Conrad,Conrad_Intro_1,2,Conrad,mi wile e sijelo pi jaki ala. ni li pali sina a. <size=70%> a.
+e2b71fbe0e3a8220,L02 Conrad,Conrad_Intro_1,2,Conrad,mi wile e sijelo pi jaki ala. ni li pali sina a. <size=70%> a.
 198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,"n, o kama lon nasin ni."
 d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,mi ken open e nasin tawa sina.
 6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,pona. taso sina wile open e lupa. o pana e jan Kolan tawa insa a!
@@ -79,11 +79,11 @@ d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,mi ken open e nasin tawa sin
 2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,"sina pali kin e <i>pini pona</i> lon ni, anu seme?"
 906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,pini ale lon tomo ni li pona a!
 c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,sama... ijo unpa anu seme?
-d704d8fd39dffd37,L02 Conrad,Conrad_required_1,5,Conrad,n... ni li ala-
+0c503978e6cd3a78,L02 Conrad,Conrad_required_1,5,Conrad,n... ni li ala-
 c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,"sina pali ala pali e ni: akesi suli, <size=60%>sama mi, <size=100%>li pana e telo unpa lon ni?"
 daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,a- seme- <size=80%>a a. <size=60%>mi ala-
 824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,"a, ala."
-b778e4a7f32732fb,L02 Conrad,Conrad_required_1,9,Conrad,seme a! ni li ike mute! sina jo ala e supa unpa...?
+33cb9fb42cd6a080,L02 Conrad,Conrad_required_1,9,Conrad,seme a! ni li ike mute! sina jo ala e supa unpa...?
 96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,n... <size=60%>ala?
 175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,ni la o esun e ona a!
 fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,taso sina ken awen kepeken e luka sina. a.
@@ -127,14 +127,14 @@ f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,mi wile e ni: pali 
 c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,mi jan pi pana sona suli- taso lon. tenpo mute la mi tawa ala e tomo telo pi jan ale.
 8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,sina pona.
 57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,"a, kin la mi toki e pakala mi: jaki mute li lon sijelo mi."
-da7509a323bc8646,L03 Alexander,Alexander_1_intro,13,Alexander,mi lon ijo ike ni. mi pilin ike tan ona...
+c44510120d3f5f7e,L03 Alexander,Alexander_1_intro,13,Alexander,mi lon ijo ike ni. mi pilin ike tan ona...
 550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,sina... jaki mute ala.
 21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,ike ala. mi open e lupa tawa sina!
 14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,ala. jaki li lon mi.
 65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,sina ken ala ken open e lupa?
 f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,a. lon. mi pakala.
 # --- progress: Alexander_1_required ---
-f8d26c6d83205a5d,L03 Alexander,Alexander_1_required,1,Alexander,n... ma ni li pona tawa mi. ona li... pi jan pali.
+8bb197f659df9e12,L03 Alexander,Alexander_1_required,1,Alexander,n... ma ni li pona tawa mi. ona li... pi jan pali.
 c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,pi jan- <i><size=70%>seme?
 3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,sina pona a!
 90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,"a, ni li sama... kulupu pi jan pali?"
@@ -385,13 +385,13 @@ e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,telo ni li pona e ale a.
 94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,kin la ona li pona mute tawa sijelo mi.
 # --- outro: Ryan_3_Outro ---
 01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,mi pilin e ni: ale li pini.
-e7b753ddf576b075,L07 Ryan,Ryan_3_Outro,2,Ryan,sina pona. sina pona e nasin ike ni tawa mi.
+26fef1581467462d,L07 Ryan,Ryan_3_Outro,2,Ryan,sina pona. sina pona e nasin ike ni tawa mi.
 021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,"o kama lon tenpo ale, jan Lajan. ni li pona tawa mi."
 dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,sina jan esun pona nanpa wan mi!
 7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,tenpo ale la mi pilin pona lon tomo sina.
 c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,a... sina pona. ni li nasa anu seme: mi pilin e ni: sina...
 e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,jan pona suli mi?
-77876a1074c9c3f3,L07 Ryan,Ryan_3_Outro,8,Kobold,<size=70%><i>a a-</i> ala. ni li pona mute a.
+674d9f74349966ca,L07 Ryan,Ryan_3_Outro,8,Kobold,<size=70%><i>a a-</i> ala. ni li pona mute a.
 e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,mi pilin e ni kin: sina jan pona mi
 29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,a- mi pilin pona!
 51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,a... sina pona.
@@ -432,7 +432,7 @@ f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,o kepeken e palisa ki
 785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,"n, sina ken ala ken open e lupa?"
 # --- idle: Conrad_idle_3_2 ---
 c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,supa unpa pi wile sina li pona tawa mi. sina ken ala ken kama jo e ona?
-100bc339b65689dd,L08 Conrad,Conrad_idle_3_2,2,Conrad,n n n. sina kepeken ala kepeken e luka sina lon palisa mi?
+4557c47a615d9810,L08 Conrad,Conrad_idle_3_2,2,Conrad,n n n. sina kepeken ala kepeken e luka sina lon palisa mi?
 7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,sina pona tan ni. ni li pona mute a.
 # --- jerkoff: Conrad_started_jerkoff_3 ---
 ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,"a lon, ni li pona a.. o awen."
@@ -467,7 +467,7 @@ f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,o toki ala e pona. mi open 
 2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,sina pona lukin mute.
 c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...kin la sina pona.
 296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,mi pilin e ni: sina pona nanpa wan kin.
-7e00e03a0df3736e,L08 Conrad,Conrad_Outro_3,24,Conrad,ni li... 'jip' nanpa wan sina tawa mi.
+17cf3cc7179b6817,L08 Conrad,Conrad_Outro_3,24,Conrad,ni li... 'jip' nanpa wan sina tawa mi.
 c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,lon toki pi jan lili la ni li toki e ni: sina pali pona.
 6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,a... a. ni li pona tawa mi.
 8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,kute pi toki ni li pana e pilin pona tawa mi.
@@ -508,7 +508,7 @@ bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,sina pali wawa mute
 67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,mi lukin e ni: sina pilin pona.
 65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,tenpo ale la mi pilin pona~
 5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,lon a! mi pilin pona mute!
-91181a317c2e2e2c,L08 Conrad,Conrad_finished_mount_3,8,Kobold,ni li pona... tenpo ni la seme?
+d45c21a765584d3b,L08 Conrad,Conrad_finished_mount_3,8,Kobold,ni li pona... tenpo ni la seme?
 ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,"tenpo ni la, nanpa tu a!"
 18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,sin...?
 f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,"ala ala. sina jan telo pi lipu sona, anu seme?"
@@ -730,7 +730,7 @@ ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,ona li akesi loje. ona li
 58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,ona li wile e nimi ante: 'sewi lili'... taso lon.
 3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,n! ona li alasa e jan sin.
 474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,a...
-fc4c4ac0587e24db,L10 Ryan,ryan_food_dialogue,39,Ryan,ni li suwi mute.
+ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,ni li suwi mute.
 c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,"a, pona mute. mi tu li sama."
 82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,mi wile kama sona e ona!
 b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,ni la mi pali e ni: sina tu li ken toki.
@@ -756,10 +756,10 @@ c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,taso sina la seme? sina lon
 58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,lon! jan Kolan li suwi mute. taso toki ni li ike tawa ona.
 3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"a, ona li akesi lili. mi lukin e ona lon tenpo pini lili, anu seme?"
 882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,o! ona li... 'sewi lili' taso.
-871f43cb596daa39,L10 Ryan,ryan_food_dialogue,67,Kobold,n! ona li ona.
+1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,n! ona li ona.
 eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"a, mi pakala."
 dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,ona li suwi a!
-70300517b020a458,L10 Ryan,ryan_food_dialogue,70,Ryan,ni li pona mute. ona li suwi!
+94ff2c4b836f0aef,L10 Ryan,ryan_food_dialogue,70,Ryan,ni li pona mute. ona li suwi!
 abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,"o, n, sina pona sin."
 9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,ike ala! mi wile e ni: sina kama sona e jan Kolan lon tenpo lili.
 e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,ala. sina pona. mi... pilin pona mute.
@@ -786,7 +786,7 @@ f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,pona! mi lukin e sina lon t
 d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,"jan Kolan ni la, ona li pona tawa sina, anu seme?"
 6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,"a a, lon."
 c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,ona li mute mute. taso ni li pona tawa mi.
-a1bf90b10d887726,L10 Ryan,ryan_food_dialogue,97,Ryan,ni li suwi!
+6525ecb4cd0f0eea,L10 Ryan,ryan_food_dialogue,97,Ryan,ni li suwi!
 6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,seme pi jan ni li pona nanpa wan tawa sina?
 a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,palisa unpa ona li suli mute a.
 dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,ona li toki wawa. taso ona li suwi kin!
@@ -795,7 +795,7 @@ dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,ona li toki wawa. taso o
 4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,a... lon. akesi lili la ijo ante ona li kama suli...
 7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,"n, lon. mi sona e jan sama ni."
 d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,ni li lon! akesi lili li musi.
-00079873ed68f67e,L10 Ryan,ryan_food_dialogue,106,Ryan,a... ni li suwi mute
+97a18e09f3f990c5,L10 Ryan,ryan_food_dialogue,106,Ryan,a... ni li suwi mute
 fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,o toki tawa mi e ijo kama pi sina tu!
 37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,sina pana e moku tawa mi. sina pona. sina jan pona suli.
 120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,sina pana e moku. sina pona! mi tawa open e lupa.
@@ -815,7 +815,7 @@ eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> tawa mi kin.
 5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,ala. mi pilin e ni: mi wile ala.
 dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,mi kama tan ni taso: mi pana e moku tawa sina!
 7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,sina pali e ijo pona mute tawa mi. ni la mi wile pana e ijo pona tawa sina.
-2fc5be91325a9449,L10 Ryan,Ryan_grab_basket,14,Ryan,ni li pona anu seme?
+414c0f3bb81740f3,L10 Ryan,Ryan_grab_basket,14,Ryan,ni li pona anu seme?
 097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,lon a!
 460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,pona a. mi pilin pona.
 6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,ni la ona li pona! mi pilin pona.
@@ -847,7 +847,7 @@ cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,jan Lajan a! kiwen sijelo a!
 618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,n n- n?
 5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,"a, ona li pona nanpa wan tawa mi!"
 7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,insa sina li moku e ona kepeken nasin seme?
-50017e1803bb849e,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> ni li pona lukin a.
+846f850b875979d4,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> ni li pona lukin a.
 f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,mi akesi suli.
 b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,mi pilin e ni: insa mi li ken moku e ijo ale.
 a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,ni li lon anu seme? mi kama sona...
@@ -980,7 +980,7 @@ cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,n n n... ni li pona mute. kili
 307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,a a. tomo telo ni li pona nanpa wan a.
 # --- outro: Conrad_Outro_4 ---
 4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,jaki li lon ala sina a!
-5fa2cf3854ecc8d9,L11 Conrad,Conrad_Outro_4,2,Kobold,mi pilin e ni: ale li pini.
+4a93a020168bbd0d,L11 Conrad,Conrad_Outro_4,2,Kobold,mi pilin e ni: ale li pini.
 2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,jaki ala la sina pona lukin!
 d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,<i>pana mi pi telo tawa sina li pona tawa mi.
 feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,pona! ale li pini.
@@ -1000,7 +1000,7 @@ dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,taso t
 589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,ni li pona mute! tenpo musi olin nanpa wan sina li lon tenpo seme?
 56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,ona li toki tawa mi kepeken ilo. mi tu li kama lon ma sama. ona li pona mute a.
 080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,ona li toki e ni: mi jan pona. mi tu li pali e nasin pi tenpo musi olin...
-75cf2f29bcbf5908,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,ni li tan pi lon mi! telo ni li pini la mi tawa weka. mi tawa lukin e ona.
+d98ca4f1aac91861,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,ni li tan pi lon mi! telo ni li pini la mi tawa weka. mi tawa lukin e ona.
 35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,telo ni li pini la mi tawa a!
 d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,mi tu li tawa tomo moku pi moku kala-
 5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,mi jo e supa lon tomo musi lon tenpo ni.
@@ -1422,7 +1422,7 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,ona li pona. mi tu 
 6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,ni li pona. sina o kama jo e jan pona.
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,mi sona e ni: sina pona tawa ona kin!
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,sina pona. sina pona tawa mi kin!
-8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,sina pona. toki sina li pona.
+01cb42db52da342d,L15 Alexander,Alexander_5_required,9,Alexander,sina pona. toki sina li pona.
 a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"a, mi pilin e ni: ona li jan nasa."
 5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,ona li pona tawa sina. mi pilin pona tan ni. mi sona e ni: sina pona tawa ona kin.
 cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,ni la sina tu li pona tawa sina tu.
@@ -1763,6 +1763,7 @@ c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,jan Maka li toki wawa tawa mi. ni
 # --- RyanMuddy_Intro ---
 299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,mi kute e ni: jan lili li lon anpa ni. ona li ken telo e mi anu seme?
 05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,mi jan lili pi nanpa wan a. jip!
+d12499a3f17512de,Unused,RyanMuddy_Intro,7,Kobold,lon. o kama pona tawa tomo Telo Akula!
 213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,"pona, ni la, n,"
 44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,"a, mi lukin e nena. mi sona!"
 af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,sina pona. mi awen!
@@ -1817,6 +1818,8 @@ c461dbb2bab7d8bc,UI,,,UI,sitelen ale
 91d6e30620d99810,UI,,,UI,luka/awen
 8e685d5409b3a543,UI,,,UI,awen
 6c359dddb1d4c36e,UI,,,UI,sitelen nena
+fd9baf7f335aa154,UI,,,UI,lukin sewi anpa li ante
+4d654c19179796ef,UI,,,UI,ilo telo: tawa lili
 2316810a5de343dd,UI,,,UI,ilo sitelen
 0286249762f7c943,UI,,,UI,ilo lawa
 c77c3af22c6429b2,UI,,,UI,linja pona

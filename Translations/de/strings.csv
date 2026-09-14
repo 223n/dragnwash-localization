@@ -12,7 +12,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"Oh, hi! Ähm..."
 30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,"Ich hab gehört, hier unten gibt's Kobolde, die mich sauber waschen können?"
 08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,Bin ich hier richtig?
 32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,Mhm! Ich bin <i>der</i> Kobold!
-d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,"Ja, willkommen bei Drag'N Wash!"
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"Ja, willkommen bei Drag'N Wash!"
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"Haha, das bist du ganz sicher!"
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Wunderbar!
 900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,Ich heiße Ryan. Also...
@@ -24,18 +24,18 @@ b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,Yip!
 ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"Ah, ich seh den Knopf da, alles klar!"
 425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"Okay, ich warte hier. Danke."
 # --- phone: Ryan_1_PhoneTutorial ---
-8a15c5bd16af8e2a,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Hallo, <i>„Drag'n'wash Franchise 223""...</i> Haben Sie schon mit Ihrem ersten Kunden gesprochen?"
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Hallo, <i>„Drag'n'wash Franchise 223""...</i> Haben Sie schon mit Ihrem ersten Kunden gesprochen?"
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,Gerade eben!
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"Ja, hab ich."
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"Ah, gut."
 ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,Dann... einen produktiven Tag noch.
-693491dd1e43554f,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Hallo, <i>„Drag'n'wash Franchise 223""...</i> Haben Sie schon herausgefunden, wie man interagiert?"
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Hallo, <i>„Drag'n'wash Franchise 223""...</i> Haben Sie schon herausgefunden, wie man interagiert?"
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,Nö.
 01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,"Ich glaub, ich hab's raus!"
 085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,Ah...
 4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,"Nun, gehen Sie zum Fenster und sprechen Sie mit Ihrem Kunden."
-18e83723472ff06b,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,Danach müssen Sie ihn natürlich hereinlassen.
+af789b5c60f24630,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,Danach müssen Sie ihn natürlich hereinlassen.
 bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,Ausgezeichnet. Dann begrüßen Sie bitte Ihren Kunden am Fenster.
 474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,Okay!
 7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,Einen produktiven Tag noch.
@@ -70,7 +70,7 @@ e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,Ich merk mir diesen Ort auf jeden 
 # ===== Level 2: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_1 ---
 d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>HEY! </gradient><size=100%>Das hier ist der Waschladen, ja?"
-89714ef9a2dd4db5,L02 Conrad,Conrad_Intro_1,2,Conrad,"Ich muss blitzblank werden. Scheint ja, dafür bist du da. <size=70%> Ha."
+e2b71fbe0e3a8220,L02 Conrad,Conrad_Intro_1,2,Conrad,"Ich muss blitzblank werden. Scheint ja, dafür bist du da. <size=70%> Ha."
 198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,"Mhm, hier entlang."
 d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,Wir können dir eine Öffnung freimachen.
 6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,Nice. Musst aber erst das Tor aufmachen. Lass Conrad rein!
@@ -79,11 +79,11 @@ d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,Wir können dir eine Öffnun
 2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,"Ihr macht hier auch <i>besondere Abschlüsse</i>, ja?"
 906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,Jeder Abschluss hier ist was Besonderes!
 c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,Also... so Sexkram?
-d704d8fd39dffd37,L02 Conrad,Conrad_required_1,5,Conrad,Äh... das ist nicht...
+0c503978e6cd3a78,L02 Conrad,Conrad_required_1,5,Conrad,Äh... das ist nicht...
 c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,"Bringst du große Drachen, <size=60%>so wie mich, <size=100%>hier zum Abspritzen?"
 daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,Wah... hä... <size=80%>oah. <size=60%>wir machen nicht...
 824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,"Oh, nein."
-b778e4a7f32732fb,L02 Conrad,Conrad_required_1,9,Conrad,Was!? Das ist ja furchtbar! Ihr habt nicht mal einen Bock...?
+33cb9fb42cd6a080,L02 Conrad,Conrad_required_1,9,Conrad,Was!? Das ist ja furchtbar! Ihr habt nicht mal einen Bock...?
 96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,Ähm... <size=60%>nein?
 175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,"Na, dann besorg dir mal besser einen!"
 fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,Wenigstens kannst du noch deine Hände benutzen. Heh.
@@ -127,14 +127,14 @@ f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,"Es muss zügig geh
 c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,Professor... Aber ja. Für gewöhnlich gehe ich nicht in öffentliche Waschanstalten.
 8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,Vielen Dank.
 57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,"Oh, und ich entschuldige mich dafür, dass ich vollkommen verdreckt bin."
-da7509a323bc8646,L03 Alexander,Alexander_1_intro,13,Alexander,"Ein bedauerlicher Zustand, in dem ich mich befinde..."
+c44510120d3f5f7e,L03 Alexander,Alexander_1_intro,13,Alexander,"Ein bedauerlicher Zustand, in dem ich mich befinde..."
 550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,Sie sind... gar nicht so schmutzig.
 21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,Kein Problem. Ich mach Ihnen das Tor auf!
 14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,"Doch, das bin ich."
 65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,Würden Sie das Tor öffnen?
 f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,Oh. Ja. Verzeihung.
 # --- progress: Alexander_1_required ---
-f8d26c6d83205a5d,L03 Alexander,Alexander_1_required,1,Alexander,Wissen Sie... diese Umgebung ist recht angenehm. Sehr... proletarisch.
+8bb197f659df9e12,L03 Alexander,Alexander_1_required,1,Alexander,Wissen Sie... diese Umgebung ist recht angenehm. Sehr... proletarisch.
 c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,Prole... <i><size=70%>wie?
 3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,Danke!
 90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,"Oh, also... Arbeiterklasse?"
@@ -386,13 +386,13 @@ e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,Diese Wäschen machen die Ding
 94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,Außerdem fühlen sie sich richtig gut an.
 # --- outro: Ryan_3_Outro ---
 01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,"Ziemlich sicher, das war alles."
-e7b753ddf576b075,L07 Ryan,Ryan_3_Outro,2,Ryan,Danke. Du machst das alles so viel leichter zu ertragen.
+26fef1581467462d,L07 Ryan,Ryan_3_Outro,2,Ryan,Danke. Du machst das alles so viel leichter zu ertragen.
 021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,"Du bist hier immer willkommen, Ryan."
 dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,Du bist einer meiner Lieblingskunden!
 7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,Bei dir fühl ich mich immer willkommen.
 c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,"Aw... Danke. Ist es komisch, dass ich dich für..."
 e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,einen richtig guten Freund halte?
-77876a1074c9c3f3,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>oah...</i> nein, das ist eigentlich richtig cool."
+674d9f74349966ca,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>oah...</i> nein, das ist eigentlich richtig cool."
 e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,Ich halte dich auch für einen guten Freund.
 29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,Oh... da bin ich froh!
 51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,D'aw... danke.
@@ -433,7 +433,7 @@ f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,"Öffnen Sie ihn mit 
 785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,"Also, äh, machst du das Tor auf?"
 # --- idle: Conrad_idle_3_2 ---
 c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,"Mir gefällt der Bock, den du ausgesucht hast. Holst du ihn mal?"
-100bc339b65689dd,L08 Conrad,Conrad_idle_3_2,2,Conrad,Alsooo. Wichst du mir jetzt einen?
+4557c47a615d9810,L08 Conrad,Conrad_idle_3_2,2,Conrad,Alsooo. Wichst du mir jetzt einen?
 7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,Danke dafür. Hat sich verdammt gut angefühlt.
 # --- jerkoff: Conrad_started_jerkoff_3 ---
 ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,"Ah ja, genau so... mach weiter."
@@ -468,7 +468,7 @@ f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,Kein Grund zu danken. Ich m
 2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,Du bist ziemlich heiß.
 c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...und nett.
 296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,Ich finde dich auch besonders.
-7e00e03a0df3736e,L08 Conrad,Conrad_Outro_3,24,Conrad,"Das ist... das erste Mal, dass du für mich gejippt hast."
+17cf3cc7179b6817,L08 Conrad,Conrad_Outro_3,24,Conrad,"Das ist... das erste Mal, dass du für mich gejippt hast."
 c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,"Auf Koboldisch heißt das, du machst deine Sache gut."
 6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,Oh... hah. Das gefällt mir.
 8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,Das zu hören tut gut.
@@ -509,7 +509,7 @@ bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,Du warst richtig am
 67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,Du schienst Spaß zu haben.
 65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,Hab ich immer~
 5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,"Verdammt, ja, hatte ich!"
-91181a317c2e2e2c,L08 Conrad,Conrad_finished_mount_3,8,Kobold,Das ist gut... Und jetzt?
+d45c21a765584d3b,L08 Conrad,Conrad_finished_mount_3,8,Kobold,Das ist gut... Und jetzt?
 ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,Jetzt Runde zwei!
 18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,Schon wieder...?
 f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,"Nein, nein, du bist doch zertifizierter Wäscher, ja?"
@@ -732,7 +732,7 @@ ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,"Er ist ein RICHTIG süß
 58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,"Er bevorzugt „vertikal benachteiligt""... Aber ja."
 3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,"Mhm! Er versucht, neue Leute kennenzulernen."
 474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,Oh...
-fc4c4ac0587e24db,L10 Ryan,ryan_food_dialogue,39,Ryan,Das ist echt süß.
+ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,Das ist echt süß.
 c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,"Oh, wunderbar. Scheint, wir sind uns ähnlich."
 82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,"Ich glaub, ich würd ihn gern kennenlernen!"
 b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,Dann bring ich euch zwei in Kontakt.
@@ -758,10 +758,10 @@ c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,Und wie sieht's bei dir aus
 58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,"Ja! Conrad, er ist zum Anbeißen. Auch wenn er es hassen würde, dass ich das sage."
 3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"Oh, hm, das ist der winzige Drake, den ich vor einer Weile reinkommen sah, ja?"
 882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,"Hey! Er ist nur... „vertikal benachteiligt""."
-871f43cb596daa39,L10 Ryan,ryan_food_dialogue,67,Kobold,Mhm! Das ist er.
+1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,Mhm! Das ist er.
 eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"Oh, sorry."
 dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,Der klingt süß!
-70300517b020a458,L10 Ryan,ryan_food_dialogue,70,Ryan,"Das ist wunderbar, er ist süß!"
+94ff2c4b836f0aef,L10 Ryan,ryan_food_dialogue,70,Ryan,"Das ist wunderbar, er ist süß!"
 abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,"Hey, ähm, nochmal danke."
 9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,"Kein Problem! Ich kann's kaum erwarten, dass du Conrad triffst."
 e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,"Nein, ich danke dir. Ich bin... richtig aufgeregt."
@@ -788,7 +788,7 @@ f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,Okay! Bis bald.
 d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,"Dieser Conrad also, klingt, als würdest du ihn mögen?"
 6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,"Hehe, ja."
 c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,Er ist anstrengend. Aber ich mag das.
-a1bf90b10d887726,L10 Ryan,ryan_food_dialogue,97,Ryan,Das ist süß!
+6525ecb4cd0f0eea,L10 Ryan,ryan_food_dialogue,97,Ryan,Das ist süß!
 6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,Was magst du am meisten an ihm?
 a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,Er ist so. RICHTIG gut bestückt.
 dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"Er ist bissig, aber auch zärtlich!"
@@ -797,7 +797,7 @@ dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"Er ist bissig, aber auc
 4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,"Oh... Ja, kleinere Drachen neigen dazu... zu kompensieren."
 7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,"Mmm, ja, den Typ kenn ich."
 d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,"Klingt logisch! Ja, winzige Drakes machen Spaß."
-00079873ed68f67e,L10 Ryan,ryan_food_dialogue,106,Ryan,Aw... das ist richtig süß.
+97a18e09f3f990c5,L10 Ryan,ryan_food_dialogue,106,Ryan,Aw... das ist richtig süß.
 fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,"Du musst mir erzählen, wie's mit euch beiden läuft!"
 37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,"Danke, dass du dein Essen mit mir geteilt hast, du bist ein toller Freund."
 120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,Danke für das Essen! Ich mach das Tor auf.
@@ -817,7 +817,7 @@ eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> Und für mich.
 5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,"Nein, ich glaub nicht."
 dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,"Ich bin nur hier, um dir Essen zu bringen!"
 7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,"Dachte, ich bring was Nettes mit, nach allem, was du getan hast."
-2fc5be91325a9449,L10 Ryan,Ryan_grab_basket,14,Ryan,"Hoffe, das ist okay?"
+414c0f3bb81740f3,L10 Ryan,Ryan_grab_basket,14,Ryan,"Hoffe, das ist okay?"
 097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,Natürlich ist es das!
 460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,"Super, da bin ich froh."
 6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,Das heißt wohl ja! Da bin ich froh.
@@ -849,7 +849,7 @@ cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,"RYAN, DER KNOCHEN!"
 618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,Mmph... Hm?
 5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,"Oh, das ist mein Lieblingsteil!"
 7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,Wie verdaust du das überhaupt?
-50017e1803bb849e,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> Das ist heiß.
+846f850b875979d4,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> Das ist heiß.
 f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,Ich bin ein Drache.
 b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,"Ziemlich sicher, dass ich alles verdauen kann."
 a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,Ist es das? Gut zu wissen...
@@ -982,7 +982,7 @@ cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,Nnnf... Das war viel besser al
 307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,Haah. Das ist die beste verfickte Wäsche.
 # --- outro: Conrad_Outro_4 ---
 4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,Du müsstest ganz sauber sein!
-5fa2cf3854ecc8d9,L11 Conrad,Conrad_Outro_4,2,Kobold,"Ich glaub, das war's."
+4a93a020168bbd0d,L11 Conrad,Conrad_Outro_4,2,Kobold,"Ich glaub, das war's."
 2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,So sauber siehst du gut aus!
 d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,"<i>Ich mag es, dich mit Wasser abzuspritzen."
 feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,Alles klar! Das sollte es gewesen sein.
@@ -1002,7 +1002,7 @@ dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,Unser 
 589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,Das ist toll! Wann ist euer erstes Date?
 56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,"Er hat mich angerufen, wir haben uns getroffen. Er ist verdammt nett."
 080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,"Er meinte, ich wär chillig, wir haben ein Date geplant..."
-75cf2f29bcbf5908,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,Und deshalb bin ich hier! Nach dieser Wäsche geh ich los und treff ihn.
+d98ca4f1aac91861,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,Und deshalb bin ich hier! Nach dieser Wäsche geh ich los und treff ihn.
 35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,Direkt nach dieser Wäsche!
 d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,Wir gehen in so einen Fischladen...
 5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,Ich hab schon einen Platz im Club reserviert.
@@ -1428,7 +1428,7 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,Es war gut. Wir hat
 6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,Das ist gut. Sie verdienen einen anständigen Mann.
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,"Ich bin sicher, auch er findet Sie angenehm!"
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,"Danke, Sie sind auch angenehm!"
-8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,Danke. Das ist freundlich von Ihnen.
+01cb42db52da342d,L15 Alexander,Alexander_5_required,9,Alexander,Danke. Das ist freundlich von Ihnen.
 a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"Hah, er scheint der wilde Typ zu sein."
 5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,"Ich freue mich, dass Sie Gefallen an ihm finden. Ich bin sicher, er findet Sie angenehm."
 cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,Dann passen Sie beide wohl gut zusammen.
@@ -1770,6 +1770,7 @@ c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,"Hab erst gemerkt, was für eine 
 # --- RyanMuddy_Intro ---
 299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,"Ich hab gehört, hier unten gibt's Kobolde, die mich sauber waschen können?"
 05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,Ich bin DER Kobold. Yip!
+d12499a3f17512de,Unused,RyanMuddy_Intro,7,Kobold,"Ja, willkommen bei Drag'N Wash!"
 213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,"Super, also, äh,"
 44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,"Oh, ich seh den Knopf da, alles klar!"
 af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,"Danke, ich warte hier!"
@@ -1824,6 +1825,8 @@ c461dbb2bab7d8bc,UI,,,UI,Vollbild
 91d6e30620d99810,UI,,,UI,Tippen/Halten
 8e685d5409b3a543,UI,,,UI,Halten
 6c359dddb1d4c36e,UI,,,UI,Tastensymbole
+fd9baf7f335aa154,UI,,,UI,Blick vertikal invertieren
+4d654c19179796ef,UI,,,UI,Sprüher: weniger Bewegung
 2316810a5de343dd,UI,,,UI,Tastatur
 0286249762f7c943,UI,,,UI,Auto
 c77c3af22c6429b2,UI,,,UI,Kantenglättung

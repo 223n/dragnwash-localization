@@ -12,7 +12,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"아, 안녕! 음..."
 30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,여기 내려오면 나를 씻겨 줄 코볼트가 있다고 들었는데?
 08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,여기가 맞아?
 32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,네! 제가 바로 <i>그</i> 코볼트예요!
-d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,"네, Drag'N Wash에 오신 걸 환영해요!"
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"네, Drag'N Wash에 오신 걸 환영해요!"
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"하하, 정말 그렇네!"
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,훌륭하군요!
 line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,잘됐다!
@@ -25,18 +25,18 @@ b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,Yip!
 ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"아, 저기 버튼이 보이네. 알겠어!"
 425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"그래, 기다리고 있을게. 고마워."
 # --- phone: Ryan_1_PhoneTutorial ---
-8a15c5bd16af8e2a,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"여보세요, <i>'Drag'n'wash 223호점'...</i> 첫 손님과는 이야기를 나누셨습니까?"
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"여보세요, <i>'Drag'n'wash 223호점'...</i> 첫 손님과는 이야기를 나누셨습니까?"
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,방금 했어요!
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"네, 했어요."
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"아, 좋습니다."
 ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,그럼- 생산적인 하루 되십시오.
-693491dd1e43554f,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"여보세요, <i>'Drag'n'wash 223호점'...</i> 상호작용하는 방법은 파악하셨습니까?"
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"여보세요, <i>'Drag'n'wash 223호점'...</i> 상호작용하는 방법은 파악하셨습니까?"
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,아니요.
 01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,알 것 같아요!
 085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,아...
 4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,그럼 창구로 가서 손님과 이야기를 나누십시오.
-18e83723472ff06b,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,그 후에는 물론 손님을 안으로 들여보내셔야 합니다.
+af789b5c60f24630,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,그 후에는 물론 손님을 안으로 들여보내셔야 합니다.
 bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,훌륭합니다. 그럼 창구로 가서 손님을 맞이하십시오.
 474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,네!
 7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,생산적인 하루 되십시오.
@@ -71,7 +71,7 @@ e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,여기 꼭 기억해 둘게.
 # ===== Level 2: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_1 ---
 d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>어이! </gradient><size=100%>여기가 그 세차장이지, 응?"
-89714ef9a2dd4db5,L02 Conrad,Conrad_Intro_1,2,Conrad,티끌 하나 없이 깨끗해져야 되거든. 그게 네 일인 것 같은데. <size=70%> 하.
+e2b71fbe0e3a8220,L02 Conrad,Conrad_Intro_1,2,Conrad,티끌 하나 없이 깨끗해져야 되거든. 그게 네 일인 것 같은데. <size=70%> 하.
 198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,"네, 이쪽으로 오세요."
 d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,자리 하나 만들어 드릴게요.
 6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,좋아. 근데 문은 열어야지. 콘래드 님 들어가신다!
@@ -80,11 +80,11 @@ d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,자리 하나 만들어 드�
 2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,"여기 <i>스페셜 엔딩</i>도 해 주지, 응?"
 906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,여기선 모든 엔딩이 스페셜이에요!
 c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,그러니까... 야한 거요?
-d704d8fd39dffd37,L02 Conrad,Conrad_required_1,5,Conrad,어... 그게 아니라-
+0c503978e6cd3a78,L02 Conrad,Conrad_required_1,5,Conrad,어... 그게 아니라-
 c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,나처럼 <size=60%>덩치 큰 드래곤을 <size=100%>여기서 싸게 해 주냐고?
 daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,와- 어- <size=80%>어어. <size=60%>저희는 그런-
 824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,"아, 아니요."
-b778e4a7f32732fb,L02 Conrad,Conrad_required_1,9,Conrad,뭐!? 그게 말이 돼! 마운트도 없단 말이야...?
+33cb9fb42cd6a080,L02 Conrad,Conrad_required_1,9,Conrad,뭐!? 그게 말이 돼! 마운트도 없단 말이야...?
 96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,음... <size=60%>없는데요?
 175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,그럼 빨리 하나 들여놔야지!
 fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,그래도 손은 쓸 수 있잖아. 헤.
@@ -128,14 +128,14 @@ f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,빠르게 부탁드
 c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,교수입니다만- 그래도 맞습니다. 평소엔 공공 세척장에는 잘 가지 않습니다.
 8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,고맙습니다.
 57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,"아, 그리고 이렇게 형편없이 더러운 꼴로 와서 죄송합니다."
-da7509a323bc8646,L03 Alexander,Alexander_1_intro,13,Alexander,유감스러운 처지에 놓이게 되었지요...
+c44510120d3f5f7e,L03 Alexander,Alexander_1_intro,13,Alexander,유감스러운 처지에 놓이게 되었지요...
 550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,그렇게... 더럽진 않으신데요.
 21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,괜찮아요. 제가 문 열어 드릴게요!
 14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,"아니요, 더럽습니다."
 65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,문을 열어 주시겠습니까?
 f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,아. 네. 죄송해요.
 # --- progress: Alexander_1_required ---
-f8d26c6d83205a5d,L03 Alexander,Alexander_1_required,1,Alexander,그러고 보니... 이곳 분위기가 꽤 쾌적하군요. 아주... 프롤레타리아적입니다.
+8bb197f659df9e12,L03 Alexander,Alexander_1_required,1,Alexander,그러고 보니... 이곳 분위기가 꽤 쾌적하군요. 아주... 프롤레타리아적입니다.
 c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,프롤레- <i><size=70%>뭐요?
 3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,감사해요!
 90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,"아, 그러니까... 노동 계급이라고 할까요?"
@@ -391,13 +391,13 @@ e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,여기서 씻으면 정말 마
 94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,게다가 기분도 진짜 좋고.
 # --- outro: Ryan_3_Outro ---
 01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,이제 다 된 것 같아.
-e7b753ddf576b075,L07 Ryan,Ryan_3_Outro,2,Ryan,고마워. 네 덕분에 이 모든 게 훨씬 견디기 쉬워.
+26fef1581467462d,L07 Ryan,Ryan_3_Outro,2,Ryan,고마워. 네 덕분에 이 모든 게 훨씬 견디기 쉬워.
 021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,라이언은 언제나 환영이에요.
 dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,제가 제일 좋아하는 손님 중 한 분이에요!
 7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,넌 항상 날 환영받는 기분으로 만들어 줘.
 c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,아... 고마워. 내가 널 이렇게 생각하면 이상할까...
 e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,정말 좋은 친구라고?
-77876a1074c9c3f3,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>어-</i> 아니요, 사실 그거 진짜 좋은데요."
+674d9f74349966ca,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>어-</i> 아니요, 사실 그거 진짜 좋은데요."
 e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,저도 라이언을 좋은 친구라고 생각해요
 29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,아- 다행이다!
 51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,으아... 고마워.
@@ -438,7 +438,7 @@ f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,쇠지렛대로 개�
 785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,"그래서 어, 문 좀 열어 줄래?"
 # --- idle: Conrad_idle_3_2 ---
 c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,네가 고른 마운트 마음에 들어. 좀 가져다줄래?
-100bc339b65689dd,L08 Conrad,Conrad_idle_3_2,2,Conrad,그으래서. 내 거 손으로 해 줄 거야?
+4557c47a615d9810,L08 Conrad,Conrad_idle_3_2,2,Conrad,그으래서. 내 거 손으로 해 줄 거야?
 7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,고맙다. 존나 시원했어.
 # --- jerkoff: Conrad_started_jerkoff_3 ---
 ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,"아 그래, 바로 그거야.. 계속해."
@@ -473,7 +473,7 @@ f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,고마워하실 것 없어�
 2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,너 꽤 섹시하잖아.
 c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...그리고 착하고.
 296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,저도 콘래드가 특별하다고 생각해요.
-7e00e03a0df3736e,L08 Conrad,Conrad_Outro_3,24,Conrad,그건... 네가 나한테 처음으로 Yip 해 준 거네.
+17cf3cc7179b6817,L08 Conrad,Conrad_Outro_3,24,Conrad,그건... 네가 나한테 처음으로 Yip 해 준 거네.
 c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,코볼트 말로 잘하고 있다는 뜻이에요.
 6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,오... 하. 마음에 든다.
 8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,그 말 들으니까 기분 좋네.
@@ -514,7 +514,7 @@ bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,정말 격렬하게
 67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,즐기신 것 같네요.
 65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,난 항상 즐기지~
 5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,당연히 즐겼지!
-91181a317c2e2e2c,L08 Conrad,Conrad_finished_mount_3,8,Kobold,다행이네요... 이제 뭘 하죠?
+d45c21a765584d3b,L08 Conrad,Conrad_finished_mount_3,8,Kobold,다행이네요... 이제 뭘 하죠?
 ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,"이제, 2라운드지!"
 18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,또요...?
 f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,"아니 아니, 넌 공인 세척사잖아, 응?"
@@ -738,7 +738,7 @@ ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,여기 씻으러 오는 �
 58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,"본인은 '수직적으로 불리한'이라고 하는 걸 선호하는데... 네, 맞아요."
 3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,네! 새로운 사람들을 만나고 싶어 해요.
 474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,오...
-fc4c4ac0587e24db,L10 Ryan,ryan_food_dialogue,39,Ryan,정말 귀엽네.
+ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,정말 귀엽네.
 c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,"아, 잘됐다. 우리 비슷한가 봐."
 82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,만나 보고 싶어!
 b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,그럼 두 분을 연결해 드릴게요.
@@ -764,10 +764,10 @@ c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,근데 넌 어때? 만나�
 58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,"네! 콘래드라고, 사랑스러운 분이에요. 본인은 제가 이렇게 말하는 거 싫어하겠지만요."
 3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"아 그래, 얼마 전에 들어가는 거 본 그 조그만 드레이크 맞지?"
 882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,저기요! 그분은 그냥... '수직적으로 불리한' 거예요.
-871f43cb596daa39,L10 Ryan,ryan_food_dialogue,67,Kobold,네! 그분이에요.
+1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,네! 그분이에요.
 eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"아, 미안."
 dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,귀여워 보이더라!
-70300517b020a458,L10 Ryan,ryan_food_dialogue,70,Ryan,"잘됐다, 귀여운 분이잖아!"
+94ff2c4b836f0aef,L10 Ryan,ryan_food_dialogue,70,Ryan,"잘됐다, 귀여운 분이잖아!"
 abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,"저기 음, 다시 한번 고마워."
 9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,별말씀을요! 콘래드랑 만나실 날이 기다려져요.
 e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,"아니요, 제가 고맙죠. 저... 정말 설레요."
@@ -794,7 +794,7 @@ f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,그래! 곧 봐.
 d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,"그래서 그 콘래드라는 애, 너 걔 좋아하는 것 같은데?"
 6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,헤헤 네.
 c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,"좀 과한 분이긴 해요. 근데, 그게 좋아요."
-a1bf90b10d887726,L10 Ryan,ryan_food_dialogue,97,Ryan,귀엽다!
+6525ecb4cd0f0eea,L10 Ryan,ryan_food_dialogue,97,Ryan,귀엽다!
 6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,그 애의 어떤 점이 제일 좋아?
 a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,그게요. 거기가 엄청 커요.
 dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"성격은 날카롭지만, 다정하기도 해요!"
@@ -803,7 +803,7 @@ dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"성격은 날카롭지�
 4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,"아... 그래, 작은 드래곤들이 대체로... 보상 심리가 있지."
 7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,"음, 그래, 그런 타입 알지."
 d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,"이해돼! 그래, 조그만 드레이크들은 재밌지."
-00079873ed68f67e,L10 Ryan,ryan_food_dialogue,106,Ryan,아... 정말 다정하다
+97a18e09f3f990c5,L10 Ryan,ryan_food_dialogue,106,Ryan,아... 정말 다정하다
 fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,둘이 어떻게 되는지 꼭 말해 줘야 해!
 37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,"음식 나눠 먹어 줘서 고마워, 넌 정말 좋은 친구야."
 120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,음식 고마워요! 문 열러 갈게요.
@@ -823,7 +823,7 @@ eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> 그리고 나를 �
 5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,"아니, 그건 아닌 것 같아."
 dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,그냥 너한테 음식 갖다주러 온 거야!
 7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,네가 해 준 게 많으니까 뭔가 좋은 걸 가져오고 싶었어.
-2fc5be91325a9449,L10 Ryan,Ryan_grab_basket,14,Ryan,괜찮지?
+414c0f3bb81740f3,L10 Ryan,Ryan_grab_basket,14,Ryan,괜찮지?
 097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,당연하죠!
 460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,"다행이다, 좋아."
 6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,그 말은 괜찮다는 거네! 다행이다.
@@ -855,7 +855,7 @@ cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,라이언 뼈까지요!
 618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,음- 응?
 5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,"아, 거기가 제일 맛있는 부분이야!"
 7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,그걸 대체 어떻게 소화하세요?
-50017e1803bb849e,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> 그거 좀 섹시한데.
+846f850b875979d4,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> 그거 좀 섹시한데.
 f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,난 드래곤이니까.
 b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,뭐든 소화할 수 있을걸.
 a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,그래? 알아 둘게...
@@ -989,7 +989,7 @@ cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,으읏... 그 베리보다 훨
 307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,하아. 여기가 존나 최고의 세차장이야.
 # --- outro: Conrad_Outro_4 ---
 4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,이제 완전히 깨끗해졌을 거예요!
-5fa2cf3854ecc8d9,L11 Conrad,Conrad_Outro_4,2,Kobold,이걸로 끝인 것 같아요.
+4a93a020168bbd0d,L11 Conrad,Conrad_Outro_4,2,Kobold,이걸로 끝인 것 같아요.
 2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,이렇게 깨끗하니까 멋져 보여요!
 d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,<i>콘래드한테 물 뿌리는 거 좋아요.
 feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,좋아요! 이걸로 끝이에요.
@@ -1010,7 +1010,7 @@ dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,근데
 589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,잘됐네요! 첫 데이트는 언제예요?
 56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,"걔가 전화해서, 만났어. 진짜 존나 착하더라."
 080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,"걔가 나보고 쿨하대, 데이트 약속도 잡았고..."
-75cf2f29bcbf5908,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,그래서 여기 온 거야! 씻고 나서 바로 걔 만나러 갈 거거든.
+d98ca4f1aac91861,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,그래서 여기 온 거야! 씻고 나서 바로 걔 만나러 갈 거거든.
 35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,씻고 나서 바로!
 d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,해산물집에 가기로 했어-
 5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,클럽 자리도 이미 예약해 놨고.
@@ -1447,7 +1447,7 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,좋았어요. 섹�
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,그도 분명 당신을 좋게 여기고 있을 겁니다!
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,"고마워요, 알렉산더도 좋은 분이에요!"
 line:44701902,L15 Alexander,Alexander_5_required,8,Kobold,감사해요!
-8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,고맙습니다. 친절한 말씀이군요.
+01cb42db52da342d,L15 Alexander,Alexander_5_required,9,Alexander,고맙습니다. 친절한 말씀이군요.
 line:d2401e75,L15 Alexander,Alexander_5_required,10,Alexander,물론입니다!
 a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"하, 거친 타입으로 보이긴 하더군요."
 5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,그를 마음에 들어 하시니 다행입니다. 그도 분명 당신을 좋게 여기고 있을 겁니다.
@@ -1796,6 +1796,7 @@ c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,"맥스한테 혼나고 나서야
 # --- RyanMuddy_Intro ---
 299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,여기 아래에 나를 씻어 줄 수 있는 코볼트들이 있다고 들었는데?
 05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,제가 바로 그 코볼트예요. Yip!
+d12499a3f17512de,Unused,RyanMuddy_Intro,7,Kobold,"네, Drag'N Wash에 오신 걸 환영해요!"
 213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,"좋아, 그럼 어,"
 44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,"아, 저기 버튼 보인다, 알겠어!"
 af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,"고마워, 기다리고 있을게!"
@@ -1850,6 +1851,8 @@ c461dbb2bab7d8bc,UI,,,UI,전체 화면
 91d6e30620d99810,UI,,,UI,탭/홀드
 8e685d5409b3a543,UI,,,UI,홀드
 6c359dddb1d4c36e,UI,,,UI,버튼 아이콘 종류
+fd9baf7f335aa154,UI,,,UI,시점 상하 반전
+4d654c19179796ef,UI,,,UI,분무기 사용 시 멀미 감소
 2316810a5de343dd,UI,,,UI,키보드
 0286249762f7c943,UI,,,UI,자동
 c77c3af22c6429b2,UI,,,UI,안티앨리어싱
