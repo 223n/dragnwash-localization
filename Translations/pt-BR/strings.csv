@@ -1871,3 +1871,29 @@ b439ffe3e5553ddc,UI,,,Conrad,Você é gostoso
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Idioma (Mod)
+6e58b577a084052a,UI,,,UI,Mods
+4850b174b713d88c,UI,,,UI,Obrigatório
+37fe885f1406e372,UI,,,UI,Desligado a partir da próxima inicialização
+9cc5c7f026ce0ca7,UI,,,UI,Ligado a partir da próxima inicialização
+fa20beae3754ffb1,UI,,,UI,Outros mods precisam deste. Pressione Desligado de novo para desligá-lo mesmo assim.
+d57274b504a45b33,UI,,,UI,"Instalado fora de BepInEx/plugins, então não pode ser desligado aqui"
+fd35647f8ecb2f7d,UI,,,UI,Necessário para
+9e6151acb057025d,UI,,,UI,Usa
+b9d0dd131d07b5ad,UI,,,UI,"Ferramentas compartilhadas para mods de Drag'n Wash, incluindo esta tela de mods."
+1236e3be635f17c7,UI,,,UI,"Jogue Drag'n Wash em 13 idiomas. Traduz diálogos, escolhas, interface e opções."
+1cd1ca858aaea1d0,UI,,,UI,Não carregado. Precisa de
+eda662e0b5033180,UI,,,UI,Não carregado. Não funciona junto com
+a8d12a246b72d98c,UI,,,UI,Não carregado. O motivo está em BepInEx/LogOutput.log.
+7c862b0749e737c4,UI,,,UI,Patcher de pré-carregamento. Roda antes dos outros mods e não pode ser desligado aqui.
+74a883a037bc227f,UI,,,UI,Configurações
+21b111cbfe6e8fca,UI,,,UI,Padrão
+bc5b45ae7b60692a,UI,,,UI,Restaurar padrão
+67529e7fdc6098a0,UI,,,UI,Salvo na hora. Alguns mods só aplicam a mudança depois de reiniciar.
+3d19e2d0333d7b19,UI,,,UI,Altere isso no arquivo de configuração do mod em BepInEx/config.
+dc20b3d5d2cddf82,UI,,,UI,Biblioteca
+e0aaa77caac35ceb,UI,,,UI,Permite que os mods vejam e substituam o texto antes que o jogo o mostre.
+e33072d0f0267e46,UI,,,UI,"Avisa os mods qual fala ou escolha está prestes a aparecer, com o ID da fala e quem está falando."
+e6af4688a3314648,UI,,,UI,"Uma janela compartilhada dentro do jogo (F1) onde os mods adicionam abas para suas ferramentas de desenvolvimento e depuração. Funciona com mouse, controle e no Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Fontes para textos que as fontes do jogo não conseguem mostrar, e carregamento de texturas e pacotes de recursos, feitos de um jeito que não trava o Direct3D 12."
+507e6f82c57c2096,UI,,,UI,"Lê e altera os espaços de salvamento e as flags de eventos do jogo, e guarda uma cópia de cada versão de cada save para que qualquer mudança possa ser desfeita."
+77777bd04fb7c9ae,UI,,,UI,Indisponível nesta versão do jogo:

@@ -1872,3 +1872,29 @@ b439ffe3e5553ddc,UI,,,Conrad,Du fühlst dich gut an.
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Sprache (Mod)
+6e58b577a084052a,UI,,,UI,Mods
+4850b174b713d88c,UI,,,UI,Erforderlich
+37fe885f1406e372,UI,,,UI,Ab dem nächsten Start aus
+9cc5c7f026ce0ca7,UI,,,UI,Ab dem nächsten Start an
+fa20beae3754ffb1,UI,,,UI,"Andere Mods brauchen diesen Mod. Drücke noch einmal auf Aus, um ihn trotzdem auszuschalten."
+d57274b504a45b33,UI,,,UI,"Außerhalb von BepInEx/plugins installiert, kann hier nicht ausgeschaltet werden"
+fd35647f8ecb2f7d,UI,,,UI,Benötigt von
+9e6151acb057025d,UI,,,UI,Verwendet
+b9d0dd131d07b5ad,UI,,,UI,"Gemeinsame Werkzeuge für Drag'n Wash-Mods, darunter dieser Mods-Bildschirm."
+1236e3be635f17c7,UI,,,UI,"Spiele Drag'n Wash in 13 Sprachen. Übersetzt Dialoge, Antworten, Oberfläche und Optionen."
+1cd1ca858aaea1d0,UI,,,UI,Nicht geladen. Benötigt
+eda662e0b5033180,UI,,,UI,Nicht geladen. Nicht zusammen nutzbar mit
+a8d12a246b72d98c,UI,,,UI,Nicht geladen. Der Grund steht in BepInEx/LogOutput.log.
+7c862b0749e737c4,UI,,,UI,Preloader-Patcher. Läuft vor anderen Mods und kann hier nicht ausgeschaltet werden.
+74a883a037bc227f,UI,,,UI,Einstellungen
+21b111cbfe6e8fca,UI,,,UI,Standard
+bc5b45ae7b60692a,UI,,,UI,Auf Standard zurücksetzen
+67529e7fdc6098a0,UI,,,UI,Sofort gespeichert. Manche Mods übernehmen eine Änderung erst nach einem Neustart.
+3d19e2d0333d7b19,UI,,,UI,Das lässt sich in der Konfigurationsdatei des Mods in BepInEx/config ändern.
+dc20b3d5d2cddf82,UI,,,UI,Bibliothek
+e0aaa77caac35ceb,UI,,,UI,"Lässt Mods Texte sehen und ersetzen, bevor das Spiel sie anzeigt."
+e33072d0f0267e46,UI,,,UI,"Teilt Mods mit, welche Dialogzeile oder Antwort gleich angezeigt wird, mit Zeilen-ID und Sprecher."
+e6af4688a3314648,UI,,,UI,"Ein gemeinsames Fenster im Spiel (F1), in dem Mods Tabs für ihre Entwickler- und Debug-Werkzeuge hinzufügen. Bedienbar mit Maus, Gamepad und auf dem Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Schriftarten für Text, den die Schriftarten des Spiels nicht darstellen können, und Laden von Texturen und Asset-Bundles, ohne dass Direct3D 12 abstürzt."
+507e6f82c57c2096,UI,,,UI,"Liest und ändert die Spielstände und Ereignis-Flags des Spiels und behält eine Kopie jeder Version jedes Spielstands, damit sich jede Änderung rückgängig machen lässt."
+77777bd04fb7c9ae,UI,,,UI,In dieser Spielversion nicht verfügbar:

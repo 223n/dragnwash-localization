@@ -1869,3 +1869,29 @@ b439ffe3e5553ddc,UI,,,Conrad,Dobrze się w tobie czuję
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Język (Mod)
+6e58b577a084052a,UI,,,UI,Mody
+4850b174b713d88c,UI,,,UI,Wymagany
+37fe885f1406e372,UI,,,UI,Wył. od następnego uruchomienia
+9cc5c7f026ce0ca7,UI,,,UI,Wł. od następnego uruchomienia
+fa20beae3754ffb1,UI,,,UI,"Inne mody potrzebują tego moda. Naciśnij Wył. ponownie, aby mimo to go wyłączyć."
+d57274b504a45b33,UI,,,UI,"Zainstalowany poza BepInEx/plugins, więc nie można go tu wyłączyć"
+fd35647f8ecb2f7d,UI,,,UI,Potrzebny dla
+9e6151acb057025d,UI,,,UI,Używa
+b9d0dd131d07b5ad,UI,,,UI,"Wspólne narzędzia dla modów do Drag'n Wash, w tym ten ekran modów."
+1236e3be635f17c7,UI,,,UI,"Graj w Drag'n Wash w 13 językach. Tłumaczy dialogi, wybory, interfejs i opcje."
+1cd1ca858aaea1d0,UI,,,UI,Niewczytany. Wymaga
+eda662e0b5033180,UI,,,UI,Niewczytany. Nie działa razem z
+a8d12a246b72d98c,UI,,,UI,Niewczytany. Przyczyna jest w BepInEx/LogOutput.log.
+7c862b0749e737c4,UI,,,UI,Patcher preloadera. Działa przed innymi modami i nie można go tu wyłączyć.
+74a883a037bc227f,UI,,,UI,Ustawienia
+21b111cbfe6e8fca,UI,,,UI,Domyślnie
+bc5b45ae7b60692a,UI,,,UI,Przywróć domyślne
+67529e7fdc6098a0,UI,,,UI,Zapisano od razu. Niektóre mody uwzględniają zmianę dopiero po ponownym uruchomieniu.
+3d19e2d0333d7b19,UI,,,UI,Zmień to w pliku konfiguracyjnym moda w BepInEx/config.
+dc20b3d5d2cddf82,UI,,,UI,Biblioteka
+e0aaa77caac35ceb,UI,,,UI,"Pozwala modom zobaczyć i podmienić tekst, zanim gra go wyświetli."
+e33072d0f0267e46,UI,,,UI,"Informuje mody, która kwestia dialogu lub który wybór zaraz się pojawi, wraz z identyfikatorem kwestii i mówcą."
+e6af4688a3314648,UI,,,UI,"Wspólne okno w grze (F1), w którym mody dodają karty ze swoimi narzędziami deweloperskimi i do debugowania. Obsługa myszą, padem i na Steam Decku."
+3839cc8c85e0dab6,UI,,,UI,"Czcionki dla tekstu, którego nie potrafią wyświetlić czcionki gry, oraz wczytywanie tekstur i paczek zasobów tak, by Direct3D 12 się nie wysypywał."
+507e6f82c57c2096,UI,,,UI,"Odczytuje i zmienia sloty zapisu i flagi zdarzeń gry oraz zachowuje kopię każdej wersji każdego zapisu, aby każdą zmianę można było cofnąć."
+77777bd04fb7c9ae,UI,,,UI,Niedostępne w tej wersji gry:

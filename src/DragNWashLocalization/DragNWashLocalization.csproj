@@ -5,8 +5,8 @@
     <AssemblyName>DragNWashLocalization</AssemblyName>
     <LangVersion>latest</LangVersion>
     <!-- Keep in sync with Plugin.PluginVersion; the installer shows this. -->
-    <Version>0.6.2</Version>
-    <FileVersion>0.6.2</FileVersion>
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0</FileVersion>
     <Nullable>disable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RootNamespace>DragNWashLocalization</RootNamespace>
@@ -91,6 +91,30 @@
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
       <HintPath>libs\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DragNWash.ModFramework">
+      <HintPath>libs\DragNWash.ModFramework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DragNWash.ModFramework.Dialogue">
+      <HintPath>libs\DragNWash.ModFramework.Dialogue.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DragNWash.ModFramework.ToolWindow">
+      <HintPath>libs\DragNWash.ModFramework.ToolWindow.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DragNWash.ModFramework.Assets">
+      <HintPath>libs\DragNWash.ModFramework.Assets.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DragNWash.ModFramework.Saves">
+      <HintPath>libs\DragNWash.ModFramework.Saves.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DragNWash.ModFramework.Text">
+      <HintPath>libs\DragNWash.ModFramework.Text.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Naelstrof.UnityScriptableSettings">

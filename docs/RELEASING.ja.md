@@ -16,6 +16,7 @@ GitHub Releases へアップロードします。
 - `src/DragNWashLocalization/libs/` にゲーム由来の参照アセンブリが揃っている
   （`.csproj` のコメントに一覧あり）
 - .NET SDK と PowerShell 7（`pwsh`）
+- [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) をこのリポジトリの隣にチェックアウトしてある（または `pack.ps1` に `-FrameworkPath` を渡す）。フレームワーク側の `libs/` はその `tools/copy-libs.ps1` でコピーしておく。`pack.ps1` がフレームワークもビルドし、中核・ライブラリ・プリローダーパッチャーを zip に入れます
 - GitHub Releases をコマンドラインで作る場合は [`gh`](https://cli.github.com/)
 
 ## 手順

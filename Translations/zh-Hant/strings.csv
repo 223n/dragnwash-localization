@@ -1888,3 +1888,29 @@ b439ffe3e5553ddc,UI,,,Conrad,你真舒服
 b92f91849d855b40,UI,,,UI,康拉德
 2d1e830624b2572a,UI,,,UI,萊恩
 e3becbaee46cc0df,UI,,,UI,語言（Mod）
+6e58b577a084052a,UI,,,UI,模組
+4850b174b713d88c,UI,,,UI,必要
+37fe885f1406e372,UI,,,UI,下次啟動時關閉
+9cc5c7f026ce0ca7,UI,,,UI,下次啟動時開啟
+fa20beae3754ffb1,UI,,,UI,其他模組需要這個模組。如仍要關閉，請再按一次「關」。
+d57274b504a45b33,UI,,,UI,安裝在 BepInEx/plugins 之外，無法在此關閉
+fd35647f8ecb2f7d,UI,,,UI,需要它的模組
+9e6151acb057025d,UI,,,UI,使用的模組
+b9d0dd131d07b5ad,UI,,,UI,Drag'n Wash 模組共用的工具，包含這個模組畫面。
+1236e3be635f17c7,UI,,,UI,讓 Drag'n Wash 支援 13 種語言。翻譯對話、選項、介面和設定。
+1cd1ca858aaea1d0,UI,,,UI,未載入。需要：
+eda662e0b5033180,UI,,,UI,未載入。無法與以下模組同時使用：
+a8d12a246b72d98c,UI,,,UI,未載入。原因請查看 BepInEx/LogOutput.log。
+7c862b0749e737c4,UI,,,UI,預載入修補程式。它在其他模組之前執行，無法在此關閉。
+74a883a037bc227f,UI,,,UI,設定
+21b111cbfe6e8fca,UI,,,UI,預設值
+bc5b45ae7b60692a,UI,,,UI,恢復預設值
+67529e7fdc6098a0,UI,,,UI,已立即儲存。部分模組需要重新啟動後才會套用變更。
+3d19e2d0333d7b19,UI,,,UI,請在 BepInEx/config 中該模組的設定檔裡修改此項。
+dc20b3d5d2cddf82,UI,,,UI,函式庫
+e0aaa77caac35ceb,UI,,,UI,讓模組在遊戲顯示文字之前檢視並取代文字。
+e33072d0f0267e46,UI,,,UI,告知模組即將顯示的對話台詞或選項，並附帶台詞 ID 和說話者。
+e6af4688a3314648,UI,,,UI,遊戲內的共用視窗（F1），模組可以在其中新增開發和除錯工具的分頁。支援滑鼠、手把和 Steam Deck。
+3839cc8c85e0dab6,UI,,,UI,為遊戲內建字型無法顯示的文字提供字型，並載入材質和資源包，避免 Direct3D 12 當機。
+507e6f82c57c2096,UI,,,UI,讀取和修改遊戲的存檔欄位和事件標記，並保留每個存檔每個版本的副本，任何修改都可以復原。
+77777bd04fb7c9ae,UI,,,UI,在此遊戲版本中無法使用：

@@ -1867,3 +1867,29 @@ b439ffe3e5553ddc,UI,,,Conrad,Qué gusto das.
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Idioma (Mod)
+6e58b577a084052a,UI,,,UI,Mods
+4850b174b713d88c,UI,,,UI,Obligatorio
+37fe885f1406e372,UI,,,UI,Desactivado desde el próximo inicio
+9cc5c7f026ce0ca7,UI,,,UI,Activado desde el próximo inicio
+fa20beae3754ffb1,UI,,,UI,Otros mods necesitan este. Pulsa Desactivado otra vez para desactivarlo de todos modos.
+d57274b504a45b33,UI,,,UI,"Instalado fuera de BepInEx/plugins, así que no se puede desactivar aquí"
+fd35647f8ecb2f7d,UI,,,UI,Lo necesitan
+9e6151acb057025d,UI,,,UI,Usa
+b9d0dd131d07b5ad,UI,,,UI,"Herramientas compartidas para mods de Drag'n Wash, incluida esta pantalla de mods."
+1236e3be635f17c7,UI,,,UI,"Juega a Drag'n Wash en 13 idiomas. Traduce diálogos, respuestas, interfaz y opciones."
+1cd1ca858aaea1d0,UI,,,UI,No cargado. Necesita
+eda662e0b5033180,UI,,,UI,No cargado. No puede funcionar junto con
+a8d12a246b72d98c,UI,,,UI,No cargado. El motivo está en BepInEx/LogOutput.log.
+7c862b0749e737c4,UI,,,UI,Parche de precarga. Se ejecuta antes que otros mods y no se puede desactivar aquí.
+74a883a037bc227f,UI,,,UI,Ajustes
+21b111cbfe6e8fca,UI,,,UI,Predeterminado
+bc5b45ae7b60692a,UI,,,UI,Restablecer valor predeterminado
+67529e7fdc6098a0,UI,,,UI,Se guarda al momento. Algunos mods solo aplican un cambio tras reiniciar.
+3d19e2d0333d7b19,UI,,,UI,Cámbialo en el archivo de configuración del mod en BepInEx/config.
+dc20b3d5d2cddf82,UI,,,UI,Biblioteca
+e0aaa77caac35ceb,UI,,,UI,Permite a los mods ver y reemplazar el texto antes de que el juego lo muestre.
+e33072d0f0267e46,UI,,,UI,"Avisa a los mods de qué línea de diálogo o respuesta está a punto de mostrarse, con su ID de línea y quién habla."
+e6af4688a3314648,UI,,,UI,"Una ventana compartida dentro del juego (F1) donde los mods añaden pestañas para sus herramientas de desarrollo y depuración. Se usa con ratón, mando y en Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Fuentes para el texto que las fuentes del juego no pueden mostrar, y carga de texturas y paquetes de recursos, hechas de forma que Direct3D 12 no se cierre."
+507e6f82c57c2096,UI,,,UI,"Lee y cambia las partidas guardadas y los indicadores de eventos del juego, y guarda una copia de cada versión de cada partida para poder deshacer cualquier cambio."
+77777bd04fb7c9ae,UI,,,UI,No disponible en esta versión del juego:

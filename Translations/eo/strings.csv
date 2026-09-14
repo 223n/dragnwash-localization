@@ -1866,3 +1866,29 @@ b439ffe3e5553ddc,UI,,,Conrad,Vi estas fek' agrabla
 b92f91849d855b40,UI,,,UI,Conrad
 2d1e830624b2572a,UI,,,UI,Ryan
 e3becbaee46cc0df,UI,,,UI,Lingvo (Mod)
+6e58b577a084052a,UI,,,UI,Modifoj
+4850b174b713d88c,UI,,,UI,Nepra
+37fe885f1406e372,UI,,,UI,Malŝaltita ekde la venonta lanĉo
+9cc5c7f026ce0ca7,UI,,,UI,Ŝaltita ekde la venonta lanĉo
+fa20beae3754ffb1,UI,,,UI,Aliaj modifoj bezonas ĉi tiun. Premu Malŝaltita denove por tamen malŝalti ĝin.
+d57274b504a45b33,UI,,,UI,"Instalita ekster BepInEx/plugins, do ĝi ne estas malŝaltebla ĉi tie"
+fd35647f8ecb2f7d,UI,,,UI,Bezonata de
+9e6151acb057025d,UI,,,UI,Uzas
+b9d0dd131d07b5ad,UI,,,UI,"Komunaj iloj por modifoj de Drag'n Wash, inkluzive de ĉi tiu ekrano de modifoj."
+1236e3be635f17c7,UI,,,UI,"Ludu Drag'n Wash en 13 lingvoj. Tradukas dialogojn, elektojn, fasadon kaj agordojn."
+1cd1ca858aaea1d0,UI,,,UI,Ne ŝargita. Ĝi bezonas
+eda662e0b5033180,UI,,,UI,Ne ŝargita. Ĝi ne funkcias kune kun
+a8d12a246b72d98c,UI,,,UI,Ne ŝargita. La kialo estas en BepInEx/LogOutput.log.
+7c862b0749e737c4,UI,,,UI,Antaŭŝarga fliko. Ĝi funkcias antaŭ aliaj modifoj kaj ne estas malŝaltebla ĉi tie.
+74a883a037bc227f,UI,,,UI,Agordoj
+21b111cbfe6e8fca,UI,,,UI,Defaŭlto
+bc5b45ae7b60692a,UI,,,UI,Restarigi defaŭlton
+67529e7fdc6098a0,UI,,,UI,Konservita tuj. Kelkaj modifoj uzas ŝanĝon nur post restarto.
+3d19e2d0333d7b19,UI,,,UI,Ŝanĝu ĉi tion en la agorda dosiero de la modifo en BepInEx/config.
+dc20b3d5d2cddf82,UI,,,UI,Biblioteko
+e0aaa77caac35ceb,UI,,,UI,Ebligas al modifaĵoj vidi kaj anstataŭigi tekston antaŭ ol la ludo montras ĝin.
+e33072d0f0267e46,UI,,,UI,"Sciigas modifaĵojn, kiu dialoga linio aŭ elekto tuj montriĝos, kun ĝia linia identigilo kaj parolanto."
+e6af4688a3314648,UI,,,UI,"Komuna fenestro en la ludo (F1), kie modifaĵoj aldonas langetojn por siaj programistaj kaj sencimigaj iloj. Uzebla per muso, ludregilo kaj sur Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Tiparoj por teksto, kiun la propraj tiparoj de la ludo ne povas montri, kaj ŝargado de teksturoj kaj valoraĵaj pakoj, farataj tiel, ke Direct3D 12 ne kolapsas."
+507e6f82c57c2096,UI,,,UI,"Legas kaj ŝanĝas la konservojn kaj eventajn flagojn de la ludo, kaj tenas kopion de ĉiu versio de ĉiu konservo, por ke ĉiu ŝanĝo estu malfarebla."
+77777bd04fb7c9ae,UI,,,UI,Ne disponebla en ĉi tiu versio de la ludo:

@@ -4,12 +4,18 @@
 # so this must run on a machine with Drag'n Wash installed and libs/ populated
 # (see the .csproj comment). CI cannot build this project.
 #
+# Since v1.0.0 the mod runs on Drag'n Wash ModFramework, which is built from its
+# own repository (a sibling folder by default) and shipped in the same zip.
+#
 # Usage:
 #   pwsh tools/pack.ps1            # version read from Plugin.cs
 #   pwsh tools/pack.ps1 -Version 0.2.0
+#   pwsh tools/pack.ps1 -FrameworkPath D:\src\dragnwash-modframework
 #
 # Output:
 #   release/DragNWashLocalization-<version>.zip
+#     BepInEx/plugins/DragNWash.ModFramework*/<the framework and its libraries>.dll
+#     BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
 #     BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 #     BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv
 #     BepInEx/plugins/DragNWashLocalization/dragnwash-menufont.bundle
@@ -23,7 +29,8 @@
 #     installer/Installer.ps1
 #     README.md, README.ja.md
 param(
-    [string]$Version
+    [string]$Version,
+    [string]$FrameworkPath
 )
 
 $ErrorActionPreference = 'Stop'
@@ -50,7 +57,33 @@ if ($Missing) {
     throw "Missing reference assemblies in src/DragNWashLocalization/libs/: $($Missing -join ', '). Copy them from your game install (see the .csproj comment)."
 }
 
-# 2. Build.
+# 2. Build the framework, then the mod against it.
+if (-not $FrameworkPath) {
+    $FrameworkPath = Join-Path (Split-Path -Parent $Root) 'dragnwash-modframework'
+}
+if (-not (Test-Path -LiteralPath (Join-Path $FrameworkPath 'src/DragNWash.ModFramework'))) {
+    throw "Drag'n Wash ModFramework not found at '$FrameworkPath'. Pass -FrameworkPath."
+}
+# The framework and the libraries the mod depends on. Every one is shipped, so
+# the Mods screen never lists a library as missing.
+$FrameworkProjects = @(
+    'DragNWash.ModFramework',
+    'DragNWash.ModFramework.Text',
+    'DragNWash.ModFramework.Dialogue',
+    'DragNWash.ModFramework.ToolWindow',
+    'DragNWash.ModFramework.Assets',
+    'DragNWash.ModFramework.Saves'
+)
+foreach ($name in $FrameworkProjects + 'DragNWash.ModFramework.Preloader') {
+    $proj = Join-Path $FrameworkPath "src/$name/$name.csproj"
+    Write-Host "Building $proj ..."
+    dotnet build $proj -c Release
+    if ($LASTEXITCODE -ne 0) { throw "Build of $name failed." }
+}
+foreach ($name in $FrameworkProjects) {
+    Copy-Item -LiteralPath (Join-Path $FrameworkPath "src/$name/bin/Release/$name.dll") -Destination (Join-Path $SrcDir 'libs') -Force
+}
+
 Write-Host "Building $Project ..."
 dotnet build $Project -c Release
 if ($LASTEXITCODE -ne 0) {
@@ -84,6 +117,18 @@ $TranslationsDir = Join-Path $PluginDir 'Translations'
 New-Item -ItemType Directory -Force -Path $TranslationsDir | Out-Null
 
 Copy-Item -LiteralPath $Dll -Destination $PluginDir
+foreach ($name in $FrameworkProjects) {
+    $dir = Join-Path $Stage "BepInEx/plugins/$name"
+    New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    Copy-Item -LiteralPath (Join-Path $FrameworkPath "src/$name/bin/Release/$name.dll") -Destination $dir
+}
+$PatcherDir = Join-Path $Stage 'BepInEx/patchers'
+New-Item -ItemType Directory -Force -Path $PatcherDir | Out-Null
+Copy-Item -LiteralPath (Join-Path $FrameworkPath 'src/DragNWash.ModFramework.Preloader/bin/Release/DragNWash.ModFramework.Preloader.dll') -Destination $PatcherDir
+$FrameworkLicense = Join-Path $FrameworkPath 'LICENSE'
+if (Test-Path -LiteralPath $FrameworkLicense) {
+    Copy-Item -LiteralPath $FrameworkLicense -Destination (Join-Path $Stage 'BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt')
+}
 Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
 # Menu font for systems whose OS fonts have no CJK glyphs (Steam Deck).
 Copy-Item -LiteralPath (Join-Path $Root 'assets/menufont/dragnwash-menufont.bundle') -Destination $PluginDir
