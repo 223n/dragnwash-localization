@@ -23,6 +23,9 @@ Installing is really easy.
 2. Double-click **`Install.exe`**.
 3. Pick a language and **click Install / Update**.
 
+> [!TIP]
+> The same steps are also on Steam as a guide: [English](https://steamcommunity.com/sharedfiles/filedetails/?id=3801420947) / [日本語](https://steamcommunity.com/sharedfiles/filedetails/?id=3801418794). Drag'n Wash has no Steam Workshop, so the mod itself is downloaded from GitHub Releases.
+
 ## See? EASY. ( ･´ｰ･｀) HEH! YIP!
 
 The installer finds the game through Steam on its own (or lets you pick the folder). If BepInEx is not installed yet, it downloads the official 5.4.23.5 release, verifies its SHA-256, and unpacks it for you. Then just start the game from Steam.
@@ -295,6 +298,18 @@ Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localiza
 Released as v0.6.0 (per-line translations: English said by several characters can be translated differently for each of them; checked with the game update of September 14, 2026). v0.5.0 added changing language from the game's own Options screen; v0.4.0 brought thirteen languages, per-language fonts, an About tab and an installer in English, Japanese and Chinese; v0.3.0 added Steam Deck support. Windows on ARM has been verified too (the game itself needs `-force-d3d11` there). macOS does not work at the moment because of a known BepInEx-side issue (see the note under [Steam Deck / Linux](#steam-deck--linux-verified)). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
+
+## Roadmap: v1.0.0 and Drag'n Wash ModFramework
+
+The next major version, **v1.0.0**, will rebuild this mod on top of a new prerequisite mod, **Drag'n Wash ModFramework** (working name).
+
+- **What the framework is for.** Much of what this mod does to hook into the game is useful to other mods as well: adding settings to the game's Options screen, an in-game menu, rewriting text before it is shown, dialogue and choice events, loading assets safely on Direct3D 12, and an installer. The framework will offer these to any mod through an API, so each mod does not have to patch the game on its own.
+- **Why.** When the game updates, only the framework has to follow the change, and the mods built on it keep working. The update of September 14, 2026 is a good example of the kind of change that would be absorbed in one place.
+- **This mod becomes its first user.** Drag'n Wash Localization will be moved onto the framework piece by piece. Because the inner workings change so much, that release will be v1.0.0.
+- **For translators.** The goal is to keep the CSV format and the translation tools as they are, so existing packs and contributions carry over.
+- **Until then.** Fixes and translation updates continue as 0.6.x releases.
+
+There is no release date yet. If you make mods for Drag'n Wash and have ideas for what the framework should provide, please open an issue.
 
 ## Contributing translations
 
