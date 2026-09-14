@@ -1,51 +1,43 @@
 using System;
-using System.Collections.Generic;
-using HarmonyLib;
+using DragNWash.ModFramework.Text;
 using TMPro;
-using UnityEngine;
 
 namespace DragNWashLocalization
 {
+    // Translation of every TextMeshPro text, as a rewriter on Drag'n Wash
+    // ModFramework's text library. The library owns the hooks on TMP_Text (the
+    // text setter, both SetText overloads and prefab text on OnEnable), remembers
+    // the text the game set on each component, and re-runs rewriters from that
+    // source on RefreshAll, so a locale switch re-translates text on screen.
     internal static class TmpTextHook
     {
-        // The game only sets a TMP_Text's text when it wants to change it. Once
-        // we rewrite English -> a translation, that translation is what the
-        // component now holds, and switching locale never re-runs the setter,
-        // so text translated once would stay frozen in the first language.
-        //
-        // Remember the original English source per component, and on locale
-        // switch re-apply the new translation to every component we have seen.
-        // Numbers/resolutions/timers are skipped: they are the game's own
-        // dynamic values and keep updating themselves.
-        private static readonly Dictionary<TMP_Text, string> SourceByComponent =
-            new Dictionary<TMP_Text, string>();
+        private static IDisposable _rewriter;
 
-        // Set while RefreshAll re-applies text so the hook does not re-translate
-        // (or "discover") the translations it just wrote.
-        internal static bool SuppressRewrite;
-
-        internal static void Rewrite(TMP_Text instance, ref string text)
+        internal static void Install()
         {
-            if (string.IsNullOrEmpty(text))
+            _rewriter = GameText.AddRewriter(Plugin.PluginGuid, Rewrite);
+            Plugin.Log(GameText.IsAvailable
+                ? "[text] Translating through Drag'n Wash ModFramework's text library."
+                : "[text] The text library is unavailable on this game build; nothing will be translated.");
+        }
+
+        private static void Rewrite(TextContext context)
+        {
+            string source = context.Source;
+            TMP_Text instance = context.Component;
+            if (string.IsNullOrEmpty(source))
             {
                 return;
             }
 
-            if (SuppressRewrite)
-            {
-                return;
-            }
-
-            string source = text;
             try
             {
                 // A row for this exact line of dialogue wins over the hash row
                 // shared by every line with the same English.
                 if (instance != null && LineIdContext.TryGetTranslation(instance, source, out string perLine, out string lineId))
                 {
-                    SourceByComponent[instance] = source;
                     RightToLeft.Apply(instance, perLine);
-                    text = perLine;
+                    context.Text = perLine;
                     if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
                         TranslationStore.IsFirstApplication(lineId + "|" + source))
                     {
@@ -54,29 +46,25 @@ namespace DragNWashLocalization
                     return;
                 }
 
-                bool translated = TranslationStore.TryGetTranslation(source, out var translation);
+                bool translated = TranslationStore.TryGetTranslation(source, out string translation);
                 bool ignored = IgnoreRules.IsIgnored(source);
 
-                if (instance != null && !ignored)
-                {
-                    SourceByComponent[instance] = source;
-                }
-                // Every text is checked, not only tracked ones: a component that
+                // Every text is checked, not only translated ones: a component that
                 // showed Hebrew may be reused for a name or a number.
                 RightToLeft.Apply(instance, translated ? translation : source);
 
                 if (translated)
                 {
-                    text = translation;
+                    context.Text = translation;
                 }
-                else
+                else if (!context.IsRefresh)
                 {
                     // Queues in memory; Plugin.Update writes the discovery CSV.
                     TranslationStore.NoteDiscoveredText(source);
                 }
 
-                // Slider values, resolutions and the like would otherwise bury
-                // the lines a translator is looking for. An explicit entry in
+                // Slider values, resolutions and the like would otherwise bury the
+                // lines a translator is looking for. An explicit entry in
                 // strings.csv still wins, hence the `translated` check first.
                 if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
                     TranslationStore.IsFirstApplication(source) &&
@@ -95,198 +83,17 @@ namespace DragNWashLocalization
         }
 
         // A component we have already translated reports its translation from
-        // .text, not the English it started as. UiTextDumper needs the source.
+        // .text, not the English it started as. The dumpers need the source.
         internal static bool TryGetTrackedSource(TMP_Text instance, out string source)
         {
-            return SourceByComponent.TryGetValue(instance, out source);
+            return GameText.TryGetSource(instance, out source) && !IgnoreRules.IsIgnored(source);
         }
 
-        // Text authored in a prefab and never assigned at runtime is
-        // deserialized straight into m_text: neither the setter nor SetText is
-        // ever called, so the hook above never sees it. That covers most of the
-        // game's static UI - the pause menu, the main menu. Catch those when
-        // the component is enabled, which is also when a menu is shown.
-        internal static void TranslateExisting(TMP_Text instance)
-        {
-            if (instance == null || SuppressRewrite)
-            {
-                return;
-            }
-
-            try
-            {
-                // Already seen through the setter; its text is ours to manage
-                // and re-reading it here would treat a translation as a source.
-                if (SourceByComponent.ContainsKey(instance))
-                {
-                    return;
-                }
-
-                string source = instance.text;
-                if (string.IsNullOrEmpty(source))
-                {
-                    return;
-                }
-
-                bool translated = TranslationStore.TryGetTranslation(source, out var translation);
-                bool ignored = IgnoreRules.IsIgnored(source);
-
-                if (!ignored)
-                {
-                    SourceByComponent[instance] = source;
-                }
-                RightToLeft.Apply(instance, translated ? translation : source);
-
-                if (translated)
-                {
-                    // Assigning would re-enter the setter patch and treat the
-                    // translation as a new source string.
-                    SuppressRewrite = true;
-                    try
-                    {
-                        instance.text = translation;
-                    }
-                    finally
-                    {
-                        SuppressRewrite = false;
-                    }
-                }
-                else
-                {
-                    TranslationStore.NoteDiscoveredText(source);
-                }
-
-                if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
-                    TranslationStore.IsFirstApplication(source) &&
-                    (translated || !ignored))
-                {
-                    Plugin.Log(translated
-                        ? $"[OK] \"{source}\" -> \"{translation}\""
-                        : $"[--] \"{source}\"");
-                }
-            }
-            catch (Exception ex)
-            {
-                Plugin.Log($"[text] Failed to localize existing text: {ex.Message}");
-            }
-        }
-
-        // Re-apply the currently loaded locale to every tracked component.
+        // Re-apply the currently loaded locale to every text on screen.
         // Runs on the main thread (Plugin.Update); never from a render callback.
         internal static void RefreshAll()
         {
-            var snapshot = new List<KeyValuePair<TMP_Text, string>>(SourceByComponent);
-            var dead = new List<TMP_Text>();
-
-            SuppressRewrite = true;
-            try
-            {
-                foreach (KeyValuePair<TMP_Text, string> kv in snapshot)
-                {
-                    TMP_Text instance = kv.Key;
-                    if (instance == null)
-                    {
-                        dead.Add(instance);
-                        continue;
-                    }
-
-                    string source = kv.Value;
-                    bool translated = TranslationStore.TryGetTranslation(source, out var translation);
-                    // A line on screen keeps its per-line translation in the new locale.
-                    if (LineIdContext.TryGetTranslation(instance, source, out string perLine, out _))
-                    {
-                        translated = true;
-                        translation = perLine;
-                    }
-
-                    // The game's typewriter reveals dialogue by raising
-                    // maxVisibleCharacters up to the current text's length. If
-                    // that text was fully shown, lift the cap before swapping in
-                    // a longer string, or it comes out truncated ("HEY! This is th").
-                    int shownBefore = instance.textInfo != null ? instance.textInfo.characterCount : 0;
-                    bool fullyShown = instance.maxVisibleCharacters >= shownBefore;
-
-                    RightToLeft.Apply(instance, translated ? translation : source);
-                    instance.text = translated ? translation : source;
-                    if (fullyShown && instance.maxVisibleCharacters != int.MaxValue)
-                    {
-                        instance.maxVisibleCharacters = int.MaxValue;
-                    }
-
-                    // Re-applying on a locale switch is exactly what the verbose
-                    // log exists to show, but the suppression above bypasses the
-                    // normal hook path, so log it here instead. AppliedOnce is
-                    // cleared by TranslationStore.Load, so each switch logs its
-                    // strings once.
-                    if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
-                        TranslationStore.IsFirstApplication(source))
-                    {
-                        Plugin.Log(translated
-                            ? $"[OK] \"{source}\" -> \"{translation}\""
-                            : $"[--] \"{source}\"");
-                    }
-                }
-            }
-            finally
-            {
-                SuppressRewrite = false;
-            }
-
-            foreach (TMP_Text key in dead)
-            {
-                SourceByComponent.Remove(key);
-            }
-        }
-    }
-
-    // Rewrite the argument before TMP builds its internal text buffers. Calling
-    // the setter again from a postfix needlessly re-enters TMP's update path.
-    [HarmonyPatch(typeof(TMP_Text), "text", MethodType.Setter)]
-    internal static class TmpText_Set_Patch
-    {
-        private static void Prefix(TMP_Text __instance, ref string __0)
-        {
-            TmpTextHook.Rewrite(__instance, ref __0);
-        }
-    }
-
-    // In the shipped TMP assembly both overloads write their own buffers and
-    // neither calls the text setter or the other overload. Patch both paths.
-    [HarmonyPatch(typeof(TMP_Text), "SetText", new Type[] { typeof(string) })]
-    internal static class TmpText_SetText_Patch
-    {
-        private static void Prefix(TMP_Text __instance, ref string __0)
-        {
-            TmpTextHook.Rewrite(__instance, ref __0);
-        }
-    }
-
-    [HarmonyPatch(typeof(TMP_Text), "SetText", new Type[] { typeof(string), typeof(bool) })]
-    internal static class TmpText_SetTextWithBool_Patch
-    {
-        private static void Prefix(TMP_Text __instance, ref string __0)
-        {
-            TmpTextHook.Rewrite(__instance, ref __0);
-        }
-    }
-
-    // Static prefab text reaches us only here. Postfix so the component has
-    // finished its own enable work before the text changes underneath it.
-    [HarmonyPatch(typeof(TextMeshProUGUI), "OnEnable")]
-    internal static class TmpUgui_OnEnable_Patch
-    {
-        private static void Postfix(TextMeshProUGUI __instance)
-        {
-            TmpTextHook.TranslateExisting(__instance);
-        }
-    }
-
-    [HarmonyPatch(typeof(TextMeshPro), "OnEnable")]
-    internal static class TmpWorld_OnEnable_Patch
-    {
-        private static void Postfix(TextMeshPro __instance)
-        {
-            TmpTextHook.TranslateExisting(__instance);
+            GameText.RefreshAll();
         }
     }
 }

@@ -93,6 +93,14 @@
       <HintPath>libs\UnityEngine.AssetBundleModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="DragNWash.ModFramework">
+      <HintPath>libs\DragNWash.ModFramework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DragNWash.ModFramework.Text">
+      <HintPath>libs\DragNWash.ModFramework.Text.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="Naelstrof.UnityScriptableSettings">
       <HintPath>libs\Naelstrof.UnityScriptableSettings.dll</HintPath>
       <Private>false</Private>

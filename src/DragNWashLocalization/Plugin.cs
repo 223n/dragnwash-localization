@@ -12,7 +12,8 @@ using UnityEngine.InputSystem;
 namespace DragNWashLocalization
 {
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
-    [BepInDependency(ModFrameworkInfo.FrameworkGuid, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(ModFrameworkInfo.FrameworkGuid, BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(DragNWash.ModFramework.Text.GameText.Guid, BepInDependency.DependencyFlags.HardDependency)]
     public partial class Plugin : BaseUnityPlugin
     {
         public const string PluginGuid = "com.tomxv.dragnwash.localization";
@@ -203,6 +204,7 @@ namespace DragNWashLocalization
             OptionsLanguage.Install(harmony);
             LineIdContext.Install(harmony);
             harmony.PatchAll();
+            TmpTextHook.Install();
 
             Logger.LogInfo($"DragNWashLocalization loaded. TargetLocale={TargetLocale.Value}, loaded entries={TranslationStore.EntryCount}, ignore patterns={IgnoreRules.PatternCount}, graphics={SystemInfo.graphicsDeviceType}");
 
