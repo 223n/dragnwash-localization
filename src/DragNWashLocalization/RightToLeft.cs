@@ -6,8 +6,11 @@ namespace DragNWashLocalization
 {
     // Hebrew (and any other right-to-left locale someone adds) has to be drawn
     // right-to-left. TextMeshPro does not detect that from the text; it has an
-    // explicit per-component switch, so flip it on every component we translate
-    // while an RTL locale is loaded, and back off when the locale changes.
+    // explicit per-component switch. Flip it on for a component while an RTL
+    // locale is loaded and the text it is about to show is written in an RTL
+    // script, and off otherwise. Text the pack leaves in English - the names in
+    // the credits, numbers, the version string - stays left-to-right, or TMP
+    // would print it backwards.
     //
     // Translation files stay in normal logical order - the order the language is
     // typed and stored. TMP reverses it for display. Because TMP reverses the
@@ -43,20 +46,38 @@ namespace DragNWashLocalization
             Active = active;
         }
 
-        public static void Apply(TMP_Text instance)
+        public static void Apply(TMP_Text instance, string shownText)
         {
             if (instance == null) return;
             try
             {
-                if (instance.isRightToLeftText != Active)
+                bool rtl = Active && HasRightToLeftLetters(shownText);
+                if (instance.isRightToLeftText != rtl)
                 {
-                    instance.isRightToLeftText = Active;
+                    instance.isRightToLeftText = rtl;
                 }
             }
             catch (Exception ex)
             {
                 Plugin.Log($"[rtl] Could not set the text direction: {ex.Message}");
             }
+        }
+
+        // Hebrew, Arabic (with its supplements and presentation forms), Syriac,
+        // Thaana and N'Ko. Rich-text tags are Latin and do not count.
+        internal static bool HasRightToLeftLetters(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return false;
+            foreach (char c in text)
+            {
+                if ((c >= '\u0590' && c <= '\u08FF') ||
+                    (c >= '\uFB1D' && c <= '\uFDFF') ||
+                    (c >= '\uFE70' && c <= '\uFEFC'))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
