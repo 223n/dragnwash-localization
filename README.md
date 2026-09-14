@@ -148,13 +148,15 @@ The plugin DLL should end up at:
 <Drag'n Wash folder>/BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 ```
 
+Next to it, the zip also brings Drag'n Wash ModFramework, which the mod runs on: one folder per plugin, `BepInEx/plugins/DragNWash.ModFramework`, `DragNWash.ModFramework.Text`, `.Dialogue`, `.ToolWindow`, `.Assets` and `.Saves`, and `BepInEx/patchers/DragNWash.ModFramework.Preloader.dll`. Keep all of them. If another mod already installed a newer ModFramework, keep the newer files.
+
 Do not leave the ZIP itself or an extra `DragNWashLocalization-<version>` directory between `plugins` and the DLL.
 
 ### 4. Launch and verify
 
 Start Drag'n Wash. A manual install starts in Japanese (the installer uses the language you picked).
 
-To change language, open **Options** and use **Language (Mod)** at the end of the Gameplay section. Picking a language switches the game to it right away; press **Save** to keep it, or **Back** to return to the saved language. It works with a mouse or a gamepad, including on the Steam Deck. The **F1** menu's **Tools** tab can also switch language, and saves the choice at once.
+To change language, open **Options** and use **Language (Mod)** at the end of the Gameplay section. Picking a language switches the game to it right away; press **Save** to keep it, or **Back** to return to the saved language. It works with a mouse or a gamepad, including on the Steam Deck. The **F1** window's **Translation** tab can also switch language, and saves the choice at once.
 
 A successful installation also produces a `DragNWashLocalization` startup entry in `BepInEx/LogOutput.log`.
 
@@ -254,10 +256,10 @@ Exclusions affect discovery only. Translation lookup happens first, so any entry
 
 ### In-game debug menu
 
-Press **F1** to toggle the debug window. The key is configurable. Drag the title bar to move the window, and drag the lower-right corner to resize it.
+Press **F1** to toggle the tool window, shared with other mods built on Drag'n Wash ModFramework. The key is `[General] ToggleKey` in `BepInEx/config/com.tomxv.dragnwash.modframework.toolwindow.cfg`. Drag the title bar to move the window, and drag the lower-right corner to resize it. This mod adds four tabs:
 
 - **Activity log:** Displays translation results and processing logs. `Follow: ON/OFF` controls automatic scrolling to the latest entry; scrolling manually disables following. `Clear log` clears the display and resets duplicate suppression. The log keeps the 100 most recent entries.
-- **Tools:** Switch the language without restarting (the buttons show each language's name from `name.txt`; **English** turns translation off). Export dialogue (`Export loaded dialogue`), UI text (`Export UI text`), or the working copy with English beside each line (`Export working copy`), rebuild the published file (`Hash for commit`), and run the layout check.
+- **Translation:** Switch the language without restarting (the buttons show each language's name from `name.txt`; **English** turns translation off). Export dialogue (`Export loaded dialogue`), UI text (`Export UI text`), or the working copy with English beside each line (`Export working copy`), rebuild the published file (`Hash for commit`), and run the layout check.
 - **Saves:** Restore an earlier save, step the level index, or toggle save flags. See below.
 - **About:** The version and build the mod is running, who made it, the license, and what this session loaded. Useful to quote in a bug report.
 
@@ -267,9 +269,9 @@ The **Check translation layout** button exports strings at risk of overflowing t
 
 Whenever the game writes a save, the plugin stores a versioned copy in:
 
-`BepInEx/plugins/DragNWashLocalization/SaveHistory/<slot>/`
+`BepInEx/SaveHistory/<slot>/`
 
-It keeps 30 versions per slot by default. You can change this with `[Debug] SaveHistoryKeep`.
+It keeps 30 versions per slot by default. You can change this with `[History] Keep` in `BepInEx/config/com.tomxv.dragnwash.modframework.saves.cfg`, or from the Mods screen. Copies kept by earlier versions of the mod in `BepInEx/plugins/DragNWashLocalization/SaveHistory` are moved there on the first start.
 
 Open **F1 → Saves**, select a slot, and click **Restore** on the version you want. Then return to the title screen and load that slot for the restored save to take effect. Saving again during gameplay will overwrite the active save as usual.
 
@@ -291,7 +293,7 @@ If the game still crashes, open Steam and go to **Drag'n Wash → Properties →
 
 The plugin startup entry in `BepInEx/LogOutput.log` reports the graphics API currently in use as `graphics=...`.
 
-Lowering `[Font] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.localization.cfg` reduces the number of font atlases. Raising it produces sharper text. The default is 80.
+Lowering `[Fonts] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.modframework.assets.cfg` reduces the number of font atlases. Raising it produces sharper text. The default is 80.
 
 ## Current status
 
@@ -299,17 +301,16 @@ Released as v0.6.1 (fixes names and other untranslated text showing backwards in
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
 
-## Roadmap: v1.0.0 and Drag'n Wash ModFramework
+## Drag'n Wash ModFramework
 
-The next major version, **v1.0.0**, will rebuild this mod on top of a new prerequisite mod, **Drag'n Wash ModFramework** (working name).
+From v1.0.0 this mod runs on **Drag'n Wash ModFramework**, a prerequisite mod that other Drag'n Wash mods can build on too.
 
-- **What the framework is for.** Much of what this mod does to hook into the game is useful to other mods as well: adding settings to the game's Options screen, an in-game menu, rewriting text before it is shown, dialogue and choice events, loading assets safely on Direct3D 12, and an installer. The framework will offer these to any mod through an API, so each mod does not have to patch the game on its own.
-- **Why.** When the game updates, only the framework has to follow the change, and the mods built on it keep working. The update of September 14, 2026 is a good example of the kind of change that would be absorbed in one place.
-- **This mod becomes its first user.** Drag'n Wash Localization will be moved onto the framework piece by piece. Because the inner workings change so much, that release will be v1.0.0.
-- **For translators.** The goal is to keep the CSV format and the translation tools as they are, so existing packs and contributions carry over.
-- **Until then.** Fixes and translation updates continue as 0.6.x releases.
+- **What it does.** Much of what this mod did to hook into the game is useful to other mods as well, so it now lives in the framework: the **Mods** screen (Options → Mods) that lists every installed mod with its settings and an on/off switch, the language row in the game's Options screen, rewriting text before it is shown, dialogue and choice events, the shared F1 tool window, fonts that are safe on Direct3D 12, and save history.
+- **Why.** When the game updates, only the framework has to follow the change, and the mods built on it keep working. The update of September 14, 2026 is the kind of change it absorbs in one place.
+- **For players.** The release zip and the installers include the framework. Uninstalling this mod keeps the framework when another mod is installed.
+- **For translators.** The CSV format and the translation tools are unchanged; existing packs and contributions carry over.
 
-There is no release date yet. If you make mods for Drag'n Wash and have ideas for what the framework should provide, please open an issue.
+If you make mods for Drag'n Wash and have ideas for what the framework should provide, please open an issue.
 
 ## Contributing translations
 

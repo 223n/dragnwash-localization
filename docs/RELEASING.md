@@ -11,6 +11,7 @@ Translation-only changes do not require a build. Translators should see [CONTRIB
 - The Steam version of Drag'n Wash is installed.
 - All game-derived reference assemblies are present in `src/DragNWashLocalization/libs/`. See the comments in the `.csproj` file for the complete list.
 - The .NET SDK and PowerShell 7 (`pwsh`) are installed.
+- [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) is checked out next to this repository (or pass `-FrameworkPath` to `pack.ps1`), with its own `libs/` copied by its `tools/copy-libs.ps1`. `pack.ps1` builds it and ships the core, the libraries and the preloader patcher in the zip.
 - To create GitHub Releases from the command line, install [`gh`](https://cli.github.com/).
 
 ## Procedure

@@ -148,13 +148,15 @@ BepInEx 5の **Windows x64（Mono）版**をダウンロードし、アーカイ
 <Drag'n Washのフォルダ>/BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 ```
 
+zip には、この Mod が動く土台の Drag'n Wash ModFramework も入っています。プラグインごとのフォルダ `BepInEx/plugins/DragNWash.ModFramework`、`DragNWash.ModFramework.Text`、`.Dialogue`、`.ToolWindow`、`.Assets`、`.Saves` と、`BepInEx/patchers/DragNWash.ModFramework.Preloader.dll` です。すべて残してください。ほかの Mod がもっと新しい ModFramework を入れている場合は、新しい方を残してください。
+
 ZIPファイルや `DragNWashLocalization-<version>` フォルダが `plugins` とDLLの間に入らないようにしてください。
 
 ### 4. 起動して確認する
 
 Drag'n Washを起動します。手動導入では日本語で始まります（インストーラーを使った場合は選んだ言語）。
 
-言語を変えるときは **Options** を開き、ゲームプレイの項目の最後にある **言語（Mod）** を使います。選んだ時点でその言語に切り替わり、**Save** で確定、**Back** で保存済みの言語に戻ります。マウスでもゲームパッドでも操作でき、Steam Deck でも使えます。**F1** メニューの **Tools** タブからも切り替えられ、こちらはその場で確定します。
+言語を変えるときは **Options** を開き、ゲームプレイの項目の最後にある **言語（Mod）** を使います。選んだ時点でその言語に切り替わり、**Save** で確定、**Back** で保存済みの言語に戻ります。マウスでもゲームパッドでも操作でき、Steam Deck でも使えます。**F1** ウィンドウの **Translation** タブからも切り替えられ、こちらはその場で確定します。
 
 `BepInEx/LogOutput.log` に `DragNWashLocalization` の起動行が記録されていれば、プラグインは読み込まれています。
 
@@ -263,13 +265,14 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
 
 ### ゲーム内デバッグメニュー
 
-**F1キー** でデバッグウィンドウを開閉できます（設定で変更可能）。
-タイトル部分をドラッグして移動、右下の角をドラッグしてサイズを変更できます。
+**F1キー** で、Drag'n Wash ModFramework を使うほかの Mod と共通のツールウィンドウを開閉できます
+（キーは `BepInEx/config/com.tomxv.dragnwash.modframework.toolwindow.cfg` の `[General] ToggleKey`）。
+タイトル部分をドラッグして移動、右下の角をドラッグしてサイズを変更できます。この Mod は次の 4 つのタブを足します。
 
 - **Activity log**: 翻訳結果と処理ログを表示します。`Follow: ON/OFF` で末尾への
   自動追従を切り替えられ、手動スクロールすると追従が止まります。`Clear log` は
   表示と重複抑制をリセットします。ログは直近100件を保持します。
-- **Tools**: 再起動なしで言語を切り替えます（ボタン名は各言語の `name.txt`、**English** は翻訳オフ）。
+- **Translation**: 再起動なしで言語を切り替えます（ボタン名は各言語の `name.txt`、**English** は翻訳オフ）。
   会話の書き出し（`Export loaded dialogue`）、UI文言の書き出し（`Export UI text`）、
   原文つき作業ファイルの書き出し（`Export working copy`）、公開ファイルの作り直し（`Hash for commit`）、
   レイアウトチェックもここから行います。
@@ -283,8 +286,9 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
 ### セーブを1つ前に戻す（翻訳確認用）
 
 ゲームがセーブを書き込むたびに、プラグインが
-`BepInEx/plugins/DragNWashLocalization/SaveHistory/<スロット>/` に世代コピーを残します
-（スロットごとに既定30世代、`[Debug] SaveHistoryKeep` で変更可）。
+`BepInEx/SaveHistory/<スロット>/` に世代コピーを残します
+（スロットごとに既定30世代、`BepInEx/config/com.tomxv.dragnwash.modframework.saves.cfg` の `[History] Keep` か Mods 画面で変更可）。
+以前の版が `BepInEx/plugins/DragNWashLocalization/SaveHistory` に残したコピーは、初回起動時にそこへ移ります。
 **F1 → Saves** タブでスロットを選び、戻したい世代の **Restore** を押すと、その世代が
 ゲームのセーブファイルに書き戻されます。**その後タイトル画面に戻ってスロットをロード**すると
 反映されます（ゲーム内でセーブすると再び上書きされます）。復元前の状態も自動で
@@ -327,7 +331,7 @@ Direct3D 11 や Steam Deck の Vulkan など他の描画 API は実行中のア�
 `BepInEx/LogOutput.log` のプラグイン起動行で、実際に使われている描画APIを
 `graphics=...` として確認できます。
 
-`BepInEx/config/com.tomxv.dragnwash.localization.cfg` の `[Font] AtlasPointSize`
+`BepInEx/config/com.tomxv.dragnwash.modframework.assets.cfg` の `[Fonts] AtlasPointSize`
 を下げると、フォントアトラスの枚数が減り、上げると文字が鮮明になります（既定80）。
 
 ## 現在のステータス
@@ -337,17 +341,16 @@ CJKフォント表示、会話・UIの一括抽出、ゲーム内デバッグメ
 翻訳者向けドキュメント、リリース手順を実装・実機確認済みです。
 詳細は [docs/PLAN.ja.md](docs/PLAN.ja.md) を参照してください。
 
-## 今後の予定：v1.0.0 と Drag'n Wash ModFramework
+## Drag'n Wash ModFramework
 
-次のメジャーバージョン **v1.0.0** では、この Mod を新しい前提 Mod **Drag'n Wash ModFramework**（仮称）の上に作り直す予定です。
+v1.0.0 から、この Mod は前提 Mod **Drag'n Wash ModFramework** の上で動きます。ほかの Drag'n Wash の Mod も、この上に作れます。
 
-- **フレームワークの役割。** この Mod がゲームに入り込むために作ってきた仕組みの多くは、ほかの Mod にも役立ちます。ゲームの Options 画面への設定の追加、ゲーム内メニュー、表示前のテキストの書き換え、台詞や選択肢のイベント、Direct3D 12 で安全にアセットを読み込む仕組み、インストーラーなどです。フレームワークはこれらを API としてどの Mod にも提供し、Mod ごとにゲームへパッチを当てなくて済むようにします
-- **目的。** ゲームがアップデートされたとき、追従が必要なのはフレームワークだけになり、その上に乗る Mod は動き続けられます。2026 年 9 月 14 日のアップデートのような変更を、1 か所で吸収するためのものです
-- **この Mod が最初の利用者。** Drag'n Wash Localization を、機能ごとに少しずつフレームワークの上へ移します。中の仕組みが大きく変わるため、そのリリースを v1.0.0 とします
-- **翻訳者の方へ。** CSV の形式と翻訳用ツールはそのまま使えるようにし、今までの翻訳パックや協力をそのまま引き継ぐことを目標にしています
-- **それまでの間。** 修正や訳の更新は 0.6.x として続けます
+- **役割。** この Mod がゲームに入り込むために作ってきた仕組みの多くは、ほかの Mod にも役立つので、フレームワークに移しました。入っている Mod を設定やオン・オフと一緒に一覧できる **Mods** 画面（Options → Mods）、ゲームの Options 画面の言語の行、表示前のテキストの書き換え、台詞や選択肢のイベント、共通の F1 ツールウィンドウ、Direct3D 12 で安全なフォント、セーブ履歴です
+- **目的。** ゲームがアップデートされたとき、追従が必要なのはフレームワークだけになり、その上に乗る Mod は動き続けられます。2026 年 9 月 14 日のアップデートのような変更を、1 か所で吸収します
+- **プレイヤーの方へ。** リリースの zip とインストーラーにフレームワークも入っています。この Mod をアンインストールしても、ほかの Mod が入っていればフレームワークは残します
+- **翻訳者の方へ。** CSV の形式と翻訳用ツールは変わりません。今までの翻訳パックや協力はそのまま使えます
 
-公開時期は未定です。Drag'n Wash の Mod を作っていて、フレームワークに欲しい機能があれば、Issue で教えてください。
+Drag'n Wash の Mod を作っていて、フレームワークに欲しい機能があれば、Issue で教えてください。
 
 ## 翻訳に参加する
 
