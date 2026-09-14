@@ -25,6 +25,9 @@ namespace DragNWashLocalization
     internal static class TranslationStore
     {
         private static readonly Dictionary<string, string> ByKey = new Dictionary<string, string>(StringComparer.Ordinal);
+        // line:xxxxxxxx -> translation. Wins over ByKey for that one line of
+        // dialogue; see LineIdContext.
+        private static readonly Dictionary<string, string> ByLineId = new Dictionary<string, string>(StringComparer.Ordinal);
         // Source text for keys that arrived as source_en rows. Only for
         // logging and exports; lookups never need it.
         private static readonly Dictionary<string, string> SourceByKey = new Dictionary<string, string>(StringComparer.Ordinal);
@@ -37,15 +40,29 @@ namespace DragNWashLocalization
 
         private static string _pluginDirectory;
 
-        public static int EntryCount => ByKey.Count;
+        public static int EntryCount => ByKey.Count + ByLineId.Count;
 
-        // key -> translation. HotReload diffs these; use DescribeKey to label.
-        public static IEnumerable<KeyValuePair<string, string>> Entries => ByKey;
+        public static int LineEntryCount => ByLineId.Count;
+
+        // key -> translation, line-ID rows included. HotReload diffs these; use
+        // DescribeKey to label.
+        public static IEnumerable<KeyValuePair<string, string>> Entries
+        {
+            get
+            {
+                foreach (KeyValuePair<string, string> kv in ByKey) yield return kv;
+                foreach (KeyValuePair<string, string> kv in ByLineId) yield return kv;
+            }
+        }
 
         // The English for a key when this locale's file supplied it, else the
         // key itself prefixed so it is obviously not text.
         public static string DescribeKey(string key)
         {
+            if (TranslationKey.LooksLikeLineId(key))
+            {
+                return key;
+            }
             return SourceByKey.TryGetValue(key, out string source) ? source : "#" + key;
         }
 
@@ -130,13 +147,21 @@ namespace DragNWashLocalization
 
         // Every string this locale can put on screen. FontFallback rasterizes
         // their glyphs up front so no atlas has to grow mid-gameplay.
-        public static IEnumerable<string> TranslatedTexts => ByKey.Values;
+        public static IEnumerable<string> TranslatedTexts
+        {
+            get
+            {
+                foreach (string t in ByKey.Values) yield return t;
+                foreach (string t in ByLineId.Values) yield return t;
+            }
+        }
 
         public static void Load(string pluginDirectory, string locale)
         {
             _pluginDirectory = pluginDirectory;
             IgnoreRules.Load(pluginDirectory);
             ByKey.Clear();
+            ByLineId.Clear();
             SourceByKey.Clear();
             DiscoveredText.Clear();
             AppliedOnce.Clear();
@@ -181,6 +206,12 @@ namespace DragNWashLocalization
                             continue;
                         }
 
+                        if (TranslationKey.LooksLikeLineId(key))
+                        {
+                            ByLineId[key] = translation;
+                            continue;
+                        }
+
                         ByKey[key] = translation;
                         if (source != null)
                         {
@@ -211,7 +242,14 @@ namespace DragNWashLocalization
 
             row.TryGetValue("key", out string key);
             row.TryGetValue("source_en", out string text);
-            key = key?.Trim().ToLowerInvariant();
+            key = key?.Trim();
+            // A line-ID row keeps its ID as the key; any English beside it in a
+            // working copy is only there for the translator to read.
+            if (TranslationKey.LooksLikeLineId(key))
+            {
+                return key;
+            }
+            key = key?.ToLowerInvariant();
             bool hasKey = !string.IsNullOrEmpty(key);
             bool hasText = !string.IsNullOrEmpty(text);
 
@@ -266,7 +304,10 @@ namespace DragNWashLocalization
             // key -> (speaker, translation), first occurrence wins, input order kept.
             var rows = new Dictionary<string, KeyValuePair<string, string>>(StringComparer.Ordinal);
             var inputOrder = new List<string>();
-            int converted = 0, kept = 0, dropped = 0;
+            // line:xxxxxxxx -> translation. Published only when translated: a
+            // working copy lists an empty line-ID row at every shared line.
+            var lineRows = new Dictionary<string, string>(StringComparer.Ordinal);
+            int converted = 0, kept = 0, dropped = 0, lineKept = 0;
             foreach (var row in CsvReader.ReadRows(input))
             {
                 string key = ResolveKey(row, out string source, out bool malformed);
@@ -275,7 +316,24 @@ namespace DragNWashLocalization
                     dropped++;
                     continue;
                 }
+                if (TranslationKey.LooksLikeLineId(key))
+                {
+                    row.TryGetValue("translation", out string lineTranslation);
+                    if (!string.IsNullOrEmpty(lineTranslation) && !lineRows.ContainsKey(key))
+                    {
+                        lineRows[key] = lineTranslation;
+                    }
+                    continue;
+                }
                 if (rows.ContainsKey(key))
+                {
+                    continue;
+                }
+                // Nothing to publish for a line nobody has translated yet (the
+                // check rejects empty translations, and tools/hash-strings.ps1
+                // leaves them out too).
+                row.TryGetValue("translation", out string rowTranslation);
+                if (string.IsNullOrEmpty(rowTranslation))
                 {
                     continue;
                 }
@@ -299,10 +357,17 @@ namespace DragNWashLocalization
                 inputOrder.Add(key);
             }
 
+            // The comment block under the header (language name, provisional
+            // notice, credits) belongs to the published file; keep it.
+            List<string> leadingComments = ReadLeadingComments(path);
             ScriptOrder.Data order = ScriptOrder.Load(pluginDirectory);
             using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
             {
                 writer.WriteLine("key,section,node,order,speaker,translation");
+                foreach (string comment in leadingComments)
+                {
+                    writer.WriteLine(comment);
+                }
                 if (order == null)
                 {
                     foreach (string key in inputOrder)
@@ -314,9 +379,20 @@ namespace DragNWashLocalization
                 {
                     ScriptOrder.WriteOrdered(writer, order, inputOrder, (key, e) =>
                     {
-                        string speaker = string.IsNullOrEmpty(rows[key].Key) ? e.Speaker : rows[key].Key;
+                        // The script order knows every character who says this
+                        // English; a speaker typed into the pack is only a fallback.
+                        string speaker = order.SpeakersFor(key);
+                        if (string.IsNullOrEmpty(speaker)) speaker = string.IsNullOrEmpty(rows[key].Key) ? e.Speaker : rows[key].Key;
                         writer.WriteLine(key + "," + CsvReader.Escape(e.Section) + "," + CsvReader.Escape(e.Node) + "," + e.Order + "," + CsvReader.Escape(speaker) + "," + CsvReader.Escape(rows[key].Value));
-                    }, out List<string> leftovers);
+                    },
+                    e => lineRows.ContainsKey(e.LineId),
+                    e =>
+                    {
+                        writer.WriteLine(e.LineId + "," + CsvReader.Escape(e.Section) + "," + CsvReader.Escape(e.Node) + "," + e.Order + "," + CsvReader.Escape(e.Speaker) + "," + CsvReader.Escape(lineRows[e.LineId]));
+                        lineRows.Remove(e.LineId);
+                        lineKept++;
+                    },
+                    out List<string> leftovers);
                     if (leftovers.Count > 0)
                     {
                         writer.WriteLine();
@@ -327,11 +403,49 @@ namespace DragNWashLocalization
                         }
                     }
                 }
+                // Line-ID rows the order does not know, or all of them without order data.
+                if (lineRows.Count > 0)
+                {
+                    writer.WriteLine();
+                    writer.WriteLine("# ===== Per-line translations not found in the script order =====");
+                    foreach (KeyValuePair<string, string> kv in lineRows)
+                    {
+                        writer.WriteLine(kv.Key + ",,,,," + CsvReader.Escape(kv.Value));
+                        lineKept++;
+                    }
+                }
             }
 
             string from = input == working ? " from the working copy" : string.Empty;
             string ordered = order == null ? " No script order data found, so rows keep their input order." : $" Ordered by {Path.GetFileName(Path.GetDirectoryName(order.Source))}/script_order.csv.";
-            return $"[hash] {locale}/strings.csv written{from}: {converted} row(s) converted from English, {kept} already hashed, {dropped} malformed dropped. No source text in the published file.{ordered}";
+            return $"[hash] {locale}/strings.csv written{from}: {converted} row(s) converted from English, {kept} already hashed, {lineKept} per-line, {dropped} malformed dropped. No source text in the published file.{ordered}";
+        }
+
+        // "# ..." lines directly under the header line, up to the first line
+        // that is not a comment or is a section header ("# =====", "# ---").
+        private static List<string> ReadLeadingComments(string path)
+        {
+            var result = new List<string>();
+            if (!File.Exists(path))
+            {
+                return result;
+            }
+            bool first = true;
+            foreach (string line in File.ReadLines(path, Encoding.UTF8))
+            {
+                if (first)
+                {
+                    first = false;
+                    continue;
+                }
+                if (!line.StartsWith("#", StringComparison.Ordinal) ||
+                    line.StartsWith("# =====", StringComparison.Ordinal) || line.StartsWith("# ---", StringComparison.Ordinal))
+                {
+                    break;
+                }
+                result.Add(line);
+            }
+            return result;
         }
 
         // The discovery file is appended to while playing, so without this it
@@ -394,6 +508,12 @@ namespace DragNWashLocalization
         public static bool TryGetTranslation(string source, out string translation)
         {
             return ByKey.TryGetValue(KeyFor(source), out translation);
+        }
+
+        public static bool TryGetLineTranslation(string lineId, out string translation)
+        {
+            translation = null;
+            return lineId != null && ByLineId.TryGetValue(lineId, out translation);
         }
 
         // Used by the verbose debug log so repeated re-renders of the same line

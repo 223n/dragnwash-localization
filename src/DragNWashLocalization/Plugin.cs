@@ -16,7 +16,7 @@ namespace DragNWashLocalization
     {
         public const string PluginGuid = "com.tomxv.dragnwash.localization";
         public const string PluginName = "DragNWashLocalization";
-        public const string PluginVersion = "0.5.0";
+        public const string PluginVersion = "0.6.0";
 
         // Every visible line costs dynamic geometry each frame the menu is open,
         // and that scratch memory is what the Direct3D 12 bug chokes on at
@@ -199,6 +199,7 @@ namespace DragNWashLocalization
             VirtualClick.Install(harmony);
             MenuText.Install(harmony);
             OptionsLanguage.Install(harmony);
+            LineIdContext.Install(harmony);
             harmony.PatchAll();
 
             Logger.LogInfo($"DragNWashLocalization loaded. TargetLocale={TargetLocale.Value}, loaded entries={TranslationStore.EntryCount}, ignore patterns={IgnoreRules.PatternCount}, graphics={SystemInfo.graphicsDeviceType}");

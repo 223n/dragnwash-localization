@@ -9,6 +9,11 @@
   from the in-game menu, or plain source_en,translation rows) and run this
   before committing. Rows already in key form pass through unchanged.
 
+  A row keyed by a Yarn line ID (line:6046bedf) translates that one line only,
+  for English said by more than one character. It is kept when it has a
+  translation and written at that line's place in the script. The speaker
+  column of a hash row lists every character who says the English.
+
   Rows are written in the order the game plays them, with '#' section
   headers, using data/script_order.csv and data/level_flow.csv from the
   repository (generated in-game by F1 -> Tools -> Export game flow). Keys the
@@ -88,11 +93,28 @@ if ($Path) {
   }
 }
 
+# key -> every speaker in play order ("Ryan/Alexander")
+$speakers = @{}
+foreach ($e in $order) {
+  $k = ([string]$e.key).Trim().ToLowerInvariant()
+  if (-not $e.speaker) { continue }
+  if (-not $speakers.ContainsKey($k)) { $speakers[$k] = New-Object System.Collections.Generic.List[string] }
+  if (-not $speakers[$k].Contains([string]$e.speaker)) { $speakers[$k].Add([string]$e.speaker) }
+}
+$lineIdPattern = '^line:[A-Za-z0-9_.\-]{1,59}$'
+
 foreach ($t in $targets) {
   $rows = @{}; $inputOrder = New-Object System.Collections.Generic.List[string]
-  $converted = 0; $kept = 0; $dropped = 0
+  $lineRows = [ordered]@{}
+  $converted = 0; $kept = 0; $dropped = 0; $lineKept = 0
   foreach ($r in Read-Csv $t.Input) {
-    $key = if ($r.PSObject.Properties['key']) { ([string]$r.key).Trim().ToLowerInvariant() } else { '' }
+    $rawKey = if ($r.PSObject.Properties['key']) { ([string]$r.key).Trim() } else { '' }
+    if ($rawKey -cmatch $lineIdPattern) {
+      $tr = if ($r.PSObject.Properties['translation']) { [string]$r.translation } else { '' }
+      if ($tr -ne '' -and -not $lineRows.Contains($rawKey)) { $lineRows[$rawKey] = $tr }
+      continue
+    }
+    $key = $rawKey.ToLowerInvariant()
     $src = if ($r.PSObject.Properties['source_en']) { [string]$r.source_en } else { '' }
     if ($src -ne '') {
       $hashed = Get-Key $src
@@ -113,11 +135,22 @@ foreach ($t in $targets) {
 
   $out = New-Object System.Text.StringBuilder
   [void]$out.AppendLine('key,section,node,order,speaker,translation')
+  # Keep the comment block under the header of the published file (language,
+  # provisional notice, credits), up to the first section header.
+  if (Test-Path $t.Output) {
+    foreach ($line in ([System.IO.File]::ReadAllLines($t.Output, [System.Text.Encoding]::UTF8) | Select-Object -Skip 1)) {
+      if (-not $line.StartsWith('#') -or $line.StartsWith('# =====') -or $line.StartsWith('# ---')) { break }
+      [void]$out.AppendLine($line)
+    }
+  }
   $done = New-Object System.Collections.Generic.HashSet[string]
   $lastSection = $null; $lastNode = $null
   foreach ($e in $order) {
     $k = ([string]$e.key).Trim().ToLowerInvariant()
-    if (-not $rows.ContainsKey($k) -or $done.Contains($k)) { continue }
+    $lid = [string]$e.line_id
+    $hashRow = $rows.ContainsKey($k) -and -not $done.Contains($k)
+    $lineRow = $lid -ne '' -and $lineRows.Contains($lid)
+    if (-not $hashRow -and -not $lineRow) { continue }
     if ($e.section -ne $lastSection) {
       [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== ' + (Section-Title $e.section) + ' =====')
       $lastSection = $e.section; $lastNode = $null
@@ -127,9 +160,15 @@ foreach ($t in $targets) {
       [void]$out.AppendLine('# --- ' + $title + ' ---')
       $lastNode = $e.node
     }
-    $who = if ($rows[$k].Speaker) { $rows[$k].Speaker } else { $e.speaker }
-    [void]$out.AppendLine($k + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
-    [void]$done.Add($k)
+    if ($hashRow) {
+      $who = if ($speakers.ContainsKey($k)) { $speakers[$k] -join '/' } elseif ($rows[$k].Speaker) { $rows[$k].Speaker } else { $e.speaker }
+      [void]$out.AppendLine($k + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
+      [void]$done.Add($k)
+    }
+    if ($lineRow) {
+      [void]$out.AppendLine($lid + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $e.speaker) + ',' + (Escape-Csv $lineRows[$lid]))
+      $lineRows.Remove($lid); $lineKept++
+    }
   }
   $left = @($inputOrder | Where-Object { -not $done.Contains($_) })
   if ($left.Count -gt 0) {
@@ -140,6 +179,12 @@ foreach ($t in $targets) {
       [void]$out.AppendLine($k + ',' + $sec + ',,,' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
     }
   }
+  if ($lineRows.Count -gt 0) {
+    [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== Per-line translations not found in the script order =====')
+    foreach ($lid in @($lineRows.Keys)) {
+      [void]$out.AppendLine($lid + ',,,,,' + (Escape-Csv $lineRows[$lid])); $lineKept++
+    }
+  }
   [System.IO.File]::WriteAllText($t.Output, $out.ToString(), (New-Object System.Text.UTF8Encoding $false))
-  Write-Host ("{0} <- {1}: {2} converted, {3} already hashed, {4} malformed dropped, {5} in play order, {6} other" -f $t.Output, $t.Input, $converted, $kept, $dropped, $done.Count, $left.Count)
+  Write-Host ("{0} <- {1}: {2} converted, {3} already hashed, {4} per-line, {5} malformed dropped, {6} in play order, {7} other" -f $t.Output, $t.Input, $converted, $kept, $lineKept, $dropped, $done.Count, $left.Count)
 }

@@ -31,6 +31,15 @@ F1 メニューの言語ボタン、インストーラー（Windows・Steam Deck
 
 ## 翻訳ファイルの形式
 
+> [!IMPORTANT]
+> **v0.6.0 から CSV の書き方が一部変わりました。** 以前のファイルもそのまま読み込めますが、今のファイルを編集するときは次の違いに注意してください。
+> - **台詞 ID の行:** `key` 列には、16 桁のハッシュのほかに `line:6046bedf` のような Yarn の台詞 ID も入ります。その行は、その 1 つの台詞だけの訳です（「[複数のキャラが話す台詞](#複数のキャラが話す台詞)」参照）。
+> - **複数の話者:** 複数のキャラが話す台詞の `speaker` 列には、全員が `/` 区切りで並びます（`Ryan/Alexander`）。
+> - **作業コピー:** 共有されている台詞の位置ごとに、訳が空の台詞 ID の行が追加されています。訳し分けたいとき以外は空のままで構いません。
+> - **`order`:** 会話の中のすべての行を数えるようになったので、v0.6.0 より前のファイルとは番号が違います。読むための列なので、直す必要はありません。
+>
+> 翻訳作業には、v0.6.0 以降のプラグインとこのリポジトリのツールを使ってください。v0.5.0 以前のツールは台詞 ID の行を知らないため、壊れたハッシュの行に変えてしまいます。古いバージョンで遊んでいる人には影響ありません（台詞 ID の行が無視されるだけです）。
+
 `Translations/<locale>/strings.csv` は公開用の CSV で、**ゲームで流れる順**に並び、`#` の見出しで区切られています。作業中は原文つきの行を**同じファイルに混在**させても読めます。
 
 ```csv
@@ -57,7 +66,8 @@ Options,オプション
 ```
 
 - `key` … 原文の SHA-256 の先頭16桁。**リポジトリにはこの形式だけ**が入ります。
-- `speaker` … 誰の台詞か（Conrad / Ryan / Alexander / Kobold＝選択肢 / Phone / UI）。台本の構造から自動で付きます。
+- `speaker` … 誰の台詞か（Conrad / Ryan / Alexander / Kobold＝選択肢 / Phone / UI）。台本の構造から自動で付きます。複数のキャラが話す英文には、全員が並びます（`Ryan/Alexander`）。
+- `key` には、`line:6046bedf` のような Yarn の台詞 ID も書けます。その行は、その 1 つの台詞だけの訳になります（「[複数のキャラが話す台詞](#複数のキャラが話す台詞)」参照）。
   ゲームの英語台本を再配布しないためで、これにより製品版を持っていない人は
   台本を読むことも、原文なしに訳を書くこともできません。
 - `source_en` … ゲームに表示される英語原文そのまま（完全一致で照合）。**作業中はこちら**で
@@ -93,6 +103,24 @@ key,section,node,order,speaker,source_en,translation
 
 プラグインがゲームの中で動いていること自体が「製品版を持っている」証明なので、
 別途の認証はありません。
+
+### 複数のキャラが話す台詞
+
+ハッシュの行は、同じ英文の台詞**すべて**に使われます。短い台詞の中には、別々のキャラが同じ英文を話すものがあります（`Wonderful!` はレベル 1 ではライアン、レベル 5 ではアレクサンダーの台詞）。そうした行の `speaker` 列には `Ryan/Alexander` のように話者が全員並び、1 つの訳が全員に使われます。
+
+1 つの訳では収まらないときは、その台詞だけ別の訳にできます。作業コピーには、共有されている台詞が話される場所ごとに、Yarn の**台詞 ID** を key にした空の行が入っています。
+
+```csv
+key,section,node,order,speaker,source_en,translation
+84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Wonderful!,全員に使う訳
+line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,Wonderful!,ライアン専用の訳
+line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Wonderful!,
+```
+
+- 訳し分けたい台詞の行だけ埋めてください。訳が入った台詞 ID の行はその 1 か所だけに使われ、ほかの場所はハッシュの行の訳のままです。
+- 空の台詞 ID の行は残したままで構いません。*Hash for commit* は訳が入った行だけを、台本の該当する位置に書き出します。
+- 台詞 ID はゲームの台本から来ています。ゲームのアップデートで ID が変わった台詞は、何も言わずにハッシュの行の訳に戻ります。
+- 台詞 ID の行が使えるのは会話と選択肢だけで、UI の文字には使えません。
 
 ### コミット前にハッシュ化する
 
@@ -202,7 +230,7 @@ python tools/check-translations.py
 | レポートのメッセージ | 意味 | 直し方 |
 |---|---|---|
 | `header is [...]; the published file must be ...` | ファイルが作業コピーのまま（`source_en` 列がある） | **F1 → Tools → Hash for commit** か `tools/hash-strings.ps1` を実行し、作り直した `strings.csv` をコミットする |
-| `key is not 16 lowercase hex digits` | key がハッシュになっていない。key の列に英文が入っているか、key を書き換えている | *Hash for commit* で作り直す。`key` 列は手で編集しない |
+| `key is not 16 lowercase hex digits or a line ID` | key がハッシュでも台詞 ID でもない。key の列に英文が入っているか、key を書き換えている | *Hash for commit* で作り直す。`key` 列は手で編集しない |
 | `must not be committed (contains source text)` | `Translations/_discovered/` のファイルか `strings.local.csv` が PR に入っている | `git rm --cached <ファイル>` で PR から外してコミットする（手元のファイルは残せます） |
 | `duplicate key (see line N)` | 同じ行が 2 回ある | key ごとに 1 行だけ残し、もう一方を消す |
 | `empty translation` | `translation` が空の行がある | 訳を入れるか、行ごと消す（その行は英語で表示されます） |

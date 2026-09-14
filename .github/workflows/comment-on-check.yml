@@ -35,7 +35,7 @@ jobs:
             const hints = [];
             const add = (re, text) => { if (re.test(report)) hints.push(text); };
             add(/header is/, '**The file still has its working-copy header.** Published files must be `key,section,node,order,speaker,translation`. Run `tools/hash-strings.ps1` (or use *Hash for commit* in the in-game F1 menu) and commit the result.');
-            add(/is not 16 lowercase hex digits/, '**Some keys are plain text instead of hashes.** The repository never carries the game\'s English script, so each line is identified by a 16-character hash of the source text. `tools/hash-strings.ps1` converts a working copy into that form.');
+            add(/is not 16 lowercase hex digits/, '**Some keys are plain text instead of hashes.** The repository never carries the game\'s English script, so each line is identified by a 16-character hash of the source text, or by a line ID such as `line:6046bedf` for a per-line translation. `tools/hash-strings.ps1` converts a working copy into that form.');
             add(/must not be committed/, '**A working copy was committed.** Files under `Translations/_discovered/` contain the English source and must stay local. Please remove them from the pull request.');
             add(/duplicate key/, '**Duplicate keys.** The same line appears more than once; keep one translation per key.');
             add(/empty translation/, '**Empty translations.** Leave a line out rather than committing it blank; the game then falls back to English for it.');

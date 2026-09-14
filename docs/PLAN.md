@@ -455,3 +455,11 @@ The built DLL was deployed to the game's BepInEx plugin directory, and its SHA-2
 - `run_bepinex.sh` checks `executable_name` relative to the current directory, so it must be run from the game folder when started by hand. Launched outside Steam the game logs `SteamAPI_Init() failed`.
 - Decision: document macOS as not working until a BepInEx release carries the Doorstop fix, then retest.
 - An experimental installer, `installer/experimental/install-macos.sh`, mirrors the Deck script for macOS (full `.app` path in `executable_name`, launch option edited with JavaScript for Automation, `steam://exit`, the UnityDoorstop#107 arch fix, a Check mode). It is not in the release zip and has not been run on a Mac; when a fixed BepInEx ships, update `BEPINEX_URL` / `BEPINEX_SHA256`, set `KNOWN_ISSUE=0`, test, then pack it.
+
+## Per-line translations (2026-09-14)
+
+- The TMP hook only sees English, so one English line said by several characters could only have one translation (29 such lines, 142 of 1839 dialogue lines).
+- `LineIdContext` patches `LinePresenter.RunLineAsync` and the `OptionItem.Option` setter to remember which line ID a TMP component is about to show. When exactly that line's text arrives, a `strings.csv` row keyed `line:<id>` wins over the hash row; `RefreshAll` does the same on a locale switch.
+- `data/script_order.csv` now lists every occurrence (1839 rows), so the working copy writes an empty `line:` row at each shared line and *Hash for commit* / `tools/hash-strings.ps1` publish the filled ones in place. The speaker of a hash row lists all speakers (`Ryan/Alexander`), taken from the script order rather than the pack.
+- Both hash writers now keep the pack's leading comment block and skip empty translations. The check accepts `line:` keys.
+- Verified in the Windows build with the game's LinePresenter and OptionsPresenter, including a locale switch. Details: `docs/PER_LINE_TRANSLATION.ja.md`.

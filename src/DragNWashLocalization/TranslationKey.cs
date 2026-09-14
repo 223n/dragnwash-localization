@@ -40,6 +40,30 @@ namespace DragNWashLocalization
             return sb.ToString();
         }
 
+        public const string LinePrefix = "line:";
+
+        // A Yarn line ID such as line:6046bedf. A row keyed this way translates
+        // one line of dialogue only, where the hash row translates every line
+        // with the same English (see LineIdContext).
+        public static bool LooksLikeLineId(string value)
+        {
+            if (value == null || value.Length <= LinePrefix.Length || value.Length > 64 ||
+                !value.StartsWith(LinePrefix, StringComparison.Ordinal))
+            {
+                return false;
+            }
+            for (int i = LinePrefix.Length; i < value.Length; i++)
+            {
+                char c = value[i];
+                bool ok = (c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == '_' || c == '-' || c == '.';
+                if (!ok)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         // A key column value: 16 lowercase hex digits. Anything else is
         // treated as not-a-key so a mistyped row is reported, not silently
         // matched against nothing.

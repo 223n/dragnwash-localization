@@ -39,6 +39,21 @@ namespace DragNWashLocalization
             string source = text;
             try
             {
+                // A row for this exact line of dialogue wins over the hash row
+                // shared by every line with the same English.
+                if (instance != null && LineIdContext.TryGetTranslation(instance, source, out string perLine, out string lineId))
+                {
+                    SourceByComponent[instance] = source;
+                    RightToLeft.Apply(instance);
+                    text = perLine;
+                    if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
+                        TranslationStore.IsFirstApplication(lineId + "|" + source))
+                    {
+                        Plugin.Log($"[OK] {lineId} \"{source}\" -> \"{perLine}\"");
+                    }
+                    return;
+                }
+
                 bool translated = TranslationStore.TryGetTranslation(source, out var translation);
                 bool ignored = IgnoreRules.IsIgnored(source);
 
@@ -175,6 +190,12 @@ namespace DragNWashLocalization
 
                     string source = kv.Value;
                     bool translated = TranslationStore.TryGetTranslation(source, out var translation);
+                    // A line on screen keeps its per-line translation in the new locale.
+                    if (LineIdContext.TryGetTranslation(instance, source, out string perLine, out _))
+                    {
+                        translated = true;
+                        translation = perLine;
+                    }
 
                     // The game's typewriter reveals dialogue by raising
                     // maxVisibleCharacters up to the current text's length. If

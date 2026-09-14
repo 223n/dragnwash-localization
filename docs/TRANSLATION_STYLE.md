@@ -19,6 +19,10 @@ Maintaining a **consistent voice for each character** is the highest priority in
 
 Preserve the structure of TMP tags such as `<size=70%>`, `<gradient="gold">`, `<i>`, and `<b>`, and translate only the text inside them. Also translate parenthetical choice hints such as `(Will lead to no romance!)`.
 
+### Lines shared by several characters
+
+A row whose `speaker` lists several characters (`Ryan/Alexander`) is used for all of them. Prefer a wording that fits every voice. If none does, translate the shared row for the most common speaker and add a line-ID row for the others, as described in [CONTRIBUTING.md](../CONTRIBUTING.md#lines-said-by-more-than-one-character).
+
 ### Do not translate Yarn internal markers
 
 Lines beginning with `title:`, `Test line` entries, flags such as `player hooked up with …`, development messages, and the markers `---` and `===` are not displayed text. Do not translate them. They are already excluded in `Translations/ignore.txt`.
