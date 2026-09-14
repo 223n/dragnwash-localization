@@ -48,14 +48,13 @@ BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 BepInEx/plugins/DragNWashLocalization/data/script_order.csv
 BepInEx/plugins/DragNWashLocalization/data/level_flow.csv
 Install.exe
-Install.cmd
 install-steamdeck.sh
-installer/Installer.ps1
+mod-install.json
 README.md
 README.ja.md
 ```
 
-`Install.exe` is a small console-less launcher that `pack.ps1` builds from `installer/Launcher.csproj` with the .NET SDK. The build is deterministic: while `installer/Launcher.cs` and the SDK stay the same, every release ships a byte-identical `Install.exe`, so antivirus reputation (Microsoft Defender flags the unsigned launcher by machine learning) is not reset with each release. `pack.ps1` prints its SHA-256; compare it with the previous release when checking. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works. `Install.cmd` opens the same installer window on machines where SmartScreen or a policy blocks the unsigned `Install.exe`. `install-steamdeck.sh` is the Steam Deck / Linux installer and must keep LF line endings, and `Install.cmd` must keep CRLF (both enforced by `.gitattributes`). The experimental macOS script in `installer/experimental/` is not packaged.
+`Install.exe` and `install-steamdeck.sh` are Drag'n Wash ModFramework's shared installers, which `pack.ps1` builds and copies from the framework checkout ([docs/INSTALLER.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.md) there). `pack.ps1` also writes `mod-install.json`: this mod's folder, the player's data to keep, its config file, and the language question with every shipped pack. The `Install.exe` build is deterministic, so antivirus reputation is not reset with each release; `pack.ps1` prints its SHA-256, which should match the previous release while the framework's `installer/` is unchanged. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works. The experimental macOS script in `installer/experimental/` is not packaged.
 
 To install it, extract the archive into the game directory and merge the included `BepInEx/` directory.
 

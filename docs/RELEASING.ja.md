@@ -52,14 +52,13 @@ BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 BepInEx/plugins/DragNWashLocalization/data/script_order.csv
 BepInEx/plugins/DragNWashLocalization/data/level_flow.csv
 Install.exe
-Install.cmd
 install-steamdeck.sh
-installer/Installer.ps1
+mod-install.json
 README.md
 README.ja.md
 ```
 
-`Install.exe` は、`pack.ps1` が .NET SDK で `installer/Launcher.csproj` からビルドする、コンソールを持たない小さな起動用プログラムです。ビルドは決定的で、`installer/Launcher.cs` と SDK が同じなら、どのリリースでもバイト単位で同じ `Install.exe` になります。そのため、ウイルス対策ソフトの評価（Microsoft Defender は署名なしのこの起動用プログラムを機械学習で検出します）がリリースのたびにリセットされません。`pack.ps1` が SHA-256 を表示するので、確認のときは前のリリースと比べてください。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。`Install.cmd` は、SmartScreen やポリシーで署名なしの `Install.exe` が止められる環境向けに、同じインストーラー画面を開きます。`install-steamdeck.sh` は Steam Deck / Linux 用のインストーラーで改行コードは LF、`Install.cmd` は CRLF のままにする必要があります（どちらも `.gitattributes` で固定）。`installer/experimental/` の実験的な macOS 用スクリプトは zip に入れません。
+`Install.exe` と `install-steamdeck.sh` は Drag'n Wash ModFramework の共通インストーラーで、`pack.ps1` がフレームワークのチェックアウトからビルド・コピーします（説明はフレームワークの [docs/INSTALLER.ja.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.ja.md)）。`pack.ps1` は `mod-install.json` も書き出します。この Mod のフォルダー、残すプレイヤーのデータ、設定ファイル、同梱するすべての言語パックを選べる言語の質問が入ります。`Install.exe` のビルドは決定的で、ウイルス対策ソフトの評価がリリースのたびにリセットされません。`pack.ps1` が SHA-256 を表示するので、フレームワークの `installer/` が変わっていなければ前のリリースと同じになっているか確認してください。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。`installer/experimental/` の実験的な macOS 用スクリプトは zip に入れません。
 
 ### 3. 検証する
 

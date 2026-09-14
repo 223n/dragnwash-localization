@@ -23,10 +23,9 @@
 #     BepInEx/plugins/DragNWashLocalization/data/script_order.csv, level_flow.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
-#     Install.exe                <- double-click installer / uninstaller (no console)
-#     Install.cmd                <- same window, for when Install.exe is blocked
-#     install-steamdeck.sh       <- Steam Deck / Linux: bash install-steamdeck.sh
-#     installer/Installer.ps1
+#     Install.exe                <- Drag'n Wash ModFramework's shared installer (Windows)
+#     install-steamdeck.sh       <- the same for Steam Deck / Linux: bash install-steamdeck.sh
+#     mod-install.json           <- what the installers need to know about this mod
 #     README.md, README.ja.md
 param(
     [string]$Version,
@@ -157,24 +156,51 @@ Get-ChildItem -LiteralPath $SrcTranslations -Directory |
 Copy-Item -LiteralPath (Join-Path $Root 'README.md') -Destination $Stage
 Copy-Item -LiteralPath (Join-Path $Root 'README.ja.md') -Destination $Stage
 
-# The one-click installer: Install.exe at the zip root, script beside the payload.
-# The exe is a tiny console-less launcher compiled with the C# compiler that
-# ships with .NET Framework 4 on every Windows machine.
-New-Item -ItemType Directory -Force -Path (Join-Path $Stage 'installer') | Out-Null
-Copy-Item -LiteralPath (Join-Path $Root 'installer/Installer.ps1') -Destination (Join-Path $Stage 'installer')
-# Fallback for machines where SmartScreen or policy stops the unsigned exe.
-Copy-Item -LiteralPath (Join-Path $Root 'installer/Install.cmd') -Destination $Stage
-# Steam Deck / Linux installer. Must keep LF line endings (.gitattributes).
-Copy-Item -LiteralPath (Join-Path $Root 'installer/install-steamdeck.sh') -Destination $Stage
-# Built deterministically (installer/Launcher.csproj): the same Launcher.cs gives a
-# byte-identical Install.exe every release, so antivirus reputation, which follows
-# the file's hash, carries over instead of starting again with each release.
-$LauncherProject = Join-Path $Root 'installer/Launcher.csproj'
-dotnet build $LauncherProject -c Release
+# The installers: Drag'n Wash ModFramework's shared Install.exe and
+# install-steamdeck.sh, the same files every mod ships (see the framework's
+# docs/INSTALLER.md). Install.exe is built deterministically, so its hash and the
+# antivirus reputation that follows it stay the same from release to release.
+$InstallerProject = Join-Path $FrameworkPath 'installer/DragNWash.Installer.csproj'
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue (Join-Path $FrameworkPath 'installer/bin'), (Join-Path $FrameworkPath 'installer/obj')
+dotnet build $InstallerProject -c Release
 if ($LASTEXITCODE -ne 0) { throw 'Failed to build Install.exe.' }
-Copy-Item -LiteralPath (Join-Path $Root 'installer/bin/Release/Install.exe') -Destination (Join-Path $Stage 'Install.exe')
-$LauncherHash = (Get-FileHash -LiteralPath (Join-Path $Stage 'Install.exe') -Algorithm SHA256).Hash.ToLowerInvariant()
-Write-Host "Install.exe sha256 $LauncherHash (unchanged unless installer/Launcher.cs or the .NET SDK changed)"
+Copy-Item -LiteralPath (Join-Path $FrameworkPath 'installer/bin/Release/Install.exe') -Destination $Stage
+# Must keep LF line endings (the framework's .gitattributes).
+Copy-Item -LiteralPath (Join-Path $FrameworkPath 'installer/install-steamdeck.sh') -Destination $Stage
+$InstallerHash = (Get-FileHash -LiteralPath (Join-Path $Stage 'Install.exe') -Algorithm SHA256).Hash.ToLowerInvariant()
+Write-Host "Install.exe sha256 $InstallerHash (unchanged unless the framework's installer/ or the .NET SDK changed)"
+
+# mod-install.json: this mod's folder, the player's data the installers keep
+# (translation working files and old save snapshots), the config file, and the
+# language question with every pack that ships.
+$Options = @()
+Get-ChildItem -LiteralPath $TranslationsDir -Directory | Sort-Object Name | ForEach-Object {
+    $display = $_.Name
+    $nameFile = Join-Path $_.FullName 'name.txt'
+    if (Test-Path -LiteralPath $nameFile) {
+        $text = ([IO.File]::ReadAllText($nameFile, [Text.Encoding]::UTF8)).Trim()
+        if ($text) { $display = $text }
+    }
+    $Options += [ordered]@{ value = $_.Name; name = $display }
+}
+$Options += [ordered]@{ value = 'en'; name = 'English' }
+$Manifest = [ordered]@{
+    schema      = 1
+    name        = "Drag'n Wash Localization"
+    version     = $Version
+    website     = 'https://github.com/TomXV/dragnwash-localization'
+    plugins     = @('DragNWashLocalization')
+    keep        = @('DragNWashLocalization/Translations/_discovered', 'DragNWashLocalization/SaveHistory')
+    configFiles = @('com.tomxv.dragnwash.localization.cfg')
+    choices     = @([ordered]@{
+        id      = 'language'
+        label   = [ordered]@{ en = 'Language'; ja = '言語'; zh = '语言' }
+        config  = [ordered]@{ file = 'com.tomxv.dragnwash.localization.cfg'; section = 'General'; key = 'TargetLocale' }
+        options = $Options
+        default = 'ui-language'
+    })
+}
+[IO.File]::WriteAllText((Join-Path $Stage 'mod-install.json'), ($Manifest | ConvertTo-Json -Depth 6), (New-Object Text.UTF8Encoding($false)))
 
 # 5. Zip the stage contents (so the zip root holds BepInEx/ and the READMEs).
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
