@@ -6,6 +6,18 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
+// What Windows shows under Properties → Details. The version is the launcher's own
+// and changes only with this file, never with the mod's releases, so the build
+// stays byte-identical from release to release (see Launcher.csproj).
+[assembly: System.Reflection.AssemblyTitle("Drag'n Wash Localization Installer")]
+[assembly: System.Reflection.AssemblyDescription("Opens the installer for Drag'n Wash Localization, an unofficial fan-made translation mod. Source: https://github.com/TomXV/dragnwash-localization")]
+[assembly: System.Reflection.AssemblyCompany("TomXV")]
+[assembly: System.Reflection.AssemblyProduct("Drag'n Wash Localization")]
+[assembly: System.Reflection.AssemblyCopyright("Copyright (c) 2026 TomXV. MIT License.")]
+[assembly: System.Reflection.AssemblyVersion("1.0.0.0")]
+[assembly: System.Reflection.AssemblyFileVersion("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("1.0.0")]
+
 static class Launcher
 {
     [STAThread]
