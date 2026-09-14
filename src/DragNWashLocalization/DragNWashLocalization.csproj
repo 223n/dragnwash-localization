@@ -5,8 +5,8 @@
     <AssemblyName>DragNWashLocalization</AssemblyName>
     <LangVersion>latest</LangVersion>
     <!-- Keep in sync with Plugin.PluginVersion; the installer shows this. -->
-    <Version>1.0.0</Version>
-    <FileVersion>1.0.0</FileVersion>
+    <Version>1.1.0</Version>
+    <FileVersion>1.1.0</FileVersion>
     <Nullable>disable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RootNamespace>DragNWashLocalization</RootNamespace>

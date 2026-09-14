@@ -1898,3 +1898,9 @@ e6af4688a3314648,UI,,,UI,"Wspólne okno w grze (F1), w którym mody dodają kart
 014659ab9d98c8fe,UI,,,UI,Konflikt
 02e19c617a19bae7,UI,,,UI,Zmienia ten sam kod gry co:
 61ec4dc622c31ea9,UI,,,UI,Zmienia ten sam kod gry co te mody i może je zastąpić:
+c1c1009d3f37ec05,UI,,,UI,Aktualizacja
+4168cfb8a090a98c,UI,,,UI,Dostępna nowa wersja:
+cd6c9851e91ad7b6,UI,,,UI,Otwórz stronę wydania
+22e2bada8f1c65cd,UI,,,UI,Aktualizacje
+f26f3275e735bdf6,UI,,,UI,Sprawdzaj aktualizacje
+a6a1b13028fd8c9c,UI,,,UI,"Raz dziennie pyta GitHub, czy mody, które podają swoje repozytorium GitHub, mają nowsze wydanie. Nie są wysyłane żadne informacje o tobie ani o twojej grze."

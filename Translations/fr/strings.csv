@@ -1896,3 +1896,9 @@ e6af4688a3314648,UI,,,UI,"Une fenêtre commune dans le jeu (F1) où les mods ajo
 014659ab9d98c8fe,UI,,,UI,Conflit
 02e19c617a19bae7,UI,,,UI,Modifie le même code du jeu que :
 61ec4dc622c31ea9,UI,,,UI,Modifie le même code du jeu que ces mods et peut les court-circuiter :
+c1c1009d3f37ec05,UI,,,UI,Mise à jour
+4168cfb8a090a98c,UI,,,UI,Nouvelle version disponible :
+cd6c9851e91ad7b6,UI,,,UI,Ouvrir la page de la version
+22e2bada8f1c65cd,UI,,,UI,Mises à jour
+f26f3275e735bdf6,UI,,,UI,Rechercher des mises à jour
+a6a1b13028fd8c9c,UI,,,UI,"Une fois par jour, demande à GitHub si les mods qui indiquent leur dépôt GitHub ont une version plus récente. Aucune information sur vous ou votre jeu n'est envoyée."

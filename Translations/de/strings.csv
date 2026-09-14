@@ -1901,3 +1901,9 @@ e6af4688a3314648,UI,,,UI,"Ein gemeinsames Fenster im Spiel (F1), in dem Mods Tab
 014659ab9d98c8fe,UI,,,UI,Konflikt
 02e19c617a19bae7,UI,,,UI,Ändert denselben Spielcode wie:
 61ec4dc622c31ea9,UI,,,UI,Ändert denselben Spielcode wie diese Mods und kann sie überschreiben:
+c1c1009d3f37ec05,UI,,,UI,Update
+4168cfb8a090a98c,UI,,,UI,Neue Version verfügbar:
+cd6c9851e91ad7b6,UI,,,UI,Release-Seite öffnen
+22e2bada8f1c65cd,UI,,,UI,Updates
+f26f3275e735bdf6,UI,,,UI,Nach Updates suchen
+a6a1b13028fd8c9c,UI,,,UI,"Fragt einmal am Tag bei GitHub nach, ob Mods, die ihr GitHub-Repository angeben, eine neuere Version haben. Es werden keine Daten über dich oder dein Spiel gesendet."

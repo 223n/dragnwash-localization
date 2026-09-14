@@ -1900,3 +1900,9 @@ e6af4688a3314648,UI,,,UI,"Uma janela compartilhada dentro do jogo (F1) onde os m
 014659ab9d98c8fe,UI,,,UI,Conflito
 02e19c617a19bae7,UI,,,UI,Altera o mesmo código do jogo que:
 61ec4dc622c31ea9,UI,,,UI,Altera o mesmo código do jogo que estes mods e pode sobrepô-los:
+c1c1009d3f37ec05,UI,,,UI,Atualização
+4168cfb8a090a98c,UI,,,UI,Nova versão disponível:
+cd6c9851e91ad7b6,UI,,,UI,Abrir página da versão
+22e2bada8f1c65cd,UI,,,UI,Atualizações
+f26f3275e735bdf6,UI,,,UI,Verificar atualizações
+a6a1b13028fd8c9c,UI,,,UI,"Uma vez por dia, pergunta ao GitHub se os mods que informam seu repositório no GitHub têm uma versão mais nova. Nada sobre você ou seu jogo é enviado."

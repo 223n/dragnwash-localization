@@ -76,6 +76,6 @@
 # 進捗カウンター（10 / 14 など）
 ^\d+\s*/\s*\d+$
 
-# タイトル画面のビルド番号の上に Drag'n Wash ModFramework が出す、フレームワークの版と読み込んだ Mod の数。
+# タイトル画面のビルド番号の上に Drag'n Wash ModFramework が出す、フレームワークの版と読み込んだ Mod の数（更新があるときはその数も）。
 # Minecraft Forge の表示と同じく英語のままにするため、記録対象から除外。
-^Drag'n Wash ModFramework [0-9.]+\n\d+ mods? loaded$
+^Drag'n Wash ModFramework [0-9.]+\n\d+ mods? loaded(\n\d+ updates? available in Mods)?$

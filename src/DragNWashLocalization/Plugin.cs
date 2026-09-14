@@ -19,7 +19,8 @@ namespace DragNWashLocalization
     // libraries hook text and dialogue, draw the F1 tool window, prepare fonts
     // and keep save history. What is left here is translation itself.
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
-    [BepInDependency(ModFramework.Guid, BepInDependency.DependencyFlags.HardDependency)]
+    // 1.1.0 for ModInfo.UpdateRepository.
+    [BepInDependency(ModFramework.Guid, "1.1.0")]
     [BepInDependency(DragNWash.ModFramework.Text.GameText.Guid, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(DragNWash.ModFramework.Dialogue.GameDialogue.Guid, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(ToolWindow.Guid, BepInDependency.DependencyFlags.HardDependency)]
@@ -29,7 +30,7 @@ namespace DragNWashLocalization
     {
         public const string PluginGuid = "com.tomxv.dragnwash.localization";
         public const string PluginName = "DragNWashLocalization";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.1.0";
 
         // Every visible line costs dynamic geometry each frame the window is
         // open, and that scratch memory is what the Direct3D 12 bug chokes on at
