@@ -11,7 +11,8 @@
 #   2. downloads the Linux build of BepInEx 5.4.23.5 if it is missing and
 #      checks its SHA-256
 #   3. sets executable_name="DragNWash" in run_bepinex.sh
-#   4. copies the mod and sets the language you pick
+#   4. copies Drag'n Wash ModFramework and its libraries (unless a newer copy
+#      is already installed), then the mod, and sets the language you pick
 #   5. sets the Steam launch option ./run_bepinex.sh %command%
 #      (Steam has to be closed for that; you are asked first)
 #
@@ -32,6 +33,8 @@ LAUNCH_OPTION="./run_bepinex.sh %command%"
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PAYLOAD="$HERE/BepInEx/plugins/$PLUGIN"
+FRAMEWORK_PREFIX="DragNWash.ModFramework"
+FRAMEWORK_PATCHER="DragNWash.ModFramework.Preloader.dll"
 
 MODE=""
 LANG_CHOICE=""
@@ -89,7 +92,7 @@ detect_ui() {
         esac
     done
     local steam_lang
-    steam_lang="$(sed -n 's/^[[:space:]]*"language"[[:space:]]*"\([^"]*\)".*/\1/p' "$HOME/.steam/registry.vdf" 2>/dev/null | head -1)"
+    steam_lang="$(sed -n 's/^[[:space:]]*"language"[[:space:]]*"\([^"]*\)".*/\1/p' "$HOME/.steam/registry.vdf" 2>/dev/null | head -1 || true)"
     case "$steam_lang" in
         japanese) echo "ja ja" ;;
         schinese) echo "zh zh-Hans" ;;
@@ -194,6 +197,12 @@ Close Steam and continue? (If not, change the launch option by hand.)" ;;
         ja:bep_removed) echo "BepInEx: 削除しました" ;;
         zh:bep_removed) echo "BepInEx：已删除" ;;
         *:bep_removed) echo "BepInEx: removed" ;;
+        ja:fw_kept) echo "ModFramework: 他の Mod があるため残しました" ;;
+        zh:fw_kept) echo "ModFramework：存在其他 Mod，已保留" ;;
+        *:fw_kept) echo "ModFramework: kept, other mods are installed" ;;
+        ja:fw_removed) echo "ModFramework: 削除しました" ;;
+        zh:fw_removed) echo "ModFramework：已删除" ;;
+        *:fw_removed) echo "ModFramework: removed" ;;
         ja:mod_removed) echo "Mod: 削除しました" ;;
         zh:mod_removed) echo "Mod：已删除" ;;
         *:mod_removed) echo "Mod: removed" ;;
@@ -549,6 +558,41 @@ $(t action)" install "$(t act_install)" uninstall "$(t act_uninstall)")" || exit
     fi
 fi
 
+# FileVersion of a .NET DLL (from its version resource), or empty.
+dll_version() {
+    [ -f "$1" ] || return 0
+    command -v python3 >/dev/null 2>&1 || return 0
+    python3 - "$1" <<'PY' 2>/dev/null || true
+import re, sys
+data = open(sys.argv[1], "rb").read()
+z = b"\x00"
+key = "FileVersion".encode("utf-16-le")
+m = re.search(re.escape(key) + z + b"+((?:[0-9.]" + z + b")+)", data)
+if m:
+    print(m.group(1).decode("utf-16-le"))
+PY
+}
+
+# 0 when version $1 is newer than $2.
+version_newer() {
+    [ -n "$1" ] && [ -n "$2" ] && [ "$1" != "$2" ] &&
+        [ "$(printf '%s
+%s
+' "$1" "$2" | sort -V | tail -1)" = "$1" ]
+}
+
+# A file the player switched off on the Mods screen was renamed to .dll.disabled
+# by the framework's patcher. Installing means wanting it on.
+enable_mod_file() {
+    rel="$1"
+    rm -f "$GAME_DIR/BepInEx/plugins/$rel.disabled"
+    for list in com.tomxv.dragnwash.modframework.disabled.txt com.tomxv.dragnwash.modframework.state.txt; do
+        f="$GAME_DIR/BepInEx/config/$list"
+        [ -f "$f" ] || continue
+        awk -F '	' -v rel="$rel" '$1 != rel' "$f" > "$f.tmp" && mv -f "$f.tmp" "$f"
+    done
+}
+
 if [ "$MODE" = install ]; then
     [ -f "$PAYLOAD/$PLUGIN.dll" ] || fail "$(t nopayload)"
 
@@ -612,7 +656,32 @@ $GAME_DIR" 1 || exit 1
         say "run_bepinex.sh: executable_name=\"$GAME_BIN\""
     fi
 
-    # Mod files (SaveHistory and Translations/_discovered are left alone)
+    # Drag'n Wash ModFramework and its libraries, each in its own folder
+    for src in "$HERE/BepInEx/plugins/$FRAMEWORK_PREFIX"*/; do
+        [ -d "$src" ] || fail "$(t nopayload)"
+        name="$(basename "$src")"
+        dst="$GAME_DIR/BepInEx/plugins/$name"
+        have="$(dll_version "$dst/$name.dll")"
+        offered="$(dll_version "$src/$name.dll")"
+        if version_newer "$have" "$offered"; then
+            say "$name: $have"
+            continue
+        fi
+        mkdir -p "$dst"
+        cp -rf "$src." "$dst/"
+        enable_mod_file "$name/$name.dll"
+        say "$name: ${offered:-ok}"
+    done
+    if [ -f "$HERE/BepInEx/patchers/$FRAMEWORK_PATCHER" ]; then
+        have="$(dll_version "$GAME_DIR/BepInEx/patchers/$FRAMEWORK_PATCHER")"
+        offered="$(dll_version "$HERE/BepInEx/patchers/$FRAMEWORK_PATCHER")"
+        if ! version_newer "$have" "$offered"; then
+            mkdir -p "$GAME_DIR/BepInEx/patchers"
+            cp -f "$HERE/BepInEx/patchers/$FRAMEWORK_PATCHER" "$GAME_DIR/BepInEx/patchers/"
+        fi
+    fi
+
+    # Mod files (Translations/_discovered is left alone)
     dst="$GAME_DIR/BepInEx/plugins/$PLUGIN"
     mkdir -p "$dst/Translations"
     for f in "$PLUGIN.dll" FlagCatalog.csv dragnwash-menufont.bundle dragnwash-menufont-LICENSE.txt; do
@@ -626,6 +695,7 @@ $GAME_DIR" 1 || exit 1
         mkdir -p "$dst/Translations/$code"
         cp -rf "$d." "$dst/Translations/$code/"
     done
+    enable_mod_file "$PLUGIN/$PLUGIN.dll"
     say "$(t mod_ok): $dst"
 
     # Language in the plugin config
@@ -666,7 +736,7 @@ $GAME_DIR" 1 || exit 1
 
     dir="$GAME_DIR/BepInEx/plugins/$PLUGIN"
     keep=0
-    if [ -d "$dir/SaveHistory" ] || [ -d "$dir/Translations/_discovered" ]; then
+    if [ -d "$dir/SaveHistory" ] || [ -d "$dir/Translations/_discovered" ] || [ -d "$GAME_DIR/BepInEx/SaveHistory" ]; then
         ask_yes "$(t keep)" 1 && keep=1
     fi
     if [ -d "$dir" ]; then
@@ -676,12 +746,28 @@ $GAME_DIR" 1 || exit 1
                 find "$dir/Translations" -mindepth 1 -maxdepth 1 ! -name _discovered -exec rm -rf {} +
                 [ -d "$dir/Translations/_discovered" ] || rmdir "$dir/Translations" 2>/dev/null || true
             fi
+            rmdir "$dir" 2>/dev/null || true
         else
             rm -rf "$dir"
         fi
         say "$(t mod_removed)"
     fi
     rm -f "$GAME_DIR/BepInEx/config/$CFG_NAME"
+
+    # The framework stays while any other mod is installed.
+    if [ -n "$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 -name "$FRAMEWORK_PREFIX*" 2>/dev/null | head -1)" ]; then
+        if [ -n "$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" ! -name "$FRAMEWORK_PREFIX*" 2>/dev/null | head -1)" ]; then
+            say "$(t fw_kept)"
+        else
+            find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 -name "$FRAMEWORK_PREFIX*" -exec rm -rf {} +
+            rm -f "$GAME_DIR/BepInEx/patchers/$FRAMEWORK_PATCHER" "$GAME_DIR/BepInEx/config/com.tomxv.dragnwash.modframework"*
+            say "$(t fw_removed)"
+        fi
+    fi
+    # Save snapshots taken by the framework's saves library.
+    if [ -d "$GAME_DIR/BepInEx/SaveHistory" ] && [ "$keep" -eq 0 ]; then
+        rm -rf "$GAME_DIR/BepInEx/SaveHistory"
+    fi
 
     # BepInEx and the launch option only matter to other mods now. If there
     # are none, offer to remove BepInEx whoever installed it (the default
@@ -704,8 +790,8 @@ $GAME_DIR" 1 || exit 1
             if [ "$remove_bep" -eq 1 ]; then
                 rm -f "$GAME_DIR/run_bepinex.sh" "$GAME_DIR/libdoorstop.so" "$GAME_DIR/.doorstop_version"
                 if [ -f "$GAME_DIR/changelog.txt" ] && grep -qi 'bepinex\|doorstop' "$GAME_DIR/changelog.txt"; then rm -f "$GAME_DIR/changelog.txt"; fi
-                if [ "$keep" -eq 1 ] && [ -d "$dir" ]; then
-                    find "$GAME_DIR/BepInEx" -mindepth 1 -maxdepth 1 ! -name plugins -exec rm -rf {} +
+                if [ "$keep" -eq 1 ] && { [ -d "$dir" ] || [ -d "$GAME_DIR/BepInEx/SaveHistory" ]; }; then
+                    find "$GAME_DIR/BepInEx" -mindepth 1 -maxdepth 1 ! -name plugins ! -name SaveHistory -exec rm -rf {} +
                     find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" -exec rm -rf {} +
                 else
                     rm -rf "$GAME_DIR/BepInEx"

@@ -11,11 +11,15 @@
 #   1. finds the game through Steam (or asks for the folder)
 #   2. downloads BepInEx 5.4.23.5 (x64) and unpacks it into the game folder if
 #      it is not there yet; the download is checked against a pinned SHA-256
-#   3. copies the plugin and the translation files from the payload that ships
+#   3. copies Drag'n Wash ModFramework and the libraries the mod uses
+#      (..\BepInEx\plugins\DragNWash.ModFramework*, ..\BepInEx\patchers), unless
+#      the same or a newer version is already installed
+#   4. copies the plugin and the translation files from the payload that ships
 #      in the same zip as this script (..\BepInEx\plugins\DragNWashLocalization)
-#   4. writes the chosen language into the plugin's config file
-# Uninstall removes the plugin folder and, when the installer was the one that
-# added BepInEx, BepInEx itself. Save-history snapshots are kept unless asked.
+#   5. writes the chosen language into the plugin's config file
+# Uninstall removes the plugin folder, the framework when no other mod is
+# installed, and, when the installer was the one that added BepInEx, BepInEx
+# itself. Save-history snapshots are kept unless asked.
 [CmdletBinding()]
 param(
     [ValidateSet('install', 'uninstall')]
@@ -36,6 +40,9 @@ $BepInExUrl = 'https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/Be
 $BepInExSha256 = '82f9878551030f54657792c0740d9d51a09500eeae1fba21106b0c441e6732c4'
 $MarkerName = '.bepinex-installed-by-dragnwash-localization'
 $Payload = Join-Path (Split-Path -Parent $PSScriptRoot) "BepInEx\plugins\$PluginFolderName"
+$PayloadBepInEx = Join-Path (Split-Path -Parent $PSScriptRoot) 'BepInEx'
+$FrameworkPrefix = 'DragNWash.ModFramework'
+$FrameworkPatcher = 'DragNWash.ModFramework.Preloader.dll'
 
 # ---------------------------------------------------------------- strings --
 $Lang = 'en'
@@ -226,6 +233,77 @@ function Install-BepInEx([string]$g) {
     Log "BepInEx: installed"
 }
 
+function Get-DllVersion([string]$path) {
+    if (-not (Test-Path -LiteralPath $path)) { return $null }
+    $v = (Get-Item -LiteralPath $path).VersionInfo.FileVersion
+    try { return [version]$v } catch { return [version]'0.0' }
+}
+
+# A mod file the player switched off on the Mods screen is renamed to
+# .dll.disabled by the framework's patcher. Installing means wanting it on.
+function Enable-ModFile([string]$g, [string]$rel) {
+    $off = Join-Path $g ("BepInEx\plugins\" + ($rel -replace '/', '\') + '.disabled')
+    if (Test-Path -LiteralPath $off) { Remove-Item -LiteralPath $off -Force }
+    $utf8 = New-Object Text.UTF8Encoding($false)
+    foreach ($name in 'com.tomxv.dragnwash.modframework.disabled.txt', 'com.tomxv.dragnwash.modframework.state.txt') {
+        $list = Join-Path $g "BepInEx\config\$name"
+        if (-not (Test-Path -LiteralPath $list)) { continue }
+        $lines = @([IO.File]::ReadAllLines($list, $utf8) | Where-Object { ($_ -split "`t")[0].Trim().Replace('\', '/') -ne $rel })
+        [IO.File]::WriteAllLines($list, [string[]]$lines, $utf8)
+    }
+}
+
+# The framework and its libraries, each in its own plugins folder. Another mod
+# may have installed a newer version already; never replace it with an older one.
+function Install-Framework([string]$g) {
+    $src = Join-Path $PayloadBepInEx 'plugins'
+    $folders = @(Get-ChildItem -LiteralPath $src -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -like "$FrameworkPrefix*" })
+    if ($folders.Count -eq 0) { throw $T.noPayload }
+    foreach ($folder in $folders) {
+        $dll = Join-Path $folder.FullName "$($folder.Name).dll"
+        $dst = Join-Path $g "BepInEx\plugins\$($folder.Name)"
+        $have = Get-DllVersion (Join-Path $dst "$($folder.Name).dll")
+        $offered = Get-DllVersion $dll
+        if ($have -and $offered -and $have -gt $offered) {
+            Log "$($folder.Name): kept $have (newer than $offered)"
+            continue
+        }
+        New-Item -ItemType Directory -Force -Path $dst | Out-Null
+        Copy-Item -Path (Join-Path $folder.FullName '*') -Destination $dst -Recurse -Force
+        Enable-ModFile $g "$($folder.Name)/$($folder.Name).dll"
+        Log "$($folder.Name): $offered"
+    }
+    $patcher = Join-Path $PayloadBepInEx "patchers\$FrameworkPatcher"
+    if (Test-Path -LiteralPath $patcher) {
+        $dst = Join-Path $g 'BepInEx\patchers'
+        $have = Get-DllVersion (Join-Path $dst $FrameworkPatcher)
+        $offered = Get-DllVersion $patcher
+        if (-not ($have -and $offered -and $have -gt $offered)) {
+            New-Item -ItemType Directory -Force -Path $dst | Out-Null
+            Copy-Item -LiteralPath $patcher -Destination $dst -Force
+        }
+    }
+}
+
+# Removed only when nothing else is installed that could be using it.
+function Uninstall-Framework([string]$g) {
+    $plugins = Join-Path $g 'BepInEx\plugins'
+    $framework = @(Get-ChildItem -LiteralPath $plugins -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -like "$FrameworkPrefix*" })
+    if ($framework.Count -eq 0) { return }
+    $others = @(Get-ChildItem -LiteralPath $plugins -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -ne $PluginFolderName -and $_.Name -notlike "$FrameworkPrefix*" })
+    if ($others.Count -gt 0) {
+        Log "ModFramework: kept, other mods are installed ($($others.Name -join ', '))"
+        return
+    }
+    $framework | Remove-Item -Recurse -Force
+    $patcher = Join-Path $g "BepInEx\patchers\$FrameworkPatcher"
+    if (Test-Path -LiteralPath $patcher) { Remove-Item -LiteralPath $patcher -Force }
+    Get-ChildItem -LiteralPath (Join-Path $g 'BepInEx\config') -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -like 'com.tomxv.dragnwash.modframework*' } | Remove-Item -Force
+    Log 'ModFramework: removed'
+}
+
 function Install-Plugin([string]$g, [string]$loc) {
     if (-not (Test-Path -LiteralPath (Join-Path $Payload "$PluginFolderName.dll"))) { throw $T.noPayload }
     $dst = Get-PluginDir $g
@@ -246,6 +324,7 @@ function Install-Plugin([string]$g, [string]$loc) {
         New-Item -ItemType Directory -Force -Path $d | Out-Null
         Copy-Item -Path (Join-Path $_.FullName '*') -Destination $d -Recurse -Force
     }
+    Enable-ModFile $g "$PluginFolderName/$PluginFolderName.dll"
     Log "Mod: files copied to $dst"
     Set-PluginLocale $g $loc
 }
@@ -271,8 +350,8 @@ function Set-PluginLocale([string]$g, [string]$loc) {
 
 function Uninstall-Plugin([string]$g, [bool]$keepSaves, [bool]$removeBep) {
     $dir = Get-PluginDir $g
+    $keep = @()
     if (Test-Path -LiteralPath $dir) {
-        $keep = @()
         if ($keepSaves) {
             if (Test-Path -LiteralPath (Join-Path $dir 'SaveHistory')) { $keep += 'SaveHistory' }
             if (Test-Path -LiteralPath (Join-Path $dir 'Translations\_discovered')) { $keep += 'Translations\_discovered' }
@@ -294,6 +373,12 @@ function Uninstall-Plugin([string]$g, [bool]$keepSaves, [bool]$removeBep) {
     } else { Log "Mod: not installed" }
     $cfg = Join-Path $g "BepInEx\config\$PluginConfigName"
     if (Test-Path -LiteralPath $cfg) { Remove-Item -LiteralPath $cfg -Force }
+    Uninstall-Framework $g
+    # Save snapshots taken by the framework's saves library.
+    $history = Join-Path $g 'BepInEx\SaveHistory'
+    if (Test-Path -LiteralPath $history) {
+        if ($keepSaves) { $keep += 'BepInEx\SaveHistory' } else { Remove-Item -LiteralPath $history -Recurse -Force }
+    }
     if ($removeBep -and (Test-BepInEx $g)) {
         $others = @(Get-ChildItem -LiteralPath (Join-Path $g 'BepInEx\plugins') -ErrorAction SilentlyContinue |
             Where-Object { $_.Name -ne $PluginFolderName })
@@ -309,12 +394,12 @@ function Uninstall-Plugin([string]$g, [bool]$keepSaves, [bool]$removeBep) {
             if ($keep.Count -gt 0) {
                 # The user's data lives inside BepInEx/plugins/<mod>/; take BepInEx
                 # apart around it instead of deleting the whole tree.
-                Get-ChildItem -LiteralPath $bep -Force | Where-Object { $_.Name -ne 'plugins' } | Remove-Item -Recurse -Force -ErrorAction Continue
+                Get-ChildItem -LiteralPath $bep -Force | Where-Object { $_.Name -ne 'plugins' -and $_.Name -ne 'SaveHistory' } | Remove-Item -Recurse -Force -ErrorAction Continue
                 $plugins = Join-Path $bep 'plugins'
                 if (Test-Path -LiteralPath $plugins) {
                     Get-ChildItem -LiteralPath $plugins -Force | Where-Object { $_.Name -ne $PluginFolderName } | Remove-Item -Recurse -Force -ErrorAction Continue
                 }
-                Log "BepInEx: removed (your data stays in $dir)"
+                Log "BepInEx: removed (your data stays: $($keep -join ', '))"
             } else {
                 Remove-Item -LiteralPath $bep -Recurse -Force -ErrorAction Continue
                 Log "BepInEx: removed"
@@ -327,6 +412,7 @@ function Invoke-Install([string]$g, [string]$loc) {
     if (-not (Test-GameFolder $g)) { throw $T.notFound }
     if (Test-GameRunning) { throw $T.running }
     Install-BepInEx $g
+    Install-Framework $g
     Install-Plugin $g $loc
     Log $T.done
 }
