@@ -12,7 +12,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"Oh, salut ! euh..."
 30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,On m'a dit qu'il y avait des kobolds par ici qui pouvaient me laver ?
 08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,C'est bien ici ?
 32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,Mhm ! Je suis <i>le</i> kobold !
-eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"Oui, bienvenue chez Drag'N Wash !"
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"Oui, bienvenue chez Drag'n wash !"
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"Haha, ça, c'est sûr !"
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Merveilleux !
 900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,"Moi, c'est Ryan. Alors..."
@@ -24,13 +24,13 @@ b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,Yip !
 ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"Ah, je vois le bouton, là. Compris !"
 425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"D'accord, j'attends. Merci."
 # --- phone: Ryan_1_PhoneTutorial ---
-9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Bonjour, <i>« franchise Drag'n'wash 223 »...</i> Avez-vous déjà parlé à votre premier client ?"
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Bonjour, <i>« franchise Drag'n wash 223 »...</i> Avez-vous déjà parlé à votre premier client ?"
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,À l'instant !
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"Oui, c'est fait."
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"Ah, bien."
 ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,Dans ce cas... Bonne journée productive.
-07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Bonjour, <i>« franchise Drag'n'wash 223 »...</i> Avez-vous compris comment interagir ?"
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Bonjour, <i>« franchise Drag'n wash 223 »...</i> Avez-vous compris comment interagir ?"
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,Non.
 01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,Je crois que j'ai pigé !
 085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,Ah...

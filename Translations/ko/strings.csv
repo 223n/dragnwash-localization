@@ -12,7 +12,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"아, 안녕! 음..."
 30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,여기 내려오면 나를 씻겨 줄 코볼트가 있다고 들었는데?
 08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,여기가 맞아?
 32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,네! 제가 바로 <i>그</i> 코볼트예요!
-eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"네, Drag'N Wash에 오신 걸 환영해요!"
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"네, Drag'n wash에 오신 걸 환영해요!"
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"하하, 정말 그렇네!"
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,훌륭하군요!
 line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,잘됐다!
@@ -25,13 +25,13 @@ b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,Yip!
 ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"아, 저기 버튼이 보이네. 알겠어!"
 425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"그래, 기다리고 있을게. 고마워."
 # --- phone: Ryan_1_PhoneTutorial ---
-9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"여보세요, <i>'Drag'n'wash 223호점'...</i> 첫 손님과는 이야기를 나누셨습니까?"
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"여보세요, <i>'Drag'n wash 223호점'...</i> 첫 손님과는 이야기를 나누셨습니까?"
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,방금 했어요!
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"네, 했어요."
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"아, 좋습니다."
 ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,그럼- 생산적인 하루 되십시오.
-07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"여보세요, <i>'Drag'n'wash 223호점'...</i> 상호작용하는 방법은 파악하셨습니까?"
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"여보세요, <i>'Drag'n wash 223호점'...</i> 상호작용하는 방법은 파악하셨습니까?"
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,아니요.
 01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,알 것 같아요!
 085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,아...
