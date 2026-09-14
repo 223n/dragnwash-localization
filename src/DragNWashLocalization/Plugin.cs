@@ -14,6 +14,7 @@ namespace DragNWashLocalization
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     [BepInDependency(ModFrameworkInfo.FrameworkGuid, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(DragNWash.ModFramework.Text.GameText.Guid, BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(DragNWash.ModFramework.Dialogue.GameDialogue.Guid, BepInDependency.DependencyFlags.HardDependency)]
     public partial class Plugin : BaseUnityPlugin
     {
         public const string PluginGuid = "com.tomxv.dragnwash.localization";
@@ -202,7 +203,6 @@ namespace DragNWashLocalization
             VirtualClick.Install(harmony);
             MenuText.Install(harmony);
             OptionsLanguage.Install(harmony);
-            LineIdContext.Install(harmony);
             harmony.PatchAll();
             TmpTextHook.Install();
 

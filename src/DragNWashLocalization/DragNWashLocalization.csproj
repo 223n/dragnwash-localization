@@ -97,6 +97,10 @@
       <HintPath>libs\DragNWash.ModFramework.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="DragNWash.ModFramework.Dialogue">
+      <HintPath>libs\DragNWash.ModFramework.Dialogue.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="DragNWash.ModFramework.Text">
       <HintPath>libs\DragNWash.ModFramework.Text.dll</HintPath>
       <Private>false</Private>
