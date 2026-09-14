@@ -1,6 +1,6 @@
 // Install.exe: opens the installer window without any console.
-// Built by tools/pack.ps1 with the C# compiler that ships in every Windows
-// (.NET Framework 4), so nothing extra is needed to produce the release.
+// Built by tools/pack.ps1 through Launcher.csproj, deterministically, so the
+// file stays byte-identical across releases while this source is unchanged.
 using System;
 using System.Diagnostics;
 using System.IO;

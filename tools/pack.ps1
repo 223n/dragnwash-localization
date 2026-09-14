@@ -166,12 +166,15 @@ Copy-Item -LiteralPath (Join-Path $Root 'installer/Installer.ps1') -Destination 
 Copy-Item -LiteralPath (Join-Path $Root 'installer/Install.cmd') -Destination $Stage
 # Steam Deck / Linux installer. Must keep LF line endings (.gitattributes).
 Copy-Item -LiteralPath (Join-Path $Root 'installer/install-steamdeck.sh') -Destination $Stage
-$Csc = Join-Path $env:WINDIR 'Microsoft.NET' | Join-Path -ChildPath 'Framework64' | Join-Path -ChildPath 'v4.0.30319' | Join-Path -ChildPath 'csc.exe'
-if (-not (Test-Path -LiteralPath $Csc)) { throw "C# compiler not found at $Csc (needed to build Install.exe)." }
-$LauncherExe = Join-Path $Stage 'Install.exe'
-$LauncherSrc = Join-Path $Root 'installer/Launcher.cs'
-& $Csc /nologo /target:winexe /optimize+ /r:System.Windows.Forms.dll "/out:$LauncherExe" $LauncherSrc
+# Built deterministically (installer/Launcher.csproj): the same Launcher.cs gives a
+# byte-identical Install.exe every release, so antivirus reputation, which follows
+# the file's hash, carries over instead of starting again with each release.
+$LauncherProject = Join-Path $Root 'installer/Launcher.csproj'
+dotnet build $LauncherProject -c Release
 if ($LASTEXITCODE -ne 0) { throw 'Failed to build Install.exe.' }
+Copy-Item -LiteralPath (Join-Path $Root 'installer/bin/Release/Install.exe') -Destination (Join-Path $Stage 'Install.exe')
+$LauncherHash = (Get-FileHash -LiteralPath (Join-Path $Stage 'Install.exe') -Algorithm SHA256).Hash.ToLowerInvariant()
+Write-Host "Install.exe sha256 $LauncherHash (unchanged unless installer/Launcher.cs or the .NET SDK changed)"
 
 # 5. Zip the stage contents (so the zip root holds BepInEx/ and the READMEs).
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
