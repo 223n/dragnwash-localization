@@ -201,6 +201,7 @@ f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,Je suis désolé de t'avoir débal
 a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,C'est pas grave !
 94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,Je sais que ça peut être dur.
 4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,Vous êtes adorable.
+line:15f55959,L04 Ryan,Ryan_2_Outro,5,Ryan,T'es vraiment adorable.
 ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,J'aimerais que ce soit aussi simple que dans les films.
 0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,"Reviens quand tu veux, Ryan."
 78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,"Si tu veux en parler encore, j'ai une minute."
@@ -588,7 +589,7 @@ c8ac7dce03b1b9b7,L09 Alexander,Alexander_3_required,18,Kobold,Comment ça ?
 7bf3b1fff483809e,L09 Alexander,Alexander_3_required,21,Alexander,N'importe quoi. Simple curiosité.
 # --- progress: Alexander_questions ---
 9da08a79c3f86ee0,L09 Alexander,Alexander_questions,1,Kobold,"C'est comment, d'enseigner ?"
-337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold/Alexander,Tu aimes le violet ?
+337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold/Alexander,Vous aimez le violet ?
 70523c9a506d9676,L09 Alexander,Alexander_questions,3,Kobold,Tu aimes être grand ?
 3fbd83d375d6fa05,L09 Alexander,Alexander_questions,4,Kobold,Quel goût a le chiffre 7 ?
 767b6d6bdc5b806a,L09 Alexander,Alexander_questions,5,Kobold,Qu'est-ce que tu penses de moi ?
@@ -1297,6 +1298,7 @@ ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,"L'ambiance
 ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,Qu'est-ce qui te met de si bonne humeur ?
 9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,"Mon rencard avec Ryan, c'était..."
 f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,"Putain, vraiment bien !"
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,Salut.
 4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,Désolé de venir si tard. Mon sommeil est complètement déréglé.
 258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,"Je suis juste là pour un lavage, par contre."
 b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,Il faudra bientôt me raconter tous les détails sur Ryan.

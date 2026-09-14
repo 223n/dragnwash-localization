@@ -11,6 +11,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,あ、どうも！ えっと……
 d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,はい、Drag'N Washへようこそ！
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,はは、確かにそうみたいだね！
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,素晴らしい！
+line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,よかった！
 900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,僕はライアン。それで……
 092808653667e9ff,L01 Ryan,Ryan_1_intro,11,Ryan,どうやって入ればいいの？
 0f3f0b7e817061e6,L01 Ryan,Ryan_1_intro,12,Kobold,ちょっと待ってくださいね、ゲートを開けますから。
@@ -190,6 +191,7 @@ d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,15,Ryan,わかってる。君にこん
 b11d41e01fefb995,L04 Ryan,Ryan_2_required,20,Kobold,ありがとうございます。私もライアンといるのは好きですよ。
 c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,21,Kobold,うまくいくといいですね。
 ebb96171ea7628a0,L04 Ryan,Ryan_2_required,22,Ryan/Kobold/Alexander,よかったです。
+line:286fec49,L04 Ryan,Ryan_2_required,22,Ryan,よかった。
 91c0e3e9014024af,L04 Ryan,Ryan_2_required,23,Ryan,僕もそう思う。
 # --- outro: Ryan_2_Outro ---
 cb57ee6155ed6ca5,L04 Ryan,Ryan_2_Outro,1,Ryan,よし。すっかり綺麗だ。
@@ -197,6 +199,7 @@ f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,さっきは色々ぶちまけち�
 a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,大丈夫ですよ！
 94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,大変なこともありますよね。
 4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,貴殿こそ、実にお優しい。
+line:15f55959,L04 Ryan,Ryan_2_Outro,5,Ryan,君って本当に優しいね。
 ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,映画みたいに簡単だったらいいのにな。
 0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,いつでも来てくださいね、ライアン。
 78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,もっと話したいなら、時間ありますよ。
@@ -222,6 +225,7 @@ c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,25,Ryan,僕もそう思ったんだ。
 7258b4e037805024,L04 Ryan,Ryan_2_Outro,32,Ryan,聞いてくれてありがとう。
 951382e00968439d,L04 Ryan,Ryan_2_Outro,33,Kobold,いつでもどうぞ、ライアン。
 c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,34,Kobold,もちろんです。大変な思いをしてますね。
+line:6b245989,L04 Ryan,Ryan_2_Outro,35,Ryan,ありがとう。
 553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,36,Ryan,大丈夫。なんとかするよ。
 bd7468846a30d095,L04 Ryan,Ryan_2_Outro,37,Kobold,ゲートを開けてきますね。
 a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,38,Ryan,じゃあ、またね！
@@ -279,6 +283,7 @@ f81a53c29135dfa5,L05 Conrad,conrad_jerk_off_no,1,Conrad,いや、その……今
 d4a62b147d5a622b,L05 Conrad,Conrad_Outro_2,2,Kobold,体がですか、心がですか？
 0d49a74e82a2356a,L05 Conrad,Conrad_Outro_2,4,Conrad,両方だ。
 c38c5771c6cf6118,L05 Conrad,Conrad_Outro_2,5,Conrad/Ryan,同じく。
+line:d4c5faea,L05 Conrad,Conrad_Outro_2,5,Conrad,俺もだぜ。
 7e30c436a9112ecd,L05 Conrad,Conrad_Outro_2,6,Conrad,お前……いいやつだな。
 229bd072e07a3d53,L05 Conrad,Conrad_Outro_2,7,Conrad,本気で言ってんだ。マジで。
 ba15304b6e669701,L05 Conrad,Conrad_Outro_2,8,Kobold,自分が正しいと思うことをしてるだけですよ。
@@ -606,6 +611,7 @@ e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,貴殿のそば�
 046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,いいえ。
 b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,ええ、あの色は好みでございます。ですが、私の体色とは無関係かと。
 bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,あの色は好みでございます。とはいえ、私の体色とは無関係かと存じますが。
+line:ef052302,L09 Alexander,Alexander_questions,24,Alexander,貴殿は紫色がお好きですかな？
 525ba3c4a2511183,L09 Alexander,Alexander_questions,27,Alexander,おや。結構。
 3885f7429496059d,L09 Alexander,Alexander_questions,29,Alexander,おや。承知いたしました。
 8133434681c5d0c2,L09 Alexander,Alexander_questions,31,Alexander,答えるのが難しい質問でございますな。
@@ -646,6 +652,7 @@ f06f453ab3d6251f,L09 Alexander,Alexander_questions,62,Kobold,とても優しい�
 91d69b4f1f9739cb,L09 Alexander,Alexander_questions,70,Alexander,体の一部だと思う者が多うございますが。
 dd0f2ff5e303f61a,L09 Alexander,Alexander_questions,71,Alexander,実は装飾品でございます！ 我が一族の紋章でして。つまり……
 7271f9e9b21e5401,L09 Alexander,Alexander_questions,72,Alexander,ドラゴンの歴史は複雑でございます。装飾的な紋章は<size=85%>しばしば<size=70%>ドラゴンが身につけ、<size=55%>どの一族に属するかを示すのです！ <size=40%>文化的・<size=35%>家族的な伝統を表す興味深い印でございまして。私も自分のものを着け続けるべきか、幾度も考えたものです。<size=20%>しかしドラゴンの伝承においては、文化と家族の絆は重要とされております！ ゆえに私はそれに従わねばなりません。<size=10%>水。土。火。気。遠い昔、四つの国は調和のうちに共存していた。だが火の国が攻めてきて、すべてが変わった。
+line:e90fee8e,L09 Alexander,Alexander_questions,73,Kobold,へえ。
 0006b6926947b91b,L09 Alexander,Alexander_questions,74,Kobold,もう一度言ってもらえますか？
 b6d573339ec0b66b,L09 Alexander,Alexander_questions,75,Alexander,ああ、失礼、こうした事柄には熱が入ってしまいましてな。
 9909f3ea3dffb93e,L09 Alexander,Alexander_questions,76,Alexander,私の紋章を気に入っていただけて、何よりでございます。
@@ -719,6 +726,7 @@ ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,27,Ryan,誰か話せる相手を知
 4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,29,Kobold,"<gradient=""gold""><b>あ。えっと。<size=70%> 私でよければ……その「誰か」に。 </b></gradient><size=70%>（ライアンとのロマンスが確定します！）"
 bb7a6be711206298,L10 Ryan,ryan_food_dialogue,30,Kobold,"<gradient=""gold""><b>すぐには思いつきませんね。</b></gradient><size=70%>（コンラッドとのロマンスが確定します！）"
 a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,31,Ryan/Alexander/Kobold,おや？
+line:1d491283,L10 Ryan,ryan_food_dialogue,31,Ryan,えっ？
 cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,32,Ryan,誰なの？
 ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,うちに来る、すっごく可愛い赤いドレイクなんです！
 4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,34,Kobold,赤いドラゴンですよ。お二竜、気が合うと思います！
@@ -732,6 +740,7 @@ c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,わあ、素敵だ。僕た
 b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,じゃあ、お二竜を引き合わせますね。
 80c500f9c426d4cc,L10 Ryan,ryan_food_dialogue,43,Kobold,楽しみです。お二竜を引き合わせますね！
 ec786c9a7656b0f9,L10 Ryan,ryan_food_dialogue,45,Ryan,僕もだよ、ありがとう！
+line:3b6d644d,L10 Ryan,ryan_food_dialogue,46,Ryan,あ。
 028dbc8d077c611f,L10 Ryan,ryan_food_dialogue,47,Ryan,<i>ああ……
 ae590830c4c03fd1,L10 Ryan,ryan_food_dialogue,48,Ryan,君にも、その「誰か」になってほしいな。
 b4066b4e58df8005,L10 Ryan,ryan_food_dialogue,49,Kobold,じゃあこれって……初デートですか？
@@ -903,6 +912,8 @@ a951e05bf8506af1,L11 Conrad,Conrad_Intro_4,15,Conrad,ベリーだ。
 daa08f627cbbfb9e,L11 Conrad,Conrad_Intro_4,23,Conrad,ああ——お前が良けりゃ、だけどな！
 20ee725c28fb397e,L11 Conrad,Conrad_Intro_4,24,Conrad,押しつけがましくしねえように気をつけてんだ。
 374fe9cc22a15007,L11 Conrad,Conrad_Intro_4,25,Kobold,もう、ゲートを開けてきますよ。
+line:34ec4db7,L11 Conrad,Conrad_Intro_4,26,Conrad,ありがとな。
+line:188d4359,L11 Conrad,Conrad_Intro_4,27,Conrad,ありがとな。
 ae53715099e0d53d,L11 Conrad,Conrad_Intro_4,28,Conrad,ライアンだ！ 会ってきたぜ。
 caefb85b87a51126,L11 Conrad,Conrad_Intro_4,29,Kobold,いいですね！ で、その……ベタベタは何ですか？
 0452c0f1847f4a72,L11 Conrad,Conrad_Intro_4,30,Kobold,どうでした？
@@ -915,11 +926,14 @@ ab20df82132f07cc,L11 Conrad,Conrad_Intro_4,37,Conrad,話すさ。今日はちょ
 9912569ea696f8ed,L11 Conrad,Conrad_Intro_4,39,Kobold,コンラッド！
 106f99c061d35f26,L11 Conrad,Conrad_Intro_4,40,Kobold,わかり——わかりました。ゲートを開けてきます。
 f71200a57e2d1d7a,L11 Conrad,Conrad_Intro_4,41,Conrad,なんだよぉ？ ウォームアップは大事だろ！
+line:3484ab9d,L11 Conrad,Conrad_Intro_4,42,Conrad,ありがとな！
 65bee50d904e101d,L11 Conrad,Conrad_Intro_4,43,Conrad,よおよお。開いててよかったぜ。
 4d5dda82efc31458,L11 Conrad,Conrad_Intro_4,44,Conrad,ホースで流してほしいんだ。マウントも使えりゃなおいい。
 0ecdd0ec4c0cf66c,L11 Conrad,Conrad_Intro_4,45,Kobold,おお、了解です。
 3252727dec6314c5,L11 Conrad,Conrad_Intro_4,47,Kobold,その……ベタベタは何ですか？
 91bc8d1d6dc8cdb7,L11 Conrad,Conrad_Intro_4,48,Conrad,へっ。ああ。
+line:bc5d790a,L11 Conrad,Conrad_Intro_4,50,Conrad,ありがとな！
+line:4d868f2f,L11 Conrad,Conrad_Intro_4,51,Conrad,ありがとな！
 1aced2f074444bdc,L11 Conrad,Conrad_Intro_4,54,Kobold,あ。わかりました、ゲートを開けてきます。
 # --- progress: Conrad_required_4 ---
 a5965f548b64e3cf,L11 Conrad,Conrad_required_4,1,Conrad,なあ、ひとつ聞きてえことがある。
@@ -935,6 +949,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,とにかく�
 71cfcccd17dc37fc,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,6,Conrad,今んとこ順調だろ、な？
 93a2ca86985333fe,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,7,Kobold,そう思いますよ！
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,ライアンみたいな子が興味を持ってるなら、うまくいってますよ。
+line:c642cb17,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,ありがとな。
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,はっ。俺を洗ってくれるコボルドがいりゃあなあ。
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,いればいいですね。
 6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>ピカピカにしてあげますよ。
@@ -947,6 +962,7 @@ f2f6817fb49621c2,L11 Conrad,Conrad_4_Conrad_Romanced,3,Kobold,ぜひ！
 fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,いいですね。
 9a03666243082379,L11 Conrad,Conrad_4_Conrad_Romanced,6,Kobold,いいですよ！
 67f68a72462bca9b,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad/Ryan,やった！
+line:70306ba1,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad,よっしゃ！
 45ec6449f36fb5b9,L11 Conrad,Conrad_4_Conrad_Romanced,8,Conrad,次に洗いに来たとき、そのまま行こうぜ。
 ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,楽しみです！
 38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,10,Kobold,それでいきましょう。
@@ -1091,6 +1107,7 @@ ed6a9612f44b19ea,L12 Alexander,Alexander_4_Cum,1,Alexander,はぁ……感謝い
 35278dc46019f9b9,L12 Alexander,Alexander_4_Outro,1,Alexander,だいぶ気分が良くなりました。
 5547ec33b10091a2,L12 Alexander,Alexander_4_Outro,2,Alexander,その……唐突なのは承知しております。
 3ce3dec2bd740757,L12 Alexander,Alexander_4_Outro,3,Alexander,ですが、貴殿は私に何かを教えてくださったように思うのです。
+line:21c46e75,L12 Alexander,Alexander_4_Outro,4,Kobold,え？
 5eca8560307cac86,L12 Alexander,Alexander_4_Outro,5,Kobold,でも、先生はアレクサンダーの方ですよ。
 419ecbf32abefda1,L12 Alexander,Alexander_4_Outro,6,Alexander,教授、でございます。ですが、ええ。教わりました。
 0b1b8529d2c3c5fc,L12 Alexander,Alexander_4_Outro,7,Alexander,私は、世話をされるのが好きなのかもしれません？
@@ -1126,12 +1143,14 @@ efa367904267d1f9,L13 Ryan,Ryan_5_intro_ryan_romanced,1,Ryan,……今夜のデ�
 d510da8dc09c7bd7,L13 Ryan,Ryan_5_intro_ryan_romanced,2,Kobold,あっ。そうでした。
 cb4f55dc25088cef,L13 Ryan,Ryan_5_intro_ryan_romanced,3,Kobold,すごく楽しみです。
 63b5ec8a662e7e8f,L13 Ryan,Ryan_5_intro_ryan_romanced,4,Ryan,じゃあ、思い出させに来てよかったね。
+line:141c006f,L13 Ryan,Ryan_5_intro_ryan_romanced,5,Ryan,僕もだよ。
 60004e58bb12dd3c,L13 Ryan,Ryan_5_intro_ryan_romanced,6,Ryan,ゲートのところで待ってるね！
 # --- intro: Ryan_5_intro ---
 3ff66f86649ed3f4,L13 Ryan,Ryan_5_intro,19,Kobold,こんにちは、ライアン！
 bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,20,Ryan,やあ！ 洗ってもらいに来たよ。
 747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,24,Kobold,いいですね、ゲートを開けてきますね。
 1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,25,Kobold,はい！ コンラッドのこと、話したくてうずうずしてるんです。
+line:f103a4a8,L13 Ryan,Ryan_5_intro,27,Ryan,そうなの？
 4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,28,Kobold,ええ！ 近いうちに彼とデートなんです。
 29301eae6840e128,L13 Ryan,Ryan_5_intro,29,Kobold,えぇ、彼とのデートの準備をしないと。
 154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,30,Ryan,わくわくするね！
@@ -1176,6 +1195,7 @@ cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,馬系のフュ�
 5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,ああ、そうだ、街に「ウィングス」っていういい店があるんだ。
 4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,あそこならいいと思うよ！ 毎晩いいショーをやってるんだ。
 ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,それから、ホテルの部屋を取って……うーん。
+line:2b560f59,L13 Ryan,Ryan_5_Required_ryan_romanced,33,Ryan,そうなの？
 435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Ryan,映画も楽しそうだね！
 0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Ryan,どんな映画を考えてるの？
 b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Kobold,イップマン ―最後のイップ―
@@ -1234,10 +1254,13 @@ c7f3dbd886d929a7,L13 Ryan,Ryan_5_Mount_Start,1,Ryan,マウント？ いいよ！
 6fc39ec69d974bb4,L13 Ryan,Ryan_5_Outro_ryan_romanced,1,Ryan,隅々まで洗ってくれたと思う。
 c9e5fbe3317edd3f,L13 Ryan,Ryan_5_Outro_ryan_romanced,2,Ryan,これがどういう意味か、わかるよね……
 f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,デートの夜ですね！
+line:95aa0bf4,L13 Ryan,Ryan_5_Outro_ryan_romanced,5,Ryan,もちろんだよ！
 0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Ryan,とあるコボルドとデートに行く準備ができたってことだよ。
 e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,店を閉めなきゃいけないのはわかってる。住所を渡しておくから、そこで待ち合わせよう、ね？
 6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Kobold,いいですね！
+line:a00f681d,L13 Ryan,Ryan_5_Outro_ryan_romanced,9,Kobold,楽しみです。
 7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,10,Ryan,本当に楽しみだな。
+line:363f6f6a,L13 Ryan,Ryan_5_Outro_ryan_romanced,11,Ryan,僕もだよ。
 dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,12,Ryan,よし、ゲートを開けてきて。僕は先に場所へ向かうよ！
 7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,13,Ryan,またすぐにね。
 # --- outro: Ryan_5_Outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
@@ -1282,7 +1305,9 @@ b6fff34d007d61c9,L14 Conrad,Conrad_5_intro_conrad_romanced,4,Kobold,うーん…
 364ea49c3b6c9895,L14 Conrad,Conrad_5_intro_conrad_romanced,8,Conrad,はっ！
 3ef6b1f5eeda632e,L14 Conrad,Conrad_5_intro_conrad_romanced,9,Conrad,ふざけただけだ。
 ec760ba3440257aa,L14 Conrad,Conrad_5_intro_conrad_romanced,10,Conrad,よし、じゃあ今夜のデートに向けて、洗い落とそうぜ。
+line:d66b9155,L14 Conrad,Conrad_5_intro_conrad_romanced,11,Kobold,楽しみです。
 300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Kobold,ピカピカにしないといけませんね！
+line:405b9622,L14 Conrad,Conrad_5_intro_conrad_romanced,13,Conrad,俺もだぜ。
 260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,へっ……あったりめぇだ。
 d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,気合い入ってるぜ。
 a652a464f67481de,L14 Conrad,Conrad_5_intro_conrad_romanced,16,Conrad,前に言ったバー、もう席は押さえてある。
@@ -1293,16 +1318,19 @@ ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,夜の雰�
 ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,何かいいことありました？
 9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,ライアンとのデートはよ……
 f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,くそ最高だった！
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,よう。
 4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,遅くに来て悪いな。睡眠がバグっててよ。
 258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,まあ、洗いに来ただけなんだけどな。
 b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,ライアンのこと、今度たっぷり聞かせてくださいね。
 9ab1cc314a249eac,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,12,Kobold,わかりました！ ゲートを開けてきますね。
 1d28eb42dcdd879d,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,13,Conrad,心配すんな。話してやるよ。
+line:5183a6f2,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,14,Conrad,ありがとな。
 # --- progress: Conrad_5_required_ryan_romanced | if $ryan_romanced ---
 189bf8eff795718a,L14 Conrad,Conrad_5_required_ryan_romanced,1,Conrad,おい、遅くに来て悪いな。
 cf69f255df6f95af,L14 Conrad,Conrad_5_required_ryan_romanced,2,Kobold,大丈夫ですよ。閉店まであと1時間くらいありますから。
 3aa0d9279bff43d9,L14 Conrad,Conrad_5_required_ryan_romanced,3,Kobold,いつでも来ていいんですよ！
 f135fa715daf4f0c,L14 Conrad,Conrad_5_required_ryan_romanced,4,Conrad,あ。じゃあ悪くねえな、撤回だ。
+line:aea0be6b,L14 Conrad,Conrad_5_required_ryan_romanced,5,Conrad,へへ、ありがとな。
 b127befdbae1da68,L14 Conrad,Conrad_5_required_ryan_romanced,6,Conrad,ライアンとのデートだけどよ。
 e00a5000d0f2cd2a,L14 Conrad,Conrad_5_required_ryan_romanced,8,Conrad,セックスはどうだった。
 7bd3b05552e5bd75,L14 Conrad,Conrad_5_required_ryan_romanced,10,Kobold,あ。えっと。<size=70%>よかったです。
@@ -1314,6 +1342,8 @@ d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,よかっ�
 9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,16,Conrad,……いや、変な意味じゃなくてよ。
 # --- progress: Conrad_5_required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
 63b786e95b90bc5e,L14 Conrad,Conrad_5_required_conrad_romanced,1,Conrad,で。今夜だ。
+line:a0479425,L14 Conrad,Conrad_5_required_conrad_romanced,3,Kobold,楽しみです。
+line:95e2f7cc,L14 Conrad,Conrad_5_required_conrad_romanced,4,Conrad,おう。
 6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,6,Conrad,楽しみにしとけよ。
 06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,絶対気に入るぜ。
 6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,あの辺の明かりも最高なんだ。
@@ -1333,6 +1363,7 @@ e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold/Conr
 7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,素敵ですね！
 98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Kobold,ライアンは本当に優しい子ですから
 7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,ああ……あいつは本当に最高だ。
+line:c7e1b369,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,12,Conrad,ほんとにな。
 5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,13,Conrad,あいつを紹介してくれて、ありがとな。
 # --- jerkoff: Conrad_5_JerkOff_Start ---
 c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,はっ……今から抜いてくれんのか？ 構わねえぜ。
@@ -1392,6 +1423,7 @@ beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,お元気でおら
 f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,ともあれ、洗浄が必要でございまして。
 4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,すぐに！
 42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,洗いを楽しみにしております。
+line:316bb26e,L15 Alexander,Alexander_5_intro,27,Alexander,感謝いたします。
 # --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
 067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,考えておったのですが……
 4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,貴殿は、私を魅力的だとお思いですかな？
@@ -1401,6 +1433,7 @@ f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,ともあれ、洗
 4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,何よりでございます！
 c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,それは……では、ずいぶんと自信が持てるようになります。
 2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,まことに？
+line:e00c6df5,L15 Alexander,Alexander_5_romance_route,14,Alexander,感謝いたします。
 8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,では、ずいぶんと自信が持てるようになります。
 4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,そこで、次の質問に移るのでございますが……
 96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,今宵、大学の図書館へご一緒していただけませんかな……？
@@ -1418,9 +1451,13 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,よかったです�
 6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,それは結構。貴殿にはまともな男がふさわしゅうございます。
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,彼もきっと、貴殿を好ましく思っておりましょう！
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,ありがとうございます、アレクサンダーも素敵ですよ！
+line:44701902,L15 Alexander,Alexander_5_required,8,Kobold,ありがとうございます！
 8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,感謝いたします。ご親切なお言葉で。
+line:d2401e75,L15 Alexander,Alexander_5_required,10,Alexander,もちろんでございます！
 a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,ははは、彼はワイルドな類のようでございますな。
 5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,彼を楽しんでおられるようで何より。彼もきっと貴殿を好ましく思っておりましょう。
+line:e7e57d9c,L15 Alexander,Alexander_5_required,14,Kobold,ありがとうございます！
+line:76f8c20c,L15 Alexander,Alexander_5_required,16,Alexander,もちろんでございます！
 cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,お二方は良い組み合わせということでございましょう。
 # --- jerkoff: Alexander_5_JerkOff_Start ---
 caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> 心地よいですな……</i>
@@ -1434,8 +1471,10 @@ caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> 心地�
 026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,洗いに感謝いたします。
 7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,今夜——キャンパスで。図書館は、青い尖塔の大きな建物でございます。
 f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,ドラゴン用の入口へお越しください。私がお通しいたします。
+line:b5d7d26f,L15 Alexander,Alexander_5_Outro,4,Alexander,楽しみでございます。
 5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,私もです！
 6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,すごく素敵ですね。
+line:99b6dc81,L15 Alexander,Alexander_5_Outro,7,Alexander,何よりでございます。
 ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,まことに、なかなか素敵なものでございます。
 6068953467a952bf,L15 Alexander,Alexander_5_Outro,9,Alexander,では、お邪魔にならぬよう失礼いたします。洗いに感謝いたします。
 7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,10,Alexander,今夜お会いしましょう。
@@ -1705,11 +1744,13 @@ ecab929d37109ab0,Unused,RyanDate_Intro,5,Ryan,君が忙しいのはわかって�
 92d9da0b0b22fd7a,Unused,RyanDate_Intro,6,Kobold,すごい！ どうぞ入ってください……
 # --- RyanDate_Outro ---
 638d7c049f321a6d,Unused,RyanDate_Outro,4,Ryan,最高だったよ！ デートのこと、すごく前向きになれた。
+line:bbca8a46,Unused,RyanDate_Outro,5,Ryan,ありがとう！
 # --- RyanExploded_Intro ---
 8e87e6b28fb697c4,Unused,RyanExploded_Intro,1,Ryan,また来ちゃった……
 53ca70e25fc42870,Unused,RyanExploded_Intro,3,Kobold,またあなたですか？
 b99d68084de082b6,Unused,RyanExploded_Intro,5,Ryan,へへ……うん……ごめんね……
 81f2cb133d548396,Unused,RyanExploded_Intro,6,Ryan,それでね、ちょっとしくじっちゃって……
+line:e02f464d,Unused,RyanExploded_Intro,7,Ryan,錬金術師が高い棚に手を届かせるのを手伝ってたんだ
 d3e25fe68c13c02d,Unused,RyanExploded_Intro,8,Ryan,大きな音がしたんだ
 ce386faf68f3df7e,Unused,RyanExploded_Intro,9,Ryan,あれがどこに行ったかはわからないけど、また汚れちゃった気がして。
 60c1424a59a1c912,Unused,RyanExploded_Intro,10,Ryan,もう一回、洗ってもらえないかな？

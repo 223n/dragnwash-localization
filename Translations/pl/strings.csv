@@ -201,6 +201,7 @@ f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,"Przepraszam, że wcześniej to ws
 a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,W porządku!
 94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,"Wiem, że bywa ciężko."
 4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,Jest pan bardzo miły.
+line:15f55959,L04 Ryan,Ryan_2_Outro,5,Ryan,Jesteś bardzo kochany.
 ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,"Chciałbym, żeby to było tak proste jak w filmach."
 0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,"Wpadaj, kiedy chcesz, Ryan."
 78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,"Jeśli chcesz o tym jeszcze pogadać, mam chwilę."
@@ -1297,6 +1298,7 @@ ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,Klimat wiec
 ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,Czemu masz taki dobry humor?
 9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,Moja randka z Ryanem była...
 f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,Cholernie udana!
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,Siema.
 4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,"Sorry, że tak późno. Sen mi się rozjebał."
 258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,Ale przyszedłem tylko na mycie.
 b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,Musisz mi niedługo opowiedzieć wszystkie szczegóły o Ryanie.
@@ -1422,9 +1424,11 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,Było dobrze. Upraw
 6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,To dobrze. Zasługuje pan na porządnego mężczyznę.
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,"Jestem pewien, że i on uważa pana za miłego!"
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,"Dziękuję, pan też jest miły!"
+line:44701902,L15 Alexander,Alexander_5_required,8,Kobold,Dziękuję!
 8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,Dziękuję. To uprzejme z pana strony.
 a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"Hah, wygląda na ten szalony typ."
 5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,"Cieszę się, że pan go lubi. Jestem pewien, że on uważa pana za miłego."
+line:e7e57d9c,L15 Alexander,Alexander_5_required,14,Kobold,Dziękuję!
 cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,"To musi znaczyć, że dobrze do siebie pasujecie."
 # --- jerkoff: Alexander_5_JerkOff_Start ---
 caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> to przyjemne...</i>

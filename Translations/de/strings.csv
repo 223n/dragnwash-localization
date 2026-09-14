@@ -226,6 +226,7 @@ c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,25,Ryan,Das hab ich auch gedacht.
 7258b4e037805024,L04 Ryan,Ryan_2_Outro,32,Ryan,Danke fürs Zuhören.
 951382e00968439d,L04 Ryan,Ryan_2_Outro,33,Kobold,"Jederzeit, Ryan."
 c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,34,Kobold,"Natürlich. Tut mir leid, dass du das alles durchmachst."
+line:6b245989,L04 Ryan,Ryan_2_Outro,35,Ryan,Danke dir.
 553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,36,Ryan,Schon okay. Ich finde schon eine Lösung.
 bd7468846a30d095,L04 Ryan,Ryan_2_Outro,37,Kobold,Ich mach dir das Tor auf.
 a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,38,Ryan,"Okay, tschüss!"
@@ -644,6 +645,7 @@ c48241cd21bb0d91,L09 Alexander,Alexander_questions,58,Alexander,ich selbst bin.
 f06f453ab3d6251f,L09 Alexander,Alexander_questions,62,Kobold,Das ist sehr lieb.
 8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,63,Alexander,"Ich weiß. Aber die Möglichkeit, sich jemandem zu öffnen, und sei es nur gelegentlich..."
 61639ef55caefda4,L09 Alexander,Alexander_questions,64,Alexander,Das wirkt Wunder.
+line:bc6cc4d2,L09 Alexander,Alexander_questions,65,Alexander,Sie sind sehr liebenswürdig.
 22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,66,Alexander,"Die Möglichkeit, sich jemandem zu öffnen, und sei es nur gelegentlich..."
 439d8da114ab9162,L09 Alexander,Alexander_questions,68,Alexander,Dafür danke ich Ihnen.
 33d3f6495bad4d3c,L09 Alexander,Alexander_questions,69,Alexander,"Oh, das Wappen um meinen Kopf?"
@@ -1238,6 +1240,7 @@ c7f3dbd886d929a7,L13 Ryan,Ryan_5_Mount_Start,1,Ryan,Der Bock? Klar!
 6fc39ec69d974bb4,L13 Ryan,Ryan_5_Outro_ryan_romanced,1,Ryan,"Ich glaub, du hast jede Stelle erwischt."
 c9e5fbe3317edd3f,L13 Ryan,Ryan_5_Outro_ryan_romanced,2,Ryan,"Du weißt, was das bedeutet..."
 f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,DATE-ABEND!
+line:95aa0bf4,L13 Ryan,Ryan_5_Outro_ryan_romanced,5,Ryan,Und wie!
 0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Ryan,"Heißt, ich bin bereit für ein Date mit einem gewissen Kobold."
 e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,"Ich weiß, du musst den Laden noch schließen. Ich sorg dafür, dass du die Adresse kriegst, und wir treffen uns dort, ja?"
 6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Kobold,Klingt gut!
@@ -1297,6 +1300,7 @@ ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,Die Stimmun
 ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,Warum bist du so gut gelaunt?
 9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,Mein Date mit Ryan war...
 f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,verdammt gut!
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,Hey.
 4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,"Sorry, dass ich so spät komme. Mein Schlaf ist im Arsch."
 258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,Ich bin aber nur wegen 'ner Wäsche hier.
 b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,Du musst mir bald alle Ryan-Details erzählen.
@@ -1396,6 +1400,7 @@ beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,"Ich hoffe, es geh
 f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"Wie dem auch sei, ich brauche eine Wäsche."
 4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,Bin dran!
 42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,Ich freue mich auf die Wäsche.
+line:316bb26e,L15 Alexander,Alexander_5_intro,27,Alexander,Vielen Dank.
 # --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
 067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,Ich habe nachgedacht...
 4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,"Glauben Sie, dass ich attraktiv bin?"
@@ -1405,6 +1410,7 @@ f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"Wie dem auch sei,
 4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,Das freut mich!
 c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,Das... lässt mich dann deutlich sicherer fühlen.
 2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,Wahrhaftig?
+line:e00c6df5,L15 Alexander,Alexander_5_romance_route,14,Alexander,Vielen Dank.
 8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,Das lässt mich dann deutlich sicherer fühlen.
 4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,Das bringt mich zu meiner nächsten Frage...
 96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,"Hätten Sie Lust, mich heute Abend in die Bibliothek der Hochschule zu begleiten...?"
@@ -1438,6 +1444,7 @@ caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> Das fü
 026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,Danke für die Wäsche.
 7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,"Heute Abend, auf dem Campus. Die Bibliothek ist das große blaue Turmgebäude."
 f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,"Kommen Sie zum Dracheneingang, und ich lasse Sie ein."
+line:b5d7d26f,L15 Alexander,Alexander_5_Outro,4,Alexander,Ich freue mich darauf.
 5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,Ich auch!
 6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,Klingt richtig cool.
 ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,Es ist in der Tat recht cool.

@@ -610,6 +610,7 @@ e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,Aprecio não tem
 046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,Não.
 b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,"Bem, eu gosto da cor. Mas creio que isso não tem relação com o meu tom."
 bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,Eu gosto da cor. Embora creia que não tenha relação com o meu próprio tom.
+line:ef052302,L09 Alexander,Alexander_questions,24,Alexander,Você gosta de roxo?
 525ba3c4a2511183,L09 Alexander,Alexander_questions,27,Alexander,Ah. que bom.
 3885f7429496059d,L09 Alexander,Alexander_questions,29,Alexander,Ah. Tá bom.
 8133434681c5d0c2,L09 Alexander,Alexander_questions,31,Alexander,Essa é uma pergunta difícil de responder.
@@ -644,6 +645,7 @@ c48241cd21bb0d91,L09 Alexander,Alexander_questions,58,Alexander,Eu.
 f06f453ab3d6251f,L09 Alexander,Alexander_questions,62,Kobold,Isso é muito gentil.
 8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,63,Alexander,"Eu sei. Mas a capacidade de se abrir com alguém, mesmo que ocasionalmente-"
 61639ef55caefda4,L09 Alexander,Alexander_questions,64,Alexander,Faz maravilhas.
+line:bc6cc4d2,L09 Alexander,Alexander_questions,65,Alexander,É muito gentil da sua parte.
 22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,66,Alexander,"A capacidade de se abrir com alguém, mesmo que ocasionalmente..."
 439d8da114ab9162,L09 Alexander,Alexander_questions,68,Alexander,Obrigado por isso.
 33d3f6495bad4d3c,L09 Alexander,Alexander_questions,69,Alexander,"Ah, a crista ao redor da minha cabeça?"
@@ -1297,6 +1299,7 @@ ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,O clima de 
 ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,O que te deixou de bom humor?
 9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,Meu encontro com o Ryan foi...
 f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,Bom pra caralho!
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,E aí.
 4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,Desculpa por vir tarde. Meu sono tá zoado.
 258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,Mas só vim pra um banho.
 b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,Você vai ter que me contar todos os detalhes do Ryan logo.
@@ -1396,6 +1399,7 @@ beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,Espero que esteja 
 f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"Enfim, estou precisando de uma limpeza."
 4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,Deixa comigo!
 42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,Ansioso pela lavagem.
+line:316bb26e,L15 Alexander,Alexander_5_intro,27,Alexander,Obrigado.
 # --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
 067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,Estive pensando...
 4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,O senhor acredita que sou atraente?
@@ -1405,6 +1409,7 @@ f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"Enfim, estou prec
 4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,Fico feliz!
 c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,"Isso... me faz sentir bem mais seguro de mim, então."
 2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,Verdade?
+line:e00c6df5,L15 Alexander,Alexander_5_romance_route,14,Alexander,Obrigado.
 8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,"Isso me faz sentir bem mais seguro de mim, então."
 4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,O que me leva à minha próxima pergunta...
 96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,O senhor gostaria de me acompanhar na biblioteca da faculdade esta noite...?
@@ -1438,6 +1443,7 @@ caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> isso é
 026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,Obrigado pela limpeza.
 7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,Esta noite- no campus. A biblioteca é o grande prédio da torre azul.
 f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,"Aproxime-se da entrada dos dragões, e eu o deixarei entrar."
+line:b5d7d26f,L15 Alexander,Alexander_5_Outro,4,Alexander,Estou ansioso.
 5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,Eu também!
 6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,Parece muito legal.
 ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,É de fato bastante legal.

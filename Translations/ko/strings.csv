@@ -15,6 +15,7 @@ dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"아, 안녕! 음..."
 d12499a3f17512de,L01 Ryan,Ryan_1_intro,7,Kobold,"네, Drag'N Wash에 오신 걸 환영해요!"
 b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"하하, 정말 그렇네!"
 84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,훌륭하군요!
+line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,잘됐다!
 900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,난 라이언이야. 그래서...
 092808653667e9ff,L01 Ryan,Ryan_1_intro,11,Ryan,어떻게 들어가면 돼?
 0f3f0b7e817061e6,L01 Ryan,Ryan_1_intro,12,Kobold,"잠깐만요, 문을 열어야 해요."
@@ -65,7 +66,7 @@ e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,여기 꼭 기억해 둘게.
 29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,8,Ryan,하하. 너도 'Yip'.
 0712e97652e51758,L01 Ryan,Ryan_1_Outro,9,Ryan,"그럼, 즐거웠어. 다음에 또 봐!"
 17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,10,Ryan,나갈 수 있게 문 좀 열어 줄래?
-1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,12,Ryan/Conrad/Kobold/Dragon,감사해요!
+1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,12,Ryan/Conrad/Kobold/Dragon,고마워!
 
 # ===== Level 2: Conrad (Sunny) =====
 # --- intro: Conrad_Intro_1 ---
@@ -193,7 +194,8 @@ d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,15,Ryan,알아. 이런 얘기 너한�
 797653f5e081152e,L04 Ryan,Ryan_2_required,18,Ryan,그냥 여기선 누가 날 재단하지 않는 것 같아서 좋아.
 b11d41e01fefb995,L04 Ryan,Ryan_2_required,20,Kobold,고마워요. 저도 라이언이랑 같이 있는 게 좋아요.
 c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,21,Kobold,잘 풀리길 바랄게요.
-ebb96171ea7628a0,L04 Ryan,Ryan_2_required,22,Ryan/Kobold/Alexander,다행이군요.
+ebb96171ea7628a0,L04 Ryan,Ryan_2_required,22,Ryan/Kobold/Alexander,다행이에요.
+line:286fec49,L04 Ryan,Ryan_2_required,22,Ryan,다행이다.
 91c0e3e9014024af,L04 Ryan,Ryan_2_required,23,Ryan,나도.
 # --- outro: Ryan_2_Outro ---
 cb57ee6155ed6ca5,L04 Ryan,Ryan_2_Outro,1,Ryan,좋아. 다 깨끗해졌다.
@@ -201,6 +203,7 @@ f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,아까 그런 얘기 다 쏟아내
 a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,괜찮아요!
 94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,힘들 때도 있는 거잖아요.
 4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,참으로 다정하시군요.
+line:15f55959,L04 Ryan,Ryan_2_Outro,5,Ryan,너 정말 다정하다.
 ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,영화처럼 쉬웠으면 좋겠다.
 0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,"언제든 또 오세요, 라이언."
 78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,"더 얘기하고 싶으면, 저 시간 있어요."
@@ -226,6 +229,7 @@ c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,25,Ryan,나도 그렇게 생각했어.
 7258b4e037805024,L04 Ryan,Ryan_2_Outro,32,Ryan,들어 줘서 고마워.
 951382e00968439d,L04 Ryan,Ryan_2_Outro,33,Kobold,"언제든지요, 라이언."
 c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,34,Kobold,그럼요. 이런 일을 겪고 계셔서 안타까워요.
+line:6b245989,L04 Ryan,Ryan_2_Outro,35,Ryan,고마워.
 553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,36,Ryan,괜찮아. 어떻게든 해결해 볼게.
 bd7468846a30d095,L04 Ryan,Ryan_2_Outro,37,Kobold,문 열어 드릴게요.
 a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,38,Ryan,"그래, 안녕!"
@@ -362,6 +366,7 @@ be0667bb01a8cd65,L07 Ryan,Ryan_3_intro,8,Ryan,아니야. 문 좀 열어 줄래?
 8dff101cb2298f67,L07 Ryan,Ryan_3_intro,12,Ryan,"아니, 별로."
 1990b3ec8cd88a48,L07 Ryan,Ryan_3_intro,13,Ryan,조금 있다가 말해 줄게. 일단 문만 열어 줄래?
 85fec70372b092bb,L07 Ryan,Ryan_3_intro,14,Kobold/Conrad,응.
+line:7311dc01,L07 Ryan,Ryan_3_intro,14,Kobold,네.
 33e04b2f805d0e1a,L07 Ryan,Ryan_3_intro,15,Kobold,알겠어요. 그래도 괜찮으셨으면 좋겠어요.
 f51bead488e14b65,L07 Ryan,Ryan_3_intro,16,Ryan/Conrad/Alexander,고마워.
 aac215f048e8ee54,L07 Ryan,Ryan_3_intro,17,Ryan,어떻게든 해 볼게.
@@ -381,6 +386,7 @@ d9e1edc2e966ec26,L07 Ryan,Ryan_3_required,8,Ryan,아무리 이유를 대 봐도 
 8948d011be56c311,L07 Ryan,Ryan_3_required,13,Ryan,"그래도, 적어도 널 만났잖아!"
 e484863d425a58e8,L07 Ryan,Ryan_3_required,14,Kobold,"고마워요, 라이언. 저도 라이언을 만나서 기뻐요"
 1af4464c602a423a,L07 Ryan,Ryan_3_required,15,Kobold/Conrad,"아, 고마워."
+line:011f1458,L07 Ryan,Ryan_3_required,15,Kobold,"아, 고마워요."
 e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,여기서 씻으면 정말 마음이 한결 가벼워져.
 94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,게다가 기분도 진짜 좋고.
 # --- outro: Ryan_3_Outro ---
@@ -610,6 +616,7 @@ e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,당신 곁에서
 046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,아니요.
 b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,"뭐, 그 색을 좋아하기는 합니다. 하지만 제 빛깔과는 무관하다고 생각합니다."
 bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,그 색을 좋아하기는 합니다. 다만 제 빛깔과는 무관하다고 생각합니다.
+line:ef052302,L09 Alexander,Alexander_questions,24,Alexander,보라색을 좋아하십니까?
 525ba3c4a2511183,L09 Alexander,Alexander_questions,27,Alexander,아. 다행이군요.
 3885f7429496059d,L09 Alexander,Alexander_questions,29,Alexander,아. 그렇군요.
 8133434681c5d0c2,L09 Alexander,Alexander_questions,31,Alexander,답하기 까다로운 질문이군요.
@@ -723,6 +730,7 @@ ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,27,Ryan,혹시 내가 얘기해 볼
 4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,29,Kobold,"<gradient=""gold""><b>아. 음. <size=70%> 저는 괜찮은데요... 그 누군가가 저라면요. </b></gradient><size=70%> (라이언 로맨스 확정!)"
 bb7a6be711206298,L10 Ryan,ryan_food_dialogue,30,Kobold,"<gradient=""gold""><b>당장 떠오르는 사람은 없네요.</b></gradient><size=70%> (콘래드 로맨스 확정!)"
 a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,31,Ryan/Alexander/Kobold,네?
+line:1d491283,L10 Ryan,ryan_food_dialogue,31,Ryan,응?
 cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,32,Ryan,그게 누군데?
 ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,여기 씻으러 오는 진짜 귀여운 붉은 드레이크예요!
 4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,34,Kobold,붉은 드래곤이에요. 두 분이 서로 마음에 들어 하실 것 같아요!
@@ -955,6 +963,7 @@ fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,좋네요.
 ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,그럼 좋겠어요!
 38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,10,Kobold,그렇게 해요.
 de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,11,Conrad/Kobold/Alexander,기대되는군요.
+line:69f406a6,L11 Conrad,Conrad_4_Conrad_Romanced,11,Conrad,기대된다.
 # --- progress: Conrad_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 8dc7f14f91542fe7,L11 Conrad,Conrad_Ryan_Romanced,1,Conrad,"그래서 너랑 라이언, 응?"
 498cb71ee3e20098,L11 Conrad,Conrad_Ryan_Romanced,2,Kobold,"아, 네!"
@@ -989,6 +998,7 @@ e2956ac74f8acb8e,L11 Conrad,Conrad_Outro_4,6,Kobold,빠진 데 없는 것 같아
 0fa2abeece5fd3de,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,1,Conrad,그래! 깨끗해진 기분이야.
 1b5f2f27de868c08,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,2,Conrad,"야 어, 라이언이랑 나랑 <i>진짜로</i> 잘될 것 같아?"
 ebc110388e3748fa,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Kobold/Alexander,물론이지요!
+line:877aced7,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Kobold,물론이죠!
 5bc10e8175dc9422,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,4,Kobold,그러길 바라요.
 3da3a77980cb9eb9,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,5,Conrad,네 말이 맞으면 좋겠다.
 43e42fb816f1d2c2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,6,Conrad,"응, 나도. 걔 진짜 착하거든."
@@ -1023,6 +1033,7 @@ f11ccc8c0bd5ecbc,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,13,Conrad,문 좀 열
 ffcc816df16993e6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,14,Conrad,당연하지.
 c25790cd739260fd,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,16,Conrad,너야말로 대단한 애야
 b18d301dab41755f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,17,Conrad,"미안, 내가 작업 거는 덴 젬병이라. 문 좀 열어 줄래?"
+line:24832f01,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,18,Conrad,기대된다.
 # --- outro: Conrad_Outro_4_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 6fe24a5cf11acb37,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,1,Conrad,그래! 언제나처럼 깨끗하네.
 8f0378325ead68c7,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,2,Conrad,라이언이랑 뭐 계획 있어?
@@ -1047,10 +1058,12 @@ e8c921ab9051f110,L12 Alexander,Alexander_4_intro,4,Alexander,"하, 언제나처�
 a9945cd0cd165325,L12 Alexander,Alexander_4_intro,8,Kobold,비 오는 거 좋아요.
 7259414f82b0b97a,L12 Alexander,Alexander_4_intro,9,Kobold,전 비가 항상 싫었어요.
 bfad19e22f9652cc,L12 Alexander,Alexander_4_intro,10,Alexander,"동감입니다, 다만 가능한 한 빨리 들여보내 주셨으면 합니다."
+line:fd8d786a,L12 Alexander,Alexander_4_intro,11,Alexander,그렇습니까?
 91a5c27ef059ab24,L12 Alexander,Alexander_4_intro,12,Alexander,비가 만들어 내는 어지러움이 싫으신 건 이해할 만합니다.
 882df59f0a75b295,L12 Alexander,Alexander_4_intro,13,Alexander,하지만 그래서 제가 여기 온 것이지요!
 990e43e4f2687cdf,L12 Alexander,Alexander_4_intro,14,Kobold,좋아요! 문 열어 드릴게요.
 846b613e707ce00d,L12 Alexander,Alexander_4_intro,15,Kobold,Yip! <size=70%>(문)
+line:e449156d,L12 Alexander,Alexander_4_intro,16,Alexander,감사합니다!
 1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,17,Alexander,"음, 문을 열어 주시겠다는 뜻으로 이해하면 됩니까?"
 56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,18,Kobold,Yip! <size=70%>(네)
 fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,19,Alexander,왜 갑자기 당신의 'Yip'을 알아듣게 된 건지 모르겠군요
@@ -1136,6 +1149,7 @@ cb4f55dc25088cef,L13 Ryan,Ryan_5_intro_ryan_romanced,3,Kobold,저 너무 설레�
 bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,20,Ryan,안녕! 씻으러 왔어.
 747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,24,Kobold,"좋아요, 문 열러 갈게요."
 1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,25,Kobold,그럼요! 콘래드 얘기 빨리 해 드리고 싶어요.
+line:f103a4a8,L13 Ryan,Ryan_5_intro,27,Ryan,"아, 그래?"
 4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,28,Kobold,네! 조만간 그분이랑 데이트하거든요.
 29301eae6840e128,L13 Ryan,Ryan_5_intro,29,Kobold,"네에, 그분이랑 데이트 준비를 해야 해서요."
 154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,30,Ryan,설레는 일이네!
@@ -1180,14 +1194,17 @@ cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,말족 퓨전 �
 5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,"아 맞다, 시내에 wings라는 괜찮은 곳이 있어."
 4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,거기 괜찮을 것 같아! 매일 밤 좋은 쇼를 하거든.
 ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,"거기 갔다가, 호텔 방을 잡는 것도... 흠."
+line:2b560f59,L13 Ryan,Ryan_5_Required_ryan_romanced,33,Ryan,"아, 그래?"
 435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Ryan,영화 재밌을 것 같아!
 0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Ryan,어떤 영화 생각하고 있어?
 b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Kobold,Yip맨 - 마지막 Yip
 45afe74b37ed6bb0,L13 Ryan,Ryan_5_Required_ryan_romanced,38,Kobold,갤럭시의 드래곤들 2
 a881cd2440d13252,L13 Ryan,Ryan_5_Required_ryan_romanced,39,Ryan,"아, 그거 평이 좋더라."
+line:67f14802,L13 Ryan,Ryan_5_Required_ryan_romanced,40,Ryan,그럼!
 00712e7d97f1872a,L13 Ryan,Ryan_5_Required_ryan_romanced,41,Ryan,Yip맨 영화는 진짜 유치한데...
 037e3c0c446d2b14,L13 Ryan,Ryan_5_Required_ryan_romanced,42,Ryan,그래도 너랑 보면 분명 재밌을 거야!
 b1ac5509459ca2a4,L13 Ryan,Ryan_5_Required_ryan_romanced,43,Ryan,"아 맞다, 1편 재밌게 봤어."
+line:52542beb,L13 Ryan,Ryan_5_Required_ryan_romanced,44,Ryan,그럼!
 eb547bf48bc9637e,L13 Ryan,Ryan_5_Required_ryan_romanced,45,Ryan,그럼 데이트 확정이네. 기대돼.
 # --- progress: Ryan_5_Required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
 1f2c5ed668dc8972,L13 Ryan,Ryan_5_Required_conrad_romanced,1,Ryan,"그래서, 콘래드 얘기 더 해 줘!"
@@ -1241,6 +1258,7 @@ f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,데이트 밤이�
 0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Ryan,어떤 코볼트랑 데이트할 준비가 됐다는 뜻이지.
 e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,"가게 문 닫아야 하는 거 알아. 주소 꼭 보내 줄 테니까 거기서 만나자, 응?"
 6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Kobold,좋아요!
+line:a00f681d,L13 Ryan,Ryan_5_Outro_ryan_romanced,9,Kobold,기대돼요.
 7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,10,Ryan,정말 기대돼.
 dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,12,Ryan,"좋아, 문 열어 주면 난 먼저 거기 가 있을게!"
 7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,13,Ryan,곧 봐.
@@ -1286,6 +1304,7 @@ b6fff34d007d61c9,L14 Conrad,Conrad_5_intro_conrad_romanced,4,Kobold,으음..
 364ea49c3b6c9895,L14 Conrad,Conrad_5_intro_conrad_romanced,8,Conrad,하!
 3ef6b1f5eeda632e,L14 Conrad,Conrad_5_intro_conrad_romanced,9,Conrad,그냥 장난이야.
 ec760ba3440257aa,L14 Conrad,Conrad_5_intro_conrad_romanced,10,Conrad,"좋아, 그럼 오늘 밤 데이트를 위해 씻어 내자고."
+line:d66b9155,L14 Conrad,Conrad_5_intro_conrad_romanced,11,Kobold,기대돼요.
 300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Kobold,티끌 하나 없게 만들어야죠!
 260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,헤... 당연하지.
 d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,나 완전 신났어.
@@ -1297,6 +1316,7 @@ ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,밤 분위�
 ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,뭐가 그렇게 기분 좋으세요?
 9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,라이언이랑 데이트가...
 f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,존나 좋았거든!
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,안녕.
 4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,늦게 와서 미안. 수면 패턴이 망가져서.
 258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,그냥 씻으러 온 것뿐이야.
 b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,라이언 얘기 전부 다 들려주셔야 해요.
@@ -1318,6 +1338,7 @@ d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,좋았나 
 9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,16,Conrad,...근데 뭐 나쁜 쪽으로 이상하게 그런 건 아니고.
 # --- progress: Conrad_5_required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
 63b786e95b90bc5e,L14 Conrad,Conrad_5_required_conrad_romanced,1,Conrad,그래서. 오늘 밤.
+line:a0479425,L14 Conrad,Conrad_5_required_conrad_romanced,3,Kobold,기대돼요.
 6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,6,Conrad,그래야지.
 06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,완전 마음에 들 거야.
 6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,그 동네 조명도 끝내주고.
@@ -1337,6 +1358,7 @@ e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold/Conr
 7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,정말 멋지네요!
 98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Kobold,라이언은 다정한 분이에요
 7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,응... 걔 진짜 최고야.
+line:c7e1b369,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,12,Conrad,정말 그래.
 5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,13,Conrad,소개해 줘서 고맙다.
 # --- jerkoff: Conrad_5_JerkOff_Start ---
 c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,하... 이제 손으로 해 주려고? 좋지.
@@ -1396,6 +1418,7 @@ beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,잘 지내고 계�
 f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"어쨌든, 세척이 필요합니다."
 4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,바로 할게요!
 42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,씻는 게 기대되는군요.
+line:316bb26e,L15 Alexander,Alexander_5_intro,27,Alexander,고맙습니다.
 # --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
 067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,생각해 봤습니다만...
 4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,제가 매력적이라고 생각하십니까?
@@ -1405,6 +1428,7 @@ f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"어쨌든, 세척
 4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,기쁘군요!
 c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,그렇다면... 훨씬 더 자신이 생깁니다.
 2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,정말입니까?
+line:e00c6df5,L15 Alexander,Alexander_5_romance_route,14,Alexander,고맙습니다.
 8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,그렇다면 훨씬 더 자신이 생깁니다.
 4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,그렇다면 다음 질문으로 넘어가겠습니다...
 96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,"오늘 저녁, 대학 도서관에 저와 함께 가 주시겠습니까...?"
@@ -1422,9 +1446,13 @@ cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,좋았어요. 섹�
 6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,잘됐군요. 당신은 괜찮은 남자를 만날 자격이 있습니다.
 9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,그도 분명 당신을 좋게 여기고 있을 겁니다!
 add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,"고마워요, 알렉산더도 좋은 분이에요!"
+line:44701902,L15 Alexander,Alexander_5_required,8,Kobold,감사해요!
 8dd47db88ce81f6d,L15 Alexander,Alexander_5_required,9,Alexander,고맙습니다. 친절한 말씀이군요.
+line:d2401e75,L15 Alexander,Alexander_5_required,10,Alexander,물론입니다!
 a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"하, 거친 타입으로 보이긴 하더군요."
 5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,그를 마음에 들어 하시니 다행입니다. 그도 분명 당신을 좋게 여기고 있을 겁니다.
+line:e7e57d9c,L15 Alexander,Alexander_5_required,14,Kobold,감사해요!
+line:76f8c20c,L15 Alexander,Alexander_5_required,16,Alexander,물론입니다!
 cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,두 분이 잘 맞는다는 뜻이겠지요.
 # --- jerkoff: Alexander_5_JerkOff_Start ---
 caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> 기분이 좋군요...</i>
@@ -1438,8 +1466,10 @@ caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> 기분�
 026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,씻겨 주셔서 고맙습니다.
 7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,오늘 밤- 캠퍼스에서. 도서관은 커다란 푸른 첨탑 건물입니다.
 f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,"드래곤용 입구로 오시면, 제가 들여보내 드리겠습니다."
+line:b5d7d26f,L15 Alexander,Alexander_5_Outro,4,Alexander,기대됩니다.
 5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,저도요!
 6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,정말 멋질 것 같아요.
+line:99b6dc81,L15 Alexander,Alexander_5_Outro,7,Alexander,다행입니다.
 ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,실제로 꽤 멋진 곳입니다.
 6068953467a952bf,L15 Alexander,Alexander_5_Outro,9,Alexander,이제 그만 방해하지 않고 가 보겠습니다. 씻겨 주셔서 고맙습니다.
 7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,10,Alexander,오늘 밤에 뵙지요.
@@ -1611,6 +1641,7 @@ fedb00f6c13cec68,Unused,Alexander_Intro,2,Kobold,어... 안녕하세요?
 4359ca4e5c8fc816,Unused,Alexander_Intro,3,Kobold,거기 누구세요?
 9e2816aaa10403b6,Unused,Alexander_Intro,4,Alexander,쉿! 저는 이 근방 사람이 아닙니다...
 8275f13b67a6687b,Unused,Alexander_Intro,5,Alexander,지금 영업 중이십니까?
+line:642255fc,Unused,Alexander_Intro,6,Kobold,물론이죠!
 7409deaefe456a49,Unused,Alexander_Intro,7,Alexander,휴우! 사고가 있어서 처리해야 합니다... 남몰래 말이지요.
 afb82d57a9c1ba48,Unused,Alexander_Intro,8,Alexander,들어갈 수 있게 이 차단봉을 당장 치워 주십시오.
 # --- Alexander_Outro ---
@@ -1709,11 +1740,13 @@ ecab929d37109ab0,Unused,RyanDate_Intro,5,Ryan,"네가 너무 바쁜 걸 아니�
 92d9da0b0b22fd7a,Unused,RyanDate_Intro,6,Kobold,멋져요! 어서 들어오세요..
 # --- RyanDate_Outro ---
 638d7c049f321a6d,Unused,RyanDate_Outro,4,Ryan,정말 좋았어! 연애에 대해 훨씬 자신이 생겼어.
+line:bbca8a46,Unused,RyanDate_Outro,5,Ryan,고마워!
 # --- RyanExploded_Intro ---
 8e87e6b28fb697c4,Unused,RyanExploded_Intro,1,Ryan,또 왔어..
 53ca70e25fc42870,Unused,RyanExploded_Intro,3,Kobold,또 오셨어요?
 b99d68084de082b6,Unused,RyanExploded_Intro,5,Ryan,헤.. 응.. 미안..
 81f2cb133d548396,Unused,RyanExploded_Intro,6,Ryan,"그게, 사고가 좀 있었거든.."
+line:e02f464d,Unused,RyanExploded_Intro,7,Ryan,연금술사가 높은 선반에 손이 닿도록 돕고 있었어
 d3e25fe68c13c02d,Unused,RyanExploded_Intro,8,Ryan,큰 폭발음이 들렸는데
 ce386faf68f3df7e,Unused,RyanExploded_Intro,9,Ryan,걔들이 어디로 갔는지는 모르겠지만 나는 다시 더러워졌어.
 60c1424a59a1c912,Unused,RyanExploded_Intro,10,Ryan,또 씻겨 줄 수 있을까?
