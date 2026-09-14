@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Install.exe. Built deterministically: the same Launcher.cs gives a byte-identical
+    Install.exe on every build and every machine with the same .NET SDK. Antivirus
+    reputation (Microsoft Defender flags this unsigned launcher as Wacatac!ml by
+    machine learning) is tied to the file's hash, so a launcher that changes with
+    every release starts from zero each time.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Install</AssemblyName>
+    <RootNamespace>Launcher</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=/installer</PathMap>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <!-- No version or commit stamped in: the file must not change unless Launcher.cs does. -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Launcher.cs" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
