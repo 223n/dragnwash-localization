@@ -73,7 +73,7 @@ namespace DragNWashLocalization
                 foreach (string rawLine in File.ReadAllLines(path))
                 {
                     string line = rawLine.Trim();
-                    if (line.Length == 0 || line.StartsWith("#"))
+                    if (line.Length == 0 || line.StartsWith("#", StringComparison.Ordinal))
                     {
                         continue;
                     }
