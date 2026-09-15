@@ -578,7 +578,7 @@ namespace DragNWashLocalization
                     kept.Add(CsvReader.Escape(source) + "," + CsvReader.Escape(draft ?? string.Empty));
                 }
 
-                using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
+                using (var writer = new StreamWriter(filePath, append: false, new UTF8Encoding(false)))
                 {
                     writer.WriteLine("source_en,translation");
                     foreach (string line in kept)
@@ -666,7 +666,7 @@ namespace DragNWashLocalization
                 string filePath = Path.Combine(dir, "strings.csv");
 
                 bool writeHeader = !File.Exists(filePath);
-                using (var writer = new StreamWriter(filePath, append: true, Encoding.UTF8))
+                using (var writer = new StreamWriter(filePath, append: true, new UTF8Encoding(false)))
                 {
                     if (writeHeader)
                     {

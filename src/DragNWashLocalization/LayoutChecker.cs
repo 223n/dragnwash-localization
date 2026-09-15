@@ -172,7 +172,7 @@ namespace DragNWashLocalization
             {
                 try
                 {
-                    using (var empty = new StreamWriter(filePath, append: false, Encoding.UTF8))
+                    using (var empty = new StreamWriter(filePath, append: false, new UTF8Encoding(false)))
                     {
                         empty.WriteLine("source_en,translation,axis,required_px,available_px,ratio,object_path");
                     }
@@ -186,7 +186,7 @@ namespace DragNWashLocalization
                 return;
             }
 
-            using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
+            using (var writer = new StreamWriter(filePath, append: false, new UTF8Encoding(false)))
             {
                 writer.WriteLine("source_en,translation,axis,required_px,available_px,ratio,object_path");
                 foreach (string row in rows)
