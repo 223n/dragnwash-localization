@@ -60,19 +60,24 @@ FORCE_TERMINAL=0
 UI=""
 WARNINGS=""
 
+# Without this, an option given as the last word shifts twice: once in the
+# case branch and once at the end of the loop. The second shift fails with
+# nothing left, and set -e ends the run with no message at all.
+need_value() { [ $# -ge 2 ] || { echo "Option $1 needs a value" >&2; exit 2; }; }
+
 while [ $# -gt 0 ]; do
     case "$1" in
         --install) MODE=install ;;
         --uninstall) MODE=uninstall ;;
         --check) MODE=check ;;
-        --lang) LANG_CHOICE="${2:-}"; shift ;;
-        --game-dir) GAME_DIR="${2:-}"; shift ;;
-        --payload) PAYLOAD_ROOT="${2:-}"; shift ;;
+        --lang) need_value "$@"; LANG_CHOICE="$2"; shift ;;
+        --game-dir) need_value "$@"; GAME_DIR="$2"; shift ;;
+        --payload) need_value "$@"; PAYLOAD_ROOT="$2"; shift ;;
         --yes|-y) ASSUME_YES=1 ;;
         --remove-bepinex) REMOVE_BEPINEX=1 ;;
         --close-steam) CLOSE_STEAM=1 ;;
         --terminal) FORCE_TERMINAL=1 ;;
-        --ui) UI="${2:-}"; shift ;;
+        --ui) need_value "$@"; UI="$2"; shift ;;
         -h|--help) sed -n '2,31p' "$0"; exit 0 ;;
         *) echo "Unknown option: $1" >&2; exit 2 ;;
     esac
