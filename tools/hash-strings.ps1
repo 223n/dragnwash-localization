@@ -108,6 +108,11 @@ foreach ($t in $targets) {
   $lineRows = [ordered]@{}
   $converted = 0; $kept = 0; $dropped = 0; $lineKept = 0
   foreach ($r in Read-Csv $t.Input) {
+    # A published file uses blank lines to space out its section headers, and
+    # ConvertFrom-Csv turns each one into an object whose properties are all
+    # null. They are not malformed rows: counting them as dropped makes the
+    # summary report dozens of problems in a perfectly good file.
+    if (-not ($r.PSObject.Properties.Value | Where-Object { [string]$_ -ne '' })) { continue }
     $rawKey = if ($r.PSObject.Properties['key']) { ([string]$r.key).Trim() } else { '' }
     if ($rawKey -cmatch $lineIdPattern) {
       $tr = if ($r.PSObject.Properties['translation']) { [string]$r.translation } else { '' }
