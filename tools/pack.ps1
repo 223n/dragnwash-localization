@@ -46,11 +46,22 @@ $OutDir = Join-Path $Root 'release'
 #    says to keep them in step, but nothing checked it: a release that updated
 #    only one shipped a mod whose two version numbers disagree, and neither the
 #    build nor any test notices. Check before anything is built.
+#    <FileVersion> is checked too: it is a separate element, so it can drift on
+#    its own, and it is the one Windows shows in the file properties.
 $PluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
 $PluginVersion = if ($PluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') { $Matches[1] } else { $null }
-$CsprojVersion = if ((Get-Content -LiteralPath $Project -Raw) -match '<Version>([^<]+)</Version>') { $Matches[1] } else { $null }
+$Csproj = Get-Content -LiteralPath $Project -Raw
+$CsprojVersion = if ($Csproj -match '<Version>([^<]+)</Version>') { $Matches[1] } else { $null }
+$CsprojFileVersion = if ($Csproj -match '<FileVersion>([^<]+)</FileVersion>') { $Matches[1] } else { $null }
+$Mismatched = @()
 if ($PluginVersion -and $CsprojVersion -and $PluginVersion -ne $CsprojVersion) {
-    throw "Version mismatch: Plugin.cs says $PluginVersion but the .csproj says $CsprojVersion. Keep <Version> and <FileVersion> in step with Plugin.PluginVersion."
+    $Mismatched += "<Version> $CsprojVersion"
+}
+if ($PluginVersion -and $CsprojFileVersion -and $PluginVersion -ne $CsprojFileVersion) {
+    $Mismatched += "<FileVersion> $CsprojFileVersion"
+}
+if ($Mismatched) {
+    throw "Version mismatch: Plugin.cs says $PluginVersion but the .csproj says $($Mismatched -join ' and '). Keep <Version> and <FileVersion> in step with Plugin.PluginVersion."
 }
 
 # 1. The reference assemblies are copied from the game install and never
