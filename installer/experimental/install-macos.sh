@@ -868,7 +868,13 @@ $GAME_DIR" 1 || exit 1
 
     # Same rules as the Deck script: BepInEx and the launch option only matter
     # to other mods now.
-    others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null | head -1)"
+    # The config file alone is enough to get here, so plugins/ may be gone. A
+    # failing find would take the whole uninstall down with it under
+    # set -e/pipefail, half-done and with nothing on screen.
+    others=""
+    if [ -d "$GAME_DIR/BepInEx/plugins" ]; then
+        others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null | head -1 || true)"
+    fi
     if [ -n "$others" ]; then
         say "$(t bep_kept)"
     else
