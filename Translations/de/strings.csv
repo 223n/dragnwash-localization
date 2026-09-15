@@ -1907,3 +1907,7 @@ cd6c9851e91ad7b6,UI,,,UI,Release-Seite öffnen
 22e2bada8f1c65cd,UI,,,UI,Updates
 f26f3275e735bdf6,UI,,,UI,Nach Updates suchen
 a6a1b13028fd8c9c,UI,,,UI,"Fragt einmal am Tag bei GitHub nach, ob Mods, die ihr GitHub-Repository angeben, eine neuere Version haben. Es werden keine Daten über dich oder dein Spiel gesendet."
+fe199528850a4e24,UI,,,UI,Deinstallieren
+63e38bd4b036193a,UI,,,UI,Abbrechen
+86965245a1d725c1,UI,,,UI,"Drücke erneut „Deinstallieren“, um diesen Mod beim nächsten Spielstart zu entfernen. Seine Einstellungen werden ebenfalls entfernt."
+e2b9759e2326caba,UI,,,UI,Wird beim nächsten Spielstart entfernt

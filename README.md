@@ -21,7 +21,7 @@ Installing is really easy.
 
 1. Download the zip from the [Releases page](https://github.com/TomXV/dragnwash-localization/releases) and extract it anywhere.
 2. Double-click **`Install.exe`**.
-3. Pick a language and **click Install / Update**.
+3. Pick a language and **click Install** (**Update** when it is already installed).
 
 > [!TIP]
 > The same steps are also on Steam as a guide: [English](https://steamcommunity.com/sharedfiles/filedetails/?id=3801420947) / [日本語](https://steamcommunity.com/sharedfiles/filedetails/?id=3801418794). Drag'n Wash has no Steam Workshop, so the mod itself is downloaded from GitHub Releases.
@@ -30,32 +30,26 @@ Installing is really easy.
 
 The installer finds the game through Steam on its own (or lets you pick the folder). If BepInEx is not installed yet, it downloads the official 5.4.23.5 release, verifies its SHA-256, and unpacks it for you. Then just start the game from Steam.
 
-Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish and Hebrew, and for fun Esperanto and Toki Pona (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
+Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish and Hebrew, and for fun Esperanto and Toki Pona (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when you ask and no other mod uses it. You can also uninstall in the game: **Options → Mods → Drag'n Wash Localization → Uninstall**, and the mod is removed the next time the game starts.
 
 If you prefer to do it by hand, follow the manual steps below.
-
-### How to install (video)
-
-![Install guide video](docs/media/install-guide-full-en.gif)
 
 
 > [!NOTE]
 > **If nothing happens when you run `Install.exe`, or Windows says "Windows protected your PC"**
 > `Install.exe` is a small unsigned program, so Windows SmartScreen may stop it the first time.
 > - If the warning appears, click **More info → Run anyway**.
-> - If no window appears at all, double-click **`Install.cmd`** in the same folder instead. A console flashes for a moment and the same installer window opens.
-> - Failing that, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
+> - If no window appears at all, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
 
 > [!WARNING]
 > **If Windows Security (Microsoft Defender) detects `Install.exe` as "Trojan:Script/Wacatac.B!ml", or `Install.exe` is missing from the folder you extracted**
-> This is a false positive. The `!ml` suffix means a machine-learning model guessed the file looks suspicious, not that it matched known malware. `Install.exe` is a small unsigned program that only starts the installer window (a PowerShell script) without a console window, and that way of starting a script resembles what malware does. Its source is public: [`installer/Launcher.cs`](installer/Launcher.cs) and [`installer/Installer.ps1`](installer/Installer.ps1).
+> This is a false positive. The `!ml` suffix means a machine-learning model guessed the file looks suspicious, not that it matched known malware. Installers up to v1.0.0 started a PowerShell script without a console window, which resembles what malware does; from v1.1.0 `Install.exe` is Drag'n Wash ModFramework's shared installer, a plain unsigned program that runs no scripts, but a new unsigned file can still be flagged. Its source is public: [`installer/`](https://github.com/TomXV/dragnwash-modframework/tree/main/installer) in the framework's repository.
 >
 > When the file is quarantined automatically no threat name is shown, and `Install.exe` simply looks missing from the extracted folder. Windows Security → **Protection history** shows what was removed.
 > - First make sure the zip you downloaded is genuine. In PowerShell, run `(Get-FileHash "<path to the zip>").Hash -eq ("<the sha256 from Releases>" -replace '^sha256:')`. It prints `True` when the file is the one published here; if it prints `False`, delete the file and do not use it.
 > - The `sha256` is shown under `DragNWashLocalization-<version>.zip` on the [Releases](https://github.com/TomXV/dragnwash-localization/releases) page. The two automatic "Source code" rows have no hash, so do not use those.
 > - A match confirms the file is the one published here. It is not by itself proof that the file is safe, which is what the source linked above is for.
 > - If it matches, open the detection in Windows Security → **Protection history** and choose **Actions → Allow on device**. Allow that one file only: there is no need to add a folder exclusion or to turn Windows Security off.
-> - **`Install.cmd`** in the same folder opens the same installer window without `Install.exe`. Whether it avoids the detection is untested, but it is worth a try.
 > - If you would rather not allow anything, use the manual installation steps below instead.
 > - Do not use copies from anywhere other than this repository's Releases page.
 
@@ -93,7 +87,7 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
 
 The script finds the game in your Steam libraries (including an SD card), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256, sets `executable_name="DragNWash"` in `run_bepinex.sh`, copies the mod, and adds `./run_bepinex.sh %command%` to the game's launch options while keeping any options you already had. To update or remove the mod, run the same command again and choose **Install / Update** or **Uninstall**. Uninstalling keeps your save history, takes `./run_bepinex.sh` back out of the launch options when no other BepInEx mod needs it, and offers to remove BepInEx as well. `--install` and `--uninstall` skip the question.
 
-Steam rewrites launch options while it is running, so when the launch option has to change the script closes Steam, edits it, and starts Steam again (it asks first; `--close-steam` skips that question). If a step could not be done, the final dialog says so and tells you what to change by hand. Each run is logged to `~/.local/state/dragnwash-localization/installer.log`.
+Steam rewrites launch options while it is running, so when the launch option has to change the script closes Steam, edits it, and starts Steam again (it asks first; `--close-steam` skips that question). If a step could not be done, the final dialog says so and tells you what to change by hand. Each run is logged to `~/.local/state/dragnwash-installer/installer.log`.
 
 <details>
 <summary>Manual installation on the Deck</summary>
@@ -321,7 +315,7 @@ From v1.0.0 this mod runs on **Drag'n Wash ModFramework**, a prerequisite mod th
 
 - **What it does.** Much of what this mod did to hook into the game is useful to other mods as well, so it now lives in the framework: the **Mods** screen (Options → Mods) that lists every installed mod with its settings and an on/off switch, the language row in the game's Options screen, rewriting text before it is shown, dialogue and choice events, the shared F1 tool window, fonts that are safe on Direct3D 12, and save history.
 - **Why.** When the game updates, only the framework has to follow the change, and the mods built on it keep working. The update of September 14, 2026 is the kind of change it absorbs in one place.
-- **For players.** The release zip and the installers include the framework. Uninstalling this mod keeps the framework when another mod is installed.
+- **For players.** The release zip and the installers include the framework. From v1.1.0 the installers are the framework's shared ones, which every Drag'n Wash mod can ship. Uninstalling this mod keeps the framework when another mod is installed.
 - **Update notices.** From v1.1.0 the title screen says **1 update available in Mods** when a newer release of this mod or the framework is out, and **Options → Mods** has a button to its release page. Once a day the framework asks GitHub for the latest release and sends nothing about you or your game; nothing is downloaded. Switch it off in **Mods → Drag'n Wash ModFramework → Settings → Check for updates**.
 - **For translators.** The CSV format and the translation tools are unchanged; existing packs and contributions carry over.
 
