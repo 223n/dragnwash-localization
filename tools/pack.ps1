@@ -128,6 +128,11 @@ $FrameworkLicense = Join-Path $FrameworkPath 'LICENSE'
 if (Test-Path -LiteralPath $FrameworkLicense) {
     Copy-Item -LiteralPath $FrameworkLicense -Destination (Join-Path $Stage 'BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt')
 }
+# The framework's icon on the Mods screen.
+$FrameworkIcon = Join-Path $FrameworkPath 'src/DragNWash.ModFramework/icon.png'
+if (Test-Path -LiteralPath $FrameworkIcon) {
+    Copy-Item -LiteralPath $FrameworkIcon -Destination (Join-Path $Stage 'BepInEx/plugins/DragNWash.ModFramework')
+}
 Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
 # Menu font for systems whose OS fonts have no CJK glyphs (Steam Deck).
 Copy-Item -LiteralPath (Join-Path $Root 'assets/menufont/dragnwash-menufont.bundle') -Destination $PluginDir
