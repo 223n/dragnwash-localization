@@ -312,6 +312,11 @@ namespace DragNWashLocalization
         // key form pass through; a key column is added ahead of translation.
         public static string HashFileInPlace(string pluginDirectory, string locale)
         {
+            // Rows without a speaker column fall back to SpeakerLookup, which
+            // scans every loaded object to build its table. Reset it once here
+            // so the scan happens at most once for the whole file rather than
+            // once per row.
+            SpeakerLookup.Reset();
             string localeDir = Path.Combine(pluginDirectory, "Translations", locale);
             string path = Path.Combine(localeDir, "strings.csv");
             // When a working copy exists it is the thing being edited, so the
