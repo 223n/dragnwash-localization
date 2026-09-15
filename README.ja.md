@@ -34,10 +34,6 @@
 
 手動で導入したい場合は、以下の手順に従ってください。
 
-### 動画で見る
-
-![導入手順の動画](docs/media/install-guide-full.gif)
-
 
 > [!NOTE]
 > **`Install.exe` を押しても何も起きない、または「Windows によって PC が保護されました」と出る場合**

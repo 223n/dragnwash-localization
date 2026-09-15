@@ -34,10 +34,6 @@ Languages: 日本語 / 简体中文 / English (no translation), plus provisional
 
 If you prefer to do it by hand, follow the manual steps below.
 
-### How to install (video)
-
-![Install guide video](docs/media/install-guide-full-en.gif)
-
 
 > [!NOTE]
 > **If nothing happens when you run `Install.exe`, or Windows says "Windows protected your PC"**
