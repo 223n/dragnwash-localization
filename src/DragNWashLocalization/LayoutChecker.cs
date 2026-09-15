@@ -38,6 +38,9 @@ namespace DragNWashLocalization
         {
             if (TranslationStore.EntryCount == 0)
             {
+                // The button that gets here tells the user to watch the
+                // activity log, so this path must not be the only silent one.
+                Plugin.Log("[layout] No translations are loaded for the current language; nothing to check.");
                 return;
             }
 
