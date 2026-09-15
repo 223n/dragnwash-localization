@@ -223,7 +223,9 @@ The export has been verified with 1,839 lines on an actual game installation.
 
 Lines appear in the order in which they are played in the game. The `node` column identifies each conversation and uses names such as `Alexander_2_intro`, following the pattern "character name_occurrence_scene." The `order` column gives the line's position within that conversation. The `kind` column distinguishes character dialogue (`line`) from player choices (`option`). This context makes it easier to understand who is speaking and what each response refers to. The three dragons in the game are Conrad, Ryan, and Alexander.
 
-Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and submit a pull request. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
+Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and check it in the game. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
+
+**Before opening a pull request, rebuild the published file** with the in-game **Hash for commit** button (or `tools/hash-strings.ps1`). The automatic check accepts only the header `key,section,node,order,speaker,translation`, so a file still carrying `source_en` and the other export columns is rejected - and a pull request that carries the English script is the one thing this repository is set up to avoid. See [CONTRIBUTING.md](CONTRIBUTING.md#hash-before-committing).
 
 Already translated lines are exported with their translations filled in, so exporting again will not discard your work.
 
