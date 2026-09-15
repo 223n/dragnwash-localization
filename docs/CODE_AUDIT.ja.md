@@ -37,8 +37,9 @@
 | L3 | 低 | `tools/hash-strings.ps1` | 空行を「malformed dropped」と数える |
 | L4 | 低 | `ScriptOrder.cs` | `level_flow.csv` の探索先がツール間で食い違う |
 | L5 | 低 | `Plugin.cs` | `Awake` の失敗が毎フレームの例外になる |
+| L6 | 低 | `.csproj` / `Plugin.cs` | バージョン番号が 2 か所にあり、一致を保証する仕組みがない |
 
-高が 4 件、中が 7 件、低が 5 件です。
+高が 4 件、中が 7 件、低が 6 件です。
 このうち H3・H4・M4 はいずれも翻訳者の作業内容が失われる経路で、実害が最も大きいと考えます。
 
 ## 監査の範囲と方法
@@ -209,6 +210,10 @@ const match = open.find(p => p.head.sha === run.head_sha);
 if (!match) return;            // 対応する PR が無ければ何もしない
 const pr = match.number;
 ```
+
+`github.event.workflow_run.pull_requests` を使う書き方もありますが、
+この配列は **fork からの PR では空になります**。
+今回守りたいのはまさにその経路なので、`head_sha` から引く形にしてください。
 
 あわせて次の 4 点を推奨します。
 
@@ -525,7 +530,15 @@ Windows の貢献者が `tools/hash-strings.ps1` またはゲーム内の「Hash
 *.sh  text eol=lf
 *.csv text eol=lf
 *.txt text eol=lf
+
+*.bundle binary
+*.gif    binary
 ```
+
+後半の 2 行は保険です。
+`.bundle` と `.gif` は先頭 8,000 バイト以内に NUL バイトを含むため、
+Git は現状でも自動的にバイナリと判定します（確認済み）。
+明示しておくと、将来 `* text=auto` を足したときにも安全です。
 
 あわせて、書き出し側でも改行を固定すると環境差に依存しなくなります。
 
@@ -664,6 +677,22 @@ fedcba9876543210,UI,,,UI,normal
 
 先頭が `#` の行でも同じことが起こります。
 こちらは中間行がまるごと消えます。
+
+**この形式は、ドキュメントが明示的に推奨しているものです**（`CONTRIBUTING.md:115`）。
+
+```text
+Wrap fields containing commas, quotes or line breaks in `"` (escape quotes as `""`),
+per [RFC 4180](https://datatracker.ietf.org/doc/html/rfc4180).
+```
+
+`CONTRIBUTING.ja.md:135` も同じ内容で、RFC 4180 準拠をうたっています。
+つまり、貢献者が案内どおりに書いた入力を、3 つの実装のうち 2 つが正しく扱えません。
+
+**重大度を「中」とした理由**
+
+現在のデータには引用フィールド内に改行を含む行が 1 件もありません。
+そのため、実害はまだ発生していません。
+ただし、複数行の訳文が 1 行でも追加された時点で、静かなデータ消失に変わります。
 
 **修正案**
 
@@ -970,6 +999,61 @@ private void Update()
 }
 ```
 
+### L6. バージョン番号が 2 か所にあり、一致を保証する仕組みがない
+
+**対象**: `src/DragNWashLocalization/DragNWashLocalization.csproj:8`、
+`src/DragNWashLocalization/Plugin.cs:33`
+
+**現象**
+
+同じバージョンが 2 か所に書かれています。
+
+```xml
+<!-- Keep in sync with Plugin.PluginVersion; the installer shows this. -->
+<Version>1.1.2</Version>
+<FileVersion>1.1.2</FileVersion>
+```
+
+```csharp
+public const string PluginVersion = "1.1.2";
+```
+
+コメントは同期を指示していますが、それを検査する仕組みはありません。
+
+**根拠**
+
+- `Plugin.cs` の値は `[BepInPlugin(PluginGuid, PluginName, PluginVersion)]` を通じて
+  Mods 画面に表示されます（`Plugin.cs:21`）。
+- `.csproj` の値は DLL のファイルバージョンになり、`.csproj` のコメントによれば
+  インストーラーがこれを表示します。
+- `tools/pack.ps1:98-104` は `Plugin.cs` からしか読みません。
+
+```powershell
+$pluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
+if ($pluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') {
+    $Version = $Matches[1]
+}
+```
+
+現時点では両者とも `1.1.2` で一致しています（確認済み）。
+
+**再現条件**
+
+リリース時に片方だけ更新した場合です。
+zip の名前と Mods 画面は新しいバージョンを、インストーラーは古いバージョンを表示します。
+ビルドもテストも通るため、気付くのはリリース後になります。
+
+**修正案**
+
+`tools/pack.ps1` で一致を検査し、ずれていれば止めます。
+
+```powershell
+$csproj = Get-Content -LiteralPath $Project -Raw
+if ($csproj -match '<Version>([^<]+)</Version>' -and $Matches[1] -ne $Version) {
+    throw "Version mismatch: Plugin.cs is $Version but the .csproj is $($Matches[1]). Update both."
+}
+```
+
 ## 調査したが問題なしと判断した項目
 
 誤検知を避けるため、検討したうえで指摘しないと判断した項目を残します。
@@ -983,6 +1067,7 @@ private void Update()
 | `HotReload` のスレッド競合 | `FileSystemWatcher` ではなくメインスレッドのポーリング。設計上そのように選択されている（`HotReload.cs:17-20`） |
 | `TranslationKey.LooksLikeLineId` の長さ制限 | Python 側の正規表現と一致（いずれも 6〜64 文字） |
 | `Translations/_discovered/` の混入 | `.gitignore:16` と `check-translations.py:109-113` の二重で防いでいる |
+| `.gitattributes` にバイナリ指定が無い | `.bundle` と `.gif` は先頭 8,000 バイト以内に NUL バイトを含むため、Git が自動でバイナリと判定する |
 
 ## データ整合性の測定結果
 
