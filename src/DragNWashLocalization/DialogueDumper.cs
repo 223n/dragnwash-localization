@@ -122,7 +122,7 @@ namespace DragNWashLocalization
             Directory.CreateDirectory(dir);
             string path = Path.Combine(dir, "dialogue_lines.csv");
 
-            using (var writer = new StreamWriter(path, append: false, Encoding.UTF8))
+            using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
             {
                 writer.WriteLine("yarn_project,node,order,kind,speaker,line_id,key,source_en,translation,tags");
                 foreach (string row in rows)
