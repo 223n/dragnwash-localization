@@ -95,7 +95,26 @@ namespace DragNWashLocalization
         private string _committedLocale;
         private bool _preloadedEverything;
 
+        // Unity logs an exception thrown from Awake and then calls Update every
+        // frame anyway. Update dereferences the config entries Awake binds, so
+        // a single failure during startup turns into a NullReferenceException
+        // on every frame for the rest of the session. Guard it instead.
+        private bool _ready;
+
         private void Awake()
+        {
+            try
+            {
+                Initialise();
+                _ready = true;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"DragNWashLocalization failed to start, so it will stay idle this session: {ex}");
+            }
+        }
+
+        private void Initialise()
         {
             _instance = this;
             PluginDirectory = Path.GetDirectoryName(Info.Location);
@@ -307,6 +326,11 @@ namespace DragNWashLocalization
 
         private void Update()
         {
+            if (!_ready)
+            {
+                return;
+            }
+
             // Locale switching is requested from OnGUI but performed here: it
             // reads files and rasterizes glyphs, neither of which belongs in a
             // render callback.
