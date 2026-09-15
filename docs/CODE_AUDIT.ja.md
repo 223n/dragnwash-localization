@@ -13,6 +13,8 @@
 - [重大度: 高](#重大度-高)
 - [重大度: 中](#重大度-中)
 - [重大度: 低](#重大度-低)
+- [検証ラウンドの結果](#検証ラウンドの結果前半-15-件に対する反証)
+- [追加監査で見つかった指摘](#追加監査で見つかった指摘28-件未検証)
 - [調査したが問題なしと判断した項目](#調査したが問題なしと判断した項目)
 - [データ整合性の測定結果](#データ整合性の測定結果)
 - [未検証の前提](#未検証の前提)
@@ -21,7 +23,7 @@
 
 | ID | 重大度 | 対象 | 概要 |
 | --- | --- | --- | --- |
-| H1 | 高 | `SpeakerLookup.cs` | 話者表を毎行作り直し、「Hash for commit」でゲームが固まる |
+| H1 | 中 | `SpeakerLookup.cs` | 話者表を作り直しすぎて「Hash for commit」が数秒〜数十秒止まる |
 | H2 | 高 | `.github/workflows/comment-on-check.yml` | fork の PR が作ったアーティファクトを特権ワークフローが信用している |
 | H3 | 高 | `tools/hash-strings.ps1` | ゲーム内ボタンと挙動が違い、公開済みの訳が消える |
 | H4 | 高 | `WorkingCopy.cs` | 「Export working copy」の再実行で未ハッシュの訳が消える |
@@ -30,17 +32,21 @@
 | M3 | 中 | `.gitattributes` ほか | CSV の改行コードが環境で変わる |
 | M4 | 中 | `TranslationStore.cs` / `WorkingCopy.cs` | 翻訳ファイルの書き込みが非アトミック |
 | M5 | 中 | `check-translations.py` / `hash-strings.ps1` | コメント行の除去方法が C# と食い違う |
-| M6 | 中 | `ScriptOrder.cs` | 書き出し時の検索が O(n×m) |
-| M7 | 中 | `DragNWashLocalization.csproj` | 参照が重複し、手順コメントと一致しない |
-| L1 | 低 | 各書き出し処理 | `_discovered` 配下だけ BOM 付き UTF-8 |
-| L2 | 低 | 4 ファイル | カルチャ依存の `StartsWith` |
-| L3 | 低 | `tools/hash-strings.ps1` | 空行を「malformed dropped」と数える |
-| L4 | 低 | `ScriptOrder.cs` | `level_flow.csv` の探索先がツール間で食い違う |
-| L5 | 低 | `Plugin.cs` | `Awake` の失敗が毎フレームの例外になる |
+| M6 | 低 | `ScriptOrder.cs` | 書き出し時の検索が O(n×m)（体感は無し） |
+| M7 | 低 | `DragNWashLocalization.csproj` | 手順コメントが実態と一致しない（ビルドは壊れない） |
+| L1 | — | 各書き出し処理 | `_discovered` 配下だけ BOM 付き UTF-8（一貫性の整理） |
+| L2 | — | 4 ファイル | カルチャ依存の `StartsWith`（一貫性の整理） |
+| L5 | — | `Plugin.cs` | 起動失敗時の明示的な停止（防御的整理。不具合ではない） |
 | L6 | 低 | `.csproj` / `Plugin.cs` | バージョン番号が 2 か所にあり、一致を保証する仕組みがない |
 
-高が 4 件、中が 7 件、低が 6 件です。
-このうち H3・H4・M4 はいずれも翻訳者の作業内容が失われる経路で、実害が最も大きいと考えます。
+検証の結果、当初 17 件としたもののうち **2 件は誤りで取り下げ**、4 件は重大度を訂正、
+3 件は「不具合」ではなく整理として位置づけ直しました。確定した指摘は
+高 3 件、中 5 件、低 3 件、整理 3 件です。詳細は[検証ラウンドの結果](#検証ラウンドの結果前半-15-件に対する反証)を参照してください。
+
+このうち **H3・H4・M4・M5 はいずれも翻訳者の作業内容が失われる経路**で、実害が最も大きいと考えます。
+
+さらに、当初カバーできていなかった 4 領域の追加監査で
+[28 件の指摘](#追加監査で見つかった指摘28-件未検証)が出ています（こちらは未検証）。
 
 ## 監査の範囲と方法
 
@@ -73,6 +79,15 @@
 ## 重大度: 高
 
 ### H1. 話者表を毎行作り直し、「Hash for commit」でゲームが固まる
+
+> [!IMPORTANT]
+> **前提に誤りがありました（重大度 高 → 中）。** 以下の「作業用コピーには `speaker` 列が無いことが
+> 多い」という記述は誤りです。公開 `strings.csv` 13 言語で `speaker` 列が空の行は **0 件**、
+> `data/script_order.csv` が知らないキーは ja で 1,680 件中 **110 件**でした。
+> Mod が書き出した作業用コピーでは走査は約 110 回（数秒の引っかかり）で、数千回になるのは
+> `speaker` 列を持たない入力、すなわち `CONTRIBUTING.md:54-57` が案内する手書きの
+> `source_en,translation` 形式や、CI が今も受け付ける旧ヘッダーの場合です。
+> 欠陥そのものと修正案は変わりません。
 
 **対象**: `src/DragNWashLocalization/SpeakerLookup.cs:28`
 
@@ -372,6 +387,11 @@ if (File.Exists(existing))
 ## 重大度: 中
 
 ### M1. ロケール依存の数値書式が出力 CSV を壊す
+
+> [!NOTE]
+> **ソートが壊れる仕組みを訂正します。** `RatioOf` は行を先に `,` で分割するため（`:205`）、
+> `1,23` では `double.TryParse` が失敗するのではなく、断片 `23` を解釈して **1.23 ではなく 23**
+> を返します。指摘自体は成立し、修正案も変わりません。
 
 **対象**: `src/DragNWashLocalization/LayoutChecker.cs:143-145`
 
@@ -717,6 +737,11 @@ C# と同じ解釈になります。
 
 ### M6. 書き出し時の検索が O(n×m)
 
+> [!IMPORTANT]
+> **影響を過大に書いていました（重大度 中 → 低）。** 約 310 万回という計算は正しいものの、
+> 16 文字のキー比較としては **10〜20 ミリ秒**で、ボタン 1 回につき 1 度だけです。
+> 知覚できる停止は発生しません。不要な計算量の整理として扱ってください。
+
 **対象**: `src/DragNWashLocalization/ScriptOrder.cs:304`
 
 **現象**
@@ -764,6 +789,12 @@ public static void WriteOrdered(TextWriter w, Data data, ICollection<string> key
 
 ### M7. 参照が重複し、手順コメントと一致しない
 
+> [!IMPORTANT]
+> **主張に誤りがありました（重大度 中 → 低）。** `<Reference>` の重複は MSBuild が同一項目として
+> 解決するため、ビルドに影響しません。また `docs/RELEASING.md` が案内する `tools/pack.ps1` は
+> 欠落した DLL を名指しで報告し、フレームワークの DLL は自分でコピーします。
+> 実体は古くなったコメントという文書上の不備です。
+
 **対象**: `src/DragNWashLocalization/DragNWashLocalization.csproj`
 
 **現象**
@@ -808,6 +839,10 @@ public static void WriteOrdered(TextWriter w, Data data, ICollection<string> key
 
 ### L1. `_discovered` 配下だけ BOM 付き UTF-8
 
+> [!NOTE]
+> **具体的な誤動作は確認できませんでした。** 読み手はすべて BOM を除去し、追記時は preamble も
+> 出力されません。不具合ではなく一貫性の整理として扱ってください。
+
 **対象**: `TranslationStore.cs:581`、`TranslationStore.cs:669`、`UiTextDumper.cs:102`、
 `LayoutChecker.cs:175`、`LayoutChecker.cs:189`
 
@@ -840,6 +875,9 @@ using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
 
 ### L2. カルチャ依存の `StartsWith`
 
+> [!NOTE]
+> **実際に挙動が変わる入力は構築できませんでした。** 不具合ではなく一貫性の整理です。
+
 **対象**: `TranslationStore.cs:90`、`TranslationStore.cs:125`、`Plugin.cs:433`、`IgnoreRules.cs:76`
 
 **現象**
@@ -870,6 +908,11 @@ if (name.StartsWith("_", StringComparison.Ordinal))
 ```
 
 ### L3. 空行を「malformed dropped」と数える
+
+> [!CAUTION]
+> **この指摘は取り下げました。** `ConvertFrom-Csv` は空行を読み飛ばし、オブジェクトを生成しません。
+> したがって空行が `$dropped` に計上されることはなく、前提そのものが誤りでした。
+> この環境には `pwsh` が無く自身では未実測のため、以下の記述は誤った推論の記録として残します。
 
 **対象**: `tools/hash-strings.ps1:53`
 
@@ -910,6 +953,12 @@ $lines = [System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8) |
 
 ### L4. `level_flow.csv` の探索先がツール間で食い違う
 
+> [!CAUTION]
+> **この指摘は取り下げました。** `ScriptOrder.Generate` の呼び出し元は `FlowDumper.Export:38` のみで、
+> その 4 行前（`:34`）で `level_flow.csv` が同じ `_discovered/` に書かれます。`Generate` は
+> `FlowDumper.ReadLevels` が失敗すれば `script_order.csv` を書かずに戻るため、両者は必ず同時に
+> 成功または失敗します。片方だけ生成される経路は存在しません（自身で確認済み）。
+
 **対象**: `src/DragNWashLocalization/ScriptOrder.cs:258`
 
 **現象**
@@ -949,6 +998,14 @@ if (!File.Exists(flow))
 ```
 
 ### L5. `Awake` の失敗が毎フレームの例外になる
+
+> [!CAUTION]
+> **主張した障害経路は到達不能でした。** `Update` が参照する 9 個の `ConfigEntry` はすべて
+> `Plugin.cs:104-160` で束縛され、現実的に例外を投げうる処理（`:162-183`）より前にあります。
+> それ以前の唯一の呼び出し `ModFrameworkInfo.Register` は自身で try/catch を持ちます
+> （`ModFrameworkInfo.cs:14-30`）。したがって `Update` が null を参照することはありません。
+> ただし `:162-183` で失敗すると、何も翻訳しないまま動き続ける中途半端な状態になります。
+> **不具合の修正ではなく、任意の防御的整理**として位置づけ直します。
 
 **対象**: `src/DragNWashLocalization/Plugin.cs:98`
 
@@ -1054,6 +1111,101 @@ if ($csproj -match '<Version>([^<]+)</Version>' -and $Matches[1] -ne $Version) {
 }
 ```
 
+## 検証ラウンドの結果（前半 15 件に対する反証）
+
+前半の指摘のうち 15 件について、「反証を試みる」「具体的な失敗ケースを構築する」の
+2 観点から独立に検証しました。その結果、**6 件に反証が出ました。**
+
+### 取り下げた指摘（2 件）
+
+| ID | 取り下げの理由 |
+| --- | --- |
+| L3 | `ConvertFrom-Csv` は空行を読み飛ばし、オブジェクトを生成しない。したがって空行が `$dropped` に計上されることはない。前提そのものが誤りだった（`pwsh` が無く自身では未実測） |
+| L4 | `script_order.csv` と `level_flow.csv` は `FlowDumper.Export` の同一呼び出しで、同じディレクトリに書かれる（`:34` と `:38`）。片方だけ生成される経路は存在しない（自身で確認済み） |
+
+### 主張を訂正した指摘（4 件）
+
+| ID | 訂正内容 | 重大度 |
+| --- | --- | --- |
+| H1 | 「作業用コピーは speaker 列が空なのが通常」は誤り。公開 `strings.csv` 13 言語で speaker 空の行は **0 件**、`script_order.csv` が知らないキーは ja で 110 件。Mod 製の作業用コピーでは走査は約 110 回で、数秒の引っかかり。数千回になるのは手書きの `source_en,translation` 形式の場合 | 高 → **中** |
+| H2 | 対象は「任意の Issue / PR」ではなく **「任意の PR」**（`issues: write` は無い）。また「passed と表示させる」のは既に marker コメントがある PR の**編集のみ** | 高（据え置き） |
+| M6 | 「数千 × 数千」は無い体感コストを示唆していた。約 310 万回の 16 文字比較は **10〜20 ミリ秒**で知覚できない | 中 → **低** |
+| M7 | `<Reference>` の重複は MSBuild が同一項目として解決するため**ビルドに影響しない**。また `tools/pack.ps1` を使う文書化された手順なら欠落は名指しで報告される。実体は古いコメントという文書上の不備 | 中 → **低** |
+
+### 位置づけを改めた指摘（3 件）
+
+| ID | 内容 |
+| --- | --- |
+| L5 | 「`Update` が毎フレーム NRE」は到達不能。9 個の `ConfigEntry` はすべて危険な処理より前で束縛され、それ以前の `ModFrameworkInfo.Register` は自身で try/catch を持つ。**不具合ではなく任意の防御的整理** |
+| L1 | 具体的な誤動作は存在しない。読み手はすべて BOM を除去し、追記時は preamble も出ない。**一貫性の整理** |
+| L2 | 実際に挙動が変わる入力を構築できなかった。**一貫性の整理** |
+
+### 補強された指摘（2 件）
+
+| ID | 内容 |
+| --- | --- |
+| M1 | ソートが壊れる仕組みは「解釈の失敗」ではなかった。`RatioOf` は先に `,` で分割するため、`1,23` は断片 `23` として解釈され、**1.23 ではなく 23 が返る**。より静かな誤りだった |
+| M2 | 「画面に出る文字列ごと」は、ハング側から見れば過大（最初の 1 件で止まる）だが、**呼び出し頻度としては過小**。`IgnoreRules.cs:101-102` の「呼び出し側で重複排除済み」というコメントに反し、`TmpTextPatches.cs:50` はすべてのテキストで無条件に呼ぶ |
+
+## 追加監査で見つかった指摘（28 件・未検証）
+
+当初カバーできていなかった 4 領域を追加で監査した結果です。
+
+> [!WARNING]
+> **これらは前半の指摘と違い、敵対的検証を通していません。**
+> 前半の 15 件は上記の 2 観点で検証し、6 件に反証が出ました。
+> 以下の 28 件には同じ検証を行っていないため、同程度の割合で誤りが含まれる可能性があります。
+> 採用前に個別の確認を推奨します。
+
+### macOS インストーラー（8 件）
+
+| 重大度 | 箇所 | 概要 |
+| --- | --- | --- |
+| 中 | `install-macos.sh:871` | `BepInEx/plugins` が無いと `set -e` + `pipefail` でアンインストールが無言で中断する。設定ファイル削除後・起動オプション削除前に止まり、完了メッセージも出ない |
+| 中 | `install-macos.sh:770` | BepInEx の導入済み判定が `run_bepinex.sh` を見ないため、存在しないラッパーを指す起動オプションが設定され、Steam からゲームを起動できなくなる |
+| 中 | `install-macos.sh:774` | `curl -fsSL` は `-S` が無く、ダウンロード失敗時に何も表示せずスクリプトが終了する。GUI モードではダイアログが出ないまま消える |
+| 中 | `install-macos.sh:632` | ゲームのパスに `$` `` ` `` `\` `"` が含まれると、相対パスの `executable_name` に無言でフォールバックする。プロジェクト自身が「動作しない」と記載している形式 |
+| 低 | `install-macos.sh:492` | JXA の `String.replace` が置換文字列中の `$&` `` $` `` `$'` `$$` を特殊解釈し、起動オプションが壊れる |
+| 低 | `install-macos.sh:79` | 値を伴わないオプションが最後の引数だと、診断なしで終了コード 1 になる |
+| 低 | `install-macos.sh:806` | `$LANG_CHOICE` が `sed s///` の置換側にエスケープなしで埋め込まれる |
+| 低 | `install-macos.sh:661` | 実行開始のログ行が、常に空のコマンドラインを記録する |
+
+### ImGui ツールウィンドウ（7 件）
+
+| 重大度 | 箇所 | 概要 |
+| --- | --- | --- |
+| **高** | `Plugin.ImGui.cs:159` | About タブがプラグインの導入パスをメニューフォントで描画する。同ファイルが「ASCII のみ」と定めた Direct3D 12 クラッシュ回避の前提を、パスに非 ASCII 文字が含まれると破る |
+| 中 | `Plugin.ImGui.cs:406` | `GameSaves.ReadLevel` が OnGUI のたびにセーブファイルへアクセスし、同じメソッドが用意した 2 秒キャッシュを迂回する |
+| 中 | `Plugin.ImGui.cs:437` | セーブファイルへの書き込みが、`GUI.enabled` の範囲と開いたままの `BeginScrollView` をまたいで、try/catch 無しで描画コールバック内から実行される |
+| 中 | `Plugin.ImGui.cs:167` | `DrawAbout` が OnGUI のたびに About ページ全体をリフレクション込みで再構築・再計測する |
+| 中 | `Plugin.ImGui.cs:370` | 2 秒ごとの更新がクリック解決と同じフレームで一覧を作り直しうるため、クリックが別の行に当たる |
+| 中 | `LayoutChecker.cs:189` | 同じメソッド内で、空の報告の書き出しは try/catch されているのに、本体の書き出しは保護されていない |
+| 低 | `LayoutChecker.cs:41` | 翻訳が未読み込みのとき、「アクティビティログを見てください」と案内した直後に何も記録せず戻る |
+
+### データ整合性（4 件）
+
+| 重大度 | 箇所 | 概要 |
+| --- | --- | --- |
+| 中 | `Translations/es/strings.csv:945` ほか | 2 つのキーで `<i>` が閉じていない言語が 13 中 11〜12。ドイツ語（と 1 件は韓国語）だけが閉じるため、斜体の範囲が言語ごとに異なる |
+| 中 | `data/script_order.csv:498` ほか | 到達可能な経路にある台詞 4 行が、13 言語のどれにも行を持たない |
+| 低 | `Translations/de/strings.csv:27` ほか | ドイツ語の引用符が開きは `U+201E` なのに、14 箇所中 13 箇所で閉じが ASCII の `"` になっている |
+| 低 | `Translations/zh-Hans/name.txt:1` | zh-Hans の表示名が汎用の「中文」で、zh-Hant の「繁體中文」と区別しにくい |
+
+### ドキュメント整合性（9 件）
+
+| 重大度 | 箇所 | 概要 |
+| --- | --- | --- |
+| 中 | `CONTRIBUTING.md:46` | ファイル形式の例が、`Audio` のハッシュを使いながらラベルを `Options` と書いている |
+| 中 | `CONTRIBUTING.md:110` | 存在しない「F1 → Tools」タブへ翻訳者を案内している |
+| 中 | `CONTRIBUTING.md:108` | 「作業用コピーがあればそこから生成」という説明が、文書化された `-Path` 形式では成り立たない |
+| 中 | `README.md:226` | README が案内する台詞エクスポート経由の貢献手順が、リポジトリ自身の CI が拒否するファイルを生む |
+| 低 | `.github/ISSUE_TEMPLATE/translation-fix.yml:9` | 13 の言語パックがあるのに、選択肢が ja / zh-Hans / その他の 3 つしかない |
+| 低 | `CONTRIBUTING.ja.md:71` | 「ハッシュのみ」の理由づけが別の項目に付いており、事実と異なる説明になっている |
+| 低 | `README.md:281` | フラグ分類の一覧が、`FlagCatalog.csv` の 8 分類のうち 2 つを欠いている |
+| 低 | `docs/PLAN.ja.md:59` | 公開 CSV が `source_en,translation` だけだという古い記述が残っている（`PLAN.md` は修正済み） |
+| 低 | `docs/RELEASING.md:49` | リリース ZIP の構成説明が、`pack.ps1` が実際に入れる ModFramework のプラグインとプリローダーを落としている |
+
+
 ## 調査したが問題なしと判断した項目
 
 誤検知を避けるため、検討したうえで指摘しないと判断した項目を残します。
@@ -1068,6 +1220,8 @@ if ($csproj -match '<Version>([^<]+)</Version>' -and $Matches[1] -ne $Version) {
 | `TranslationKey.LooksLikeLineId` の長さ制限 | Python 側の正規表現と一致（いずれも 6〜64 文字） |
 | `Translations/_discovered/` の混入 | `.gitignore:16` と `check-translations.py:109-113` の二重で防いでいる |
 | `.gitattributes` にバイナリ指定が無い | `.bundle` と `.gif` は先頭 8,000 バイト以内に NUL バイトを含むため、Git が自動でバイナリと判定する |
+| L3: 空行が malformed dropped に計上される | `ConvertFrom-Csv` は空行を読み飛ばしオブジェクトを作らない。前提が誤りだった（`pwsh` 不在のため自身では未実測） |
+| L4: `level_flow.csv` の探索先が食い違う | 両ファイルは `FlowDumper.Export` の同一呼び出しで同じディレクトリに書かれる。片方だけ存在する経路は無い |
 
 ## データ整合性の測定結果
 
