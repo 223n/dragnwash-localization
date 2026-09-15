@@ -205,7 +205,7 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 `key,section,node,order,speaker,translation` の列を持ちます。`key` は英語原文のハッシュ、`section` / `node` / `order` はゲーム内のどこ（レベルと会話）で流れるかをプレイ順で示し、`speaker` は誰の台詞かです。`#` で始まる行は `# ===== Level 1: Ryan (Sunny) =====` のような見出しで、ファイルを上から読むと台本のように流れが追えます。
 おすすめの作業手順：
 
-1. ゲーム内で **F1 → Tools → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
+1. ゲーム内で **F1 → Translation → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
    に、各行の英語原文を並べた作業用ファイル（`key,section,node,order,speaker,source_en,translation`）が、同じ見出しつきでゲーム内の実行順に書き出されます
 2. `translation` 列を編集して保存する。起動中のゲームにその場で反映されます
 3. コミット前に **F1 → Tools → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す

@@ -80,15 +80,15 @@ F6 / F7 の出力には `key` 列と `source_en` 列の両方が入っている�
 ### 新しい言語を始める
 
 1. `Translations/<locale>/` フォルダを作り（例: `ko`）、`name.txt` に表示名（例: `한국어`）を書く
-2. ゲームを起動し、**Options →「言語（Mod）」** か F1 → Tools の言語一覧で新しい言語を選ぶ（まだ訳が 0 件なので画面は英語のまま）
-3. **F1 → Tools → Export working copy** を押す。`strings.csv` がなくても、ゲームが持つ全行の英語原文を並べた
+2. ゲームを起動し、**Options →「言語（Mod）」** か F1 → Translation の言語一覧で新しい言語を選ぶ（まだ訳が 0 件なので画面は英語のまま）
+3. **F1 → Translation → Export working copy** を押す。`strings.csv` がなくても、ゲームが持つ全行の英語原文を並べた
    空の作業コピー `_discovered/<locale>.working.csv` ができる
 4. あとは下記「原文を並べて作業する」と同じ。訳した行から順に画面へ反映される
 5. Options の項目名 `Language (Mod)`（キー `e3becbaee46cc0df`）も訳す。ゲーム本来の設定ではなく Mod の設定だと分かるように、「(Mod)」かその言語での言い方を残す。一度 Options を開くと、作業コピーと F7 の書き出しに出てくる
 
 ### 原文を並べて作業する（推奨）
 
-ゲーム内 **F1 → Tools → Export working copy** を押すと、公開用の `strings.csv` が
+ゲーム内 **F1 → Translation → Export working copy** を押すと、公開用の `strings.csv` が
 `Translations/_discovered/<locale>.working.csv` に展開されます：
 
 ```csv
@@ -127,7 +127,7 @@ line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Wonderful!,
 PR を送る前に、公開用の `strings.csv` を作り直してください。作業ファイル（`_discovered/<locale>.working.csv`）が
 あればそこから、なければ `strings.csv` 自身の `source_en` 行から生成されます。方法は2つ：
 
-- ゲーム内 **F1 → Tools → Hash for commit**（現在の言語のファイルを書き換えます）
+- ゲーム内 **F1 → Translation → Hash for commit**（現在の言語のファイルを書き換えます）
 - `tools/hash-strings.ps1`（引数なしで全言語、`-Path` で1ファイル）
 
 **英語原文が残った `strings.csv` は PR で受け付けません。** PR ごとに自動チェックが走り、形式が違う場合は理由を英語でコメントします。直してプッシュすれば同じコメントが更新されます。
@@ -195,8 +195,8 @@ Fキーや自動記録で `Translations/_discovered/` に CSV として出力さ
 ## 動作確認
 
 - ゲームの **Options →「言語（Mod）」**（Save で確定、Back で保存済みの言語に戻る）か、
-  **F1** のデバッグウィンドウの **Tools** タブで言語を切り替えると、再起動なしで表示が切り替わります。
-- Tools の **Check translation layout** で、レイアウト崩れリスクのある文字列が
+  **F1** のデバッグウィンドウの **Translation** タブで言語を切り替えると、再起動なしで表示が切り替わります。
+- Translation タブの **Check translation layout** で、レイアウト崩れリスクのある文字列が
   `_discovered/layout_risks.csv`（`source_en,translation,axis,required_px,available_px,ratio,object_path`）
   に出力されます。`ratio` が大きいものほどはみ出しが大きいので、訳文を短くする等で調整してください。
 
@@ -229,7 +229,7 @@ python tools/check-translations.py
 
 | レポートのメッセージ | 意味 | 直し方 |
 |---|---|---|
-| `header is [...]; the published file must be ...` | ファイルが作業コピーのまま（`source_en` 列がある） | **F1 → Tools → Hash for commit** か `tools/hash-strings.ps1` を実行し、作り直した `strings.csv` をコミットする |
+| `header is [...]; the published file must be ...` | ファイルが作業コピーのまま（`source_en` 列がある） | **F1 → Translation → Hash for commit** か `tools/hash-strings.ps1` を実行し、作り直した `strings.csv` をコミットする |
 | `key is not 16 lowercase hex digits or a line ID` | key がハッシュでも台詞 ID でもない。key の列に英文が入っているか、key を書き換えている | *Hash for commit* で作り直す。`key` 列は手で編集しない |
 | `must not be committed (contains source text)` | `Translations/_discovered/` のファイルか `strings.local.csv` が PR に入っている | `git rm --cached <ファイル>` で PR から外してコミットする（手元のファイルは残せます） |
 | `duplicate key (see line N)` | 同じ行が 2 回ある | key ごとに 1 行だけ残し、もう一方を消す |
