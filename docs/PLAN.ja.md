@@ -335,7 +335,7 @@ InputActionMap         1
 
 翻訳者とメンテナ双方の導線を整えた。
 
-- **`CONTRIBUTING.md`**: 翻訳者向けガイド。CSVの形式（`source_en,translation` の2列・
+- **`CONTRIBUTING.md`**: 翻訳者向けガイド。CSVの形式（当時の `source_en,translation` の2列・
   完全一致）、書式タグの扱い、F6/F7/自動記録による未訳の見つけ方、`ignore.txt`、
   ロケールの追加、PR前のチェック、ルール（ゲーム資産・`_discovered/` をコミットしない）
   をまとめた。
