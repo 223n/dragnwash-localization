@@ -489,9 +489,17 @@ function editVdf(text, app, option, action) {
     } else if (action === 'set') {
         if (current.includes(wrapper)) return { status: 'same' };
         if (anyWrapper.test(current)) return { status: 'other' };
-        if (current.includes('%command%')) value = current.replace('%command%', option);
-        else if (current.trim()) value = option + ' ' + current.trim();
-        else value = option;
+        if (current.includes('%command%')) {
+            // String.replace scans the replacement for $-patterns ($&, $`,
+            // $', $$), so a game path containing one would be rewritten
+            // instead of inserted. Splice it in by index instead.
+            const at = current.indexOf('%command%');
+            value = current.slice(0, at) + option + current.slice(at + '%command%'.length);
+        } else if (current.trim()) {
+            value = option + ' ' + current.trim();
+        } else {
+            value = option;
+        }
     } else if (action === 'remove') {
         if (!anyWrapper.test(current)) return { status: 'none' };
         value = current.replace(anyWrapper, '').trim();
