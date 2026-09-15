@@ -40,23 +40,55 @@ namespace DragNWashLocalization
 
         private static void Commit(string temp, string path)
         {
-            if (!File.Exists(path))
-            {
-                File.Move(temp, path);
-                return;
-            }
             try
             {
-                // Keeps the target's identity, so an editor holding the file
-                // open sees the new content rather than a dangling handle.
-                File.Replace(temp, path, null, ignoreMetadataErrors: true);
+                if (!File.Exists(path))
+                {
+                    File.Move(temp, path);
+                    return;
+                }
+                try
+                {
+                    // Keeps the target's identity, so an editor holding the file
+                    // open sees the new content rather than a dangling handle.
+                    File.Replace(temp, path, null, ignoreMetadataErrors: true);
+                }
+                catch (PlatformNotSupportedException)
+                {
+                    // Some Mono builds do not implement File.Replace. The window
+                    // here is a single delete rather than a whole file write.
+                    File.Delete(path);
+                    File.Move(temp, path);
+                }
+                catch (IOException)
+                {
+                    // Another program holds the target open and does not allow
+                    // it to be deleted or renamed, which both File.Replace and
+                    // the delete above need. Writing into the file that is
+                    // already there still works, and it is what this code did
+                    // before, so do that rather than refuse to save the
+                    // translator's work. The content is already complete in the
+                    // temporary file, so the copy is short.
+                    Overwrite(temp, path);
+                    Discard(temp);
+                }
             }
-            catch (PlatformNotSupportedException)
+            catch
             {
-                // Some Mono builds do not implement File.Replace. The window
-                // here is a single delete rather than a whole file write.
-                File.Delete(path);
-                File.Move(temp, path);
+                // Never leave a stray .tmp beside the translator's file.
+                Discard(temp);
+                throw;
+            }
+        }
+
+        private static void Overwrite(string temp, string path)
+        {
+            // FileShare.Read matches what StreamWriter asks for, so this
+            // succeeds exactly where the previous, non-atomic write did.
+            using (var source = new FileStream(temp, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (var target = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                source.CopyTo(target);
             }
         }
 
