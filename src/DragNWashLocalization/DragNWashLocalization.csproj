@@ -34,7 +34,14 @@
       libs/UnityEngine.AssetBundleModule.dll <- <Game>/DragNWash_Data/Managed/UnityEngine.AssetBundleModule.dll
       libs/Naelstrof.UnityScriptableSettings.dll <- <Game>/DragNWash_Data/Managed/Naelstrof.UnityScriptableSettings.dll
       libs/Unity.Localization.dll          <- <Game>/DragNWash_Data/Managed/Unity.Localization.dll
-      libs/UnityEngine.UI.dll              <- <Game>/DragNWash_Data/Managed/UnityEngine.UI.dll
+      libs/UnityEngine.TextCoreFontEngineModule.dll <- <Game>/DragNWash_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll
+
+    The DragNWash.ModFramework*.dll references do not come from the game. They
+    are built from the framework's own repository and copied into libs/ by
+    tools/pack.ps1 (see the comment at the top of that script). Building this
+    project by hand needs them there too.
+
+    tools/pack.ps1 checks this same list before it builds; keep the two in step.
   -->
   <ItemGroup>
     <Reference Include="BepInEx">
@@ -79,10 +86,6 @@
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>libs\Unity.InputSystem.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>libs\UnityEngine.UI.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.TextCoreFontEngineModule">
