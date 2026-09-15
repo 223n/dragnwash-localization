@@ -449,6 +449,10 @@ namespace DragNWashLocalization
             }
             using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
             {
+                // The published file is committed, and the repository keeps
+                // its CSVs in LF. WriteLine would use Environment.NewLine,
+                // so hashing on Windows would rewrite every line.
+                writer.NewLine = "\n";
                 writer.WriteLine("key,section,node,order,speaker,translation");
                 foreach (string comment in leadingComments)
                 {

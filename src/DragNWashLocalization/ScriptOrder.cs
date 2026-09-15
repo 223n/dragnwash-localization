@@ -215,6 +215,9 @@ namespace DragNWashLocalization
             string path = Path.Combine(dir, "script_order.csv");
             using (var w = new StreamWriter(path, false, new UTF8Encoding(false)))
             {
+                // Copied into the repository as data/script_order.csv, which
+                // is LF like every other CSV here.
+                w.NewLine = "\n";
                 w.WriteLine("section,phase,node,order,line_id,key,speaker,condition");
                 foreach (Entry e in entries)
                 {

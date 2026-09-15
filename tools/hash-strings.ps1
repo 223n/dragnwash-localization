@@ -133,14 +133,18 @@ foreach ($t in $targets) {
     $inputOrder.Add($key)
   }
 
-  $out = New-Object System.Text.StringBuilder
-  [void]$out.AppendLine('key,section,node,order,speaker,translation')
+  # StringBuilder.AppendLine uses [Environment]::NewLine, which is CRLF on
+  # Windows. StringWriter lets the newline be stated outright, so the file is
+  # LF on every platform, matching the repository (see .gitattributes).
+  $out = New-Object System.IO.StringWriter
+  $out.NewLine = "`n"
+  $out.WriteLine('key,section,node,order,speaker,translation')
   # Keep the comment block under the header of the published file (language,
   # provisional notice, credits), up to the first section header.
   if (Test-Path $t.Output) {
     foreach ($line in ([System.IO.File]::ReadAllLines($t.Output, [System.Text.Encoding]::UTF8) | Select-Object -Skip 1)) {
       if (-not $line.StartsWith('#') -or $line.StartsWith('# =====') -or $line.StartsWith('# ---')) { break }
-      [void]$out.AppendLine($line)
+      $out.WriteLine($line)
     }
   }
   $done = New-Object System.Collections.Generic.HashSet[string]
@@ -152,37 +156,37 @@ foreach ($t in $targets) {
     $lineRow = $lid -ne '' -and $lineRows.Contains($lid)
     if (-not $hashRow -and -not $lineRow) { continue }
     if ($e.section -ne $lastSection) {
-      [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== ' + (Section-Title $e.section) + ' =====')
+      $out.WriteLine(''); $out.WriteLine('# ===== ' + (Section-Title $e.section) + ' =====')
       $lastSection = $e.section; $lastNode = $null
     }
     if ($e.node -ne $lastNode) {
       $title = $(if ($e.phase) { $e.phase + ': ' } else { '' }) + $e.node + $(if ($e.condition) { ' | if ' + $e.condition } else { '' })
-      [void]$out.AppendLine('# --- ' + $title + ' ---')
+      $out.WriteLine('# --- ' + $title + ' ---')
       $lastNode = $e.node
     }
     if ($hashRow) {
       $who = if ($speakers.ContainsKey($k)) { $speakers[$k] -join '/' } elseif ($rows[$k].Speaker) { $rows[$k].Speaker } else { $e.speaker }
-      [void]$out.AppendLine($k + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
+      $out.WriteLine($k + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
       [void]$done.Add($k)
     }
     if ($lineRow) {
-      [void]$out.AppendLine($lid + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $e.speaker) + ',' + (Escape-Csv $lineRows[$lid]))
+      $out.WriteLine($lid + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $e.speaker) + ',' + (Escape-Csv $lineRows[$lid]))
       $lineRows.Remove($lid); $lineKept++
     }
   }
   $left = @($inputOrder | Where-Object { -not $done.Contains($_) })
   if ($left.Count -gt 0) {
-    if ($order.Count -gt 0) { [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== UI and other text (not part of the dialogue script) =====') }
+    if ($order.Count -gt 0) { $out.WriteLine(''); $out.WriteLine('# ===== UI and other text (not part of the dialogue script) =====') }
     foreach ($k in $left) {
       $who = if ($rows[$k].Speaker) { $rows[$k].Speaker } else { 'UI' }
       $sec = if ($order.Count -gt 0) { 'UI' } else { '' }
-      [void]$out.AppendLine($k + ',' + $sec + ',,,' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
+      $out.WriteLine($k + ',' + $sec + ',,,' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
     }
   }
   if ($lineRows.Count -gt 0) {
-    [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== Per-line translations not found in the script order =====')
+    $out.WriteLine(''); $out.WriteLine('# ===== Per-line translations not found in the script order =====')
     foreach ($lid in @($lineRows.Keys)) {
-      [void]$out.AppendLine($lid + ',,,,,' + (Escape-Csv $lineRows[$lid])); $lineKept++
+      $out.WriteLine($lid + ',,,,,' + (Escape-Csv $lineRows[$lid])); $lineKept++
     }
   }
   [System.IO.File]::WriteAllText($t.Output, $out.ToString(), (New-Object System.Text.UTF8Encoding $false))
