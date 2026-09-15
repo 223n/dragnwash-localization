@@ -54,13 +54,19 @@ function Escape-Csv([string]$v) {
 # the game (src/DragNWashLocalization/CsvReader.cs) treats '#' as a comment only
 # at the start of a record, never inside quotes.
 function Read-Csv([string]$file) {
-  $lines = [System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8)
-  if ($lines.Count -lt 2) { return @() }
+  # The whole file as one string, not an array of lines: ConvertFrom-Csv only
+  # joins a quoted field across physical lines when it is given a single
+  # string. Handed an array it makes every line its own record, which cuts a
+  # multi-line translation off at its first line - the very thing this change
+  # is about.
+  $text = [System.IO.File]::ReadAllText($file, [System.Text.Encoding]::UTF8)
+  if ($text.Trim() -eq '') { return @() }
   # The first column's name, so a parsed comment row can be spotted by it.
   # A comment may itself contain a comma ('# ===== ... | sets a, b ====='), so
   # it can arrive split across several fields; only the first one matters.
-  $first = (($lines[0] -split ',')[0]).Trim('"')
-  return ($lines | ConvertFrom-Csv | Where-Object { -not ([string]$_.$first).StartsWith('#') })
+  $first = ((($text -split "\r?\n", 2)[0] -split ',')[0]).Trim('"')
+  if ($first -eq '') { return @() }
+  return (@($text | ConvertFrom-Csv) | Where-Object { -not ([string]$_.$first).StartsWith('#') })
 }
 
 # ---- play order ------------------------------------------------------------
