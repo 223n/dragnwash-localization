@@ -19,6 +19,10 @@
   repository (generated in-game by F1 -> Tools -> Export game flow). Keys the
   order does not know (UI text) go last. No game installation is needed.
 
+  When a working copy is the input, every published row it does not contain is
+  kept: a working copy only holds the rows it was written with, and the
+  published file may have gained rows since.
+
   Identical to the in-game "Hash for commit" button.
 
 .PARAMETER Path
@@ -133,6 +137,33 @@ foreach ($t in $targets) {
     $inputOrder.Add($key)
   }
 
+  # A working copy only holds the rows it was written with. Rows the published
+  # file gained since (a pack update, keys re-made after a game update) would
+  # otherwise be lost, so keep every published row the working copy does not
+  # have. The working copy wins where both do. This mirrors
+  # TranslationStore.HashFileInPlace, which the in-game button uses.
+  $fromPublished = 0
+  if ($t.Input -ne $t.Output -and (Test-Path $t.Output)) {
+    foreach ($r in Read-Csv $t.Output) {
+      $pk = if ($r.PSObject.Properties['key']) { ([string]$r.key).Trim() } else { '' }
+      if ($pk -eq '') { continue }
+      $ptr = if ($r.PSObject.Properties['translation']) { [string]$r.translation } else { '' }
+      if ($ptr -eq '') { continue }
+      if ($pk -cmatch $lineIdPattern) {
+        if (-not $lineRows.Contains($pk)) { $lineRows[$pk] = $ptr }
+        continue
+      }
+      $pk = $pk.ToLowerInvariant()
+      # The published file is always in key form; anything else is not ours.
+      if ($pk -cnotmatch '^[0-9a-f]{16}$') { continue }
+      if ($rows.ContainsKey($pk)) { continue }
+      $pwho = if ($r.PSObject.Properties['speaker']) { [string]$r.speaker } else { '' }
+      $rows[$pk] = @{ Speaker = $pwho; Translation = $ptr }
+      $inputOrder.Add($pk)
+      $fromPublished++
+    }
+  }
+
   $out = New-Object System.Text.StringBuilder
   [void]$out.AppendLine('key,section,node,order,speaker,translation')
   # Keep the comment block under the header of the published file (language,
@@ -186,5 +217,5 @@ foreach ($t in $targets) {
     }
   }
   [System.IO.File]::WriteAllText($t.Output, $out.ToString(), (New-Object System.Text.UTF8Encoding $false))
-  Write-Host ("{0} <- {1}: {2} converted, {3} already hashed, {4} per-line, {5} malformed dropped, {6} in play order, {7} other" -f $t.Output, $t.Input, $converted, $kept, $lineKept, $dropped, $done.Count, $left.Count)
+  Write-Host ("{0} <- {1}: {2} converted, {3} already hashed, {4} per-line, {5} malformed dropped, {6} kept from the published file, {7} in play order, {8} other" -f $t.Output, $t.Input, $converted, $kept, $lineKept, $dropped, $fromPublished, $done.Count, $left.Count)
 }
