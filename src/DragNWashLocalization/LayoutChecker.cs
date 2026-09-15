@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using TMPro;
@@ -136,13 +137,18 @@ namespace DragNWashLocalization
                         continue;
                     }
 
+                    // Invariant culture on purpose: the current culture would
+                    // write "1,5" where the decimal separator is a comma - de,
+                    // fr, es, pt-BR, ru, pl are all target languages of this
+                    // mod - and the value is not quoted, so the row would gain
+                    // a column and the file would no longer parse.
                     rows.Add(string.Concat(
                         CsvReader.Escape(source), ",",
                         CsvReader.Escape(translation), ",",
                         axis, ",",
-                        required.ToString("0.#"), ",",
-                        available.ToString("0.#"), ",",
-                        (required / available).ToString("0.##"), ",",
+                        required.ToString("0.#", CultureInfo.InvariantCulture), ",",
+                        available.ToString("0.#", CultureInfo.InvariantCulture), ",",
+                        (required / available).ToString("0.##", CultureInfo.InvariantCulture), ",",
                         CsvReader.Escape(path)));
                 }
             }
@@ -207,7 +213,9 @@ namespace DragNWashLocalization
                 // Walk back from the path field, which may itself contain commas.
                 for (int i = parts.Length - 1; i >= 0; i--)
                 {
-                    if (double.TryParse(parts[i], out value))
+                    // Written with the invariant culture above, so read it back
+                    // the same way; the current culture would fail to parse it.
+                    if (double.TryParse(parts[i], NumberStyles.Float, CultureInfo.InvariantCulture, out value))
                     {
                         return value;
                     }
