@@ -131,6 +131,41 @@ namespace DragNWashLocalization
                     }
                 }
 
+                // The working copy is where the translator actually types, and
+                // what they enter there exists nowhere else until "Hash for
+                // commit" writes it into strings.csv. Re-exporting must not
+                // overwrite it, so read the previous working copy back and let
+                // its translations win over the published ones.
+                //
+                // Only non-empty values override. A working copy written before
+                // the published file gained translations would otherwise blank
+                // them out with its own empty cells.
+                string path = PathFor(pluginDirectory, locale);
+                if (File.Exists(path))
+                {
+                    foreach (var row in CsvReader.ReadRows(path))
+                    {
+                        row.TryGetValue("key", out string key);
+                        row.TryGetValue("translation", out string tr);
+                        key = key?.Trim();
+                        if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(tr))
+                        {
+                            continue;
+                        }
+                        if (TranslationKey.LooksLikeLineId(key))
+                        {
+                            lineTranslations[key] = tr;
+                            continue;
+                        }
+                        key = key.ToLowerInvariant();
+                        if (!translations.ContainsKey(key))
+                        {
+                            fileOrder.Add(key);
+                        }
+                        translations[key] = tr;
+                    }
+                }
+
                 // Every key worth a row: what the game has loaded plus what the
                 // file already holds. Then write them in play order with section
                 // headers; keys the order does not know go last (UI and such).
@@ -140,7 +175,6 @@ namespace DragNWashLocalization
                 foreach (string key in fileOrder) if (seen.Add(key)) all.Add(key);
 
                 int written = 0, resolved = 0, unresolved = 0, untranslated = 0, lineRows = 0;
-                string path = PathFor(pluginDirectory, locale);
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
                 ScriptOrder.Data order = ScriptOrder.Load(pluginDirectory);
                 using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
