@@ -38,6 +38,15 @@ pwsh tools/pack.ps1
 This creates `release/DragNWashLocalization-<version>.zip` with the following structure:
 
 ```text
+BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
+BepInEx/plugins/DragNWash.ModFramework/DragNWash.ModFramework.dll
+BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt
+BepInEx/plugins/DragNWash.ModFramework/icon.png
+BepInEx/plugins/DragNWash.ModFramework.Text/DragNWash.ModFramework.Text.dll
+BepInEx/plugins/DragNWash.ModFramework.Dialogue/DragNWash.ModFramework.Dialogue.dll
+BepInEx/plugins/DragNWash.ModFramework.ToolWindow/DragNWash.ModFramework.ToolWindow.dll
+BepInEx/plugins/DragNWash.ModFramework.Assets/DragNWash.ModFramework.Assets.dll
+BepInEx/plugins/DragNWash.ModFramework.Saves/DragNWash.ModFramework.Saves.dll
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
