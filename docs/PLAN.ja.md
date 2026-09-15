@@ -56,7 +56,7 @@ Unity Localization経由のフックは不採用とし、**TextMeshProのテキ�
    - 起動時に `FontFallback.EnsureCjkFallback()` でCJKフォールバックフォントを注入
    - BepInEx configで言語切り替え（`TargetLocale`: `ja` / `zh-Hans` / 手動指定）を提供
 3. **翻訳ファイル形式**（誰でも「投げるだけ」で参加できる形式）
-   - `Translations/<locale>/strings.csv` — 列は `source_en,translation` の2列のみ
+   - `Translations/<locale>/strings.csv` — 当初は `source_en,translation` の2列のみ。公開形式はのちにハッシュキーへ変更（後述）
    - UIも会話文も同じ1ファイルで扱える（フックが共通のため区別不要）
    - 翻訳者は `Translations/_discovered/strings.csv`（未訳一覧、ゲームをプレイすると
      自動生成される）を参考に、`Translations/<locale>/strings.csv` の該当行を埋めてPRを送るだけ
