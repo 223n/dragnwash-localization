@@ -346,7 +346,7 @@ DirectX 12 で **ウィンドウモード** を **排他的フルスクリーン
 
 ## 現在のステータス
 
-v1.1.0 をリリース済み（ModFramework 1.1.0 と合わせて、この Mod の新しいリリースが出ると Mods 画面とタイトル画面で知らせるように）。v1.0.0 で [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) の上で動くようにし、Mods 画面を追加。v0.6.2 で、古い作業用ファイルで「Hash for commit」をしても行が消えないように修正し、「Really Delete Save?」を翻訳。v0.6.1 でヘブライ語の、訳のない名前などが反転して表示される不具合を修正。v0.6.0 で台詞 ID ごとの訳（複数のキャラが話す同じ英文を、キャラごとに訳し分けられるように。2026 年 9 月 14 日のゲームのアップデートで動作確認済み）。v0.5.0 でゲームの Options 画面から言語を変更できるように、v0.4.0 で 13 言語、言語ごとのフォント準備、About タブ、日英中に切り替えられるインストーラーを、v0.3.0 で Steam Deck 対応を入れました。Windows on ARM でも動作を確認済みです（ゲーム本体の都合で `-force-d3d11` が必要）。macOS は、BepInEx 側の既知の不具合で現在は動作しません（[Steam Deck / Linux](#steam-deck--linux動作確認済み) の下の注意書き参照）。BepInExプラグインの骨格、UI文字列・会話文の日本語/中国語差し替え、
+v1.1.1 をリリース済み（Drag'n Wash ModFramework 1.1.1 を同梱し、Mods 画面にフレームワークのアイコンを表示）。v1.1.0 で（ModFramework 1.1.0 と合わせて、この Mod の新しいリリースが出ると Mods 画面とタイトル画面で知らせるように）。v1.0.0 で [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) の上で動くようにし、Mods 画面を追加。v0.6.2 で、古い作業用ファイルで「Hash for commit」をしても行が消えないように修正し、「Really Delete Save?」を翻訳。v0.6.1 でヘブライ語の、訳のない名前などが反転して表示される不具合を修正。v0.6.0 で台詞 ID ごとの訳（複数のキャラが話す同じ英文を、キャラごとに訳し分けられるように。2026 年 9 月 14 日のゲームのアップデートで動作確認済み）。v0.5.0 でゲームの Options 画面から言語を変更できるように、v0.4.0 で 13 言語、言語ごとのフォント準備、About タブ、日英中に切り替えられるインストーラーを、v0.3.0 で Steam Deck 対応を入れました。Windows on ARM でも動作を確認済みです（ゲーム本体の都合で `-force-d3d11` が必要）。macOS は、BepInEx 側の既知の不具合で現在は動作しません（[Steam Deck / Linux](#steam-deck--linux動作確認済み) の下の注意書き参照）。BepInExプラグインの骨格、UI文字列・会話文の日本語/中国語差し替え、
 CJKフォント表示、会話・UIの一括抽出、ゲーム内デバッグメニュー、レイアウト崩れ検出、
 翻訳者向けドキュメント、リリース手順を実装・実機確認済みです。
 詳細は [docs/PLAN.ja.md](docs/PLAN.ja.md) を参照してください。
