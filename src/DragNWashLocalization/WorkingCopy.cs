@@ -143,7 +143,9 @@ namespace DragNWashLocalization
                 string path = PathFor(pluginDirectory, locale);
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
                 ScriptOrder.Data order = ScriptOrder.Load(pluginDirectory);
-                using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
+                // Written through SafeFile so a failure partway through leaves the
+                // previous file intact rather than a truncated one.
+                SafeFile.Write(path, new UTF8Encoding(false), writer =>
                 {
                     writer.WriteLine("key,section,node,order,speaker,source_en,translation");
                     void Emit(string key, string section, string node, string ord, string fallbackSpeaker)
@@ -203,7 +205,7 @@ namespace DragNWashLocalization
                             lineRows++;
                         }
                     }
-                }
+                });
 
                 string ordered = order == null ? " No script order data found (Export game flow with a level loaded), so rows are in discovery order." : "";
                 if (fresh) ordered = $" {locale}/strings.csv did not exist, so this is a fresh start with every line the game has loaded." + ordered;

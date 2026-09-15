@@ -447,7 +447,9 @@ namespace DragNWashLocalization
                     }
                 }
             }
-            using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
+            // Written through SafeFile so a failure partway through leaves the
+            // previous file intact rather than a truncated one.
+            SafeFile.Write(path, new UTF8Encoding(false), writer =>
             {
                 writer.WriteLine("key,section,node,order,speaker,translation");
                 foreach (string comment in leadingComments)
@@ -500,7 +502,7 @@ namespace DragNWashLocalization
                         lineKept++;
                     }
                 }
-            }
+            });
 
             string from = input == working ? $" from the working copy ({fromPublished} row(s) kept from the published file)" : string.Empty;
             string ordered = order == null ? " No script order data found, so rows keep their input order." : $" Ordered by {Path.GetFileName(Path.GetDirectoryName(order.Source))}/script_order.csv.";
