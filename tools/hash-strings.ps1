@@ -48,11 +48,19 @@ function Escape-Csv([string]$v) {
   return $v
 }
 
-# Import-Csv cannot skip comment lines, so strip them first.
+# Import-Csv cannot skip comment lines, so they are dropped after parsing.
+# Stripping them from the physical lines first would also remove lines that
+# belong to a quoted multi-line value, which silently rewrites the translation:
+# the game (src/DragNWashLocalization/CsvReader.cs) treats '#' as a comment only
+# at the start of a record, never inside quotes.
 function Read-Csv([string]$file) {
-  $lines = [System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8) | Where-Object { -not $_.StartsWith('#') }
+  $lines = [System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8)
   if ($lines.Count -lt 2) { return @() }
-  return ($lines | ConvertFrom-Csv)
+  # The first column's name, so a parsed comment row can be spotted by it.
+  # A comment may itself contain a comma ('# ===== ... | sets a, b ====='), so
+  # it can arrive split across several fields; only the first one matters.
+  $first = (($lines[0] -split ',')[0]).Trim('"')
+  return ($lines | ConvertFrom-Csv | Where-Object { -not ([string]$_.$first).StartsWith('#') })
 }
 
 # ---- play order ------------------------------------------------------------
