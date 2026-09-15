@@ -256,6 +256,16 @@ namespace DragNWashLocalization
                     });
                 }
                 string flow = Path.Combine(Path.GetDirectoryName(path), "level_flow.csv");
+                if (!File.Exists(flow))
+                {
+                    // A maintainer who regenerates only script_order.csv in game
+                    // leaves level_flow.csv where it was shipped. Without this
+                    // the level metadata is missing and section headers stay
+                    // "L01 Ryan" instead of "Level 1: Ryan", so the in-game
+                    // button and tools/hash-strings.ps1 write different files
+                    // from the same data - the script always reads data/.
+                    flow = Path.Combine(pluginDirectory, "data", "level_flow.csv");
+                }
                 if (File.Exists(flow))
                 {
                     foreach (Dictionary<string, string> row in CsvReader.ReadRows(flow))
