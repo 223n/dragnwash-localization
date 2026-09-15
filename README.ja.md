@@ -208,7 +208,7 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 1. ゲーム内で **F1 → Translation → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
    に、各行の英語原文を並べた作業用ファイル（`key,section,node,order,speaker,source_en,translation`）が、同じ見出しつきでゲーム内の実行順に書き出されます
 2. `translation` 列を編集して保存する。起動中のゲームにその場で反映されます
-3. コミット前に **F1 → Tools → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す
+3. コミット前に **F1 → Translation → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す
 
 リポジトリにはゲームの英語台本を含めない方針で、**製品版を持っている人だけが翻訳できる**仕組みです。
 各言語フォルダには表示名を書いた1行の `name.txt`（例: `日本語`）があり、インストーラーとゲーム内メニューに表示されます。

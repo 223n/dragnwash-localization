@@ -205,7 +205,7 @@ You can add a translation by editing `Translations/<locale>/strings.csv`. The pu
 
 1. In the game, open **F1 → Translation → Export working copy**. This writes `Translations/_discovered/<locale>.working.csv` with the English text beside every line (`key,section,node,order,speaker,source_en,translation`), in the order the lines are played, with the same section headers.
 2. Edit the `translation` column. Saving the file hot-reloads it into the running game.
-3. Before committing, press **F1 → Tools → Hash for commit** (or run `tools/hash-strings.ps1`). This regenerates `strings.csv` without any English text.
+3. Before committing, press **F1 → Translation → Hash for commit** (or run `tools/hash-strings.ps1`). This regenerates `strings.csv` without any English text.
 
 Each language folder also holds a one-line `name.txt` with the language's display name (for example `日本語`), shown in the installer and the in-game menu.
 

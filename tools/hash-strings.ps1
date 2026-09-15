@@ -16,7 +16,7 @@
 
   Rows are written in the order the game plays them, with '#' section
   headers, using data/script_order.csv and data/level_flow.csv from the
-  repository (generated in-game by F1 -> Tools -> Export game flow). Keys the
+  repository (generated in-game by F1 -> Translation -> Export game flow). Keys the
   order does not know (UI text) go last. No game installation is needed.
 
   Identical to the in-game "Hash for commit" button.
