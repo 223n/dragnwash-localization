@@ -33,6 +33,14 @@ namespace DragNWashLocalization
 
         private static readonly List<Regex> Patterns = new List<Regex>();
 
+        // Patterns come from Translations/ignore.txt, which a translator can
+        // edit. IsIgnored already wraps matching in try/catch, but catastrophic
+        // backtracking does not throw - it simply never returns, on the Unity
+        // main thread, for every distinct string the game shows. A match
+        // timeout turns that into a RegexMatchTimeoutException the existing
+        // catch handles.
+        private static readonly TimeSpan MatchTimeout = TimeSpan.FromMilliseconds(50);
+
         // Whole strings the mod itself puts on screen, such as language names
         // in the Options dropdown, which are not game text to translate.
         private static readonly HashSet<string> Exact = new HashSet<string>(StringComparer.Ordinal);
@@ -90,7 +98,7 @@ namespace DragNWashLocalization
         {
             try
             {
-                Patterns.Add(new Regex(pattern, RegexOptions.CultureInvariant));
+                Patterns.Add(new Regex(pattern, RegexOptions.CultureInvariant, MatchTimeout));
             }
             catch (ArgumentException ex)
             {
@@ -130,6 +138,8 @@ namespace DragNWashLocalization
                 catch (Exception)
                 {
                     // A pathological pattern must not break text rendering.
+                    // RegexMatchTimeoutException lands here too, so a runaway
+                    // pattern costs one timeout per string instead of hanging.
                 }
             }
 
