@@ -162,8 +162,16 @@ namespace DragNWashLocalization
             rows.Sort((a, b) => RatioOf(b).CompareTo(RatioOf(a)));
 
             string dir = Path.Combine(pluginDirectory, "Translations", "_discovered");
-            Directory.CreateDirectory(dir);
             string filePath = Path.Combine(dir, "layout_risks.csv");
+            try
+            {
+                Directory.CreateDirectory(dir);
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[layout] Could not create {dir}: {ex.Message}");
+                return;
+            }
 
             // Written even when empty. Returning early here used to leave the
             // previous run's file on disk, so a clean result still read as a
@@ -186,13 +194,24 @@ namespace DragNWashLocalization
                 return;
             }
 
-            using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
+            // Update() has no handler of its own, so an IOException here -
+            // the report is open in a spreadsheet, most likely - would unwind
+            // out of the whole frame and skip the discovered-strings flush.
+            try
             {
-                writer.WriteLine("source_en,translation,axis,required_px,available_px,ratio,object_path");
-                foreach (string row in rows)
+                using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
                 {
-                    writer.WriteLine(row);
+                    writer.WriteLine("source_en,translation,axis,required_px,available_px,ratio,object_path");
+                    foreach (string row in rows)
+                    {
+                        writer.WriteLine(row);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[layout] Could not write {filePath}: {ex.Message}");
+                return;
             }
 
             Plugin.Log($"[layout] {rows.Count} of {measured} translated label(s) need a look ({autoSized} auto-size, reported as 'shrink' rather than overflow); see {filePath}");
