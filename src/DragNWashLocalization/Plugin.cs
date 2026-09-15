@@ -223,6 +223,10 @@ namespace DragNWashLocalization
         private void PrepareWindowCharacters()
         {
             var text = new StringBuilder(GameFonts.PreparedCharacters);
+            // The install path is not ours to choose. The About tab prints it
+            // and so do the log lines that name a written file, so it has to be
+            // prepared here like everything else the window draws.
+            text.Append(PluginDirectory);
             foreach (string locale in _availableLocales)
             {
                 text.Append(LocaleDisplayName(locale));

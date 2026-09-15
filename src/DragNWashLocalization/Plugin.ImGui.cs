@@ -113,9 +113,11 @@ namespace DragNWashLocalization
 
         private Vector2 _aboutScroll;
 
-        // Everything here is ASCII on purpose. Rasterizing a glyph the menu
+        // Every literal here is ASCII on purpose. Rasterizing a glyph the menu
         // font has not seen yet uploads a texture, and on Direct3D 12 an upload
         // while the menu is open is what crashes the game (Unity UUM-140564).
+        // The one value that is not ours to choose is the install path below;
+        // Plugin.PrepareWindowCharacters feeds it to the font at startup.
         private void DrawAbout(Rect area)
         {
             ToolWindow.Fill(area, ToolWindow.InsetColor);
