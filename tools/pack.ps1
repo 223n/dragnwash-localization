@@ -40,6 +40,19 @@ $SrcDir = Split-Path -Parent $Project
 $Dll = Join-Path $SrcDir 'bin/Release/DragNWashLocalization.dll'
 $OutDir = Join-Path $Root 'release'
 
+# 0. The version lives in two places: Plugin.PluginVersion, which the Mods
+#    screen shows, and the .csproj's <Version>/<FileVersion>, which become the
+#    DLL's file version and are what the installer shows. The .csproj comment
+#    says to keep them in step, but nothing checked it: a release that updated
+#    only one shipped a mod whose two version numbers disagree, and neither the
+#    build nor any test notices. Check before anything is built.
+$PluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
+$PluginVersion = if ($PluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') { $Matches[1] } else { $null }
+$CsprojVersion = if ((Get-Content -LiteralPath $Project -Raw) -match '<Version>([^<]+)</Version>') { $Matches[1] } else { $null }
+if ($PluginVersion -and $CsprojVersion -and $PluginVersion -ne $CsprojVersion) {
+    throw "Version mismatch: Plugin.cs says $PluginVersion but the .csproj says $CsprojVersion. Keep <Version> and <FileVersion> in step with Plugin.PluginVersion."
+}
+
 # 1. The reference assemblies are copied from the game install and never
 #    committed. Fail loudly and early with the list of what is missing.
 $Required = @(
@@ -93,11 +106,10 @@ if (-not (Test-Path -LiteralPath $Dll)) {
     throw "Build succeeded but $Dll was not produced."
 }
 
-# 3. Version: explicit argument wins, otherwise read PluginVersion from Plugin.cs.
+# 3. Version: explicit argument wins, otherwise the PluginVersion read above.
 if (-not $Version) {
-    $pluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
-    if ($pluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') {
-        $Version = $Matches[1]
+    if ($PluginVersion) {
+        $Version = $PluginVersion
     }
     else {
         throw 'Could not read PluginVersion from Plugin.cs. Pass -Version explicitly.'
