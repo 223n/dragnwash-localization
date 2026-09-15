@@ -231,9 +231,12 @@ Unity内部のキー名などを知る必要はありません。手順は [CONT
 実機で確認してください（`node` や `key` など余分な列が付いたままでもプラグインは問題なく読み込みます）。
 
 **PR を送る前に、公開用ファイルを作り直してください。** ゲーム内の **Hash for commit** ボタン
-（または `tools/hash-strings.ps1`）を使います。自動チェックが受け付けるヘッダは
-`key,section,node,order,speaker,translation` だけなので、`source_en` などダンプ由来の列が
-残ったファイルは弾かれます。英語原文を含む PR を作らないことは、このリポジトリの
+（または `tools/hash-strings.ps1`）を使います。
+自動チェックが受け付けるのは公開形式のヘッダだけです。*Hash for commit* が書く
+`key,section,node,order,speaker,translation` のほか、短い `key,speaker,translation` と `key,translation`
+も通ります。作業ファイルのヘッダはどれにも当てはまらないため、
+`source_en` などダンプ由来の列が残ったファイルは弾かれます。
+英語原文を含む PR を作らないことは、このリポジトリの
 一番の前提でもあります。詳しくは [CONTRIBUTING.ja.md](CONTRIBUTING.ja.md#コミット前にハッシュ化する) を参照してください。
 
 すでに訳した行は `translation` 列に訳が入った状態で出力されるので、再ダンプしても

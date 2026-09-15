@@ -225,7 +225,7 @@ Lines appear in the order in which they are played in the game. The `node` colum
 
 Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and check it in the game. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
 
-**Before opening a pull request, rebuild the published file** with the in-game **Hash for commit** button (or `tools/hash-strings.ps1`). The automatic check accepts only the header `key,section,node,order,speaker,translation`, so a file still carrying `source_en` and the other export columns is rejected - and a pull request that carries the English script is the one thing this repository is set up to avoid. See [CONTRIBUTING.md](CONTRIBUTING.md#hash-before-committing).
+**Before opening a pull request, rebuild the published file** with the in-game **Hash for commit** button (or `tools/hash-strings.ps1`). The automatic check takes only published headers - `key,section,node,order,speaker,translation`, which is what *Hash for commit* writes, or the shorter `key,speaker,translation` and `key,translation` - so a file still carrying `source_en` and the other export columns is rejected - and a pull request that carries the English script is the one thing this repository is set up to avoid. See [CONTRIBUTING.md](CONTRIBUTING.md#hash-before-committing).
 
 Already translated lines are exported with their translations filled in, so exporting again will not discard your work.
 
