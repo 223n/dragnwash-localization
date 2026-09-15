@@ -357,6 +357,7 @@ namespace DragNWashLocalization
         private float _savesRefreshAt;
         private List<string> _savesSlots = new List<string>();
         private List<SaveSnapshot> _savesList = new List<SaveSnapshot>();
+        private int _savesLevel = -1;
 
         // Snapshots of the game's own save file, one per write, newest first.
         // Restore puts one back; the player then reloads the slot from the
@@ -377,6 +378,7 @@ namespace DragNWashLocalization
                 }
                 _savesList = _savesSlot != null ? GameSaves.Snapshots(_savesSlot) : new List<SaveSnapshot>();
                 _savesFlags = _savesSlot != null ? GameSaves.ReadFlags(_savesSlot) : new List<SaveFlag>();
+                _savesLevel = _savesSlot != null ? GameSaves.ReadLevel(_savesSlot) : -1;
                 _newestMatchesSave = _savesSlot != null && _savesList.Count > 0 && GameSaves.SnapshotMatchesSave(_savesSlot, _savesList[0]);
                 RebuildFlagRows();
             }
@@ -403,7 +405,9 @@ namespace DragNWashLocalization
             // ---- progress editor: levelIndex and the boolean flags ----------
             if (_savesSlot != null)
             {
-                int current = GameSaves.ReadLevel(_savesSlot);
+                // Cached with the rest: ReadLevel reads and parses the whole
+                // save file, and OnGUI runs several times per frame.
+                int current = _savesLevel;
                 if (_editLevelSlot != _savesSlot || _editLevelBase != current)
                 {
                     _editLevelSlot = _savesSlot;
