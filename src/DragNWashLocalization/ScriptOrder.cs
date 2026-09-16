@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using DragNWash.ModFramework.Dialogue;
 using Yarn;
 using Yarn.Unity;
 
@@ -34,6 +35,9 @@ namespace DragNWashLocalization
             public string Key;
             public string Speaker;
             public string Condition; // variables the parent read before jumping here
+            public string NormalizedKey;  // LineKey.NormalizedHash of the English, "" in older files
+            public string Fingerprint;    // LineKey.FingerprintText of the English, "" in older files
+            public int NormalizedLength;  // length of the normalized English, 0 in older files
         }
 
         internal sealed class LevelMeta
@@ -174,11 +178,13 @@ namespace DragNWashLocalization
                     if (!textById.TryGetValue(lineId, out string text) || text.Length == 0) return;
                     if (!emittedLines.Add(lineId)) return;
                     string key = TranslationStore.KeyFor(text);
+                    string normalized = LineKey.Normalize(text);
                     order++;
                     entries.Add(new Entry
                     {
                         Section = section, Phase = phase, Node = nodeName, Order = order, LineId = lineId, Key = key,
                         Speaker = DialogueDumper.SpeakerFor(nodeName, kind, text), Condition = condition ?? "",
+                        NormalizedKey = LineKey.Hash(normalized), Fingerprint = LineKey.FingerprintText(text), NormalizedLength = normalized.Length,
                     });
                 }
             }
@@ -215,11 +221,14 @@ namespace DragNWashLocalization
             string path = Path.Combine(dir, "script_order.csv");
             using (var w = new StreamWriter(path, false, new UTF8Encoding(false)))
             {
-                w.WriteLine("section,phase,node,order,line_id,key,speaker,condition");
+                // norm, fp and nlen (experimental) let the resolver find a line after
+                // a game update edited its English; none of them contain the text.
+                w.WriteLine("section,phase,node,order,line_id,key,speaker,condition,norm,fp,nlen");
                 foreach (Entry e in entries)
                 {
                     w.WriteLine(string.Join(",", CsvReader.Escape(e.Section), e.Phase, CsvReader.Escape(e.Node), e.Order.ToString(),
-                        CsvReader.Escape(e.LineId), e.Key, CsvReader.Escape(e.Speaker), CsvReader.Escape(e.Condition)));
+                        CsvReader.Escape(e.LineId), e.Key, CsvReader.Escape(e.Speaker), CsvReader.Escape(e.Condition),
+                        e.NormalizedKey, e.Fingerprint, e.NormalizedLength.ToString()));
                 }
             }
             int lines = textById.Count;
@@ -253,6 +262,7 @@ namespace DragNWashLocalization
                     {
                         Section = Get(row, "section"), Phase = Get(row, "phase"), Node = Get(row, "node"), Order = order,
                         LineId = Get(row, "line_id"), Key = key.Trim().ToLowerInvariant(), Speaker = Get(row, "speaker"), Condition = Get(row, "condition"),
+                        NormalizedKey = Get(row, "norm"), Fingerprint = Get(row, "fp"), NormalizedLength = int.TryParse(Get(row, "nlen"), out int nlen) ? nlen : 0,
                     });
                 }
                 string flow = Path.Combine(Path.GetDirectoryName(path), "level_flow.csv");

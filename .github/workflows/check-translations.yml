@@ -34,6 +34,8 @@ jobs:
             status.txt
       - name: Compare every file with the fingerprints of real game installs
         run: python tools/check-game-files.py
+      - name: Line keys match the vectors (tools/linekeys.py, same as the framework's)
+        run: python tools/linekeys.py --check
       - name: Fail if the check found problems
         if: steps.validate.outputs.status != '0'
         run: exit 1

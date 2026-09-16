@@ -107,7 +107,7 @@ namespace DragNWashLocalization
         {
             string localeStatus = _pendingLocale == null ? TargetLocale.Value : TargetLocale.Value + " -> " + _pendingLocale;
             GUI.Label(new Rect(area.x, area.y, area.width, 24),
-                $"Locale: {localeStatus}    |    Entries: {TranslationStore.EntryCount}", S.MutedLabel);
+                $"Locale: {localeStatus}    |    Entries: {TranslationStore.EntryCount}" + (LineResolution.ReviewCount > 0 ? $"    |    Review: {LineResolution.ReviewCount} line(s)" : ""), S.MutedLabel);
             draw(new Rect(area.x, area.y + 32, area.width, Mathf.Max(40, area.height - 32)));
         }
 
@@ -153,7 +153,7 @@ namespace DragNWashLocalization
             Body("");
 
             Head("THIS SESSION");
-            Body($"Language: {TargetLocale.Value}    Entries loaded: {TranslationStore.EntryCount}");
+            Body($"Language: {TargetLocale.Value}    Entries loaded: {TranslationStore.EntryCount}" + (LineResolution.ReviewCount > 0 ? $"    Lines to review: {LineResolution.ReviewCount}" : ""));
             Body($"Game: Unity {Application.unityVersion}    Graphics: {SystemInfo.graphicsDeviceType}");
             Body($"Platform: {Application.platform}");
             Body($"Plugin folder: {PluginDirectory}");
