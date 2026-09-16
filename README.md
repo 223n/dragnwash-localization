@@ -278,7 +278,7 @@ The plugin automatically preserves the state from immediately before a restore, 
 
 Use this feature to revisit the same scene while comparing revisions of a dialogue translation. Restore replaces the game's own save file without editing flags or variables.
 
-The same tab also has a **PROGRESS** editor: step the level index back or forward with **-** / **+** and press **Apply**. Moving forward asks for confirmation because it can spoil content you have not seen. **Flags...** lists every event flag the game is known to use, grouped (level flow, story, romance, scene triggers, scene watched, items, wash session, debug) with a short description, whether or not the save has set it yet. Click a value to cycle unset → true → false, type in the search box to filter, and use **Reset all to false...** to wipe every flag (the level index is kept). The list comes from `FlagCatalog.csv` next to the plugin DLL, so you can add rows for flags found later. Every edit snapshots the save first.
+The same tab also has a **PROGRESS** editor: step the level index back or forward with **-** / **+** and press **Apply**. Moving forward asks for confirmation because it can spoil content you have not seen. **Flags...** lists every event flag the game is known to use, grouped (level flow, story, romance, scene triggers, scene watched, wash session, items, debug) with a short description, whether or not the save has set it yet. Click a value to cycle unset → true → false, type in the search box to filter, and use **Reset all to false...** to wipe every flag (the level index is kept). The list comes from `FlagCatalog.csv` next to the plugin DLL, so you can add rows for flags found later. Every edit snapshots the save first.
 
 ## Crash when opening Options on Windows
 
