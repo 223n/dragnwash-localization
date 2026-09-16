@@ -218,7 +218,7 @@ If the source text contains formatting tags such as `<size=70%>`, preserve the t
 
 ### Exporting all dialogue for context
 
-After installing the plugin, load a save and press **F6** in the game. The plugin exports all dialogue to:
+These are developer tools: first turn on **Options → Mods → Drag'n Wash ModFramework → Developer tools** (off for players, so nothing below runs for them). Then load a save and press **F6** in the game. The plugin exports all dialogue to:
 
 `BepInEx/plugins/DragNWashLocalization/Translations/_discovered/dialogue_lines.csv`
 

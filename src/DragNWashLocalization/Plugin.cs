@@ -20,7 +20,7 @@ namespace DragNWashLocalization
     // and keep save history. What is left here is translation itself.
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     // 1.1.0 for ModInfo.UpdateRepository.
-    [BepInDependency(ModFramework.Guid, "1.1.0")]
+    [BepInDependency(ModFramework.Guid, "1.2.0")]
     [BepInDependency(DragNWash.ModFramework.Text.GameText.Guid, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(DragNWash.ModFramework.Dialogue.GameDialogue.Guid, "1.1.0")]
     [BepInDependency(ToolWindow.Guid, BepInDependency.DependencyFlags.HardDependency)]
@@ -94,6 +94,7 @@ namespace DragNWashLocalization
         // previewed from the Options dropdown.
         private string _committedLocale;
         private bool _preloadedEverything;
+        private bool _saidToolsOff;
 
         // Unity logs an exception thrown from Awake and then calls Update every
         // frame anyway. Update dereferences the config entries Awake binds, so
@@ -392,6 +393,20 @@ namespace DragNWashLocalization
                 }
                 HotReload.Track(PluginDirectory, locale);
                 Log($"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}");
+            }
+
+            // Everything from here on is for translators and mod makers; a
+            // player who only installed the mod has the framework's developer
+            // tools off and gets none of it (no exports, no folder of the
+            // game's text, no file watching).
+            if (!DeveloperTools.Enabled)
+            {
+                if ((DumpDialogueKey.Value.IsDown() || DumpUiTextKey.Value.IsDown()) && !_saidToolsOff)
+                {
+                    _saidToolsOff = true;
+                    Log("[tools] Exports and hot reload are part of the developer tools, which are off. Turn them on in Options > Mods > Drag'n Wash ModFramework > Developer tools.");
+                }
+                return;
             }
 
             if (HotReloadTranslations.Value)

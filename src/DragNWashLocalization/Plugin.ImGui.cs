@@ -100,6 +100,61 @@ namespace DragNWashLocalization
             _toolTabs.Add(ToolWindow.AddTab(PluginGuid, "Translation", area => DrawWithStatus(area, DrawTools), 101));
             _toolTabs.Add(ToolWindow.AddTab(PluginGuid, "Saves", DrawSaves, 102));
             _toolTabs.Add(ToolWindow.AddTab(PluginGuid, "About", DrawAbout, 103));
+            ToolWindow.AddCommand(PluginGuid, "tl", "tl status | tl reload | tl find <text> | tl review", ConsoleCommand,
+                args => args.Length == 1 ? new[] { "status", "reload", "find", "review" } : new string[0]);
+        }
+
+        // The console's "tl" command (experimental; the framework's Console tab).
+        private string ConsoleCommand(string[] args)
+        {
+            string what = args.Length > 0 ? args[0].ToLowerInvariant() : "";
+            switch (what)
+            {
+                case "status":
+                    return $"Language {TargetLocale.Value}, {TranslationStore.EntryCount} entries loaded, {LineResolution.RecordCount} line records, {LineResolution.ReviewCount} line(s) to review, graphics {SystemInfo.graphicsDeviceType}.";
+                case "reload":
+                    TranslationStore.Load(PluginDirectory, TargetLocale.Value);
+                    TmpTextHook.RefreshAll();
+                    return $"Reloaded {TargetLocale.Value}: {TranslationStore.EntryCount} entries.";
+                case "find":
+                {
+                    if (args.Length < 2)
+                    {
+                        return "tl find <text>: rows whose translation contains the text";
+                    }
+                    string needle = string.Join(" ", args, 1, args.Length - 1);
+                    var lines = new List<string>();
+                    foreach (KeyValuePair<string, string> kv in TranslationStore.Entries)
+                    {
+                        if (kv.Value.IndexOf(needle, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            lines.Add($"{kv.Key}  {kv.Value}");
+                            if (lines.Count >= 20)
+                            {
+                                lines.Add("(more; narrow the text)");
+                                break;
+                            }
+                        }
+                    }
+                    return lines.Count == 0 ? "No translation contains that." : string.Join("\n", lines);
+                }
+                case "review":
+                {
+                    List<LineResolution.Review> reviews = LineResolution.ReviewList;
+                    if (reviews.Count == 0)
+                    {
+                        return "No line needs review: every line shown so far matched its exact English.";
+                    }
+                    var lines = new List<string>();
+                    foreach (LineResolution.Review r in reviews)
+                    {
+                        lines.Add($"{r.LineId ?? r.Key}  {r.Node} / {r.Speaker}  matched by {r.Layer}");
+                    }
+                    return string.Join("\n", lines);
+                }
+                default:
+                    return "tl status | tl reload | tl find <text> | tl review";
+            }
         }
 
         private void RemoveToolTabs()
