@@ -13,7 +13,7 @@ You do not need to know Unity's internal keys or how to program. While working y
 
 ### Language display name (`name.txt`)
 
-Whatever you put in `Translations/<locale>/name.txt` is shown as the language's name in the game's **Options → Language (Mod)** list, on the language buttons in the F1 menu, and in the installers (Windows and Steam Deck) (for example `ja/name.txt` → `日本語`, `zh-Hans/name.txt` → `中文`). One line, UTF-8. Without the file the folder name is shown. Adding a language is just a folder, a `strings.csv` and a `name.txt`.
+Whatever you put in `Translations/<locale>/name.txt` is shown as the language's name in the game's **Options → Language (Mod)** list, on the language buttons in the F1 menu, and in the installers (Windows and Steam Deck) (for example `ja/name.txt` → `日本語`, `zh-Hans/name.txt` → `简体中文`). One line, UTF-8. Without the file the folder name is shown. Adding a language is just a folder, a `strings.csv` and a `name.txt`.
 
 ## Basic flow
 
@@ -43,7 +43,7 @@ key,section,node,order,speaker,translation
 # --- phone: Ryan_1_PhoneTutorial | if $has_talked_to_ryan ---
 …
 # ===== UI and other text (not part of the dialogue script) =====
-bc1b88907d3b748a,UI,,,UI,Options
+d0db8b5e364b6989,UI,,,UI,Options
 ```
 
 - `section` … level number and dragon such as `L01 Ryan`, or `Cutscene` / `Reaction` / `Unused` / `UI`
@@ -67,14 +67,14 @@ The plugin hashes the English text it is about to show and looks it up, so both 
 ### Starting a new language
 
 1. Create `Translations/<locale>/` (for example `ko`) and write the display name into `name.txt` (for example `한국어`).
-2. Start the game and pick the new language in **Options → Language (Mod)** or under F1 → Tools (the screen stays English, there are no translations yet).
-3. Press **F1 → Tools → Export working copy**. Even without a `strings.csv` you get an empty working copy, `_discovered/<locale>.working.csv`, listing every line the game has loaded with its English text.
+2. Start the game and pick the new language in **Options → Language (Mod)** or under F1 → Translation (the screen stays English, there are no translations yet).
+3. Press **F1 → Translation → Export working copy**. Even without a `strings.csv` you get an empty working copy, `_discovered/<locale>.working.csv`, listing every line the game has loaded with its English text.
 4. Continue as in "Working with the English beside each line". Lines show up in the game as you translate them.
 5. Translate the Options row label `Language (Mod)` too (key `e3becbaee46cc0df`). Keep "(Mod)" or your language's equivalent so players can tell it is this mod's setting, not the game's. It appears in the working copy and in the F7 export once you have opened Options.
 
 ### Working with the English beside each line (recommended)
 
-**F1 → Tools → Export working copy** expands the published `strings.csv` into `Translations/_discovered/<locale>.working.csv`:
+**F1 → Translation → Export working copy** expands the published `strings.csv` into `Translations/_discovered/<locale>.working.csv`:
 
 ```csv
 key,section,node,order,speaker,source_en,translation
@@ -107,8 +107,10 @@ line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Wonderful!,
 
 Rebuild the published `strings.csv` before opening a pull request. It is generated from the working copy (`_discovered/<locale>.working.csv`) when one exists, otherwise from the `source_en` rows in `strings.csv` itself. Two ways:
 
-- In the game: **F1 → Tools → Hash for commit** (rewrites the current language's file)
-- `tools/hash-strings.ps1` (all languages with no arguments, one file with `-Path`)
+- In the game: **F1 → Translation → Hash for commit** (rewrites the current language's file)
+- `tools/hash-strings.ps1` with no arguments (all languages)
+
+`-Path` is different: it converts exactly the files given, in place, and does **not** look for a working copy. Use it on a published `strings.csv`; passing a working copy overwrites it with the published form, losing its `source_en` column and every untranslated row.
 
 **A `strings.csv` that still contains English is not accepted.** Every pull request is checked automatically, and when the format is wrong a comment explains why in English. Push a fix and the same comment is updated.
 
@@ -159,8 +161,8 @@ If you only change the `translation` column of the published `strings.csv` and l
 
 ## Checking your work
 
-- Switch languages in **Options → Language (Mod)** (Save keeps the choice, Back returns to the saved language) or on the **Tools** tab of the **F1** debug window; the screen updates without a restart.
-- **Check translation layout** on the Tools tab writes strings at risk of overflowing to `_discovered/layout_risks.csv` (`source_en,translation,axis,required_px,available_px,ratio,object_path`). A larger `ratio` means more overflow; shorten the translation or rephrase.
+- Switch languages in **Options → Language (Mod)** (Save keeps the choice, Back returns to the saved language) or on the **Translation** tab of the **F1** debug window; the screen updates without a restart.
+- **Check translation layout** on the Translation tab writes strings at risk of overflowing to `_discovered/layout_risks.csv` (`source_en,translation,axis,required_px,available_px,ratio,object_path`). A larger `ratio` means more overflow; shorten the translation or rephrase.
 
 ## Before opening a pull request
 
@@ -190,7 +192,7 @@ It prints `translations OK` when everything passes.
 
 | Message in the report | What it means | How to fix it |
 |---|---|---|
-| `header is [...]; the published file must be ...` | The file is still a working copy (it has a `source_en` column) | Run **F1 → Tools → Hash for commit** or `tools/hash-strings.ps1`, then commit the rebuilt `strings.csv` |
+| `header is [...]; the published file must be ...` | The file is still a working copy (it has a `source_en` column) | Run **F1 → Translation → Hash for commit** or `tools/hash-strings.ps1`, then commit the rebuilt `strings.csv` |
 | `key is not 16 lowercase hex digits or a line ID` | A key is neither a hash nor a line ID: English text was put in the key column, or the key was edited | Rebuild with *Hash for commit*. Never edit the `key` column by hand |
 | `must not be committed (contains source text)` | A file from `Translations/_discovered/` or a `strings.local.csv` is in the pull request | Remove it from the pull request with `git rm --cached <file>` and commit; keep the file locally if you still need it |
 | `duplicate key (see line N)` | The same line appears twice | Keep one row per key and delete the other |

@@ -203,9 +203,9 @@ The translation files were written by TomXV and ship in the same zip; contributo
 
 You can add a translation by editing `Translations/<locale>/strings.csv`. The published file has the columns `key,section,node,order,speaker,translation`: `key` is a hash of the English line, `section`/`node`/`order` say where in the game it is played (level and conversation, in play order), and `speaker` says who says it. Lines starting with `#` are section headers such as `# ===== Level 1: Ryan (Sunny) =====`, so the file reads like a script from top to bottom. The recommended way to work is:
 
-1. In the game, open **F1 → Tools → Export working copy**. This writes `Translations/_discovered/<locale>.working.csv` with the English text beside every line (`key,section,node,order,speaker,source_en,translation`), in the order the lines are played, with the same section headers.
+1. In the game, open **F1 → Translation → Export working copy**. This writes `Translations/_discovered/<locale>.working.csv` with the English text beside every line (`key,section,node,order,speaker,source_en,translation`), in the order the lines are played, with the same section headers.
 2. Edit the `translation` column. Saving the file hot-reloads it into the running game.
-3. Before committing, press **F1 → Tools → Hash for commit** (or run `tools/hash-strings.ps1`). This regenerates `strings.csv` without any English text.
+3. Before committing, press **F1 → Translation → Hash for commit** (or run `tools/hash-strings.ps1`). This regenerates `strings.csv` without any English text.
 
 Each language folder also holds a one-line `name.txt` with the language's display name (for example `日本語`), shown in the installer and the in-game menu.
 
@@ -223,7 +223,9 @@ The export has been verified with 1,839 lines on an actual game installation.
 
 Lines appear in the order in which they are played in the game. The `node` column identifies each conversation and uses names such as `Alexander_2_intro`, following the pattern "character name_occurrence_scene." The `order` column gives the line's position within that conversation. The `kind` column distinguishes character dialogue (`line`) from player choices (`option`). This context makes it easier to understand who is speaking and what each response refers to. The three dragons in the game are Conrad, Ryan, and Alexander.
 
-Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and submit a pull request. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
+Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and check it in the game. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
+
+**Before opening a pull request, rebuild the published file** with the in-game **Hash for commit** button (or `tools/hash-strings.ps1`). The automatic check takes only published headers: `key,section,node,order,speaker,translation`, which is what *Hash for commit* writes, or the shorter `key,speaker,translation` and `key,translation`. A file still carrying `source_en` and the other export columns is rejected, and a pull request that carries the English script is the one thing this repository is set up to avoid. See [CONTRIBUTING.md](CONTRIBUTING.md#hash-before-committing).
 
 Already translated lines are exported with their translations filled in, so exporting again will not discard your work.
 
@@ -278,7 +280,7 @@ The plugin automatically preserves the state from immediately before a restore, 
 
 Use this feature to revisit the same scene while comparing revisions of a dialogue translation. Restore replaces the game's own save file without editing flags or variables.
 
-The same tab also has a **PROGRESS** editor: step the level index back or forward with **-** / **+** and press **Apply**. Moving forward asks for confirmation because it can spoil content you have not seen. **Flags...** lists every event flag the game is known to use, grouped (level flow, story, romance, scene triggers, scene watched, items) with a short description, whether or not the save has set it yet. Click a value to cycle unset → true → false, type in the search box to filter, and use **Reset all to false...** to wipe every flag (the level index is kept). The list comes from `FlagCatalog.csv` next to the plugin DLL, so you can add rows for flags found later. Every edit snapshots the save first.
+The same tab also has a **PROGRESS** editor: step the level index back or forward with **-** / **+** and press **Apply**. Moving forward asks for confirmation because it can spoil content you have not seen. **Flags...** lists every event flag the game is known to use, grouped (level flow, story, romance, scene triggers, scene watched, wash session, items, debug) with a short description, whether or not the save has set it yet. Click a value to cycle unset → true → false, type in the search box to filter, and use **Reset all to false...** to wipe every flag (the level index is kept). The list comes from `FlagCatalog.csv` next to the plugin DLL, so you can add rows for flags found later. Every edit snapshots the save first.
 
 ## Crash when opening Options on Windows
 
