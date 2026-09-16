@@ -1632,7 +1632,7 @@ de と ko の 3 行だけが語単位で閉じているため、表示が他言�
 | --- | --- |
 | 11 本から作れる全 55 ペアを `git merge-tree --write-tree` | **衝突 0 件** |
 | 11 本すべてを 1 つのツリーにマージ | 成功 |
-| 統合ツリーのビルド | `main` 単体と同じく **0 警告 0 エラー**（下記の DLL 不足を型スタブで埋めた条件下） |
+| 統合ツリーのビルド | `main` 単体と同じく **0 警告 0 エラー**（フレームワークをビルドして得た実 DLL を参照） |
 | 統合ツリーで `python tools/check-translations.py` | `translations OK`（exit 0） |
 | 統合ツリーで `python tools/linekeys.py --check` | `OK: 11 vectors`（exit 0） |
 | 統合ツリーで `python tools/check-game-files.py` | `OK: 89 tracked files`（exit 0） |
@@ -1640,13 +1640,16 @@ de と ko の 3 行だけが語単位で閉じているため、表示が他言�
 したがって**取り込み順に制約はありません**。推奨するのは #46 を #54 より先に置くことだけです。
 
 > [!IMPORTANT]
-> **`main`(`e946127`) は、現状そのままではビルドできません。**
-> 上流が要求する ModFramework.Dialogue 1.1.0 が未リリースで、手元にもゲーム導入先にも
-> 1.0.0 しかありません。そのため `LineResolution.cs` が `LineResolver` / `LineMatch` /
-> `LineMatchLayer`（2 箇所）を解決できず、CS0246 を 4 件出します。コンパイル専用スタブには、この 3 型に加えて `LineRecord` と `LineKey`、さらに `LineResolver.Count` まで必要です。
-> これは `main` 時点の環境側の問題で、上の指摘とも修正 PR とも無関係です。
-> コンパイル専用の型スタブ（リポジトリ外・未コミット）を足すと、`main` も 11 本統合版も
-> どちらも 0 警告 0 エラーになります。
+> **参照アセンブリについて。**
+> `main`(`e946127`) は `LineResolution.cs` で ModFramework.Dialogue **1.1.0** の型
+> （`LineResolver` / `LineMatch` / `LineMatchLayer`）を使います。配布済みの DLL は 1.0.0 なので、
+> `src/DragNWashLocalization/libs/` を配布物のまま置くと `main` でも `CS0246` が 4 件出ます。
+> これは参照の問題で、上の指摘とも修正 PR とも関係ありません。
+>
+> 1.1.0 は[フレームワークのリポジトリ](https://github.com/TomXV/dragnwash-modframework)
+> （`main` = `17cda74`。line-key の作業は `experimental/stable-line-keys` から取り込み済み）を
+> クローンして `dotnet build` すれば生成できます。**その実 DLL で 11 本を個別に、また統合ツリーを
+> ビルドし、いずれも 0 警告 0 エラーであることを確認済みです。**
 
 ### 旧構成の記録を残す理由
 
@@ -1686,14 +1689,24 @@ de と ko の 3 行だけが語単位で閉じているため、表示が他言�
   および `check-translations.py` / `linekeys.py --check` / `check-game-files.py` の 3 本が
   いずれも exit 0 になることを確認しています。全 55 ペアの `git merge-tree` も衝突 0 件です。
 
-### 現在 `main` はそのままではビルドできない
+### 参照アセンブリは自分でビルドする必要がある
 
-`main`(`e946127`) が要求する **ModFramework.Dialogue 1.1.0 が未リリース**で、
-手元にもゲーム導入先にも 1.0.0 しかありません。そのため `LineResolution.cs` が
-CS0246 を 4 件出します。**`main` 時点の環境側の問題であり、本レポートの指摘とも
-修正 PR とも無関係です。** 上のビルド確認は、コンパイル専用の型スタブ
-（リポジトリ外・未コミット）を足した条件下の結果であり、
-**実 DLL での 1.1.0 ビルドは未検証**です。
+`main`(`e946127`) は `LineResolution.cs` で ModFramework.Dialogue **1.1.0** の型を使いますが、
+配布済みの DLL は 1.0.0 です。`libs/` を配布物のまま置くと `CS0246` が 4 件出ます。
+
+1.1.0 は[フレームワークのリポジトリ](https://github.com/TomXV/dragnwash-modframework)を
+クローンしてビルドすれば得られます。7 プロジェクトとも 0 警告 0 エラーでビルドでき、
+`Dialogue` の `<Version>` / `<FileVersion>` はいずれも `1.1.0` です。
+
+```
+git clone https://github.com/TomXV/dragnwash-modframework
+cd dragnwash-modframework
+pwsh tools/copy-libs.ps1                     # ゲーム導入先から参照 DLL を集める
+dotnet build src/DragNWash.ModFramework.Dialogue/DragNWash.ModFramework.Dialogue.csproj -c Release
+```
+
+生成された DLL を `src/DragNWashLocalization/libs/` に置けば、`main` も 11 本の修正 PR も
+0 警告 0 エラーでビルドできます（確認済み）。
 
 ### 引き続き未検証のもの
 
