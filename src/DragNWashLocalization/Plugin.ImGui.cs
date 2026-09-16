@@ -89,12 +89,28 @@ namespace DragNWashLocalization
         }
 
         private float FlagRowsHeight() => 40 + 34 + _flagRows.Count * 30 + (_flagClearConfirm ? 70 : 0) + 8;
+
+        // AddTab hands back the handle that removes the tab again; Awake uses it
+        // to take the tabs down if startup fails after this point.
+        private readonly List<IDisposable> _toolTabs = new List<IDisposable>();
+
         private void AddToolTabs()
         {
-            ToolWindow.AddTab(PluginGuid, "Activity log", area => DrawWithStatus(area, DrawActivityLog), 100);
-            ToolWindow.AddTab(PluginGuid, "Translation", area => DrawWithStatus(area, DrawTools), 101);
-            ToolWindow.AddTab(PluginGuid, "Saves", DrawSaves, 102);
-            ToolWindow.AddTab(PluginGuid, "About", DrawAbout, 103);
+            _toolTabs.Add(ToolWindow.AddTab(PluginGuid, "Activity log", area => DrawWithStatus(area, DrawActivityLog), 100));
+            _toolTabs.Add(ToolWindow.AddTab(PluginGuid, "Translation", area => DrawWithStatus(area, DrawTools), 101));
+            _toolTabs.Add(ToolWindow.AddTab(PluginGuid, "Saves", DrawSaves, 102));
+            _toolTabs.Add(ToolWindow.AddTab(PluginGuid, "About", DrawAbout, 103));
+        }
+
+        private void RemoveToolTabs()
+        {
+            foreach (IDisposable tab in _toolTabs)
+            {
+                // Called from the failure path of Awake; it must not throw a
+                // second exception over the one being reported.
+                try { tab.Dispose(); } catch { }
+            }
+            _toolTabs.Clear();
         }
 
         private bool _followLog = true;
@@ -113,9 +129,13 @@ namespace DragNWashLocalization
 
         private Vector2 _aboutScroll;
 
-        // Everything here is ASCII on purpose. Rasterizing a glyph the menu
+        // Every literal here is ASCII on purpose. Rasterizing a glyph the menu
         // font has not seen yet uploads a texture, and on Direct3D 12 an upload
         // while the menu is open is what crashes the game (Unity UUM-140564).
+        // The values that are not ours to choose - the install path, the folder
+        // names under Translations and the configured locale - cannot be kept
+        // ASCII, so Plugin.PrepareWindowCharacters feeds them to the font at
+        // startup instead.
         private void DrawAbout(Rect area)
         {
             ToolWindow.Fill(area, ToolWindow.InsetColor);
@@ -357,6 +377,12 @@ namespace DragNWashLocalization
         private float _savesRefreshAt;
         private List<string> _savesSlots = new List<string>();
         private List<SaveSnapshot> _savesList = new List<SaveSnapshot>();
+        private int _savesLevel = -1;
+
+        // How long a held control may hold the refresh back. Without a limit a
+        // press that never gets its release - the window loses focus mid-click,
+        // say - would freeze the listing for the rest of the session.
+        private const float SavesRefreshHoldLimit = 5f;
 
         // Snapshots of the game's own save file, one per write, newest first.
         // Restore puts one back; the player then reloads the slot from the
@@ -367,7 +393,17 @@ namespace DragNWashLocalization
             ToolWindow.Fill(area, ToolWindow.InsetColor);
             float innerWidth = Mathf.Max(100, area.width - 36);
 
-            if (Time.unscaledTime >= _savesRefreshAt)
+            // Not while a control is held. Both lists below are addressed by
+            // index, and a snapshot taken between the press and the release
+            // shifts every row down without changing the control ids, so the
+            // click would land on a different entry than the one under the
+            // cursor. GUI.Button releases the control before it returns true,
+            // so the handlers that set _savesRefreshAt = 0 still take effect on
+            // the next pass.
+            bool held = GUIUtility.hotControl != 0 &&
+                        Time.unscaledTime < _savesRefreshAt + SavesRefreshHoldLimit;
+
+            if (Time.unscaledTime >= _savesRefreshAt && !held)
             {
                 _savesRefreshAt = Time.unscaledTime + 2f;
                 _savesSlots = GameSaves.Slots();
@@ -377,6 +413,7 @@ namespace DragNWashLocalization
                 }
                 _savesList = _savesSlot != null ? GameSaves.Snapshots(_savesSlot) : new List<SaveSnapshot>();
                 _savesFlags = _savesSlot != null ? GameSaves.ReadFlags(_savesSlot) : new List<SaveFlag>();
+                _savesLevel = _savesSlot != null ? GameSaves.ReadLevel(_savesSlot) : -1;
                 _newestMatchesSave = _savesSlot != null && _savesList.Count > 0 && GameSaves.SnapshotMatchesSave(_savesSlot, _savesList[0]);
                 RebuildFlagRows();
             }
@@ -392,6 +429,10 @@ namespace DragNWashLocalization
                 if (GUI.Button(new Rect(area.x + x, area.y + y, w, RowHeight), shown, slot == _savesSlot ? S.SelectedButton : S.Button))
                 {
                     _savesSlot = slot;
+                    // The rest of the listing reloads at the top of the next
+                    // pass, but the progress editor below reads the level in
+                    // this one, and it must not show the slot we just left.
+                    _savesLevel = GameSaves.ReadLevel(slot);
                     _savesRefreshAt = 0;
                 }
                 x += w + 8;
@@ -403,7 +444,10 @@ namespace DragNWashLocalization
             // ---- progress editor: levelIndex and the boolean flags ----------
             if (_savesSlot != null)
             {
-                int current = GameSaves.ReadLevel(_savesSlot);
+                // Cached with the rest of the listing: ReadLevel reads and
+                // parses the whole save file, and OnGUI runs several times per
+                // rendered frame.
+                int current = _savesLevel;
                 if (_editLevelSlot != _savesSlot || _editLevelBase != current)
                 {
                     _editLevelSlot = _savesSlot;
