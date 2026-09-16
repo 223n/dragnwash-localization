@@ -67,7 +67,7 @@ The plugin hashes the English text it is about to show and looks it up, so both 
 ### Starting a new language
 
 1. Create `Translations/<locale>/` (for example `ko`) and write the display name into `name.txt` (for example `한국어`).
-2. Start the game and pick the new language in **Options → Language (Mod)** or under F1 → Tools (the screen stays English, there are no translations yet).
+2. Turn on the developer tools: **Options → Mods → Drag'n Wash ModFramework → Developer tools** (they are off by default, so players never see the F1 window, the exports or the `_discovered` folder). Start the game and pick the new language in **Options → Language (Mod)** or under F1 → Tools (the screen stays English, there are no translations yet).
 3. Press **F1 → Tools → Export working copy**. Even without a `strings.csv` you get an empty working copy, `_discovered/<locale>.working.csv`, listing every line the game has loaded with its English text.
 4. Continue as in "Working with the English beside each line". Lines show up in the game as you translate them.
 5. Translate the Options row label `Language (Mod)` too (key `e3becbaee46cc0df`). Keep "(Mod)" or your language's equivalent so players can tell it is this mod's setting, not the game's. It appears in the working copy and in the F7 export once you have opened Options.

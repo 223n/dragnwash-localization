@@ -544,6 +544,12 @@ namespace DragNWashLocalization
         // session only appends genuinely new strings.
         private static void RebuildDiscoveredFile()
         {
+            // The discovered files carry the game's text in plain English; only
+            // a translator with the developer tools on gets them.
+            if (!DragNWash.ModFramework.DeveloperTools.Enabled)
+            {
+                return;
+            }
             string filePath = Path.Combine(_pluginDirectory, "Translations", "_discovered", "strings.csv");
 
             try
@@ -655,6 +661,10 @@ namespace DragNWashLocalization
 
         public static void FlushDiscoveredToDisk()
         {
+            if (!DragNWash.ModFramework.DeveloperTools.Enabled)
+            {
+                return;
+            }
             string[] lines;
             lock (PendingDiscoveredLines)
             {
