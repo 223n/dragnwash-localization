@@ -37,6 +37,28 @@ def display(path: Path) -> str:
         return str(path)
 
 
+def comment_lines(text):
+    """Line numbers (1-based) of the comment records in text.
+
+    The game (src/DragNWashLocalization/CsvReader.cs) treats a '#' as a
+    comment only when it starts a record outside quotes. Deciding that on the
+    parsed fields instead would silently drop a quoted "#..." value, which
+    CsvReader keeps - and which CsvReader.Escape quotes so that it survives
+    the round trip. The quote parity carried across lines is what separates a
+    comment from a line that merely sits inside a quoted, multi-line value.
+    """
+    found = set()
+    in_quotes = False
+    for number, line in enumerate(text.splitlines(), start=1):
+        if not in_quotes and line[:1] == "#":
+            # Not a record; its quotes cannot open one either.
+            found.add(number)
+            continue
+        if line.count('"') % 2 == 1:
+            in_quotes = not in_quotes
+    return found
+
+
 def check_file(path: Path) -> list[str]:
     problems = []
     name = display(path)
@@ -50,6 +72,8 @@ def check_file(path: Path) -> list[str]:
     # record started. reader.line_num is the last physical line the record
     # used, so the next record starts on the line after it.
     with io.open(path, encoding="utf-8-sig", newline="") as f:
+        comments = comment_lines(f.read())
+    with io.open(path, encoding="utf-8-sig", newline="") as f:
         reader = csv.reader(f)
         rows = []
         previous = 0
@@ -59,7 +83,7 @@ def check_file(path: Path) -> list[str]:
                 previous = reader.line_num
                 if not row:            # a blank line between records
                     continue
-                if row[0].startswith("#"):
+                if start in comments:
                     continue
                 rows.append((start, row))
         except csv.Error as exc:

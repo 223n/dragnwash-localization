@@ -71,22 +71,44 @@ function Read-Csv([string]$file) {
   # is about.
   $text = [System.IO.File]::ReadAllText($file, [System.Text.Encoding]::UTF8)
   if ($text.Trim() -eq '') { return @() }
-  # ConvertFrom-Csv takes the first physical line as the header, so anything
-  # above it becomes the header and every column is lost. It skips a leading
-  # '#' line on its own, but not a blank line that follows one, so drop both
-  # here. The game (CsvReader.Parse) skips blank lines and treats '#' at the
-  # start of a record as a comment, so this matches it.
-  $text = $text -replace '^(?:[^\S\r\n]*\r?\n|#[^\r\n]*\r?\n)+', ''
-  $rows = @($text | ConvertFrom-Csv)
-  if ($rows.Count -eq 0) { return @() }
-  # The first column's name, so a parsed comment row can be spotted by it.
-  # A comment may itself contain a comma ('# ===== ... | sets a, b ====='), so
-  # it can arrive split across several fields; only the first one matters.
-  # Taken from the header ConvertFrom-Csv actually used rather than from the
-  # first physical line: a comment line above the header would otherwise name
-  # a column that does not exist and turn the filter below into a no-op.
-  $first = @($rows[0].PSObject.Properties.Name)[0]
-  return ($rows | Where-Object { -not ([string]$_.$first).StartsWith('#') })
+  # Drop blank lines and comment records before parsing, the same way the game
+  # does (CsvReader.Parse): a blank line is not a record, and a '#' that starts
+  # a record - outside quotes - begins a comment.
+  #
+  # This has to be decided on the physical lines, not on the parsed fields.
+  # Once ConvertFrom-Csv has unquoted a value there is no way left to tell the
+  # section header  # ===== Level 1 =====  from the datum  "#1 alley", and
+  # filtering on the parsed value silently drops the latter. The game keeps it,
+  # and CsvReader.Escape quotes a leading '#' so that it survives the round trip.
+  #
+  # It also settles the header: ConvertFrom-Csv takes the first physical line
+  # as the header, so anything left above it would become the header and every
+  # column would be lost.
+  return ((Remove-NonRecords $text) | ConvertFrom-Csv)
+}
+
+# The quote parity carried across lines is what separates a comment from a
+# line that merely sits inside a quoted, multi-line value.
+function Remove-NonRecords([string]$text) {
+  $out = New-Object System.Text.StringBuilder
+  $inQuotes = $false
+  foreach ($m in [regex]::Matches($text, '[^\r\n]*(?:\r?\n|$)')) {
+    $line = $m.Value
+    if ($line.Length -eq 0) { continue }
+    if (-not $inQuotes) {
+      $body = $line -replace '\r?\n$', ''
+      if ($body.Trim().Length -eq 0 -or $body.StartsWith('#')) {
+        # Not a record. Its quotes cannot open one either, so leave the
+        # parity alone - the game's parser never looks inside a comment.
+        continue
+      }
+    }
+    [void]$out.Append($line)
+    $quotes = 0
+    foreach ($c in $line.ToCharArray()) { if ($c -eq '"') { $quotes++ } }
+    if ($quotes % 2 -eq 1) { $inQuotes = -not $inQuotes }
+  }
+  return $out.ToString()
 }
 
 # ---- play order ------------------------------------------------------------
