@@ -58,6 +58,10 @@ README.ja.md
 
 To install it, extract the archive into the game directory and merge the included `BepInEx/` directory.
 
+### 2b. Or let GitHub build it
+
+The **Build** workflow (Actions) does step 2 on a Windows runner: on a push to `main`, on a `v*` tag, or by hand (with a framework branch or tag to ship). It checks out Drag'n Wash ModFramework, fetches the reference assemblies from the private repository `TomXV/dragnwash-libs` with the `LIBS_TOKEN` secret, runs `tools/pack.ps1 -FrameworkPath`, and uploads the zip as a workflow artifact. A tag also creates a **draft** release with the zip attached, so the flow is: bump the version, commit, push the tag, wait for the workflow, then write the notes on the draft and publish it. The workflow never runs for pull requests. After a game update, refresh the private repository with `tools/copy-libs.ps1` (from both repositories' game installs). Local `pack.ps1` stays as the fallback.
+
 ### 3. Validate the package
 
 - Confirm that the Release build produces no warnings or errors.
@@ -82,6 +86,8 @@ The release notes should say that `Install.exe` and `install-steamdeck.sh` downl
 Do not move a tag that has already been pushed. If a published release has to be rebuilt (for example to add a file to its zip), delete the GitHub release and its tag first, then tag the new commit, build, and create the release again as above. Deleting the release resets its download count. If the release was a pre-release, decide before publishing whether the new one should be the latest release.
 
 ## Why releases are not built in CI
+
+> Since 2026-09-16 they can be: see [2b](#2b-or-let-github-build-it). The reference assemblies live in a private repository that only the Build workflow reads; this public repository still never contains them.
 
 The game DLLs required for compilation, including `UnityEngine.CoreModule.dll` and `YarnSpinner.dll`, cannot be included in the repository. GitHub Actions therefore cannot compile the plugin. Builds are created locally, and only the resulting ZIP is attached to a release.
 

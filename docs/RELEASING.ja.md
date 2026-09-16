@@ -60,6 +60,10 @@ README.ja.md
 
 `Install.exe` と `install-steamdeck.sh` は Drag'n Wash ModFramework の共通インストーラーで、`pack.ps1` がフレームワークのチェックアウトからビルド・コピーします（説明はフレームワークの [docs/INSTALLER.ja.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.ja.md)）。`pack.ps1` は `mod-install.json` も書き出します。この Mod のフォルダー、残すプレイヤーのデータ、設定ファイル、同梱するすべての言語パックを選べる言語の質問が入ります。`Install.exe` のビルドは決定的で、ウイルス対策ソフトの評価がリリースのたびにリセットされません。`pack.ps1` が SHA-256 を表示するので、フレームワークの `installer/` が変わっていなければ前のリリースと同じになっているか確認してください。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。`installer/experimental/` の実験的な macOS 用スクリプトは zip に入れません。
 
+### 2b. GitHub にビルドさせる
+
+Actions の **Build** ワークフローが、手順 2 を Windows の runner で行います。`main` への push、`v*` のタグ、手動実行（同梱するフレームワークのブランチかタグを指定）のときに動きます。Drag'n Wash ModFramework をチェックアウトし、参照アセンブリを非公開リポジトリ `TomXV/dragnwash-libs` から `LIBS_TOKEN` シークレットで取り、`tools/pack.ps1 -FrameworkPath` を回して、zip を成果物として残します。タグのときは zip を添えた **下書き** のリリースも作るので、流れは「バージョンを上げる → コミット → タグを push → ワークフローを待つ → 下書きにノートを書いて公開」です。PR では動きません。ゲームが更新されたら、`tools/copy-libs.ps1` で非公開リポジトリを更新してください。手元の `pack.ps1` は、そのまま予備として使えます。
+
 ### 3. 検証する
 
 - Release ビルドの警告・エラーが0であること。
@@ -89,6 +93,8 @@ gh release create v0.2.0 release/DragNWashLocalization-0.2.0.zip `
 公開済み（push 済み）のタグは付け替えません。公開済みのリリースを作り直す場合（zip にファイルを追加するなど）は、先に GitHub のリリースとタグを削除してから、新しいコミットにタグを付け、上の手順どおりにビルドしてリリースを作り直します。リリースを削除するとダウンロード数はリセットされます。元がプレリリースだった場合は、作り直すリリースを最新版（Latest）にするかどうかを公開前に決めてください。
 
 ## なぜ CI で自動ビルドしないのか
+
+> 2026-09-16 からはできます。[2b](#2b-github-にビルドさせる) を参照。参照アセンブリは Build ワークフローだけが読む非公開リポジトリにあり、この公開リポジトリには引き続き含まれません。
 
 ビルドに必要なゲームの DLL（`UnityEngine.CoreModule.dll` や `YarnSpinner.dll` など）を
 リポジトリに含めることができないため、GitHub Actions 上でコンパイルできません。
