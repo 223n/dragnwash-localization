@@ -22,9 +22,14 @@
   Identical to the in-game "Hash for commit" button.
 
 .PARAMETER Path
-  The strings.csv (or working copy) to convert. Defaults to every locale under
-  Translations/. When a locale's working copy exists under
-  Translations/_discovered/<locale>.working.csv it is used as the input.
+  Convert exactly these files, in place: each one is both the input and the
+  output. Give it a published strings.csv, not a working copy - a working copy
+  passed here is overwritten with the published form, which drops its source_en
+  column and every untranslated row.
+
+  With no arguments every locale under Translations/ is converted, and there a
+  locale's working copy (Translations/_discovered/<locale>.working.csv) is used
+  as the input when one exists. That resolution does not happen for -Path.
 #>
 [CmdletBinding()]
 param(

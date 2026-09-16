@@ -108,7 +108,9 @@ line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Wonderful!,
 Rebuild the published `strings.csv` before opening a pull request. It is generated from the working copy (`_discovered/<locale>.working.csv`) when one exists, otherwise from the `source_en` rows in `strings.csv` itself. Two ways:
 
 - In the game: **F1 → Tools → Hash for commit** (rewrites the current language's file)
-- `tools/hash-strings.ps1` (all languages with no arguments, one file with `-Path`)
+- `tools/hash-strings.ps1` with no arguments (all languages)
+
+`-Path` is different: it converts exactly the files given, in place, and does **not** look for a working copy. Use it on a published `strings.csv`; passing a working copy overwrites it with the published form, losing its `source_en` column and every untranslated row.
 
 **A `strings.csv` that still contains English is not accepted.** Every pull request is checked automatically, and when the format is wrong a comment explains why in English. Push a fix and the same comment is updated.
 
