@@ -87,7 +87,7 @@ namespace DragNWashLocalization
             foreach (string localeDir in Directory.GetDirectories(translationsDir))
             {
                 string name = Path.GetFileName(localeDir);
-                if (name.StartsWith("_"))
+                if (name.StartsWith("_", StringComparison.Ordinal))
                 {
                     continue;
                 }
@@ -122,7 +122,7 @@ namespace DragNWashLocalization
             foreach (string localeDir in Directory.GetDirectories(translationsDir))
             {
                 string name = Path.GetFileName(localeDir);
-                if (name.StartsWith("_")) continue;
+                if (name.StartsWith("_", StringComparison.Ordinal)) continue;
                 string path = Path.Combine(localeDir, "strings.csv");
                 if (!File.Exists(path)) continue;
                 var texts = new List<string>();
