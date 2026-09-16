@@ -221,6 +221,9 @@ namespace DragNWashLocalization
             string path = Path.Combine(dir, "script_order.csv");
             using (var w = new StreamWriter(path, false, new UTF8Encoding(false)))
             {
+                // Copied into the repository as data/script_order.csv, which
+                // is LF like every other CSV here.
+                w.NewLine = "\n";
                 // norm, fp and nlen (experimental) let the resolver find a line after
                 // a game update edited its English; none of them contain the text.
                 w.WriteLine("section,phase,node,order,line_id,key,speaker,condition,norm,fp,nlen");
@@ -320,11 +323,19 @@ namespace DragNWashLocalization
         public static void WriteOrdered(TextWriter w, Data data, ICollection<string> keysPresent, Action<string, Entry> emit,
             Func<Entry, bool> wantLine, Action<Entry> emitLine, out List<string> leftovers)
         {
+            // Both callers pass a List, whose Contains is O(n). Without this the
+            // loop below is O(entries x keys): script_order.csv holds ~1,800
+            // entries and a locale ~1,700 keys, so roughly three million string
+            // comparisons on the main thread for every "Hash for commit" and
+            // every "Export working copy". Index the keys once instead.
+            // Always a fresh set: a HashSet handed in could carry a different
+            // comparer, and Ordinal is what the keys are compared with here.
+            var present = new HashSet<string>(keysPresent, StringComparer.Ordinal);
             var done = new HashSet<string>(StringComparer.Ordinal);
             string lastSection = null, lastNode = null;
             foreach (Entry e in data.Entries)
             {
-                bool hashRow = keysPresent.Contains(e.Key) && !done.Contains(e.Key);
+                bool hashRow = present.Contains(e.Key) && !done.Contains(e.Key);
                 bool lineRow = emitLine != null && !string.IsNullOrEmpty(e.LineId) && wantLine(e);
                 if (!hashRow && !lineRow) continue;
                 if (e.Section != lastSection)

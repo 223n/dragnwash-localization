@@ -33,6 +33,22 @@ namespace DragNWashLocalization
             return Path.Combine(pluginDirectory, "Translations", "_discovered", FileNameFor(locale));
         }
 
+        // The key column of an export holds a hash, which a translator may type
+        // back in upper case, so a hash is lower-cased. Anything else in that
+        // column is text the translator typed under the header - lower-casing
+        // it would change the string, and with it the hash it stands for - so
+        // it is left exactly as written.
+        private static string NormalizeKey(string key)
+        {
+            key = key?.Trim();
+            if (string.IsNullOrEmpty(key))
+            {
+                return key;
+            }
+            string lowered = key.ToLowerInvariant();
+            return TranslationKey.LooksLikeKey(lowered) ? lowered : key;
+        }
+
         public static string Export(string pluginDirectory, string locale)
         {
             try
@@ -59,7 +75,7 @@ namespace DragNWashLocalization
                         if (!string.IsNullOrEmpty(tr)) lineTranslations[key] = tr;
                         continue;
                     }
-                    key = key?.ToLowerInvariant();
+                    key = NormalizeKey(key);
                     if (string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(src))
                     {
                         key = TranslationStore.KeyFor(src);
@@ -131,6 +147,66 @@ namespace DragNWashLocalization
                     }
                 }
 
+                // The working copy is where the translator actually types, and
+                // what they enter there exists nowhere else until "Hash for
+                // commit" writes it into strings.csv. Re-exporting must not
+                // overwrite it, so read the previous working copy back and let
+                // its translations win over the published ones.
+                //
+                // Only non-empty values override. A working copy written before
+                // the published file gained translations would otherwise blank
+                // them out with its own empty cells.
+                string path = PathFor(pluginDirectory, locale);
+                if (File.Exists(path))
+                {
+                    foreach (var row in CsvReader.ReadRows(path))
+                    {
+                        row.TryGetValue("key", out string key);
+                        row.TryGetValue("source_en", out string src);
+                        row.TryGetValue("speaker", out string who);
+                        row.TryGetValue("translation", out string tr);
+                        key = key?.Trim();
+                        if (TranslationKey.LooksLikeLineId(key))
+                        {
+                            if (!string.IsNullOrEmpty(tr)) lineTranslations[key] = tr;
+                            continue;
+                        }
+                        key = NormalizeKey(key);
+                        // The same rescue the published file gets: a row typed
+                        // with only its English and its translation still names
+                        // a string, and that string is what its hash is made of.
+                        if (string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(src))
+                        {
+                            key = TranslationStore.KeyFor(src);
+                        }
+                        if (string.IsNullOrEmpty(key))
+                        {
+                            continue;
+                        }
+                        // The English and the speaker the game has loaded win;
+                        // the working copy only fills in what this session never
+                        // saw, so re-exporting from the title screen keeps the
+                        // columns it wrote last time instead of blanking them.
+                        if (!string.IsNullOrEmpty(src) && !sources.ContainsKey(key))
+                        {
+                            sources[key] = src;
+                        }
+                        if (!string.IsNullOrEmpty(who) && !speakers.ContainsKey(key))
+                        {
+                            speakers[key] = who;
+                        }
+                        if (string.IsNullOrEmpty(tr))
+                        {
+                            continue;
+                        }
+                        if (!translations.ContainsKey(key))
+                        {
+                            fileOrder.Add(key);
+                        }
+                        translations[key] = tr;
+                    }
+                }
+
                 // Every key worth a row: what the game has loaded plus what the
                 // file already holds. Then write them in play order with section
                 // headers; keys the order does not know go last (UI and such).
@@ -140,10 +216,11 @@ namespace DragNWashLocalization
                 foreach (string key in fileOrder) if (seen.Add(key)) all.Add(key);
 
                 int written = 0, resolved = 0, unresolved = 0, untranslated = 0, lineRows = 0;
-                string path = PathFor(pluginDirectory, locale);
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
                 ScriptOrder.Data order = ScriptOrder.Load(pluginDirectory);
-                using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
+                // Written through SafeFile so a failure partway through leaves the
+                // previous file intact rather than a truncated one.
+                SafeFile.Write(path, new UTF8Encoding(false), writer =>
                 {
                     writer.WriteLine("key,section,node,order,speaker,source_en,translation");
                     void Emit(string key, string section, string node, string ord, string fallbackSpeaker)
@@ -157,7 +234,7 @@ namespace DragNWashLocalization
                         if (string.IsNullOrEmpty(who)) speakers.TryGetValue(key, out who);
                         if (string.IsNullOrEmpty(who)) who = fallbackSpeaker;
                         if (string.IsNullOrEmpty(who) && src != null) who = "UI";
-                        writer.WriteLine(key + "," + CsvReader.Escape(section) + "," + CsvReader.Escape(node) + "," + ord + "," + CsvReader.Escape(who ?? string.Empty) + "," + CsvReader.Escape(src ?? string.Empty) + "," + CsvReader.Escape(tr ?? string.Empty));
+                        writer.WriteLine(CsvReader.Escape(key) + "," + CsvReader.Escape(section) + "," + CsvReader.Escape(node) + "," + ord + "," + CsvReader.Escape(who ?? string.Empty) + "," + CsvReader.Escape(src ?? string.Empty) + "," + CsvReader.Escape(tr ?? string.Empty));
                         written++;
                     }
                     List<string> leftovers;
@@ -203,7 +280,7 @@ namespace DragNWashLocalization
                             lineRows++;
                         }
                     }
-                }
+                });
 
                 string ordered = order == null ? " No script order data found (Export game flow with a level loaded), so rows are in discovery order." : "";
                 if (fresh) ordered = $" {locale}/strings.csv did not exist, so this is a fresh start with every line the game has loaded." + ordered;
