@@ -1,0 +1,1947 @@
+key,section,node,order,speaker,translation
+# Language: ไทย (th)
+# Created by TomXV. Provisional translation, not reviewed by a native speaker:
+# some lines may read unnaturally. Corrections are welcome as pull requests.
+# Only the Japanese (ja) and Simplified Chinese (zh-Hans) files were supervised by the author.
+
+# ===== Level 1: Ryan (Sunny) | sets level_1 | ends level_1_complete =====
+# --- intro: Ryan_1_intro ---
+0da72197e898ebe1,L01 Ryan,Ryan_1_intro,1,Ryan,สวัสดี?
+334d016f755cd6dc,L01 Ryan,Ryan_1_intro,2,Kobold,สวัสดี!
+dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,อ้าว สวัสดี! เอ่อ...
+30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,ได้ยิน​มา​ว่า​แถว​นี้​มี​โค​บอลด์​ที่​ช่วย​ล้าง​ตัว​ให้ได้?
+08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,มา​ถูกที่​หรือเปล่า?
+32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,ใช่​แล้ว! ฉัน​นี่แหละ <i>โค​บอลด์</i> คน​นั้น!
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,ใช่ ยินดีต้อนรับ​สู่ Drag'n wash!
+b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,ฮ่า​ฮ่า ใช่​จริง ๆ ด้วย!
+84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,เยี่ยม​เลย!
+line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,เยี่ยม​เลย!
+900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,ฉัน​ชื่อ​ไร​อัน แล้ว...
+092808653667e9ff,L01 Ryan,Ryan_1_intro,11,Ryan,จะ​เข้าไป​ยังไง​ดี?
+0f3f0b7e817061e6,L01 Ryan,Ryan_1_intro,12,Kobold,รอ​แป๊บ​นะ ต้อง​เปิด​ประตู​ก่อน
+b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,ยิ๊บ!
+273533e355fd12cf,L01 Ryan,Ryan_1_intro,14,Ryan,หา...?
+3faa3f1d46e0e544,L01 Ryan,Ryan_1_intro,15,Kobold,อ๊ะ หมายถึง... จะ​ไป​เปิด​ประตู​ให้​เดี๋ยวนี้!
+ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,อ้อ เห็น​ปุ่ม​ตรงนั้น​แล้ว เข้าใจ​แล้ว!
+425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,โอเค ฉัน​จะ​รอ​อยู่​ตรงนี้ ขอบใจ​นะ
+# --- phone: Ryan_1_PhoneTutorial ---
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,สวัสดี <i>'แฟรนไชส์ Drag'n wash สาขา 223'...</i> คุย​กับ​ลูกค้า​คน​แรก​หรือยัง?
+276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,เพิ่ง​คุย​เสร็จ!
+d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,คุย​แล้ว
+38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,อ้อ ดี
+ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
+4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,งั้น​ก็... ขอให้​เป็น​วันที่​ได้​งาน​ได้การ
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,สวัสดี <i>'แฟรนไชส์ Drag'n wash สาขา 223'...</i> รู้​วิธี​ใช้งาน​สิ่ง​ต่าง ๆ หรือยัง?
+3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,ยังเลย
+01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,น่าจะ​เข้าใจ​แล้ว!
+085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,อ้า...
+4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,งั้น​ไป​ที่​ช่อง​หน้าต่าง​แล้ว​คุย​กับ​ลูกค้า​ซะ
+af789b5c60f24630,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,หลังจากนั้น​ก็​ต้อง​เปิด​ให้​เขา​เข้ามา​ด้วย​แน่นอน
+bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,ดีมาก งั้น​อย่า​ลืม​ไป​ทักทาย​ลูกค้า​ที่​ช่อง​หน้าต่าง​ล่ะ
+474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,โอเค!
+7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,ขอให้​เป็น​วันที่​ได้​งาน​ได้การ
+# --- progress: Ryan_1_required ---
+098ac93ca7999f8c,L01 Ryan,Ryan_1_required,1,Ryan,นาย​เป็น​ช่าง​ล้าง​มังกร​มี​ใบรับรอง​สิ​นะ?
+7b999e621945fe90,L01 Ryan,Ryan_1_required,2,Kobold,ใช่​แล้ว!
+1cb7709c2b6cdc0b,L01 Ryan,Ryan_1_required,3,Kobold,เพิ่ง​ล้าง​มา​ได้​ไม่​กี่​สัปดาห์​เอง!
+9b9024cada67653e,L01 Ryan,Ryan_1_required,4,Ryan,โอ้ เจ๋ง!
+fbd8fe3b49aed7c5,L01 Ryan,Ryan_1_required,5,Ryan,ปกติ​ฉัน​ใช้​สายยาง​ฉีด​เอา​ที่​บ้า​น...
+3f742efbf9edb2ee,L01 Ryan,Ryan_1_required,6,Ryan,อ้อ งั้น​ก็​ใหม่​สำหรับ​เรา​ทั้งคู่​เลย!
+e6c276d67e994ed5,L01 Ryan,Ryan_1_required,7,Ryan,พูด​ตรง ๆ แปลกใจ​ที่​มันดี​ขนาด​นี้
+e99ba1a86146f1aa,L01 Ryan,Ryan_1_required,8,Ryan,ได้​หลีกหนี​จาก​ทุกอย่าง​ข้างนอก​นั่น​สักพัก ดี​จัง
+# --- nag: Ryan_1_nag ---
+c2aa03c999eb7731,L01 Ryan,Ryan_1_nag,1,Ryan,นี่ ฉัน​มีเรื่อง​จะ​พูด!
+5b798fca0ab51d6c,L01 Ryan,Ryan_1_nag,2,Ryan,ช่วย​ขึ้น​มา​ตรง​ที่​ฉัน​มองเห็น​หน่อย​ได้​ไหม
+# --- jerkoff: ryan_jerk_off_no ---
+2e75bb6a3610c11b,L01 Ryan,ryan_jerk_off_no,1,Ryan,นี่... เรื่อง 'ลงมือ' เอาไว้​ทีหลัง​ได้​ไหม?
+# --- mount_start: ryan_mount_no ---
+91c3bf04fb99ce8b,L01 Ryan,ryan_mount_no,1,Ryan,อืม ขอ​ผ่าน​แท่น​ไป​ก่อน​ละ​กัน
+# --- outro: Ryan_1_Outro ---
+0d26aa953ca02c41,L01 Ryan,Ryan_1_Outro,1,Ryan,สะอาดหมดจด​แล้ว​แน่ ๆ!
+699cdec6a62f5ff3,L01 Ryan,Ryan_1_Outro,2,Ryan,ดีกว่า​สายยาง​เยอะ​เลย
+c3bbf19f280c6dde,L01 Ryan,Ryan_1_Outro,3,Kobold,ด้วยความยินดี
+66984a1e53d3e869,L01 Ryan,Ryan_1_Outro,4,Kobold,ใช่​แล้ว! แวะ​มา​ได้​ทุกเมื่อ​นะ
+d629b0ed3f97727c,L01 Ryan,Ryan_1_Outro,6,Ryan,จะ​บอกต่อ​คนอื่น​เรื่อง​ที่นี่​แน่นอน
+e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,จะ​จำ​ที่นี่​ไว้​แน่นอน
+29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,8,Ryan,ฮ่า​ฮ่า 'ยิ๊บ' คืนให้​เหมือนกัน
+0712e97652e51758,L01 Ryan,Ryan_1_Outro,9,Ryan,สนุก​ดี งั้น​ไว้​เจอกัน​ใหม่​นะ!
+17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,10,Ryan,ช่วย​เปิด​ประตู​ให้​ฉัน​ออก​ไป​หน่อย​ได้​ไหม?
+1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,12,Ryan/Conrad/Kobold/Dragon,ขอบใจ!
+
+# ===== Level 2: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_1 ---
+d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>เฮ้ย! </gradient><size=100%>ที่นี่​ที่​ล้าง​ตัว​ใช่ไหม?"
+e2b71fbe0e3a8220,L02 Conrad,Conrad_Intro_1,2,Conrad,ฉัน​ต้อง​สะอาด​เอี่ยม ดูเหมือน​นาย​มี​ไว้​เพื่อ​สิ่ง​นี้ <size=70%> ฮะ
+198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,ใช่ ทาง​นี้​เลย
+d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,เรา​เปิดทาง​ให้ได้
+6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,ดี แต่​ต้อง​เปิด​ประตู​ก่อน​นะ ให้​คอนราด​เข้าไป!
+# --- progress: Conrad_required_1 ---
+87e002767e44df8e,L02 Conrad,Conrad_required_1,1,Conrad,คื<size=90%>อ<size=80%>อ<size=70%>อ<size=60%>อ... <size=100%>สงสัย​อยู่​ว่า
+2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,ที่นี่​มี <i>ตอนจบ​พิเศษ</i> ด้วย​ใช่ไหม?
+906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,ทุก​ตอนจบ​ที่นี่​พิเศษ​หมด​เลย!
+c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,แบ​บ... เรื่อง​ทางเพศ​น่ะ​เหรอ?
+0c503978e6cd3a78,L02 Conrad,Conrad_required_1,5,Conrad,เอ่อ... นั่น​ไม่...
+c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,พวก​นาย​ทำให้​มังกร​ตัว​ใหญ่ <size=60%>อย่าง​ฉัน <size=100%>เสร็จ​ตรงนี้​ได้​ไหม?
+daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,ว้า... หา... <size=80%>โอ้ <size=60%>เรา​ไม่...
+824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,โอ้ ไม่​นะ
+33cb9fb42cd6a080,L02 Conrad,Conrad_required_1,9,Conrad,อะไร​นะ!? แย่​ชะมัด! แถม​ไม่​มี​แท่น​ด้วย​เห​รอ...?
+96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,เอ่อ... <size=60%>ไม่​มี?
+175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,งั้น​รีบ​หา​มา​ซะ​สิ!
+fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,อย่าง​น้อย​ก็​ยัง​ใช้​มือ​ได้ เฮะ
+a29919179016a4e8,L02 Conrad,Conrad_required_1,13,Conrad,เหรอ? ฉัน​ไม่​เห็น​แท่น​สักหน่อย
+6ec80eb8deb5afd8,L02 Conrad,Conrad_required_1,14,Kobold,อ้อ... ใช่ เรา​ไม่​มี
+22706d3faee3b165,L02 Conrad,Conrad_required_1,15,Kobold,ไม่ ที่นี่​ไม่​มี​บริการ​แบบ​นั้น
+4a8d1297fbe8f246,L02 Conrad,Conrad_required_1,16,Conrad,น่าเสียดาย​จริง ควร​เปลี่ยน​ซะ​นะ
+# --- jerkoff: Conrad_1_JerkOff_Start ---
+6d4db2b6b39822b2,L02 Conrad,Conrad_1_JerkOff_Start,1,Conrad,โอ้ เอาเลย​โว้ย
+8fc6411ffc04a8f3,L02 Conrad,Conrad_1_JerkOff_Start,2,Conrad,ต่อไป​สิ
+# --- cum: Conrad_1_Cum ---
+e51f82fb1e4773ad,L02 Conrad,Conrad_1_Cum,1,Conrad,<size=140%> โคตร​มัน​เลย​โว้ย!
+6d721d6e2ad2ae1c,L02 Conrad,Conrad_1_Cum,2,Conrad,<size=100%> สุดยอด​ไป​เลย!
+# --- mount_start: conrad_mount_no ---
+b902443f60bdba87,L02 Conrad,conrad_mount_no,1,Conrad,โว้ว เอ่อ
+ccdcfc48472b3533,L02 Conrad,conrad_mount_no,2,Conrad,ปกติ​ฉัน​ตอบ​ตกลง​เรื่อง​แท่น​ทันที แต่​ตอนนี้​ไม่​ล่ะ
+# --- outro: Conrad_Outro_1 ---
+2edaf16ee5b742a8,L02 Conrad,Conrad_Outro_1,1,Conrad,ล้าง​ก็​โอเค​นะ
+882508b81f97e7cf,L02 Conrad,Conrad_Outro_1,2,Conrad,แต่​ร้าน​ล้าง​อื่น​ที่​ฉัน​เคย​ไป อย่าง​น้อย​ก็​มี​แท่น
+51335374627e92a3,L02 Conrad,Conrad_Outro_1,3,Kobold,ขอโทษ​นะ...
+598e348ffe7cc978,L02 Conrad,Conrad_Outro_1,4,Kobold,สัญญา​ว่า​จะ​สั่ง​มา​ให้!
+3eba607f0573bf98,L02 Conrad,Conrad_Outro_1,5,Conrad,ไม่ต้อง​ขอโทษ! ไปหา​แท่น​มา!
+4e52b9a8b0ae1335,L02 Conrad,Conrad_Outro_1,6,Conrad,ช่าง​ล้าง​ที่รัก​ศักดิ์ศรี​ทุกคน​ต้อง​รู้​วิธี​เอาใจ​มังกร
+25d0b6008550c533,L02 Conrad,Conrad_Outro_1,7,Kobold,โอเค ฉัน​จะ​สั่ง​แท่น​มา
+2e92d12d86bf03a5,L02 Conrad,Conrad_Outro_1,8,Conrad,ดี งั้น​ปล่อย​ฉัน​ออก​ไป
+426726c5d08284a8,L02 Conrad,Conrad_Outro_1,9,Conrad,ดี ต้อง​มี​นะ ถ้า​กลับมา​แล้ว​ไม่​มี...
+28c3830dac3b9c5b,L02 Conrad,Conrad_Outro_1,10,Kobold,นั่น​ขู่​กัน​เห​รอ...?
+fac432bdcfb4b753,L02 Conrad,Conrad_Outro_1,11,Conrad,เอ่อ เปล่า ฉัน​แค่​จะ​เสียใจ มาก ๆ
+ee7433c3dd161b65,L02 Conrad,Conrad_Outro_1,12,Conrad,เอาเถอะ ปล่อย​ฉัน​ออก​ไป
+
+# ===== Level 3: Alexander (Sunny) =====
+# --- intro: Alexander_1_intro ---
+dbca31128a900488,L03 Alexander,Alexander_1_intro,1,Alexander,สวัสดี​ตอนเย็น สถานที่​แห่ง​นี้​รับ​ลูกค้า​ไม่​นัด​ล่วงหน้า​ใช่ไหม​ครับ?
+a6208f4370193b60,L03 Alexander,Alexander_1_intro,2,Kobold,รับ! คุณ... มาจาก​วิทยาลัย​เห​รอ...?
+fdf9d60aca05c19e,L03 Alexander,Alexander_1_intro,4,Alexander,ถูกต้อง คง​จำ​ตรา​ของ​ผม​ได้​สิ​นะ! ผม​สอน​วิชา​เล่นแร่แปรธาตุ
+12456a9c2599222e,L03 Alexander,Alexander_1_intro,5,Alexander,... ซึ่ง​อีกไม่นาน​ผม​ก็​ต้อง​ไป​สอน​แล้ว
+cccd2e909950ad59,L03 Alexander,Alexander_1_intro,6,Alexander,ดีมาก
+f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,ต้อง​รีบ​หน่อย​นะ​ครับ นักศึกษา​ไม่​สอน​ตัวเอง​หรอก
+26f8788d21d9fd7d,L03 Alexander,Alexander_1_intro,8,Kobold,ไม่​เคย​ล้าง​มังกร​อาจารย์​มา​ก่อน​เลย... โว้ว
+7cc55c8bb6442b93,L03 Alexander,Alexander_1_intro,9,Kobold,โอเค จะ​เปิด​ประตู​ให้!
+c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,ศาสตราจารย์​ต่าง​หา​ก... แต่​ก็​ใช่ ปกติ​ผม​ไม่​ไป​ร้าน​ล้าง​สาธารณะ
+8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,ขอบคุณ
+57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,อ้อ แล้วก็​ขอโทษ​ที่​มอมแมม​สุด ๆ แบบนี้
+c44510120d3f5f7e,L03 Alexander,Alexander_1_intro,13,Alexander,เป็น​สภาพ​ที่​น่าเสียใจ​จริง ๆ...
+550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,คุณ... ไม่​ได้​สกปรก​ขนาด​นั้น​หรอก
+21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,ไม่​มีปัญหา จะ​ไป​เปิด​ประตู​ให้​เดี๋ยวนี้!
+14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,ไม่ สกปรก​จริง ๆ
+65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,ช่วย​เปิด​ประตู​ได้​ไหม​ครับ?
+f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,อ้อ ได้ ขอโทษ​ที
+# --- progress: Alexander_1_required ---
+8bb197f659df9e12,L03 Alexander,Alexander_1_required,1,Alexander,รู้​ไห​ม... บรรยากาศ​ที่นี่​ค่อนข้าง​น่ารื่นรมย์ ดู... เป็น​ชนชั้นกรรมาชีพ
+c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,กรร​มา... <i><size=70%>อะไร​นะ?
+3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,ขอบคุณ!
+90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,อ้อ แบ​บ... ชนชั้น​แรงงาน​น่ะ​เหรอ?
+55c80016618e1bc5,L03 Alexander,Alexander_1_required,5,Alexander,ขอโทษ ผม​หมาย​ถึงว่า​ผม​ชอบ​ร้าน​ล้าง​ของ​คุณ
+02fa2a9691178177,L03 Alexander,Alexander_1_required,6,Alexander,แน่นอน
+32e117cdd1f56f3f,L03 Alexander,Alexander_1_required,7,Alexander,ใคร​จะ​ไป​รู้​ว่า​มี​ที่​แบบนี้​เปิด​ให้​คน​ทั่วไป​ใช้ได้​ง่าย​ขนาด​นี้!
+# --- jerkoff: alexander_jerk_off_no ---
+f33ca08a17779409,L03 Alexander,alexander_jerk_off_no,1,Alexander,<i>อ้อ</i> ผม​ว่า​ผม​ยัง​ไม่​พร้อม​สำหรับ​เรื่อง​นั้น
+# --- mount_start: alexander_mount_no ---
+170ebd10775afd58,L03 Alexander,alexander_mount_no,1,Alexander,ผม... ไม่​แน่ใจ​ว่า​อยาก​ใช้​สิ่ง​นี้​วันนี้
+# --- outro: Alexander_1_Outro ---
+d202075090a8960b,L03 Alexander,Alexander_1_Outro,1,Alexander,ต้อง​บอก​เลย​ว่า​คุณ​ทำ​ได้ดี​เท่ากับ​ช่าง​ล้าง​ส่วนตัว​เลย
+b6069e62e167364f,L03 Alexander,Alexander_1_Outro,3,Kobold,อืม ฉัน​ทำ​เต็มที่​เสมอ
+981447d1952fe850,L03 Alexander,Alexander_1_Outro,4,Alexander,ฮ่า​ฮ่า 'ยิ๊บ' จริง ๆ ด้วย
+5d7279822bcee7dd,L03 Alexander,Alexander_1_Outro,5,Alexander,นักศึกษา​ของ​ผม​น่าจะ​เรียน​รู้ความ​ขยัน​ของ​คุณ​บ้าง!
+8117291ab8529b4f,L03 Alexander,Alexander_1_Outro,6,Alexander,อยาก​คุย​ต่อ​อีก​จริง ๆ แต่​ใกล้​ถึง​เวลา​สอน​แล้ว
+dae0c0aa3ae01c37,L03 Alexander,Alexander_1_Outro,7,Alexander,...ขอบคุณ​สำหรับ​สิ่ง​นี้
+
+# ===== Level 4: Ryan (Sunny) =====
+# --- intro: Ryan_2_intro ---
+7825d92f67bdcdef,L04 Ryan,Ryan_2_intro,1,Ryan,สวัสดี​อีกครั้ง!
+cd26586143766826,L04 Ryan,Ryan_2_intro,2,Kobold,สวัสดี ไร​อัน!
+6a67a8866ec70c09,L04 Ryan,Ryan_2_intro,4,Ryan,สวัสดี ดีใจ​ที่​ได้​กลับมา
+921bd4effdaa2a2f,L04 Ryan,Ryan_2_intro,5,Ryan,ฮ่า... นาย​ชอบ​เสียง​นั้น​จริง ๆ นะ
+387d0da740d0826e,L04 Ryan,Ryan_2_intro,6,Ryan,ต้อง​ล้าง​ตัว​อี​กรอบ​แล้ว
+e542b800ecfc350a,L04 Ryan,Ryan_2_intro,7,Ryan,อยาก​ออกจาก​บ้าน​สักพัก​น่ะ
+78b22bcc76942425,L04 Ryan,Ryan_2_intro,8,Ryan,ไปเที่ยว​กับ​เพื่อน​มา
+21abbb56e463a200,L04 Ryan,Ryan_2_intro,9,Ryan,พวก​ปากกา​มาร์ก​เกอร์​สนุก​ดี
+da3405e1151a476e,L04 Ryan,Ryan_2_intro,10,Ryan,แต่​คิด​ว่า​ถึง​เวลา​ทำความสะอาด​ตัว​แล้ว​ล่ะ
+41dc14e2cd744b1b,L04 Ryan,Ryan_2_intro,11,Kobold,อ้อ ได้​เลย เข้ามา​สิ
+b231225bfcc08d4c,L04 Ryan,Ryan_2_intro,12,Kobold,ทุกอย่าง​โอเค​ไหม?
+056b5511850d7220,L04 Ryan,Ryan_2_intro,13,Ryan,โอเค ขอบใจ
+b4e4d893367947a0,L04 Ryan,Ryan_2_intro,14,Ryan,อืม ไม่เป็นไร ขอโทษ​นะ
+c9cdea9d31e53d5b,L04 Ryan,Ryan_2_intro,15,Ryan,แค่​วัน​แย่ ๆ น่ะ หวัง​ว่า​นี่​จะ​ช่วย​ได้!
+ab74167fe23c9db5,L04 Ryan,Ryan_2_intro,17,Ryan,แล้ว เอ่อ ประตู​ล่ะ?
+5cbc0ceea57587db,L04 Ryan,Ryan_2_intro,18,Kobold,อ๊ะ ใช่ กำลัง​ไป
+08411b780900fb59,L04 Ryan,Ryan_2_intro,19,Kobold,ได้​เลย แป๊บ​นึง!
+a386908e3024f35e,L04 Ryan,Ryan_2_intro,20,Ryan,เยี่ยม
+# --- progress: Ryan_2_required ---
+580684f8909e025d,L04 Ryan,Ryan_2_required,1,Ryan,นี่
+b4eff799a0271863,L04 Ryan,Ryan_2_required,2,Kobold,หืม?
+fad448038cd06268,L04 Ryan,Ryan_2_required,3,Kobold,มี​อะไร​เหรอ?
+a1dd2ff2d1ef6beb,L04 Ryan,Ryan_2_required,4,Ryan,ขอ​ถาม​อะไร​หน่อย​ได้​ไหม?
+2acd4405a7f14ae3,L04 Ryan,Ryan_2_required,5,Kobold,ก็​ถาม​อยู่แล้ว​นี่ มี​อะไร​เหรอ?
+c10c037156053bfe,L04 Ryan,Ryan_2_required,6,Kobold,ได้​สิ
+4f6d869aa239596c,L04 Ryan,Ryan_2_required,7,Ryan,อ้อ จริง​ด้วย ขอโทษ
+0fa0dff561f86016,L04 Ryan,Ryan_2_required,8,Ryan,คือ เรื่อง... ความสัมพันธ์​น่ะ
+9a38b89ed035e464,L04 Ryan,Ryan_2_required,9,Ryan,ถ้า​ความสัมพันธ์​มัน <i>ขรุขระ</i> ขนาด​นี้ และ​รู้​ว่า​ยังไง​ก็​จบ
+9b943020b9ae2658,L04 Ryan,Ryan_2_required,10,Ryan,แล้วก็​ลอง​ทุกอย่าง​มา​หมด​แล้ว
+954ba66a076849a5,L04 Ryan,Ryan_2_required,12,Ryan,ควร​จบ​ความสัมพันธ์​ตอน​ไหน​กัน​แน่?
+f173e528733bb05a,L04 Ryan,Ryan_2_required,13,Kobold,โอ๊ย... ไร​อัน...
+7b102f547a549072,L04 Ryan,Ryan_2_required,14,Kobold,ฉัน... ไม่​แน่ใจ​ว่า​ตอบ​ให้ได้​นะ
+d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,15,Ryan,รู้ รู้​ว่า​ไม่​ควร​มา​ระบาย​ใส่​นาย
+64973f6ac9ac08be,L04 Ryan,Ryan_2_required,16,Ryan,แค่​อยู่​ใกล้​นาย​แล้ว​สบายใจ​น่ะ
+93fa9e1a16f34a7d,L04 Ryan,Ryan_2_required,17,Ryan,นาย​พูด​ถู​ก... นาย​ตอบ​ไม่​ได้​หรอก
+797653f5e081152e,L04 Ryan,Ryan_2_required,18,Ryan,แค่​ดีใจ​ที่​ที่นี่​ไม่​มี​ใคร​ตัดสิน​ฉัน
+b11d41e01fefb995,L04 Ryan,Ryan_2_required,20,Kobold,ขอบใจ ฉัน​ก็​ชอบ​อยู่​ใกล้​นาย​เหมือนกัน
+c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,21,Kobold,หวัง​ว่า​อะ​ไร ๆ จะ​ดีขึ้น​นะ
+ebb96171ea7628a0,L04 Ryan,Ryan_2_required,22,Ryan/Kobold/Alexander,ดีใจ​จัง
+line:286fec49,L04 Ryan,Ryan_2_required,22,Ryan,ดี​จัง
+91c0e3e9014024af,L04 Ryan,Ryan_2_required,23,Ryan,ฉัน​ก็​ด้วย
+# --- outro: Ryan_2_Outro ---
+cb57ee6155ed6ca5,L04 Ryan,Ryan_2_Outro,1,Ryan,เอาล่ะ สะอาด​หมด​แล้ว
+f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,ขอโทษ​ที่​เมื่อกี้​ระบาย​ใส่​นาย​ซะ​เยอะ
+a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,ไม่เป็นไร!
+94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,รู้​ว่า​บางที​มัน​ก็​หนักหนา
+4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,นาย​ใจ​ดีมาก​เลย
+line:15f55959,L04 Ryan,Ryan_2_Outro,5,Ryan,นาย​ใจดี​จริง ๆ นะ
+ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,ถ้า​มัน​ง่าย​เหมือน​ใน​หนัง​ก็ดี​สิ
+0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,มา​ได้​ทุกเมื่อ​นะ ไร​อัน
+78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,ถ้า​อยาก​คุย​เรื่อง​นี้​อีก ฉัน​มี​เวลา​ให้​นะ
+f204fcc6b711621e,L04 Ryan,Ryan_2_Outro,9,Ryan,จะ​มานะ ขอบใจ
+72eaafd8ad3f6b0d,L04 Ryan,Ryan_2_Outro,10,Ryan,แน่ใจ​นะ? มัน​ไม่​ใช่... เรื่อง​สนุก​อะไร
+fe454a1e25772898,L04 Ryan,Ryan_2_Outro,11,Kobold,นาย​พูด​ถูก ฉัน​ไม่​ควร​ซักไซ้
+513af1a2eeeef9b6,L04 Ryan,Ryan_2_Outro,12,Kobold,ไม่เป็นไร ดูเหมือน​นาย​ต้องการ​มัน​นะ
+f3ff11acd1b54309,L04 Ryan,Ryan_2_Outro,13,Ryan,ไม่เป็นไร​หรอก ขอบใจ
+0b61ba409dc46906,L04 Ryan,Ryan_2_Outro,14,Ryan,อืม นาย​พูด​ถูก
+5459b9d74fb7a529,L04 Ryan,Ryan_2_Outro,15,Ryan,คือ​งี้ แฟน​ฉัน​กลับ​ถึง​บ้าน​ก่อน เธอ​เป็น​มังกร​ที่ทำงาน​อยู่​บ้าน
+2cd54468954ee8c7,L04 Ryan,Ryan_2_Outro,16,Ryan,ฉัน​กลับบ้าน​มา​เลอะ​นิดหน่อย แล้ว​เธอ​ก็​ตะคอก​ใส่
+f7e4ec27dd7d6527,L04 Ryan,Ryan_2_Outro,17,Ryan,บอก​ให้​ไป​ร้าน​ล้าง แล้ว​ทำท่า​โกรธจัด​สุด ๆ
+2880304176197c02,L04 Ryan,Ryan_2_Outro,18,Ryan,เธอ... <i>โมโห​จริง ๆ</i> ที่​ฉัน​เปื้อน​โคลน
+250b97243d1df1f7,L04 Ryan,Ryan_2_Outro,19,Kobold,นั่น​คือ​เหตุผล​ที่​นาย​มา​ครั้งแรก​เหรอ?
+bc78d04f7d5861dc,L04 Ryan,Ryan_2_Outro,20,Kobold,ฟัง​ดูเหมือน​เธอ​เกิน​เหตุ​ไป​นะ
+08a70054f59e703a,L04 Ryan,Ryan_2_Outro,21,Ryan,อืม...
+6079131a1c79adef,L04 Ryan,Ryan_2_Outro,22,Ryan,แต่​พูด​ตรง ๆ นาย​ช่วย​ฉัน​ได้​เยอะ​เลย
+92536deee525f694,L04 Ryan,Ryan_2_Outro,23,Ryan,ให้​เวลา​ฉัน​ได้คิด
+c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,25,Ryan,ฉัน​ก็​คิด​แบบ​นั้น​เหมือนกัน
+9ebcf8a46cc189b7,L04 Ryan,Ryan_2_Outro,26,Ryan,ฉัน​ว่า​เธอ​โมโห​เรื่อง​อื่น​มากกว่า...
+8c3115a4e2a9a664,L04 Ryan,Ryan_2_Outro,27,Ryan,แค่​ไม่​ชอบ​ที่​เธอ​มา​ลง​กับ​ฉัน
+393d8e5925dc5937,L04 Ryan,Ryan_2_Outro,31,Ryan,เอาเถอะ...
+7258b4e037805024,L04 Ryan,Ryan_2_Outro,32,Ryan,ขอบใจ​ที่​รับฟัง​นะ
+951382e00968439d,L04 Ryan,Ryan_2_Outro,33,Kobold,ได้​เสมอ ไร​อัน
+c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,34,Kobold,แน่นอน เสียใจ​ด้วย​ที่​นาย​ต้อง​เจอ​เรื่อง​พวก​นี้
+line:6b245989,L04 Ryan,Ryan_2_Outro,35,Ryan,ขอบใจ​นะ
+553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,36,Ryan,ไม่เป็นไร เดี๋ยว​ฉัน​หาทาง​เอง
+bd7468846a30d095,L04 Ryan,Ryan_2_Outro,37,Kobold,จะ​ไป​เปิด​ประตู​ให้​นะ
+a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,38,Ryan,โอเค บ๊ายบาย!
+
+# ===== Level 5: Conrad (Rainy) | sets level_5 | ends MedkitCompleted, level_5_complete =====
+# --- intro: Conrad_Intro_2 ---
+ed1060b120921b51,L05 Conrad,Conrad_Intro_2,1,Conrad,มี​ชุด​ปฐมพยาบาล​ไหม?
+33b8a4a45ccc09d4,L05 Conrad,Conrad_Intro_2,2,Kobold,เกิด​อะไร​ขึ้น!?
+0a1daca6a7ffe060,L05 Conrad,Conrad_Intro_2,3,Kobold,โอ้​ไม่​นะ คอนราด โอเค​ไหม?
+20e5d8710e635ec0,L05 Conrad,Conrad_Intro_2,4,Conrad,ไม่ต้อง​บอก​นาย​ก็ได้
+20e7bf03f9acda80,L05 Conrad,Conrad_Intro_2,5,Conrad,ทีนี้ มี​ชุด​ปฐมพยาบาล​หรือไม่​มี?
+b5df9715ed2e91ed,L05 Conrad,Conrad_Intro_2,6,Conrad,ดูเหมือน​โอเค​เหรอ?
+b91e8be1b03d1b61,L05 Conrad,Conrad_Intro_2,7,Conrad,ไม่ ไม่​โอเค มี​ชุด​ปฐมพยาบาล​หรือไม่​มี?
+f974998c16103aa0,L05 Conrad,Conrad_Intro_2,8,Kobold,มี มี​อยู่​ชุด​นึง
+8ca82a3bb03f138c,L05 Conrad,Conrad_Intro_2,9,Kobold,มี แต่​เกิด​อะไร​ขึ้น?
+a94b34f629b2029a,L05 Conrad,Conrad_Intro_2,10,Conrad,แค่... เปิด​ประตู​เถอะ
+# --- progress: Conrad_required_2 ---
+4356fa179bb80e09,L05 Conrad,Conrad_required_2,1,Conrad,ฉัน​มัน​โง่​จริง ๆ
+d886f3d923f9c796,L05 Conrad,Conrad_required_2,2,Conrad,เรื่อง​เฮงซวย​แบบ​นี้แหละ​ที่​ฉัน​พยายาม​เลี่ยง!
+ea8c1853a7d5966c,L05 Conrad,Conrad_required_2,3,Kobold,อยาก​เล่า​ไหม​ว่า​เกิด​อะไร​ขึ้น...?
+bded00d07cb1e457,L05 Conrad,Conrad_required_2,4,Kobold,เสียใจ​ด้วย​ที่​นาย​บาดเจ็บ...
+02f000041eb5ab82,L05 Conrad,Conrad_required_2,5,Conrad,ไม่​เอา​โว้ย! มัน​น่าอาย
+58356b98fdf40dc3,L05 Conrad,Conrad_required_2,7,Conrad,ไม่ต้อง​มา​สงสาร​ฉัน!
+cb7847cb63566364,L05 Conrad,Conrad_required_2,9,Conrad,แค่​ว่า...
+b48f291ebc6b18fe,L05 Conrad,Conrad_required_2,10,Conrad,เกลียด​ที่​ตัวเอง​เจอ​เรื่อง​แบบนี้​อยู่​เรื่อย
+519b07c299436f2a,L05 Conrad,Conrad_required_2,11,Conrad,เริ่ม​รู้สึก​ว่า​มัน​เป็น​ความผิด​ของ <i>ฉัน</i> เอง
+f5ad489eeba50b01,L05 Conrad,Conrad_required_2,12,Kobold,<i>เรื่อง​นี้</i> ไม่​ใช่​ความผิด​ของ​นาย คอนราด
+6402f4608ceb7bbb,L05 Conrad,Conrad_required_2,13,Kobold,เสียใจ​ด้วย​จริง ๆ ที่​นาย​บาดเจ็บ ใคร​ทำ?
+8e59613d6cd60464,L05 Conrad,Conrad_required_2,14,Conrad,ครั้งนี้​ฉัน​ว่า​มัน​ใช่​จริง ๆ...
+7058e362e43623f0,L05 Conrad,Conrad_required_2,15,Conrad,ไอ้​เด​รก​ที่​บาร์... ฉัน​มัน​โง่ หุบปาก​ไม่​ได้
+ea289ebcdd7e81ef,L05 Conrad,Conrad_required_2,16,Conrad,แค่​เด​รก​ตัว​นึง​ที่​บาร์ โง่​เอง... หุบปาก​ไม่​ได้
+aff317c06781bc70,L05 Conrad,Conrad_required_2,17,Conrad,ไม่​เข้าใจ​เลย! ทำไม​ฉัน​ต้อง​ทำตัว​แบบนี้?
+da5eed4c72eb1073,L05 Conrad,Conrad_required_2,18,Kobold,ทำตัว​แบบ​ไหน?
+193bb66a944990a8,L05 Conrad,Conrad_required_2,19,Kobold,ฉัน​ว่า​นาย​เจ๋ง​ออก​นะ คอนราด
+c69250ea092a7fcd,L05 Conrad,Conrad_required_2,20,Conrad,แบ​บ... ไอ้เวร​น่ะ​เหรอ? ฉัน​รู้​ว่า​อยู่​ใกล้​ฉัน​มัน​น่ารำคาญ
+c2f21da58e28df4f,L05 Conrad,Conrad_required_2,21,Conrad,นาย​ใจดี มากกว่า​ที่​ฉัน​สมควร​ได้
+9c529e9f79f39a21,L05 Conrad,Conrad_required_2,22,Conrad,ฉัน​มัน​ไอ้เวร ฉัน​รู้
+4b7317a793a0f728,L05 Conrad,Conrad_required_2,23,Conrad,ขอโทษ​ที่​เมื่อกี้​ตวาด​ใส่​นาย
+c4c0c9950baa723f,L05 Conrad,Conrad_required_2,24,Conrad,นาย​ไม่​สมควร​โดน​แบบ​นั้น
+9fa8cd9193124e79,L05 Conrad,Conrad_required_2,25,Kobold,ไม่เป็นไร นาย​กำลัง​เจอ​เรื่อง​หนัก​อยู่​ชัด ๆ
+249133e0671a807b,L05 Conrad,Conrad_required_2,26,Kobold,ไม่เป็นไร​หรอก
+c61717fe95ec2b9c,L05 Conrad,Conrad_required_2,27,Conrad,ก็​ไม่​ได้​แปล​ว่า​ฉัน​ต้อง​ตะคอก​ใส่​นาย
+652daa6043287e1b,L05 Conrad,Conrad_required_2,28,Conrad,ไม่​มี​ข้อแก้ตัว​อีกแล้ว
+65b4e7b9caad6028,L05 Conrad,Conrad_required_2,29,Conrad,ไม่ ไม่​โอเค ไม่​มี​ข้อแก้ตัว​อีกแล้ว
+334ade0356dff453,L05 Conrad,Conrad_required_2,30,Conrad,ฉัน​ต้อง​ดีกว่า​นี้ ฉัน <i>อยาก </i>ดีกว่า​นี้
+1d190e45e1ddc239,L05 Conrad,Conrad_required_2,31,Conrad,แค่ เอ่อ... อย่า​บอก​ใคร​ว่า​ฉัน​พูด​เรื่อง​พวก​นี้​ล่ะ
+3969155d983b9b32,L05 Conrad,Conrad_required_2,32,Kobold,ความลับ​ของ​นาย​ปลอดภัย​กับ​ฉัน
+bd7f2cf961e397ca,L05 Conrad,Conrad_required_2,33,Kobold,ไม่​บอก​หรอก
+0cd12abef67edc64,L05 Conrad,Conrad_required_2,34,Conrad,...ขอบใจ
+bbaef120c3a81475,L05 Conrad,Conrad_required_2,35,Conrad,แล้วก็​ดีใจ​ที่​นาย​มี​ชุด​ปฐมพยาบาล... เตรียมพร้อม​ดีจริง
+# --- jerkoff: conrad_jerk_off_no ---
+f81a53c29135dfa5,L05 Conrad,conrad_jerk_off_no,1,Conrad,นี่ เอ่อ... ไม่​ใช่​ตอนนี้
+# --- outro: Conrad_Outro_2 ---
+7f9f3c8d0db46cbf,L05 Conrad,Conrad_Outro_2,1,Conrad,รู้สึก​ดีขึ้น​เยอะ​แล้ว
+d4a62b147d5a622b,L05 Conrad,Conrad_Outro_2,2,Kobold,ทาง​ร่างกาย​หรือ​ทางใจ?
+0d49a74e82a2356a,L05 Conrad,Conrad_Outro_2,4,Conrad,ทั้งคู่
+c38c5771c6cf6118,L05 Conrad,Conrad_Outro_2,5,Conrad/Ryan,ฉัน​ก็​ด้วย
+line:d4c5faea,L05 Conrad,Conrad_Outro_2,5,Conrad,ฉัน​ก็​ด้วย​ว่ะ
+7e30c436a9112ecd,L05 Conrad,Conrad_Outro_2,6,Conrad,นาย... เจ๋ง​ดี
+229bd072e07a3d53,L05 Conrad,Conrad_Outro_2,7,Conrad,พูด​จริง​นะ จริง ๆ
+ba15304b6e669701,L05 Conrad,Conrad_Outro_2,8,Kobold,ฉัน​แค่​ทำ​ใน​สิ่งที่คิด​ว่า​ถูกต้อง
+1fb463b57138c081,L05 Conrad,Conrad_Outro_2,9,Kobold,ฉัน​ก็​ว่า​นาย​เจ๋ง การพัฒนา​ตัวเอง​มัน​ยาก
+56c81331bdf0858e,L05 Conrad,Conrad_Outro_2,10,Conrad,หวัง​ว่า​จะ​เรียนรู้​จาก​เรื่อง​นี้​ได้
+3e2cb05f5d39c6e5,L05 Conrad,Conrad_Outro_2,11,Conrad,ขอบใจ แต่​ฉัน​จะ​ดีขึ้น สัญญา
+8a3ca437a0d6d164,L05 Conrad,Conrad_Outro_2,12,Conrad,ไม่​กวน​นาย​แล้ว...
+c90e3d1d20fadd0f,L05 Conrad,Conrad_Outro_2,13,Conrad,จะ​กลับมา​อีก​แน่นอน
+
+# ===== Level 6: Alexander (Night) | sets level_6_started =====
+# --- intro: Alexander_2_intro ---
+44aa15e695b4e0d5,L06 Alexander,Alexander_2_intro,1,Alexander,ขอบคุณ​สวรรค์​ที่​คุณ​ยัง​เปิด​อยู่
+840851d0f7570dd9,L06 Alexander,Alexander_2_intro,2,Kobold,อเล็กซานเดอร์...?
+d786fe5166ed78b0,L06 Alexander,Alexander_2_intro,3,Kobold,เอ่อ... จริง ๆ ก็​ไม่เชิง​นะ
+b5707c134254e827,L06 Alexander,Alexander_2_intro,4,Alexander,ใช่ ผม​ต้อง​ล้าง​ตัว สถานการณ์​ค่อนข้าง​วิกฤต!
+5962824d5ad2d472,L06 Alexander,Alexander_2_intro,5,Alexander,นี่​เป็นงาน​ที่​มี​แต่​คุณ​เท่านั้น​ที่​ทำได้
+4006d568c80ab534,L06 Alexander,Alexander_2_intro,6,Alexander,ผม​จ่าย​สองเท่า สาม​เท่า... นี่​เป็นงาน​ที่​มี​แต่​คุณ​เท่านั้น​ที่​ทำได้!
+a17a2764777e0b60,L06 Alexander,Alexander_2_intro,7,Kobold,อ้อ งั้น​ก็ได้ เรา​เปิด​อยู่
+1e5b9c4d7c7853fa,L06 Alexander,Alexander_2_intro,8,Alexander,ยอดเยี่ยม!
+e36d5a8ffbc61b8c,L06 Alexander,Alexander_2_intro,9,Kobold,เกิด​อะไร​ขึ้น?
+c43599f1e3538c5c,L06 Alexander,Alexander_2_intro,10,Kobold,ทำไม​มา​ดึก​ขนาด​นี้?
+c63c466c3e28f286,L06 Alexander,Alexander_2_intro,11,Alexander,เพื่อนร่วมงาน​ของ​ผม ศาสตราจารย์​อิก​วิกซ์ อยาก​ใช้​ผม​เป็น​แท่น​ยืน
+dfb6e95e4715f76e,L06 Alexander,Alexander_2_intro,12,Alexander,ผม​ยอม เพราะ​ร่าง​ของ​ผม​ให้​ความสูง​ที่​เพียงพอ
+9da4c08f2c9d94f9,L06 Alexander,Alexander_2_intro,13,Alexander,แต่ทว่า...
+149351e2d565febf,L06 Alexander,Alexander_2_intro,14,Alexander,วิธีการ​ของ​เขา​มีข้อบกพร่อง
+b54a89ba26aaeaa1,L06 Alexander,Alexander_2_intro,15,Kobold,เขา​ตาย​แล้ว​เหรอ!?
+0ee302086c5ae61a,L06 Alexander,Alexander_2_intro,16,Kobold,เขา​หาย​ไป​ไห​น...?
+2cc9a59ae14e4845,L06 Alexander,Alexander_2_intro,17,Alexander,อะไร​นะ?
+3b20ece829b0bd68,L06 Alexander,Alexander_2_intro,18,Alexander,เปล่า
+93f6d587969b0e78,L06 Alexander,Alexander_2_intro,19,Alexander,หลังจาก​เขา​ลุกไหม้​ขึ้น​มา​เอง ผม​ก็​ให้​ความเป็นส่วนตัว​แก่​เขา
+1d37ba6f405ce0fd,L06 Alexander,Alexander_2_intro,20,Alexander,ร่างกาย​ของ​เขา​กำลัง​ก่อตัว​ขึ้น​ใหม่​อยู่​ใน​ห้องพัก​อาจารย์
+27c227129d961114,L06 Alexander,Alexander_2_intro,21,Alexander,พ่อ​มด​ที่รัก​ศักดิ์ศรี​ทุกคน​ย่อม​พก​ขนนก​ฟีนิกซ์​ติดตัว
+9e99fec970b38818,L06 Alexander,Alexander_2_intro,22,Kobold,อ้อ ขนนก​ฟีนิกซ์ แน่นอน​อยู่แล้ว
+0549826a698aad1c,L06 Alexander,Alexander_2_intro,23,Kobold,โอเค จะ​เปิดร้าน​ให้ แป๊บ​นึง
+9e85e9ab574cfc16,L06 Alexander,Alexander_2_intro,24,Alexander,ผม​ลืม​ไป​ว่า​คน​ทั่วไป​ไม่​รู้เรื่อง​พวก​นี้ ขออภัย
+359439ec513e7e35,L06 Alexander,Alexander_2_intro,25,Kobold,อื้อ จะ​ไป​เปิด​ประตู​ให้
+28fa9c1bb5161161,L06 Alexander,Alexander_2_intro,26,Alexander,รีบ​หน่อย! ชื่อเสียง​ของ​ผม​แขวน​อยู่​บน​เส้นด้าย
+# --- progress: Alexander_2_required ---
+cc99c01887a9b5f1,L06 Alexander,Alexander_2_required,1,Alexander,ผม​อับอาย​กับ​เรื่อง​ทั้งหมด​นี้​อย่างยิ่ง
+e33e953efb157171,L06 Alexander,Alexander_2_required,2,Kobold,ไม่​ใช่​เรื่องใหญ่​หรอก ฟัง​ดูเหมือน​ทุกคน​ปลอดภัย​ดี
+c054502c35602985,L06 Alexander,Alexander_2_required,3,Kobold,ไม่ต้อง​อาย​หรอก
+98cbb728e5fb19f2,L06 Alexander,Alexander_2_required,4,Alexander,นั่น​ไม่​เคย​เป็นเรื่อง​ที่​ผม​กังวล ผม​เป็น​มังกร​ที่​ไม่ค่อย​ชอบ​เสี่ยง
+c1d152bd1a4b22f1,L06 Alexander,Alexander_2_required,5,Alexander,พูด​แบบ​นั้น​ก็​ใจ​ดีมาก​เลย​ครับ
+0da1bbeb76d9ef60,L06 Alexander,Alexander_2_required,6,Alexander,แต่ <i>ภาพลักษณ์</i> ของ​ผม​นั้น​ถาวร​กว่า​ร่าง​ชั่วคราว​ของ​อิก​วิกซ์​มาก​นัก
+54021b5f26568c41,L06 Alexander,Alexander_2_required,7,Alexander,นั่น​คือ​สิ่ง​ที่​ผม​กังวล...
+3a363409d3ae72f1,L06 Alexander,Alexander_2_required,8,Alexander,และ​นั่น​คือ​เหตุผล​ที่​คุณ​เหมาะกับ​งาน​นี้​ที่สุด!
+# --- outro: Alexander_2_Outro ---
+abc1043955962614,L06 Alexander,Alexander_2_Outro,1,Alexander,สะอาดหมดจด​อีกครั้ง ขอบคุณ​ที่​รับ​ผม​ใน​เวลา​แบบนี้
+2de23f0bdf3de327,L06 Alexander,Alexander_2_Outro,2,Kobold,เงิน... อืม​ม...
+082cb158de32f2d9,L06 Alexander,Alexander_2_Outro,3,Kobold,ไม่​มีปัญหา
+374214d86f810d53,L06 Alexander,Alexander_2_Outro,4,Alexander,ฮะ มัน​ก็​เป็น​แรงจูงใจ​นะ
+7ff22bb553842005,L06 Alexander,Alexander_2_Outro,5,Alexander,อย่าง​น้อย​ตอนนี้​ก็​ไม่​แล้ว!
+01b524bd7165a166,L06 Alexander,Alexander_2_Outro,6,Alexander,ไม่​คิด​ว่า​จะ​เล่าเรื่อง​น่าอาย​แบบนี้​ให้​ใคร​ฟังได้
+704866fd76bd9fb8,L06 Alexander,Alexander_2_Outro,7,Kobold,ยินดี​ช่วย​เสมอ <i><size=70%> โดยเฉพาะ​มังกร​ตัว​ใหญ่ ๆ
+dd573253630e8021,L06 Alexander,Alexander_2_Outro,8,Kobold,ดีใจ​ที่​คุณ​ไว้ใจ​ฉัน
+d6b066332b6d8b9a,L06 Alexander,Alexander_2_Outro,9,Alexander,ดีใจ​ที่​คุณ​เอง​ก็ได้​ความสุข​จาก​สิ่ง​นี้​เช่นกัน
+762c20b866b7b263,L06 Alexander,Alexander_2_Outro,10,Alexander,ผม​ก็​ด้วย
+5fc37d4eda289c06,L06 Alexander,Alexander_2_Outro,11,Alexander,ไม่​แน่ใจ​ว่า​ทำไม​การคุย​กับ​คุณ​ถึง​ง่าย​ขนาด​นี้
+5a2661b79c536b73,L06 Alexander,Alexander_2_Outro,12,Alexander,สายตา​ของ​ทุกคน​มี​น้ำหนัก​มหาศาล
+0ddbb1a880fb5b54,L06 Alexander,Alexander_2_Outro,13,Alexander,แต่​ของ​คุณ​ไม่ ดี​จริง ๆ
+df9e3e9397757b17,L06 Alexander,Alexander_2_Outro,14,Kobold,ความคาดหวัง​น่ะ น่าเบื่อ​ออ​ออ
+5b4ce4081cac21b5,L06 Alexander,Alexander_2_Outro,15,Kobold,แค่​ทำงาน​ของ​ฉัน​น่ะ!
+1acd1b8d362287ec,L06 Alexander,Alexander_2_Outro,16,Alexander,ก็​จริง​อย่างว่า...
+cbbaf40d803468a2,L06 Alexander,Alexander_2_Outro,17,Alexander,คุณ​ทำได้​ดีมาก
+
+# ===== Level 7: Ryan (Sunny) =====
+# --- intro: Ryan_3_intro ---
+49e50c5be7d1583e,L07 Ryan,Ryan_3_intro,2,Kobold,ไร​อัน!
+346181d6c9954315,L07 Ryan,Ryan_3_intro,3,Kobold,ยินดีต้อนรับ​กลับมา!
+c1cff3dbff6bfce2,L07 Ryan,Ryan_3_intro,4,Ryan,ฉัน​เอง
+03810482331af8e2,L07 Ryan,Ryan_3_intro,5,Ryan,ดีใจ​ที่​ได้มา​อยู่​ตรงนี้
+e1a42aae663ccf1f,L07 Ryan,Ryan_3_intro,6,Ryan,มา​ล้าง​ตัว​อี​กรอบ
+fc7ed7b68999fdae,L07 Ryan,Ryan_3_intro,7,Ryan,ฉัน...
+be0667bb01a8cd65,L07 Ryan,Ryan_3_intro,8,Ryan,ช่างมันเถอะ ช่วย​เปิด​ประตู​ได้​ไหม?
+20ed966db540aaaf,L07 Ryan,Ryan_3_intro,9,Kobold,ได้ จะ​เปิด​ให้​เดี๋ยวนี้
+6c0973b0166d3528,L07 Ryan,Ryan_3_intro,10,Kobold,ไร​อัน? แน่ใจ​นะ​ว่า​ทุกอย่าง​โอเค...?
+8dff101cb2298f67,L07 Ryan,Ryan_3_intro,12,Ryan,ไม่ ไม่ค่อย​เลย
+1990b3ec8cd88a48,L07 Ryan,Ryan_3_intro,13,Ryan,เดี๋ยว​จะ​เล่า​ให้​ฟัง ตอนนี้​ช่วย​เปิด​ประตู​ก่อน​ได้​ไหม?
+85fec70372b092bb,L07 Ryan,Ryan_3_intro,14,Kobold/Conrad,ได้
+33e04b2f805d0e1a,L07 Ryan,Ryan_3_intro,15,Kobold,โอเค แต่​หวัง​ว่า​นาย​จะ​ไหว​นะ
+f51bead488e14b65,L07 Ryan,Ryan_3_intro,16,Ryan/Conrad/Alexander,ขอบใจ
+aac215f048e8ee54,L07 Ryan,Ryan_3_intro,17,Ryan,ฉัน​ไหว
+# --- progress: Ryan_3_required ---
+eb256f4dcddfee94,L07 Ryan,Ryan_3_required,1,Ryan,เรื่อง​เมื่อกี้​น่ะ
+1a17d73907f63be1,L07 Ryan,Ryan_3_required,2,Ryan,เมื่อ​ไม่​กี่​วัน​ก่อ​น...
+87a781aa9b0c0136,L07 Ryan,Ryan_3_required,3,Ryan,ฉัน​เลิก​กับ​แฟน​แล้ว...
+f68b8d76138a2a69,L07 Ryan,Ryan_3_required,4,Kobold,โอ้... เสียใจ​ด้วย​จริง ๆ
+d6077ef6cdb59db1,L07 Ryan,Ryan_3_required,5,Kobold,โธ่ ไร​อัน
+d296154ff317814a,L07 Ryan,Ryan_3_required,6,Ryan,ไม่เป็นไร ฉัน​ต้อง​ทำ เธอ​ไม่​ได้​ทำให้​ฉัน​มีความสุข
+8a2e2803c1bc2ea7,L07 Ryan,Ryan_3_required,7,Ryan,ฉัน​ก็​ไม่​ได้​ทำให้​เธอ​มีความสุข​เหมือนกัน
+d9e1edc2e966ec26,L07 Ryan,Ryan_3_required,8,Ryan,แต่​ต่อ​ให้หา​เหตุผล​แค่​ไหน มัน​ก็​ไม่​รู้สึก​ดีขึ้น​หรอก
+769c31039308d04d,L07 Ryan,Ryan_3_required,9,Kobold,ดีใจ​ที่​นาย​เลือก​สิ่ง​ที่​ดี​ที่สุด​สำหรับ​ตัวเอง​ได้
+460c50191c964260,L07 Ryan,Ryan_3_required,10,Kobold,การ​จบ​อะไร​สัก​อย่าง​ไม่​เคย​ง่าย​เลย
+8825be71018f7f88,L07 Ryan,Ryan_3_required,11,Ryan,อืม อย่าง​น้อย​เพราะ​เรื่อง​นี้​ฉัน​ก็ได้​เจอ​นาย
+3e43d550d0572c10,L07 Ryan,Ryan_3_required,12,Ryan,อืม... ไม่​ง่าย​จริง ๆ
+8948d011be56c311,L07 Ryan,Ryan_3_required,13,Ryan,แต่​อย่าง​น้อย​ฉัน​ก็ได้​เจอ​นาย!
+e484863d425a58e8,L07 Ryan,Ryan_3_required,14,Kobold,ขอบใจ​นะ ไร​อัน ฉัน​ก็​ดีใจ​ที่​ได้​เจอ​นาย​เหมือนกัน
+1af4464c602a423a,L07 Ryan,Ryan_3_required,15,Kobold/Conrad,โธ่ ขอบใจ
+e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,การ​ล้าง​พวก​นี้​ทำให้​อะ​ไร ๆ ง่าย​ขึ้น​จริง ๆ
+94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,แถม​ยัง​รู้สึก​ดีมาก​ด้วย
+# --- outro: Ryan_3_Outro ---
+01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,น่าจะ​ครบ​หมด​แล้ว
+26fef1581467462d,L07 Ryan,Ryan_3_Outro,2,Ryan,ขอบใจ​นะ นาย​ทำให้​เรื่อง​นี้​ผ่าน​ไป​ได้​ง่าย​ขึ้น​เยอะ
+021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,ที่นี่​ยินดีต้อนรับ​นาย​เสมอ ไร​อัน
+dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,นาย​เป็น​ลูกค้า​คนโปรด​ของ​ฉัน​คน​นึง​เลย!
+7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,นาย​ทำให้​ฉัน​รู้สึก​เป็นที่​ต้อนรับ​เสมอ
+c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,โธ่... ขอบใจ จะ​แปลก​ไหม​ถ้า​ฉัน​คิด​ว่า​นาย​เป็น...
+e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,เพื่อน​ที่​ดี​จริง ๆ?
+674d9f74349966ca,L07 Ryan,Ryan_3_Outro,8,Kobold,<size=70%><i>โอ้...</i> ไม่​แปลก​เลย เจ๋ง​มาก​เลย​ต่างหาก
+e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,ฉัน​ก็​คิด​ว่า​นาย​เป็นเพื่อน​ที่​ดี​เหมือนกัน
+29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,โอ้... ดีใจ​จัง!
+51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,โธ่เอ๊ย... ขอบใจ​นะ
+91c56a4e9213a4b0,L07 Ryan,Ryan_3_Outro,12,Ryan,โอเค ฉัน​ไม่​ควร​กวน​นาย​นาน​กว่า​นี้
+523791f6550c3508,L07 Ryan,Ryan_3_Outro,13,Ryan,ไว้​จะ​มา​อีก​นะ?
+667cadad21e120f0,L07 Ryan,Ryan_3_Outro,14,Kobold,โอเค! จะ​ไป​เปิด​ประตู​ให้
+18f0197237db4a52,L07 Ryan,Ryan_3_Outro,15,Kobold,ตั้งตารอ​เจอ​นาย​นะ
+952d54adb781ab58,L07 Ryan,Ryan_3_Outro,16,Ryan,ขอบใจ แล้ว​เจอกัน​เร็ว ๆ นี้
+
+# ===== Level 8: Conrad (Sunny) | sets DeliveredMountFrame =====
+# --- intro: Conrad_Intro_3 ---
+c2ce80cda53b3e12,L08 Conrad,Conrad_Intro_3,1,Conrad,เฮ้ ไอ้​หมา​ตัว​โต
+ef92f8b9796dcaad,L08 Conrad,Conrad_Intro_3,2,Kobold,ฉัน​เป็น... โค​บอลด์​นะ
+3faf8798d815fbcc,L08 Conrad,Conrad_Intro_3,3,Kobold,สวัสดี คอนราด
+fe810d1ef6bbca3f,L08 Conrad,Conrad_Intro_3,4,Conrad,เอ่อ... ใช่
+fe59e121f203b436,L08 Conrad,Conrad_Intro_3,5,Conrad,เฮะ ใช่ ฉัน​เอง
+a911f2d8e77038c7,L08 Conrad,Conrad_Intro_3,6,Conrad,ดูเหมือน​ของ​ส่ง​มาถึง​แล้ว​นะ?
+403e617f71fdbd7d,L08 Conrad,Conrad_Intro_3,7,Conrad,ใน​ลัง​ที่​เปิด​แล้ว​พวก​นั้น​มี​อะไร?
+2fa26a557574f06d,L08 Conrad,Conrad_Intro_3,8,Kobold,ฉัน​ได้​แท่น​มา​แล้ว
+ba689238087b547e,L08 Conrad,Conrad_Intro_3,9,Kobold,แท่น​ที่​นาย​ขอ​ไว้​ไง
+a1d3f8d9c7e16f54,L08 Conrad,Conrad_Intro_3,10,Conrad,<size=160%>เยี่ยม​ไป​เลย​โว้ย!
+24f5fb4981989960,L08 Conrad,Conrad_Intro_3,11,Conrad,<size=100%>หมายถึง... เจ๋ง
+086c8ec178979d9b,L08 Conrad,Conrad_Intro_3,12,Conrad,ทีนี้​ให้​ฉัน​เข้าไป! อยาก​ลอง​เจ้า​นั่น​แล้ว!
+8b742c36f3da7059,L08 Conrad,Conrad_Intro_3,13,Kobold,โอเค...
+3a1b28ba58f06ac8,L08 Conrad,Conrad_Intro_3,14,Kobold,จะ​ไป​เปิด​ประตู​ให้
+c2ac4efff25192d6,L08 Conrad,Conrad_Intro_3,15,Conrad,อย่า... ทำ​เสียง​แบบ​นั้น​สิ
+faa0b4a641d866a4,L08 Conrad,Conrad_Intro_3,17,Conrad,ไป​กัน​เลย~!
+f030a371b944e9be,L08 Conrad,Conrad_Intro_3,18,Conrad/Ryan,ใช่​เลย!
+# --- phone: Conrad_3_PhoneTutorial ---
+eb8e96751da9e008,L08 Conrad,Conrad_3_PhoneTutorial,1,Phone,เรา​ได้รับ​คำขอ​เรื่อง​แท่น​แล้ว!
+4369749a5a3394e9,L08 Conrad,Conrad_3_PhoneTutorial,2,Kobold,หา..?
+339397c0d1c1f21f,L08 Conrad,Conrad_3_PhoneTutorial,3,Phone,มาถึง​เมื่อเช้านี้ น่าจะ​อยู่​ใกล้​ประตู
+f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,ใช้​ชะแลง​งัด​เปิด​แล้ว​เอา​ไป​เก็บ​ใน​ห้องเก็บของ​ด้วย​นะ
+435c7e974ca94c84,L08 Conrad,Conrad_3_PhoneTutorial,6,Phone,ยอดเยี่ยม ขอให้​เป็น​วันที่ <i>ได้​งาน​ได้การ</i>
+# --- idle: Conrad_idle_3_1 ---
+37950c8a8db90865,L08 Conrad,Conrad_idle_3_1,1,Conrad,ถ้า​วาง​แท่น​ให้ ฉัน​จะ​จัดการ​เอง
+8f224115163c0dbe,L08 Conrad,Conrad_idle_3_1,2,Conrad,เฮ้ ใช้​มือ​กับ​ไอ้​จ้อน​ของ​ฉัน​สิ... มัน​เสียว!
+785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,แล้ว เอ่อ ช่วย​เปิด​ประตู​หน่อย​ได้​ไหม?
+# --- idle: Conrad_idle_3_2 ---
+c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,ชอบ​แท่น​ที่​นาย​เลือก​นะ ช่วย​หยิบ​มา​หน่อย​ได้​ไหม?
+4557c47a615d9810,L08 Conrad,Conrad_idle_3_2,2,Conrad,แล้ว​วว จะ​รูด​ให้​ฉัน​ไหม?
+7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,ขอบใจ​สำหรับ​เมื่อกี้ โคตร​ดี​เลย
+# --- jerkoff: Conrad_started_jerkoff_3 ---
+ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,อา ใช่ นี่แหละ.. ต่อไป
+# --- cum: Conrad_finished_jerkoff_3 ---
+10069c101bcc95c1,L08 Conrad,Conrad_finished_jerkoff_3,1,Conrad,...!
+82d37703a9140210,L08 Conrad,Conrad_finished_jerkoff_3,2,Conrad,ให้​ตาย นาย​ใช้​มือ​เป็น​จริง ๆ
+95be71f702fae4a6,L08 Conrad,Conrad_finished_jerkoff_3,5,Kobold,ฮ่า... <size=70%> อืม
+b60c2f975eedb833,L08 Conrad,Conrad_finished_jerkoff_3,6,Kobold,แน่นอน​สิ ฉัน​เป็น <i>มืออาชีพ</i> นะ
+f9e0d3cba1f3548e,L08 Conrad,Conrad_finished_jerkoff_3,7,Conrad,ดี​เสมอ​เวลา​โค​บอลด์​รู้​ว่า​ตัวเอง​ชอบ​อะไร
+0eb2a1e25a35e85e,L08 Conrad,Conrad_finished_jerkoff_3,8,Conrad,ฉัน​ก็​เหมือนกัน
+83d081eadc40b86b,L08 Conrad,Conrad_finished_jerkoff_3,10,Conrad,ใน​การ​โดน​รูด​ให้​น่ะ
+# --- cum: Conrad_Outro_3 | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+6f64e0cc9b162541,L08 Conrad,Conrad_Outro_3,1,Conrad,เฮ้ คือ ฉัน​คิด​อยู่​ว่า
+dd5acacdb6c59489,L08 Conrad,Conrad_Outro_3,2,Conrad,ถาม​ตอนนี้​อาจจะ​ดู​แปลก ๆ แต่ว่า​าา
+7f39f874a107d858,L08 Conrad,Conrad_Outro_3,3,Conrad,นาย​รู้จัก​ที่​เจ๋ง ๆ หรือ​คน​เจ๋ง ๆ ที่​ฉัน​ไป​เฮฮา​ด้วย​ได้​ไหม?
+df48dbfe82678dea,L08 Conrad,Conrad_Outro_3,4,Kobold,"<gradient=""gold""><b> ฉัน​รู้จัก​มังกร​ตัว​นึง ไร​อัน ให้​ฉัน​แนะนำ​ให้​รู้จัก​กัน​ไหม? </b></gradient><size=70%>(ปลดล็อก​คอนราด/ไร​อัน​คบ​กัน หรือ โรแมนซ์​กับ​ไร​อัน)"
+7b870878852ee72d,L08 Conrad,Conrad_Outro_3,5,Kobold,"<gradient=""gold""><b> ฉัน​ไม่​ว่า​อะไร​ถ้า​จะ​ออก​ไปเที่ยว​ด้วยกัน... </b></gradient><size=70%> (ปลดล็อก​โรแมนซ์​กับ​คอนราด)"
+ac6820f366b18b44,L08 Conrad,Conrad_Outro_3,6,Conrad,มังกร​อีก​ตัว​เหรอ? ปกติ​ฉัน​ไม่ค่อย​เข้ากับ​ใคร​ได้...
+de6f58682bdaacf9,L08 Conrad,Conrad_Outro_3,7,Kobold,โอ้ ไม่​หรอก ไร​อันเป็น​คน​น่ารัก​มาก
+d4185d9f80a34228,L08 Conrad,Conrad_Outro_3,8,Kobold,ไม่ต้อง​ห่วง เขา​นิสัย​ดีมาก
+9df619228ba627fc,L08 Conrad,Conrad_Outro_3,9,Conrad,โอเค งั้น​ฉัน​อยาก​ลองดู
+d88679eede302f8e,L08 Conrad,Conrad_Outro_3,10,Kobold,เจอ​เขา​ครั้งหน้า​จะ​ถาม​ให้​แน่นอน
+7984d45df6290f6c,L08 Conrad,Conrad_Outro_3,11,Kobold,ฉัน​ว่า​เขา​น่าจะ​ชอบ​นาย​คน​ใหม่​นะ!
+bf35fcb679c816dd,L08 Conrad,Conrad_Outro_3,12,Conrad,ขอบใจ ฉัน​ซาบซึ้ง​มาก​จริง ๆ
+d32db8ee98680d0f,L08 Conrad,Conrad_Outro_3,13,Conrad,หวัง​ว่า​นะ ฉัน​อยาก​เริ่มต้น​ใหม่​กับ​ใคร​สัก​คน​จริง ๆ
+8623a4b26a9521d8,L08 Conrad,Conrad_Outro_3,14,Conrad,แต่​ฉัน​คง​ต้อง​ไป​แล้ว​ล่ะ
+30dcd5391100eeba,L08 Conrad,Conrad_Outro_3,15,Conrad,ขอบใจ​สำหรับ​คำแนะนำ!
+f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,ไม่ต้อง​ขอบใจ​หรอก จะ​ไป​เปิด​ประตู​ให้
+404cba15a4acdcfe,L08 Conrad,Conrad_Outro_3,17,Kobold,แน่นอน
+8bf9f7d2ecce0105,L08 Conrad,Conrad_Outro_3,18,Conrad,โอ้ว​วว
+8929fe2569ae7455,L08 Conrad,Conrad_Outro_3,19,Conrad,ฉัน​ว่า​ฉัน​ชอบ​นะ!
+2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,นาย​เซ็กซี่​ใช้ได้​เลย
+c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...แล้วก็​ใจดี
+296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,ฉัน​ก็​คิด​ว่า​นาย​พิเศษ​เหมือนกัน
+17cf3cc7179b6817,L08 Conrad,Conrad_Outro_3,24,Conrad,นั่น... ครั้งแรก​เลย​ที่​นาย​ยิ๊บ​ให้​ฉัน
+c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,ภาษา​โค​บอลด์​แปล​ว่า​นาย​ทำได้​ดีมาก
+6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,โอ้... ฮ่า ชอบ​จัง
+8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,ได้ยิน​แบบ​นั้น​แล้ว​รู้สึก​ดี​จัง
+e8ae0da9edb0a314,L08 Conrad,Conrad_Outro_3,28,Conrad,แล้ว ไป​เดต​กัน​ไหม?
+781cbcfcd7920f3f,L08 Conrad,Conrad_Outro_3,29,Kobold,เร็ว​ไป​หน่อย​นะ... แต่​ก็ได้!
+5f9a2b795615ba6a,L08 Conrad,Conrad_Outro_3,30,Kobold,ได้
+508f3cf175389841,L08 Conrad,Conrad_Outro_3,31,Conrad,ฉัน​อยาก​ลองดู!
+c282dd1133ff96d4,L08 Conrad,Conrad_Outro_3,32,Conrad,โอเค! งั้น​ไว้​กลับมา​ใหม่​นะ
+bfc65061708379d6,L08 Conrad,Conrad_Outro_3,33,Kobold,<size=70%><i> ให้​ตาย​เถอะ ฉัน​เพิ่ง​ได้​เดต​กับ​มังกร
+cf78ef26075ae223,L08 Conrad,Conrad_Outro_3,34,Kobold,ได้​เลย! จะ​ไป​เปิด​ประตู​ให้
+6b8aa4fb55221728,L08 Conrad,Conrad_Outro_3,35,Conrad,หืม?
+c395eb5878798c08,L08 Conrad,Conrad_Outro_3,36,Kobold,อ๊ะ! เปล่า จะ​ไป​เปิด​ประตู​ให้
+102e28eb7d17c7dd,L08 Conrad,Conrad_Outro_3,37,Conrad,อ้อ โอเค ขอบใจ
+ca518354e1f14735,L08 Conrad,Conrad_Outro_3,38,Conrad,โอเค ขอบใจ
+# --- cum: Conrad_finished_jerkoff_3 ---
+5dffcc40132f0ec4,L08 Conrad,Conrad_finished_jerkoff_3,11,Conrad,ทีนี้​ก็​เล็ง​แท่น​อยู่...
+45c2b89acdcfd55d,L08 Conrad,Conrad_finished_jerkoff_3,12,Conrad,ขอ​ลอง​หน่อย!
+57725c300be82fa5,L08 Conrad,Conrad_finished_jerkoff_3,13,Kobold,อ้อ โอเค จะ​ไป​หยิบ​มา​ให้
+1976e7477a26b680,L08 Conrad,Conrad_finished_jerkoff_3,14,Kobold/Ryan,ได้​เลย!
+9e50b8e48f012f1f,L08 Conrad,Conrad_finished_jerkoff_3,15,Conrad,เยี่ยม​โว้ย
+# --- mount_start: Conrad_placed_mount_3 ---
+b9778eb1fe076168,L08 Conrad,Conrad_placed_mount_3,1,Conrad,ฮ่า! แท่น​อยู่​นั่นไง!
+86b1b615d536c6c9,L08 Conrad,Conrad_placed_mount_3,2,Conrad,คื<size=90%>อ<size=80%>อ<size=70%>อ<size=60%>อ... <size=100%>ฉัน​ไม่​ได้​สกปรก แต่​ฉัน​น่ะ <i>~ลามก~</i> เข้าใจ​ไหม?
+449244744c8bbd8a,L08 Conrad,Conrad_placed_mount_3,3,Kobold,งั้น​นาย​มา​ก็​แค่​จะ...
+f8c28806b84cad3d,L08 Conrad,Conrad_placed_mount_3,4,Kobold,อืม ราคา​ไม่​แพง​เท่าไหร่
+cd4ecc87775c0780,L08 Conrad,Conrad_placed_mount_3,5,Conrad,เอา​อะไร​สัก​อย่าง แล้ว​หวัง​ว่า​จะ​ได้​รูด​ด้วย
+01e3f480dfe7930d,L08 Conrad,Conrad_placed_mount_3,6,Conrad,ได้​รูด​แล้วก็​เอา​แท่น​นี่
+7f9240260973e0ce,L08 Conrad,Conrad_placed_mount_3,7,Kobold,นาย... ตรง​มาก​เลย​นะ
+e0b48878cb57c01f,L08 Conrad,Conrad_placed_mount_3,8,Conrad,แน่นอน​สิ! ฉัน​รู้​ว่า​ฉัน​น่ะ...
+1bd882b6a6343777,L08 Conrad,Conrad_placed_mount_3,9,Conrad,เจ๋ง
+557321787688acff,L08 Conrad,Conrad_placed_mount_3,11,Conrad,เอาเถอะ จะ​ใช้​ไอ้​นี่​ละ​นะ!
+78e9c032e409d82d,L08 Conrad,Conrad_placed_mount_3,12,Conrad,ฮ่า ดี มา​เปิดซิง​เจ้า​นี่​กัน!
+# --- mount_finish: Conrad_finished_mount_3 ---
+81b18a3cc2f69ea7,L08 Conrad,Conrad_finished_mount_3,1,Conrad,โห
+748b06c5c3f0552b,L08 Conrad,Conrad_finished_mount_3,2,Conrad,นั่น
+e92da2c203110197,L08 Conrad,Conrad_finished_mount_3,3,Conrad,นั่น​มัน <i>สุดยอด</i> เลย
+bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,นาย​จัด​หนัก​จริง ๆ
+67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,ดู​สนุก​ดี​นะ
+65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,สนุก​เสมอ​แหละ~
+5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,สนุก​สิ​โว้ย!
+d45c21a765584d3b,L08 Conrad,Conrad_finished_mount_3,8,Kobold,ดีแล้ว... แล้ว​ยังไง​ต่อ?
+ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,ทีนี้​ก็​ยก​สอง!
+18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,อีกแล้ว​เห​รอ...?
+f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,ไม่ ๆ นาย​เป็น​ช่าง​ล้าง​มี​ใบรับรอง​ใช่ไหม?
+5117686f8d936e47,L08 Conrad,Conrad_finished_mount_3,12,Conrad,แปล​ว่า​นาย​รู้​วิธี​ลงมือ​ไง!
+a441237f7aea8d53,L08 Conrad,Conrad_finished_mount_3,13,Kobold,โอ้ <size=70%>โอเค
+d2e773775c5bf598,L08 Conrad,Conrad_finished_mount_3,14,Kobold,ได้ จะ​จัดการ​ให้
+d126a37255fb8144,L08 Conrad,Conrad_finished_mount_3,15,Conrad,ฮ่า ใช่ <size=70%><i>เจ๋ง​ดี​ที่​โรงเรียน​สอน​ล้าง​สอน​รูด​ให้​มังกร​ด้วย...
+fba1924f5f79713e,L08 Conrad,Conrad_finished_mount_3,16,Conrad,งั้น ขอให้​โชคดี​กับ​การ​เอา​มือ​รอบตัว​ฉัน​ให้​หมด​นะ
+# --- mount_finish: Conrad_OutroDirty ---
+9b363afaa9dc8a5f,L08 Conrad,Conrad_OutroDirty,1,Conrad,ฉัน​ยัง​สกปรก​อยู่เลย!
+44aa54eec876d22e,L08 Conrad,Conrad_OutroDirty,2,Kobold,โทษ​ที
+85d8ae405abc5722,L08 Conrad,Conrad_OutroDirty,3,Kobold,อุ๊ปส์
+# --- mount_finish: Conrad_OutroSoapy ---
+d7bb84bfc322967e,L08 Conrad,Conrad_OutroSoapy,1,Conrad,ฉัน​ยังมี​ฟองสบู่​เต็มตัว​เลย!
+# --- mount_finish: ErrorHasOccurred ---
+9241fa9324783298,L08 Conrad,ErrorHasOccurred,1,ErrorHasOccurred,โอ้ ฉิบ มี​อะไร​ผิดพลาด
+fbc99d34c317d087,L08 Conrad,ErrorHasOccurred,2,ErrorHasOccurred,ถ้า​คุณ​เห็น​ข้อความ​นี้ กรุณา​ตาม nael หรือ​ส่ง​รายงาน​บั๊ก
+be7e08152c8d1556,L08 Conrad,ErrorHasOccurred,3,ErrorHasOccurred,ขอโทษ!
+# --- mount_finish: Conrad_Outro | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+c571db95fc1e4f78,L08 Conrad,Conrad_Outro,4,Conrad,อา สะอาดหมดจด​แถม​เบาตัว​ขึ้น​ด้วย
+e374c1b3adfa0cf8,L08 Conrad,Conrad_Outro,5,Conrad,ขอบใจ​นะ​เพื่อน งั้น​เจอกัน​พรุ่งนี้
+
+# ===== Level 9: Alexander (Sunny) =====
+# --- intro: Alexander_3_intro ---
+36cd0d2b83086eeb,L09 Alexander,Alexander_3_intro,1,Alexander/Conrad,สวัสดี
+bc15783521246457,L09 Alexander,Alexander_3_intro,2,Kobold/Alexander,อเล็กซานเดอร์!
+3cbf350078abb1bf,L09 Alexander,Alexander_3_intro,3,Kobold,สวัสดี ยินดีต้อนรับ​กลับมา!
+516ad83185e96dfb,L09 Alexander,Alexander_3_intro,4,Alexander,ฮ่า​ฮ่า ใช่ ดีใจ​ที่​ได้​เจอ​คุณ
+f1d9c9797985d9a2,L09 Alexander,Alexander_3_intro,5,Alexander,ดีใจ​ที่​ได้​กลับมา
+9f59b5e841a0d2ad,L09 Alexander,Alexander_3_intro,6,Alexander,ดูเหมือน​ผม​จะ​เปื้อน​หมึก​ไป​ทั้งตัว!
+fda3c419d5174cb2,L09 Alexander,Alexander_3_intro,7,Alexander,แย่มาก​เลย​ใช่ไหม?
+b5d76009b084e709,L09 Alexander,Alexander_3_intro,8,Kobold,ก็​นั่นแหละ​ที่​ฉัน​อยู่​ตรงนี้!
+4f921c2b968fe884,L09 Alexander,Alexander_3_intro,9,Kobold,โอ้โห เปื้อน​เต็มตัว​เลย​จริง ๆ!
+256ae0739ddd2dbc,L09 Alexander,Alexander_3_intro,10,Alexander,ใช่​แล้ว! ตอนนี้​คุณ​เป็น​โค​บอลด์​คนเดียว​ที่​ผม​อยาก​ให้​ล้าง​ให้
+f114f26d23d53dc1,L09 Alexander,Alexander_3_intro,11,Kobold,โธ่ ขอบคุณ​นะ อเล็กซานเดอร์
+1f01b93ae3777189,L09 Alexander,Alexander_3_intro,12,Kobold,แล้ว​ช่าง​ล้าง​ส่วนตัว​ของ​คุณ​ล่ะ?
+92b7fef7172975fa,L09 Alexander,Alexander_3_intro,13,Alexander,แน่นอน! คุณ​บริหาร​ร้าน​ได้​ดีมาก
+df2a4df0381808af,L09 Alexander,Alexander_3_intro,14,Alexander,ไม่ต้อง​ห่วง สหภาพ​ช่าง​ล้าง​น่ะ... มีอำนาจ​กว่า​ผม
+1bdc19a56262fbc5,L09 Alexander,Alexander_3_intro,15,Alexander,<size=70%>พวกเขา​ยัง​ได้​เงินเดือน​จาก​ผม​อยู่
+b0134babb7e75550,L09 Alexander,Alexander_3_intro,16,Alexander,เป็น​ข้ออ้าง​ที่​ดี​ที่จะ​ได้​มาหา​โค​บอลด์​คนโปรด​ของ​ผม
+7d926d6395419270,L09 Alexander,Alexander_3_intro,17,Kobold,โธ่... ขอบคุณ!
+6ad0fe6dcc2efa30,L09 Alexander,Alexander_3_intro,19,Alexander,แน่นอน คุณ​บริหาร​ร้าน​ได้​ดีมาก
+f38b3b8fcf6bf031,L09 Alexander,Alexander_3_intro,20,Alexander,อะไร? คำชม​ที่​จริงใจ​ไม่​ทำร้าย​ใคร​หรอก!
+350955b9410d95a5,L09 Alexander,Alexander_3_intro,21,Kobold,ไม่​คิด​เลย​ว่า​คุณ​จะ​เป็น​คน​เลอะเทอะ​ขนาด​นี้!
+3cf6fd8e7e50386c,L09 Alexander,Alexander_3_intro,22,Kobold,ทำไม​ถึง​เปื้อน​หมึก​ล่ะ?
+5d2cee363540fc7a,L09 Alexander,Alexander_3_intro,23,Alexander,ผม... อืม
+26b3089f5ee4a463,L09 Alexander,Alexander_3_intro,24,Alexander,ผม <i>คิด​ว่า </i> ผม​คง​ทำ​ขวด​หมึก​หก <i>ระหว่างทาง​มา​ที่นี่</i> ซุ่มซ่าม​จริง ๆ!
+7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,25,Kobold,'คิด​ว่า' 'ระหว่างทาง​มา​ที่นี่' เหรอ? งั้น​ก่อนหน้านี้​คุณ​ก็​ไม่​ได้​เปื้อน​หมึก​สิ...
+b356a126e4318643,L09 Alexander,Alexander_3_intro,26,Alexander/Kobold/Ryan,อ้อ
+cd5592e5e3140daa,L09 Alexander,Alexander_3_intro,27,Alexander,ใช่
+2a0200c46ee1b662,L09 Alexander,Alexander_3_intro,29,Alexander,พูด​ตามตรง ผม​ทำตัว​เลอะ​เพื่อ​จะ​ได้มา​ที่นี่
+b4d680dde83d7847,L09 Alexander,Alexander_3_intro,30,Kobold,โธ่เอ๊ย ไม่ต้อง​เปื้อน​หมึก​ก็​มา​ทักทาย​ได้​นะ!
+42d72aa4b0b39750,L09 Alexander,Alexander_3_intro,31,Kobold,อ้อ! งั้น​ต้อง​รีบ​ให้​คุณ​เข้ามา จะ​ไป​เปิด​ประตู​ให้
+9eb8cd756595cf24,L09 Alexander,Alexander_3_intro,32,Alexander,จริง​เหรอ?
+5f9846717183dcc1,L09 Alexander,Alexander_3_intro,33,Alexander,จะ​จำไว้ ผม​ชิน​กับ​การ​ที่​ทุกอย่าง​เป็นเรื่อง​แลกเปลี่ยน
+2ea5b920a0a9a519,L09 Alexander,Alexander_3_intro,34,Kobold,ฉัน​ดีใจ​ที่​ได้​เจอ​คุณ​เสมอ จะ​ไป​เปิด​ประตู​ให้
+# --- progress: Alexander_3_required ---
+a59f7f35644dcdbb,L09 Alexander,Alexander_3_required,1,Alexander,ศาสตราจารย์​อิก​วิกซ์... เพื่อนร่วมงาน​ที่​ลุกไหม้​ตัวเอง​เมื่อ​คราวก่อน
+10b4110dad07d576,L09 Alexander,Alexander_3_required,2,Alexander,เขา​กลับมา​ทำงาน​แล้ว ขอบคุณ​ที่​ช่วย​เรื่อง​ทั้งหมด​นั่น
+b8baebdff88a847f,L09 Alexander,Alexander_3_required,3,Kobold,อืม ตอนแรก​น่ากลัว​จริง ๆ
+a2aff5b173ae96bb,L09 Alexander,Alexander_3_required,4,Kobold,อ้อ ดี​จัง ดีใจ​ที่​เขา​ไม่เป็นไร
+4b29556a255aea95,L09 Alexander,Alexander_3_required,5,Alexander,โชคดี​ที่​การตาย​จาก​การ​ลุกไหม้​เอง​เป็นเรื่อง​ที่​โลก​สมัยใหม่​ควบคุม​ได้​แล้ว​เกือบ​ทั้งหมด
+ababfd6e7703460e,L09 Alexander,Alexander_3_required,6,Alexander,ใช่​แล้ว ดีใจ​ที่​คุณ​ช่วย​ได้
+69f278cd5a2eb111,L09 Alexander,Alexander_3_required,7,Alexander,...แปลก​ดี​ที่​ได้​คุย​กับ​ใคร​สัก​คน​อย่าง​อิสระ​แบบนี้
+6221337862dcba2c,L09 Alexander,Alexander_3_required,8,Alexander,รู้สึก​เหมือน​จะ​พูด​อะไร​กับ​คุณ​ก็ได้
+cecec36c55a564ee,L09 Alexander,Alexander_3_required,9,Kobold,อะไร​ก็ได้​เลย?
+7dbde0758389bd7b,L09 Alexander,Alexander_3_required,11,Alexander,ใช่ การ​พูดตรงไปตรงมา​แบบนี้​ทำให้​กระปรี้กระเปร่า
+9bc918ab274337a8,L09 Alexander,Alexander_3_required,12,Alexander,ไม่​รู้​ทำไม แต่​มัน​รู้สึก​จริงใจ​กว่า​อะไร​ที่​คนอื่น​พูด​ทั้งหมด
+35af415ffcb7f757,L09 Alexander,Alexander_3_required,13,Alexander,ว่าแต่...
+c66fb72552f1fa4c,L09 Alexander,Alexander_3_required,14,Alexander,ผม​มี​คำถาม
+bbff7b98d6da7061,L09 Alexander,Alexander_3_required,15,Kobold,อะไร​เหรอ?
+834032dfb827138e,L09 Alexander,Alexander_3_required,16,Kobold,มี​อะไร?
+71291e2e0c7ce300,L09 Alexander,Alexander_3_required,17,Alexander,คุณ​ช่วย​ถาม <i>ผม</i> สัก​คำถาม​ได้​ไหม?
+c8ac7dce03b1b9b7,L09 Alexander,Alexander_3_required,18,Kobold,หมายความว่า​ยังไง?
+10f232e68c0c0443,L09 Alexander,Alexander_3_required,19,Kobold,คำถาม​แบบ​ไหน?
+5956cbc43e2c8c2b,L09 Alexander,Alexander_3_required,20,Alexander,ผม​แค่​อยาก​ให้​คุณ​ถาม​ผม​สัก​คำถาม คำถาม​อะไร​ก็ได้
+7bf3b1fff483809e,L09 Alexander,Alexander_3_required,21,Alexander,อะไร​ก็ได้ ผม​แค่​อยากรู้
+# --- progress: Alexander_questions ---
+9da08a79c3f86ee0,L09 Alexander,Alexander_questions,1,Kobold,การสอน​เป็น​ยังไง​บ้าง?
+337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold/Alexander,ชอบ​สีม่วง​ไหม?
+70523c9a506d9676,L09 Alexander,Alexander_questions,3,Kobold,ชอบ​การ​เป็นตัว​ใหญ่​ไหม?
+3fbd83d375d6fa05,L09 Alexander,Alexander_questions,4,Kobold,เลข 7 รสชาติ​เป็น​ยังไง?
+767b6d6bdc5b806a,L09 Alexander,Alexander_questions,5,Kobold,คิด​ยังไง​กับ​ฉัน?
+8ed9fdad93b0f690,L09 Alexander,Alexander_questions,6,Kobold,คุณ​มีความสุข​ไหม?
+e5263ec7185a5166,L09 Alexander,Alexander_questions,7,Kobold,ตรา​ของ​คุณ​เท่​ดี มัน​คือ​อะไร?
+bc116106c2929c42,L09 Alexander,Alexander_questions,8,Kobold,อยาก​ถาม​แค่​นี้แหละ
+a04d5511812a415b,L09 Alexander,Alexander_questions,9,Alexander,มัน​คือ​ความฝัน​ของ​ผม
+6861f7c274e3de2c,L09 Alexander,Alexander_questions,10,Alexander,ผม​ชอบ​การ​ได้​เป็น​ส่วนหนึ่ง​ใน​ชีวิต​ของ​คน​มากมาย​ใน​ทาง​ที่​ดี
+8743d170a315e668,L09 Alexander,Alexander_questions,11,Alexander,...น่า​หวั่นใจ​ที่​รู้​ว่า​พวกเขา​เชิดหน้า​มอง​ผม​มาก​แค่​ไหน
+7aebce70febcfb8c,L09 Alexander,Alexander_questions,12,Alexander,และ​ไม่​ใช่​แค่​ทางกายภาพ
+0ad864ff0c0b3f21,L09 Alexander,Alexander_questions,13,Kobold,สอน​วิชา​อะไร​บ้าง?
+24244e96851180ca,L09 Alexander,Alexander_questions,14,Kobold,คุณ​เป็น​ตัวอย่าง​ที่​ดี​นะ
+f58328ac8301872f,L09 Alexander,Alexander_questions,15,Alexander,หลัก ๆ คือ​เล่นแร่แปรธาตุ บางครั้ง​ก็​ประวัติศาสตร์​โลก
+771e997edf959694,L09 Alexander,Alexander_questions,16,Alexander,ผม​พยายาม​จะ​เข้าสู่​สาย​สังคมศาสตร์​ด้วย
+9986ef8860d34d9e,L09 Alexander,Alexander_questions,17,Alexander,นั่นแหละ​ที่​น่ากลัว
+e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,ผม​ชอบ​ที่อยู่​กับ​คุณ​แล้ว​ไม่​กลัว​ความล้มเหลว
+818a4fe04a76ce19,L09 Alexander,Alexander_questions,19,Alexander,ถาม​เพราะ​ผม​สี​ลา​เวนเดอร์​เหรอ?
+54a1b0b8e5f6fa32,L09 Alexander,Alexander_questions,20,Kobold,ใช่
+046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,เปล่า
+b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,ก็ ผม​ชอบ​สี​นี้​จริง ๆ แต่​คิด​ว่า​ไม่​เกี่ยวกับ​สี​ตัว​ของ​ผม​นะ
+bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,ผม​ชอบ​สี​นี้​จริง ๆ แม้​จะ​คิด​ว่า​ไม่​เกี่ยวกับ​สี​ตัว​ของ​ผม​เอง​ก็ตาม
+line:ef052302,L09 Alexander,Alexander_questions,24,Alexander,แล้ว​คุณ​ล่ะ ชอบ​สีม่วง​ไหม?
+525ba3c4a2511183,L09 Alexander,Alexander_questions,27,Alexander,อ้อ ดี
+3885f7429496059d,L09 Alexander,Alexander_questions,29,Alexander,อ้อ โอเค
+8133434681c5d0c2,L09 Alexander,Alexander_questions,31,Alexander,เป็น​คำถาม​ที่​ตอบ​ยาก​ทีเดียว
+a3e6072e41a2ff07,L09 Alexander,Alexander_questions,32,Alexander,ผม​ชอบ​บางส่วน ความเคารพ​เป็นเรื่อง​น่ายินดี...
+b1ca0efdea534b71,L09 Alexander,Alexander_questions,33,Alexander,แต่​ความเคารพ​นั้น​มา​พร้อม​ความคาดหวัง​ให้​ทำตัว​สม​กับ​รูปลักษณ์ มัน​เครียด​อย่าง​เหลือเชื่อ
+186edb7d24ea9459,L09 Alexander,Alexander_questions,34,Kobold,อยู่​กับ​ฉัน​จะ​ทำตัว​ยังไง​ก็ได้​นะ
+1a6be1fd03e5ae6f,L09 Alexander,Alexander_questions,35,Kobold,ฉัน​ชอบ​คุณ​ใน​แบบ​ที่​คุณ​เป็น
+08063aff652b7108,L09 Alexander,Alexander_questions,36,Alexander,พูด​แบบ​นั้น​ใจ​ดีมาก​เลย
+4f9390dd28090827,L09 Alexander,Alexander_questions,37,Alexander,ผม​อยาก​เปิดใจ​มากกว่า​นี้ มัน​รู้สึก​ดี
+b38834ce4594ad5c,L09 Alexander,Alexander_questions,38,Alexander,มะนาว​สีเหลือง
+5f6bb166b079c336,L09 Alexander,Alexander_questions,39,Kobold,ไม่​จริง​น่า
+aac4af2b645cf88e,L09 Alexander,Alexander_questions,40,Kobold,แบ​บ... เลมอน​เหรอ?
+0ee250681eda1a08,L09 Alexander,Alexander_questions,41,Alexander,'จริง​สิ' ไม่​มี​อะไร​ที่​ผม​มั่นใจ​ไป​กว่า​นี้​อีกแล้ว
+b83a1658171971d7,L09 Alexander,Alexander_questions,42,Alexander,ไม่ มะนาว​ที่​เป็น​สีเหลือง
+a87e0094e62cb429,L09 Alexander,Alexander_questions,43,Kobold,คุณ​เป็น​ศาสตราจารย์​นี่ ต้อง​ถูก​แน่ ๆ
+e154199e27c1d4a3,L09 Alexander,Alexander_questions,45,Alexander,นั่น​คือ​การ​อ้าง​อำนาจ​ซึ่ง​เป็น​ตรรกะ​วิบัติ แต่​ก็​ใช่ ผม​ถูก
+0c137b35abd3f637,L09 Alexander,Alexander_questions,47,Alexander,คุณ​น่ะ...
+d4efe0db738b52b5,L09 Alexander,Alexander_questions,48,Alexander,เป็น​สิ่งผิดปกติ
+55c3e5daec20a64d,L09 Alexander,Alexander_questions,49,Kobold,หา?
+2c291db1ddbe2b9d,L09 Alexander,Alexander_questions,50,Kobold,นั่น​เรื่อง​ดี​หรือเปล่า...?
+df2bc10ba434d57e,L09 Alexander,Alexander_questions,51,Alexander,หมายถึง​คุณ​ไม่​เหมือน​ใคร
+019d328b739d99e6,L09 Alexander,Alexander_questions,52,Kobold,ใน​ทาง​ที่​ดี​เหรอ?
+c2667b3b3dc54c1a,L09 Alexander,Alexander_questions,53,Kobold,ใน​ทาง​ที่​ไม่​ดี​เหรอ?
+4f9b4a3cd9b0261a,L09 Alexander,Alexander_questions,54,Alexander,แน่นอน! คุณวิเศษ​มาก
+ebb1884c75b23e27,L09 Alexander,Alexander_questions,55,Alexander,โอ้​ดวงดาว! ไม่ ๆ คุณ​ยอดเยี่ยม
+3b2c32e616b24822,L09 Alexander,Alexander_questions,56,Alexander,ใช่ คุณ​เป็น​คน​ที่อยู่​ด้วย​แล้ว​ดีมาก
+7e6a62b6d8659273,L09 Alexander,Alexander_questions,57,Alexander,คุณ​เป็น​คน​แรก​ที่​ผม​เจอ ที่​คาดหวัง​จาก​ผม​แค่​อย่าง​เดียว​คือ​ให้​ผม​เป็น...
+c48241cd21bb0d91,L09 Alexander,Alexander_questions,58,Alexander,ตัวเอง
+5a4d28241178ab01,L09 Alexander,Alexander_questions,59,Alexander,มี​สิ
+216bb6e650af4cfc,L09 Alexander,Alexander_questions,60,Alexander,ผม​เชื่อ​ว่า​ส่วนหนึ่ง​เป็น​เพราะ​คุณ
+91ff270d6aaba6a4,L09 Alexander,Alexander_questions,61,Kobold,แต่​ฉัน​เป็น​แค่​ช่าง​ล้าง​ของ​คุณ​นะ?
+f06f453ab3d6251f,L09 Alexander,Alexander_questions,62,Kobold,น่ารัก​มาก​เลย
+8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,63,Alexander,ผม​รู้ แต่​การ​ได้​เปิดใจ​กับ​ใคร​สัก​คน แม้แต่​นาน ๆ ครั้ง...
+61639ef55caefda4,L09 Alexander,Alexander_questions,64,Alexander,มัน​ช่วย​ได้​มหาศาล
+22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,66,Alexander,การ​ได้​เปิดใจ​กับ​ใคร​สัก​คน แม้แต่​นาน ๆ ครั้ง...
+439d8da114ab9162,L09 Alexander,Alexander_questions,68,Alexander,ขอบคุณ​สำหรับ​สิ่ง​นั้น
+33d3f6495bad4d3c,L09 Alexander,Alexander_questions,69,Alexander,อ้อ ตรา​รอบ​หัว​ของ​ผม​น่ะ​เหรอ?
+91d69b4f1f9739cb,L09 Alexander,Alexander_questions,70,Alexander,หลาย​คน​คิด​ว่า​เป็น​ส่วนหนึ่ง​ของ​ร่างกาย
+dd0f2ff5e303f61a,L09 Alexander,Alexander_questions,71,Alexander,แต่​จริง ๆ เป็น​เครื่องประดับ! ตรา​ประจำ​ตระกูล​ของ​ผม คือ​ว่า...
+7271f9e9b21e5401,L09 Alexander,Alexander_questions,72,Alexander,ประวัติศาสตร์​มังกร​ซับซ้อน ตรา​ประดับ <size=85%> มัก​ถูก <size=70%> มังกร​สวมใส่​เพื่อ <size=55%>แสดงว่า​ตน​สังกัด​ตระกูล​ใด! <size=40%> เป็น​เครื่องหมาย​ที่​น่าสนใจ​ของ​มรดกทางวัฒนธรรม <size=35%> และ​ครอบครัว ผม​มัก​สงสัย​ว่า​ควร​สวม​ของ​ผม​ต่อไป​ไหม <size=20%> แต่​สายสัมพันธ์​ทางวัฒนธรรม​และ​ครอบครัว​ถือว่า​สำคัญ​ใน​ตำนาน​ของ​มังกร! ผม​จึง​ต้อง​ยึดถือ​สิ่ง​เหล่านี้ <size=10%> น้ำ ดิน ไฟ ลม นานมาแล้ว สี่​ชนชาติ​เคย​อยู่​ร่วมกัน​อย่าง​สงบสุข แล้ว​ทุกอย่าง​ก็​เปลี่ยนไป​เมื่อ​ชนชาติ​ไฟ​บุก​โจมตี
+line:e90fee8e,L09 Alexander,Alexander_questions,73,Kobold,โห
+0006b6926947b91b,L09 Alexander,Alexander_questions,74,Kobold,ช่วย​พูด​อีกที​ได้​ไหม?
+b6d573339ec0b66b,L09 Alexander,Alexander_questions,75,Alexander,อ้า ขอโทษ ผม​อิน​กับ​เรื่อง​พวก​นี้​มาก
+9909f3ea3dffb93e,L09 Alexander,Alexander_questions,76,Alexander,ดีใจ​ที่​คุณ​ชอบ​ตรา​ของ​ผม
+e5bccc3a053371ce,L09 Alexander,Alexander_questions,77,Alexander,...ไม่
+# --- progress: Alexander_3_required_end | if $has_asked_question ---
+c225b2626bb24d2c,L09 Alexander,Alexander_3_required_end,1,Alexander,ขอบคุณ​ที่​ถาม การ​ถูก​ถาม​คำถาม​ส่วนตัว​เป็นเรื่อง​น่ายินดี
+# --- jerkoff: Alexander_3_JerkOff_Start ---
+8342e51e14980481,L09 Alexander,Alexander_3_JerkOff_Start,1,Alexander,โอ้​ตาย... ไม่​คิด​ว่า​คุณ​จะ... ลงมือ​ขนาด​นี้
+ce664ef00487ef78,L09 Alexander,Alexander_3_JerkOff_Start,2,Alexander,<size=70%><i>ทำต่อ​ได้​ตามสบาย...</i>
+# --- cum: Alexander_3_Cum ---
+85503a54fcc74839,L09 Alexander,Alexander_3_Cum,1,Alexander,อืมฟ์ น-นั่น​มัน... ไม่ค่อย​สง่างาม​เลย
+afa89c59eece65b9,L09 Alexander,Alexander_3_Cum,2,Alexander,<size=70%><i>แต่​ก็ดี​นะ... ขอบคุณ
+# --- outro: Alexander_3_Outro ---
+d96b34ffac75e750,L09 Alexander,Alexander_3_Outro,1,Alexander,ผม <i>สะอาดหมดจด</i>
+6dae153117be9e8a,L09 Alexander,Alexander_3_Outro,2,Kobold,ฉัน​ไม่​เคย​พลาด​สัก​จุด
+941f66ab23bc1b9b,L09 Alexander,Alexander_3_Outro,4,Alexander,ผม​รู้ดี การ​ล้าง​ลึก​ให้​ความรู้สึก​ที่​ต่าง​ออก​ไป​ชัดเจน!
+4598878b44333749,L09 Alexander,Alexander_3_Outro,5,Alexander,นั่นแหละ​ที่​ผม​อยาก​ได้ยิน
+7ea92f17440d2fae,L09 Alexander,Alexander_3_Outro,6,Alexander,จะ​กลับมา​อีก ดี​จัง​ที่​มี​คุณ​เป็นเพื่อน
+7bbef8475c6cdff7,L09 Alexander,Alexander_3_Outro,7,Kobold,ตั้งตารอ​เจอ​คุณ​เร็ว ๆ นี้​นะ
+17d54d35bc089567,L09 Alexander,Alexander_3_Outro,8,Kobold,ดีใจ​ที่​คุณ​รู้สึก​สบายใจ​ที่นี่
+
+# ===== Level 10: Ryan (Sunny) | ends PicnicCompleted =====
+# --- intro: Ryan_4_intro ---
+379060351b7eda00,L10 Ryan,Ryan_4_intro,1,Ryan,<b><i><size=130%>คุณ​แนะนำ​ไร​อัน​ให้​คอนราด​หรือเปล่า?
+8a798890fe938171,L10 Ryan,Ryan_4_intro,2,Kobold,ใช่
+9390298f3fb0c5b1,L10 Ryan,Ryan_4_intro,3,Kobold,ไม่
+578f5563ae25f1ce,L10 Ryan,Ryan_4_intro,4,Kobold,โว้ว... นั่น​อะไร​ใน​ปาก​น่ะ?
+c03386d6c9efb92a,L10 Ryan,Ryan_4_intro,5,Kobold,นี่​ไร​อัน มี​อะไร​อยู่​ตรงนั้น?
+d85dcd17cab55fde,L10 Ryan,Ryan_4_intro,6,Ryan,ตะ​กล้า​ปิกนิก...
+b9c2f8ae41c83ebe,L10 Ryan,Ryan_4_intro,7,Ryan,พูด​ไม่ค่อย​ฉัด
+696058e475fae76a,L10 Ryan,Ryan_4_intro,8,Ryan,ให้​เข้าไป​หน่อย?
+1f843189eaccc2b6,L10 Ryan,Ryan_4_intro,9,Kobold,อ๊ะ! โอเค จะ​ไป​เปิด​ประตู​ให้!
+9cc8b0255238b35e,L10 Ryan,Ryan_4_intro,10,Kobold,ได้ จะ​เปิด​ให้​ทันที
+1facde273315d636,L10 Ryan,Ryan_4_intro,11,Ryan,ขอบ​ใฉ!
+# --- picnic: Ryan_egg_dialog | if $food_number ---
+ff7696a47d0cd4ed,L10 Ryan,Ryan_egg_dialog,1,Kobold,ตาย​แล้ว ฉัน​นึก​ว่า​ไข่​นั่น​เป็น​ของ​ตกแต่ง
+76dddaed85a8d844,L10 Ryan,Ryan_egg_dialog,2,Kobold,ไข่​อะไร​น่ะ?
+9fe69182b150b8b1,L10 Ryan,Ryan_egg_dialog,3,Ryan,หา? ไม่​ใช่​อยู่แล้ว!
+f5d2571561dba2b0,L10 Ryan,Ryan_egg_dialog,4,Ryan,อ้อ นาย​ไม่​ชิน​กับ​การ​กิน​ทั้ง​ฟอง​สิ​นะ
+718beb6db0dae659,L10 Ryan,Ryan_egg_dialog,5,Ryan,แบบ​นั้นแหละ​อร่อย​ที่สุด!
+c03f60d1d7bd67e5,L10 Ryan,Ryan_egg_dialog,6,Ryan,เอ่อ...
+4a7cf2bb1bd01e0b,L10 Ryan,Ryan_egg_dialog,7,Ryan,สี​ฟ้า...?
+640cee0646ecb66c,L10 Ryan,Ryan_egg_dialog,8,Ryan,ไม่ค่อย​แน่ใจ มัน​ลดราคา​อยู่​ที่ WingCo น่ะ
+f887a50c6f7d1edc,L10 Ryan,Ryan_egg_dialog,9,Ryan,แต่​อร่อย​มาก​เลย!
+# --- picnic: ryan_food_dialogue ---
+8b555a411ea346ec,L10 Ryan,ryan_food_dialogue,1,Ryan,คือ... ฉัน​คิด​เรื่อง​ความสัมพันธ์​ของ​ตัวเอง​อยู่
+03e1d33ec4a7f6e8,L10 Ryan,ryan_food_dialogue,2,Kobold,ยังไง​เหรอ?
+f1676448791feef6,L10 Ryan,ryan_food_dialogue,3,Ryan,แบบ อนาคต​ของ​ความสัมพันธ์​น่ะ
+9d2e28c9ae2ed8b4,L10 Ryan,ryan_food_dialogue,4,Ryan,ออกจะ​ตื่นเต้น​ด้วยซ้ำ
+91b32d6180935501,L10 Ryan,ryan_food_dialogue,5,Kobold,ก็​นาย​เป็น​คน​ที่​ใคร​ก็​อยากได้​นี่​นา
+e5d632fba39e2f0f,L10 Ryan,ryan_food_dialogue,6,Kobold,ตื่นเต้น​แทน​นาย​เลย!
+d228097b23b352e6,L10 Ryan,ryan_food_dialogue,7,Ryan,โธ่ นาย​นี่ จะ​ทำให้​ฉัน​เขิน​แล้ว
+d94d7310f7d31a45,L10 Ryan,ryan_food_dialogue,9,Ryan,ตั้งตารอ​ที่จะ​ได้​เจอ​คน​ใหม่ ๆ จริง ๆ
+1121175da09c0008,L10 Ryan,ryan_food_dialogue,10,Ryan,เอาล่ะ กิน​ต่อ​ไหม?
+6ebac8131d5267ac,L10 Ryan,ryan_food_dialogue,11,Ryan,อืม...
+d2c7e6789d89f523,L10 Ryan,ryan_food_dialogue,13,Ryan,ฉัน​คิด​อยู่​ว่า
+67c0ce6aff865e1c,L10 Ryan,ryan_food_dialogue,14,Ryan,หา​คน​ที่อยู่​นอก​วง​ของ​ฉัน​ตอนนี้​มัน​ยาก
+d7f23a9907b74860,L10 Ryan,ryan_food_dialogue,15,Ryan,แบบ ฉัน​รัก​คน​รอบตัว​นะ แต่​มัน​มีเรื่อง​ค้างคา​เยอะ
+99daac47d7b305f6,L10 Ryan,ryan_food_dialogue,16,Ryan,เข้าใจ​ใช่ไหม?
+1b4b607607b8c988,L10 Ryan,ryan_food_dialogue,17,Kobold,เข้าใจ​ได้
+dfcb7cbdb552d8f5,L10 Ryan,ryan_food_dialogue,18,Kobold,เข้าใจ​ว่า​ทำไม​นาย​ถึง​รู้สึก​แบบ​นั้น​หลัง​เลิกกัน อืม
+f574c59b56179de8,L10 Ryan,ryan_food_dialogue,19,Ryan,อืม ตั้งแต่​เลิกกัน​ฉัน​ก็​มองหา​อะไร​ใหม่ ๆ
+0febbd04cce87646,L10 Ryan,ryan_food_dialogue,20,Ryan,อาจจะ​เป็น​ใคร​สัก​คน?
+b7fca6004f2d5325,L10 Ryan,ryan_food_dialogue,22,Ryan,อืม หลัง​เรื่อง​แบบ​นั้น​มัน​ยาก​ที่จะ​แยกตัว​จาก​กลุ่ม​เพื่อน
+8da113ef266e587f,L10 Ryan,ryan_food_dialogue,23,Ryan,ฉัน​ยอม​ทำ​นะ แต่​อยากได้​อะไร​ใหม่ ๆ
+baf0df26ea4f2e81,L10 Ryan,ryan_food_dialogue,24,Ryan,อาจจะ​เป็น​ใคร​คน​ใหม่...
+03ccd297eb346729,L10 Ryan,ryan_food_dialogue,25,Ryan,...เรื่อง​ที่​ฉัน​พูด​เมื่อกี้​น่ะ
+1032684d93c794bf,L10 Ryan,ryan_food_dialogue,26,Kobold,อืม?
+ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,27,Ryan,นาย​รู้จัก​ใคร​ที่​ฉัน​คุย​ด้วย​ได้​ไหม? แบ​บ... เรื่อง​ความสัมพันธ์​น่ะ?
+0a7119cfe1246546,L10 Ryan,ryan_food_dialogue,28,Kobold,"<gradient=""gold""><b>ฉัน​รู้จัก​มังกร​แดง​ตัว​นึง ฉัน​ว่า​นาย​น่าจะ​ชอบ​เขา! </b></gradient><size=70%> (จับคู่​ไร​อัน​กับ​คอนราด!)"
+4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,29,Kobold,"<gradient=""gold""><b>อ้อ เอ่อ <size=70%> ฉัน​ไม่​ว่า​นะ... ถ้า​ใคร​คน​นั้น​เป็น​ฉัน </b></gradient><size=70%> (ล็อก​โรแมนซ์​กับ​ไร​อัน!)"
+bb7a6be711206298,L10 Ryan,ryan_food_dialogue,30,Kobold,"<gradient=""gold""><b>นึกไม่ออก​เลย​ตอนนี้</b></gradient><size=70%> (ล็อก​โรแมนซ์​กับ​คอนราด!)"
+a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,31,Ryan/Alexander/Kobold,อ้อ?
+line:1d491283,L10 Ryan,ryan_food_dialogue,31,Ryan,เอ๊ะ?
+cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,32,Ryan,ใคร​เหรอ?
+ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,เขา​เป็น​เด​รก​แดง​ที่​น่ารัก​มาก ๆ ที่มา​ล้าง​ตัว​ที่นี่!
+4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,34,Kobold,เขา​เป็น​มังกร​แดง ฉัน​ว่า​พวก​นาย​น่าจะ​ถูกใจ​กัน!
+0ea02ee3f0c5673d,L10 Ryan,ryan_food_dialogue,35,Ryan,อ้อ! เหมือนเคย​เห็น​นะ ตัวเล็ก ๆ นั่น​ใช่ไหม?
+58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,เขา​ชอบ​ให้​เรียก​ว่า 'ท้าทาย​ใน​แนวดิ่ง' มากกว่า... แต่​ก็​ใช่
+3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,ใช่​แล้ว! เขา​พยายาม​จะ​เจอ​คน​ใหม่ ๆ อยู่
+474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,โอ้...
+ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,น่ารัก​จัง
+c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,โอ้ เยี่ยม ดูเหมือน​เรา​จะ​คล้าย​กัน
+82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,ฉัน​อยาก​เจอ​เขา​นะ!
+b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,งั้น​ฉัน​จะ​แนะนำ​ให้​รู้จัก​กัน
+80c500f9c426d4cc,L10 Ryan,ryan_food_dialogue,43,Kobold,ตื่นเต้น​จัง จะ​แนะนำ​ให้​รู้จัก​กัน​นะ!
+ec786c9a7656b0f9,L10 Ryan,ryan_food_dialogue,45,Ryan,ฉัน​ก็​ด้วย ขอบใจ!
+line:3b6d644d,L10 Ryan,ryan_food_dialogue,46,Ryan,อ๊ะ
+028dbc8d077c611f,L10 Ryan,ryan_food_dialogue,47,Ryan,<i>โอ้...
+ae590830c4c03fd1,L10 Ryan,ryan_food_dialogue,48,Ryan,ฉัน​ก็​อยาก​ให้​นาย​เป็น​ใคร​คน​นั้น​เหมือนกัน
+b4066b4e58df8005,L10 Ryan,ryan_food_dialogue,49,Kobold,งั้น​นี่​ก็​แบ​บ... เดต​แรก​ของ​เรา​เหรอ?
+8c7e5a49ec8fd685,L10 Ryan,ryan_food_dialogue,50,Kobold,พูด​ตรง ๆ ฉัน​แอบ​ชอบ​นาย​มา​สักพัก​แล้ว
+710ea0057247cb51,L10 Ryan,ryan_food_dialogue,51,Ryan,น่าจะ​ใช่!
+de4d091acdb6059c,L10 Ryan,ryan_food_dialogue,52,Ryan,จริง​เหรอ? โธ่ น่ารัก​จัง
+35e3561cd36f36d6,L10 Ryan,ryan_food_dialogue,53,Ryan,ไม่​รู้​เลย​ว่า​จะ​มี​ใคร​ชอบ​ฉัน​ขนาด​นี้​ได้​ง่าย ๆ
+f05160456925af3f,L10 Ryan,ryan_food_dialogue,54,Ryan,ว่าแต่ นาย​น่ารัก​นะ
+a01d64fcb9d7d3a5,L10 Ryan,ryan_food_dialogue,55,Kobold,อืม <size=90%>อ๊ะ... <size=80%>ก็​นะ ฉัน​แบ​บ... <size=70%>ฮ่า​ฮ่า อืม ใช่!
+65691ff38c85e57c,L10 Ryan,ryan_food_dialogue,56,Kobold,นาย​ก็​ด้วย!
+d323e565ed8ea749,L10 Ryan,ryan_food_dialogue,57,Ryan,ไม่​ได้​ตั้งใจ​ทำให้​นาย​เขิน​นะ!
+145e6a2d848267cb,L10 Ryan,ryan_food_dialogue,58,Ryan,ฉัน​แค่... มีความสุข
+0cc014df7d89d3e1,L10 Ryan,ryan_food_dialogue,59,Ryan,โธ่ ขอบใจ ฉัน​ดูดี​ขนาด​นี้​ก็​เพราะ​นาย​ล้าง​ให้​นี่แหละ!
+eea7bdf3ab3f251c,L10 Ryan,ryan_food_dialogue,60,Ryan,ฉัน... มีความสุข
+d619413abc4a1de1,L10 Ryan,ryan_food_dialogue,61,Ryan,ไม่เป็นไร!
+c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,แล้ว​นาย​ล่ะ? คบ​ใคร​อยู่​หรือเปล่า?
+2374bdd10aea40ba,L10 Ryan,ryan_food_dialogue,63,Kobold,มี​มังกร​แดง​ตัว​นึง คอนราด เขา... หัว​ร้อน แต่​น่ารัก
+58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,ใช่! คอนราด เขา​น่ารัก​มาก แต่​เขา​คง​เกลียด​ที่​ฉัน​พูด​แบบนี้
+3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,อ้อ นั่น​เด​รก​ตัวเล็ก​ที่​ฉัน​เห็น​เดิน​เข้ามา​เมื่อไม่นานนี้​ใช่ไหม?
+882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,นี่! เขา​แค่... 'ท้าทาย​ใน​แนวดิ่ง'
+1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,ใช่​แล้ว! ตัว​นั้นแหละ
+eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,อ้อ ขอโทษ
+dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,ดู​น่ารัก​ดี​นะ!
+94ff2c4b836f0aef,L10 Ryan,ryan_food_dialogue,70,Ryan,เยี่ยม​เลย เขา​น่ารัก​ดี!
+abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,นี่ เอ่อ ขอบใจ​อีกครั้ง​นะ
+9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,ไม่​มีปัญหา! รอ​ไม่​ไหว​แล้ว​ที่​นาย​จะ​ได้​เจอ​คอนราด
+e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,ไม่​สิ ต้อง​ขอบใจ​นาย ฉัน... ตื่นเต้น​มาก
+1f50e1361eaeacbf,L10 Ryan,ryan_food_dialogue,74,Kobold,แน่นอน! ขอบใจ​สำหรับ​อาหาร​นะ
+489184ee3c2573f9,L10 Ryan,ryan_food_dialogue,75,Ryan,ฮ่า อืม ฟัง​ดู​สนุก​ดี
+28f3547a6af39629,L10 Ryan,ryan_food_dialogue,76,Ryan,ไว้​จะ​มา​เล่า​ให้​ฟัง​ว่า​เป็น​ยังไง​นะ?
+fcd75c87b326482c,L10 Ryan,ryan_food_dialogue,77,Kobold,รอ​ฟัง​อยู่​นะ!
+a66a9f98f63d5aaf,L10 Ryan,ryan_food_dialogue,78,Kobold,อืม พวก​นาย​สอง​คน​ต้อง​น่ารัก​แน่
+39619dc71b15dfde,L10 Ryan,ryan_food_dialogue,79,Ryan,วันนี้​ดี​จัง...
+b2d03d0e5222d95c,L10 Ryan,ryan_food_dialogue,80,Ryan,แล้ว​เจอกัน​เร็ว ๆ นี้​นะ?
+17c800776b082018,L10 Ryan,ryan_food_dialogue,81,Kobold,หวัง​ว่า​นะ! จะ​ไป​เปิด​ประตู​ให้
+56372773e401e131,L10 Ryan,ryan_food_dialogue,82,Kobold,อืม! ขอบใจ​สำหรับ​อาหาร จะ​ไป​เปิด​ประตู​ให้
+97cffb9a377004b2,L10 Ryan,ryan_food_dialogue,83,Ryan,อืม... ฉัน​ไม่​เคย​เดต​กับ​โค​บอลด์​มา​ก่อน​เลย
+50ce0561192b6b01,L10 Ryan,ryan_food_dialogue,84,Ryan,แต่​รู้​แล้ว​ว่า​ฉัน​ชอบ​มัน​มาก
+e823adcc22fd50c2,L10 Ryan,ryan_food_dialogue,85,Kobold,ฉัน​ชอบ​นาย​มาก
+62e851c911a254bb,L10 Ryan,ryan_food_dialogue,86,Kobold,อืม วันนี้​ดี​สุด ๆ เลย
+773c0ce37ffbb546,L10 Ryan,ryan_food_dialogue,87,Ryan,เฮะ อืม ฉัน​ก็​ชอบ​นาย
+1c6058ce1c7242cf,L10 Ryan,ryan_food_dialogue,88,Ryan,ดี​จริง ๆ นาย​วิเศษ​มาก
+32e4e8851f8ac398,L10 Ryan,ryan_food_dialogue,89,Ryan,ขอบใจ​ที่​แบ่ง​อาหาร​ให้​นะ...
+0a94f0c3b65c425c,L10 Ryan,ryan_food_dialogue,90,Ryan,ตั้งตารอ​เจอ​นาย​อีก​นะ
+8c39f31ac476e20e,L10 Ryan,ryan_food_dialogue,91,Kobold,ฉัน​ตั้งตารอ​เจอ​นาย​เสมอ จะ​ไป​เปิด​ประตู​ให้
+db8848bda5df285f,L10 Ryan,ryan_food_dialogue,92,Kobold,นาย​ก็​ด้วย​นะ! จะ​ไป​เปิด​ประตู​ให้
+f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,โอเค! เจอกัน​เร็ว ๆ นี้
+d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,แล้ว​คอนราด​คน​นี้ ดูเหมือน​นาย​ชอบ​เขา​นะ?
+6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,เฮะเฮะ อืม
+c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,เขา​จัด​เต็ม​มาก แต่​ฉัน​ชอบ
+6525ecb4cd0f0eea,L10 Ryan,ryan_food_dialogue,97,Ryan,น่ารัก​จัง!
+6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,ชอบ​อะไร​ใน​ตัว​เขา​ที่สุด?
+a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,เขา​แบบ ใหญ่​มาก ๆ
+dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,เขา​ปากร้าย แต่​ก็​อ่อนโยน​ด้วย!
+3c29c25f0a23d26a,L10 Ryan,ryan_food_dialogue,101,Kobold,เขา​ตัวเล็ก ฉัน​ชอบ​ที่​สายตา​อยู่​ระดับ​เดียว​กับ​เขา
+0911d52bc2d9f70b,L10 Ryan,ryan_food_dialogue,102,Kobold,ฉัน​ชอบ... เขา
+4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,อ้อ... อืม มังกร​ตัวเล็ก​มักจะ... ชดเชย
+7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,อืม ใช่ ฉัน​รู้จัก​คน​แบบ​นั้น
+d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,เข้าใจ​ได้! อืม เด​รก​ตัวเล็ก​สนุก​ดี
+97a18e09f3f990c5,L10 Ryan,ryan_food_dialogue,106,Ryan,โธ่... น่ารัก​จริง ๆ
+fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,ต้อง​เล่า​ให้​ฟัง​นะ​ว่า​พวก​นาย​เป็น​ยังไง​กัน​บ้าง!
+37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,ขอบใจ​ที่​แบ่ง​อาหาร​ให้​นะ นาย​เป็นเพื่อน​ที่​ดีมาก
+120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,ขอบใจ​สำหรับ​อาหาร! จะ​ไป​เปิด​ประตู​ให้
+94ddf87d22b36d07,L10 Ryan,ryan_food_dialogue,110,Kobold,นาย​ก็​เป็นเพื่อน​ที่​ดี​เหมือนกัน จะ​ไป​เปิด​ประตู​ให้
+02ca8c073be8669d,L10 Ryan,ryan_food_dialogue,111,Ryan,โอเค ไว้​เจอกัน​นะ!
+# --- picnic: Ryan_grab_basket ---
+3276ca6f923e3a2e,L10 Ryan,Ryan_grab_basket,1,Ryan,แบ​ล่ ขอบใจ​ที่​หยิบ​ให้​นะ
+1790d1bc285d158f,L10 Ryan,Ryan_grab_basket,2,Kobold,นาย​เอา​อาหาร​มา​ด้วย​เหรอ?
+fab7cff668586c9b,L10 Ryan,Ryan_grab_basket,3,Kobold,ไร​อัน! น่ารัก​จัง​เลย
+3f519f6990d85e4d,L10 Ryan,Ryan_grab_basket,4,Ryan,ใช่! มี​ของ​กินที่​น่าจะ​ดี​สำหรับ​เรา​ทั้งคู่
+38953523aa1d8dc9,L10 Ryan,Ryan_grab_basket,5,Ryan,เฮะเฮะ ขอบใจ มี​ของ​ที่​น่าจะ​ดี​สำหรับ​เรา​ทั้งคู่
+f44e62ce0d92a9c3,L10 Ryan,Ryan_grab_basket,6,Ryan,แต่​ปริมาณ​อาจจะ... ขนาด​มังกร​ไป​หน่อย
+dbe7ccbf37aed06a,L10 Ryan,Ryan_grab_basket,7,Kobold,ทำไม​เอา​ทั้งหมด​นี่​มา​ล่ะ?
+96082d9f598cc1db,L10 Ryan,Ryan_grab_basket,8,Kobold,นาย​ต้อง​ล้าง​ตัว​ด้วย​เหรอ?
+5be9d07e2e19a321,L10 Ryan,Ryan_grab_basket,9,Ryan,เพื่อ​นาย​ไง!
+eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> แล้วก็​เพื่อ​ฉัน
+5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,ไม่ คิด​ว่า​ไม่ต้อง
+dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,ฉัน​แค่​มา​เอา​อาหาร​มา​ให้!
+7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,คิด​ว่า​จะ​เอา​อะไร​ดี ๆ มา​ให้ หลังจากที่​นาย​ทำให้​ฉัน​มา​เยอะ
+414c0f3bb81740f3,L10 Ryan,Ryan_grab_basket,14,Ryan,หวัง​ว่า​คง​ไม่เป็นไร​นะ?
+097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,ไม่เป็นไร​อยู่แล้ว!
+460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,เยี่ยม ดีใจ​จัง
+6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,แปล​ว่า​ไม่เป็นไร​สิ​นะ! ดีใจ​จัง
+fe3e5d4e4925ddb6,L10 Ryan,Ryan_grab_basket,19,Ryan,เอาล่ะ... กินกัน​ไหม?
+# --- picnic: Ryan_grapes_dialog | if $food_number ---
+46ca5d912bed1dcc,L10 Ryan,Ryan_grapes_dialog,1,Kobold,องุ่น​พวก​นั้น​ดู​น่ากิน​นะ
+33f099ac348159d4,L10 Ryan,Ryan_grapes_dialog,2,Kobold,ไร​อัน ก้าน​มัน​ไม่​ได้​มี​ไว้​กิน​นะ...
+174343e1e975e68b,L10 Ryan,Ryan_grapes_dialog,3,Ryan,น่ากิน​จริง! แต่​ก้าน​คือ​ส่วน​ที่​ฉัน​ชอบ​ที่สุด
+976fdc62e4cbffcf,L10 Ryan,Ryan_grapes_dialog,4,Kobold,นั่น​มัน... ไม้​ไม่​ใช่​เหรอ?
+8e4f1f66ab3b3860,L10 Ryan,Ryan_grapes_dialog,5,Kobold,ไม่​เคย​ลอง
+d053df82397c2f86,L10 Ryan,Ryan_grapes_dialog,6,Ryan,อืม อร่อย​นะ!
+c994875a9f5c8520,L10 Ryan,Ryan_grapes_dialog,7,Ryan,แต่​นาย​ไม่​ควร​กิน​นะ
+025e9c74601a1a65,L10 Ryan,Ryan_grapes_dialog,8,Ryan,กระเพาะ​มังกร​น่ะ... ทนทาน​กว่า​ของ​นาย​หน่อย
+b689b40a79b968df,L10 Ryan,Ryan_grapes_dialog,9,Ryan,นาย​ไม่​ควร​กิน​หรอก
+8d834797bd163119,L10 Ryan,Ryan_grapes_dialog,10,Ryan,ต้อง​มี​กระเพาะ​มังกร​ก่อน!
+27935fd7477eba77,L10 Ryan,Ryan_grapes_dialog,11,Ryan,ใคร​บอก?
+0b71d27200d13a33,L10 Ryan,Ryan_grapes_dialog,12,Kobold,ฉัน?
+47252f2c75dea9ef,L10 Ryan,Ryan_grapes_dialog,13,Kobold,ชีววิทยา...? <size=70%> <i>มั้ง?
+5af35db6f8fe39ad,L10 Ryan,Ryan_grapes_dialog,14,Ryan,ก็...
+79436a008466d243,L10 Ryan,Ryan_grapes_dialog,15,Ryan,ฉัน​เป็น​พวก​แหก​กฎ!
+49e7a64aec55ff2a,L10 Ryan,Ryan_grapes_dialog,16,Ryan,ไม่ต้อง​ห่วง มังกร​เกิด​มา​เพื่อ​กิน​ได้​ทุกอย่าง
+5f82b968ccbb4aaa,L10 Ryan,Ryan_grapes_dialog,17,Ryan,ฉัน​ย่อย​ได้​แทบ​ทุกอย่าง
+f9a3f85545840310,L10 Ryan,Ryan_grapes_dialog,18,Ryan,ก้าน​ก็​แค่​ของกิน​เพิ่ม
+53494acb38981cff,L10 Ryan,Ryan_grapes_dialog,19,Ryan,แต่​องุ่น​นี่​ตอบ​โจทย์​ความอยาก​บางอย่าง​เสมอ
+77e53d1b1d33b9f0,L10 Ryan,Ryan_grapes_dialog,20,Ryan,อ้อ แล้ว​ดูเหมือน​จะ​เปื้อน​หน้า​ด้วย อุ๊ปส์
+# --- picnic: Ryan_ham_dialog | if $food_number ---
+cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,ไร​อัน กระดูก!
+523a9690a00a7803,L10 Ryan,Ryan_ham_dialog,2,Kobold,นาย​กิน​ทั้ง​ชิ้น​จริง ๆ... โว้ว
+618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,อืมฟ์... หืม?
+5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,อ้อ นั่น​ส่วน​ที่​ฉัน​ชอบ​ที่สุด!
+7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,ย่อย​ได้​ยังไง​กัน​น่ะ?
+846f850b875979d4,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> เซ็กซี่​ดี
+f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,ฉัน​เป็น​มังกร​นี่
+b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,มั่นใจ​ว่า​ย่อย​ได้​ทุกอย่าง
+a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,งั้น​เหรอ? ดี​ที่​ได้​รู้...
+db22d9512845d515,L10 Ryan,Ryan_ham_dialog,10,Ryan,เป็น​วิธี​ที่​ดี​ที่สุด​ใน​การ​กิน​อาหาร​เลย
+a5af381d1ec66e2a,L10 Ryan,Ryan_ham_dialog,11,Ryan,น่าสนใจ​นะ พวก​สอง​ขา​อย่าง​นาย​ชอบ​ละเลียด​อาหาร
+180983e0a4f4e327,L10 Ryan,Ryan_ham_dialog,12,Ryan,แต่​ไม่​มี​อะไร​สู้​การกลืน​คำโต ๆ ได้!
+# --- picnic: Ryan_melon_dialog | if $food_number ---
+e1d0d09daa3129d9,L10 Ryan,Ryan_melon_dialog,1,Ryan,ลูก​นั้น​เกือบ​ใหญ่​เกินไป...
+8725851a4492f86f,L10 Ryan,Ryan_melon_dialog,2,Kobold,นาย​ไม่​ได้​ผ่า​แตงโม​ด้วยซ้ำ
+991947f3461b26a7,L10 Ryan,Ryan_melon_dialog,3,Kobold,รสชาติ​เป็น​ยังไง?
+7d20121dc2fa0757,L10 Ryan,Ryan_melon_dialog,4,Ryan,อื้มมม
+41f87d2c55073e29,L10 Ryan,Ryan_melon_dialog,5,Ryan,อุ๊ปส์
+4fafd5a0c9f29d5f,L10 Ryan,Ryan_melon_dialog,6,Ryan,แต่​ก็​อร่อย​นะ! ชอบ​ตอนที่​มัน​ไหล​ลง​ไป
+dc8488830f9d7192,L10 Ryan,Ryan_melon_dialog,7,Ryan,ลืม​กัด​ก่อน​น่ะ ก็​เลย... ไม่​มีรส?
+7dedd07a7558afa9,L10 Ryan,Ryan_melon_dialog,8,Ryan,แต่​ตอน​ไหล​ลง​ไป​รู้สึก​ดี​นะ!
+8b4a775ae776722a,L10 Ryan,Ryan_melon_dialog,9,Kobold,<size=70%> โว้ว
+ef03f59f06da8fa4,L10 Ryan,Ryan_melon_dialog,10,Kobold,เหลือเชื่อ​เลย​ว่า​คอ​นาย​รับ​ได้ขนาด​ไหน
+4fc09f2d61d5cc43,L10 Ryan,Ryan_melon_dialog,11,Ryan,โค​บอลด์​ดูจะ​หลงใหล​เวลา​ฉัน​กิน​เสมอ​เลย
+032ea150ccdf88be,L10 Ryan,Ryan_melon_dialog,12,Ryan,น่าเอ็นดู​ดี!
+aad3715a2f685dc3,L10 Ryan,Ryan_melon_dialog,13,Ryan,มัน​ถูก​สร้าง​มา​เพื่อ​กลืน​ของ​ทั้ง​ชิ้น
+b0a73a78b7d9045b,L10 Ryan,Ryan_melon_dialog,14,Kobold,<size=70%><i>งั้น​เหรอ?
+30ff5a696a0def56,L10 Ryan,Ryan_melon_dialog,16,Ryan,ใช่!
+901c77872c53d308,L10 Ryan,Ryan_melon_dialog,18,Ryan,ใช่! มีประโยชน์​นะ
+# --- jerkoff: Ryan_4_JerkOff_Start ---
+2d434662c42f6a6c,L10 Ryan,Ryan_4_JerkOff_Start,1,Ryan,แน่ใจ​นะ...? ต่อหน้า​อาหาร​เนี่ย​นะ?
+031703a96ac0df8c,L10 Ryan,Ryan_4_JerkOff_Start,2,Ryan,เฮะ... ก็ได้
+# --- cum: Ryan_4_Cum ---
+3b1c48772bd5889e,L10 Ryan,Ryan_4_Cum,1,Ryan,ฮึ่​ฟ... ดี​จัง... แต่​เลอะ​ไป​หน่อย
+# --- mount_start: Ryan_4_Mount_Start ---
+2f31dcbcaa980550,L10 Ryan,Ryan_4_Mount_Start,1,Ryan,โว้ว... อยาก​ให้​ฉัน​ใช้​เจ้า​นั่น​เหรอ? ทั้งที่​มี​อาหาร​อยู่​เนี่ย? ก็ได้!
+# --- mount_finish: Ryan_4_Mount_Finish ---
+833d21b8cd952764,L10 Ryan,Ryan_4_Mount_Finish,1,Ryan,เลอะ​ไป​หน่อย... แต่​ก็​คุ้ม
+
+# ===== Level 11: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_4 ---
+a67959dc39353129,L11 Conrad,Conrad_Intro_4,1,Conrad/Ryan/Alexander,แฟล็ก​มีปัญหา!
+c1a949184675fa92,L11 Conrad,Conrad_Intro_4,2,Conrad/Ryan/Alexander,ช่วย​ผู้พัฒนา​หน่อย​นะ..
+60f8f02dd7a80d00,L11 Conrad,Conrad_Intro_4,3,Kobold,คอนราด​คบ​กับ​ไร​อัน
+6e98155abad655c3,L11 Conrad,Conrad_Intro_4,4,Kobold,ผู้​เล่น​คบ​กับ​คอนราด
+9cf9d4fc71363f68,L11 Conrad,Conrad_Intro_4,5,Kobold,ผู้​เล่น​คบ​กับ​ไร​อัน
+67beed0c39e205b4,L11 Conrad,Conrad_Intro_4,6,Kobold,สวัสดี คอนราด!
+d22e2236304b2ef0,L11 Conrad,Conrad_Intro_4,7,Kobold,ทำไม​ดู​มีความสุข​จัง​เลย?
+6183e901a5a22ddc,L11 Conrad,Conrad_Intro_4,8,Kobold,สวัสดี คอนราด!
+3c0eb60cca3b1422,L11 Conrad,Conrad_Intro_4,9,Conrad,เฮ้ โค​บอลด์​ตัว​โต
+ad13467d89f77645,L11 Conrad,Conrad_Intro_4,10,Conrad,นาย​ไป เอ่อ...
+25aab860a8266c4c,L11 Conrad,Conrad_Intro_4,11,Conrad,เกล็ด​ดู​ต่าง​ไป​วันนี้? <size=70%><i>มีเรื่อง​แบบ​นั้น​ด้วย​เห​รอ...? </i><size=100%>วันนี้​นาย​ดูดี​นะ
+42e1b9a73c953f33,L11 Conrad,Conrad_Intro_4,12,Kobold,ขอบใจ! แล้ว... อะไร​เหนียว ๆ นั่น​น่ะ?
+be118711068118d5,L11 Conrad,Conrad_Intro_4,13,Kobold,ฮ่า คอนราด นาย​ก็​ดูดี​เหมือนกัน
+a4008861bf24c47d,L11 Conrad,Conrad_Intro_4,14,Kobold,ไม่​มีเรื่อง​แบบ​นั้น​หรอ​ก... แต่​ขอบใจ​นะ!
+a951e05bf8506af1,L11 Conrad,Conrad_Intro_4,15,Conrad,เบอร์​รี่
+765af85f1bd7eafe,L11 Conrad,Conrad_Intro_4,17,Conrad,เอาเถอะ
+199e91c738a75b4c,L11 Conrad,Conrad_Intro_4,18,Conrad,แหง​อยู่แล้ว!
+926069483fd35835,L11 Conrad,Conrad_Intro_4,19,Conrad,ฮ่า​ฮ่า... อืม ฉัน​ไม่ค่อย​ชิน​กับ​การ​ชม​ใคร
+8c9dc9229a7630ce,L11 Conrad,Conrad_Intro_4,20,Conrad,แค่​อยาก​ล้าง​ตัว​เร็ว ๆ... แท่น​ด้วย​ก็ดี​นะ
+3ee865676f6e4c99,L11 Conrad,Conrad_Intro_4,21,Kobold/Ryan,อ้อ เหรอ?
+5fae46a5c8669c29,L11 Conrad,Conrad_Intro_4,22,Kobold,ได้​เลย! จะ​ไป​เปิด​ประตู​ให้
+daa08f627cbbfb9e,L11 Conrad,Conrad_Intro_4,23,Conrad,อืม... แต่​ถ้า​นาย​โอเค​นะ!
+20ee725c28fb397e,L11 Conrad,Conrad_Intro_4,24,Conrad,พยายาม​ไม่​กดดัน​อยู่
+374fe9cc22a15007,L11 Conrad,Conrad_Intro_4,25,Kobold,โธ่ จะ​ไป​เปิด​ประตู​ให้​นะ
+line:34ec4db7,L11 Conrad,Conrad_Intro_4,26,Conrad,ขอบใจ​นะ
+line:188d4359,L11 Conrad,Conrad_Intro_4,27,Conrad,ขอบใจ​นะ
+ae53715099e0d53d,L11 Conrad,Conrad_Intro_4,28,Conrad,ไร​อัน! ฉัน​เจอ​เขา​แล้ว
+caefb85b87a51126,L11 Conrad,Conrad_Intro_4,29,Kobold,เยี่ยม! แล้ว... อะไร​เหนียว ๆ นั่น​น่ะ?
+0452c0f1847f4a72,L11 Conrad,Conrad_Intro_4,30,Kobold,เป็น​ยังไง​บ้าง?
+940b2bb279fbfd8a,L11 Conrad,Conrad_Intro_4,33,Conrad,ขอบใจ​ที่​แนะนำ​ฉัน​กับ​ไร​อัน​ให้​รู้จัก​กัน
+6c42e3202026a3e8,L11 Conrad,Conrad_Intro_4,34,Conrad,พูด​ตรง ๆ ดีมาก​เลย
+91b34251e9ff7711,L11 Conrad,Conrad_Intro_4,35,Conrad,ไม่​เคย​คิด​ว่า​คน​แบบ​เขา​จะ​เป็น​สเปก​ฉัน...
+abc0fe0ceed24339,L11 Conrad,Conrad_Intro_4,36,Kobold,ต้อง​เล่า​ให้​ฟัง​หมด​เลย​นะ
+ab20df82132f07cc,L11 Conrad,Conrad_Intro_4,37,Conrad,จะ​เล่า แค่​อยาก​ล้าง​ตัว​เร็ว ๆ แล้ว​วันนี้​ก็​อยาก​ใช้​แท่น​ด้วย
+17c5f180de5a8348,L11 Conrad,Conrad_Intro_4,38,Conrad,ต้อง <i>ซ้อม</i> ไว้​เพื่อ​ไร​อัน ถ้า​นาย​เข้าใจ​ที่​ฉัน​หมายถึง​นะ
+9912569ea696f8ed,L11 Conrad,Conrad_Intro_4,39,Kobold,คอนราด!
+106f99c061d35f26,L11 Conrad,Conrad_Intro_4,40,Kobold,โอเค ๆ จะ​ไป​เปิด​ประตู​ให้
+f71200a57e2d1d7a,L11 Conrad,Conrad_Intro_4,41,Conrad,อะไร​ล่ะ? วอร์มอัพ​ไว้​ก่อน​มัน​ก็ดี​นี่!
+line:3484ab9d,L11 Conrad,Conrad_Intro_4,42,Conrad,ขอบใจ!
+65bee50d904e101d,L11 Conrad,Conrad_Intro_4,43,Conrad,เฮ้ ๆ ดีใจ​ที่​เปิด​อยู่
+4d5dda82efc31458,L11 Conrad,Conrad_Intro_4,44,Conrad,มา​ขอ​ฉีด​น้ำ​ล้าง​ตัว​หน่อย ใช้​แท่น​ด้วย​ก็​ไม่​ว่า
+0ecdd0ec4c0cf66c,L11 Conrad,Conrad_Intro_4,45,Kobold,โอ้ว โอเค
+3252727dec6314c5,L11 Conrad,Conrad_Intro_4,47,Kobold,แล้ว... อะไร​เหนียว ๆ นั่น​น่ะ?
+91bc8d1d6dc8cdb7,L11 Conrad,Conrad_Intro_4,48,Conrad,เฮะ อืม
+line:bc5d790a,L11 Conrad,Conrad_Intro_4,50,Conrad,ขอบใจ!
+line:4d868f2f,L11 Conrad,Conrad_Intro_4,51,Conrad,ขอบใจ!
+1aced2f074444bdc,L11 Conrad,Conrad_Intro_4,54,Kobold,อ้อ โอเค จะ​ไป​เปิด​ประตู​ให้
+# --- progress: Conrad_required_4 ---
+a5965f548b64e3cf,L11 Conrad,Conrad_required_4,1,Conrad,นี่ มีเรื่อง​จะ​ถาม
+9ad0664c4ac1572a,L11 Conrad,Conrad_required_4,2,Kobold,อ้อ เหรอ?
+d448809fdbbeaf11,L11 Conrad,Conrad_required_4,4,Kobold,อ้อ เหรอ​ออ?
+51dbc8c7be16145b,L11 Conrad,Conrad_required_4,5,Kobold,มี​อะไร ตัว​ใหญ่?
+# --- progress: Conrad_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+e6071cb4e7c448c8,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,1,Conrad,กับ​ไร​อัน​น่ะ ค่อนข้าง​แน่​ว่า​คืนนี้​เรา​จะ​ไป​เดต​กัน
+9ee7e6a6ebccf907,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,2,Conrad,มี​คำแนะนำ​ไหม?
+f7af2bd25c827e3d,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,3,Kobold,เป็น​ตัวเอง​ไว้!
+a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,ต้อง​สะอาด​มาก ๆ นะ <size=70%><i>เฮะเฮะ
+528e2755301df89e,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,5,Conrad,พยายาม​เต็ม​ที่อยู่
+71cfcccd17dc37fc,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,6,Conrad,แต่​ตอนนี้​ก็​ไป​ได้​สวย​ใช่ไหม?
+93a2ca86985333fe,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,7,Kobold,คิด​ว่า​งั้น​นะ!
+55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,ถ้า​คน​อย่างไร​อัน​สนใจ แปล​ว่า​นาย​ทำได้​ดีมาก​แล้ว
+line:c642cb17,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,ขอบใจ​นะ
+162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,ฮ่า ถ้า​มี​โค​บอลด์​ที่​ล้าง​ตัว​ให้​ฉัน​ได้​ก็ดี​สิ
+4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,ถ้า​มี​ก็ดี​สิ
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,ฉัน​จะ​ทำให้​นาย <i>สะอาดหมดจด
+7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,ล้อเล่น​นะ ร้าน​ล้าง​ของ​นาย​ดี​ที่สุด​จริง ๆ
+207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,ขอบใจ ดูดี​ก็​รู้สึก​ดี!
+# --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+a8ee5e15400fc208,L11 Conrad,Conrad_4_Conrad_Romanced,1,Conrad,คือ... เดต ฉัน​อยาก​ไป​สักครั้ง​เร็ว ๆ นี้!
+f2f6817fb49621c2,L11 Conrad,Conrad_4_Conrad_Romanced,3,Kobold,ยินดี​เลย!
+82ddb728ff9d18a9,L11 Conrad,Conrad_4_Conrad_Romanced,4,Conrad,คิด​อยู่​ว่า ออก​ไป​ไหน​กัน​สักวัน​สัปดาห์​หน้า​ดี​ไหม?
+fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,ฟัง​ดูดี​นะ
+9a03666243082379,L11 Conrad,Conrad_4_Conrad_Romanced,6,Kobold,ฉัน​ไม่​ว่า​นะ!
+67f68a72462bca9b,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad/Ryan,เยี่ยม!
+line:70306ba1,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad,เยี่ยม​โว้ย!
+45ec6449f36fb5b9,L11 Conrad,Conrad_4_Conrad_Romanced,8,Conrad,ครั้ง​หน้าที่​ฉัน​มา​ล้าง​ตัว เรา​ไป​กัน
+ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,ชอบ​เลย!
+38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,10,Kobold,ตกลง​ตามนั้น
+de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,11,Conrad/Kobold/Alexander,ตื่นเต้น​จัง
+# --- progress: Conrad_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+8dc7f14f91542fe7,L11 Conrad,Conrad_Ryan_Romanced,1,Conrad,นาย​กับ​ไร​อัน​สิ​นะ?
+498cb71ee3e20098,L11 Conrad,Conrad_Ryan_Romanced,2,Kobold,อ้อ ใช่!
+37d827f8025ee687,L11 Conrad,Conrad_Ryan_Romanced,3,Kobold,เขา​เซ็กซี่​มาก
+64db0ca49ca9563d,L11 Conrad,Conrad_Ryan_Romanced,4,Kobold,เขา​คือ​มังกร​ใน​ฝัน​ของ​ฉัน
+bdfc096fee84c4fb,L11 Conrad,Conrad_Ryan_Romanced,5,Conrad,ดีใจ​ด้วย​นะ!
+cb24c38318e64595,L11 Conrad,Conrad_Ryan_Romanced,6,Conrad,ดูเหมือน​จะ​เป็น​แบบ​นั้น
+0e5b54a94da4725b,L11 Conrad,Conrad_Ryan_Romanced,8,Kobold,แล้ว​นาย​ล่ะ? มี​ใคร​น่าสนใจ​ไหม?
+5f9173229e51d947,L11 Conrad,Conrad_Ryan_Romanced,9,Kobold,อืม ฉัน​ก็​มีความสุข​เหมือนกัน
+68fa6f383249196c,L11 Conrad,Conrad_Ryan_Romanced,10,Conrad,ก็​นิดหน่อย! ช่วงนี้​ออก​ไป​ข้างนอก​บ่อย​ขึ้น
+e589607da4e2983d,L11 Conrad,Conrad_Ryan_Romanced,11,Conrad,เจ​อก​ริ​ฟฟิน​ตัว​นึง ตัว​พอ ๆ กับ​ฉัน...
+d69f5ee422fdf377,L11 Conrad,Conrad_Ryan_Romanced,12,Conrad,ฉัน​ว่า​เขา​แอบ​ชอบ​ฉัน​นะ
+9aab87987aca7783,L11 Conrad,Conrad_Ryan_Romanced,13,Conrad,...<i><size=70%>อย่าง​น้อย​ฉัน​ก็​แอบ​ชอบ​เขา​แหละ
+7b42e92a68e914e0,L11 Conrad,Conrad_Ryan_Romanced,14,Conrad,ดีใจ​ที่​ได้ยิน​แบบ​นั้น
+88b86bef7b86a770,L11 Conrad,Conrad_Ryan_Romanced,15,Conrad,อืม ดูเหมือน​เขา​จะ​เป็น​คน​ที่​กวนใจ​ฉัน​ได้
+# --- jerkoff: Conrad_4_JerkOff_Start ---
+395b9d676b6c01c5,L11 Conrad,Conrad_4_JerkOff_Start,1,Conrad,อ้อ... ตอนนี้​เลย​เหรอ? โอเค เอา​ด้วย
+# --- cum: Conrad_4_Cum ---
+cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,อืมฟ์... ดีกว่า​เบอร์​รี่​พวก​นั้น​เยอะ​เลย
+# --- mount_start: Conrad_4_Mount_Start ---
+9c4eeb4a7cc4c1e1,L11 Conrad,Conrad_4_Mount_Start,1,Conrad,เฮ้! แท่น! เยี่ยม​โว้ย
+# --- mount_finish: Conrad_4_Mount_Finish ---
+307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,ฮ่าห์ นี่​คือ​ร้าน​ล้าง​ที่​โคตร​ดี​ที่สุด
+# --- outro: Conrad_Outro_4 ---
+4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,นาย​น่าจะ​สะอาด​หมด​แล้ว!
+4a93a020168bbd0d,L11 Conrad,Conrad_Outro_4,2,Kobold,คิด​ว่า​เสร็จ​แล้ว​นะ
+2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,สะอาด​แบบนี้​ดู​ดีมาก​เลย!
+d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,<i>ฉัน​ชอบ​ฉีด​น้ำ​ใส่​นาย
+feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,เอาล่ะ! น่าจะ​เสร็จ​แล้ว
+e2956ac74f8acb8e,L11 Conrad,Conrad_Outro_4,6,Kobold,คิด​ว่า​ครบ​ทุก​จุด​แล้ว​นะ
+# --- outro: Conrad_Outro_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+0fa2abeece5fd3de,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,1,Conrad,ใช่! รู้สึก​สะอาด​เลย
+1b5f2f27de868c08,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,2,Conrad,นี่ เอ่อ นาย​คิด​ว่า​ฉัน​กับ​ไร​อัน​จะ​ไปกันได้ <i>จริง ๆ</i> ไหม?
+ebc110388e3748fa,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Kobold/Alexander,แน่นอน!
+5bc10e8175dc9422,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,4,Kobold,หวัง​ว่า​นะ
+3da3a77980cb9eb9,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,5,Conrad,หวัง​ว่า​นาย​จะ​พูด​ถูก
+43e42fb816f1d2c2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,6,Conrad,อืม ฉัน​ก็​ด้วย เขา​ดี​จริง ๆ
+603a3749013e876b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,7,Conrad,หลังจาก​ทุกอย่าง​ที่ผ่านมา มัน​ยาก​ที่จะ​ไม่​ประหม่า...
+189f4f64972cc1fe,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,8,Conrad,แต่​ฉัน​มัน​เจ๋ง เพราะ​งั้น​ไม่เป็นไร​หรอก
+40b8366766a655d6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,9,Conrad,หวัง​ว่า​นะ
+dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,แต่​การ​เจอกัน​ครั้งแรก​ของ​เรา​ไป​ได้​สวย​นะ!
+0a47996c4c389f39,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,11,Kobold,เหรอ? เล่า​ให้​ฟัง​หน่อย!
+589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,เยี่ยม​เลย! เดต​แรก​เมื่อไหร่?
+56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,เขา​โทร​มา เรา​เจอกัน เขา​ดี​โคตร ๆ
+080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,เขา​บอ​กว่า​ฉัน​ชิล เรา​วางแผน​เดต​กัน...
+d98ca4f1aac91861,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,แล้ว​นั่นแหละ​ที่​ฉัน​มา​ที่นี่! ล้าง​เสร็จ​จะ​ไปหา​เขา​เลย
+35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,ทัน​ทีหลัง​ล้าง​เสร็จ!
+d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,เรา​จะ​ไป​ร้าน​ซี​ฟู้ด​ร้าน​นึง...
+5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,จองที่​ใน​คลับ​ไว้​แล้วด้วย
+6ffd2844813c419e,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,19,Kobold,งั้น​ต้อง​รีบ​ปล่อย​นาย​ออก​ไป!
+d547385bcae74ca2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,20,Kobold,ตื่นเต้น​แทน​นาย​เลย จะ​ไป​เปิด​ประตู​ให้!
+9458fe24a9152c2b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,21,Conrad,ฮ่า... อืม ฉัน​ก็​ตื่นเต้น
+83a4b4bd32149db8,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,22,Conrad,ขอบใจ ฉัน​ก็​ตื่นเต้น​เหมือนกัน
+# --- outro: Conrad_Outro_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ad0500f8d2500c0f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,1,Conrad,รู้สึก​สะอาดหมดจด​เหมือนเคย
+297d60c9e5c25580,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,2,Conrad,อ้อ แล้วก็​คิดออก​แล้ว​ว่า​จะ​ไป​ไหน
+f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,มี​คลับ​ใน​ตัวเมือง 'Wings' ที่​โปรด​เก่า​ของ​ฉัน
+5dcbc1f451fcc29d,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,6,Conrad,ฉัน​ค่อนข้าง​มีชื่อ​แถว​นั้น
+99c9d7ee0966d8d1,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,7,Conrad,หา​ที่นั่ง <i>ดี​ที่สุด</i> สำหรับ​โชว์​ของ​พวกเขา​ให้​เรา​ได้
+02f6a5560835daa6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,8,Kobold,ฮ่า โอเค เอา​ด้วย
+7137eb7d65d8f4d8,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,9,Kobold,โอ้ว​วว งั้น​คง​เป็น​คนใหญ่คนโต​สิ​นะ
+60c5caff4aee58e9,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,10,Conrad,ให้​ตาย​เถอะ ตื่นเต้น​สุด ๆ
+d37d98f486ba54c5,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,11,Conrad,จะ​เริ่ม​เตรียมตัว​เลย
+bf3d9317290e56b0,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,12,Conrad,ครั้งหน้า​ที่มา ฉัน​จะ​จอง​ไว้​เรียบร้อย!
+f11ccc8c0bd5ecbc,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,13,Conrad,ช่วย​ไป​เปิด​ประตู​ได้​ไหม?
+ffcc816df16993e6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,14,Conrad,แหง​อยู่แล้ว
+c25790cd739260fd,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,16,Conrad,นาย​นั่นแหละ​คนใหญ่คนโต
+b18d301dab41755f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,17,Conrad,โทษ​ที ฉัน​จีบ​ไม่​เก่ง ช่วย​เปิด​ประตู​ได้​ไหม?
+# --- outro: Conrad_Outro_4_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+6fe24a5cf11acb37,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,1,Conrad,ใช่! สะอาด​เหมือนเคย
+8f0378325ead68c7,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,2,Conrad,มีแผน​อะไร​กับ​ไร​อัน​ไหม?
+a12011af4e943fb2,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,3,Kobold,ยัง​ไม่​แน่ใจ
+c3393181a97b4208,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,4,Kobold,คิด​ว่า​จะ​เดต​เร็ว ๆ นี้
+5ef95c64f52e6263,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,5,Conrad,ก็​ยุติธรรม​ดี พวก​นาย​ดู​น่ารัก​ดี​เวลา​อยู่​ด้วยกัน
+6d8a46a5e1da81ef,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,6,Conrad,หวัง​จริง ๆ ว่า​ทุกอย่าง​จะ​ไป​ได้ดี!
+1884386d93b6fccd,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,7,Conrad,ใช่! คงจะ​สุดยอด​เลย
+c5cace2191af6925,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,8,Conrad,พวก​นาย​สอง​คน​น่ารัก​มาก​เวลา​อยู่​ด้วยกัน...
+9e806b93dd0d48fe,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,9,Conrad,หวัง​ว่า​ทุกอย่าง​จะ​ไป​ได้ดี​นะ
+83a8afa550485db4,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,10,Conrad,แต่​น่าจะ​ครบ​แล้ว ช่วย​ไป​เปิด​ประตู​ได้​ไหม?
+
+# ===== Level 12: Alexander (Rainy) =====
+# --- intro: Alexander_4_intro ---
+0248808ddaa3479e,L12 Alexander,Alexander_4_intro,1,Alexander,สวัสดี​ตอนเย็น!
+d3d306a15d158e29,L12 Alexander,Alexander_4_intro,2,Kobold,สวัสดี​ีี! สวัสดี​ี!
+68094c643e49d3c6,L12 Alexander,Alexander_4_intro,3,Kobold,สวัสดี อเล็กซานเดอร์!
+e8c921ab9051f110,L12 Alexander,Alexander_4_intro,4,Alexander,ฮ่า กระตือรือร้น​เหมือนเคย
+3b767556f3eeaa3b,L12 Alexander,Alexander_4_intro,5,Alexander,ดีใจ​ที่​ได้​กลับมา!
+96ed1471d1f86a4d,L12 Alexander,Alexander_4_intro,6,Alexander,วันนี้​ฝนตก​ไม่​หยุด​เลย!
+429d93ef0fafbe8a,L12 Alexander,Alexander_4_intro,7,Alexander,บรรยากาศ​ดี​นะ
+a9945cd0cd165325,L12 Alexander,Alexander_4_intro,8,Kobold,ฝน​ดี​นะ
+7259414f82b0b97a,L12 Alexander,Alexander_4_intro,9,Kobold,ฉัน​เกลียด​ฝน​มา​ตลอด
+bfad19e22f9652cc,L12 Alexander,Alexander_4_intro,10,Alexander,เห็นด้วย แต่​ก็​อยาก​ให้​เข้าไป​เร็ว​ที่สุด​เท่าที่​สะดวก
+91a5c27ef059ab24,L12 Alexander,Alexander_4_intro,12,Alexander,คง​เข้าใจ​ได้ที่​ไม่​ชอบ​ความ​เลอะเทอะ​ที่​มัน​ก่อ
+882df59f0a75b295,L12 Alexander,Alexander_4_intro,13,Alexander,แต่​นั่นแหละ​ที่​ผม​มา​ที่นี่!
+990e43e4f2687cdf,L12 Alexander,Alexander_4_intro,14,Kobold,โอเค! จะ​ไป​เปิด​ประตู​ให้
+846b613e707ce00d,L12 Alexander,Alexander_4_intro,15,Kobold,ยิ๊บ! <size=70%>(ประตู)
+1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,17,Alexander,อืม เข้าใจ​ว่า​หมายถึง​คุณ​จะ​ไป​เปิด​ประตู​ใช่ไหม?
+56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,18,Kobold,ยิ๊บ! <size=70%>(ใช่)
+fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,19,Alexander,ไม่​แน่ใจ​ว่า​ทำไม​จู่ ๆ ผม​ถึง​เข้าใจ 'ยิ๊บ' ของ​คุณ
+7a919cef111fe275,L12 Alexander,Alexander_4_intro,20,Kobold,ยิ๊บ! <size=70%>(เพราะ​ส่วน​ที่​หลับใหล​ใน​จิตใจ​มังกร​ของ​คุณ​กำลัง​ระลึกถึง​สะพาน​ภาษา​ที่​ฝัง​ลึก​ระหว่าง​เผ่าพันธุ์​ของ​คุณ​กับ​ของ​ฉัน ซึ่ง​บรรจุ​ความหมาย​และ​เจตนา​อัน​ลึกซึ้ง​ของ 'ยิ๊บ' ของ​โค​บอลด์​ไว้ ความเข้าใจ​อย่าง​ฉับพลัน​ของ​คุณ​เป็น​เพียง​ผล​จาก​สายสัมพันธ์​ของ​เรา​ที่​เติบโต​ขึ้น​ตามเวลา​และ​ปลุก​ส่วน​นั้น​ของ​จิตใจ​คุณ​ให้​ตื่นขึ้น)
+6d8c462224bca1b5,L12 Alexander,Alexander_4_intro,21,Kobold,ยิ๊บ! <size=70%>(ไม่​รู้)
+8e7ead434fce5609,L12 Alexander,Alexander_4_intro,24,Alexander,ช่วย​เปิด​ประตู​ได้​ไห​ม...?
+19be549c91d82ff3,L12 Alexander,Alexander_4_intro,25,Alexander,ก็ได้ ผม​จะ​รอ!
+# --- progress: Alexander_4_required ---
+c19ca0647cc1a583,L12 Alexander,Alexander_4_required,1,Alexander,ผม​คิด​อยู่​ว่า...
+6d9630067757f781,L12 Alexander,Alexander_4_required,2,Alexander,อด​สังเกต​ไม่​ได้​ถึง... อุปกรณ์​ตรงนั้น
+7bd6925025a24288,L12 Alexander,Alexander_4_required,3,Alexander,นั่น​แท่น​ใช่ไหม?
+54b9fbcd575cd0a7,L12 Alexander,Alexander_4_required,4,Kobold,ใช่​แล้ว!
+1f5aad5cbae1a020,L12 Alexander,Alexander_4_required,5,Kobold,อยาก​ใช้​ไหม?
+36a85b3430aa6639,L12 Alexander,Alexander_4_required,6,Alexander,ผม... สงสัย​ว่า...
+d2b8ae469c604bfb,L12 Alexander,Alexander_4_required,7,Alexander,ถ้า​ผม​จะ เอ่อ...
+577e4edfcd4fa53d,L12 Alexander,Alexander_4_required,8,Alexander,อาจจะ แบ​บ...
+4caa8162834de434,L12 Alexander,Alexander_4_required,9,Alexander,แค่​บางที...
+d89de41838a75fa0,L12 Alexander,Alexander_4_required,10,Kobold,ถ้า​อยาก​ใช้​ก็ได้​เลย​นะ!
+68ad27123e1df879,L12 Alexander,Alexander_4_required,11,Kobold,ไม่ต้อง​ประหม่า​หรอก อเล็กซานเดอร์!
+6dece6f0ec399d4e,L12 Alexander,Alexander_4_required,12,Alexander,ผม​คิด​ว่า​อยาก​ลอง?
+08ab3092d83ed1d3,L12 Alexander,Alexander_4_required,13,Alexander,รู้​ครับ รู้
+81a4fcd2541ac990,L12 Alexander,Alexander_4_required,14,Alexander,ผม​คิด​ว่า​อยาก​ใช้​มัน?
+67c0f2a71f4ff613,L12 Alexander,Alexander_4_required,16,Alexander,เอ่อ... อืม...
+4640c27322f55d8c,L12 Alexander,Alexander_4_required,17,Alexander,บางที...?
+9739b879143b91cf,L12 Alexander,Alexander_4_required,18,Alexander,ถ้า​ไม่เป็นไร​นะ...
+e2dce2bed173fba0,L12 Alexander,Alexander_4_required,20,Kobold,ไม่เป็นไร​อยู่แล้ว ต้อง​ขอบคุณ​คอนราด​ที่​ทำให้​ฉัน​ซื้อ​มัน​มา
+f12929f0cef567d7,L12 Alexander,Alexander_4_required,21,Alexander,โอเค ๆ... งั้น​ผม​คิด​ว่า​อยาก​ใช้​มัน?
+76ea754cd53f21dc,L12 Alexander,Alexander_4_required,22,Alexander,คอนราด...?
+18b51cf572e4b49a,L12 Alexander,Alexander_4_required,25,Kobold,ฉัน​โอเค​เลย!
+334a54e73cf69dc1,L12 Alexander,Alexander_4_required,26,Kobold,ยินดี​หยิบ​มา​ให้​เลย
+7bd62126f382f565,L12 Alexander,Alexander_4_required,27,Alexander,อืม... ขอบคุณ
+d2c15503eb28631b,L12 Alexander,Alexander_4_required,28,Alexander,โอเค... ขอบคุณ
+# --- jerkoff: Alexander_4_JerkOff_Start ---
+47122b215cc11a2b,L12 Alexander,Alexander_4_JerkOff_Start,1,Alexander,โอ้... ก็​คง​ไม่เป็นไร​นะ~
+# --- cum: Alexander_4_Cum ---
+ed6a9612f44b19ea,L12 Alexander,Alexander_4_Cum,1,Alexander,ฮึ่​ฟ... ขอบคุณ​สำหรับ​สิ่ง​นั้น
+# --- mount_start: Alexander_4_Mount_Start ---
+1db0bf44f69526fc,L12 Alexander,Alexander_4_Mount_Start,1,Alexander,แท่น​เหรอ? ผม... ก็ได้!
+# --- mount_finish: Alexander_4_Mount_Finish ---
+76527d719ccc95a3,L12 Alexander,Alexander_4_Mount_Finish,1,Alexander,นั่น... ดีกว่า​ที่​คิด​ไว้
+# --- outro: Alexander_4_Outro ---
+35278dc46019f9b9,L12 Alexander,Alexander_4_Outro,1,Alexander,รู้สึก​ดีขึ้น​มาก
+5547ec33b10091a2,L12 Alexander,Alexander_4_Outro,2,Alexander,ผม... รู้​ว่า​คุณ​ไม่​ได้​ถาม
+3ce3dec2bd740757,L12 Alexander,Alexander_4_Outro,3,Alexander,แต่​ผม​คิด​ว่า​คุณ​สอน​อะ​ไรผม​บางอย่าง
+line:21c46e75,L12 Alexander,Alexander_4_Outro,4,Kobold,เอ๊ะ?
+5eca8560307cac86,L12 Alexander,Alexander_4_Outro,5,Kobold,แต่​คุณ​เป็น​มังกร​อาจารย์​นี่​นา
+419ecbf32abefda1,L12 Alexander,Alexander_4_Outro,6,Alexander,ศาสตราจารย์​ต่างหาก แต่​ก็​ใช่ คุณ​สอน​ผม
+0b1b8529d2c3c5fc,L12 Alexander,Alexander_4_Outro,7,Alexander,ผม​คิด​ว่า​ผม​ชอบ​การ​ถูก​ดูแล?
+4df2487e01509478,L12 Alexander,Alexander_4_Outro,8,Kobold,ส่วนใหญ่​ก็​ชอบ​กัน​ทั้งนั้น!
+c9f8ba59379bb60a,L12 Alexander,Alexander_4_Outro,9,Kobold,ฉัน​ชอบ​ดูแล​คุณ​นะ
+93786b06bef36348,L12 Alexander,Alexander_4_Outro,10,Alexander,ก็​ใช่ แต่​ผม​หมายถึง​ใน​แบบ​ที่... ดิบ​กว่า​นั้น?
+b868cb066c4b572d,L12 Alexander,Alexander_4_Outro,11,Alexander,ได้ยิน​แบบ​นั้น​ก็ดี​นะ... แต่​ผม​หมายถึง​การ​ถูก​ดูแล​ใน​แบบ​ที่... ดิบ​กว่า​นั้น?
+565a3630f0cfbcc5,L12 Alexander,Alexander_4_Outro,12,Alexander,ผม​ชอบ​เวลา​ที่​คุณ​บอก​ให้​ผม​ทำ​อะไร​ด้วย​การ​ตบ​เบา ๆ ด้วยมือ
+1161a29c118dbaa6,L12 Alexander,Alexander_4_Outro,13,Alexander,ผม​ชอบ​ความมั่นใจ​ของ​คุณ ถึง​จะ​แค่​เรื่อง​ล้าง​ตัว​ก็​เถอะ
+32c31015075eeede,L12 Alexander,Alexander_4_Outro,14,Alexander,การ​ได้​ปล่อย​การควบคุม​ไป​สักครู่​มันดี​จริง ๆ
+1651e2418c22d0c0,L12 Alexander,Alexander_4_Outro,15,Kobold,<size=70%> มังกร​ตัว​ใหญ่​ยก​การควบคุม​ให้​ฉัน โว้ว
+bd051341e68cc04e,L12 Alexander,Alexander_4_Outro,16,Kobold,ดีใจ​ที่​ให้​ที่​ที่​คุณ​ผ่อนคลาย​ได้
+2e1f723e42b149be,L12 Alexander,Alexander_4_Outro,17,Alexander,ค่อนข้าง​แปลกใหม่​ใช่ไหม​ล่ะ?
+8212cbdd05d21f37,L12 Alexander,Alexander_4_Outro,18,Alexander,ไว้​จะ​กลับมา​เร็ว ๆ นี้​นะ? ขอบคุณ​ที่​ล้าง​ให้
+b5f8ec9a6918d554,L12 Alexander,Alexander_4_Outro,19,Alexander,มัน​รู้สึก​เป็นอิสระ ไว้​จะ​กลับ​มานะ?
+
+# ===== Level 13: Ryan (Sunny) =====
+# --- intro: Ryan_5_intro ---
+dcd95465ccb79997,L13 Ryan,Ryan_5_intro,6,Kobold,สวัสดี ตัว​ใหญ่
+a4c1cb0899f204fc,L13 Ryan,Ryan_5_intro,8,Ryan,สวัสดี... ตัวเล็ก!
+df50afc7f5e2d994,L13 Ryan,Ryan_5_intro,9,Kobold,ฉัน​ไม่​ได้​ตัวเล็ก <i>ขนาด​นั้น</i> นะ...
+8061d3d1aed7c531,L13 Ryan,Ryan_5_intro,10,Kobold,แล้ว มา​ล้าง​ตัว​เหรอ?
+1107598aa9bc6c75,L13 Ryan,Ryan_5_intro,11,Ryan,อ๊ะ ขอโทษ...
+061629ac669e11f8,L13 Ryan,Ryan_5_intro,12,Ryan,แค่​พยายาม​เล่น​ตาม​น่ะ ดีใจ​ที่​ได้​เจอ​นาย!
+cdc7ebc001250566,L13 Ryan,Ryan_5_intro,13,Ryan,ใช่!
+f8c3932b65e6bbb0,L13 Ryan,Ryan_5_intro,14,Ryan,สวัสดี โค​บอลด์!
+4a5d3b88460afb6b,L13 Ryan,Ryan_5_intro,15,Ryan,ฉัน​ลอง​ทำ​ขน​มอบ​ดู
+b483e9c7e323807a,L13 Ryan,Ryan_5_intro,16,Ryan,ช่วงนี้​มี​เวลาว่าง​เยอะ
+afd9ef6045a7191c,L13 Ryan,Ryan_5_intro,17,Ryan,ปรากฏ​ว่าการ​อบ​ขนม​มัน​เลอะเทอะ​มาก!
+808f38835d1deb53,L13 Ryan,Ryan_5_intro,18,Ryan,ต้อง​ล้าง​ตัว​สักหน่อย
+# --- intro: Ryan_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+efa367904267d1f9,L13 Ryan,Ryan_5_intro_ryan_romanced,1,Ryan,...ล้าง​ตัว​เตรียม​เดต​ของ​เรา​คืนนี้
+d510da8dc09c7bd7,L13 Ryan,Ryan_5_intro_ryan_romanced,2,Kobold,อ๊ะ จริง​ด้วย
+cb4f55dc25088cef,L13 Ryan,Ryan_5_intro_ryan_romanced,3,Kobold,ตื่นเต้น​มาก​เลย
+63b5ec8a662e7e8f,L13 Ryan,Ryan_5_intro_ryan_romanced,4,Ryan,ดี​ที่​ฉัน​มา​เตือน​สิ​นะ
+line:141c006f,L13 Ryan,Ryan_5_intro_ryan_romanced,5,Ryan,ฉัน​ก็​ด้วย
+60004e58bb12dd3c,L13 Ryan,Ryan_5_intro_ryan_romanced,6,Ryan,จะ​รอ​ตรง​ประตู​นะ!
+# --- intro: Ryan_5_intro ---
+3ff66f86649ed3f4,L13 Ryan,Ryan_5_intro,19,Kobold,สวัสดี ไร​อัน!
+bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,20,Ryan,สวัสดี! มา​ล้าง​ตัว​น่ะ
+747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,24,Kobold,เยี่ยม จะ​ไป​เปิด​ประตู​ให้
+1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,25,Kobold,ได้​เลย! อยาก​เล่าเรื่อง​คอนราด​ให้​ฟัง​จะ​แย่​แล้ว
+line:f103a4a8,L13 Ryan,Ryan_5_intro,27,Ryan,งั้น​เหรอ?
+4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,28,Kobold,ใช่! อีกไม่นาน​จะ​ไป​เดต​กับ​เขา
+29301eae6840e128,L13 Ryan,Ryan_5_intro,29,Kobold,อื้มม ต้อง​เตรียมตัว​ไป​เดต​กับ​เขา​น่ะ
+154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,30,Ryan,น่าตื่นเต้น​จัง!
+e1867b98d8ce23bd,L13 Ryan,Ryan_5_intro,31,Ryan,ต้อง​เล่า​ให้​ฟัง​อีก​ข้างใน​นะ
+10dc92e80220fe9b,L13 Ryan,Ryan_5_intro,33,Kobold,เฮ้ย​ยย ไร​อัน
+b57c370a0fcc7045,L13 Ryan,Ryan_5_intro,34,Ryan,เฮ้!
+cd80a4a851309647,L13 Ryan,Ryan_5_intro,38,Kobold,เดต​กับ​คอนราด​เป็น​ยังไง​บ้าง?
+26eed1b65d0e1370,L13 Ryan,Ryan_5_intro,39,Kobold,เล่าเรื่อง​นาย​กับ​คอนราด​ให้​ฟัง​หน่อย!
+b433dad7fc4cdb18,L13 Ryan,Ryan_5_intro,40,Ryan,ไป​ได้​สวย​เลย!
+cd235c4d7d27fbdb,L13 Ryan,Ryan_5_intro,41,Ryan,โอ้... ใจร้อน​จัง!
+7b1f5d058f2045c5,L13 Ryan,Ryan_5_intro,43,Ryan,เรา​ออก​ไป​กินข้าว คุย​กัน​ได้​ดีมาก
+4932dbc11ab131d4,L13 Ryan,Ryan_5_intro,44,Ryan,แล้ว​เรื่อง​หนึ่ง​ก็​นำไปสู่​อีก​เรื่อง...
+1a86226c86c7138f,L13 Ryan,Ryan_5_intro,45,Ryan,ไป​บาร์... เริ่ม​เผ็ดร้อน คง​นึกออก​ว่า​เกิด​อะไร​ขึ้น​ต่อ... <size=70%>ฮ่า...
+# --- progress: Ryan_5_Required_ryan_romanced | if $ryan_romanced ---
+e61676df3c022293,L13 Ryan,Ryan_5_Required_ryan_romanced,1,Ryan,คือ เดต​ของ​เรา​คืนนี้...
+c022fa54258553ea,L13 Ryan,Ryan_5_Required_ryan_romanced,2,Ryan,อยาก​ไป​ไหน​ดี?
+6c0884e4717c5d5b,L13 Ryan,Ryan_5_Required_ryan_romanced,3,Kobold,นาย​ตัดสินใจ​เลย!
+bbedb233b6bbe2ea,L13 Ryan,Ryan_5_Required_ryan_romanced,4,Kobold,อยาก​ออก​ไป​กินข้าว
+fb57b97d646f43c9,L13 Ryan,Ryan_5_Required_ryan_romanced,5,Kobold,รู้จัก​บาร์​ดี ๆ ไหม?
+d2c0f4718541c240,L13 Ryan,Ryan_5_Required_ryan_romanced,6,Kobold,ดู​หนัง​ดี​ไหม?
+98ef145fb642c5b6,L13 Ryan,Ryan_5_Required_ryan_romanced,7,Ryan,บางที​เรา​อาจจะ​แค่... เดินเล่น?
+4bad2b5ecfe22c4a,L13 Ryan,Ryan_5_Required_ryan_romanced,8,Ryan,ฉัน​ชอบ​ให้​คน​ขี่หลัง​มาก ๆ
+6e8c399ff118f405,L13 Ryan,Ryan_5_Required_ryan_romanced,9,Ryan,สนใจ​ไหม?
+7da2aa0d4ef74597,L13 Ryan,Ryan_5_Required_ryan_romanced,10,Kobold,ฟัง​ดูดี​จัง!
+db39ae73af1cfae5,L13 Ryan,Ryan_5_Required_ryan_romanced,11,Kobold,แบบ​นั้น​ไม่​เสียศักดิ์ศรี​เหรอ?
+3185b026252747c6,L13 Ryan,Ryan_5_Required_ryan_romanced,13,Ryan,ฉัน​ชอบ​ให้​เพื่อน​สอง​ขา​ขี่หลัง​มา​ตลอด...
+d2994ff918a23d86,L13 Ryan,Ryan_5_Required_ryan_romanced,14,Ryan,งั้น​ก็​เป็น​เดต​แล้ว ตื่นเต้น​จัง
+3fdcf71c3e2f7ea0,L13 Ryan,Ryan_5_Required_ryan_romanced,15,Ryan,อ๊ะ! ไม่เลย มัน​สนุก​ออก!
+8bacddc318adc2b9,L13 Ryan,Ryan_5_Required_ryan_romanced,16,Ryan,ฉัน​ให้​เพื่อน​สอง​ขา​คนอื่น​ขี่หลัง​ตลอด​เลย
+638c1801c65c6b0c,L13 Ryan,Ryan_5_Required_ryan_romanced,17,Ryan,เดี๋ยว​ก็​หาทาง​กัน​ได้! เจอ​กันที่​ท่าเรือ​นะ!
+25f86d817a092ae1,L13 Ryan,Ryan_5_Required_ryan_romanced,18,Ryan,อืม ฟัง​ดูดี​นะ
+38ae2aec596ab356,L13 Ryan,Ryan_5_Required_ryan_romanced,19,Ryan,ซี​ฟู้ด​เป็น​ยังไง​บ้าง?
+d7456d9e85366bc9,L13 Ryan,Ryan_5_Required_ryan_romanced,20,Kobold,อืม ฉัน​ชอบ​ปลา!
+925a663e1b23d966,L13 Ryan,Ryan_5_Required_ryan_romanced,21,Kobold,อืมม อย่าง​อื่น​ดี​ไหม?
+14d1fddd0115ee0d,L13 Ryan,Ryan_5_Required_ryan_romanced,22,Ryan,อ้อ เยี่ยม ฉัน​เป็น​สาย​แซลมอน​ตัวยง
+6b59acab736bd349,L13 Ryan,Ryan_5_Required_ryan_romanced,23,Ryan,ก็ ฉัน​เป็น​มังกร​นะ... แต่... นาย​เข้าใจ​ที่​ฉัน​หมายถึง
+334998266afc2476,L13 Ryan,Ryan_5_Required_ryan_romanced,24,Ryan,งั้น​ก็​เป็น​เดต​แล้ว! ซี​ฟู้ด​ก่อน แล้ว​ค่อย​ว่า​กัน​ตาม​สถานการณ์
+a02af61e18efb0f0,L13 Ryan,Ryan_5_Required_ryan_romanced,25,Ryan,ฉัน​รู้จัก​ร้าน​ของ​พวก​ม้า​ที่​ใช้ได้​อยู่​แถว​ท่าเรือ
+cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,แบบ​ฟิวชั่น​ของ​พวก​ม้า​น่ะ...
+8771d66a0a1ace3e,L13 Ryan,Ryan_5_Required_ryan_romanced,27,Ryan,ฉัน​ชอบ​นะ! คิด​ว่า​นาย​ก็​น่าจะ​ชอบ
+8cceef523eb8c739,L13 Ryan,Ryan_5_Required_ryan_romanced,28,Ryan,งั้น​ก็​เป็น​เดต​แล้ว!
+5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,อ้อ ใช่ มี​ร้าน​ดี ๆ ใน​ตัวเมือง​ชื่อ wings
+4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,คิด​ว่า​เป็นที่​ที่​ใช้ได้! มี​โชว์​ดี ๆ ทุกคืน
+ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,ไป​ที่นั่น แล้ว​ค่อย​เปิด​ห้อง​โรง​แร​ม... อืม
+line:2b560f59,L13 Ryan,Ryan_5_Required_ryan_romanced,33,Ryan,งั้น​เหรอ?
+435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Ryan,ดู​หนัง​ก็​น่าจะ​สนุก!
+0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Ryan,คิดถึง​หนัง​แบบ​ไหน?
+b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Kobold,ยิ๊บ​แมน - ยิ๊บ​สุดท้าย
+45afe74b37ed6bb0,L13 Ryan,Ryan_5_Required_ryan_romanced,38,Kobold,มังกร​แห่ง​กาแล็กซี 2
+a881cd2440d13252,L13 Ryan,Ryan_5_Required_ryan_romanced,39,Ryan,โอ้ ได้ยิน​ว่า​เรื่อง​นั้น​ดี​นะ
+00712e7d97f1872a,L13 Ryan,Ryan_5_Required_ryan_romanced,41,Ryan,หนัง​ยิ๊บ​แมน​นี่​เชย​สุด ๆ...
+037e3c0c446d2b14,L13 Ryan,Ryan_5_Required_ryan_romanced,42,Ryan,แต่​ดู​กับ​นาย​ยังไง​ก็​สนุก​แน่!
+b1ac5509459ca2a4,L13 Ryan,Ryan_5_Required_ryan_romanced,43,Ryan,อ้อ ใช่ ฉัน​ชอบ​ภาค​แรก​นะ
+eb547bf48bc9637e,L13 Ryan,Ryan_5_Required_ryan_romanced,45,Ryan,งั้น​ก็​เป็น​เดต​แล้ว ตื่นเต้น​จัง
+# --- progress: Ryan_5_Required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+1f2c5ed668dc8972,L13 Ryan,Ryan_5_Required_conrad_romanced,1,Ryan,งั้น​เล่าเรื่อง​คอนราด​ให้​ฟัง​อี​กสิ!
+522b54ddedc9ae6c,L13 Ryan,Ryan_5_Required_conrad_romanced,2,Kobold,ช่วงนี้​เขา​ดีขึ้น​เยอะ​เลย
+9df47f9485e2d886,L13 Ryan,Ryan_5_Required_conrad_romanced,3,Kobold,เขา​แบ​บ... ตัว​นุ่มนิ่ม​ที่​ห่อ​ด้วย​หนาม​แห​ลม ๆ
+2e0446089ab2f237,L13 Ryan,Ryan_5_Required_conrad_romanced,4,Ryan,เหรอ? ฟัง​ดู​หัว​ร้อน​นิดหน่อย​นะ
+eb926b4bc196ac32,L13 Ryan,Ryan_5_Required_conrad_romanced,5,Ryan,แต่​ฉัน​รู้จัก​คน​แบบ​นั้น... ข้างใน​มักจะ​นุ่มนิ่ม
+8ea9e02ddeed61e3,L13 Ryan,Ryan_5_Required_conrad_romanced,6,Kobold,อืม เขา​พัฒนา​ขึ้น​เยอะ​เลย
+5085892250461c04,L13 Ryan,Ryan_5_Required_conrad_romanced,7,Kobold,ใช่ ฉัน​ชอบ​นะ
+53011f72775c8ca4,L13 Ryan,Ryan_5_Required_conrad_romanced,8,Ryan,ดีใจ​ที่​ได้ยิน​แบบ​นั้น​จริง ๆ
+4fbcc070e27c4736,L13 Ryan,Ryan_5_Required_conrad_romanced,9,Ryan,ไม่​มี​อะไร​น่า​ดึงดูด​ไป​กว่า​ผู้ชาย​ที่​พัฒนา​ตัวเอง​ได้!
+aa8e7dea9ad61538,L13 Ryan,Ryan_5_Required_conrad_romanced,10,Ryan,ดีใจ​ที่​พวก​นาย​ไปกันได้​ดี
+390bea406a842664,L13 Ryan,Ryan_5_Required_conrad_romanced,11,Ryan,เยี่ยม​เลย ดีใจ​ที่​พวก​นาย​ไปกันได้​ดี
+f147cd900de98aeb,L13 Ryan,Ryan_5_Required_conrad_romanced,12,Ryan,อ้อ อืม คน​แบบ​นั้น​น่ารัก​ดี​นะ
+883fec192f3d1119,L13 Ryan,Ryan_5_Required_conrad_romanced,13,Ryan,จาก​ที่​ได้ยิน​มา ช่วงนี้​เขา​ดู​ดีขึ้น​เยอะ​ใช่ไหม?
+b5060af9808e8c7c,L13 Ryan,Ryan_5_Required_conrad_romanced,14,Kobold,อืม เขา​พยายาม​อยู่
+702195668cf48039,L13 Ryan,Ryan_5_Required_conrad_romanced,15,Kobold,ฉัน​ว่า​เขา​เคย​อยู่​ใน​สภาพแวดล้อม​ที่​แย่ ตอนนี้​ดีขึ้น​แล้ว
+1e681c01b417052f,L13 Ryan,Ryan_5_Required_conrad_romanced,16,Ryan,แค่นั้น​ก็​พอแล้ว​ใช่ไหม​ล่ะ?
+9056022b2085d3b7,L13 Ryan,Ryan_5_Required_conrad_romanced,17,Ryan,แต่​ดีใจ​นะ​ที่​พวก​นาย​ไปกันได้​ดี
+932d7df9b58f5376,L13 Ryan,Ryan_5_Required_conrad_romanced,18,Ryan,ดีใจ​ที่​ได้ยิน​แบบ​นั้น
+# --- progress: Ryan_5_Required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e76e544c771880f3,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,1,Ryan,คอนราด​พูดถึง​นาย​ตอน​เรา​เดต​กัน
+2e21aa0b86c092fb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,3,Kobold,เรื่อง​อะไร​เหรอ?
+271a662aed24f160,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,4,Ryan,เล่าเรื่อง​ตอนที่​เขา​โดน​ซ้อม​ให้​ฟัง
+1b0b214cb2df69ec,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,5,Ryan,ฉัน​ว่า​นาย​ช่วย​เขา​ไว้​มากกว่า​ที่​นาย​คิด​เยอะ​เลย
+ad14c398c575824b,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,7,Kobold,แค่​ทำงาน​ของ​ฉัน​เอง!
+daddaa15545566ce,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,8,Ryan,ก็​จริง แต่​ตอนนั้น​เขา​ต้องการ​ใคร​สัก​คน​ที่​แคร์
+f03747feadc10e71,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,9,Ryan,เขา​ไม่​เคย... เอ่อ ถูก​ใคร​แคร์​มา​นาน​แล้ว เท่าที่​ฉัน​จับ​ใจความ​ได้
+2ed3613575959ca6,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,10,Ryan,ถึง​นาย​จะ​แค่​ทำ​งา​น... ฉัน​ว่า​มัน​ช่วย​เขา​ได้​มาก​เลย
+658add118bb17ed5,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,11,Ryan,ขอบใจ​แทน​เขา​ที่​แคร์​นะ
+8ca78aefdf9d3b44,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,12,Ryan,รู้​ว่า​เขา​หัว​ร้อน​นิดหน่อย​และ​มัก​ลืม​ขอบคุณ​คนอื่น
+9176dd2bd815750c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,13,Kobold,โธ่... ขอบใจ​นะ
+5a4dcf1ccff086af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,14,Kobold,ได้ยิน​แบบ​นั้น​แล้ว​มีความสุข​จัง
+6db8bf6280f68edb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,15,Ryan,อ้อ อีก​เรื่อง​นึง
+49e6d82bb7d163af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,16,Ryan,หลัง​เดต​เรา​ก็​มี​อะไร​กัน​ด้วย
+e06e957ec854ab4c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,17,Kobold,<size=70%><i>โว้ว...
+9b2ad1c8b149bf00,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,19,Ryan,ฮ่า อืม คอนราด​มีประสบการณ์​แน่​นอ​น...
+bc156217e847a8df,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,20,Ryan,อะไร​ล่ะ ไม่​ผิด​สักหน่อย! คิด​ว่า​นาย​อยากรู้​น่ะ
+# --- jerkoff: Ryan_5_JerkOff_Start ---
+9fec39c7cefbaca2,L13 Ryan,Ryan_5_JerkOff_Start,1,Ryan,เฮะ... วันนี้​มือไว​จัง​นะ?
+# --- cum: Ryan_5_Cum ---
+6f8c64dde681ced5,L13 Ryan,Ryan_5_Cum,1,Ryan,อู๊​ฟ... ต้องการ​แบบ​นี้แหละ ขอบใจ​นะ
+# --- mount_start: Ryan_5_Mount_Start ---
+c7f3dbd886d929a7,L13 Ryan,Ryan_5_Mount_Start,1,Ryan,แท่น​เหรอ? ได้​เลย!
+# --- mount_finish: Ryan_5_Mount_Finish ---
+48ffbc93e2486713,L13 Ryan,Ryan_5_Mount_Finish,1,Ryan,ฮึ่​ฟ... ขอบใจ​สำหรับ​สิ่ง​นั้น
+# --- outro: Ryan_5_Outro_ryan_romanced | if $ryan_romanced ---
+6fc39ec69d974bb4,L13 Ryan,Ryan_5_Outro_ryan_romanced,1,Ryan,ฉัน​ว่า​นาย​ล้าง​ครบ​ทุก​จุด​แล้ว
+c9e5fbe3317edd3f,L13 Ryan,Ryan_5_Outro_ryan_romanced,2,Ryan,รู้​ใช่ไหม​ว่า​หมายความว่า​ยังไง...
+f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,คืน​เดต!
+line:95aa0bf4,L13 Ryan,Ryan_5_Outro_ryan_romanced,5,Ryan,แน่นอน​สิ!
+0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Ryan,แปล​ว่า​ฉัน​พร้อม​ไป​เดต​กับ​โค​บอลด์คน​หนึ่ง​แล้ว
+e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,รู้​ว่า​นาย​ต้อง​ปิด​ร้าน​ก่อน เดี๋ยว​ส่ง​ที่อยู่​ให้​แล้ว​เจอกัน​ที่นั่น​นะ?
+6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Kobold,ฟัง​ดูดี!
+line:a00f681d,L13 Ryan,Ryan_5_Outro_ryan_romanced,9,Kobold,ตั้งตารอ​เลย
+7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,10,Ryan,ตั้งตารอ​เรื่อง​นี้​จริง ๆ
+line:363f6f6a,L13 Ryan,Ryan_5_Outro_ryan_romanced,11,Ryan,ฉัน​ก็​ด้วย
+dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,12,Ryan,โอเค ไป​เปิด​ประตู​ซะ แล้ว​ฉัน​จะ​ไป​ที่​นัด​ก่อน!
+7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,13,Ryan,แล้ว​เจอกัน​เร็ว ๆ นี้
+# --- outro: Ryan_5_Outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+b050469dea41d597,L13 Ryan,Ryan_5_Outro_conrad_romanced,2,Ryan,ขอบใจ​ที่​ช่วย​ฉัน​นะ
+25ec1c59caa5e66c,L13 Ryan,Ryan_5_Outro_conrad_romanced,3,Kobold,ยินดี​ล้าง​ให้​นาย​เสมอ!
+2a67fb93196e8722,L13 Ryan,Ryan_5_Outro_conrad_romanced,5,Ryan,อ้อ... ไม่​ใช่​แค่​เรื่อง​ล้าง
+2140dcb75dc2d0f9,L13 Ryan,Ryan_5_Outro_conrad_romanced,6,Ryan,แบบ โดยรวม​น่ะ
+a6d4dab5c8699946,L13 Ryan,Ryan_5_Outro_conrad_romanced,7,Ryan,การ​เลิกกัน​ครั้งก่อน​มัน​หนักหนา
+1fd66775cea2eb4b,L13 Ryan,Ryan_5_Outro_conrad_romanced,8,Ryan,ที่นี่​เป็น​ที่หลบภัย​ที่​ดี
+8f4dc96f133fa75c,L13 Ryan,Ryan_5_Outro_conrad_romanced,9,Ryan,แล้วก็​ดีใจ​กับ​นาย​และ​คอนราด​จริง ๆ
+8ed791569d35f02c,L13 Ryan,Ryan_5_Outro_conrad_romanced,10,Ryan,ไว้​เจอกัน​ครั้ง​หน้าที่​มานะ?
+d38d6a1844481871,L13 Ryan,Ryan_5_Outro_conrad_romanced,11,Kobold,ดีใจ​ที่​ได้​เจอ​นาย​เสมอ ไร​อัน
+c88980c837fb6592,L13 Ryan,Ryan_5_Outro_conrad_romanced,12,Kobold,จะ​ไป​เปิด​ประตู​ให้
+b1e1c4e40f4aaeec,L13 Ryan,Ryan_5_Outro_conrad_romanced,13,Ryan,นาย​ก็​ด้วย ขอบใจ​ที่​ล้าง​ให้
+# --- outro: Ryan_5_Outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+c5f14714a1e0439c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,8,Ryan,นี่​เป็น​ที่หลบภัย​ที่​วิเศษ...
+3eb55bf5de9c718b,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,9,Ryan,นาย​ยัง​แนะนำ​คอนราด​ให้​ฉัน​รู้จัก​อีก
+7aa8987bf569468c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,10,Ryan,เขา​เยี่ยม​มาก
+
+# ===== Level 14: Conrad (Night) =====
+# --- intro: Conrad_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ab4070df9f9d3980,L14 Conrad,Conrad_5_intro_ryan_romanced,1,Conrad,<size=140%>เฮ้ <size=100%>มา​ล้าง​ตัว
+8597b1ea1423580d,L14 Conrad,Conrad_5_intro_ryan_romanced,2,Kobold,สวัสดี คอนราด
+3ed1272125c54574,L14 Conrad,Conrad_5_intro_ryan_romanced,3,Kobold,มา​ดึก​ขนาด​นี้​มี​อะไร​เหรอ?
+d90de33a2137108a,L14 Conrad,Conrad_5_intro_ryan_romanced,4,Conrad,อือ ฉัน​เอง
+2ca9d5b1cf89ccc8,L14 Conrad,Conrad_5_intro_ryan_romanced,5,Conrad,คืนนี้​จะ​เข้า​เมือง ต้อง​สะอาด​เอี่ยม ว่าแต่...
+f5ebf2a456433609,L14 Conrad,Conrad_5_intro_ryan_romanced,6,Conrad,ได้ยิน​เรื่อง​นาย​กับ​ตัว​โต​สีน้ำเงิน​มา ไร​อัน​ใช่ไหม?
+061d649bf4c733b7,L14 Conrad,Conrad_5_intro_ryan_romanced,7,Conrad,พนัน​ได้​ว่า​สนุก​แน่
+4193e2b4730c89ad,L14 Conrad,Conrad_5_intro_ryan_romanced,8,Conrad,หวัง​ว่า​จะ​ไป​ได้ดี​นะ
+63ecf81d4e111712,L14 Conrad,Conrad_5_intro_ryan_romanced,9,Kobold,ดีมาก! ขอบใจ​ที่​ถาม
+0c7c795d2dd5eb76,L14 Conrad,Conrad_5_intro_ryan_romanced,10,Kobold,ไป​ได้ดี
+ae61bf1949b59852,L14 Conrad,Conrad_5_intro_ryan_romanced,12,Conrad,ทีนี้!
+25ba5fd876754270,L14 Conrad,Conrad_5_intro_ryan_romanced,13,Conrad,คอนราด​ต้อง​ล้าง​ตัว!
+# --- intro: Conrad_5_intro_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+76777c9ea422832b,L14 Conrad,Conrad_5_intro_conrad_romanced,1,Conrad,เฮ้ คน​หล่อ
+0b7efee62380b6cd,L14 Conrad,Conrad_5_intro_conrad_romanced,2,Conrad,ฉัน​ดู​เป็นไง?
+060982be63865e2c,L14 Conrad,Conrad_5_intro_conrad_romanced,3,Kobold,เท่​มาก
+b6fff34d007d61c9,L14 Conrad,Conrad_5_intro_conrad_romanced,4,Kobold,เอ่อ..
+806a4d3418ed236d,L14 Conrad,Conrad_5_intro_conrad_romanced,5,Conrad,ใช่! ฉัน​เท่!
+4bd075c280186208,L14 Conrad,Conrad_5_intro_conrad_romanced,6,Conrad,แต่​ไม่​เหมาะกับ​เดต
+777560a71762cf9b,L14 Conrad,Conrad_5_intro_conrad_romanced,7,Conrad,งั้น​ล้าง​ออก​ซะ​เพื่อ​เดต​คืนนี้​ของ​เรา
+364ea49c3b6c9895,L14 Conrad,Conrad_5_intro_conrad_romanced,8,Conrad,ฮ่า!
+3ef6b1f5eeda632e,L14 Conrad,Conrad_5_intro_conrad_romanced,9,Conrad,แค่​ล้อเล่น
+ec760ba3440257aa,L14 Conrad,Conrad_5_intro_conrad_romanced,10,Conrad,โอเค งั้น​ล้าง​ออก​ซะ​เพื่อ​เดต​คืนนี้​ของ​เรา
+line:d66b9155,L14 Conrad,Conrad_5_intro_conrad_romanced,11,Kobold,ตั้งตารอ​เลย
+300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Kobold,ต้อง​ทำให้​นาย​สะอาดหมดจด!
+line:405b9622,L14 Conrad,Conrad_5_intro_conrad_romanced,13,Conrad,ฉัน​ก็​ด้วย​ว่ะ
+260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,เฮะ... แหง​อยู่แล้ว
+d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,ตื่นเต้น​สุด ๆ
+a652a464f67481de,L14 Conrad,Conrad_5_intro_conrad_romanced,16,Conrad,จอง​ที่นั่ง​ที่​บาร์​ที่​บอก​ไว้​แล้ว
+ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,บรรยากาศ​ตอนกลางคืน​โคตร​ดี
+18ed0c57d649df67,L14 Conrad,Conrad_5_intro_conrad_romanced,18,Conrad,นาย​ต้อง​ชอบ
+# --- intro: Conrad_5_intro_ryan_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+9ec8a28e82bf29dd,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,1,Conrad,เฮ้ย​ยย
+ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,อะไร​ทำให้​อารมณ์ดี​ขนาด​นี้?
+9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,เดต​กับ​ไร​อัน​มัน...
+f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,โคตร​ดี​เลย!
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,โย่
+4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,โทษ​ที​ที่มา​ดึก การ​นอน​ฉัน​เพี้ยน​ไป​หมด
+258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,แค่​มา​ล้าง​ตัว​น่ะ
+b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,ต้อง​เล่า​รายละเอียด​เรื่อง​ไร​อัน​ให้​ฟัง​เร็ว ๆ นี้​นะ
+9ab1cc314a249eac,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,12,Kobold,โอเค! จะ​ไป​เปิด​ประตู​ให้
+1d28eb42dcdd879d,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,13,Conrad,ไม่ต้อง​ห่วง จะ​เล่า​แน่
+line:5183a6f2,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,14,Conrad,ขอบใจ​นะ
+# --- progress: Conrad_5_required_ryan_romanced | if $ryan_romanced ---
+189bf8eff795718a,L14 Conrad,Conrad_5_required_ryan_romanced,1,Conrad,เฮ้ โทษ​ที​ที่มา​ดึก
+cf69f255df6f95af,L14 Conrad,Conrad_5_required_ryan_romanced,2,Kobold,ไม่เป็นไร อีก​ประมาณ​ชั่วโมง​ถึง​จะ​ปิด
+3aa0d9279bff43d9,L14 Conrad,Conrad_5_required_ryan_romanced,3,Kobold,มา​ได้​ทุกเมื่อ​เลย!
+f135fa715daf4f0c,L14 Conrad,Conrad_5_required_ryan_romanced,4,Conrad,อ้อ โอเค งั้น​ช่างมัน ไม่​ขอโทษ​แล้ว
+line:aea0be6b,L14 Conrad,Conrad_5_required_ryan_romanced,5,Conrad,เฮะเฮะ ขอบใจ​นะ
+b127befdbae1da68,L14 Conrad,Conrad_5_required_ryan_romanced,6,Conrad,เดต​กับ​ไร​อัน​ของ​นาย​น่ะ
+e00a5000d0f2cd2a,L14 Conrad,Conrad_5_required_ryan_romanced,8,Conrad,เซ็กซ์​เป็นไง
+7bd3b05552e5bd75,L14 Conrad,Conrad_5_required_ryan_romanced,10,Kobold,อ้อ เอ่อ <size=70%>ดี
+051b72b94276cf81,L14 Conrad,Conrad_5_required_ryan_romanced,11,Conrad,เฮ้ ถาม​หน่อย​ไม่​ผิด​สักหน่อย!
+d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,ฟัง​ดูเหมือน​ดี​นะ
+83e2bb850a49b35e,L14 Conrad,Conrad_5_required_ryan_romanced,13,Conrad,ฮ่า นึก​ภาพ​ออก
+9f69f9b215b926ee,L14 Conrad,Conrad_5_required_ryan_romanced,14,Conrad,นาย​ใช้​มือ​เก่ง​จริง ๆ นี่​นา
+2c910bcdb2651bf0,L14 Conrad,Conrad_5_required_ryan_romanced,15,Conrad,อิจฉา!
+9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,16,Conrad,...แต่​ไม่​ใช่​แบบ​แปลก ๆ นะ
+# --- progress: Conrad_5_required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+63b786e95b90bc5e,L14 Conrad,Conrad_5_required_conrad_romanced,1,Conrad,คือ คืนนี้
+line:a0479425,L14 Conrad,Conrad_5_required_conrad_romanced,3,Kobold,ตั้งตารอ​เลย
+line:95e2f7cc,L14 Conrad,Conrad_5_required_conrad_romanced,4,Conrad,อือ
+6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,6,Conrad,ก็​ควร​อยู่
+06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,นาย​ต้อง​ชอบ​แน่
+6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,แสงไฟ​แถว​นั้น​ก็​สวย​มาก
+95e9b7e01259ac1e,L14 Conrad,Conrad_5_required_conrad_romanced,9,Conrad,สร้าง​บรรยากาศ​ได้ดี​จริง ๆ
+66e39f6379268a82,L14 Conrad,Conrad_5_required_conrad_romanced,10,Kobold,เก็บ​การ​สร้าง​บรรยากาศ​ไว้​คืนนี้​เถอะ!
+f9ae65b8ce359331,L14 Conrad,Conrad_5_required_conrad_romanced,12,Conrad,ฮ่า ก็ได้
+1d1baaa8db27cb04,L14 Conrad,Conrad_5_required_conrad_romanced,13,Conrad,อ้อ ใช่
+ff84a4b13b8be2a4,L14 Conrad,Conrad_5_required_conrad_romanced,14,Conrad,พอ​ล้าง​เสร็จ​ฉัน​จะ​ออก​ไป​เตรียม​ที่​ของ​เรา​ไว้
+# --- progress: Conrad_5_required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+1598446fc49cdf80,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,1,Conrad,ไร​อันเป็น​มังกร​ที่​ดี​จริง ๆ
+e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold/Conrad,ดี​จริง ๆ
+73f5014bc8782ad4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,4,Conrad,อืม เขา​ใจดี​กับ​ฉัน​มาก
+953a9b287930c86a,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,5,Conrad,เขา... ใส่ใจ แล้วก็​เข้า​อก​เข้าใจ​ด้วย
+41d3eda9c195fe48,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,6,Conrad,ตอน​เจอ​เขา​ครั้งแรก ฉัน​กลับ​ไป​ทำตัว​แบบ​เดิม ๆ
+42fb7bc16778c0a5,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,7,Conrad,... พูด​ตรง ๆ ก็​ทำตัว​เป็น​ไอ้เวร​นิดหน่อย
+66ad79997bc62825,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,8,Conrad,แต่​เขา​ก็... รู้​ว่า​ต้อง​พูด​ยังไง​ให้​ฉัน​หลุด​จาก​มัน
+7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,ดี​จัง​เลย!
+98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Kobold,ไร​อันเป็น​คน​น่ารัก
+7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,อืม... เขา​เยี่ยม​จริง ๆ
+line:c7e1b369,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,12,Conrad,จริง​ว่ะ
+5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,13,Conrad,ขอบใจ​ที่​แนะนำ​เขา​ให้​ฉัน​รู้จัก
+# --- jerkoff: Conrad_5_JerkOff_Start ---
+c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,ฮ่า... จะ​รูด​ให้​ฉัน​ตอนนี้​เหรอ? ก็ได้
+# --- cum: Conrad_5_Cum ---
+51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,โอ๊ย​ยย นาย​รู้​วิธี​จัดการ​มังกร​จริง ๆ!
+# --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
+311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,เสร็จ​แล้ว!
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,นาย <i>สะอาดหมดจด
+2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,ดูเหมือน​งั้น
+af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,เยี่ยม​โว้ย
+8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,ขอบใจ​ที่​ล้าง​ให้​ดึกดื่น​ขนาด​นี้
+028e30f8adf6e6ad,L14 Conrad,Conrad_5_outro_ryan_romanced,6,Conrad,ต้อง​อัปเดต​เรื่อง​นาย​กับ​ไร​อัน​ให้​ฉัน​ด้วย​นะ?
+a398eca1fb8d9924,L14 Conrad,Conrad_5_outro_ryan_romanced,7,Conrad,เอาเถอะ...
+234fc4abfc8d8619,L14 Conrad,Conrad_5_outro_ryan_romanced,8,Conrad,ปล่อย <i>บิ๊กซี</i> ออก​ไป​จาก​ที่นี่!
+a53a782390260e09,L14 Conrad,Conrad_5_outro_ryan_romanced,9,Kobold,บิ๊กซี...?
+8e369560d1581070,L14 Conrad,Conrad_5_outro_ryan_romanced,10,Kobold,โอเค คอนราด
+f6b30f28e561466d,L14 Conrad,Conrad_5_outro_ryan_romanced,12,Conrad,อืมมม อันนี้​ไม่​ใช้แล้ว​ละ​กัน
+ac2b2c6605839727,L14 Conrad,Conrad_5_outro_ryan_romanced,13,Conrad,ฮ่า... อืม...
+fc66fcc7fd7d0e4d,L14 Conrad,Conrad_5_outro_ryan_romanced,14,Conrad,โอเค ไว้​เจอกัน!
+# --- outro: Conrad_5_outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+9333db61bcc08052,L14 Conrad,Conrad_5_outro_conrad_romanced,1,Conrad,สะอาด​หมด​แล้ว...
+8b45593ada7894a3,L14 Conrad,Conrad_5_outro_conrad_romanced,2,Conrad,รู้​ใช่ไหม​ว่า​หมายความว่า​ยังไง
+53e54ad7b23e6757,L14 Conrad,Conrad_5_outro_conrad_romanced,3,Kobold,คืน​เดต!
+4f319a155b3e572c,L14 Conrad,Conrad_5_outro_conrad_romanced,4,Kobold,ต้อง​ปิด​ร้าน​ก่อน​นะ...
+f3296c9825518630,L14 Conrad,Conrad_5_outro_conrad_romanced,6,Conrad,ฉัน​จะ​ไป​จองที่​ให้​นาย​ระหว่าง​ที่​นาย​ปิด​ร้าน
+c215e512d572e96c,L14 Conrad,Conrad_5_outro_conrad_romanced,7,Conrad,รู้​แล้ว ฉัน​จะ​จองที่​ให้!
+22d803e60de439a9,L14 Conrad,Conrad_5_outro_conrad_romanced,8,Conrad,โอเค! พร้อม​ไป​แล้ว
+092af5ec90bd21c7,L14 Conrad,Conrad_5_outro_conrad_romanced,9,Conrad,คืนนี้​จะ​รอ​นาย​อยู่​ที่​บาร์​นะ!
+# --- outro: Conrad_5_outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e079ff157877ea28,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,1,Conrad,ฉัน​ว่า​ล้าง​ครบ​ทุก​จุด​แล้ว!
+6749954edebda844,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,2,Conrad,ไม่​กวน​นาย​แล้ว​ล่ะ
+2bc72fd03dd6d9e7,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,3,Conrad,ขอบใจ​ที่​ให้​เข้ามา​ดึก​ขนาด​นี้
+f001e3ed4df7e0ee,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,4,Kobold,ไม่​มีปัญหา!
+9d4a6cd35afcc17e,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,5,Kobold,ยินดีต้อนรับ​เสมอ คอนราด
+5e4e2c64bc630fa1,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,6,Conrad,อืมม ฉัน​จะ​ปรับ​เวลานอน​ให้​ดีขึ้น...
+5c58c3e6d4c7dc65,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,7,Conrad,ขอบใจ ฉัน​ดีใจ​ที่​ได้มา​ที่นี่​เสมอ
+163137d1bff25904,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,8,Conrad,เอาเถอะ ช่วย​ไป​เปิด​ประตู​ได้​ไหม?
+94d29a68cf0c8c31,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,9,Conrad,ค่ำคืน​ไม่​เริ่ม​ด้วยตัวเอง​หรอก​นะ!
+
+# ===== Level 15: Alexander (Sunny) =====
+# --- intro: Alexander_5_intro ---
+bc3d56d7794e4370,L15 Alexander,Alexander_5_intro,6,Kobold,สวัสดี อเล็กซานเดอร์
+1bef44aeb393caf0,L15 Alexander,Alexander_5_intro,7,Kobold,สวัสดี ตัว​ใหญ่!
+2d8bd7d9bb5f85ba,L15 Alexander,Alexander_5_intro,8,Alexander,สวัสดี
+b048841add4ee6cf,L15 Alexander,Alexander_5_intro,10,Alexander,ผม​มา​ล้าง​ตัว
+beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,หวัง​ว่า​คุณ​สบายดี​นะ!
+906a59351176dc24,L15 Alexander,Alexander_5_intro,12,Kobold,สบายดี! เพิ่ง​ไป​เดต​กับ​ไร​อัน​มา
+2a75724b922176cf,L15 Alexander,Alexander_5_intro,13,Alexander,เหรอ? เด​รก​สี​ฟ้า​ที่​ผม​เห็น​แถว​นี้​น่ะ​เหรอ?
+1f4da5e1dde7e17c,L15 Alexander,Alexander_5_intro,14,Alexander,ดีใจ​ที่​ได้ยิน​ว่า​คุณ​คบ​กับ​ใคร​อยู่!
+50f1967e1e33cecf,L15 Alexander,Alexander_5_intro,15,Kobold,สบายดี! เพิ่ง​ไป​เดต​กับ​คอนราด​มา
+0738da2a76bc2231,L15 Alexander,Alexander_5_intro,16,Alexander,เหรอ? เด​รก​แดง​ตัวเล็ก​น่ะ​เหรอ?
+896dc87e931d64eb,L15 Alexander,Alexander_5_intro,18,Kobold,สบายดี! ยิ่ง​ดี​เข้าไป​อีก​เพราะ​คุณ​มา
+0786859cb08f5ef9,L15 Alexander,Alexander_5_intro,19,Kobold,สบายดี!
+414ed962f4c8a03a,L15 Alexander,Alexander_5_intro,20,Alexander,อ้อ นั่น... วิเศษ​เลย!
+10cdda610834ef77,L15 Alexander,Alexander_5_intro,21,Alexander,ผม​ก็​ดีใจ​ที่​ได้มา​ที่นี่
+346865d8c1dd9693,L15 Alexander,Alexander_5_intro,22,Alexander,ดีใจ​ที่​ได้ยิน​แบบ​นั้น
+f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,เอาล่ะ ผม​ต้อง​ล้าง​ตัว
+4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,จัด​ให้!
+42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,ตั้งตารอ​การ​ล้าง​อยู่
+line:316bb26e,L15 Alexander,Alexander_5_intro,27,Alexander,ขอบคุณ​อย่างยิ่ง
+# --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
+067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,ผม​คิด​อยู่​ว่า...
+4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,คุณ​คิด​ว่า​ผม​น่า​ดึงดูด​ไหม?
+303f7b0a567bfb2b,L15 Alexander,Alexander_5_romance_route,6,Kobold,ใช่
+09141003dee8665c,L15 Alexander,Alexander_5_romance_route,7,Kobold,คิด​สิ!
+43c22d680a102c02,L15 Alexander,Alexander_5_romance_route,8,Kobold,ฉัน​ว่า​คุณ​ดูดี​นะ
+4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,ดีใจ​จัง!
+c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,นั่น... ทำให้​ผม​มั่นใจ​ใน​ตัวเอง​ขึ้น​มาก​เลย
+2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,จริง​เหรอ?
+line:e00c6df5,L15 Alexander,Alexander_5_romance_route,14,Alexander,ขอบคุณ​อย่างยิ่ง
+8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,นั่น​ทำให้​ผม​มั่นใจ​ใน​ตัวเอง​ขึ้น​มาก​เลย
+4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,นั่น​นำ​มาสู่​คำถาม​ต่อไป​ของ​ผม...
+96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,เย็น​นี้​คุณ​อยาก​ไป​ห้องสมุด​ของ​วิทยาลัย​กับ​ผม​ไห​ม...?
+558dbfba7857e37d,L15 Alexander,Alexander_5_romance_route,18,Alexander,มัน​จะ​เป็น... เดต อย่าง​ที่​คน​ส่วนใหญ่​เรียก​กัน
+76eea215ea7ba450,L15 Alexander,Alexander_5_romance_route,19,Kobold,"<gradient=""gold""><b> ไม่​ว่า​เลย! </b></gradient><size=70%> (นำไปสู่​โรแมนซ์​กับ​อเล็กซานเดอร์!)"
+500188b2a2627768,L15 Alexander,Alexander_5_romance_route,20,Kobold,"<gradient=""gold""><b> คืนนี้​ฉัน​จะ​ยุ่ง​น่ะ ขอโทษ​ที </b></gradient><size=70%> (ไม่​มี​โรแมนซ์!)"
+96b6a8b07a0781d0,L15 Alexander,Alexander_5_romance_route,22,Alexander,ผม​คิด​จะ​ถาม​คุณ​เรื่อง​นี้​มา​สักพัก​แล้ว
+942b49a7c66fb0bf,L15 Alexander,Alexander_5_romance_route,23,Alexander,อ้า ไม่ต้อง​กังวล
+b1cb9d9c9d3d9661,L15 Alexander,Alexander_5_romance_route,24,Alexander,ก็ได้ งั้น​อย่า​ให้​ผม​รบกวน​การ​ล้าง​เลย!
+# --- progress: Alexander_5_required ---
+861a7c80ccb8a4ba,L15 Alexander,Alexander_5_required,1,Alexander,แล้ว เดต​เป็น​ยังไง​บ้าง?
+3481be04c35d76a2,L15 Alexander,Alexander_5_required,2,Kobold,เยี่ยม​มาก! ไร​อัน​น่ารัก​มาก
+d26f0d306552c44a,L15 Alexander,Alexander_5_required,3,Kobold,เยี่ยม​เลย คอนราด​สุดเหวี่ยง แบบ​ดี ๆ นะ
+cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,ดี​นะ เรา​มี​อะไร​กัน
+6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,ดีแล้ว คุณ​สมควร​ได้​ผู้ชาย​ดี ๆ
+9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,ผม​มั่นใจ​ว่า​เขา​ก็​คิด​ว่า​คุณ​น่า​คบ​เหมือนกัน!
+add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,ขอบคุณ คุณ​ก็​น่า​คบ​เหมือนกัน!
+line:44701902,L15 Alexander,Alexander_5_required,8,Kobold,ขอบคุณ!
+01cb42db52da342d,L15 Alexander,Alexander_5_required,9,Alexander,ขอบคุณ พูด​แบบ​นั้น​ใจ​ดีมาก
+line:d2401e75,L15 Alexander,Alexander_5_required,10,Alexander,แน่นอน​ครับ!
+a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,ฮ่า เขา​ดู​เป็น​พวก​สุดเหวี่ยง​จริง ๆ
+5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,ดีใจ​ที่​คุณ​ชอบ​เขา ผม​มั่นใจ​ว่า​เขา​ก็​คิด​ว่า​คุณ​น่า​คบ
+line:e7e57d9c,L15 Alexander,Alexander_5_required,14,Kobold,ขอบคุณ!
+line:76f8c20c,L15 Alexander,Alexander_5_required,16,Alexander,แน่นอน​ครับ!
+cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,แปล​ว่า​คุณ​สอง​คน​เข้ากันได้ดี
+# --- jerkoff: Alexander_5_JerkOff_Start ---
+caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> รู้สึก​ดี​จัง...</i>
+# --- cum: Alexander_5_Cum ---
+3eb65bb3b11e901c,L15 Alexander,Alexander_5_Cum,1,Alexander,โอ้... ขอโทษ​ที่​ทำ​เลอะ...
+# --- mount_start: Alexander_5_Mount_Start ---
+6df0c2c2617b9905,L15 Alexander,Alexander_5_Mount_Start,1,Alexander,โอ้​ตาย ผม​คง​ใช้​แท่น​ได้!
+# --- mount_finish: Alexander_5_Mount_Finish ---
+31ea4258e44c77e4,L15 Alexander,Alexander_5_Mount_Finish,1,Alexander,อืมฟ์... ผม​คง​ต้องการ​สิ่ง​นี้​จริง ๆ ขอบคุณ
+# --- outro: Alexander_5_Outro ---
+026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,ขอบคุณ​ที่​ล้าง​ให้
+7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,คืนนี้... ใน​วิทยาเขต ห้องสมุด​คือ​ตึก​ยอด​แหลม​สีน้ำเงิน​หลัง​ใหญ่
+f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,ไป​ที่​ทางเข้า​สำหรับ​มังกร แล้ว​ผม​จะ​เปิด​ให้​เข้ามา
+line:b5d7d26f,L15 Alexander,Alexander_5_Outro,4,Alexander,ตั้งตารอ​เลย​ครับ
+5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,ฉัน​ก็​ด้วย!
+6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,ฟัง​ดู​เจ๋ง​มาก
+line:99b6dc81,L15 Alexander,Alexander_5_Outro,7,Alexander,ยินดี​อย่างยิ่ง​ครับ
+ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,มัน​เจ๋ง​จริง ๆ นั่นแหละ
+6068953467a952bf,L15 Alexander,Alexander_5_Outro,9,Alexander,ไม่​กวน​คุณ​แล้ว​นะ ขอบคุณ​ที่​ล้าง​ให้
+7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,10,Alexander,แล้ว​เจอกัน​คืนนี้
+4f8eb9eeb14b2f7d,L15 Alexander,Alexander_5_Outro,11,Alexander,น่าจะ​ครบ​ทุก​จุด​แล้ว
+991fa15e47275ce0,L15 Alexander,Alexander_5_Outro,12,Alexander,ขอบคุณ​ที่​ล้าง​ให้!
+6d1255dd43802973,L15 Alexander,Alexander_5_Outro,13,Alexander,ดีใจ​ที่​ได้​พบ​คุณ
+5d5e0eafc7ef13d6,L15 Alexander,Alexander_5_Outro,14,Kobold,ฉัน​ก็​ด้วย
+63b9a103362edd6c,L15 Alexander,Alexander_5_Outro,15,Kobold,โธ่ ขอบคุณ​นะ อเล็กซานเดอร์
+6df8f8008c57cbac,L15 Alexander,Alexander_5_Outro,16,Alexander,เอาล่ะ ไม่​กวน​คุณ​แล้ว
+1cb7b221b7adda1c,L15 Alexander,Alexander_5_Outro,17,Alexander,ลาก่อน!
+
+# ===== Cutscenes (started by game code) =====
+# --- Alexander_SexScene ---
+266f7a45346224eb,Cutscene,Alexander_SexScene,1,Alexander,เรา​จะ​นอน​อยู่​ตรงนี้​ก็ได้...
+43b91c684627d3b6,Cutscene,Alexander_SexScene,2,Alexander,คุณ​จะ​จัดการ​ทุกอย่าง​ให้​เหรอ?
+# --- Alexander_SexScene_Loop ---
+7d085d9765e3c5d6,Cutscene,Alexander_SexScene_Loop,1,Alexander,โอ้...
+f70738ec42aa401d,Cutscene,Alexander_SexScene_Loop,2,Alexander,คุณ​ใช้​มือ​เก่ง​มาก​จริง ๆ
+328ad033a139998d,Cutscene,Alexander_SexScene_Loop,3,Alexander,อืม​ม..
+5ec1f7e700f37c3d,Cutscene,Alexander_SexScene_Loop,4,Alexander/Conrad/Ryan,..
+# --- Alexander_SexScene_Cum | if $alexander_sexscene_loops ---
+08ab4c0c6ca5fe6f,Cutscene,Alexander_SexScene_Cum,1,Kobold,แบบนี้​ดี​ไหม?
+069e24aa896ea4cf,Cutscene,Alexander_SexScene_Cum,2,Alexander,ดี... ถูกต้อง​แล้ว
+2c33dcef91e06624,Cutscene,Alexander_SexScene_Cum,3,Kobold,ดี
+2d731f1625c8064f,Cutscene,Alexander_SexScene_Cum,4,Alexander,ผม... ใกล้​แล้ว
+4650860eb73dd16f,Cutscene,Alexander_SexScene_Cum,5,Kobold,อดทน​อีก​นิด​เพื่อ​ฉัน​ได้​ไหม?
+860ede2808e2507c,Cutscene,Alexander_SexScene_Cum,6,Kobold,เอาเลย!
+16c36baab1491eb1,Cutscene,Alexander_SexScene_Cum,7,Alexander,ก-ก็ได้ จะ​พยายาม
+24537bfd61baf4a0,Cutscene,Alexander_SexScene_Cum,8,Alexander,ผม​ว่า​ผม​กลั้น​ไม่​ไหว​แล้ว
+a63eed0b6b6a78c7,Cutscene,Alexander_SexScene_Cum,9,Kobold,ยังก่อน อีก​นิดเดียว
+35f5ee08b67fc0f5,Cutscene,Alexander_SexScene_Cum,10,Kobold,ปล่อย​ได้​เมื่อ​พร้อม​นะ
+82af5427ecb85c11,Cutscene,Alexander_SexScene_Cum,11,Alexander,ครับ..
+847ec7301eab2bde,Cutscene,Alexander_SexScene_Cum,12,Alexander,ฮึ่​ฟ...
+c958ed597f3ee7b9,Cutscene,Alexander_SexScene_Cum,13,Alexander,ผม​ชอบ​สิ่ง​นี้​มาก​เลย
+f3be3d62065c0791,Cutscene,Alexander_SexScene_Cum,14,Kobold,ดีใจ​ที่​ได้ยิน​แบบ​นั้น
+6a629fe795ac84d7,Cutscene,Alexander_SexScene_Cum,15,Kobold,แล้ว​ยังไง​ต่อ?
+4cc4342b97114697,Cutscene,Alexander_SexScene_Cum,16,Alexander,ครับ... แต่​ผม​ว่า​เรา​ต้อง​ถู​พื้น​กัน
+ee63118710aa5c5b,Cutscene,Alexander_SexScene_Cum,17,Alexander,เรา​ต้อง​ถู​พื้น...
+8319d1715d2a4149,Cutscene,Alexander_SexScene_Cum,18,Alexander,<i><size=70%>แย่​แล้ว.. หนังสือ​ด้วย
+# --- Conrad_SexScene ---
+b6d2d6ccb52c5166,Cutscene,Conrad_SexScene,1,Conrad,โอ้​ให้​ตาย! นาย​ชอบ​ผจญภัย​จริง ๆ!
+e5c48d779d6422b5,Cutscene,Conrad_SexScene,2,Kobold,อืมฟ์! (ใช่!)
+e0ecc38d8bbe3790,Cutscene,Conrad_SexScene,3,Conrad,อย่า​พูด​ตอน​ปาก​เต็ม​สิ
+# --- Conrad_SexScene_Loop ---
+d7e01674d2776085,Cutscene,Conrad_SexScene_Loop,1,Conrad,พูด​ตรง ๆ ไม่​รู้​ว่า​นาย​ทำได้​ยังไง
+9b277d164ba8a630,Cutscene,Conrad_SexScene_Loop,2,Conrad,แต่​ไม่​บ่น​หรอก​นะ
+73433af885509f84,Cutscene,Conrad_SexScene_Loop,3,Conrad,เยี่ยม​โว้ย
+# --- Conrad_SexScene_Cum | if $conrad_sexscene_loops ---
+fcfcfc2c31be11e5,Cutscene,Conrad_SexScene_Cum,1,Conrad,พร้อม​ไหม?
+6b426873374bb7a4,Cutscene,Conrad_SexScene_Cum,2,Kobold,ขอเวลา​อีก​นิด
+91213ceb7548b8dc,Cutscene,Conrad_SexScene_Cum,3,Kobold,พร้อม!
+72e3cb39cf4a181a,Cutscene,Conrad_SexScene_Cum,4,Conrad,คอนราด​อึด​ได้​เท่าที่​ต้องการ
+3f2d1b3f808a4ec7,Cutscene,Conrad_SexScene_Cum,5,Conrad,ฉัน​ปล่อย​ได้​เมื่อ​นาย​พร้อม
+46438371960f0974,Cutscene,Conrad_SexScene_Cum,6,Kobold,ยังก่อน
+d893ccbfc95475bc,Cutscene,Conrad_SexScene_Cum,7,Kobold,เอาเลย!
+aa1a7618e29e4482,Cutscene,Conrad_SexScene_Cum,8,Conrad,เฮ้ ได้​เลย!
+aa116a5879e94072,Cutscene,Conrad_SexScene_Cum,9,Conrad,ประทับใจ​นะ
+45a9ad3bf69b0498,Cutscene,Conrad_SexScene_Cum,10,Conrad,พร้อม​กลับ​เข้า​คลับ​หรือยัง?
+4db30f4a0f40d350,Cutscene,Conrad_SexScene_Cum,11,Kobold,ได้​เลย!
+# --- Ryan_Conrad_SexScene ---
+e86ce51d1dbf8280,Cutscene,Ryan_Conrad_SexScene,1,Ryan,ไร​อัน: ฉัน​ไม่​เคย​ทำ​แบบนี้​ข้างนอก​มา​ก่อน
+848d254c8d63e6fb,Cutscene,Ryan_Conrad_SexScene,2,Conrad,คอนราด: ไม่ต้อง​ห่วง!
+3e0325398f9de675,Cutscene,Ryan_Conrad_SexScene,3,Conrad,คอนราด: ฉัน​ทำ​ตลอด
+d55845869b2cd946,Cutscene,Ryan_Conrad_SexScene,4,Ryan,ไร​อัน: มัน​ก็​ตื่นเต้น​ดี​นะ
+# --- Ryan_Conrad_SexScene_Loop ---
+59a6f968c75b792f,Cutscene,Ryan_Conrad_SexScene_Loop,1,Conrad,คอนราด: สนุก​ไหม?
+836b8c1db049dc01,Cutscene,Ryan_Conrad_SexScene_Loop,2,Ryan,ไร​อัน: สนุก​แน่นอน เป็นห่วง​ฉัน​เหรอ?
+dd91f260275b5093,Cutscene,Ryan_Conrad_SexScene_Loop,3,Conrad,คอนราด: คอนราด​แค่​สนุก​กับ​ตัวเอง
+bf095ea55cdeb898,Cutscene,Ryan_Conrad_SexScene_Loop,4,Conrad,คอนราด: จริง ๆ.. คือ..
+5001d1e4b306b6d9,Cutscene,Ryan_Conrad_SexScene_Loop,5,Conrad,คอนราด: ฉัน​อยาก​ให้​เรื่อง​นี้​ไป​ได้ดี
+4c3de56e34727c37,Cutscene,Ryan_Conrad_SexScene_Loop,6,Ryan,ไร​อัน: ฉัน​ว่า​มัน​ไป​ได้​สวย​เลย​นะ
+06cb256bd506fa70,Cutscene,Ryan_Conrad_SexScene_Loop,7,Ryan,ไร​อัน: ชอบ​มาก​เลย
+2e028541c13b150b,Cutscene,Ryan_Conrad_SexScene_Loop,8,Conrad,คอนราด: นาย​รู้สึก​ดีมาก
+# --- Ryan_Conrad_SexScene_Cum | if $ryan_conrad_sexscene_loops ---
+5142dd3610e4cc0c,Cutscene,Ryan_Conrad_SexScene_Cum,1,Conrad,คอนราด: ฉัน​จะ​ระเบิด​แล้ว
+357806c023d4c85e,Cutscene,Ryan_Conrad_SexScene_Cum,2,Kobold,พวกเขา​ทำต่อ
+4e0f42eaaa70c70d,Cutscene,Ryan_Conrad_SexScene_Cum,3,Kobold,พวกเขา​เสร็จ
+d8e952b1635e3fe5,Cutscene,Ryan_Conrad_SexScene_Cum,4,Ryan,ไร​อัน: ฉัน​ว่า​ฉัน​ก็​ใกล้​แล้ว..
+50504d8f1c0a5f1c,Cutscene,Ryan_Conrad_SexScene_Cum,7,Ryan,ไร​อัน: ว้าว.. ความสูง​คือ​สิ่ง​เดียว​ที่​เล็ก​ใน​ตัว​นาย​จริง ๆ
+e7a686aecb078b9e,Cutscene,Ryan_Conrad_SexScene_Cum,8,Conrad,คอนราด: แหง​อยู่แล้ว!
+98087861fbfaa621,Cutscene,Ryan_Conrad_SexScene_Cum,9,Ryan,ไร​อัน: ดี​จัง
+be1dff750703beb9,Cutscene,Ryan_Conrad_SexScene_Cum,10,Conrad,คอนราด: อืม
+# --- Ryan_SexScene ---
+caa123c912750ed2,Cutscene,Ryan_SexScene,1,Ryan,แน่ใจ​นะ​ว่า​มัน​จะ​เข้า?
+c8dda0f1b46383bc,Cutscene,Ryan_SexScene,2,Kobold,โค​บอลด์​ยืดหยุ่น​มาก เข้า​ได้​แน่
+849b442f9a88c950,Cutscene,Ryan_SexScene,3,Kobold,ยิ๊บ
+88f476f3d6ebac8d,Cutscene,Ryan_SexScene,4,Ryan,โอเค บอก​นะ​ถ้า​ไม่​สบาย​ตัว​หรือ​อะไร
+# --- Ryan_SexScene_Loop ---
+48cf02e6d9e88966,Cutscene,Ryan_SexScene_Loop,1,Ryan,โอ้​ว้าว..
+8caf602c6f60f544,Cutscene,Ryan_SexScene_Loop,2,Ryan,นี่​ครั้งแรก​ของ​ฉัน​กับ​โค​บอลด์
+db7bd45c48fe49a2,Cutscene,Ryan_SexScene_Loop,3,Ryan,ดีมาก​เลย..
+# --- Ryan_SexScene_Cum | if $ryan_sexscene_loops ---
+eff478354f7f1b18,Cutscene,Ryan_SexScene_Cum,1,Ryan,ฉัน​ว่า​ฉัน​ใกล้​แล้ว..
+ddfa0f7133303565,Cutscene,Ryan_SexScene_Cum,2,Kobold,ต่อ​อีก​นิด​นะ
+f76c951c6c97d8cd,Cutscene,Ryan_SexScene_Cum,3,Kobold,เอาเลย!
+27cb363532fd0324,Cutscene,Ryan_SexScene_Cum,4,Ryan,โอเค ทำได้
+685d8bfcf6988796,Cutscene,Ryan_SexScene_Cum,5,Ryan,กลั้น​ยาก​จัง..
+8fdcf9b73762886e,Cutscene,Ryan_SexScene_Cum,6,Kobold,ฉัน​ยัง​ต้องการ​อีก!
+5128d4e4a722127f,Cutscene,Ryan_SexScene_Cum,7,Kobold,เอาเลย!
+eb41a8966fdf7cfd,Cutscene,Ryan_SexScene_Cum,8,Ryan,แบบ​นั้น​ยิ่ง​ยาก​ขึ้น​นะ!
+9c78a3c6942a7982,Cutscene,Ryan_SexScene_Cum,9,Ryan,โอเค ฉัน​ไหว..
+b9ed3621fb6dfbef,Cutscene,Ryan_SexScene_Cum,10,Ryan,สนุก​มาก​เลย
+99955b75e0544165,Cutscene,Ryan_SexScene_Cum,11,Kobold,เห็นด้วย
+ee60aadc2fcea44d,Cutscene,Ryan_SexScene_Cum,12,Ryan,จะ​อยู่​ต่อ​ก็ได้​นะ​ถ้า​อยาก
+9d29fc6dcfe7c05d,Cutscene,Ryan_SexScene_Cum,13,Ryan,ฉัน​จอง​ไว้​ทั้งคืน
+3736ec41338c7ad0,Cutscene,Ryan_SexScene_Cum,14,Kobold,ยินดี​เลย
+
+# ===== Dragon reactions (started by game code) =====
+# --- DragonAlmostClean ---
+bae76fc276bb2030,Reaction,DragonAlmostClean,1,Dragon,อ้อ ดีขึ้น​แล้ว แต่​ยัง​รู้สึก​สกปรก​อยู่
+ce6aaf93738f317e,Reaction,DragonAlmostClean,2,Dragon,ช่วย​ตรวจ​อีกที​ได้​ไหม​ว่า​สะอาด​แล้ว?
+16584052fd337f09,Reaction,DragonAlmostClean,3,Kobold,โอเค
+c54cbee211a25e14,Reaction,DragonAlmostClean,4,Kobold,ได้​เลย
+# --- DragonAnnoyedByBuzzing ---
+d139edc8ffdc22b7,Reaction,DragonAnnoyedByBuzzing,1,Dragon,หยุด​เถอะ เรา​ยัง​ไม่​เสร็จ ใช่ไหม?
+631ef624f4506ea7,Reaction,DragonAnnoyedByBuzzing,2,Kobold,เฮะเฮะ
+# --- DragonColdBalls ---
+e820f3ec0397737f,Reaction,DragonColdBalls,1,Dragon,โอ้! เย็น​จัง!
+8408ed2f21e73811,Reaction,DragonColdBalls,2,Dragon,โว้ว! เย็น!
+46f3ba9fc7d04fa7,Reaction,DragonColdBalls,3,Dragon,บร​ร! น้ำเย็น!
+00221b8a2772003a,Reaction,DragonColdBalls,4,Dragon,อี๊​บ!
+# --- DragonConfusedAboutDismissal ---
+9b99cd22a6f3f85a,Reaction,DragonConfusedAboutDismissal,1,Dragon,อ้าว เสร็จ​แล้ว​เหรอ?
+7022570f87a73481,Reaction,DragonConfusedAboutDismissal,2,Dragon,ฉัน​ว่า​ยัง​พลาด​อีก​หลาย​จุด​นะ...
+27db29faa5e11bb6,Reaction,DragonConfusedAboutDismissal,3,Kobold,อุ๊ปส์ โทษ​ที
+4fff64bb7aeed72f,Reaction,DragonConfusedAboutDismissal,4,Kobold,ไม่​รู้​ว่า​ปุ่ม​นั้น​ทำ​อะไร
+b0869fc4ea46c5bd,Reaction,DragonConfusedAboutDismissal,5,Dragon,ไม่เป็นไร
+cb554196ac99a428,Reaction,DragonConfusedAboutDismissal,6,Dragon,อืม มัน​ดัง บร​รท ฮ่า​ฮ่า
+345b04bed8d1a7e0,Reaction,DragonConfusedAboutDismissal,7,Dragon,เอาเถอะ ดีใจ​ที่​ยัง​ไม่​เสร็จ ทำ​ต่อกัน​เถอะ!
+# --- DragonSatisfiedAndLeaves ---
+7a8942e2613fa23c,Reaction,DragonSatisfiedAndLeaves,1,Dragon,ขอบใจ​ที่​ล้าง​ให้!!
+c92c35bb9f44dac4,Reaction,DragonSatisfiedAndLeaves,2,Dragon,ไว้​ไปเที่ยว​ด้วยกัน​ไหม?
+8aff5108a050bcfa,Reaction,DragonSatisfiedAndLeaves,3,Kobold,ได้!
+2cb6318b9f4550a8,Reaction,DragonSatisfiedAndLeaves,4,Kobold,ได้!!
+28454e931a2d3578,Reaction,DragonSatisfiedAndLeaves,5,Dragon,เยี่ยม! งั้น​ไว้​เจอกัน!
+
+# ===== Unused nodes (not reachable in the current game) =====
+# --- Alexander_1 ---
+31c53bea307f49d0,Unused,Alexander_1,1,Alexander/Ryan,ผม​กำลัง​ช่วย​นัก​เล่นแร่แปรธาตุ​หยิบ​ของ​บน​ชั้นสูง
+f00ea25690e17adf,Unused,Alexander_1,2,Alexander,ได้ยิน​เสียง​ระเบิด​ดังลั่น ผม​ว่า​อิก​วิกซ์​ไม่​รอด
+# --- Alexander_2 ---
+07874aa669e5cb8c,Unused,Alexander_2,1,Alexander,ถ้า​ถูก​จับได้​ว่า​ละเมิด​กฎ​อีก​ข้อ ชื่อเสียง​ผม​พัง​แน่!
+cfe73695b2bdfe19,Unused,Alexander_2,2,Alexander,วิทยาลัย​ต้อง​ไม่​รู้เรื่อง​นี้ โอเค​ไหม?
+27b11f3f6bf12fe9,Unused,Alexander_2,3,Kobold,วิทยาลัย​ไหน?
+2d3935f374b6474e,Unused,Alexander_2,5,Alexander,วิทยาลัย​ชุมชน​ธาตุ​วิทยา​เบิร์น​ส​วิก​น่ะ​สิ!
+7a5128354d6171d0,Unused,Alexander_2,6,Alexander,วิทยาลัย​อัน​ทรงเกียรติ​ที่สุด​ที่​มี​ศาสตราจารย์​ทรงเกียรติ​อย่าง​ผม:
+b34663a53a6541a7,Unused,Alexander_2,9,Alexander,ดี ผม​ยอมให้​วิทยาลัย​ชุมชน​ธาตุ​วิทยา​เบิร์น​ส​วิก​รู้​ไม่​ได้​ว่า​อเล็กซานเดอร์ ศาสตราจารย์​ที่​ดี​ที่สุด​ของ​พวกเขา ก่อเหตุ​อีกครั้ง
+b39b95373bf40c36,Unused,Alexander_2,11,Alexander,โอ๊ย ลืม​ที่​ผม​พูด​ไป​ซะ!
+# --- Alexander_3 ---
+2501ad553fd20454,Unused,Alexander_3,1,Alexander,ผม​ต้อง​ชุบชีวิต​อิก​วิกซ์ น่าอาย​จริง ๆ!
+7b282582fab597eb,Unused,Alexander_3,2,Alexander,ร้าน​ยา​จะ​ป้ายชื่อ​ผม​ไป​อีก​หลาย​เดือน
+# --- Alexander_Dirty ---
+950b8260a6ca788f,Unused,Alexander_Dirty,1,Alexander,ดู​ผม​สิ! ผม​จะ​เป็น​ตัวตลก​ของ​นักศึกษา
+97733f8db49fb168,Unused,Alexander_Dirty,2,Alexander,ช่วย​ขัด​อิก​วิกซ์​ออกจาก​หลัง​ผม​หน่อย​ได้​ไหม?
+# --- Alexander_Idle1 ---
+6a4162b247e5aae1,Unused,Alexander_Idle1,1,Alexander,ไม่​อยาก​เชื่อ​ว่า​อิก​วิกซ์​จะ​พลาด​แบบนี้!
+5e971607fa926b31,Unused,Alexander_Idle1,2,Alexander,แล้ว​ตอนนี้​ผม​ก็​มา​อยู่​ตรงนี้ อ๊ากส์!
+# --- Alexander_Idle2 ---
+2a1b4481e851f727,Unused,Alexander_Idle2,1,Alexander,ผม​อุตส่าห์​มา​ล้าง​ตัว​แบบ​เงียบ ๆ มั่นใจ​ว่า​ไม่​มี​ใคร​ตาม
+26974d0189f0d75c,Unused,Alexander_Idle2,2,Alexander,มั่นใจ​ว่า​ไม่​มี​ใคร​รู้​หรอ​ก...
+# --- Alexander_Idle3 ---
+db8cc14accf5dfe9,Unused,Alexander_Idle3,1,Alexander,อา คราบ​สกปรก​แสบ​นิดหน่อย ขอบคุณ
+# --- Alexander_Soapy ---
+e17d9103818204a4,Unused,Alexander_Soapy,1,Alexander,สบู่​นี้​ไม่​เหมาะกับ​ศาสตราจารย์​เลย​ว่า​ไหม?
+03c418e790b340c3,Unused,Alexander_Soapy,2,Alexander,ล้าง​เสร็จ​แล้ว​บอก​ด้วย​นะ
+# --- Alexander_Intro ---
+f82f410ee41cad07,Unused,Alexander_Intro,1,Alexander,ป​สส..!
+fedb00f6c13cec68,Unused,Alexander_Intro,2,Kobold,เอ่อ... สวัสดี?
+4359ca4e5c8fc816,Unused,Alexander_Intro,3,Kobold,ใคร​น่ะ?
+9e2816aaa10403b6,Unused,Alexander_Intro,4,Alexander,ชู่! ผม​ไม่​ใช่​คน​แถว​นี้...
+8275f13b67a6687b,Unused,Alexander_Intro,5,Alexander,ตอนนี้​เปิด​อยู่​ไหม?
+7409deaefe456a49,Unused,Alexander_Intro,7,Alexander,เฮ้อ! ผม​เจอ​อุบัติเหตุ​ที่​ต้อง​จัด​กา​ร... แบบ​เงียบ ๆ
+afb82d57a9c1ba48,Unused,Alexander_Intro,8,Alexander,เอา​สิ่งกีดขวาง​นี้​ออก​เดี๋ยวนี้ ผม​จะ​ได้​เข้าไป
+# --- Alexander_Outro ---
+0c2f6e570964b0c1,Unused,Alexander_Outro,1,Alexander,ขอบคุณ​สวรรค์ เพราะ​คุณ​ผม​ถึง​มีโอกาส​กู้​สถานการณ์​นี้
+639110e1c4cc2914,Unused,Alexander_Outro,2,Alexander,ว่าแต่ จำ​ชื่อ​วิทยาลัย​ที่​ผม​ทำงาน​ได้​ไหม?
+e35f2c7dd32a4059,Unused,Alexander_Outro,3,Kobold,วิทยาลัย​ชุมชน​ธาตุ​วิทยา​เบิร์น​ส​วิก
+8e3a0c6c1c068e67,Unused,Alexander_Outro,4,Kobold,คุณ​ทำงาน​ที่​วิทยาลัย​เหรอ?
+7bf1556708efd0d8,Unused,Alexander_Outro,5,Kobold,ไม่
+79acad09a68bf670,Unused,Alexander_Outro,6,Alexander,ไม่! คือ ใช่ แต่​เพื่อ​ชื่อเสียง​ของ​ผม ช่วย​เก็บ​เรื่อง​ที่​ผม​มา​ที่นี่​เป็นความลับ​ด้วย
+3730dccb6a6582be,Unused,Alexander_Outro,7,Alexander,อะไร​นะ? ผม​เป็น​ศาสตราจารย์! ดู​จาก​ตรา​ไม่​ออก​เหรอ?
+56723edcd935d476,Unused,Alexander_Outro,8,Alexander,อ้อ!
+e0723f4408ee3eda,Unused,Alexander_Outro,9,Alexander,ผม​เข้าใจ​ที่​คุณ​ทำ​แล้ว ขอบคุณ
+7973db48113175b5,Unused,Alexander_Outro,10,Alexander,ดีมาก ขอบคุณ​ที่เก็บ​เป็นความลับ ผม​จะ​ไป​ร้าน​ยา​ละ
+677412526f14044a,Unused,Alexander_Outro,14,Alexander,ผม​พอใจ​กับ​ผลลัพธ์​นี้​มา​ก..
+# --- ConradBeatup_1 ---
+72f9c6536242f235,Unused,ConradBeatup_1,2,Kobold,ถ้า​ต้องการ​ใคร​สัก​คน​คุย​ด้วย ฉัน​อยู่​ตรงนี้​นะ
+67410be84ad1b8ac,Unused,ConradBeatup_1,3,Kobold,ฉัน​จัดการ​เอง ไม่ต้อง​ห่วง
+5b207ccbfd5d5679,Unused,ConradBeatup_1,4,Conrad,ไม่.. ไม่เป็นไร... ขอบใจ
+b2139b5e4dc27f14,Unused,ConradBeatup_1,5,Conrad,... ขอบใจ..
+# --- ConradBeatup_2 ---
+b841443b4a7e3b82,Unused,ConradBeatup_2,1,Conrad,นี่ ขอบใจ​ที่อยู่​ข้าง​ฉัน​นะ...
+02febaeeb5306c30,Unused,ConradBeatup_2,2,Conrad,ดี​จัง​ที่​มี​เพื่อน​ให้​พึ่งพา
+# --- ConradBeatup_Idle1 ---
+7ff77420c3518210,Unused,ConradBeatup_Idle1,1,Conrad,... นึก​ว่า​เรา​เป็นเพื่อน​ที่​ดีกัน มี​อะไร​กัน​ตลอด​เลย​นี่!
+13a3bd02487dab16,Unused,ConradBeatup_Idle1,2,Conrad,ไม่​เข้าใจ​เลย..
+# --- ConradBeatup_Idle2 ---
+861f99e073cd06e2,Unused,ConradBeatup_Idle2,1,Conrad,ฉัน​ทำตัว​แกร่ง แต่​ก็​เป็น​มังกร​ตัวเล็ก...
+e375cf5dd6f03d34,Unused,ConradBeatup_Idle2,2,Conrad,พวก​มัน​ทำเกินไป
+# --- ConradBeatup_Intro ---
+19aa373fb830a05c,Unused,ConradBeatup_Intro,2,Kobold,ตาย​แล้ว นาย​บาดเจ็บ!
+c7e055a695603f2b,Unused,ConradBeatup_Intro,3,Kobold,โอเค​ไหม?
+e4e0397bea6600f5,Unused,ConradBeatup_Intro,4,Conrad,นี่ เอ่อ ฉัน​แค่​ต้อง​ล้าง​ตัว
+e36f54f748a69d3e,Unused,ConradBeatup_Intro,5,Kobold,...โอเค เข้ามา​สิ
+# --- ConradBeatup_OutroDirty ---
+e17652524a905f18,Unused,ConradBeatup_OutroDirty,1,Conrad,... เสร็จ​แล้ว​เหรอ? ฉัน​ยัง​สกปรก​อยู่เลย..
+# --- ConradBeatup_OutroSoapy ---
+d0b060d51bc87feb,Unused,ConradBeatup_OutroSoapy,1,Conrad,... เสร็จ​แล้ว​เหรอ? ฉัน​ยังมี​ฟองสบู่​อยู่เลย..
+# --- Conrad_1 ---
+5a208b2886d87937,Unused,Conrad_1,1,Conrad,"ที่นี่​มี ""ตอนจบ​พิเศษ"" ด้วย​ไหม?"
+d61259269b75dec9,Unused,Conrad_1,2,Kobold,อะไร​น่ะ?
+1ea442a134b2a184,Unused,Conrad_1,4,Kobold,ไม่
+335bcdceb30ec6b8,Unused,Conrad_1,5,Conrad,ไม่​เอา​น่า เพื่อน นาย​ต้อง​ทำ​สิ ฉัน​จ่าย​ดี​นะ!
+2f7cc8c297b8d283,Unused,Conrad_1,6,Conrad,สุดยอด! อยาก​เห็น​นาย​ทำงาน​แล้ว!
+9d1528cc1118e4dd,Unused,Conrad_1,7,Conrad,อะไร? ร้าน​ดี ๆ ทุกที่​เขา​ทำ​กัน​ทั้งนั้น!
+# --- Conrad_2 ---
+d892eb1f696177b4,Unused,Conrad_2,1,Conrad,ที่นี่​น่าจะ​ปรับปรุง​หน่อย​นะ ฉัน​รู้​ว่า​มัน​ต้องการ​อะไร!
+0eaacb4d2b730370,Unused,Conrad_2,2,Conrad,ฉัน​รู้จัก​คน​ที่​เอา​ของขวัญ​มา​ส่ง​ได้​พรุ่งนี้ จะ​ทำให้​ที่นี่​ดู​ดีขึ้น
+# --- Conrad_5_Mount_Finish ---
+28a96495be7701ea,Unused,Conrad_5_Mount_Finish,1,Conrad,ให้​ตาย... รู้สึก​ดี​เสมอ​เลย
+# --- Conrad_5_Mount_Start ---
+cda9c08deb782b6e,Unused,Conrad_5_Mount_Start,1,Conrad,<i>โอ้ว​ว </i>แท่น​เหรอ? เอา​สิ​เพื่อน
+# --- Conrad_Idle1 ---
+06b2c581e253753a,Unused,Conrad_Idle1,1,Conrad,คน​บอ​กว่า​ไอ้​จ้อน​ฉัน​อวบ จริง​ไหม?
+ba07cdd711c7d570,Unused,Conrad_Idle1,2,Kobold,ตาย​แล้ว
+f2ea9d36d2c4032f,Unused,Conrad_Idle1,3,Kobold,เคย​เห็น​ใหญ่​กว่า​นี้
+25cdc596cd23bedb,Unused,Conrad_Idle1,4,Conrad,ลอง​จับ​ดู​แล้ว​เช็ก​ให้​ฉัน​สิ
+c3565cd77a3dcba9,Unused,Conrad_Idle1,5,Conrad,แต่​ไม่​ใช่​ใน​แพ็กเกจ​ขนาด​นี้​ใช่ไหม​ล่ะ??
+# --- Conrad_Intro ---
+bc1e29287f60b297,Unused,Conrad_Intro,1,Conrad,สวัสดี​เพื่อน!
+f7a29676d9621163,Unused,Conrad_Intro,2,Conrad,คอนราด​ต้อง​ล้าง​ตัว มี​คิว​ว่าง​ให้​ไหม?
+8339b88ae51a85f6,Unused,Conrad_Intro,3,Kobold,มี ทาง​นี้​เลย
+255d982b3d4c772e,Unused,Conrad_Intro,5,Conrad,เยี่ยม!
+# --- Mount_Alexander_2_6 ---
+dcc524605bec9fd8,Unused,Mount_Alexander_2_6,1,Alexander,นี่​มัน..
+d010c18e5ff478ed,Unused,Mount_Alexander_2_6,2,Alexander,โอ้​ตาย ไม่​ล่ะ..
+f025190cb1adde9c,Unused,Mount_Alexander_2_6,3,Alexander,ไม่​ได้​ตั้งใจ​จะ​เสียมารยาท แต่​ผม​ขอ​ปฏิเสธ
+eec9d16c87323040,Unused,Mount_Alexander_2_6,4,Alexander,นี่​เป็นเรื่อง​ปกติ​เหรอ?
+929e50391bfd0646,Unused,Mount_Alexander_2_6,5,Kobold,ใช่​แล้ว
+b6547fc9d980c16e,Unused,Mount_Alexander_2_6,6,Kobold,ไม่ จริง ๆ เพิ่ง​ได้มา
+40df3c9d9e1d5126,Unused,Mount_Alexander_2_6,7,Alexander,เข้าใจ​แล้ว..
+d3acad6a7014a598,Unused,Mount_Alexander_2_6,8,Alexander,รู้สึก​เหมือน​เรื่องอื้อฉาว
+ab5a3375052f41eb,Unused,Mount_Alexander_2_6,9,Alexander,แต่​ก็​ไม่​บอ​กว่า​ไม่​อยากรู้​นะ
+c5ba4f5f1cdff517,Unused,Mount_Alexander_2_6,10,Alexander,ถึง​อย่างนั้น ครั้งนี้​ไม่​ล่ะ
+# --- RyanDate_1 ---
+14ecee0afc63c845,Unused,RyanDate_1,1,Ryan,ตื่นเต้น​กับ​เดต​นี้​มาก!
+90ba900c65607127,Unused,RyanDate_1,2,Ryan,ฉัน​เอา​แตงโม ขนมปัง องุ่น แล้วก็​อย่าง​อื่น​มา​ด้วย
+# --- RyanDate_2 ---
+690cf2b49eb95f79,Unused,RyanDate_2,1,Ryan,มี​อะไร​กวนใจ​อยู่​หรือเปล่า?
+1648a912c46f7fec,Unused,RyanDate_2,2,Kobold,เมื่อคืน​มีเรื่อง​เกิดขึ้น
+b3979a44b5b9376a,Unused,RyanDate_2,3,Ryan,โอ้​ไม่​นะ! อยาก​เล่า​ไหม?
+02c33e4e3c09bc79,Unused,RyanDate_2,4,Kobold,แค่​มีเรื่อง​เกิด​ขึ้นกับ​คอนราด หวัง​ว่า​เขา​จะ​โอเค
+7680ca7ff15f1566,Unused,RyanDate_2,5,Ryan,ฉัน​ก็​หวัง​ว่า​เขา​จะ​โอเค
+# --- RyanDate_3 ---
+7ba9e65f61ca2369,Unused,RyanDate_3,1,Ryan,อร่อย​มาก!
+ff74b82dcb8a11d3,Unused,RyanDate_3,2,Kobold,ว้าว ดู​นาย​กิน​แบบ​นั้น​นี่​เป็น​ประสบการณ์​เลย
+5b14f19a86849ff5,Unused,RyanDate_3,3,Ryan,แบบ​ไหน?
+42af2c2067728998,Unused,RyanDate_3,4,Ryan,อ้อ แบบ กลืน​ทั้ง​ชิ้น​น่ะ​เหรอ?
+37f99dd7cbcf5b6f,Unused,RyanDate_3,5,Ryan,แล้วแต่! เรื่อง​ของ​มังกร​น่ะ
+# --- RyanDate_Idle1 ---
+bcda1f48383d915f,Unused,RyanDate_Idle1,1,Ryan,เฮะเฮะ ตื่นเต้น​ที่จะ​ได้​กลับมา​เดต​อีกครั้ง
+# --- RyanDate_Intro ---
+d5be54b666b3d38f,Unused,RyanDate_Intro,2,Ryan,ฉัน​คิดถึง​เรื่อง​ที่​นาย​พูด
+ffcaf369ac8b1a74,Unused,RyanDate_Intro,3,Ryan,เรื่อง​กลับมา​เดต​อีกครั้ง​น่ะ...
+89f52a0dc3d757c1,Unused,RyanDate_Intro,4,Kobold,อืม
+ecab929d37109ab0,Unused,RyanDate_Intro,5,Ryan,รู้​ว่า​นาย​ยุ่ง ก็​เลย​เอา​เดต​มาหา​นาย​เอง​เลย!
+92d9da0b0b22fd7a,Unused,RyanDate_Intro,6,Kobold,เยี่ยม! เข้ามา​สิ..
+# --- RyanDate_Outro ---
+638d7c049f321a6d,Unused,RyanDate_Outro,4,Ryan,วิเศษ​มาก! รู้สึก​ดี​กับ​การ​เดต​ขึ้น​เยอะ​เลย
+line:bbca8a46,Unused,RyanDate_Outro,5,Ryan,ขอบใจ!
+# --- RyanExploded_Intro ---
+8e87e6b28fb697c4,Unused,RyanExploded_Intro,1,Ryan,สวัสดี​อีกครั้ง..
+53ca70e25fc42870,Unused,RyanExploded_Intro,3,Kobold,นาย​อีกแล้ว​เหรอ?
+b99d68084de082b6,Unused,RyanExploded_Intro,5,Ryan,เฮะ.. อืม.. โทษ​ที..
+81f2cb133d548396,Unused,RyanExploded_Intro,6,Ryan,คือ​ว่า มี​อุบัติเหตุ​น่ะ..
+line:e02f464d,Unused,RyanExploded_Intro,7,Ryan,ฉัน​ช่วย​นัก​เล่นแร่แปรธาตุ​หยิบ​ของ​บน​ชั้นสูง​อยู่
+d3e25fe68c13c02d,Unused,RyanExploded_Intro,8,Ryan,แล้วก็​ได้ยิน​เสียง​ระเบิด​ดังลั่น
+ce386faf68f3df7e,Unused,RyanExploded_Intro,9,Ryan,ไม่​รู้​ว่า​พวกเขา​หาย​ไป​ไหน แต่​ฉัน​รู้สึก​สกปรก​อีกแล้ว
+60c1424a59a1c912,Unused,RyanExploded_Intro,10,Ryan,ช่วย​ล้าง​ให้​อี​กรอบ​ได้​ไหม?
+917613bbf36e4b93,Unused,RyanExploded_Intro,11,Kobold,ได้​เลย! ทาง​นี้!
+# --- RyanExploded_OutroDirty ---
+f2bdff14318fd81c,Unused,RyanExploded_OutroDirty,1,Ryan,รู้สึก​เหมือน​ยังมี​เขม่า​ระเบิด​ติดตัว​อยู่...
+6a1900ba2212696d,Unused,RyanExploded_OutroDirty,2,Ryan,ล้าง​เพิ่ม​หน่อย​ได้​ไหม?
+85a39ab345d672ff,Unused,RyanExploded_OutroDirty,3,Kobold,ได้
+1562d2eeb95b795a,Unused,RyanExploded_OutroDirty,4,Kobold,โทษ​ที
+3bcf70f39eca74f1,Unused,RyanExploded_OutroDirty,5,Ryan,ไม่เป็นไร ขอบใจ!
+# --- RyanExploded_OutroSoapy ---
+9df62882448c291b,Unused,RyanExploded_OutroSoapy,1,Ryan,เอ่อ ยังมี​ฟองสบู่​เต็มตัว​เลย!
+29d1991e26b1773d,Unused,RyanExploded_OutroSoapy,2,Ryan,ช่วย​ล้าง​ออก​ได้​ไหม?
+# --- RyanExploded_Outro ---
+a45ce5a6357ad76f,Unused,RyanExploded_Outro,4,Ryan,เฮ้อ กลัว​ว่า​จะ​ทำ​เรื่อง​ยุ่ง​อีก
+ca1dd92cfbe2dcd5,Unused,RyanExploded_Outro,5,Ryan,ทีนี้​พวกเขา​ก็​ไม่ต้อง​รู้​เลย!
+# --- RyanMuddy_Dirty ---
+58246ed8cfcdfa19,Unused,RyanMuddy_Dirty,1,Ryan,อืม ก็​ฉัน​เปื้อน​โคลน​ไป​หมด ชอบ​วิ่งเล่น​ใน​สวนสาธารณะ​น่ะ
+f27e94e23a2cc6eb,Unused,RyanMuddy_Dirty,2,Ryan,ยัง​เปื้อน​โคลน​อยู่​มาก ช่วย​ฟอกสบู่​ให้​หน่อย​จะ​ดีมาก
+# --- RyanMuddy_Idle1 ---
+c24aaf031df991a1,Unused,RyanMuddy_Idle1,1,Ryan,แล้ว เอ่อ บอก​นะ​ถ้า​อยาก​ให้​ฉัน​ขยับ
+8bb630e0c8dc64ac,Unused,RyanMuddy_Idle1,2,Ryan,แค่​แตะ​ตัว​ฉัน​ด้วยมือ แล้ว​ฉัน​จะ​พยายาม​ช่วย
+# --- RyanMuddy_Idle2 ---
+bcee068ce8220b8e,Unused,RyanMuddy_Idle2,1,Ryan,ขอบใจ​ที่​ล้าง​ให้!
+2c4f3b41240d00cd,Unused,RyanMuddy_Idle2,2,Ryan,รอ​เรื่อง​นี้​อยู่เลย
+# --- RyanMuddy_Idle3 ---
+e304ea7f521df3f2,Unused,RyanMuddy_Idle3,1,Ryan,เสร็จ​แล้วก็​กดปุ่ม​ได้​เลย
+ac51ca95656fffdd,Unused,RyanMuddy_Idle3,2,Ryan,ปุ่ม​บน​กำแพง​น่ะ
+# --- RyanMuddy_Idle4 ---
+8fd85e09be693fbf,Unused,RyanMuddy_Idle4,1,Ryan,แม็กซ์​บอ​กว่า​ฉัน​เป็น​มังกร​ซุ่มซ่าม
+d2261edb51b885d9,Unused,RyanMuddy_Idle4,2,Ryan,หวัง​ว่า​นาย​จะ​ช่วย​ฉัน​พิสูจน์​ว่า​ไม่​จริง!
+# --- RyanMuddy_Idle5 ---
+9df1eb0e35a5d36a,Unused,RyanMuddy_Idle5,1,Ryan,ฟอกสบู่ แล้ว​ล้าง​ออก!
+5e7b1eae20d0fb72,Unused,RyanMuddy_Idle5,2,Ryan,อย่าง​น้อย​ก็​ได้ยิน​มา​แบบ​นั้น
+# --- RyanMuddy_Soapy ---
+73d08af95ae8835e,Unused,RyanMuddy_Soapy,1,Ryan,ชอบ​ฟองสบู่ มัน​จั๊กจี้!
+83af94fb3d626970,Unused,RyanMuddy_Soapy,2,Ryan,แต่​ก็​อยาก​เห็น​มัน​ไหล​ลง​ท่อระบายน้ำ
+6bc811f815ef9e24,Unused,RyanMuddy_Soapy,3,Ryan,ใช้หัว​ฉีด​บน​กำแพง​ล้าง​ฉัน​สิ
+# --- RyanMuddy_Idle7 ---
+255bd9c513473506,Unused,RyanMuddy_Idle7,1,Ryan,ว้าว ขอบใจ รู้สึก​ดี​จัง
+77ff00f75a7c2083,Unused,RyanMuddy_Idle7,2,Ryan,เปื้อน​โคลน​นี่​สนุก​ดี​จนกว่า​มัน​จะ​เริ่ม​แห้ง
+620caab5d90b8d3f,Unused,RyanMuddy_Idle7,3,Ryan,ดีใจ​ที่​ได้​ล้าง​ออก
+# --- RyanMuddy_Idle8 ---
+afa88441bc4fc8d9,Unused,RyanMuddy_Idle8,1,Ryan,ใคร​จะ​คิด​ว่า​มังกร​จะ​สกปรก​ได้ขนาด​นี้ เนอะ?
+2ea6d5d46861d1bf,Unused,RyanMuddy_Idle8,2,Ryan,ฉัน​วิ่งเล่น​ใน​ป่า
+c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,เพิ่ง​รู้​ว่า​เลอะ​แค่​ไหน​ตอน​แม็กซ์​ตะคอก​ใส่ ฮ่า​ฮ่า
+# --- RyanMuddy_Intro ---
+299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,ได้ยิน​มา​ว่า​แถว​นี้​มี​โค​บอลด์​ที่​ช่วย​ล้าง​ตัว​ให้ได้?
+05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,ฉัน​คือ​โค​บอลด์คน​นั้น ยิ๊บ!
+d12499a3f17512de,Unused,RyanMuddy_Intro,7,Kobold,ใช่ ยินดีต้อนรับ​สู่ Drag'N Wash!
+213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,เยี่ยม แล้ว เอ่อ
+44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,อ้อ เห็น​ปุ่ม​ตรงนั้น​แล้ว เข้าใจ​แล้ว!
+af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,ขอบใจ ฉัน​จะ​รอ​นะ!
+# --- RyanMuddy_Nag1 ---
+3605a9273b22288b,Unused,RyanMuddy_Nag1,1,Ryan,นี่ ช่วย​มา​ข้าง​หน้าตรง​ที่​ฉัน​เห็น​ได้​ไหม?
+720febc2a9d251aa,Unused,RyanMuddy_Nag1,2,Ryan,ฉัน​มีเรื่อง​จะ​พูด!
+# --- RyanMuddy_Nag2 ---
+6852c864bbd2afef,Unused,RyanMuddy_Nag2,1,Ryan,อยาก​คุย​กัน​ต่อหน้า!
+0918205f97d74d78,Unused,RyanMuddy_Nag2,2,Ryan,ช่วย​มา​ข้างหน้า​หน่อย ฉัน​จะ​ได้​คุย​ได้
+# --- RyanMuddy_Nag3 ---
+c8f453084718c8cc,Unused,RyanMuddy_Nag3,1,Ryan,เขา​ว่า​กัน​ว่า​คุย​กับ​คน​ตัวเล็ก​กว่า​ต่อหน้า​ถึง​จะ​สุภาพ
+# --- RyanMuddy_NaughtyTouch ---
+4d13604e28159e56,Unused,RyanMuddy_NaughtyTouch,1,Ryan,ระวัง​หน่อย​ว่า​อุ้งเท้า​จะ​ไป​ทาง​ไหน​นะ?
+# --- RyanMuddy_Outro ---
+a46a0805bb6a5eda,Unused,RyanMuddy_Outro,1,Ryan,ขอบใจ​ที่​ล้าง​ให้​เร็ว​มาก!
+168c7d0bb7743dec,Unused,RyanMuddy_Outro,2,Ryan,ว่าแต่ นาย​จะ​โกรธ​ไหม​ถ้า​คู่​ของ​นาย​ทำ​บ้าน​เลอะ?
+3ae7f278ef092258,Unused,RyanMuddy_Outro,4,Kobold,แล้วแต่
+0dfd80e1f981faca,Unused,RyanMuddy_Outro,6,Ryan,อ้อ! ก็​จริง...
+8f207ab27746c010,Unused,RyanMuddy_Outro,7,Ryan,คง​ขึ้นอยู่กับ​สถานการณ์​นะ
+86b57f75d4c04b75,Unused,RyanMuddy_Outro,8,Ryan,รู้​อยู่แล้ว​ว่า​นาย​จะ​อยู่​ข้าง​ฉัน
+# --- RyanMuddy_SmallTalk ---
+0bf9a145c66c512b,Unused,RyanMuddy_SmallTalk,3,Kobold,จริง ๆ นี่​ครั้งแรก​ของ​ฉัน​เลย!
+4eb8bdb270c030ae,Unused,RyanMuddy_SmallTalk,5,Ryan,อ้อ งั้น​ก็​ใหม่​สำหรับ​เรา​ทั้งคู่!
+ff152503516900ee,Unused,RyanMuddy_SmallTalk,6,Ryan,สำหรับ​ฉัน​ก็​ใหม่​เหมือนกัน...
+13d1c29ec8784cae,Unused,RyanMuddy_SmallTalk,7,Ryan,แปลกใจ​ที่​มันดี​ขนาด​นี้
+# --- Ryan_3_wont_use_mount ---
+9221ab210b374d30,Unused,Ryan_3_wont_use_mount,1,Ryan,อ้อ... ตอนนี้​ไม่ค่อย​อยาก​ใช้​นั่น​เท่าไหร่
+f3f18c2eea794920,Unused,Ryan_3_wont_use_mount,2,Ryan,ไว้​ทีหลัง​ละ​กัน...?
+
+# ===== UI and other text (not part of the dialogue script) =====
+bc1b88907d3b748a,UI,,,UI,เสียง
+b3f848c2a09aa9ed,UI,,,UI,ระดับ​เสียงเพลง
+de7b57b57b05d020,UI,,,UI,เสียง​เอฟเฟกต์
+59a4a3f7f7caa060,UI,,,UI,ระดับเสียง​บรรยากาศ
+31bcb8940fffb7d1,UI,,,UI,เกม​เพลย์
+a874fca87cdd5e4e,UI,,,UI,กราฟิก
+d0db8b5e364b6989,UI,,,UI,ตัวเลือก
+28f9044138a54b95,UI,,,UI,เกม​ใหม่
+2a6b24ad28722034,UI,,,UI,เครดิต
+b3eb37acb66ba4bb,UI,,,UI,ออก
+76900f1bfd16c8d4,UI,,,UI,กลับ
+6a3041fb3ecba173,UI,,,UI,มุมมอง​กล้อง
+d4055fafa3794fa8,UI,,,UI,ความ​ละเอียด
+41ca171b0cbae01e,UI,,,UI,ความสว่าง​หน้าจอ
+42e7fdbd13ba2a01,UI,,,UI,เฟรม​เรต​เป้าหมาย
+052810dae19607f5,UI,,,UI,VSync
+b63e857488f49396,UI,,,UI,โหมด​หน้าต่าง
+c461dbb2bab7d8bc,UI,,,UI,เต็ม​จอ
+4571896d8a4d4162,UI,,,UI,ความ​ไว​เมาส์
+43ff6e9485bf371e,UI,,,UI,การย่อ​ตัว
+3d03a1dea561d0db,UI,,,UI,สลับ
+91d6e30620d99810,UI,,,UI,แตะ/กด​ค้าง
+8e685d5409b3a543,UI,,,UI,กด​ค้าง
+6c359dddb1d4c36e,UI,,,UI,ชนิด​ไอคอน​คำ​ใบ้
+fd9baf7f335aa154,UI,,,UI,กลับด้าน​การ​มอง​แนวตั้ง
+4d654c19179796ef,UI,,,UI,ลด​อาการ​เวียนหัว​ขณะ​ฉีด​น้ำ
+2316810a5de343dd,UI,,,UI,คีย์บอร์ด
+0286249762f7c943,UI,,,UI,อัตโนมัติ
+c77c3af22c6429b2,UI,,,UI,การ​ลบรอย​หยัก
+130011756125313c,UI,,,UI,เปิด
+ca7981b46ecf2c17,UI,,,UI,ปิด
+4883b7dfffb02e36,UI,,,UI,เต็ม​จอ​เฉพาะ
+da43a1983d819a4d,UI,,,UI,หน้าต่าง​ขยาย​เต็ม
+3f26603a2748fed3,UI,,,UI,หน้าต่าง
+d640c7421da06661,UI,,,UI,เล่น​ต่อ
+b6dcb96448c66497,UI,,,UI,กำลัง​โหลด...
+f942d1e183d020b6,UI,,,UI,ลบ​เซฟ
+fae07a8540ff237b,UI,,,UI,ลบ​เซฟ​จริง ๆ หรือ?
+ffb3c5f2edc34373,UI,,,UI,เมนู​หยุดชั่วคราว
+3e49dd16f3893026,UI,,,UI,สะอาด
+4b36f28b2cf37677,UI,,,UI,มี​ฟองสบู่
+e4e9ab13fc711176,UI,,,UI,เศษ​สิ่งสกปรก
+c9c8bf1eae99e1dc,UI,,,UI,ต้อง​การคุย
+b98b0ff714ab5417,UI,,,UI,ต้องการ​ผ้าพันแผล
+dde8c08738fe9e59,UI,,,UI,ต้องการ​รูด​ให้
+a462b8c590652563,UI,,,UI,พิมพ์​ข้อความ...
+bb23ec0586e24df5,UI,,,UI,แตงโม​ไง!
+fa6bb50727553976,UI,,,UI,โอเค
+77b845d22632a9ef,UI,,,UI,ดีใจ​ที่​ได้​เจอ​นาย​อีก
+ed172a475c84204f,UI,,,UI,ผม​เป็น​ศาสตราจารย์!
+43cc9e298a30c3af,UI,,,UI,พวก​สอง​ขา​อย่าง​นาย​ชอบ​ละเลียด​อาหาร
+b735b39b4eea8b70,UI,,,Ryan,ฉัน​ไม่​เคย​ทำ​แบบนี้​ข้างนอก​มา​ก่อน
+c913913d57c38493,UI,,,Conrad,ไม่ต้อง​ห่วง!
+d0ee8dcf7035040c,UI,,,Conrad,ฉัน​ทำ​ตลอด
+b00675617fbac31a,UI,,,Ryan,มัน​ก็​ตื่นเต้น​ดี​นะ
+816c197dfe2ac7e7,UI,,,Conrad,ฉัน​จะ​ระเบิด​แล้ว
+fb490e9880f63f05,UI,,,Ryan,ฉัน​ว่า​ฉัน​ก็​ใกล้​แล้ว..
+cb9cc6fadcf02cd5,UI,,,Ryan,ว้าว.. ความสูง​คือ​สิ่ง​เดียว​ที่​เล็ก​ใน​ตัว​นาย​จริง ๆ
+b77039c811832311,UI,,,Ryan,ดี​จัง
+cbc2935aebe3ca1f,UI,,,Conrad,อืม
+1b01a1658c9a5adf,UI,,,Conrad,สนุก​ไหม?
+0d8490d07a321596,UI,,,Ryan,สนุก​แน่นอน เป็นห่วง​ฉัน​เหรอ?
+3d42325316477a3a,UI,,,Conrad,คอนราด​แค่​สนุก​กับ​ตัวเอง
+2fafbe5f3e7ff469,UI,,,Conrad,จริง ๆ.. คือ..
+df9b23df54ab5518,UI,,,Conrad,ฉัน​อยาก​ให้​เรื่อง​นี้​ไป​ได้ดี
+b0bfa8fe9e70154c,UI,,,Ryan,ฉัน​ว่า​มัน​ไป​ได้​สวย​เลย​นะ
+46fa21135fd9811b,UI,,,Ryan,ชอบ​มาก​เลย
+b439ffe3e5553ddc,UI,,,Conrad,นาย​รู้สึก​ดีมาก
+b92f91849d855b40,UI,,,UI,คอนราด
+2d1e830624b2572a,UI,,,UI,ไร​อัน
+e3becbaee46cc0df,UI,,,UI,ภาษา (ม็อด)
+6e58b577a084052a,UI,,,UI,ม็อด
+4850b174b713d88c,UI,,,UI,จำเป็น
+37fe885f1406e372,UI,,,UI,ปิด​ตั้งแต่​การ​เริ่ม​ครั้ง​ถัดไป
+9cc5c7f026ce0ca7,UI,,,UI,เปิด​ตั้งแต่​การ​เริ่ม​ครั้ง​ถัดไป
+fa20beae3754ffb1,UI,,,UI,"ม็อด​อื่น​ต้อง​ใช้​ม็อด​นี้ หาก​ยัง​ต้องการ​ปิด ให้​กด ""ปิด"" อีกครั้ง"
+d57274b504a45b33,UI,,,UI,ปิด​ที่นี่​ไม่​ได้ เพราะ​ติด​ตั้งอยู่​นอก BepInEx/plugins
+fd35647f8ecb2f7d,UI,,,UI,ม็อด​ที่​ต้อง​ใช้
+9e6151acb057025d,UI,,,UI,ม็อด​ที่​ใช้​อยู่
+b9d0dd131d07b5ad,UI,,,UI,เครื่องมือ​ที่​ใช้​ร่วมกัน​สำหรับ​ม็อด​ของ Drag'n Wash รวมถึง​หน้าจอ​ม็อด​นี้​ด้วย
+1236e3be635f17c7,UI,,,UI,เล่น Drag'n Wash ได้​ใน 16 ภาษา แปล​บทสนทนา ตัวเลือก หน้าจอ และ​การ​ตั้งค่า
+1cd1ca858aaea1d0,UI,,,UI,ไม่​ได้​โหลด ต้อง​ใช้​ม็อด:
+eda662e0b5033180,UI,,,UI,ไม่​ได้​โหลด ใช้​ร่วมกัน​ไม่​ได้​กับ:
+a8d12a246b72d98c,UI,,,UI,ไม่​ได้​โหลด ดู​สาเหตุ​ได้​ใน BepInEx/LogOutput.log
+7c862b0749e737c4,UI,,,UI,ตัว​แพตช์​ก่อน​โหลด ทำงาน​ก่อน​ม็อด​อื่น​จึง​ปิด​ที่นี่​ไม่​ได้
+74a883a037bc227f,UI,,,UI,การ​ตั้งค่า
+21b111cbfe6e8fca,UI,,,UI,ค่า​เริ่มต้น
+bc5b45ae7b60692a,UI,,,UI,คืน​ค่า​เริ่มต้น
+67529e7fdc6098a0,UI,,,UI,บันทึก​ทันที บาง​ม็อด​จะ​ใช้​การเปลี่ยนแปลง​หลังจาก​เริ่ม​เกม​ใหม่​เท่านั้น
+3d19e2d0333d7b19,UI,,,UI,เปลี่ยน​ค่า​นี้​ใน​ไฟล์​ตั้งค่า​ของ​ม็อด​ใน BepInEx/config
+dc20b3d5d2cddf82,UI,,,UI,ไลบรารี
+e0aaa77caac35ceb,UI,,,UI,ให้​ม็อด​เห็น​และ​แทนที่​ข้อความ​ก่อนที่​เกม​จะ​แสดง
+e33072d0f0267e46,UI,,,UI,แจ้ง​ม็อด​ว่า​บทพูด​หรือ​ตัวเลือก​ใด​กำลังจะ​แสดง พร้อม ID ของ​บทพูด​และ​ผู้พูด
+e6af4688a3314648,UI,,,UI,หน้าต่าง​ใน​เกม​ที่​ใช้​ร่วมกัน (F1) ซึ่ง​ม็อด​เพิ่ม​แท็บ​เครื่องมือ​พัฒนา​และ​ดี​บัก​ได้ ใช้ได้​กับ​เมาส์ เกม​แพ​ด และ Steam Deck
+3839cc8c85e0dab6,UI,,,UI,ฟอนต์​สำหรับ​ข้อความ​ที่​ฟอนต์​ของ​เกม​แสดง​ไม่​ได้ และ​การ​โหลด​เท็กซ์​เจอร์​กับ​แอ​ส​เซ็ต​บัน​เดิล​โดย​ไม่​ทำให้ Direct3D 12 ล่ม
+507e6f82c57c2096,UI,,,UI,อ่าน​และ​แก้ไข​ช่อง​เซฟ​และ​แฟล็ก​เหตุการณ์​ของ​เกม และ​เก็บ​สำเนา​ของ​เซฟ​ทุก​เวอร์ชัน​เพื่อให้​ย้อนกลับ​การเปลี่ยนแปลง​ได้
+77777bd04fb7c9ae,UI,,,UI,ใช้ไม่ได้​ใน​เกม​เวอร์ชัน​นี้:
+014659ab9d98c8fe,UI,,,UI,ขัดแย้ง
+02e19c617a19bae7,UI,,,UI,แก้ไข​โค้ด​เกม​ส่วน​เดียว​กับ:
+61ec4dc622c31ea9,UI,,,UI,แก้ไข​โค้ด​เกม​ส่วน​เดียว​กับ​ม็อด​เหล่านี้​และ​อาจ​เขียน​ทับ:
+c1c1009d3f37ec05,UI,,,UI,มี​อัปเดต
+4168cfb8a090a98c,UI,,,UI,มี​เวอร์ชัน​ใหม่:
+cd6c9851e91ad7b6,UI,,,UI,เปิด​หน้า​รี​ลี​ส
+22e2bada8f1c65cd,UI,,,UI,อัปเดต
+f26f3275e735bdf6,UI,,,UI,ตรวจสอบ​อัปเดต
+a6a1b13028fd8c9c,UI,,,UI,วัน​ละ​ครั้ง​จะ​ถาม GitHub ว่า​ม็อด​ที่​ระบุ​ที่เก็บ GitHub ไว้​มี​รี​ลี​ส​ใหม่​หรือไม่ ไม่​ส่ง​ข้อมูล​ใด ๆ เกี่ยวกับ​คุณ​หรือ​เกม​ของ​คุณ
+fe199528850a4e24,UI,,,UI,ถอน​การ​ติดตั้ง
+63e38bd4b036193a,UI,,,UI,ยกเลิก
+86965245a1d725c1,UI,,,UI,"กด ""ถอน​การ​ติดตั้ง"" อีกครั้ง​เพื่อ​ลบ​ม็อด​นี้​ใน​การ​เริ่ม​เกม​ครั้ง​ถัดไป การ​ตั้งค่า​ของ​ม็อด​นี้​จะ​ถู​กลบ​ด้วย"
+e2b9759e2326caba,UI,,,UI,จะ​ลบ​ใน​การ​เริ่ม​ครั้ง​ถัดไป
