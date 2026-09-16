@@ -873,7 +873,14 @@ $GAME_DIR" 1 || exit 1
     # set -e/pipefail, half-done and with nothing on screen.
     others=""
     if [ -d "$GAME_DIR/BepInEx/plugins" ]; then
-        others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null | head -1 || true)"
+        # Only whether the listing is empty matters, so the exit status is the
+        # part to keep: a probe that fails must not read as "no other mods
+        # left", because that answer removes BepInEx and everything under it.
+        # An unreadable directory keeps BepInEx, the same as a mod being there.
+        if ! others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null)"; then
+            others="?"
+            log "could not list BepInEx/plugins; keeping BepInEx"
+        fi
     fi
     if [ -n "$others" ]; then
         say "$(t bep_kept)"
