@@ -28,3 +28,6 @@ Thumbs.db
 .~lock.*#
 ~$*
 
+
+# Python bytecode from tools/
+__pycache__/

@@ -180,6 +180,7 @@ namespace DragNWashLocalization
             }
 
             RebuildDiscoveredFile();
+            LineResolution.Rebuild(pluginDirectory);
         }
 
         private static void LoadFile(string path, string label)
@@ -596,6 +597,12 @@ namespace DragNWashLocalization
         public static bool TryGetTranslation(string source, out string translation)
         {
             return ByKey.TryGetValue(KeyFor(source), out translation);
+        }
+
+        public static bool TryGetKeyTranslation(string key, out string translation)
+        {
+            translation = null;
+            return key != null && ByKey.TryGetValue(key, out translation);
         }
 
         public static bool TryGetLineTranslation(string lineId, out string translation)
