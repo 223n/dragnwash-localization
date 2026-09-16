@@ -430,7 +430,7 @@ namespace DragNWashLocalization
             _availableLocales = new[] { "en" }
                 .Concat(Directory.GetDirectories(translationsDir)
                     .Select(Path.GetFileName)
-                    .Where(name => !name.StartsWith("_") && name != "en")
+                    .Where(name => !name.StartsWith("_", StringComparison.Ordinal) && name != "en")
                     .OrderBy(name => name, StringComparer.Ordinal))
                 .ToArray();
             foreach (string locale in _availableLocales)

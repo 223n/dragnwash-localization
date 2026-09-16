@@ -19,8 +19,13 @@ namespace DragNWashLocalization
         private static readonly string[] BuiltIn =
         {
             // Numbers on their own: "0", "-3", "0.001", "1,250", "45%".
-            // At least one actual digit, so dialogue like "..." is not caught.
-            @"^[+-]?[\d.,]*\d[\d.,]*\s*%?$",
+            // At least one actual digit, and the lookahead is what demands it.
+            // Writing that as [\d.,]*\d[\d.,]* splits one run of digits two
+            // ways and backtracks quadratically over any long string that does
+            // not match. Everything before the first digit can only be "." or
+            // ",", so the lookahead itself never backtracks, and [\d.,] shares
+            // no character with \s or %, so the run never gives anything back.
+            @"^[+-]?(?=[.,]*\d)(?>[\d.,]+)\s*%?$",
             // Resolutions, with or without a refresh rate.
             @"^\d+\s*[x×]\s*\d+(\s*@\s*[\d.]+\s*Hz)?$",
             // Bare refresh rates and framerates: "60Hz", "144 Hz", "30 FPS".
@@ -32,6 +37,18 @@ namespace DragNWashLocalization
         };
 
         private static readonly List<Regex> Patterns = new List<Regex>();
+
+        // Patterns come from Translations/ignore.txt, which a translator edits.
+        // Catastrophic backtracking does not throw - it simply never returns, on
+        // the Unity main thread, for every distinct string the game shows. A
+        // match timeout turns that into a RegexMatchTimeoutException IsIgnored
+        // can handle.
+        private static readonly TimeSpan MatchTimeout = TimeSpan.FromMilliseconds(50);
+
+        // One log line per pattern, not per string: IsIgnored runs for every
+        // distinct string on screen, so reporting every timeout would bury the
+        // log. Index-aligned with Patterns.
+        private static readonly List<bool> TimeoutReported = new List<bool>();
 
         // Whole strings the mod itself puts on screen, such as language names
         // in the Options dropdown, which are not game text to translate.
@@ -73,7 +90,7 @@ namespace DragNWashLocalization
                 foreach (string rawLine in File.ReadAllLines(path))
                 {
                     string line = rawLine.Trim();
-                    if (line.Length == 0 || line.StartsWith("#"))
+                    if (line.Length == 0 || line.StartsWith("#", StringComparison.Ordinal))
                     {
                         continue;
                     }
@@ -90,7 +107,8 @@ namespace DragNWashLocalization
         {
             try
             {
-                Patterns.Add(new Regex(pattern, RegexOptions.CultureInvariant));
+                Patterns.Add(new Regex(pattern, RegexOptions.CultureInvariant, MatchTimeout));
+                TimeoutReported.Add(false);
             }
             catch (ArgumentException ex)
             {
@@ -125,6 +143,16 @@ namespace DragNWashLocalization
                     if (Patterns[i].IsMatch(trimmed))
                     {
                         return true;
+                    }
+                }
+                catch (RegexMatchTimeoutException)
+                {
+                    // Without this the rule the translator wrote would quietly
+                    // stop working, with nothing anywhere to say why.
+                    if (!TimeoutReported[i])
+                    {
+                        TimeoutReported[i] = true;
+                        Plugin.Log($"Ignore pattern timed out after {MatchTimeout.TotalMilliseconds:0} ms and is treated as no match: {Patterns[i]}");
                     }
                 }
                 catch (Exception)
