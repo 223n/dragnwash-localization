@@ -367,7 +367,11 @@ namespace DragNWashLocalization
             ToolWindow.Fill(area, ToolWindow.InsetColor);
             float innerWidth = Mathf.Max(100, area.width - 36);
 
-            if (Time.unscaledTime >= _savesRefreshAt)
+            // Not while a control is held. Both lists are addressed by index,
+            // and a snapshot taken between the press and the release shifts
+            // every row down without changing the control ids, so the click
+            // would land on a different entry than the one under the cursor.
+            if (Time.unscaledTime >= _savesRefreshAt && GUIUtility.hotControl == 0)
             {
                 _savesRefreshAt = Time.unscaledTime + 2f;
                 _savesSlots = GameSaves.Slots();
