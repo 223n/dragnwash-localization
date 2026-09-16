@@ -38,6 +38,15 @@ pwsh tools/pack.ps1
 This creates `release/DragNWashLocalization-<version>.zip` with the following structure:
 
 ```text
+BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
+BepInEx/plugins/DragNWash.ModFramework/DragNWash.ModFramework.dll
+BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt
+BepInEx/plugins/DragNWash.ModFramework/icon.png
+BepInEx/plugins/DragNWash.ModFramework.Text/DragNWash.ModFramework.Text.dll
+BepInEx/plugins/DragNWash.ModFramework.Dialogue/DragNWash.ModFramework.Dialogue.dll
+BepInEx/plugins/DragNWash.ModFramework.ToolWindow/DragNWash.ModFramework.ToolWindow.dll
+BepInEx/plugins/DragNWash.ModFramework.Assets/DragNWash.ModFramework.Assets.dll
+BepInEx/plugins/DragNWash.ModFramework.Saves/DragNWash.ModFramework.Saves.dll
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
@@ -53,6 +62,8 @@ mod-install.json
 README.md
 README.ja.md
 ```
+
+Two of those are conditional: `pack.ps1` copies `BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt` only when the framework checkout has a `LICENSE` at its root, and `icon.png` only when it has `src/DragNWash.ModFramework/icon.png`. Everything else in the list is always written.
 
 `Install.exe` and `install-steamdeck.sh` are Drag'n Wash ModFramework's shared installers, which `pack.ps1` builds and copies from the framework checkout ([docs/INSTALLER.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.md) there). `pack.ps1` also writes `mod-install.json`: this mod's folder, the player's data to keep, its config file, and the language question with every shipped pack. The `Install.exe` build is deterministic, so antivirus reputation is not reset with each release; `pack.ps1` prints its SHA-256, which should match the previous release while the framework's `installer/` is unchanged. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works. The experimental macOS script in `installer/experimental/` is not packaged.
 

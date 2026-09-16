@@ -42,6 +42,15 @@ pwsh tools/pack.ps1
 `release/DragNWashLocalization-<version>.zip` が生成されます。中身は次のとおりです。
 
 ```
+BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
+BepInEx/plugins/DragNWash.ModFramework/DragNWash.ModFramework.dll
+BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt
+BepInEx/plugins/DragNWash.ModFramework/icon.png
+BepInEx/plugins/DragNWash.ModFramework.Text/DragNWash.ModFramework.Text.dll
+BepInEx/plugins/DragNWash.ModFramework.Dialogue/DragNWash.ModFramework.Dialogue.dll
+BepInEx/plugins/DragNWash.ModFramework.ToolWindow/DragNWash.ModFramework.ToolWindow.dll
+BepInEx/plugins/DragNWash.ModFramework.Assets/DragNWash.ModFramework.Assets.dll
+BepInEx/plugins/DragNWash.ModFramework.Saves/DragNWash.ModFramework.Saves.dll
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
@@ -57,6 +66,8 @@ mod-install.json
 README.md
 README.ja.md
 ```
+
+うち 2 つは条件付きです。`pack.ps1` は、フレームワークのチェックアウト直下に `LICENSE` があるときだけ `BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt` を、`src/DragNWash.ModFramework/icon.png` があるときだけ `icon.png` をコピーします。他のファイルは常に書き出されます。
 
 `Install.exe` と `install-steamdeck.sh` は Drag'n Wash ModFramework の共通インストーラーで、`pack.ps1` がフレームワークのチェックアウトからビルド・コピーします（説明はフレームワークの [docs/INSTALLER.ja.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.ja.md)）。`pack.ps1` は `mod-install.json` も書き出します。この Mod のフォルダー、残すプレイヤーのデータ、設定ファイル、同梱するすべての言語パックを選べる言語の質問が入ります。`Install.exe` のビルドは決定的で、ウイルス対策ソフトの評価がリリースのたびにリセットされません。`pack.ps1` が SHA-256 を表示するので、フレームワークの `installer/` が変わっていなければ前のリリースと同じになっているか確認してください。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。`installer/experimental/` の実験的な macOS 用スクリプトは zip に入れません。
 
@@ -95,3 +106,4 @@ gh release create v0.2.0 release/DragNWashLocalization-0.2.0.zip `
 そのためビルドはローカルで行い、成果物（zip）だけをリリースへ添付します。
 
 - ゲームがアップデートされたら、`tools/game-fingerprints.py` で新しいビルドのファイルを `ci/game-fingerprints.json` に追加し（Windows と Steam Deck の両方）、Drag'n Wash ModFramework にもコピーしてください。CI はリポジトリのすべてのファイルをこれと照合し、ゲームのファイルの混入を拒否します。
+- これもゲームのアップデート後（実験的）: ゲーム内で F6 と F7 を押して `_discovered/` を更新し、`python tools/rekey.py replay --discovered <そのフォルダー>` でアップデートが変えた台詞を確かめます。そのあと新しい `script_order.csv` を `data/` へコピーし、`python tools/rekey.py augment --discovered <そのフォルダー>` を実行してリゾルバーのキーを持たせます。`tools/linekeys.py` はフレームワーク側の同名ファイルと常に同一に保ちます。CI が `ci/linekey-vectors.json` と照合します。
