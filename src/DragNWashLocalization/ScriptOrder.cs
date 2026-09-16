@@ -244,7 +244,7 @@ namespace DragNWashLocalization
             string shipped = Path.Combine(pluginDirectory, "data", "script_order.csv");
             string generated = Path.Combine(pluginDirectory, "Translations", "_discovered", "script_order.csv");
             // The freshly generated file wins so a maintainer sees the new order at once.
-            return Load(File.Exists(generated) ? generated : (File.Exists(shipped) ? shipped : null));
+            return LoadFrom(File.Exists(generated) ? generated : (File.Exists(shipped) ? shipped : null));
         }
 
         // The order the packs were keyed against, as shipped under data/. The
@@ -253,10 +253,10 @@ namespace DragNWashLocalization
         public static Data LoadShipped(string pluginDirectory)
         {
             string shipped = Path.Combine(pluginDirectory, "data", "script_order.csv");
-            return Load(File.Exists(shipped) ? shipped : null);
+            return LoadFrom(File.Exists(shipped) ? shipped : null);
         }
 
-        private static Data Load(string path)
+        private static Data LoadFrom(string path)
         {
             if (path == null) return null;
             string stamp = path + "|" + File.GetLastWriteTimeUtc(path).Ticks;
