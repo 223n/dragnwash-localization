@@ -483,7 +483,16 @@ namespace DragNWashLocalization
                     }
                 }
                 GUI.enabled = true;
-                if (GUI.Button(new Rect(area.x + 414, area.y + y, Mathf.Max(60, innerWidth - 414 + 12), RowHeight),
+                // In a narrow window the Flags button goes on its own line
+                // instead of past the right edge.
+                float flagsX = area.x + 414, flagsWidth = innerWidth - 414 + 12;
+                if (flagsWidth < 80)
+                {
+                    y += 36;
+                    flagsX = area.x + 12;
+                    flagsWidth = Mathf.Min(160, innerWidth);
+                }
+                if (GUI.Button(new Rect(flagsX, area.y + y, flagsWidth, RowHeight),
                     _showFlags ? "Hide flags" : "Flags...", S.Button))
                 {
                     _showFlags = !_showFlags;
@@ -520,6 +529,13 @@ namespace DragNWashLocalization
 
             var footerText = new GUIContent("A snapshot is taken whenever the game writes the save. After Restore: go to the title screen and load the slot. Saving in game overwrites it again.");
             float footerHeight = S.MutedLabel.CalcHeight(footerText, innerWidth);
+            // The footer sits at the bottom; in a window too short for it, it
+            // is left out rather than drawn over the rows above.
+            bool footerFits = area.height - y - footerHeight - 12 >= 60;
+            if (!footerFits)
+            {
+                footerHeight = 0;
+            }
 
             var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - footerHeight - 12));
             ToolWindow.ApplyScroll(view, ref _savesScroll);
@@ -614,7 +630,10 @@ namespace DragNWashLocalization
             }
             GUI.EndScrollView();
 
-            GUI.Label(new Rect(area.x + 12, area.y + area.height - footerHeight - 6, innerWidth, footerHeight), footerText, S.MutedLabel);
+            if (footerFits)
+            {
+                GUI.Label(new Rect(area.x + 12, area.y + area.height - footerHeight - 6, innerWidth, footerHeight), footerText, S.MutedLabel);
+            }
         }
 
         // True when every character of the text has a glyph in the menu font.
