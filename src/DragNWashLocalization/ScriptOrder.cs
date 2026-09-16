@@ -244,7 +244,20 @@ namespace DragNWashLocalization
             string shipped = Path.Combine(pluginDirectory, "data", "script_order.csv");
             string generated = Path.Combine(pluginDirectory, "Translations", "_discovered", "script_order.csv");
             // The freshly generated file wins so a maintainer sees the new order at once.
-            string path = File.Exists(generated) ? generated : (File.Exists(shipped) ? shipped : null);
+            return Load(File.Exists(generated) ? generated : (File.Exists(shipped) ? shipped : null));
+        }
+
+        // The order the packs were keyed against, as shipped under data/. The
+        // resolver needs this one: after a game update the regenerated order
+        // carries the new keys, which the packs do not have yet.
+        public static Data LoadShipped(string pluginDirectory)
+        {
+            string shipped = Path.Combine(pluginDirectory, "data", "script_order.csv");
+            return Load(File.Exists(shipped) ? shipped : null);
+        }
+
+        private static Data Load(string path)
+        {
             if (path == null) return null;
             string stamp = path + "|" + File.GetLastWriteTimeUtc(path).Ticks;
             if (_cached != null && _cachedFrom == stamp) return _cached;
