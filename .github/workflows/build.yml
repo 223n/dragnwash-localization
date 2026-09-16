@@ -13,6 +13,10 @@ name: Build
 # Every run uploads release/DragNWashLocalization-<version>.zip as a workflow
 # artifact. A v* tag also creates a DRAFT GitHub release with the zip attached;
 # publishing it stays a person's decision.
+#
+# When a run fails, the reason is in the run's annotations (the red lines at
+# the top of the summary page) and in the job summary; each step below says
+# what to do about the failure it can see.
 on:
   push:
     branches: [main]
@@ -31,6 +35,18 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Check that the LIBS_TOKEN secret exists
+        shell: pwsh
+        env:
+          HAS_TOKEN: ${{ secrets.LIBS_TOKEN != '' }}
+        run: |
+          if ($env:HAS_TOKEN -ne 'true') {
+            Write-Host "::error title=LIBS_TOKEN is not set::The Build workflow needs the LIBS_TOKEN secret to read the private TomXV/dragnwash-libs repository. Add it under Settings > Secrets and variables > Actions > New repository secret, with a fine-grained personal access token that has Contents: Read-only on dragnwash-libs only."
+            "### Build failed: LIBS_TOKEN is not set`n`nAdd the secret under **Settings > Secrets and variables > Actions** (name ``LIBS_TOKEN``, a fine-grained token with *Contents: Read-only* on ``TomXV/dragnwash-libs``). A token that expired fails the reference-assemblies step instead, with a 'repository not found' message." | Out-File -Append $env:GITHUB_STEP_SUMMARY
+            exit 1
+          }
+          Write-Host "LIBS_TOKEN is set."
 
       - name: Get Drag'n Wash ModFramework
         uses: actions/checkout@v4
@@ -55,13 +71,54 @@ jobs:
           Remove-Item -Recurse -Force .libs-private
           (Get-ChildItem src/DragNWashLocalization/libs).Count
 
+      - name: Check that every referenced assembly is there
+        shell: pwsh
+        run: |
+          # Every <HintPath>libs/X.dll</HintPath> in this project and in the framework's must exist after the copy above.
+          $missing = @()
+          $sets = @(
+            @{ Projects = Get-ChildItem src/DragNWashLocalization/*.csproj; Libs = 'src/DragNWashLocalization/libs'; Folder = 'localization' },
+            @{ Projects = Get-ChildItem framework/src/*/*.csproj; Libs = 'framework/src/DragNWash.ModFramework/libs'; Folder = 'modframework' }
+          )
+          foreach ($set in $sets) {
+            foreach ($csproj in $set.Projects) {
+              $text = Get-Content -Raw $csproj
+              foreach ($m in [regex]::Matches($text, 'libs/([A-Za-z0-9.]+\.dll)')) {
+                $dll = $m.Groups[1].Value
+                if (-not (Test-Path "$($set.Libs)/$dll")) {
+                  $missing += "$dll in dragnwash-libs/$($set.Folder) (referenced by $($csproj.Name))"
+                }
+              }
+            }
+          }
+          $missing = $missing | Sort-Object -Unique
+          if ($missing) {
+            foreach ($m in $missing) { Write-Host "::error title=Reference assembly missing::$m. Copy it there from a game install and push that repository." }
+            "### Build failed: reference assemblies missing from dragnwash-libs`n`n" + (($missing | ForEach-Object { "- ``$_``" }) -join "`n") | Out-File -Append $env:GITHUB_STEP_SUMMARY
+            exit 1
+          }
+          Write-Host "All referenced assemblies are present."
+
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
 
       - name: Build and pack (with the framework from its checkout)
         shell: pwsh
-        run: pwsh tools/pack.ps1 -FrameworkPath (Join-Path $PWD framework)
+        run: |
+          # Compiler errors are annotated by the .NET problem matcher; pack.ps1's own
+          # checks throw with a reason, which is turned into an annotation here.
+          try {
+            pwsh tools/pack.ps1 -FrameworkPath (Join-Path $PWD framework)
+            if ($LASTEXITCODE -ne 0) { throw "tools/pack.ps1 exited with $LASTEXITCODE (see the lines above for the build error)." }
+          } catch {
+            Write-Host "::error title=Build and pack failed::$($_.Exception.Message)"
+            "### Build failed`n`n$($_.Exception.Message)`n`nCompiler errors, if any, are listed as annotations on this run. A 'needs core X' or missing-member error means the framework checkout (ref ``${{ github.event.inputs.framework_ref || 'main' }}``) is older than what this mod expects." | Out-File -Append $env:GITHUB_STEP_SUMMARY
+            exit 1
+          }
+          $zip = Get-ChildItem release/*.zip | Select-Object -First 1
+          $fw = git -C framework rev-parse --short HEAD
+          "### Built ``$($zip.Name)`` ($([math]::Round($zip.Length / 1KB)) KB) from ``$env:GITHUB_REF_NAME`` at ``$($env:GITHUB_SHA.Substring(0, 7))``, with Drag'n Wash ModFramework ``${{ github.event.inputs.framework_ref || 'main' }}`` at ``$fw``" | Out-File -Append $env:GITHUB_STEP_SUMMARY
 
       - name: Keep the zip as a workflow artifact
         uses: actions/upload-artifact@v4
@@ -79,3 +136,8 @@ jobs:
           $tag = "${{ github.ref_name }}"
           $zip = (Get-ChildItem release/*.zip | Select-Object -First 1).FullName
           gh release create $tag $zip --draft --title $tag --notes "Draft made by the Build workflow. Replace these notes before publishing."
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "::error title=Draft release not created::gh release create failed for $tag. A release for this tag may already exist (delete the draft and re-run), or the workflow token lacks contents: write."
+            exit 1
+          }
+          "Draft release **$tag** created with ``$(Split-Path -Leaf $zip)``; publish it by hand." | Out-File -Append $env:GITHUB_STEP_SUMMARY

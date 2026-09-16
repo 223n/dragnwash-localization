@@ -18,6 +18,7 @@ copies there carry the game's script in plain English.
 """
 import csv
 import io
+import os
 import re
 import sys
 from pathlib import Path
@@ -162,6 +163,19 @@ def main() -> int:
         print(p)
     if problems:
         print(f"\n{len(problems)} problem(s).")
+        # On GitHub Actions, also mark each problem on its file and line so it
+        # shows in the run's annotations and in the pull request's Files tab.
+        # Written to stderr so the report captured from stdout stays clean.
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            for p in problems:
+                m = re.match(r"^([^:]+?)(?::(\d+))?: (.*)$", p)
+                if m and m.group(2):
+                    where = f"file=Translations/{m.group(1)},line={m.group(2)}"
+                elif m:
+                    where = f"file=Translations/{m.group(1)}"
+                else:
+                    where = ""
+                print(f"::error {where}::{m.group(3) if m else p}", file=sys.stderr)
         return 1
     print("translations OK")
     return 0
