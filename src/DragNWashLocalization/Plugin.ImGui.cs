@@ -227,7 +227,7 @@ namespace DragNWashLocalization
             Head("LANGUAGES");
             Body("Supervised by the author: Japanese (ja), Simplified Chinese (zh-Hans).");
             Body("Converted from the supervised Simplified Chinese: Traditional Chinese (zh-Hant).");
-            Body("Provisional, not reviewed by native speakers: German (de), French (fr), Spanish (es), Brazilian Portuguese (pt-BR), Korean (ko), Russian (ru), Polish (pl), Hebrew (he).");
+            Body("Provisional, not reviewed by native speakers: German (de), French (fr), Spanish (es), Brazilian Portuguese (pt-BR), Korean (ko), Russian (ru), Polish (pl), Hebrew (he), Ukrainian (uk), Thai (th), Vietnamese (vi).");
             Body("Just for fun: Esperanto (eo), Toki Pona (tok).");
             Body("Provisional lines may read unnaturally. Native speakers: corrections are very welcome as pull requests.");
             Body("Installed in this copy: " + string.Join(", ", _availableLocales ?? new string[0]));
