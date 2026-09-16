@@ -40,16 +40,33 @@ def display(path: Path) -> str:
 def check_file(path: Path) -> list[str]:
     problems = []
     name = display(path)
+    # Parse first, then drop comment rows. Filtering physical lines before the
+    # CSV parser sees them also removes lines that belong to a quoted
+    # multi-line value, which silently changes the value being validated: the
+    # game (src/DragNWashLocalization/CsvReader.cs) only treats '#' as a
+    # comment at the start of a record, never inside quotes.
+    #
+    # Reports must point at the line in the file, so remember where each
+    # record started. reader.line_num is the last physical line the record
+    # used, so the next record starts on the line after it.
     with io.open(path, encoding="utf-8-sig", newline="") as f:
-        # Header comments and blank lines are skipped, but reports must point
-        # at the line in the file, so remember where each kept line came from.
-        kept = [(i, line) for i, line in enumerate(f, start=1) if line.strip() and not line.startswith("#")]
-    origin = [i for i, _ in kept]
-    reader = csv.reader(line for _, line in kept)
-    try:
-        header = next(reader)
-    except StopIteration:
+        reader = csv.reader(f)
+        rows = []
+        previous = 0
+        try:
+            for row in reader:
+                start = previous + 1
+                previous = reader.line_num
+                if not row:            # a blank line between records
+                    continue
+                if row[0].startswith("#"):
+                    continue
+                rows.append((start, row))
+        except csv.Error as exc:
+            return [f"{name}:{reader.line_num}: could not be parsed as CSV ({exc})"]
+    if not rows:
         return [f"{name}: empty file"]
+    header = rows[0][1]
     accepted = (
         ["key", "section", "node", "order", "speaker", "translation"],
         ["key", "speaker", "translation"],
@@ -64,12 +81,7 @@ def check_file(path: Path) -> list[str]:
     col = {column: i for i, column in enumerate(header)}
     width = len(header)
     seen = {}
-    consumed = reader.line_num
-    for row in reader:
-        # A quoted field can span lines; a row starts right after the lines
-        # the reader had consumed before it.
-        n = origin[consumed]
-        consumed = reader.line_num
+    for n, row in rows[1:]:
         if len(row) != width:
             problems.append(f"{name}:{n}: expected {width} fields, got {len(row)}")
             continue
