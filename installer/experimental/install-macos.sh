@@ -60,19 +60,30 @@ FORCE_TERMINAL=0
 UI=""
 WARNINGS=""
 
+# The loop below shifts every argument away, and the language picker later
+# replaces the positional parameters again, so the invocation has to be kept
+# here to be able to log it at all. installer.log is usually the only
+# artefact a user can attach to a bug report.
+ARGV="$*"
+
+# Without this, an option given as the last word shifts twice: once in the
+# case branch and once at the end of the loop. The second shift fails with
+# nothing left, and set -e ends the run with no message at all.
+need_value() { [ $# -ge 2 ] || { echo "Option $1 needs a value" >&2; exit 2; }; }
+
 while [ $# -gt 0 ]; do
     case "$1" in
         --install) MODE=install ;;
         --uninstall) MODE=uninstall ;;
         --check) MODE=check ;;
-        --lang) LANG_CHOICE="${2:-}"; shift ;;
-        --game-dir) GAME_DIR="${2:-}"; shift ;;
-        --payload) PAYLOAD_ROOT="${2:-}"; shift ;;
+        --lang) need_value "$@"; LANG_CHOICE="$2"; shift ;;
+        --game-dir) need_value "$@"; GAME_DIR="$2"; shift ;;
+        --payload) need_value "$@"; PAYLOAD_ROOT="$2"; shift ;;
         --yes|-y) ASSUME_YES=1 ;;
         --remove-bepinex) REMOVE_BEPINEX=1 ;;
         --close-steam) CLOSE_STEAM=1 ;;
         --terminal) FORCE_TERMINAL=1 ;;
-        --ui) UI="${2:-}"; shift ;;
+        --ui) need_value "$@"; UI="$2"; shift ;;
         -h|--help) sed -n '2,31p' "$0"; exit 0 ;;
         *) echo "Unknown option: $1" >&2; exit 2 ;;
     esac
@@ -489,9 +500,17 @@ function editVdf(text, app, option, action) {
     } else if (action === 'set') {
         if (current.includes(wrapper)) return { status: 'same' };
         if (anyWrapper.test(current)) return { status: 'other' };
-        if (current.includes('%command%')) value = current.replace('%command%', option);
-        else if (current.trim()) value = option + ' ' + current.trim();
-        else value = option;
+        if (current.includes('%command%')) {
+            // String.replace scans the replacement for $-patterns ($&, $`,
+            // $', $$), so a game path containing one would be rewritten
+            // instead of inserted. Splice it in by index instead.
+            const at = current.indexOf('%command%');
+            value = current.slice(0, at) + option + current.slice(at + '%command%'.length);
+        } else if (current.trim()) {
+            value = option + ' ' + current.trim();
+        } else {
+            value = option;
+        }
     } else if (action === 'remove') {
         if (!anyWrapper.test(current)) return { status: 'none' };
         value = current.replace(anyWrapper, '').trim();
@@ -658,7 +677,7 @@ patch_run_script() {
 }
 
 # ------------------------------------------------------------------ main ----
-log "---- start: $0 $* (mode=${MODE:-ask}, ui=$UI, gui=$GUI, payload=$PAYLOAD)"
+log "---- start: $0 $ARGV (mode=${MODE:-ask}, ui=$UI, gui=$GUI, payload=$PAYLOAD)"
 say "== $(t title)"
 
 if [ -z "$GAME_DIR" ]; then GAME_DIR="$(find_game || true)"; fi
@@ -759,8 +778,22 @@ $(t known_issue_ask)" 0; then
             fi
         fi
     fi
-    if [ -z "$LANG_CHOICE" ] || { [ "$LANG_CHOICE" != en ] && [ ! -d "$PAYLOAD/Translations/$LANG_CHOICE" ]; }; then
-        fail "Unknown language: ${LANG_CHOICE:-?}"
+    # Every way of choosing a language lands here: --lang, the GUI picker and
+    # the code typed at the prompt above. That is why the check sits after the
+    # picker and not next to the option parser.
+    #
+    # Shape first, because a directory test on its own accepts "ja/" and the
+    # code is spliced into a sed s/// replacement further down, where / and &
+    # change what the expression means. A leading _ is out as well: the picker
+    # hides those directories (the mod keeps its working files in
+    # Translations/_discovered/), so they are not languages to offer here
+    # either. A locale directory name never needs anything outside these
+    # characters.
+    case "$LANG_CHOICE" in
+        "" | _* | *[!A-Za-z0-9_-]*) fail "Unknown language: ${LANG_CHOICE:-?}" ;;
+    esac
+    if [ "$LANG_CHOICE" != en ] && [ ! -d "$PAYLOAD/Translations/$LANG_CHOICE" ]; then
+        fail "Unknown language: $LANG_CHOICE"
     fi
 
     ask_yes "$(t confirm_install)
@@ -868,7 +901,20 @@ $GAME_DIR" 1 || exit 1
 
     # Same rules as the Deck script: BepInEx and the launch option only matter
     # to other mods now.
-    others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null | head -1)"
+    # The config file alone is enough to get here, so plugins/ may be gone. A
+    # failing find would take the whole uninstall down with it under
+    # set -e/pipefail, half-done and with nothing on screen.
+    others=""
+    if [ -d "$GAME_DIR/BepInEx/plugins" ]; then
+        # Only whether the listing is empty matters, so the exit status is the
+        # part to keep: a probe that fails must not read as "no other mods
+        # left", because that answer removes BepInEx and everything under it.
+        # An unreadable directory keeps BepInEx, the same as a mod being there.
+        if ! others="$(find "$GAME_DIR/BepInEx/plugins" -mindepth 1 -maxdepth 1 ! -name "$PLUGIN" 2>/dev/null)"; then
+            others="?"
+            log "could not list BepInEx/plugins; keeping BepInEx"
+        fi
+    fi
     if [ -n "$others" ]; then
         say "$(t bep_kept)"
     else
