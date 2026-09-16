@@ -157,6 +157,14 @@ namespace DragNWashLocalization
             }
         }
 
+        // Reloaded by the framework (or unloaded at quit): the tabs and the
+        // console command go with this build. Hot reload polls from Update, so
+        // it stops with the component.
+        private void OnDestroy()
+        {
+            RemoveToolTabs();
+        }
+
         private void RemoveToolTabs()
         {
             foreach (IDisposable tab in _toolTabs)
