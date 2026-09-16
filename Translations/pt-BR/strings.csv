@@ -943,7 +943,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,Garanta que v
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Se alguém como o Ryan tá interessado, você tá indo muito bem."
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,Hah. Se ao menos tivesse um kobold que pudesse me limpar.
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Se ao menos.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,Vou garantir que você fique <i>impecável.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,Vou garantir que você fique <i>impecável.</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Brincadeiras à parte, o seu banho é com certeza o melhor."
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,Valeu. Quem tá bonito se sente bem!
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1347,7 +1347,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Hah... Vai bater uma
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,Caraaalho. Você sabe mesmo como lidar com um dragão!
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,Pronto!
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Você tá <i>impecável.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Você tá <i>impecável.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,Parece que sim.
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,"Isso, porra."
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Valeu pelo banho tão tarde da noite.
@@ -1880,7 +1880,7 @@ d57274b504a45b33,UI,,,UI,"Instalado fora de BepInEx/plugins, então não pode se
 fd35647f8ecb2f7d,UI,,,UI,Necessário para
 9e6151acb057025d,UI,,,UI,Usa
 b9d0dd131d07b5ad,UI,,,UI,"Ferramentas compartilhadas para mods de Drag'n Wash, incluindo esta tela de mods."
-1236e3be635f17c7,UI,,,UI,"Jogue Drag'n Wash em 13 idiomas. Traduz diálogos, escolhas, interface e opções."
+1236e3be635f17c7,UI,,,UI,"Jogue Drag'n Wash em 16 idiomas. Traduz diálogos, escolhas, interface e opções."
 1cd1ca858aaea1d0,UI,,,UI,Não carregado. Precisa de
 eda662e0b5033180,UI,,,UI,Não carregado. Não funciona junto com
 a8d12a246b72d98c,UI,,,UI,Não carregado. O motivo está em BepInEx/LogOutput.log.
@@ -1900,3 +1900,13 @@ e6af4688a3314648,UI,,,UI,"Uma janela compartilhada dentro do jogo (F1) onde os m
 014659ab9d98c8fe,UI,,,UI,Conflito
 02e19c617a19bae7,UI,,,UI,Altera o mesmo código do jogo que:
 61ec4dc622c31ea9,UI,,,UI,Altera o mesmo código do jogo que estes mods e pode sobrepô-los:
+c1c1009d3f37ec05,UI,,,UI,Atualização
+4168cfb8a090a98c,UI,,,UI,Nova versão disponível:
+cd6c9851e91ad7b6,UI,,,UI,Abrir página da versão
+22e2bada8f1c65cd,UI,,,UI,Atualizações
+f26f3275e735bdf6,UI,,,UI,Verificar atualizações
+a6a1b13028fd8c9c,UI,,,UI,"Uma vez por dia, pergunta ao GitHub se os mods que informam seu repositório no GitHub têm uma versão mais nova. Nada sobre você ou seu jogo é enviado."
+fe199528850a4e24,UI,,,UI,Desinstalar
+63e38bd4b036193a,UI,,,UI,Cancelar
+86965245a1d725c1,UI,,,UI,"Pressione ""Desinstalar"" de novo para remover este mod na próxima vez que o jogo iniciar. As configurações dele também são removidas."
+e2b9759e2326caba,UI,,,UI,Será removido na próxima inicialização

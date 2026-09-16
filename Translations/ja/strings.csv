@@ -952,7 +952,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,とにかく�
 line:c642cb17,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,ありがとな。
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,はっ。俺を洗ってくれるコボルドがいりゃあなあ。
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,いればいいですね。
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>ピカピカにしてあげますよ。
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>ピカピカにしてあげますよ。</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,冗談抜きで、お前の洗いは間違いなく一番だ。
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,ありがとな。見た目が決まりゃ気分も決まる！
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1371,7 +1371,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,はっ……今か�
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,くっそ……お前、マジでドラゴンの扱いがわかってるな！
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,終わりましたよ！
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,<i>ピカピカですよ。
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,<i>ピカピカですよ。</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,みたいだな。
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,そうこなくっちゃ。
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,こんな夜遅くに洗ってくれて、ありがとな。
@@ -1911,7 +1911,7 @@ d57274b504a45b33,UI,,,UI,BepInEx/plugins の外に入っているため、ここ
 fd35647f8ecb2f7d,UI,,,UI,必要としている Mod
 9e6151acb057025d,UI,,,UI,使っている Mod
 b9d0dd131d07b5ad,UI,,,UI,Drag'n Wash の Mod で共通して使う機能をまとめたものです。この Mods 画面もその 1 つです。
-1236e3be635f17c7,UI,,,UI,Drag'n Wash を 13 言語で遊べるようにします。台詞、選択肢、UI、設定を翻訳します。
+1236e3be635f17c7,UI,,,UI,Drag'n Wash を 16 言語で遊べるようにします。台詞、選択肢、UI、設定を翻訳します。
 1cd1ca858aaea1d0,UI,,,UI,読み込まれていません。必要な Mod：
 eda662e0b5033180,UI,,,UI,読み込まれていません。一緒に使えない Mod：
 a8d12a246b72d98c,UI,,,UI,読み込まれていません。理由は BepInEx/LogOutput.log を確認してください。
@@ -1931,3 +1931,13 @@ e6af4688a3314648,UI,,,UI,Mod が開発・デバッグ用ツールのタブを追
 014659ab9d98c8fe,UI,,,UI,競合
 02e19c617a19bae7,UI,,,UI,同じゲームのコードを書き換えている Mod：
 61ec4dc622c31ea9,UI,,,UI,同じゲームのコードを書き換え、上書きする可能性がある Mod：
+c1c1009d3f37ec05,UI,,,UI,更新あり
+4168cfb8a090a98c,UI,,,UI,新しいバージョンがあります：
+cd6c9851e91ad7b6,UI,,,UI,リリースページを開く
+22e2bada8f1c65cd,UI,,,UI,更新
+f26f3275e735bdf6,UI,,,UI,更新を確認する
+a6a1b13028fd8c9c,UI,,,UI,1 日に 1 回、GitHub リポジトリを指定している Mod に新しいリリースがあるかを GitHub に問い合わせます。あなたやゲームについての情報は送りません。
+fe199528850a4e24,UI,,,UI,アンインストール
+63e38bd4b036193a,UI,,,UI,取り消す
+86965245a1d725c1,UI,,,UI,もう一度「アンインストール」を押すと、次にゲームを起動したときにこの Mod を削除します。この Mod の設定も削除されます。
+e2b9759e2326caba,UI,,,UI,次回の起動時に削除

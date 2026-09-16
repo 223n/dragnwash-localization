@@ -23,10 +23,9 @@
 #     BepInEx/plugins/DragNWashLocalization/data/script_order.csv, level_flow.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
-#     Install.exe                <- double-click installer / uninstaller (no console)
-#     Install.cmd                <- same window, for when Install.exe is blocked
-#     install-steamdeck.sh       <- Steam Deck / Linux: bash install-steamdeck.sh
-#     installer/Installer.ps1
+#     Install.exe                <- Drag'n Wash ModFramework's shared installer (Windows)
+#     install-steamdeck.sh       <- the same for Steam Deck / Linux: bash install-steamdeck.sh
+#     mod-install.json           <- what the installers need to know about this mod
 #     README.md, README.ja.md
 param(
     [string]$Version,
@@ -40,6 +39,46 @@ $Project = Join-Path $Root 'src/DragNWashLocalization/DragNWashLocalization.cspr
 $SrcDir = Split-Path -Parent $Project
 $Dll = Join-Path $SrcDir 'bin/Release/DragNWashLocalization.dll'
 $OutDir = Join-Path $Root 'release'
+
+# 0. The version lives in two places: Plugin.PluginVersion, which the Mods
+#    screen shows, and the .csproj's <Version>/<FileVersion>, which become the
+#    DLL's file version and are what the installer shows. The .csproj comment
+#    says to keep them in step, but nothing checked it: a release that updated
+#    only one shipped a mod whose two version numbers disagree, and neither the
+#    build nor any test notices. Check before anything is built.
+#    <FileVersion> is checked too: it is a separate element, so it can drift on
+#    its own, and it is the one Windows shows in the file properties.
+#
+#    A missing element is not the same as a matching one, so the two are told
+#    apart. No <FileVersion> is fine: MSBuild takes it from <Version>. No
+#    <Version> is not: the assembly version falls back to 1.0.0.0 - and with
+#    both elements gone the file version is stamped 1.0.0.0 too - while
+#    Plugin.cs still says something else. That is the very drift this check
+#    exists to catch, so it must not read as "nothing to compare, carry on".
+#
+#    The values are trimmed: <Version> 1.1.2 </Version> is valid MSBuild and
+#    builds a 1.1.2 DLL, so it must not be reported as a mismatch.
+$PluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
+$PluginVersion = if ($PluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') { $Matches[1].Trim() } else { $null }
+$Csproj = Get-Content -LiteralPath $Project -Raw
+$CsprojVersion = if ($Csproj -match '<Version>([^<]*)</Version>') { $Matches[1].Trim() } else { $null }
+$CsprojFileVersion = if ($Csproj -match '<FileVersion>([^<]*)</FileVersion>') { $Matches[1].Trim() } else { $null }
+if (-not $PluginVersion -and -not $Version) {
+    throw 'Could not read PluginVersion from Plugin.cs. Pass -Version explicitly.'
+}
+if (-not $CsprojVersion) {
+    throw "No <Version> in $Project. Without it the assembly version falls back to 1.0.0.0 and nothing matches Plugin.PluginVersion. Add <Version> (and <FileVersion>) and keep both in step with it."
+}
+$Mismatched = @()
+if ($PluginVersion -and $PluginVersion -ne $CsprojVersion) {
+    $Mismatched += "<Version> $CsprojVersion"
+}
+if ($PluginVersion -and $CsprojFileVersion -and $PluginVersion -ne $CsprojFileVersion) {
+    $Mismatched += "<FileVersion> $CsprojFileVersion"
+}
+if ($Mismatched) {
+    throw "Version mismatch: Plugin.cs says $PluginVersion but the .csproj says $($Mismatched -join ' and '). Keep <Version> and <FileVersion> in step with Plugin.PluginVersion."
+}
 
 # 1. The reference assemblies are copied from the game install and never
 #    committed. Fail loudly and early with the list of what is missing.
@@ -94,15 +133,10 @@ if (-not (Test-Path -LiteralPath $Dll)) {
     throw "Build succeeded but $Dll was not produced."
 }
 
-# 3. Version: explicit argument wins, otherwise read PluginVersion from Plugin.cs.
+# 3. Version: explicit argument wins, otherwise the PluginVersion read in step 0,
+#    which already refused to go on without one.
 if (-not $Version) {
-    $pluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
-    if ($pluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') {
-        $Version = $Matches[1]
-    }
-    else {
-        throw 'Could not read PluginVersion from Plugin.cs. Pass -Version explicitly.'
-    }
+    $Version = $PluginVersion
 }
 
 # 4. Stage the files under the same layout the game expects, so extracting the
@@ -128,6 +162,11 @@ Copy-Item -LiteralPath (Join-Path $FrameworkPath 'src/DragNWash.ModFramework.Pre
 $FrameworkLicense = Join-Path $FrameworkPath 'LICENSE'
 if (Test-Path -LiteralPath $FrameworkLicense) {
     Copy-Item -LiteralPath $FrameworkLicense -Destination (Join-Path $Stage 'BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt')
+}
+# The framework's icon on the Mods screen.
+$FrameworkIcon = Join-Path $FrameworkPath 'src/DragNWash.ModFramework/icon.png'
+if (Test-Path -LiteralPath $FrameworkIcon) {
+    Copy-Item -LiteralPath $FrameworkIcon -Destination (Join-Path $Stage 'BepInEx/plugins/DragNWash.ModFramework')
 }
 Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
 # Menu font for systems whose OS fonts have no CJK glyphs (Steam Deck).
@@ -157,24 +196,51 @@ Get-ChildItem -LiteralPath $SrcTranslations -Directory |
 Copy-Item -LiteralPath (Join-Path $Root 'README.md') -Destination $Stage
 Copy-Item -LiteralPath (Join-Path $Root 'README.ja.md') -Destination $Stage
 
-# The one-click installer: Install.exe at the zip root, script beside the payload.
-# The exe is a tiny console-less launcher compiled with the C# compiler that
-# ships with .NET Framework 4 on every Windows machine.
-New-Item -ItemType Directory -Force -Path (Join-Path $Stage 'installer') | Out-Null
-Copy-Item -LiteralPath (Join-Path $Root 'installer/Installer.ps1') -Destination (Join-Path $Stage 'installer')
-# Fallback for machines where SmartScreen or policy stops the unsigned exe.
-Copy-Item -LiteralPath (Join-Path $Root 'installer/Install.cmd') -Destination $Stage
-# Steam Deck / Linux installer. Must keep LF line endings (.gitattributes).
-Copy-Item -LiteralPath (Join-Path $Root 'installer/install-steamdeck.sh') -Destination $Stage
-# Built deterministically (installer/Launcher.csproj): the same Launcher.cs gives a
-# byte-identical Install.exe every release, so antivirus reputation, which follows
-# the file's hash, carries over instead of starting again with each release.
-$LauncherProject = Join-Path $Root 'installer/Launcher.csproj'
-dotnet build $LauncherProject -c Release
+# The installers: Drag'n Wash ModFramework's shared Install.exe and
+# install-steamdeck.sh, the same files every mod ships (see the framework's
+# docs/INSTALLER.md). Install.exe is built deterministically, so its hash and the
+# antivirus reputation that follows it stay the same from release to release.
+$InstallerProject = Join-Path $FrameworkPath 'installer/DragNWash.Installer.csproj'
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue (Join-Path $FrameworkPath 'installer/bin'), (Join-Path $FrameworkPath 'installer/obj')
+dotnet build $InstallerProject -c Release
 if ($LASTEXITCODE -ne 0) { throw 'Failed to build Install.exe.' }
-Copy-Item -LiteralPath (Join-Path $Root 'installer/bin/Release/Install.exe') -Destination (Join-Path $Stage 'Install.exe')
-$LauncherHash = (Get-FileHash -LiteralPath (Join-Path $Stage 'Install.exe') -Algorithm SHA256).Hash.ToLowerInvariant()
-Write-Host "Install.exe sha256 $LauncherHash (unchanged unless installer/Launcher.cs or the .NET SDK changed)"
+Copy-Item -LiteralPath (Join-Path $FrameworkPath 'installer/bin/Release/Install.exe') -Destination $Stage
+# Must keep LF line endings (the framework's .gitattributes).
+Copy-Item -LiteralPath (Join-Path $FrameworkPath 'installer/install-steamdeck.sh') -Destination $Stage
+$InstallerHash = (Get-FileHash -LiteralPath (Join-Path $Stage 'Install.exe') -Algorithm SHA256).Hash.ToLowerInvariant()
+Write-Host "Install.exe sha256 $InstallerHash (unchanged unless the framework's installer/ or the .NET SDK changed)"
+
+# mod-install.json: this mod's folder, the player's data the installers keep
+# (translation working files and old save snapshots), the config file, and the
+# language question with every pack that ships.
+$Options = @()
+Get-ChildItem -LiteralPath $TranslationsDir -Directory | Sort-Object Name | ForEach-Object {
+    $display = $_.Name
+    $nameFile = Join-Path $_.FullName 'name.txt'
+    if (Test-Path -LiteralPath $nameFile) {
+        $text = ([IO.File]::ReadAllText($nameFile, [Text.Encoding]::UTF8)).Trim()
+        if ($text) { $display = $text }
+    }
+    $Options += [ordered]@{ value = $_.Name; name = $display }
+}
+$Options += [ordered]@{ value = 'en'; name = 'English' }
+$Manifest = [ordered]@{
+    schema      = 1
+    name        = "Drag'n Wash Localization"
+    version     = $Version
+    website     = 'https://github.com/TomXV/dragnwash-localization'
+    plugins     = @('DragNWashLocalization')
+    keep        = @('DragNWashLocalization/Translations/_discovered', 'DragNWashLocalization/SaveHistory')
+    configFiles = @('com.tomxv.dragnwash.localization.cfg')
+    choices     = @([ordered]@{
+        id      = 'language'
+        label   = [ordered]@{ en = 'Language'; ja = '言語'; zh = '语言' }
+        config  = [ordered]@{ file = 'com.tomxv.dragnwash.localization.cfg'; section = 'General'; key = 'TargetLocale' }
+        options = $Options
+        default = 'ui-language'
+    })
+}
+[IO.File]::WriteAllText((Join-Path $Stage 'mod-install.json'), ($Manifest | ConvertTo-Json -Depth 6), (New-Object Text.UTF8Encoding($false)))
 
 # 5. Zip the stage contents (so the zip root holds BepInEx/ and the READMEs).
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null

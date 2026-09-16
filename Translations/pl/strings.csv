@@ -942,7 +942,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,"Upewnij się
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Jeśli ktoś taki jak Ryan jest zainteresowany, to świetnie ci idzie."
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,"Hah. Gdyby tylko był jakiś kobold, który mógłby mnie umyć."
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Gdyby tylko.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,"Dopilnuję, żebyś był <i>nieskazitelny."
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,"Dopilnuję, żebyś był <i>nieskazitelny.</i>"
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Żarty na bok, twoja myjnia jest zdecydowanie najlepsza."
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,"Dzięki. Dobrze wyglądasz, dobrze się czujesz!"
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1346,7 +1346,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Hah... Zwalisz mi te
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,"Kuuurwa. Ty naprawdę wiesz, jak obsłużyć smoka!"
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,Gotowe!
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Jesteś <i>bez skazy.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Jesteś <i>bez skazy.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,Na to wygląda.
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,No i git.
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Dzięki za mycie tak późno w nocy.
@@ -1878,7 +1878,7 @@ d57274b504a45b33,UI,,,UI,"Zainstalowany poza BepInEx/plugins, więc nie można g
 fd35647f8ecb2f7d,UI,,,UI,Potrzebny dla
 9e6151acb057025d,UI,,,UI,Używa
 b9d0dd131d07b5ad,UI,,,UI,"Wspólne narzędzia dla modów do Drag'n Wash, w tym ten ekran modów."
-1236e3be635f17c7,UI,,,UI,"Graj w Drag'n Wash w 13 językach. Tłumaczy dialogi, wybory, interfejs i opcje."
+1236e3be635f17c7,UI,,,UI,"Graj w Drag'n Wash w 16 językach. Tłumaczy dialogi, wybory, interfejs i opcje."
 1cd1ca858aaea1d0,UI,,,UI,Niewczytany. Wymaga
 eda662e0b5033180,UI,,,UI,Niewczytany. Nie działa razem z
 a8d12a246b72d98c,UI,,,UI,Niewczytany. Przyczyna jest w BepInEx/LogOutput.log.
@@ -1898,3 +1898,13 @@ e6af4688a3314648,UI,,,UI,"Wspólne okno w grze (F1), w którym mody dodają kart
 014659ab9d98c8fe,UI,,,UI,Konflikt
 02e19c617a19bae7,UI,,,UI,Zmienia ten sam kod gry co:
 61ec4dc622c31ea9,UI,,,UI,Zmienia ten sam kod gry co te mody i może je zastąpić:
+c1c1009d3f37ec05,UI,,,UI,Aktualizacja
+4168cfb8a090a98c,UI,,,UI,Dostępna nowa wersja:
+cd6c9851e91ad7b6,UI,,,UI,Otwórz stronę wydania
+22e2bada8f1c65cd,UI,,,UI,Aktualizacje
+f26f3275e735bdf6,UI,,,UI,Sprawdzaj aktualizacje
+a6a1b13028fd8c9c,UI,,,UI,"Raz dziennie pyta GitHub, czy mody, które podają swoje repozytorium GitHub, mają nowsze wydanie. Nie są wysyłane żadne informacje o tobie ani o twojej grze."
+fe199528850a4e24,UI,,,UI,Odinstaluj
+63e38bd4b036193a,UI,,,UI,Anuluj
+86965245a1d725c1,UI,,,UI,"Naciśnij ponownie „Odinstaluj”, aby usunąć ten mod przy następnym uruchomieniu gry. Jego ustawienia również zostaną usunięte."
+e2b9759e2326caba,UI,,,UI,Zostanie usunięty przy następnym uruchomieniu

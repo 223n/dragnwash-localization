@@ -16,15 +16,25 @@
 
   Rows are written in the order the game plays them, with '#' section
   headers, using data/script_order.csv and data/level_flow.csv from the
-  repository (generated in-game by F1 -> Tools -> Export game flow). Keys the
-  order does not know (UI text) go last. No game installation is needed.
+  repository (generated in-game by F1 -> Translation -> Export game flow).
+  Keys the order does not know (UI text) go last. No game installation is
+  needed.
+
+  When a working copy is the input, every published row it does not contain is
+  kept: a working copy only holds the rows it was written with, and the
+  published file may have gained rows since.
 
   Identical to the in-game "Hash for commit" button.
 
 .PARAMETER Path
-  The strings.csv (or working copy) to convert. Defaults to every locale under
-  Translations/. When a locale's working copy exists under
-  Translations/_discovered/<locale>.working.csv it is used as the input.
+  Convert exactly these files, in place: each one is both the input and the
+  output. Give it a published strings.csv, not a working copy - a working copy
+  passed here is overwritten with the published form, which drops its source_en
+  column and every untranslated row.
+
+  With no arguments every locale under Translations/ is converted, and there a
+  locale's working copy (Translations/_discovered/<locale>.working.csv) is used
+  as the input when one exists. That resolution does not happen for -Path.
 #>
 [CmdletBinding()]
 param(
@@ -48,11 +58,57 @@ function Escape-Csv([string]$v) {
   return $v
 }
 
-# Import-Csv cannot skip comment lines, so strip them first.
+# Import-Csv cannot skip comment lines, so they are dropped after parsing.
+# Stripping them from the physical lines first would also remove lines that
+# belong to a quoted multi-line value, which silently rewrites the translation:
+# the game (src/DragNWashLocalization/CsvReader.cs) treats '#' as a comment only
+# at the start of a record, never inside quotes.
 function Read-Csv([string]$file) {
-  $lines = [System.IO.File]::ReadAllLines($file, [System.Text.Encoding]::UTF8) | Where-Object { -not $_.StartsWith('#') }
-  if ($lines.Count -lt 2) { return @() }
-  return ($lines | ConvertFrom-Csv)
+  # The whole file as one string, not an array of lines: ConvertFrom-Csv only
+  # joins a quoted field across physical lines when it is given a single
+  # string. Handed an array it makes every line its own record, which cuts a
+  # multi-line translation off at its first line - the very thing this change
+  # is about.
+  $text = [System.IO.File]::ReadAllText($file, [System.Text.Encoding]::UTF8)
+  if ($text.Trim() -eq '') { return @() }
+  # Drop blank lines and comment records before parsing, the same way the game
+  # does (CsvReader.Parse): a blank line is not a record, and a '#' that starts
+  # a record - outside quotes - begins a comment.
+  #
+  # This has to be decided on the physical lines, not on the parsed fields.
+  # Once ConvertFrom-Csv has unquoted a value there is no way left to tell the
+  # section header  # ===== Level 1 =====  from the datum  "#1 alley", and
+  # filtering on the parsed value silently drops the latter. The game keeps it,
+  # and CsvReader.Escape quotes a leading '#' so that it survives the round trip.
+  #
+  # It also settles the header: ConvertFrom-Csv takes the first physical line
+  # as the header, so anything left above it would become the header and every
+  # column would be lost.
+  return ((Remove-NonRecords $text) | ConvertFrom-Csv)
+}
+
+# The quote parity carried across lines is what separates a comment from a
+# line that merely sits inside a quoted, multi-line value.
+function Remove-NonRecords([string]$text) {
+  $out = New-Object System.Text.StringBuilder
+  $inQuotes = $false
+  foreach ($m in [regex]::Matches($text, '[^\r\n]*(?:\r?\n|$)')) {
+    $line = $m.Value
+    if ($line.Length -eq 0) { continue }
+    if (-not $inQuotes) {
+      $body = $line -replace '\r?\n$', ''
+      if ($body.Trim().Length -eq 0 -or $body.StartsWith('#')) {
+        # Not a record. Its quotes cannot open one either, so leave the
+        # parity alone - the game's parser never looks inside a comment.
+        continue
+      }
+    }
+    [void]$out.Append($line)
+    $quotes = 0
+    foreach ($c in $line.ToCharArray()) { if ($c -eq '"') { $quotes++ } }
+    if ($quotes % 2 -eq 1) { $inQuotes = -not $inQuotes }
+  }
+  return $out.ToString()
 }
 
 # ---- play order ------------------------------------------------------------
@@ -83,7 +139,16 @@ function Section-Title([string]$s) {
 # ---- inputs ----------------------------------------------------------------
 $targets = @()
 if ($Path) {
-  foreach ($p in $Path) { $targets += @{ Input = $p; Output = $p } }
+  # Resolve against PowerShell's current location. The path is handed to
+  # [System.IO.File], which resolves a relative one against the process working
+  # directory - not the same thing, and Set-Location never updates it. That put
+  # the rewritten file somewhere other than where the caller pointed. As a bonus
+  # Resolve-Path fails outright on a path that does not exist, instead of the
+  # run reading nothing and writing a file there.
+  foreach ($p in $Path) {
+    $rp = (Resolve-Path -LiteralPath $p).Path
+    $targets += @{ Input = $rp; Output = $rp }
+  }
 } else {
   Get-ChildItem -Path (Join-Path $root 'Translations') -Directory | Where-Object { $_.Name -notlike '_*' } | ForEach-Object {
     $out = Join-Path $_.FullName 'strings.csv'
@@ -108,7 +173,8 @@ foreach ($t in $targets) {
   $lineRows = [ordered]@{}
   $converted = 0; $kept = 0; $dropped = 0; $lineKept = 0
   foreach ($r in Read-Csv $t.Input) {
-    $rawKey = if ($r.PSObject.Properties['key']) { ([string]$r.key).Trim() } else { '' }
+    $keyCell = if ($r.PSObject.Properties['key']) { [string]$r.key } else { '' }
+    $rawKey = $keyCell.Trim()
     if ($rawKey -cmatch $lineIdPattern) {
       $tr = if ($r.PSObject.Properties['translation']) { [string]$r.translation } else { '' }
       if ($tr -ne '' -and -not $lineRows.Contains($rawKey)) { $lineRows[$rawKey] = $tr }
@@ -120,8 +186,15 @@ foreach ($t in $targets) {
       $hashed = Get-Key $src
       if ($key -ne '' -and $key -ne $hashed) { $dropped++; continue }
       $key = $hashed; $converted++
-    } elseif ($key -match '^[0-9a-f]{16}$') {
+    } elseif ($key -cmatch '^[0-9a-f]{16}$') {
       $kept++
+    } elseif ($key -ne '') {
+      # A translator appending "English,訳" to a published file puts the
+      # English under the key column, since that is the header. That is the
+      # most natural edit there is, so take it as source text rather than
+      # dropping the row - TranslationStore.ResolveKey, which the in-game
+      # button uses, does the same.
+      $key = Get-Key $keyCell; $converted++
     } else {
       $dropped++; continue
     }
@@ -133,14 +206,49 @@ foreach ($t in $targets) {
     $inputOrder.Add($key)
   }
 
-  $out = New-Object System.Text.StringBuilder
-  [void]$out.AppendLine('key,section,node,order,speaker,translation')
+  # A working copy only holds the rows it was written with. Rows the published
+  # file gained since (a pack update, keys re-made after a game update) would
+  # otherwise be lost, so keep every published row the working copy does not
+  # have. The working copy wins where both do. This mirrors
+  # TranslationStore.HashFileInPlace, which the in-game button uses.
+  $fromPublished = 0
+  if ($t.Input -ne $t.Output -and (Test-Path $t.Output)) {
+    foreach ($r in Read-Csv $t.Output) {
+      $pCell = if ($r.PSObject.Properties['key']) { [string]$r.key } else { '' }
+      $pk = $pCell.Trim()
+      if ($pk -eq '') { continue }
+      $ptr = if ($r.PSObject.Properties['translation']) { [string]$r.translation } else { '' }
+      if ($ptr -eq '') { continue }
+      if ($pk -cmatch $lineIdPattern) {
+        if (-not $lineRows.Contains($pk)) { $lineRows[$pk] = $ptr }
+        continue
+      }
+      $pk = $pk.ToLowerInvariant()
+      # The published file carries no source_en column, so a key column holding
+      # something other than a key is English somebody appended by hand. Hash it
+      # and keep the row, exactly as ResolveKey does; discarding it here would
+      # throw a finished translation away without saying so.
+      if ($pk -cnotmatch '^[0-9a-f]{16}$') { $pk = Get-Key $pCell }
+      if ($rows.ContainsKey($pk)) { continue }
+      $pwho = if ($r.PSObject.Properties['speaker']) { [string]$r.speaker } else { '' }
+      $rows[$pk] = @{ Speaker = $pwho; Translation = $ptr }
+      $inputOrder.Add($pk)
+      $fromPublished++
+    }
+  }
+
+  # StringBuilder.AppendLine uses [Environment]::NewLine, which is CRLF on
+  # Windows. StringWriter lets the newline be stated outright, so the file is
+  # LF on every platform, matching the repository (see .gitattributes).
+  $out = New-Object System.IO.StringWriter
+  $out.NewLine = "`n"
+  $out.WriteLine('key,section,node,order,speaker,translation')
   # Keep the comment block under the header of the published file (language,
   # provisional notice, credits), up to the first section header.
   if (Test-Path $t.Output) {
     foreach ($line in ([System.IO.File]::ReadAllLines($t.Output, [System.Text.Encoding]::UTF8) | Select-Object -Skip 1)) {
       if (-not $line.StartsWith('#') -or $line.StartsWith('# =====') -or $line.StartsWith('# ---')) { break }
-      [void]$out.AppendLine($line)
+      $out.WriteLine($line)
     }
   }
   $done = New-Object System.Collections.Generic.HashSet[string]
@@ -152,39 +260,39 @@ foreach ($t in $targets) {
     $lineRow = $lid -ne '' -and $lineRows.Contains($lid)
     if (-not $hashRow -and -not $lineRow) { continue }
     if ($e.section -ne $lastSection) {
-      [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== ' + (Section-Title $e.section) + ' =====')
+      $out.WriteLine(''); $out.WriteLine('# ===== ' + (Section-Title $e.section) + ' =====')
       $lastSection = $e.section; $lastNode = $null
     }
     if ($e.node -ne $lastNode) {
       $title = $(if ($e.phase) { $e.phase + ': ' } else { '' }) + $e.node + $(if ($e.condition) { ' | if ' + $e.condition } else { '' })
-      [void]$out.AppendLine('# --- ' + $title + ' ---')
+      $out.WriteLine('# --- ' + $title + ' ---')
       $lastNode = $e.node
     }
     if ($hashRow) {
       $who = if ($speakers.ContainsKey($k)) { $speakers[$k] -join '/' } elseif ($rows[$k].Speaker) { $rows[$k].Speaker } else { $e.speaker }
-      [void]$out.AppendLine($k + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
+      $out.WriteLine($k + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
       [void]$done.Add($k)
     }
     if ($lineRow) {
-      [void]$out.AppendLine($lid + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $e.speaker) + ',' + (Escape-Csv $lineRows[$lid]))
+      $out.WriteLine($lid + ',' + (Escape-Csv $e.section) + ',' + (Escape-Csv $e.node) + ',' + $e.order + ',' + (Escape-Csv $e.speaker) + ',' + (Escape-Csv $lineRows[$lid]))
       $lineRows.Remove($lid); $lineKept++
     }
   }
   $left = @($inputOrder | Where-Object { -not $done.Contains($_) })
   if ($left.Count -gt 0) {
-    if ($order.Count -gt 0) { [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== UI and other text (not part of the dialogue script) =====') }
+    if ($order.Count -gt 0) { $out.WriteLine(''); $out.WriteLine('# ===== UI and other text (not part of the dialogue script) =====') }
     foreach ($k in $left) {
       $who = if ($rows[$k].Speaker) { $rows[$k].Speaker } else { 'UI' }
       $sec = if ($order.Count -gt 0) { 'UI' } else { '' }
-      [void]$out.AppendLine($k + ',' + $sec + ',,,' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
+      $out.WriteLine($k + ',' + $sec + ',,,' + (Escape-Csv $who) + ',' + (Escape-Csv $rows[$k].Translation))
     }
   }
   if ($lineRows.Count -gt 0) {
-    [void]$out.AppendLine(''); [void]$out.AppendLine('# ===== Per-line translations not found in the script order =====')
+    $out.WriteLine(''); $out.WriteLine('# ===== Per-line translations not found in the script order =====')
     foreach ($lid in @($lineRows.Keys)) {
-      [void]$out.AppendLine($lid + ',,,,,' + (Escape-Csv $lineRows[$lid])); $lineKept++
+      $out.WriteLine($lid + ',,,,,' + (Escape-Csv $lineRows[$lid])); $lineKept++
     }
   }
   [System.IO.File]::WriteAllText($t.Output, $out.ToString(), (New-Object System.Text.UTF8Encoding $false))
-  Write-Host ("{0} <- {1}: {2} converted, {3} already hashed, {4} per-line, {5} malformed dropped, {6} in play order, {7} other" -f $t.Output, $t.Input, $converted, $kept, $lineKept, $dropped, $done.Count, $left.Count)
+  Write-Host ("{0} <- {1}: {2} converted, {3} already hashed, {4} per-line, {5} malformed dropped, {6} kept from the published file, {7} in play order, {8} other" -f $t.Output, $t.Input, $converted, $kept, $lineKept, $dropped, $fromPublished, $done.Count, $left.Count)
 }

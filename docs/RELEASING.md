@@ -38,6 +38,15 @@ pwsh tools/pack.ps1
 This creates `release/DragNWashLocalization-<version>.zip` with the following structure:
 
 ```text
+BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
+BepInEx/plugins/DragNWash.ModFramework/DragNWash.ModFramework.dll
+BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt
+BepInEx/plugins/DragNWash.ModFramework/icon.png
+BepInEx/plugins/DragNWash.ModFramework.Text/DragNWash.ModFramework.Text.dll
+BepInEx/plugins/DragNWash.ModFramework.Dialogue/DragNWash.ModFramework.Dialogue.dll
+BepInEx/plugins/DragNWash.ModFramework.ToolWindow/DragNWash.ModFramework.ToolWindow.dll
+BepInEx/plugins/DragNWash.ModFramework.Assets/DragNWash.ModFramework.Assets.dll
+BepInEx/plugins/DragNWash.ModFramework.Saves/DragNWash.ModFramework.Saves.dll
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
@@ -48,16 +57,21 @@ BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 BepInEx/plugins/DragNWashLocalization/data/script_order.csv
 BepInEx/plugins/DragNWashLocalization/data/level_flow.csv
 Install.exe
-Install.cmd
 install-steamdeck.sh
-installer/Installer.ps1
+mod-install.json
 README.md
 README.ja.md
 ```
 
-`Install.exe` is a small console-less launcher that `pack.ps1` builds from `installer/Launcher.csproj` with the .NET SDK. The build is deterministic: while `installer/Launcher.cs` and the SDK stay the same, every release ships a byte-identical `Install.exe`, so antivirus reputation (Microsoft Defender flags the unsigned launcher by machine learning) is not reset with each release. `pack.ps1` prints its SHA-256; compare it with the previous release when checking. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works. `Install.cmd` opens the same installer window on machines where SmartScreen or a policy blocks the unsigned `Install.exe`. `install-steamdeck.sh` is the Steam Deck / Linux installer and must keep LF line endings, and `Install.cmd` must keep CRLF (both enforced by `.gitattributes`). The experimental macOS script in `installer/experimental/` is not packaged.
+Two of those are conditional: `pack.ps1` copies `BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt` only when the framework checkout has a `LICENSE` at its root, and `icon.png` only when it has `src/DragNWash.ModFramework/icon.png`. Everything else in the list is always written.
+
+`Install.exe` and `install-steamdeck.sh` are Drag'n Wash ModFramework's shared installers, which `pack.ps1` builds and copies from the framework checkout ([docs/INSTALLER.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.md) there). `pack.ps1` also writes `mod-install.json`: this mod's folder, the player's data to keep, its config file, and the language question with every shipped pack. The `Install.exe` build is deterministic, so antivirus reputation is not reset with each release; `pack.ps1` prints its SHA-256, which should match the previous release while the framework's `installer/` is unchanged. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works. The experimental macOS script in `installer/experimental/` is not packaged.
 
 To install it, extract the archive into the game directory and merge the included `BepInEx/` directory.
+
+### 2b. Or let GitHub build it
+
+The **Build** workflow (Actions) does step 2 on a Windows runner: on a push to `main`, on a `v*` tag, or by hand (with a framework branch or tag to ship). It checks out Drag'n Wash ModFramework, fetches the reference assemblies from the private repository `TomXV/dragnwash-libs` with the `LIBS_TOKEN` secret, runs `tools/pack.ps1 -FrameworkPath`, and uploads the zip as a workflow artifact. A tag also creates a **draft** release with the zip attached, so the flow is: bump the version, commit, push the tag, wait for the workflow, then write the notes on the draft and publish it. The workflow never runs for pull requests. After a game update, refresh the private repository with `tools/copy-libs.ps1` (from both repositories' game installs). Local `pack.ps1` stays as the fallback.
 
 ### 3. Validate the package
 
@@ -84,6 +98,9 @@ Do not move a tag that has already been pushed. If a published release has to be
 
 ## Why releases are not built in CI
 
+> Since 2026-09-16 they can be: see [2b](#2b-or-let-github-build-it). The reference assemblies live in a private repository that only the Build workflow reads; this public repository still never contains them.
+
 The game DLLs required for compilation, including `UnityEngine.CoreModule.dll` and `YarnSpinner.dll`, cannot be included in the repository. GitHub Actions therefore cannot compile the plugin. Builds are created locally, and only the resulting ZIP is attached to a release.
 
 - After a game update, add the new build's files to `ci/game-fingerprints.json` with `tools/game-fingerprints.py`, on Windows and on the Steam Deck, and copy the file to Drag'n Wash ModFramework too. CI compares every file in the repository with it and refuses copies of the game's files.
+- Also after a game update (experimental): press F6 and F7 in the game to refresh `_discovered/`, run `python tools/rekey.py replay --discovered <that folder>` to see which lines the update changed, then copy the new `script_order.csv` into `data/` and run `python tools/rekey.py augment --discovered <that folder>` so it carries the resolver's keys. `tools/linekeys.py` must stay identical to the framework's copy; CI checks it against `ci/linekey-vectors.json`.

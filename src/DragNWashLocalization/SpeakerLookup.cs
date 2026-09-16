@@ -9,9 +9,25 @@ namespace DragNWashLocalization
     internal static class SpeakerLookup
     {
         private static Dictionary<string, string> _byKey;
+        // Build() walks every loaded object (Resources.FindObjectsOfTypeAll),
+        // so it must run once per operation, not once per row. Testing the
+        // table for emptiness instead would rebuild on every call whenever no
+        // project is loaded - which is exactly when a translator presses
+        // "Hash for commit" from the title screen.
+        private static bool _built;
+
+        // Forget the table so the next lookup rebuilds it. Callers that batch
+        // many lookups call this once up front; a project loaded since the last
+        // build is then picked up, without paying for a scan per row.
+        public static void Reset()
+        {
+            _byKey = null;
+            _built = false;
+        }
 
         private static void Build()
         {
+            _built = true;
             _byKey = new Dictionary<string, string>(StringComparer.Ordinal);
             foreach (KeyValuePair<string, string> line in DialogueDumper.EnumerateOrderedLines())
             {
@@ -25,7 +41,7 @@ namespace DragNWashLocalization
 
         public static string ForKey(string key)
         {
-            if (_byKey == null || _byKey.Count == 0)
+            if (!_built)
             {
                 Build();
             }

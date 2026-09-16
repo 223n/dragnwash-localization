@@ -941,7 +941,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,o awen e ni: 
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,jan sama jan Lajan li wile e sina la sina pali pona mute.
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,a. mi wile e jan lili pi ken telo e mi. jan ni li lon anu seme?
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,"a, ona li lon ala, la."
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,mi pali e ni: jaki li lon <i>ala sina.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,mi pali e ni: jaki li lon <i>ala sina.</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,musi li pini. lon la telo sina li pona nanpa wan.
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,sina pona. mi pona lukin la mi pilin pona!
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1344,7 +1344,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,a... sina kepeken e 
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,pakalaaa. sina sona e nasin pi pali akesi a!
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,ale li pini!
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,jaki li lon <i>ala sina.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,jaki li lon <i>ala sina.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,"ni li lon, la."
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,pona mute a.
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,sina telo e mi lon tenpo pimeja suli. sina pona.
@@ -1874,7 +1874,7 @@ d57274b504a45b33,UI,,,UI,ni li lon ala poki BepInEx/plugins la sina ken ala pini
 fd35647f8ecb2f7d,UI,,,UI,ilo sin ni li wile e ni
 9e6151acb057025d,UI,,,UI,ona li kepeken e ni
 b9d0dd131d07b5ad,UI,,,UI,ilo pi ilo sin ale pi Drag'n Wash. lipu ni kin li tan ona.
-1236e3be635f17c7,UI,,,UI,sina ken musi e Drag'n Wash kepeken toki 13. ona li ante e toki jan e wile e lipu e nasin.
+1236e3be635f17c7,UI,,,UI,sina ken musi e Drag'n Wash kepeken toki 16. ona li ante e toki jan e wile e lipu e nasin.
 1cd1ca858aaea1d0,UI,,,UI,ni li open ala. ona li wile e
 eda662e0b5033180,UI,,,UI,ni li open ala. ona li ken ala lon poka
 a8d12a246b72d98c,UI,,,UI,ni li open ala. o lukin e lipu BepInEx/LogOutput.log.
@@ -1894,3 +1894,13 @@ e6af4688a3314648,UI,,,UI,lipu wan lon musi (F1). ilo sin li ken pana e lipu lili
 014659ab9d98c8fe,UI,,,UI,utala
 02e19c617a19bae7,UI,,,UI,ona li ante e ilo musi sama pi ilo sin ni:
 61ec4dc622c31ea9,UI,,,UI,ona li ante e ilo musi sama li ken weka e pali pi ilo sin ni:
+c1c1009d3f37ec05,UI,,,UI,sin
+4168cfb8a090a98c,UI,,,UI,nanpa sin li lon:
+cd6c9851e91ad7b6,UI,,,UI,o open e lipu pi nanpa sin
+22e2bada8f1c65cd,UI,,,UI,sin
+f26f3275e735bdf6,UI,,,UI,o lukin e sin
+a6a1b13028fd8c9c,UI,,,UI,"tenpo suno ale la, ona li toki wan tawa GitHub: ilo sin pi lipu GitHub li jo ala jo e nanpa sin? ona li pana ala e sona pi sina anu musi sina."
+fe199528850a4e24,UI,,,UI,o weka
+63e38bd4b036193a,UI,,,UI,o weka ala
+86965245a1d725c1,UI,,,UI,"sina pilin e ""o weka"" sin la, ilo sin ni li weka lon open kama pi musi. nasin ona kin li weka."
+e2b9759e2326caba,UI,,,UI,li weka lon open kama

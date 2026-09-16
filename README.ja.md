@@ -21,7 +21,7 @@
 
 1. [Releases](https://github.com/TomXV/dragnwash-localization/releases) から zip をダウンロードして展開する
 2. **`Install.exe` をダブルクリック**
-3. 言語を選んで、**「インストール / 更新」をポチッ**
+3. 言語を選んで、**「インストール」をポチッ**（入っていれば「更新」）
 
 > [!TIP]
 > 同じ手順を Steam のガイドにも載せています: [日本語](https://steamcommunity.com/sharedfiles/filedetails/?id=3801418794) / [English](https://steamcommunity.com/sharedfiles/filedetails/?id=3801420947)。Drag'n Wash には Steam ワークショップがないため、Mod 本体は GitHub の Releases からダウンロードします。
@@ -30,32 +30,26 @@
 
 ゲームフォルダは Steam から勝手に見つけます（見つからなければ選ぶだけ）。BepInEx が入っていなければ、公式の 5.4.23.5 を自動でダウンロードして入れます（SHA-256 で検証済み）。あとは Steam からゲームを起動するだけです。
 
-言語は 日本語 / 简体中文 / English（翻訳しない）に加えて、仮翻訳の繁体字中国語・ドイツ語・フランス語・スペイン語・ブラジルポルトガル語・韓国語・ロシア語・ポーランド語・ヘブライ語、面白枠のエスペラント・トキポナから選べます（[言語パック](#言語パック)参照）。同じ画面に「アンインストール」ボタンもあり、セーブ履歴は既定で残します。インストーラーが入れた BepInEx は、他の Mod がなければ一緒に消せます。
+言語は 日本語 / 简体中文 / English（翻訳しない）に加えて、仮翻訳の繁体字中国語・ドイツ語・フランス語・スペイン語・ブラジルポルトガル語・韓国語・ロシア語・ポーランド語・ヘブライ語・ウクライナ語・タイ語・ベトナム語、面白枠のエスペラント・トキポナから選べます（[言語パック](#言語パック)参照）。同じ画面に「アンインストール」ボタンもあり、セーブ履歴は既定で残します。BepInEx は、選んだときに、他の Mod がなければ一緒に消せます。ゲームの中の **Options → Mods → Drag'n Wash Localization → Uninstall** からもアンインストールでき、次にゲームを起動したときに削除されます。
 
 手動で導入したい場合は、以下の手順に従ってください。
-
-### 動画で見る
-
-![導入手順の動画](docs/media/install-guide-full.gif)
 
 
 > [!NOTE]
 > **`Install.exe` を押しても何も起きない、または「Windows によって PC が保護されました」と出る場合**
 > `Install.exe` は署名のない小さなプログラムなので、初回だけ Windows SmartScreen が止めることがあります。
 > - 警告画面が出たら **「詳細情報」→「実行」** を押してください
-> - 何も出ないときは、同じフォルダの **`Install.cmd`** をダブルクリックしてください。黒い窓が一瞬出るだけで、同じインストーラー画面が開きます
-> - それでも駄目なら、`Install.exe` を右クリック → プロパティ → 一番下の **「許可する」** にチェック → OK のあと、もう一度ダブルクリック
+> - 何も出ないときは、`Install.exe` を右クリック → プロパティ → 一番下の **「許可する」** にチェック → OK のあと、もう一度ダブルクリック
 
 > [!WARNING]
 > **Windows セキュリティ（Microsoft Defender）が `Install.exe` を「Trojan:Script/Wacatac.B!ml」と検出する場合、または展開したフォルダに `Install.exe` が見当たらない場合**
-> 誤検知です。末尾の `!ml` は、既知のウイルスと一致したのではなく、機械学習で「怪しいパターンに似ている」と推定されたことを表します。`Install.exe` はインストーラー画面（PowerShell のスクリプト）を、黒い窓を出さずに起動するだけの小さな署名なしプログラムで、この起動のしかたがマルウェアの手口に似ているため検出されることがあります。中身は [`installer/Launcher.cs`](installer/Launcher.cs) と [`installer/Installer.ps1`](installer/Installer.ps1) で公開しています。
+> 誤検知です。末尾の `!ml` は、既知のウイルスと一致したのではなく、機械学習で「怪しいパターンに似ている」と推定されたことを表します。v1.0.0 までのインストーラーは PowerShell のスクリプトを黒い窓を出さずに起動しており、その起動のしかたがマルウェアの手口に似ていました。v1.1.0 からの `Install.exe` は Drag'n Wash ModFramework の共通インストーラーで、スクリプトを実行しない普通の署名なしプログラムですが、新しい署名なしのファイルは検出されることがあります。中身はフレームワークのリポジトリの [`installer/`](https://github.com/TomXV/dragnwash-modframework/tree/main/installer) で公開しています。
 >
 > 自動で隔離されたときは検出名が表示されず、展開したフォルダから `Install.exe` が消えているように見えるだけです。何が消されたかは、Windows セキュリティの「保護の履歴」で確認できます。
 > - まず、ダウンロードした zip が本物か確かめてください。PowerShell で `(Get-FileHash "<zip のパス>").Hash -eq ("<Releases の sha256>" -replace '^sha256:')` を実行し、`True` と出れば、このリポジトリで配布しているファイルです。`False` なら使わずに削除してください
 > - `sha256` は [Releases](https://github.com/TomXV/dragnwash-localization/releases) のページで `DragNWashLocalization-<version>.zip` の下に表示されます。自動で付く「Source code」の2行にはハッシュがないので、そちらは使わないでください
 > - 一致は「配布しているファイルと同じもの」の確認であって、安全性そのものの証明ではありません。中身は上記のソースで確認できます
 > - 一致した場合は、Windows セキュリティの「保護の履歴」でその検出を開き、「操作」→「デバイスで許可」を選ぶと使えます。許可するのはこのファイルだけにしてください。フォルダの除外を追加したり、Windows セキュリティを無効にしたりする必要はありません
-> - 同じフォルダの **`Install.cmd`** でも、`Install.exe` を使わずに同じインストーラー画面が開きます。これで検出を避けられるかは未検証ですが、試す価値はあります
 > - 何も許可したくない場合は、下の「手動で導入する」の手順でも導入できます
 > - GitHub の Releases 以外から入手したファイルは使わないでください
 
@@ -93,7 +87,7 @@ Linux ネイティブ版のゲームと Linux 版 BepInEx で動きます。`Ins
 
 スクリプトは、Steam のライブラリ（SD カードも含む）からゲームを探し、公式の Linux 版 BepInEx 5.4.23.5 をダウンロードして SHA-256 で検証し、`run_bepinex.sh` の `executable_name="DragNWash"` を設定し、Mod をコピーし、ゲームの起動オプションに `./run_bepinex.sh %command%` を追加します（すでに設定しているオプションは残します）。更新や削除も同じコマンドで実行し、**インストール / 更新** か **アンインストール** を選びます。アンインストールではセーブ履歴を残し、BepInEx を使う Mod がほかになければ起動オプションから `./run_bepinex.sh` を外し、BepInEx も消すか確認します。`--install` や `--uninstall` を付けると、この質問を飛ばせます。
 
-Steam は起動中に起動オプションを上書きするため、起動オプションを変更するときは Steam を一度終了して書き換え、Steam を起動し直します（事前に確認します。`--close-steam` を付けると確認を飛ばせます）。できなかった手順があれば、最後のダイアログに表示し、手動で変更する内容を案内します。実行内容は `~/.local/state/dragnwash-localization/installer.log` に記録されます。
+Steam は起動中に起動オプションを上書きするため、起動オプションを変更するときは Steam を一度終了して書き換え、Steam を起動し直します（事前に確認します。`--close-steam` を付けると確認を飛ばせます）。できなかった手順があれば、最後のダイアログに表示し、手動で変更する内容を案内します。実行内容は `~/.local/state/dragnwash-installer/installer.log` に記録されます。
 
 <details>
 <summary>Deck に手動で導入する場合</summary>
@@ -198,6 +192,9 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 | `ru` | Русский | 仮翻訳 |
 | `pl` | Polski | 仮翻訳 |
 | `he` | עברית | 仮翻訳（右から左に表示） |
+| `uk` | Українська | 仮翻訳 |
+| `th` | ไทย | 仮翻訳（単語の間にゼロ幅スペースを入れて折り返せるようにしています） |
+| `vi` | Tiếng Việt | 仮翻訳 |
 | `eo` | Esperanto | 仮翻訳（面白枠） |
 | `tok` | toki pona | 仮翻訳（面白枠。単語が 137 個しかない言語なので、かなりざっくり） |
 | `en` | English | ゲーム本来の英語（翻訳なし） |
@@ -211,10 +208,10 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 `key,section,node,order,speaker,translation` の列を持ちます。`key` は英語原文のハッシュ、`section` / `node` / `order` はゲーム内のどこ（レベルと会話）で流れるかをプレイ順で示し、`speaker` は誰の台詞かです。`#` で始まる行は `# ===== Level 1: Ryan (Sunny) =====` のような見出しで、ファイルを上から読むと台本のように流れが追えます。
 おすすめの作業手順：
 
-1. ゲーム内で **F1 → Tools → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
+1. ゲーム内で **F1 → Translation → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
    に、各行の英語原文を並べた作業用ファイル（`key,section,node,order,speaker,source_en,translation`）が、同じ見出しつきでゲーム内の実行順に書き出されます
 2. `translation` 列を編集して保存する。起動中のゲームにその場で反映されます
-3. コミット前に **F1 → Tools → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す
+3. コミット前に **F1 → Translation → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す
 
 リポジトリにはゲームの英語台本を含めない方針で、**製品版を持っている人だけが翻訳できる**仕組みです。
 各言語フォルダには表示名を書いた1行の `name.txt`（例: `日本語`）があり、インストーラーとゲーム内メニューに表示されます。
@@ -223,7 +220,7 @@ Unity内部のキー名などを知る必要はありません。手順は [CONT
 
 ### 会話文をまとめて確認したい場合
 
-プラグイン導入後、ゲーム内（セーブをロードした後）で **F6キー** を押すと、全会話文が
+これらは開発者向けの機能です。先に **Options → Mods → Drag'n Wash ModFramework → Developer tools** をオンにしてください（遊ぶだけの人にはオフで、以下は何も動きません）。そのうえで、ゲーム内（セーブをロードした後）で **F6キー** を押すと、全会話文が
 `BepInEx/plugins/DragNWashLocalization/Translations/_discovered/dialogue_lines.csv`
 に一括で書き出されます（実機で1839行を確認済み）。
 
@@ -234,7 +231,17 @@ Unity内部のキー名などを知る必要はありません。手順は [CONT
 前後を見ながら訳せます。登場するドラゴンは Conrad / Ryan / Alexander の3体です。
 
 訳したい行を `Translations/<locale>/strings.csv` にコピーし、`translation` 列を埋めて
-PRを送ってください（`node` や `key` など余分な列が付いたままでも問題なく読み込まれます）。
+実機で確認してください（`node` や `key` など余分な列が付いたままでもプラグインは問題なく読み込みます）。
+
+**PR を送る前に、公開用ファイルを作り直してください。** ゲーム内の **Hash for commit** ボタン
+（または `tools/hash-strings.ps1`）を使います。
+自動チェックが受け付けるのは公開形式のヘッダだけです。*Hash for commit* が書く
+`key,section,node,order,speaker,translation` のほか、短い `key,speaker,translation` と `key,translation`
+も通ります。作業ファイルのヘッダはどれにも当てはまらないため、
+`source_en` などダンプ由来の列が残ったファイルは弾かれます。
+英語原文を含む PR を作らないことは、このリポジトリの
+一番の前提でもあります。詳しくは [CONTRIBUTING.ja.md](CONTRIBUTING.ja.md#コミット前にハッシュ化する) を参照してください。
+
 すでに訳した行は `translation` 列に訳が入った状態で出力されるので、再ダンプしても
 作業は失われません。
 
@@ -304,7 +311,7 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
 
 同じタブの **PROGRESS** 欄では、レベル番号を **-** / **+** で変えて **Apply** できます。
 先に進める方向はネタバレの可能性があるので確認が出ます。**Flags...** を押すと、ゲームが使う
-イベントフラグが分類（レベル進行 / ストーリー / 恋愛 / シーン発生条件 / シーン視聴済み / アイテム）と
+イベントフラグが分類（レベル進行 / ストーリー / 恋愛 / シーン発生条件 / シーン視聴済み / 洗浄セッション / アイテム / デバッグ）と
 説明つきで全部並びます。セーブにまだ存在しないフラグも「unset」として表示され、値をクリックすると
 unset → true → false の順に切り替わります。検索欄で絞り込み、**Reset all to false...** で全フラグを
 一括で false にできます（レベル番号は保持）。一覧は DLL の隣の `FlagCatalog.csv` から読むので、
@@ -339,9 +346,20 @@ Direct3D 11 や Steam Deck の Vulkan など他の描画 API は実行中のア�
 `BepInEx/config/com.tomxv.dragnwash.modframework.assets.cfg` の `[Fonts] AtlasPointSize`
 を下げると、フォントアトラスの枚数が減り、上げると文字が鮮明になります（既定80）。
 
+## 排他的フルスクリーンで画面を切り替えると固まる場合（Windows）
+
+DirectX 12 で **ウィンドウモード** を **排他的フルスクリーン** にしていると、別のウィンドウに切り替えて（Alt+Tab や、ほかのウィンドウをクリック）戻ったときにゲームが固まり、そのまま落ちることがあります。
+クラッシュの記録では、Windows が排他的フルスクリーンを解除・再開する間に Unity の DirectX 12 の画面表示が止まっています（`D3D12SwapChain::Present` がエラー `887a0001` で失敗し、ログにはその前に `D3D12Fence::Wait ... May cause crash` が出ることが多い）。
+このとき Mod のコードは動いておらず、この Mod ではなくゲームの描画処理の問題です。
+
+次のどちらかで避けられます。
+
+- Steam ライブラリで **Drag'n Wash → プロパティ → 一般 → 起動オプション** に `-force-d3d11` を追加する。排他的フルスクリーンのまま切り替えても固まらなくなることを確認済みです。
+- **ウィンドウモード** を **排他的フルスクリーン** ではなく **フルスクリーン** にする。画面を切り替えたときに表示モードが変わるのは排他的フルスクリーンだけなので、これでも避けられるはずです（まだ試していません）。
+
 ## 現在のステータス
 
-v1.0.0 をリリース済み（[Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) の上で動くようにし、Mods 画面を追加）。v0.6.2 で、古い作業用ファイルで「Hash for commit」をしても行が消えないように修正し、「Really Delete Save?」を翻訳。v0.6.1 でヘブライ語の、訳のない名前などが反転して表示される不具合を修正。v0.6.0 で台詞 ID ごとの訳（複数のキャラが話す同じ英文を、キャラごとに訳し分けられるように。2026 年 9 月 14 日のゲームのアップデートで動作確認済み）。v0.5.0 でゲームの Options 画面から言語を変更できるように、v0.4.0 で 13 言語、言語ごとのフォント準備、About タブ、日英中に切り替えられるインストーラーを、v0.3.0 で Steam Deck 対応を入れました。Windows on ARM でも動作を確認済みです（ゲーム本体の都合で `-force-d3d11` が必要）。macOS は、BepInEx 側の既知の不具合で現在は動作しません（[Steam Deck / Linux](#steam-deck--linux動作確認済み) の下の注意書き参照）。BepInExプラグインの骨格、UI文字列・会話文の日本語/中国語差し替え、
+v1.1.2 をリリース済み（Drag'n Wash ModFramework 1.1.2 を同梱し、Mods 画面のアイコンを手作りのロゴに差し替え）。v1.1.1 で（ModFramework 1.1.1 を同梱し、Mods 画面にフレームワークのアイコンを表示）。v1.1.0 で（ModFramework 1.1.0 と合わせて、この Mod の新しいリリースが出ると Mods 画面とタイトル画面で知らせるように）。v1.0.0 で [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) の上で動くようにし、Mods 画面を追加。v0.6.2 で、古い作業用ファイルで「Hash for commit」をしても行が消えないように修正し、「Really Delete Save?」を翻訳。v0.6.1 でヘブライ語の、訳のない名前などが反転して表示される不具合を修正。v0.6.0 で台詞 ID ごとの訳（複数のキャラが話す同じ英文を、キャラごとに訳し分けられるように。2026 年 9 月 14 日のゲームのアップデートで動作確認済み）。v0.5.0 でゲームの Options 画面から言語を変更できるように、v0.4.0 で 13 言語、言語ごとのフォント準備、About タブ、日英中に切り替えられるインストーラーを、v0.3.0 で Steam Deck 対応を入れました。Windows on ARM でも動作を確認済みです（ゲーム本体の都合で `-force-d3d11` が必要）。macOS は、BepInEx 側の既知の不具合で現在は動作しません（[Steam Deck / Linux](#steam-deck--linux動作確認済み) の下の注意書き参照）。BepInExプラグインの骨格、UI文字列・会話文の日本語/中国語差し替え、
 CJKフォント表示、会話・UIの一括抽出、ゲーム内デバッグメニュー、レイアウト崩れ検出、
 翻訳者向けドキュメント、リリース手順を実装・実機確認済みです。
 詳細は [docs/PLAN.ja.md](docs/PLAN.ja.md) を参照してください。
@@ -352,7 +370,8 @@ v1.0.0 から、この Mod は前提 Mod **Drag'n Wash ModFramework** の上で�
 
 - **役割。** この Mod がゲームに入り込むために作ってきた仕組みの多くは、ほかの Mod にも役立つので、フレームワークに移しました。入っている Mod を設定やオン・オフと一緒に一覧できる **Mods** 画面（Options → Mods）、ゲームの Options 画面の言語の行、表示前のテキストの書き換え、台詞や選択肢のイベント、共通の F1 ツールウィンドウ、Direct3D 12 で安全なフォント、セーブ履歴です
 - **目的。** ゲームがアップデートされたとき、追従が必要なのはフレームワークだけになり、その上に乗る Mod は動き続けられます。2026 年 9 月 14 日のアップデートのような変更を、1 か所で吸収します
-- **プレイヤーの方へ。** リリースの zip とインストーラーにフレームワークも入っています。この Mod をアンインストールしても、ほかの Mod が入っていればフレームワークは残します
+- **更新のお知らせ。** v1.1.0 から、この Mod やフレームワークの新しいリリースが出ると、タイトル画面に **1 update available in Mods** と出て、**Options → Mods** からリリースページを開けます。フレームワークが 1 日 1 回 GitHub に最新リリースを問い合わせるだけで、あなたやゲームについての情報は送らず、ダウンロードもしません。止めるには **Mods → Drag'n Wash ModFramework → 設定 → 更新を確認する** をオフにしてください。
+- **プレイヤーの方へ。** リリースの zip とインストーラーにフレームワークも入っています。v1.1.0 からのインストーラーは、どの Drag'n Wash の Mod も同梱できるフレームワークの共通インストーラーです。この Mod をアンインストールしても、ほかの Mod が入っていればフレームワークは残します
 - **翻訳者の方へ。** CSV の形式と翻訳用ツールは変わりません。今までの翻訳パックや協力はそのまま使えます
 
 Drag'n Wash の Mod を作っていて、フレームワークに欲しい機能があれば、Issue で教えてください。

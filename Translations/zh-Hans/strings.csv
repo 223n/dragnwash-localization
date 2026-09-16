@@ -946,7 +946,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,一定要洗�
 line:c642cb17,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,谢了。
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,哈。要是有条狗头人能给我洗澡就好了。
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,要是有就好了。
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>我会把您洗得一尘不染。
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>我会把您洗得一尘不染。</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,说正经的，你洗得绝对是最好的。
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,谢了。人靓心情就好！
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1351,7 +1351,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,哈……现在要�
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,操……你真懂怎么伺候一条龙！
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,完成了！
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,<i>您一尘不染。
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,<i>您一尘不染。</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,看来是。
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,太好了。
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,谢谢你这么晚还给我洗澡。
@@ -1893,7 +1893,7 @@ d57274b504a45b33,UI,,,UI,安装在 BepInEx/plugins 之外，无法在此关闭
 fd35647f8ecb2f7d,UI,,,UI,需要它的模组
 9e6151acb057025d,UI,,,UI,使用的模组
 b9d0dd131d07b5ad,UI,,,UI,Drag'n Wash 模组共用的工具，包括这个模组界面。
-1236e3be635f17c7,UI,,,UI,让 Drag'n Wash 支持 13 种语言。翻译对话、选项、界面和设置。
+1236e3be635f17c7,UI,,,UI,让 Drag'n Wash 支持 16 种语言。翻译对话、选项、界面和设置。
 1cd1ca858aaea1d0,UI,,,UI,未加载。需要：
 eda662e0b5033180,UI,,,UI,未加载。无法与以下模组同时使用：
 a8d12a246b72d98c,UI,,,UI,未加载。原因请查看 BepInEx/LogOutput.log。
@@ -1913,3 +1913,13 @@ e6af4688a3314648,UI,,,UI,游戏内的共用窗口（F1），模组可以在其�
 014659ab9d98c8fe,UI,,,UI,冲突
 02e19c617a19bae7,UI,,,UI,修改了相同游戏代码的模组：
 61ec4dc622c31ea9,UI,,,UI,修改了相同游戏代码且可能覆盖其效果的模组：
+c1c1009d3f37ec05,UI,,,UI,有更新
+4168cfb8a090a98c,UI,,,UI,有新版本：
+cd6c9851e91ad7b6,UI,,,UI,打开发布页面
+22e2bada8f1c65cd,UI,,,UI,更新
+f26f3275e735bdf6,UI,,,UI,检查更新
+a6a1b13028fd8c9c,UI,,,UI,每天一次向 GitHub 查询指定了 GitHub 仓库的模组是否有更新的版本。不会发送任何关于你或你的游戏的信息。
+fe199528850a4e24,UI,,,UI,卸载
+63e38bd4b036193a,UI,,,UI,取消
+86965245a1d725c1,UI,,,UI,再次按“卸载”，将在下次启动游戏时删除此模组。其设置也会一并删除。
+e2b9759e2326caba,UI,,,UI,下次启动时删除

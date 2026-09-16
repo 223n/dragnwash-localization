@@ -941,7 +941,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,תדאג לה
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"אם מישהו כמו ריאן מעוניין, אתה בכיוון מצוין."
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,חה. אם רק היה קובולד שיכול לנקות אותי.
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,אם רק.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,אני אדאג שתהיה <i>נקי לגמרי.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,אני אדאג שתהיה <i>נקי לגמרי.</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"בלי בדיחות, הרחיצה שלך היא בהחלט הכי טובה."
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,"תודה. נראה טוב, מרגיש טוב!"
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1345,7 +1345,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,חה... הולך ל�
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,פאאאק. אתה באמת יודע לתפעל דרקון!
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,סיימנו!
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,אתה <i>נקי לגמרי.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,אתה <i>נקי לגמרי.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,נראה ככה.
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,"כן, לעזאזל."
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,תודה על הרחיצה בשעה כזאת מאוחרת.
@@ -1875,7 +1875,7 @@ d57274b504a45b33,UI,,,UI,"מותקן מחוץ לתיקיית התוספים, ו�
 fd35647f8ecb2f7d,UI,,,UI,נדרש על ידי
 9e6151acb057025d,UI,,,UI,משתמש ב־
 b9d0dd131d07b5ad,UI,,,UI,"כלים משותפים למודים של דראג'ן וואש, כולל מסך המודים הזה."
-1236e3be635f17c7,UI,,,UI,"שחקו בדראג'ן וואש בשלוש עשרה שפות. מתרגם שיחות, בחירות, ממשק והגדרות."
+1236e3be635f17c7,UI,,,UI,"שחקו בדראג'ן וואש בשש עשרה שפות. מתרגם שיחות, בחירות, ממשק והגדרות."
 1cd1ca858aaea1d0,UI,,,UI,לא נטען. הוא צריך את
 eda662e0b5033180,UI,,,UI,לא נטען. הוא לא יכול לפעול יחד עם
 a8d12a246b72d98c,UI,,,UI,לא נטען. הסיבה מופיעה ביומן של מטען המודים.
@@ -1895,3 +1895,13 @@ e6af4688a3314648,UI,,,UI,"חלון משותף בתוך המשחק (F1) שבו מ
 014659ab9d98c8fe,UI,,,UI,התנגשות
 02e19c617a19bae7,UI,,,UI,משנה את אותו קוד משחק כמו:
 61ec4dc622c31ea9,UI,,,UI,משנה את אותו קוד משחק כמו המודים האלה ועלול לעקוף אותם:
+c1c1009d3f37ec05,UI,,,UI,עדכון
+4168cfb8a090a98c,UI,,,UI,גרסה חדשה זמינה:
+cd6c9851e91ad7b6,UI,,,UI,פתיחת דף הגרסה
+22e2bada8f1c65cd,UI,,,UI,עדכונים
+f26f3275e735bdf6,UI,,,UI,בדיקת עדכונים
+a6a1b13028fd8c9c,UI,,,UI,"פעם ביום, שואל את GitHub אם למודים שמציינים את מאגר ה-GitHub שלהם יש גרסה חדשה יותר. שום מידע עליך או על המשחק שלך לא נשלח."
+fe199528850a4e24,UI,,,UI,הסרה
+63e38bd4b036193a,UI,,,UI,ביטול
+86965245a1d725c1,UI,,,UI,"לחצו שוב על ""הסרה"" כדי להסיר את המוד בהפעלה הבאה של המשחק. גם ההגדרות שלו יוסרו."
+e2b9759e2326caba,UI,,,UI,יוסר בהפעלה הבאה

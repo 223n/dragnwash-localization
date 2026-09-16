@@ -21,7 +21,7 @@ Installing is really easy.
 
 1. Download the zip from the [Releases page](https://github.com/TomXV/dragnwash-localization/releases) and extract it anywhere.
 2. Double-click **`Install.exe`**.
-3. Pick a language and **click Install / Update**.
+3. Pick a language and **click Install** (**Update** when it is already installed).
 
 > [!TIP]
 > The same steps are also on Steam as a guide: [English](https://steamcommunity.com/sharedfiles/filedetails/?id=3801420947) / [日本語](https://steamcommunity.com/sharedfiles/filedetails/?id=3801418794). Drag'n Wash has no Steam Workshop, so the mod itself is downloaded from GitHub Releases.
@@ -30,32 +30,26 @@ Installing is really easy.
 
 The installer finds the game through Steam on its own (or lets you pick the folder). If BepInEx is not installed yet, it downloads the official 5.4.23.5 release, verifies its SHA-256, and unpacks it for you. Then just start the game from Steam.
 
-Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish and Hebrew, and for fun Esperanto and Toki Pona (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when the installer put it there and no other plugin uses it.
+Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish, Hebrew, Ukrainian, Thai and Vietnamese, and for fun Esperanto and Toki Pona (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when you ask and no other mod uses it. You can also uninstall in the game: **Options → Mods → Drag'n Wash Localization → Uninstall**, and the mod is removed the next time the game starts.
 
 If you prefer to do it by hand, follow the manual steps below.
-
-### How to install (video)
-
-![Install guide video](docs/media/install-guide-full-en.gif)
 
 
 > [!NOTE]
 > **If nothing happens when you run `Install.exe`, or Windows says "Windows protected your PC"**
 > `Install.exe` is a small unsigned program, so Windows SmartScreen may stop it the first time.
 > - If the warning appears, click **More info → Run anyway**.
-> - If no window appears at all, double-click **`Install.cmd`** in the same folder instead. A console flashes for a moment and the same installer window opens.
-> - Failing that, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
+> - If no window appears at all, right-click `Install.exe` → Properties → tick **Unblock** → OK, then double-click it again.
 
 > [!WARNING]
 > **If Windows Security (Microsoft Defender) detects `Install.exe` as "Trojan:Script/Wacatac.B!ml", or `Install.exe` is missing from the folder you extracted**
-> This is a false positive. The `!ml` suffix means a machine-learning model guessed the file looks suspicious, not that it matched known malware. `Install.exe` is a small unsigned program that only starts the installer window (a PowerShell script) without a console window, and that way of starting a script resembles what malware does. Its source is public: [`installer/Launcher.cs`](installer/Launcher.cs) and [`installer/Installer.ps1`](installer/Installer.ps1).
+> This is a false positive. The `!ml` suffix means a machine-learning model guessed the file looks suspicious, not that it matched known malware. Installers up to v1.0.0 started a PowerShell script without a console window, which resembles what malware does; from v1.1.0 `Install.exe` is Drag'n Wash ModFramework's shared installer, a plain unsigned program that runs no scripts, but a new unsigned file can still be flagged. Its source is public: [`installer/`](https://github.com/TomXV/dragnwash-modframework/tree/main/installer) in the framework's repository.
 >
 > When the file is quarantined automatically no threat name is shown, and `Install.exe` simply looks missing from the extracted folder. Windows Security → **Protection history** shows what was removed.
 > - First make sure the zip you downloaded is genuine. In PowerShell, run `(Get-FileHash "<path to the zip>").Hash -eq ("<the sha256 from Releases>" -replace '^sha256:')`. It prints `True` when the file is the one published here; if it prints `False`, delete the file and do not use it.
 > - The `sha256` is shown under `DragNWashLocalization-<version>.zip` on the [Releases](https://github.com/TomXV/dragnwash-localization/releases) page. The two automatic "Source code" rows have no hash, so do not use those.
 > - A match confirms the file is the one published here. It is not by itself proof that the file is safe, which is what the source linked above is for.
 > - If it matches, open the detection in Windows Security → **Protection history** and choose **Actions → Allow on device**. Allow that one file only: there is no need to add a folder exclusion or to turn Windows Security off.
-> - **`Install.cmd`** in the same folder opens the same installer window without `Install.exe`. Whether it avoids the detection is untested, but it is worth a try.
 > - If you would rather not allow anything, use the manual installation steps below instead.
 > - Do not use copies from anywhere other than this repository's Releases page.
 
@@ -93,7 +87,7 @@ Works with the native Linux build of the game and the Linux build of BepInEx. `I
 
 The script finds the game in your Steam libraries (including an SD card), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256, sets `executable_name="DragNWash"` in `run_bepinex.sh`, copies the mod, and adds `./run_bepinex.sh %command%` to the game's launch options while keeping any options you already had. To update or remove the mod, run the same command again and choose **Install / Update** or **Uninstall**. Uninstalling keeps your save history, takes `./run_bepinex.sh` back out of the launch options when no other BepInEx mod needs it, and offers to remove BepInEx as well. `--install` and `--uninstall` skip the question.
 
-Steam rewrites launch options while it is running, so when the launch option has to change the script closes Steam, edits it, and starts Steam again (it asks first; `--close-steam` skips that question). If a step could not be done, the final dialog says so and tells you what to change by hand. Each run is logged to `~/.local/state/dragnwash-localization/installer.log`.
+Steam rewrites launch options while it is running, so when the launch option has to change the script closes Steam, edits it, and starts Steam again (it asks first; `--close-steam` skips that question). If a step could not be done, the final dialog says so and tells you what to change by hand. Each run is logged to `~/.local/state/dragnwash-installer/installer.log`.
 
 <details>
 <summary>Manual installation on the Deck</summary>
@@ -198,6 +192,9 @@ The translation files were written by TomXV and ship in the same zip; contributo
 | `ru` | Русский | Provisional |
 | `pl` | Polski | Provisional |
 | `he` | עברית | Provisional, drawn right to left |
+| `uk` | Українська | Provisional |
+| `th` | ไทย | Provisional (a zero-width space between words lets lines break) |
+| `vi` | Tiếng Việt | Provisional |
 | `eo` | Esperanto | Provisional, just for fun |
 | `tok` | toki pona | Provisional, just for fun (a 137-word language, so expect it to be loose) |
 | `en` | English | The game's original text (no translation) |
@@ -209,9 +206,9 @@ The translation files were written by TomXV and ship in the same zip; contributo
 
 You can add a translation by editing `Translations/<locale>/strings.csv`. The published file has the columns `key,section,node,order,speaker,translation`: `key` is a hash of the English line, `section`/`node`/`order` say where in the game it is played (level and conversation, in play order), and `speaker` says who says it. Lines starting with `#` are section headers such as `# ===== Level 1: Ryan (Sunny) =====`, so the file reads like a script from top to bottom. The recommended way to work is:
 
-1. In the game, open **F1 → Tools → Export working copy**. This writes `Translations/_discovered/<locale>.working.csv` with the English text beside every line (`key,section,node,order,speaker,source_en,translation`), in the order the lines are played, with the same section headers.
+1. In the game, open **F1 → Translation → Export working copy**. This writes `Translations/_discovered/<locale>.working.csv` with the English text beside every line (`key,section,node,order,speaker,source_en,translation`), in the order the lines are played, with the same section headers.
 2. Edit the `translation` column. Saving the file hot-reloads it into the running game.
-3. Before committing, press **F1 → Tools → Hash for commit** (or run `tools/hash-strings.ps1`). This regenerates `strings.csv` without any English text.
+3. Before committing, press **F1 → Translation → Hash for commit** (or run `tools/hash-strings.ps1`). This regenerates `strings.csv` without any English text.
 
 Each language folder also holds a one-line `name.txt` with the language's display name (for example `日本語`), shown in the installer and the in-game menu.
 
@@ -221,7 +218,7 @@ If the source text contains formatting tags such as `<size=70%>`, preserve the t
 
 ### Exporting all dialogue for context
 
-After installing the plugin, load a save and press **F6** in the game. The plugin exports all dialogue to:
+These are developer tools: first turn on **Options → Mods → Drag'n Wash ModFramework → Developer tools** (off for players, so nothing below runs for them). Then load a save and press **F6** in the game. The plugin exports all dialogue to:
 
 `BepInEx/plugins/DragNWashLocalization/Translations/_discovered/dialogue_lines.csv`
 
@@ -229,7 +226,9 @@ The export has been verified with 1,839 lines on an actual game installation.
 
 Lines appear in the order in which they are played in the game. The `node` column identifies each conversation and uses names such as `Alexander_2_intro`, following the pattern "character name_occurrence_scene." The `order` column gives the line's position within that conversation. The `kind` column distinguishes character dialogue (`line`) from player choices (`option`). This context makes it easier to understand who is speaking and what each response refers to. The three dragons in the game are Conrad, Ryan, and Alexander.
 
-Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and submit a pull request. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
+Copy the lines you want to translate into `Translations/<locale>/strings.csv`, fill in the `translation` column, and check it in the game. Extra columns such as `node` and `key` may be left in place; the plugin will still load the file correctly.
+
+**Before opening a pull request, rebuild the published file** with the in-game **Hash for commit** button (or `tools/hash-strings.ps1`). The automatic check takes only published headers: `key,section,node,order,speaker,translation`, which is what *Hash for commit* writes, or the shorter `key,speaker,translation` and `key,translation`. A file still carrying `source_en` and the other export columns is rejected, and a pull request that carries the English script is the one thing this repository is set up to avoid. See [CONTRIBUTING.md](CONTRIBUTING.md#hash-before-committing).
 
 Already translated lines are exported with their translations filled in, so exporting again will not discard your work.
 
@@ -284,7 +283,7 @@ The plugin automatically preserves the state from immediately before a restore, 
 
 Use this feature to revisit the same scene while comparing revisions of a dialogue translation. Restore replaces the game's own save file without editing flags or variables.
 
-The same tab also has a **PROGRESS** editor: step the level index back or forward with **-** / **+** and press **Apply**. Moving forward asks for confirmation because it can spoil content you have not seen. **Flags...** lists every event flag the game is known to use, grouped (level flow, story, romance, scene triggers, scene watched, items) with a short description, whether or not the save has set it yet. Click a value to cycle unset → true → false, type in the search box to filter, and use **Reset all to false...** to wipe every flag (the level index is kept). The list comes from `FlagCatalog.csv` next to the plugin DLL, so you can add rows for flags found later. Every edit snapshots the save first.
+The same tab also has a **PROGRESS** editor: step the level index back or forward with **-** / **+** and press **Apply**. Moving forward asks for confirmation because it can spoil content you have not seen. **Flags...** lists every event flag the game is known to use, grouped (level flow, story, romance, scene triggers, scene watched, wash session, items, debug) with a short description, whether or not the save has set it yet. Click a value to cycle unset → true → false, type in the search box to filter, and use **Reset all to false...** to wipe every flag (the level index is kept). The list comes from `FlagCatalog.csv` next to the plugin DLL, so you can add rows for flags found later. Every edit snapshots the save first.
 
 ## Crash when opening Options on Windows
 
@@ -300,9 +299,18 @@ The plugin startup entry in `BepInEx/LogOutput.log` reports the graphics API cur
 
 Lowering `[Fonts] AtlasPointSize` in `BepInEx/config/com.tomxv.dragnwash.modframework.assets.cfg` reduces the number of font atlases. Raising it produces sharper text. The default is 80.
 
+## Freeze after switching windows in Exclusive fullscreen (Windows)
+
+With **Window Mode** set to **Exclusive** on DirectX 12, switching to another window (Alt+Tab, or clicking another window) and coming back can freeze the game, which then crashes. The crash reports show Unity's DirectX 12 swap chain stuck while Windows takes the game out of exclusive fullscreen or back into it (`D3D12SwapChain::Present` fails with `887a0001`, often after `D3D12Fence::Wait ... May cause crash` in the log). No mod code is running at that moment; it is a problem in the game's graphics code, not in this mod.
+
+To avoid it, do one of these:
+
+- Add `-force-d3d11` to the launch options: in Steam, **Drag'n Wash → Properties → General → Launch Options**. Verified: with it, switching windows in Exclusive fullscreen no longer freezes.
+- Set **Window Mode** to **Fullscreen** instead of **Exclusive**. Only exclusive fullscreen changes the display mode when you switch windows, so this should avoid it too (not tested yet).
+
 ## Current status
 
-Released as v1.0.0, which runs on [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) and adds the Mods screen. v0.6.2 stopped "Hash for commit" from dropping rows when the working copy is from before a game update, and translated "Really Delete Save?". v0.6.1 fixed names and other untranslated text showing backwards in Hebrew. v0.6.0 added per-line translations (English said by several characters can be translated differently for each of them; checked with the game update of September 14, 2026). v0.5.0 added changing language from the game's own Options screen; v0.4.0 brought thirteen languages, per-language fonts, an About tab and an installer in English, Japanese and Chinese; v0.3.0 added Steam Deck support. Windows on ARM has been verified too (the game itself needs `-force-d3d11` there). macOS does not work at the moment because of a known BepInEx-side issue (see the note under [Steam Deck / Linux](#steam-deck--linux-verified)). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
+Released as v1.1.2, which ships Drag'n Wash ModFramework 1.1.2 with its hand-made Mods screen icon. v1.1.1 shipped ModFramework 1.1.1 with the framework's first icon. v1.1.0: the Mods screen and the title screen now tell you when a newer release of this mod is out (with ModFramework 1.1.0). v1.0.0 made the mod run on [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) and added the Mods screen. v0.6.2 stopped "Hash for commit" from dropping rows when the working copy is from before a game update, and translated "Really Delete Save?". v0.6.1 fixed names and other untranslated text showing backwards in Hebrew. v0.6.0 added per-line translations (English said by several characters can be translated differently for each of them; checked with the game update of September 14, 2026). v0.5.0 added changing language from the game's own Options screen; v0.4.0 brought thirteen languages, per-language fonts, an About tab and an installer in English, Japanese and Chinese; v0.3.0 added Steam Deck support. Windows on ARM has been verified too (the game itself needs `-force-d3d11` there). macOS does not work at the moment because of a known BepInEx-side issue (see the note under [Steam Deck / Linux](#steam-deck--linux-verified)). The BepInEx plugin skeleton, Japanese and Chinese replacement of UI and dialogue text, CJK font rendering, bulk dialogue and UI export, in-game debug menu, layout overflow detection, translator documentation, and release workflow have all been implemented and tested in the game.
 
 See [docs/PLAN.md](docs/PLAN.md) for details.
 
@@ -312,7 +320,8 @@ From v1.0.0 this mod runs on **Drag'n Wash ModFramework**, a prerequisite mod th
 
 - **What it does.** Much of what this mod did to hook into the game is useful to other mods as well, so it now lives in the framework: the **Mods** screen (Options → Mods) that lists every installed mod with its settings and an on/off switch, the language row in the game's Options screen, rewriting text before it is shown, dialogue and choice events, the shared F1 tool window, fonts that are safe on Direct3D 12, and save history.
 - **Why.** When the game updates, only the framework has to follow the change, and the mods built on it keep working. The update of September 14, 2026 is the kind of change it absorbs in one place.
-- **For players.** The release zip and the installers include the framework. Uninstalling this mod keeps the framework when another mod is installed.
+- **For players.** The release zip and the installers include the framework. From v1.1.0 the installers are the framework's shared ones, which every Drag'n Wash mod can ship. Uninstalling this mod keeps the framework when another mod is installed.
+- **Update notices.** From v1.1.0 the title screen says **1 update available in Mods** when a newer release of this mod or the framework is out, and **Options → Mods** has a button to its release page. Once a day the framework asks GitHub for the latest release and sends nothing about you or your game; nothing is downloaded. Switch it off in **Mods → Drag'n Wash ModFramework → Settings → Check for updates**.
 - **For translators.** The CSV format and the translation tools are unchanged; existing packs and contributions carry over.
 
 If you make mods for Drag'n Wash and have ideas for what the framework should provide, please open an issue.

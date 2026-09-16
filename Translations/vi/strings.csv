@@ -1,0 +1,1947 @@
+key,section,node,order,speaker,translation
+# Language: Tiếng Việt (vi)
+# Created by TomXV. Provisional translation, not reviewed by a native speaker:
+# some lines may read unnaturally. Corrections are welcome as pull requests.
+# Only the Japanese (ja) and Simplified Chinese (zh-Hans) files were supervised by the author.
+
+# ===== Level 1: Ryan (Sunny) | sets level_1 | ends level_1_complete =====
+# --- intro: Ryan_1_intro ---
+0da72197e898ebe1,L01 Ryan,Ryan_1_intro,1,Ryan,Có ai không?
+334d016f755cd6dc,L01 Ryan,Ryan_1_intro,2,Kobold,Chào!
+dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,"Ồ, chào! Ừm..."
+30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,Nghe nói dưới này có kobold tắm rửa cho rồng được?
+08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,Có đúng chỗ không nhỉ?
+32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,Đúng rồi! Tớ chính là <i>con</i> kobold đó!
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"Đúng vậy, chào mừng đến Drag'n wash!"
+b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"Haha, đúng là cậu rồi!"
+84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Tuyệt vời!
+line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,Tuyệt vời!
+900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,Mình tên Ryan. Vậy...
+092808653667e9ff,L01 Ryan,Ryan_1_intro,11,Ryan,mình vào bằng cách nào?
+0f3f0b7e817061e6,L01 Ryan,Ryan_1_intro,12,Kobold,"Đợi chút, tớ phải mở cổng đã."
+b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,Yip!
+273533e355fd12cf,L01 Ryan,Ryan_1_intro,14,Ryan,hả...?
+3faa3f1d46e0e544,L01 Ryan,Ryan_1_intro,15,Kobold,À... ý tớ là. Tớ đi mở cổng đây!
+ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"À, thấy cái nút đằng kia rồi, hiểu rồi!"
+425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"Được, mình đợi. Cảm ơn nhé."
+# --- phone: Ryan_1_PhoneTutorial ---
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Xin chào, <i>'Chi nhánh Drag'n wash 223'...</i> Bạn đã nói chuyện với khách hàng đầu tiên chưa?"
+276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,Vừa xong!
+d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"Rồi, nói rồi."
+38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"À, tốt."
+ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
+4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,Vậy thì... Chúc một ngày làm việc hiệu quả.
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Xin chào, <i>'Chi nhánh Drag'n wash 223'...</i> Bạn đã biết cách thao tác với đồ vật chưa?"
+3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,Chưa.
+01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,Chắc là hiểu rồi!
+085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,À...
+4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,Vậy thì ra cửa sổ và nói chuyện với khách hàng đi.
+af789b5c60f24630,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,Sau đó dĩ nhiên là phải cho họ vào.
+bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,Rất tốt. Vậy nhớ ra cửa sổ chào khách hàng nhé.
+474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,Được!
+7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,Chúc một ngày làm việc hiệu quả.
+# --- progress: Ryan_1_required ---
+098ac93ca7999f8c,L01 Ryan,Ryan_1_required,1,Ryan,Vậy cậu là thợ tắm rồng có chứng chỉ hả?
+7b999e621945fe90,L01 Ryan,Ryan_1_required,2,Kobold,Đúng vậy!
+1cb7709c2b6cdc0b,L01 Ryan,Ryan_1_required,3,Kobold,Mới làm được vài tuần thôi!
+9b9024cada67653e,L01 Ryan,Ryan_1_required,4,Ryan,"Ồ, hay đấy!"
+fbd8fe3b49aed7c5,L01 Ryan,Ryan_1_required,5,Ryan,Bình thường mình chỉ xịt vòi ở nhà cho xong...
+3f742efbf9edb2ee,L01 Ryan,Ryan_1_required,6,Ryan,"Ồ, vậy là mới với cả hai chúng ta!"
+e6c276d67e994ed5,L01 Ryan,Ryan_1_required,7,Ryan,"Thật lòng, mình ngạc nhiên là ở đây dễ chịu thế này."
+e99ba1a86146f1aa,L01 Ryan,Ryan_1_required,8,Ryan,"Được tránh xa mọi thứ ngoài kia một chút, thích thật."
+# --- nag: Ryan_1_nag ---
+c2aa03c999eb7731,L01 Ryan,Ryan_1_nag,1,Ryan,"Này, mình có chuyện muốn nói!"
+5b798fca0ab51d6c,L01 Ryan,Ryan_1_nag,2,Ryan,Cậu lên chỗ nào mình nhìn thấy được đi.
+# --- jerkoff: ryan_jerk_off_no ---
+2e75bb6a3610c11b,L01 Ryan,ryan_jerk_off_no,1,Ryan,Này... Để chuyện 'ra tay' sau được không?
+# --- mount_start: ryan_mount_no ---
+91c3bf04fb99ce8b,L01 Ryan,ryan_mount_no,1,Ryan,"Hừm, cái bệ thì mình xin bỏ qua."
+# --- outro: Ryan_1_Outro ---
+0d26aa953ca02c41,L01 Ryan,Ryan_1_Outro,1,Ryan,Chắc chắn là sạch bong rồi!
+699cdec6a62f5ff3,L01 Ryan,Ryan_1_Outro,2,Ryan,Dễ chịu hơn xịt vòi nhiều.
+c3bbf19f280c6dde,L01 Ryan,Ryan_1_Outro,3,Kobold,Không có gì đâu.
+66984a1e53d3e869,L01 Ryan,Ryan_1_Outro,4,Kobold,Ừ! Lúc nào quay lại cũng được nhé.
+d629b0ed3f97727c,L01 Ryan,Ryan_1_Outro,6,Ryan,Mình sẽ kể cho mọi người về chỗ này.
+e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,Mình nhất định sẽ nhớ chỗ này.
+29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,8,Ryan,Haha. 'Yip' lại cho cậu nè.
+0712e97652e51758,L01 Ryan,Ryan_1_Outro,9,Ryan,"Vui lắm, vậy hẹn gặp lại nhé!"
+17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,10,Ryan,Mở cổng cho mình ra được không?
+1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,12,Ryan/Conrad/Kobold/Dragon,Cảm ơn!
+
+# ===== Level 2: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_1 ---
+d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>NÀY! </gradient><size=100%>Đây là chỗ tắm rửa, phải không?"
+e2b71fbe0e3a8220,L02 Conrad,Conrad_Intro_1,2,Conrad,Tôi cần sạch không tì vết. Có vẻ cậu ở đây là để làm việc đó. <size=70%> Ha.
+198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,"Vâng, mời anh lối này."
+d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,Chúng tôi mở lối được.
+6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,Tốt. Nhưng phải mở cổng đã. Cho Conrad vào!
+# --- progress: Conrad_required_1 ---
+87e002767e44df8e,L02 Conrad,Conrad_required_1,1,Conrad,Thế<size=90%>ế<size=80%>ế<size=70%>ế<size=60%>ế... <size=100%>Tôi đang tự hỏi
+2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,Ở đây cũng có <i>kết thúc đặc biệt</i> chứ hả?
+906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,Kết thúc nào ở đây cũng đặc biệt hết!
+c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,Kiểu... chuyện tình dục á?
+0c503978e6cd3a78,L02 Conrad,Conrad_required_1,5,Conrad,Ơ... Không phải...
+c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,"Bọn cậu có làm cho rồng to, <size=60%>như tôi, <size=100%>lên đỉnh ở đây không?"
+daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,Ơ... hả... <size=80%>ôi. <size=60%>chúng tôi không...
+824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,"Ồ, không."
+33cb9fb42cd6a080,L02 Conrad,Conrad_required_1,9,Conrad,Cái gì!? Tệ quá! Đến cái bệ cũng không có...?
+96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,ừm... <size=60%>không?
+175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,Vậy thì lo mà sắm một cái đi!
+fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,Ít ra cậu vẫn còn dùng tay được. Hê.
+a29919179016a4e8,L02 Conrad,Conrad_required_1,13,Conrad,Thế à? Tôi có thấy cái bệ nào đâu.
+6ec80eb8deb5afd8,L02 Conrad,Conrad_required_1,14,Kobold,À... đúng là chúng tôi không có.
+22706d3faee3b165,L02 Conrad,Conrad_required_1,15,Kobold,"Không, ở đây chúng tôi không có dịch vụ kiểu đó."
+4a8d1297fbe8f246,L02 Conrad,Conrad_required_1,16,Conrad,Tiếc thật. Nên thay đổi đi.
+# --- jerkoff: Conrad_1_JerkOff_Start ---
+6d4db2b6b39822b2,L02 Conrad,Conrad_1_JerkOff_Start,1,Conrad,"Ôi mẹ nó, đã quá."
+8fc6411ffc04a8f3,L02 Conrad,Conrad_1_JerkOff_Start,2,Conrad,Tiếp đi.
+# --- cum: Conrad_1_Cum ---
+e51f82fb1e4773ad,L02 Conrad,Conrad_1_Cum,1,Conrad,<size=140%> ĐÃ QUÁ!
+6d721d6e2ad2ae1c,L02 Conrad,Conrad_1_Cum,2,Conrad,<size=100%> Sướng thật đấy!
+# --- mount_start: conrad_mount_no ---
+b902443f60bdba87,L02 Conrad,conrad_mount_no,1,Conrad,Ồ. Ừm.
+ccdcfc48472b3533,L02 Conrad,conrad_mount_no,2,Conrad,Bình thường tôi sẽ đồng ý cái bệ ngay. Nhưng giờ thì không.
+# --- outro: Conrad_Outro_1 ---
+2edaf16ee5b742a8,L02 Conrad,Conrad_Outro_1,1,Conrad,Tắm thì ổn.
+882508b81f97e7cf,L02 Conrad,Conrad_Outro_1,2,Conrad,Nhưng chỗ tắm nào khác tôi từng đến ít nhất cũng có cái bệ.
+51335374627e92a3,L02 Conrad,Conrad_Outro_1,3,Kobold,Xin lỗi...
+598e348ffe7cc978,L02 Conrad,Conrad_Outro_1,4,Kobold,Tôi hứa sẽ đặt mua một cái!
+3eba607f0573bf98,L02 Conrad,Conrad_Outro_1,5,Conrad,Đừng xin lỗi! Sắm cái bệ đi!
+4e52b9a8b0ae1335,L02 Conrad,Conrad_Outro_1,6,Conrad,Thợ tắm nào biết tự trọng cũng biết cách làm rồng hài lòng.
+25d0b6008550c533,L02 Conrad,Conrad_Outro_1,7,Kobold,Được. Tôi sẽ đặt mua một cái bệ.
+2e92d12d86bf03a5,L02 Conrad,Conrad_Outro_1,8,Conrad,"Tốt. Rồi, cho tôi ra."
+426726c5d08284a8,L02 Conrad,Conrad_Outro_1,9,Conrad,"Tốt, liệu mà làm. Tôi quay lại mà không có..."
+28c3830dac3b9c5b,L02 Conrad,Conrad_Outro_1,10,Kobold,Đó là dọa tôi à...?
+fac432bdcfb4b753,L02 Conrad,Conrad_Outro_1,11,Conrad,"Ừm, không, tôi chỉ RẤT buồn thôi."
+ee7433c3dd161b65,L02 Conrad,Conrad_Outro_1,12,Conrad,Thôi... Cho tôi ra.
+
+# ===== Level 3: Alexander (Sunny) =====
+# --- intro: Alexander_1_intro ---
+dbca31128a900488,L03 Alexander,Alexander_1_intro,1,Alexander,"Chào buổi tối. Cơ sở này nhận khách không hẹn trước, đúng chứ?"
+a6208f4370193b60,L03 Alexander,Alexander_1_intro,2,Kobold,Có ạ! Anh... từ trường cao đẳng đến...?
+fdf9d60aca05c19e,L03 Alexander,Alexander_1_intro,4,Alexander,"Đúng vậy, hẳn cậu nhận ra huy hiệu của tôi! Tôi dạy giả kim thuật."
+12456a9c2599222e,L03 Alexander,Alexander_1_intro,5,Alexander,... Một lớp mà tôi sắp phải dạy ngay đây.
+cccd2e909950ad59,L03 Alexander,Alexander_1_intro,6,Alexander,Tuyệt.
+f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,"Tôi cần làm nhanh, sinh viên đâu tự dạy mình được."
+26f8788d21d9fd7d,L03 Alexander,Alexander_1_intro,8,Kobold,Chưa từng tắm cho rồng giáo viên bao giờ... ồ.
+7cc55c8bb6442b93,L03 Alexander,Alexander_1_intro,9,Kobold,"Được, tôi mở cổng đây!"
+c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,Giáo sư chứ... Nhưng đúng. Tôi thường không đến chỗ tắm công cộng.
+8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,Cảm ơn.
+57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,"À, và xin lỗi vì tôi bẩn khủng khiếp thế này."
+c44510120d3f5f7e,L03 Alexander,Alexander_1_intro,13,Alexander,Một tình trạng đáng tiếc mà tôi rơi vào...
+550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,Anh... đâu có bẩn đến thế.
+21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,Không sao. Để tôi mở cổng cho anh!
+14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,"Không, có đấy."
+65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,Cậu mở cổng được chứ?
+f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,À. vâng. Xin lỗi.
+# --- progress: Alexander_1_required ---
+8bb197f659df9e12,L03 Alexander,Alexander_1_required,1,Alexander,Cậu biết không... Không gian này khá dễ chịu. Rất... vô sản.
+c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,vô... <i><size=70%>hả?
+3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,Cảm ơn!
+90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,"À, kiểu... tầng lớp lao động?"
+55c80016618e1bc5,L03 Alexander,Alexander_1_required,5,Alexander,"Xin lỗi, ý tôi là tôi thích chỗ tắm của cậu."
+02fa2a9691178177,L03 Alexander,Alexander_1_required,6,Alexander,Dĩ nhiên
+32e117cdd1f56f3f,L03 Alexander,Alexander_1_required,7,Alexander,Ai mà ngờ những nơi thế này lại sẵn có cho công chúng đến vậy!
+# --- jerkoff: alexander_jerk_off_no ---
+f33ca08a17779409,L03 Alexander,alexander_jerk_off_no,1,Alexander,<i>Ồ.</i> Tôi nghĩ mình chưa sẵn sàng cho việc đó.
+# --- mount_start: alexander_mount_no ---
+170ebd10775afd58,L03 Alexander,alexander_mount_no,1,Alexander,Tôi... không chắc mình muốn dùng cái này hôm nay.
+# --- outro: Alexander_1_Outro ---
+d202075090a8960b,L03 Alexander,Alexander_1_Outro,1,Alexander,Phải nói là cậu làm tốt ngang thợ tắm riêng.
+b6069e62e167364f,L03 Alexander,Alexander_1_Outro,3,Kobold,"Vâng, tôi luôn cố hết sức."
+981447d1952fe850,L03 Alexander,Alexander_1_Outro,4,Alexander,"Haha, đúng là 'Yip'."
+5d7279822bcee7dd,L03 Alexander,Alexander_1_Outro,5,Alexander,Sinh viên của tôi nên học hỏi tinh thần làm việc của cậu!
+8117291ab8529b4f,L03 Alexander,Alexander_1_Outro,6,Alexander,"Tôi thật sự muốn nói chuyện thêm, nhưng sắp đến giờ lên lớp rồi."
+dae0c0aa3ae01c37,L03 Alexander,Alexander_1_Outro,7,Alexander,...Cảm ơn cậu vì việc này.
+
+# ===== Level 4: Ryan (Sunny) =====
+# --- intro: Ryan_2_intro ---
+7825d92f67bdcdef,L04 Ryan,Ryan_2_intro,1,Ryan,Lại chào nhé!
+cd26586143766826,L04 Ryan,Ryan_2_intro,2,Kobold,Chào Ryan!
+6a67a8866ec70c09,L04 Ryan,Ryan_2_intro,4,Ryan,"Chào, vui vì được quay lại."
+921bd4effdaa2a2f,L04 Ryan,Ryan_2_intro,5,Ryan,Hah... cậu thích tiếng đó thật đấy.
+387d0da740d0826e,L04 Ryan,Ryan_2_intro,6,Ryan,Mình lại cần tắm rồi.
+e542b800ecfc350a,L04 Ryan,Ryan_2_intro,7,Ryan,Mình đang cố ra khỏi nhà một lát.
+78b22bcc76942425,L04 Ryan,Ryan_2_intro,8,Ryan,Mình đi chơi với mấy người bạn.
+21abbb56e463a200,L04 Ryan,Ryan_2_intro,9,Ryan,Mấy cây bút lông vui phết.
+da3405e1151a476e,L04 Ryan,Ryan_2_intro,10,Ryan,Nhưng chắc đến lúc phải tắm rửa rồi.
+41dc14e2cd744b1b,L04 Ryan,Ryan_2_intro,11,Kobold,"À, được chứ. Vào đi."
+b231225bfcc08d4c,L04 Ryan,Ryan_2_intro,12,Kobold,Mọi chuyện ổn chứ?
+056b5511850d7220,L04 Ryan,Ryan_2_intro,13,Ryan,"Ừ, cảm ơn."
+b4e4d893367947a0,L04 Ryan,Ryan_2_intro,14,Ryan,"Ừ, ổn mà. Xin lỗi."
+c9cdea9d31e53d5b,L04 Ryan,Ryan_2_intro,15,Ryan,Chỉ là một ngày tệ thôi. Mong là cái này giúp được!
+ab74167fe23c9db5,L04 Ryan,Ryan_2_intro,17,Ryan,"Vậy, ờ, cổng?"
+5cbc0ceea57587db,L04 Ryan,Ryan_2_intro,18,Kobold,À... Ừ. Làm ngay.
+08411b780900fb59,L04 Ryan,Ryan_2_intro,19,Kobold,Dĩ nhiên. Chờ chút!
+a386908e3024f35e,L04 Ryan,Ryan_2_intro,20,Ryan,Tuyệt.
+# --- progress: Ryan_2_required ---
+580684f8909e025d,L04 Ryan,Ryan_2_required,1,Ryan,Này.
+b4eff799a0271863,L04 Ryan,Ryan_2_required,2,Kobold,Hửm?
+fad448038cd06268,L04 Ryan,Ryan_2_required,3,Kobold,Sao thế?
+a1dd2ff2d1ef6beb,L04 Ryan,Ryan_2_required,4,Ryan,Mình hỏi cậu một câu được không?
+2acd4405a7f14ae3,L04 Ryan,Ryan_2_required,5,Kobold,"Cậu đang hỏi rồi còn gì, sao thế?"
+c10c037156053bfe,L04 Ryan,Ryan_2_required,6,Kobold,Được chứ.
+4f6d869aa239596c,L04 Ryan,Ryan_2_required,7,Ryan,"À, phải. Xin lỗi."
+0fa0dff561f86016,L04 Ryan,Ryan_2_required,8,Ryan,"Vậy, về... chuyện tình cảm."
+9a38b89ed035e464,L04 Ryan,Ryan_2_required,9,Ryan,Nếu một mối quan hệ <i>trắc trở</i> đến thế và cậu biết nó sẽ kết thúc.
+9b943020b9ae2658,L04 Ryan,Ryan_2_required,10,Ryan,Và cậu đã thử mọi cách.
+954ba66a076849a5,L04 Ryan,Ryan_2_required,12,Ryan,Thì đến lúc nào mới thật sự nên chấm dứt?
+f173e528733bb05a,L04 Ryan,Ryan_2_required,13,Kobold,Ôi... Ryan...
+7b102f547a549072,L04 Ryan,Ryan_2_required,14,Kobold,Tớ... không chắc tớ trả lời giúp cậu được.
+d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,15,Ryan,Mình biết. Mình biết không nên trút hết lên cậu.
+64973f6ac9ac08be,L04 Ryan,Ryan_2_required,16,Ryan,Chỉ là ở bên cậu dễ chịu lắm.
+93fa9e1a16f34a7d,L04 Ryan,Ryan_2_required,17,Ryan,Cậu nói đúng... Cậu không thể trả lời được.
+797653f5e081152e,L04 Ryan,Ryan_2_required,18,Ryan,Mình chỉ mừng là ở đây không bị ai phán xét.
+b11d41e01fefb995,L04 Ryan,Ryan_2_required,20,Kobold,Cảm ơn. Tớ cũng thích ở bên cậu.
+c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,21,Kobold,Mong mọi chuyện sẽ khá hơn.
+ebb96171ea7628a0,L04 Ryan,Ryan_2_required,22,Ryan/Kobold/Alexander,Mừng quá.
+line:286fec49,L04 Ryan,Ryan_2_required,22,Ryan,Mừng quá.
+91c0e3e9014024af,L04 Ryan,Ryan_2_required,23,Ryan,mình cũng vậy.
+# --- outro: Ryan_2_Outro ---
+cb57ee6155ed6ca5,L04 Ryan,Ryan_2_Outro,1,Ryan,Rồi. Sạch hết rồi.
+f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,Xin lỗi vì lúc nãy trút hết lên cậu.
+a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,Không sao mà!
+94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,Tớ biết đôi khi mọi chuyện khó khăn.
+4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,Cậu dễ thương lắm.
+line:15f55959,L04 Ryan,Ryan_2_Outro,5,Ryan,Cậu thật sự tốt bụng.
+ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,Ước gì mọi chuyện dễ như trong phim.
+0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,"Lúc nào cũng có thể quay lại nhé, Ryan."
+78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,"Nếu muốn nói thêm về chuyện đó, tớ có thời gian."
+f204fcc6b711621e,L04 Ryan,Ryan_2_Outro,9,Ryan,"Mình sẽ quay lại, cảm ơn."
+72eaafd8ad3f6b0d,L04 Ryan,Ryan_2_Outro,10,Ryan,Cậu chắc chứ? Nó không phải... chuyện vui gì đâu.
+fe454a1e25772898,L04 Ryan,Ryan_2_Outro,11,Kobold,Cậu nói đúng. Tớ không nên tọc mạch.
+513af1a2eeeef9b6,L04 Ryan,Ryan_2_Outro,12,Kobold,"Không sao, nghe có vẻ cậu cần nói ra."
+f3ff11acd1b54309,L04 Ryan,Ryan_2_Outro,13,Ryan,Cậu không sao đâu. Cảm ơn.
+0b61ba409dc46906,L04 Ryan,Ryan_2_Outro,14,Ryan,"Ừ, cậu nói đúng."
+5459b9d74fb7a529,L04 Ryan,Ryan_2_Outro,15,Ryan,Chuyện là. Bạn gái mình về nhà trước mình. Cô ấy là rồng làm việc tại nhà.
+2cd54468954ee8c7,L04 Ryan,Ryan_2_Outro,16,Ryan,Mình về nhà hơi bẩn một chút. Và cô ấy quát mình.
+f7e4ec27dd7d6527,L04 Ryan,Ryan_2_Outro,17,Ryan,"Bảo mình đi tắm, và tỏ ra cực kỳ khó chịu."
+2880304176197c02,L04 Ryan,Ryan_2_Outro,18,Ryan,Cô ấy... <i>Thật sự</i> bực vì mình dính bùn.
+250b97243d1df1f7,L04 Ryan,Ryan_2_Outro,19,Kobold,Đó là lý do cậu đến lần đầu à?
+bc78d04f7d5861dc,L04 Ryan,Ryan_2_Outro,20,Kobold,Nghe như cô ấy phản ứng hơi quá.
+08a70054f59e703a,L04 Ryan,Ryan_2_Outro,21,Ryan,Ừ...
+6079131a1c79adef,L04 Ryan,Ryan_2_Outro,22,Ryan,Nhưng thật lòng cậu đã giúp mình nhiều lắm.
+92536deee525f694,L04 Ryan,Ryan_2_Outro,23,Ryan,Cho mình thời gian suy nghĩ.
+c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,25,Ryan,Mình cũng nghĩ vậy.
+9ebcf8a46cc189b7,L04 Ryan,Ryan_2_Outro,26,Ryan,Mình nghĩ cô ấy bực vì chuyện khác...
+8c3115a4e2a9a664,L04 Ryan,Ryan_2_Outro,27,Ryan,Mình chỉ không thích việc cô ấy trút lên mình.
+393d8e5925dc5937,L04 Ryan,Ryan_2_Outro,31,Ryan,Thôi thì...
+7258b4e037805024,L04 Ryan,Ryan_2_Outro,32,Ryan,Cảm ơn đã lắng nghe.
+951382e00968439d,L04 Ryan,Ryan_2_Outro,33,Kobold,"Lúc nào cũng được, Ryan."
+c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,34,Kobold,Dĩ nhiên. Tiếc là cậu phải trải qua mấy chuyện này.
+line:6b245989,L04 Ryan,Ryan_2_Outro,35,Ryan,Cảm ơn.
+553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,36,Ryan,Không sao. Mình sẽ nghĩ ra cách.
+bd7468846a30d095,L04 Ryan,Ryan_2_Outro,37,Kobold,Tớ đi mở cổng cho cậu.
+a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,38,Ryan,"Được, tạm biệt!"
+
+# ===== Level 5: Conrad (Rainy) | sets level_5 | ends MedkitCompleted, level_5_complete =====
+# --- intro: Conrad_Intro_2 ---
+ed1060b120921b51,L05 Conrad,Conrad_Intro_2,1,Conrad,Cậu có hộp sơ cứu không?
+33b8a4a45ccc09d4,L05 Conrad,Conrad_Intro_2,2,Kobold,Chuyện gì thế!?
+0a1daca6a7ffe060,L05 Conrad,Conrad_Intro_2,3,Kobold,"Ôi không, Conrad. Anh ổn chứ?"
+20e5d8710e635ec0,L05 Conrad,Conrad_Intro_2,4,Conrad,Tôi không cần kể cho cậu.
+20e7bf03f9acda80,L05 Conrad,Conrad_Intro_2,5,Conrad,"Giờ thì, có hộp sơ cứu hay không?"
+b5df9715ed2e91ed,L05 Conrad,Conrad_Intro_2,6,Conrad,Trông tôi có ổn không?
+b91e8be1b03d1b61,L05 Conrad,Conrad_Intro_2,7,Conrad,Không. Không ổn. Có hộp sơ cứu hay không?
+f974998c16103aa0,L05 Conrad,Conrad_Intro_2,8,Kobold,"Có, tôi có một hộp."
+8ca82a3bb03f138c,L05 Conrad,Conrad_Intro_2,9,Kobold,Có. Nhưng chuyện gì xảy ra vậy?
+a94b34f629b2029a,L05 Conrad,Conrad_Intro_2,10,Conrad,Cứ... mở cổng đi.
+# --- progress: Conrad_required_2 ---
+4356fa179bb80e09,L05 Conrad,Conrad_required_2,1,Conrad,Tôi đúng là đồ ngốc.
+d886f3d923f9c796,L05 Conrad,Conrad_required_2,2,Conrad,Đây đúng là thứ chuyện tôi cố tránh!
+ea8c1853a7d5966c,L05 Conrad,Conrad_required_2,3,Kobold,Anh có muốn kể chuyện gì đã xảy ra không...?
+bded00d07cb1e457,L05 Conrad,Conrad_required_2,4,Kobold,Tôi rất tiếc vì anh bị thương...
+02f000041eb5ab82,L05 Conrad,Conrad_required_2,5,Conrad,Không đời nào! Xấu hổ chết đi được.
+58356b98fdf40dc3,L05 Conrad,Conrad_required_2,7,Conrad,Tôi không cần cậu thương hại!
+cb7847cb63566364,L05 Conrad,Conrad_required_2,9,Conrad,Chỉ là...
+b48f291ebc6b18fe,L05 Conrad,Conrad_required_2,10,Conrad,Tôi ghét việc mình cứ rơi vào mấy chuyện thế này.
+519b07c299436f2a,L05 Conrad,Conrad_required_2,11,Conrad,Bắt đầu thấy như là lỗi của <i>tôi</i>.
+f5ad489eeba50b01,L05 Conrad,Conrad_required_2,12,Kobold,"<i>Chuyện này</i> không phải lỗi của anh, Conrad."
+6402f4608ceb7bbb,L05 Conrad,Conrad_required_2,13,Kobold,Tôi thật sự tiếc vì anh bị thương. Ai làm vậy?
+8e59613d6cd60464,L05 Conrad,Conrad_required_2,14,Conrad,Tôi thật sự nghĩ lần này là lỗi của tôi...
+7058e362e43623f0,L05 Conrad,Conrad_required_2,15,Conrad,Gã rồng ở quán bar... Tôi ngu quá. Không giữ được mồm.
+ea289ebcdd7e81ef,L05 Conrad,Conrad_required_2,16,Conrad,Chỉ là một gã rồng ở quán bar. Ngu thật... Không giữ được mồm.
+aff317c06781bc70,L05 Conrad,Conrad_required_2,17,Conrad,Tôi không hiểu! Sao tôi cứ phải hành xử như thế?
+da5eed4c72eb1073,L05 Conrad,Conrad_required_2,18,Kobold,Hành xử như thế nào?
+193bb66a944990a8,L05 Conrad,Conrad_required_2,19,Kobold,"Tôi thấy anh khá tuyệt đấy, Conrad."
+c69250ea092a7fcd,L05 Conrad,Conrad_required_2,20,Conrad,Kiểu... Một thằng khốn? Tôi biết ở gần tôi khổ sở lắm.
+c2f21da58e28df4f,L05 Conrad,Conrad_required_2,21,Conrad,Cậu tốt bụng. Hơn cả những gì tôi xứng đáng.
+9c529e9f79f39a21,L05 Conrad,Conrad_required_2,22,Conrad,Tôi là thằng khốn. Tôi biết mà.
+4b7317a793a0f728,L05 Conrad,Conrad_required_2,23,Conrad,Xin lỗi vì lúc nãy đã gắt với cậu.
+c4c0c9950baa723f,L05 Conrad,Conrad_required_2,24,Conrad,Cậu không đáng bị thế.
+9fa8cd9193124e79,L05 Conrad,Conrad_required_2,25,Kobold,Anh không sao đâu. Rõ ràng anh đang trải qua nhiều chuyện.
+249133e0671a807b,L05 Conrad,Conrad_required_2,26,Kobold,Không sao mà.
+c61717fe95ec2b9c,L05 Conrad,Conrad_required_2,27,Conrad,Không có nghĩa là tôi được quát cậu.
+652daa6043287e1b,L05 Conrad,Conrad_required_2,28,Conrad,Không bao biện nữa.
+65b4e7b9caad6028,L05 Conrad,Conrad_required_2,29,Conrad,"Không, không ổn. Không bao biện nữa."
+334ade0356dff453,L05 Conrad,Conrad_required_2,30,Conrad,Tôi cần phải tốt hơn. Tôi <i>muốn </i>tốt hơn.
+1d190e45e1ddc239,L05 Conrad,Conrad_required_2,31,Conrad,Chỉ là ừm... Đừng kể ai là tôi nói mấy chuyện này nhé.
+3969155d983b9b32,L05 Conrad,Conrad_required_2,32,Kobold,Bí mật của anh an toàn với tôi.
+bd7f2cf961e397ca,L05 Conrad,Conrad_required_2,33,Kobold,Tôi sẽ không kể.
+0cd12abef67edc64,L05 Conrad,Conrad_required_2,34,Conrad,...Cảm ơn.
+bbaef120c3a81475,L05 Conrad,Conrad_required_2,35,Conrad,Và may là cậu có hộp sơ cứu... Cậu chuẩn bị kỹ thật.
+# --- jerkoff: conrad_jerk_off_no ---
+f81a53c29135dfa5,L05 Conrad,conrad_jerk_off_no,1,Conrad,Này ờ... Không phải lúc.
+# --- outro: Conrad_Outro_2 ---
+7f9f3c8d0db46cbf,L05 Conrad,Conrad_Outro_2,1,Conrad,Tôi thấy khá hơn nhiều rồi.
+d4a62b147d5a622b,L05 Conrad,Conrad_Outro_2,2,Kobold,về thể chất hay tinh thần?
+0d49a74e82a2356a,L05 Conrad,Conrad_Outro_2,4,Conrad,Cả hai.
+c38c5771c6cf6118,L05 Conrad,Conrad_Outro_2,5,Conrad/Ryan,Tôi cũng vậy.
+line:d4c5faea,L05 Conrad,Conrad_Outro_2,5,Conrad,Tôi cũng vậy.
+7e30c436a9112ecd,L05 Conrad,Conrad_Outro_2,6,Conrad,Cậu... tuyệt đấy.
+229bd072e07a3d53,L05 Conrad,Conrad_Outro_2,7,Conrad,Tôi nói thật. Thật đấy.
+ba15304b6e669701,L05 Conrad,Conrad_Outro_2,8,Kobold,Tôi chỉ làm điều tôi nghĩ là đúng.
+1fb463b57138c081,L05 Conrad,Conrad_Outro_2,9,Kobold,Tôi cũng thấy anh tuyệt. Tự hoàn thiện bản thân khó lắm.
+56c81331bdf0858e,L05 Conrad,Conrad_Outro_2,10,Conrad,Mong là tôi học được từ chuyện này.
+3e2cb05f5d39c6e5,L05 Conrad,Conrad_Outro_2,11,Conrad,"Cảm ơn, nhưng tôi sẽ tốt hơn. Tôi hứa."
+8a3ca437a0d6d164,L05 Conrad,Conrad_Outro_2,12,Conrad,Tôi sẽ không làm phiền cậu nữa...
+c90e3d1d20fadd0f,L05 Conrad,Conrad_Outro_2,13,Conrad,Tôi nhất định sẽ quay lại.
+
+# ===== Level 6: Alexander (Night) | sets level_6_started =====
+# --- intro: Alexander_2_intro ---
+44aa15e695b4e0d5,L06 Alexander,Alexander_2_intro,1,Alexander,Ơn trời là cậu còn mở cửa.
+840851d0f7570dd9,L06 Alexander,Alexander_2_intro,2,Kobold,Alexander...?
+d786fe5166ed78b0,L06 Alexander,Alexander_2_intro,3,Kobold,"Ừm, thật ra là không hẳn."
+b5707c134254e827,L06 Alexander,Alexander_2_intro,4,Alexander,Phải. Tôi cần được tắm. Tình hình khá là nguy cấp!
+5962824d5ad2d472,L06 Alexander,Alexander_2_intro,5,Alexander,Đây là việc chỉ cậu mới làm được.
+4006d568c80ab534,L06 Alexander,Alexander_2_intro,6,Alexander,Tôi sẽ trả gấp đôi. Gấp ba... Đây là việc chỉ cậu mới làm được!
+a17a2764777e0b60,L06 Alexander,Alexander_2_intro,7,Kobold,"Ồ. Vậy thì có, chúng tôi mở cửa."
+1e5b9c4d7c7853fa,L06 Alexander,Alexander_2_intro,8,Alexander,Tuyệt vời!
+e36d5a8ffbc61b8c,L06 Alexander,Alexander_2_intro,9,Kobold,chuyện gì thế?
+c43599f1e3538c5c,L06 Alexander,Alexander_2_intro,10,Kobold,sao anh đến muộn thế này?
+c63c466c3e28f286,L06 Alexander,Alexander_2_intro,11,Alexander,"Đồng nghiệp của tôi, giáo sư Igwyx, muốn dùng tôi làm bệ đứng."
+dfb6e95e4715f76e,L06 Alexander,Alexander_2_intro,12,Alexander,"Tôi cho phép, vì vóc dáng của tôi đủ cao."
+9da4c08f2c9d94f9,L06 Alexander,Alexander_2_intro,13,Alexander,Tuy nhiên...
+149351e2d565febf,L06 Alexander,Alexander_2_intro,14,Alexander,Phương pháp của ông ấy có sai sót.
+b54a89ba26aaeaa1,L06 Alexander,Alexander_2_intro,15,Kobold,ÔNG ẤY CHẾT RỒI!?
+0ee302086c5ae61a,L06 Alexander,Alexander_2_intro,16,Kobold,Ông ấy đi đâu rồi...?
+2cc9a59ae14e4845,L06 Alexander,Alexander_2_intro,17,Alexander,gì cơ?
+3b20ece829b0bd68,L06 Alexander,Alexander_2_intro,18,Alexander,không.
+93f6d587969b0e78,L06 Alexander,Alexander_2_intro,19,Alexander,"Sau khi ông ấy tự bốc cháy, tôi đã lo để ông ấy được riêng tư."
+1d37ba6f405ce0fd,L06 Alexander,Alexander_2_intro,20,Alexander,Thân xác của ông ấy hiện đang tái tạo trong phòng nghỉ giáo viên.
+27c227129d961114,L06 Alexander,Alexander_2_intro,21,Alexander,Pháp sư nào biết tự trọng cũng có sẵn một chiếc lông phượng hoàng.
+9e99fec970b38818,L06 Alexander,Alexander_2_intro,22,Kobold,Phải rồi. Lông phượng hoàng. Dĩ nhiên.
+0549826a698aad1c,L06 Alexander,Alexander_2_intro,23,Kobold,Được. Tôi mở cửa tiệm. Đợi chút.
+9e85e9ab574cfc16,L06 Alexander,Alexander_2_intro,24,Alexander,Tôi quên mất sự thiếu hiểu biết của người thường. Xin lỗi.
+359439ec513e7e35,L06 Alexander,Alexander_2_intro,25,Kobold,"Ừ-hử, tôi đi mở cổng"
+28fa9c1bb5161161,L06 Alexander,Alexander_2_intro,26,Alexander,Mau lên! Danh tiếng của tôi đang bị đe dọa.
+# --- progress: Alexander_2_required ---
+cc99c01887a9b5f1,L06 Alexander,Alexander_2_required,1,Alexander,Tôi vô cùng xấu hổ vì toàn bộ chuyện này.
+e33e953efb157171,L06 Alexander,Alexander_2_required,2,Kobold,Không có gì to tát. Nghe có vẻ mọi người đều ổn.
+c054502c35602985,L06 Alexander,Alexander_2_required,3,Kobold,Không cần phải thế.
+98cbb728e5fb19f2,L06 Alexander,Alexander_2_required,4,Alexander,Đó chưa bao giờ là mối lo. Tôi là một con rồng khá ngại rủi ro.
+c1d152bd1a4b22f1,L06 Alexander,Alexander_2_required,5,Alexander,Cậu nói vậy thật là tử tế.
+0da1bbeb76d9ef60,L06 Alexander,Alexander_2_required,6,Alexander,"Tuy nhiên, <i>hình ảnh</i> của tôi bền vững hơn nhiều so với thân xác chóng tàn của Igwyx."
+54021b5f26568c41,L06 Alexander,Alexander_2_required,7,Alexander,Đó là điều tôi lo lắng...
+3a363409d3ae72f1,L06 Alexander,Alexander_2_required,8,Alexander,Và là lý do cậu hoàn hảo cho việc này!
+# --- outro: Alexander_2_Outro ---
+abc1043955962614,L06 Alexander,Alexander_2_Outro,1,Alexander,Lại sạch sẽ hoàn hảo. Cảm ơn cậu đã nhận tôi vào giờ này.
+2de23f0bdf3de327,L06 Alexander,Alexander_2_Outro,2,Kobold,Tiền... mmm...
+082cb158de32f2d9,L06 Alexander,Alexander_2_Outro,3,Kobold,Không có gì.
+374214d86f810d53,L06 Alexander,Alexander_2_Outro,4,Alexander,"Hah, nó đúng là động lực."
+7ff22bb553842005,L06 Alexander,Alexander_2_Outro,5,Alexander,Ít nhất là không còn nữa!
+01b524bd7165a166,L06 Alexander,Alexander_2_Outro,6,Alexander,Tôi chưa từng nghĩ mình sẽ tâm sự những chuyện xấu hổ thế này với ai.
+704866fd76bd9fb8,L06 Alexander,Alexander_2_Outro,7,Kobold,Tôi luôn vui khi được giúp. <i><size=70%> nhất là một con rồng to lớn.
+dd573253630e8021,L06 Alexander,Alexander_2_Outro,8,Kobold,Tôi mừng vì anh tin tôi.
+d6b066332b6d8b9a,L06 Alexander,Alexander_2_Outro,9,Alexander,Tôi mừng vì cậu cũng thấy vui với việc này.
+762c20b866b7b263,L06 Alexander,Alexander_2_Outro,10,Alexander,Tôi cũng vậy.
+5fc37d4eda289c06,L06 Alexander,Alexander_2_Outro,11,Alexander,Tôi không hiểu sao nói chuyện với cậu lại dễ đến thế.
+5a2661b79c536b73,L06 Alexander,Alexander_2_Outro,12,Alexander,Ánh mắt của ai cũng mang một sức nặng khủng khiếp.
+0ddbb1a880fb5b54,L06 Alexander,Alexander_2_Outro,13,Alexander,Của cậu thì không. Dễ chịu lắm.
+df9e3e9397757b17,L06 Alexander,Alexander_2_Outro,14,Kobold,Kỳ vọng chán òòòm.
+5b4ce4081cac21b5,L06 Alexander,Alexander_2_Outro,15,Kobold,Chỉ là làm việc của tôi thôi!
+1acd1b8d362287ec,L06 Alexander,Alexander_2_Outro,16,Alexander,Đúng là vậy thật...
+cbbaf40d803468a2,L06 Alexander,Alexander_2_Outro,17,Alexander,Cậu làm giỏi lắm.
+
+# ===== Level 7: Ryan (Sunny) =====
+# --- intro: Ryan_3_intro ---
+49e50c5be7d1583e,L07 Ryan,Ryan_3_intro,2,Kobold,Ryan!
+346181d6c9954315,L07 Ryan,Ryan_3_intro,3,Kobold,Mừng cậu quay lại!
+c1cff3dbff6bfce2,L07 Ryan,Ryan_3_intro,4,Ryan,Là mình đây.
+03810482331af8e2,L07 Ryan,Ryan_3_intro,5,Ryan,Vui vì được ở đây.
+e1a42aae663ccf1f,L07 Ryan,Ryan_3_intro,6,Ryan,Đến tắm thêm lần nữa.
+fc7ed7b68999fdae,L07 Ryan,Ryan_3_intro,7,Ryan,Mình...
+be0667bb01a8cd65,L07 Ryan,Ryan_3_intro,8,Ryan,Thôi bỏ đi. Cậu mở cổng được không?
+20ed966db540aaaf,L07 Ryan,Ryan_3_intro,9,Kobold,"Ừ, để tớ mở cho."
+6c0973b0166d3528,L07 Ryan,Ryan_3_intro,10,Kobold,Ryan? cậu chắc là mọi chuyện ổn chứ...?
+8dff101cb2298f67,L07 Ryan,Ryan_3_intro,12,Ryan,"Không, không hẳn."
+1990b3ec8cd88a48,L07 Ryan,Ryan_3_intro,13,Ryan,Lát nữa mình kể. Giờ cậu mở cổng trước được không?
+85fec70372b092bb,L07 Ryan,Ryan_3_intro,14,Kobold/Conrad,Ừ.
+33e04b2f805d0e1a,L07 Ryan,Ryan_3_intro,15,Kobold,Được. Nhưng mong là cậu vẫn ổn.
+f51bead488e14b65,L07 Ryan,Ryan_3_intro,16,Ryan/Conrad/Alexander,Cảm ơn.
+aac215f048e8ee54,L07 Ryan,Ryan_3_intro,17,Ryan,Mình xoay xở được.
+# --- progress: Ryan_3_required ---
+eb256f4dcddfee94,L07 Ryan,Ryan_3_required,1,Ryan,Về chuyện lúc nãy.
+1a17d73907f63be1,L07 Ryan,Ryan_3_required,2,Ryan,Vài ngày trước...
+87a781aa9b0c0136,L07 Ryan,Ryan_3_required,3,Ryan,Mình chia tay bạn gái rồi...
+f68b8d76138a2a69,L07 Ryan,Ryan_3_required,4,Kobold,Ôi... Tớ rất tiếc.
+d6077ef6cdb59db1,L07 Ryan,Ryan_3_required,5,Kobold,"Ôi, Ryan."
+d296154ff317814a,L07 Ryan,Ryan_3_required,6,Ryan,Không sao. Mình cần phải thế. Cô ấy không làm mình hạnh phúc.
+8a2e2803c1bc2ea7,L07 Ryan,Ryan_3_required,7,Ryan,Mình cũng không làm cô ấy hạnh phúc.
+d9e1edc2e966ec26,L07 Ryan,Ryan_3_required,8,Ryan,Dù biện minh thế nào thì cũng chẳng dễ chịu hơn.
+769c31039308d04d,L07 Ryan,Ryan_3_required,9,Kobold,Tớ mừng vì cậu đã chọn được điều tốt nhất cho mình.
+460c50191c964260,L07 Ryan,Ryan_3_required,10,Kobold,Kết thúc một chuyện chẳng bao giờ dễ.
+8825be71018f7f88,L07 Ryan,Ryan_3_required,11,Ryan,Ừ. Ít ra nhờ vậy mà mình gặp được cậu.
+3e43d550d0572c10,L07 Ryan,Ryan_3_required,12,Ryan,Ừ... Đúng là không dễ.
+8948d011be56c311,L07 Ryan,Ryan_3_required,13,Ryan,Nhưng ít ra mình đã gặp được cậu!
+e484863d425a58e8,L07 Ryan,Ryan_3_required,14,Kobold,"Cảm ơn, Ryan. Tớ cũng vui vì đã gặp cậu"
+1af4464c602a423a,L07 Ryan,Ryan_3_required,15,Kobold/Conrad,"Ôi, cảm ơn."
+e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,Những lần tắm này thật sự làm mọi chuyện nhẹ đi.
+94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,Với lại rất dễ chịu nữa.
+# --- outro: Ryan_3_Outro ---
+01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,Chắc là xong hết rồi.
+26fef1581467462d,L07 Ryan,Ryan_3_Outro,2,Ryan,Cảm ơn. Cậu làm chuyện này dễ vượt qua hơn nhiều.
+021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,"Cậu lúc nào cũng được chào đón ở đây, Ryan."
+dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,Cậu là một trong những khách tớ thích nhất!
+7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,Cậu luôn làm mình thấy được chào đón.
+c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,Ôi... Cảm ơn. Có kỳ không nếu mình coi cậu là...
+e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,Một người bạn thật sự tốt?
+674d9f74349966ca,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>ồ...</i> không, thật ra thế thì tuyệt lắm."
+e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,Tớ cũng coi cậu là bạn tốt
+29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,Ồ... Mừng quá!
+51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,Ôi... cảm ơn.
+91c56a4e9213a4b0,L07 Ryan,Ryan_3_Outro,12,Ryan,Được. Mình nên để cậu yên thôi.
+523791f6550c3508,L07 Ryan,Ryan_3_Outro,13,Ryan,"Mình sẽ quay lại nữa, nhé?"
+667cadad21e120f0,L07 Ryan,Ryan_3_Outro,14,Kobold,Được! Tớ đi mở cổng cho cậu.
+18f0197237db4a52,L07 Ryan,Ryan_3_Outro,15,Kobold,Mong được gặp lại cậu
+952d54adb781ab58,L07 Ryan,Ryan_3_Outro,16,Ryan,Cảm ơn. Sớm gặp lại.
+
+# ===== Level 8: Conrad (Sunny) | sets DeliveredMountFrame =====
+# --- intro: Conrad_Intro_3 ---
+c2ce80cda53b3e12,L08 Conrad,Conrad_Intro_3,1,Conrad,"Ê, chó bự."
+ef92f8b9796dcaad,L08 Conrad,Conrad_Intro_3,2,Kobold,Tôi là... kobold.
+3faf8798d815fbcc,L08 Conrad,Conrad_Intro_3,3,Kobold,Chào Conrad.
+fe810d1ef6bbca3f,L08 Conrad,Conrad_Intro_3,4,Conrad,Ờ... Ừ.
+fe59e121f203b436,L08 Conrad,Conrad_Intro_3,5,Conrad,Hê. Ừ. Là tôi đây.
+a911f2d8e77038c7,L08 Conrad,Conrad_Intro_3,6,Conrad,"Có vẻ cậu vừa nhận hàng, hả?"
+403e617f71fdbd7d,L08 Conrad,Conrad_Intro_3,7,Conrad,Trong mấy cái thùng đã mở kia có gì?
+2fa26a557574f06d,L08 Conrad,Conrad_Intro_3,8,Kobold,Tôi có cái bệ rồi.
+ba689238087b547e,L08 Conrad,Conrad_Intro_3,9,Kobold,Là cái bệ anh đòi đó.
+a1d3f8d9c7e16f54,L08 Conrad,Conrad_Intro_3,10,Conrad,<size=160%>ĐÃ QUÁ!
+24f5fb4981989960,L08 Conrad,Conrad_Intro_3,11,Conrad,<size=100%>Ý tôi là... Hay.
+086c8ec178979d9b,L08 Conrad,Conrad_Intro_3,12,Conrad,Giờ cho tôi vào! Tôi muốn thử cái đó!
+8b742c36f3da7059,L08 Conrad,Conrad_Intro_3,13,Kobold,Được...
+3a1b28ba58f06ac8,L08 Conrad,Conrad_Intro_3,14,Kobold,Tôi đi mở cổng.
+c2ac4efff25192d6,L08 Conrad,Conrad_Intro_3,15,Conrad,Đừng... nói cái giọng đó.
+faa0b4a641d866a4,L08 Conrad,Conrad_Intro_3,17,Conrad,Đi thôi~!
+f030a371b944e9be,L08 Conrad,Conrad_Intro_3,18,Conrad/Ryan,Chuẩn luôn!
+# --- phone: Conrad_3_PhoneTutorial ---
+eb8e96751da9e008,L08 Conrad,Conrad_3_PhoneTutorial,1,Phone,Chúng tôi đã nhận yêu cầu về cái bệ!
+4369749a5a3394e9,L08 Conrad,Conrad_3_PhoneTutorial,2,Kobold,Hả..?
+339397c0d1c1f21f,L08 Conrad,Conrad_3_PhoneTutorial,3,Phone,"Nó đến sáng nay, chắc đang ở gần cổng."
+f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,Dùng xà beng mở ra rồi đặt vào kho nhé?
+435c7e974ca94c84,L08 Conrad,Conrad_3_PhoneTutorial,6,Phone,Tuyệt vời. Chúc một ngày <i>hiệu quả</i>.
+# --- idle: Conrad_idle_3_1 ---
+37950c8a8db90865,L08 Conrad,Conrad_idle_3_1,1,Conrad,Cậu đặt cái bệ cho tôi thì tôi xử luôn.
+8f224115163c0dbe,L08 Conrad,Conrad_idle_3_1,2,Conrad,"Ê, dùng tay với cái ấy của tôi đi... sướng lắm!"
+785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,"Vậy ờ, mở cổng được không?"
+# --- idle: Conrad_idle_3_2 ---
+c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,Tôi thích cái bệ cậu chọn. Lấy ra được không?
+4557c47a615d9810,L08 Conrad,Conrad_idle_3_2,2,Conrad,Vậyyy. Cậu định giúp tôi bằng tay chứ?
+7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,Cảm ơn vụ đó. Sướng thật đấy.
+# --- jerkoff: Conrad_started_jerkoff_3 ---
+ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,"Ah đúng rồi, đúng chỗ đó.. tiếp đi."
+# --- cum: Conrad_finished_jerkoff_3 ---
+10069c101bcc95c1,L08 Conrad,Conrad_finished_jerkoff_3,1,Conrad,...!
+82d37703a9140210,L08 Conrad,Conrad_finished_jerkoff_3,2,Conrad,"Chết tiệt, cậu biết dùng tay thật."
+95be71f702fae4a6,L08 Conrad,Conrad_finished_jerkoff_3,5,Kobold,Hah... <size=70%> ừ.
+b60c2f975eedb833,L08 Conrad,Conrad_finished_jerkoff_3,6,Kobold,Dĩ nhiên rồi. Tôi là <i>dân chuyên</i> mà.
+f9e0d3cba1f3548e,L08 Conrad,Conrad_finished_jerkoff_3,7,Conrad,Lúc nào cũng tốt khi kobold biết mình thích gì.
+0eb2a1e25a35e85e,L08 Conrad,Conrad_finished_jerkoff_3,8,Conrad,Tôi cũng vậy.
+83d081eadc40b86b,L08 Conrad,Conrad_finished_jerkoff_3,10,Conrad,Ở khoản được người khác dùng tay.
+# --- cum: Conrad_Outro_3 | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+6f64e0cc9b162541,L08 Conrad,Conrad_Outro_3,1,Conrad,"Ê, cái này. Tôi đang nghĩ"
+dd5acacdb6c59489,L08 Conrad,Conrad_Outro_3,2,Conrad,Hỏi bây giờ hơi kỳ. Nhưnggg.
+7f39f874a107d858,L08 Conrad,Conrad_Outro_3,3,Conrad,"Cậu có biết chỗ nào hay, người nào hay, để tôi lui tới không?"
+df48dbfe82678dea,L08 Conrad,Conrad_Outro_3,4,Kobold,"<gradient=""gold""><b> Tôi biết một con rồng, Ryan. Tôi giới thiệu hai người nhé? </b></gradient><size=70%>(Mở khóa Conrad/Ryan hẹn hò HOẶC tình cảm với Ryan)"
+7b870878852ee72d,L08 Conrad,Conrad_Outro_3,5,Kobold,"<gradient=""gold""><b> Tôi không ngại đi chơi cùng... </b></gradient><size=70%> (Mở khóa tình cảm với Conrad)"
+ac6820f366b18b44,L08 Conrad,Conrad_Outro_3,6,Conrad,Rồng khác à? Thường thì tôi không hợp với ai lắm...
+de6f58682bdaacf9,L08 Conrad,Conrad_Outro_3,7,Kobold,"Ồ, không đâu. Ryan dễ thương lắm."
+d4185d9f80a34228,L08 Conrad,Conrad_Outro_3,8,Kobold,"Đừng lo, cậu ấy tốt lắm."
+9df619228ba627fc,L08 Conrad,Conrad_Outro_3,9,Conrad,Được. Vậy chắc tôi muốn thử.
+d88679eede302f8e,L08 Conrad,Conrad_Outro_3,10,Kobold,Lần tới gặp cậu ấy tôi sẽ hỏi.
+7984d45df6290f6c,L08 Conrad,Conrad_Outro_3,11,Kobold,Tôi nghĩ cậu ấy sẽ thích con người mới của anh!
+bf35fcb679c816dd,L08 Conrad,Conrad_Outro_3,12,Conrad,Cảm ơn. Tôi rất biết ơn
+d32db8ee98680d0f,L08 Conrad,Conrad_Outro_3,13,Conrad,Mong là thế. Tôi thật sự muốn bắt đầu lại với ai đó.
+8623a4b26a9521d8,L08 Conrad,Conrad_Outro_3,14,Conrad,Nhưng chắc tôi phải đi rồi.
+30dcd5391100eeba,L08 Conrad,Conrad_Outro_3,15,Conrad,Cảm ơn vì gợi ý!
+f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,Không cần cảm ơn. Tôi mở cổng đây.
+404cba15a4acdcfe,L08 Conrad,Conrad_Outro_3,17,Kobold,Dĩ nhiên.
+8bf9f7d2ecce0105,L08 Conrad,Conrad_Outro_3,18,Conrad,Ooooh.
+8929fe2569ae7455,L08 Conrad,Conrad_Outro_3,19,Conrad,Tôi nghĩ tôi thích thế!
+2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,Cậu khá là hấp dẫn đấy.
+c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...và tốt bụng.
+296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,Tôi cũng thấy anh đặc biệt.
+17cf3cc7179b6817,L08 Conrad,Conrad_Outro_3,24,Conrad,Đó là... lần đầu cậu yip với tôi.
+c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,Theo tiếng kobold thì nghĩa là anh đang làm tốt.
+6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,Ồ... hah. Tôi thích thế.
+8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,Nghe vậy tôi thấy vui.
+e8ae0da9edb0a314,L08 Conrad,Conrad_Outro_3,28,Conrad,Vậy. Hẹn hò một buổi nhé?
+781cbcfcd7920f3f,L08 Conrad,Conrad_Outro_3,29,Kobold,Nhanh thật... Nhưng chắc là được!
+5f9a2b795615ba6a,L08 Conrad,Conrad_Outro_3,30,Kobold,Được.
+508f3cf175389841,L08 Conrad,Conrad_Outro_3,31,Conrad,Tôi nghĩ tôi muốn thử!
+c282dd1133ff96d4,L08 Conrad,Conrad_Outro_3,32,Conrad,Được! Vậy lát nữa tôi quay lại.
+bfc65061708379d6,L08 Conrad,Conrad_Outro_3,33,Kobold,"<size=70%><i> trời ơi, mình vừa có hẹn với một con rồng."
+cf78ef26075ae223,L08 Conrad,Conrad_Outro_3,34,Kobold,Ừ! Tôi mở cổng đây.
+6b8aa4fb55221728,L08 Conrad,Conrad_Outro_3,35,Conrad,Hửm?
+c395eb5878798c08,L08 Conrad,Conrad_Outro_3,36,Kobold,À! không có gì. Tôi mở cổng đây.
+102e28eb7d17c7dd,L08 Conrad,Conrad_Outro_3,37,Conrad,"Ồ, được. Cảm ơn."
+ca518354e1f14735,L08 Conrad,Conrad_Outro_3,38,Conrad,"Được, cảm ơn."
+# --- cum: Conrad_finished_jerkoff_3 ---
+5dffcc40132f0ec4,L08 Conrad,Conrad_finished_jerkoff_3,11,Conrad,Giờ thì tôi đang nhắm cái bệ...
+45c2b89acdcfd55d,L08 Conrad,Conrad_finished_jerkoff_3,12,Conrad,Để tôi thử!
+57725c300be82fa5,L08 Conrad,Conrad_finished_jerkoff_3,13,Kobold,Ồ được. Tôi đi lấy.
+1976e7477a26b680,L08 Conrad,Conrad_finished_jerkoff_3,14,Kobold/Ryan,Được chứ!
+9e50b8e48f012f1f,L08 Conrad,Conrad_finished_jerkoff_3,15,Conrad,Đã quá
+# --- mount_start: Conrad_placed_mount_3 ---
+b9778eb1fe076168,L08 Conrad,Conrad_placed_mount_3,1,Conrad,Hah! Cái bệ đây rồi!
+86b1b615d536c6c9,L08 Conrad,Conrad_placed_mount_3,2,Conrad,"Thế<size=90%>ế<size=80%>ế<size=70%>ế<size=60%>ế... <size=100%>Tôi không bẩn. Nhưng tôi <i>~hư~</i> lắm, hiểu chứ?"
+449244744c8bbd8a,L08 Conrad,Conrad_placed_mount_3,3,Kobold,Vậy anh đến chỉ để...
+f8c28806b84cad3d,L08 Conrad,Conrad_placed_mount_3,4,Kobold,Ừ. Nó không đắt lắm.
+cd4ecc87775c0780,L08 Conrad,Conrad_placed_mount_3,5,Conrad,Chịch cái gì đó rồi hy vọng được sướng bằng tay.
+01e3f480dfe7930d,L08 Conrad,Conrad_placed_mount_3,6,Conrad,Được sướng bằng tay rồi chịch cái bệ này.
+7f9240260973e0ce,L08 Conrad,Conrad_placed_mount_3,7,Kobold,Anh... thẳng thắn quá.
+e0b48878cb57c01f,L08 Conrad,Conrad_placed_mount_3,8,Conrad,Dĩ nhiên rồi! Tôi biết tôi rất...
+1bd882b6a6343777,L08 Conrad,Conrad_placed_mount_3,9,Conrad,Ngầu.
+557321787688acff,L08 Conrad,Conrad_placed_mount_3,11,Conrad,Thôi kệ. Giờ dùng cái này đây!
+78e9c032e409d82d,L08 Conrad,Conrad_placed_mount_3,12,Conrad,"Hah, tốt. Khai trương nó nào!"
+# --- mount_finish: Conrad_finished_mount_3 ---
+81b18a3cc2f69ea7,L08 Conrad,Conrad_finished_mount_3,1,Conrad,Chà.
+748b06c5c3f0552b,L08 Conrad,Conrad_finished_mount_3,2,Conrad,Cái đó.
+e92da2c203110197,L08 Conrad,Conrad_finished_mount_3,3,Conrad,Cái đó <i>sướng</i> thật.
+bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,Anh làm hăng thật đấy.
+67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,Có vẻ anh thích lắm.
+65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,Lúc nào chả thế~
+5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,Còn phải nói!
+d45c21a765584d3b,L08 Conrad,Conrad_finished_mount_3,8,Kobold,Tốt... Giờ sao nữa?
+ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,"Giờ thì, hiệp hai!"
+18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,Lại nữa...?
+f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,"Không không, cậu là thợ tắm có chứng chỉ mà?"
+5117686f8d936e47,L08 Conrad,Conrad_finished_mount_3,12,Conrad,Nghĩa là cậu biết cách ra tay!
+a441237f7aea8d53,L08 Conrad,Conrad_finished_mount_3,13,Kobold,ồ. <size=70%>được.
+d2e773775c5bf598,L08 Conrad,Conrad_finished_mount_3,14,Kobold,Được. Tôi làm ngay.
+d126a37255fb8144,L08 Conrad,Conrad_finished_mount_3,15,Conrad,"Hah. Ừ. <size=70%><i>Hay thật, trường tắm rửa dạy cả cách quay tay cho rồng..."
+fba1924f5f79713e,L08 Conrad,Conrad_finished_mount_3,16,Conrad,Chúc may mắn ôm hết cả người tôi bằng tay nhé.
+# --- mount_finish: Conrad_OutroDirty ---
+9b363afaa9dc8a5f,L08 Conrad,Conrad_OutroDirty,1,Conrad,Tôi vẫn còn bẩn nguyên!
+44aa54eec876d22e,L08 Conrad,Conrad_OutroDirty,2,Kobold,Ôi lỗi tôi
+85d8ae405abc5722,L08 Conrad,Conrad_OutroDirty,3,Kobold,Úi
+# --- mount_finish: Conrad_OutroSoapy ---
+d7bb84bfc322967e,L08 Conrad,Conrad_OutroSoapy,1,Conrad,Tôi vẫn còn đầy xà phòng!
+# --- mount_finish: ErrorHasOccurred ---
+9241fa9324783298,L08 Conrad,ErrorHasOccurred,1,ErrorHasOccurred,Ôi chết tiệt có gì đó sai rồi
+fbc99d34c317d087,L08 Conrad,ErrorHasOccurred,2,ErrorHasOccurred,"nếu bạn thấy dòng này, hãy gọi nael hoặc gửi báo cáo lỗi"
+be7e08152c8d1556,L08 Conrad,ErrorHasOccurred,3,ErrorHasOccurred,xin lỗi!
+# --- mount_finish: Conrad_Outro | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+c571db95fc1e4f78,L08 Conrad,Conrad_Outro,4,Conrad,"Ahh, sạch sẽ và nhẹ cả người."
+e374c1b3adfa0cf8,L08 Conrad,Conrad_Outro,5,Conrad,"Cảm ơn bạn hiền, vậy mai gặp lại."
+
+# ===== Level 9: Alexander (Sunny) =====
+# --- intro: Alexander_3_intro ---
+36cd0d2b83086eeb,L09 Alexander,Alexander_3_intro,1,Alexander/Conrad,Chào.
+bc15783521246457,L09 Alexander,Alexander_3_intro,2,Kobold/Alexander,Alexander!
+3cbf350078abb1bf,L09 Alexander,Alexander_3_intro,3,Kobold,"Chào, mừng anh quay lại!"
+516ad83185e96dfb,L09 Alexander,Alexander_3_intro,4,Alexander,"Haha, phải. Vui vì gặp cậu."
+f1d9c9797985d9a2,L09 Alexander,Alexander_3_intro,5,Alexander,Vui vì được quay lại.
+9f59b5e841a0d2ad,L09 Alexander,Alexander_3_intro,6,Alexander,Có vẻ tôi bị dính mực đầy người!
+fda3c419d5174cb2,L09 Alexander,Alexander_3_intro,7,Alexander,"Kinh khủng thật, phải không?"
+b5d76009b084e709,L09 Alexander,Alexander_3_intro,8,Kobold,"Thì, đó là lý do tôi ở đây!"
+4f921c2b968fe884,L09 Alexander,Alexander_3_intro,9,Kobold,"Ôi chao, anh dính đầy người thật!"
+256ae0739ddd2dbc,L09 Alexander,Alexander_3_intro,10,Alexander,Đúng vậy! Giờ cậu là kobold duy nhất tôi muốn tắm cho mình.
+f114f26d23d53dc1,L09 Alexander,Alexander_3_intro,11,Kobold,"Ôi, cảm ơn Alexander."
+1f01b93ae3777189,L09 Alexander,Alexander_3_intro,12,Kobold,Thế còn thợ tắm riêng của anh?
+92b7fef7172975fa,L09 Alexander,Alexander_3_intro,13,Alexander,Dĩ nhiên! Cậu điều hành một cơ sở tốt.
+df2a4df0381808af,L09 Alexander,Alexander_3_intro,14,Alexander,Cậu không cần lo. Công đoàn thợ tắm... quyền lực hơn tôi.
+1bdc19a56262fbc5,L09 Alexander,Alexander_3_intro,15,Alexander,<size=70%>Họ vẫn nhận lương từ tôi.
+b0134babb7e75550,L09 Alexander,Alexander_3_intro,16,Alexander,Một cái cớ khá hay để gặp kobold tôi thích nhất.
+7d926d6395419270,L09 Alexander,Alexander_3_intro,17,Kobold,Ôi... Cảm ơn!
+6ad0fe6dcc2efa30,L09 Alexander,Alexander_3_intro,19,Alexander,"Dĩ nhiên, cậu điều hành một cơ sở tốt."
+f38b3b8fcf6bf031,L09 Alexander,Alexander_3_intro,20,Alexander,Sao? Một lời khen chân thành thì có hại gì đâu!
+350955b9410d95a5,L09 Alexander,Alexander_3_intro,21,Kobold,Tôi không ngờ anh là kiểu người bừa bộn thế!
+3cf6fd8e7e50386c,L09 Alexander,Alexander_3_intro,22,Kobold,Sao anh lại dính mực đầy người?
+5d2cee363540fc7a,L09 Alexander,Alexander_3_intro,23,Alexander,Tôi... hừm.
+26b3089f5ee4a463,L09 Alexander,Alexander_3_intro,24,Alexander,Tôi <i>nghĩ </i> mình đã làm đổ lọ mực <i>trên đường đến đây</i>. Vụng về quá!
+7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,25,Kobold,"'Nghĩ', 'Trên đường đến đây'? Vậy trước đó anh không dính mực..."
+b356a126e4318643,L09 Alexander,Alexander_3_intro,26,Alexander/Kobold/Ryan,Ồ.
+cd5592e5e3140daa,L09 Alexander,Alexander_3_intro,27,Alexander,Phải.
+2a0200c46ee1b662,L09 Alexander,Alexander_3_intro,29,Alexander,"Nói thật, tôi tự làm bẩn để được đến đây."
+b4d680dde83d7847,L09 Alexander,Alexander_3_intro,30,Kobold,Ôiii. Anh không cần dính mực đầy người chỉ để chào tôi đâu!
+42d72aa4b0b39750,L09 Alexander,Alexander_3_intro,31,Kobold,Ồ! Vậy tôi phải cho anh vào thôi. Tôi đi mở cổng.
+9eb8cd756595cf24,L09 Alexander,Alexander_3_intro,32,Alexander,Thật sao?
+5f9846717183dcc1,L09 Alexander,Alexander_3_intro,33,Alexander,Tôi sẽ nhớ điều đó. Tôi quen với việc mọi thứ đều là trao đổi.
+2ea5b920a0a9a519,L09 Alexander,Alexander_3_intro,34,Kobold,Tôi luôn vui khi gặp anh. Tôi đi mở cổng cho anh.
+# --- progress: Alexander_3_required ---
+a59f7f35644dcdbb,L09 Alexander,Alexander_3_required,1,Alexander,"Giáo sư Igwyx... Đồng nghiệp của tôi, người tự thiêu hôm trước."
+10b4110dad07d576,L09 Alexander,Alexander_3_required,2,Alexander,Ông ấy đã đi làm lại rồi. Cảm ơn đã giúp vụ đó.
+b8baebdff88a847f,L09 Alexander,Alexander_3_required,3,Kobold,"Ừ, lúc đầu sợ thật."
+a2aff5b173ae96bb,L09 Alexander,Alexander_3_required,4,Kobold,Ồ tốt quá. Tôi mừng vì ông ấy ổn.
+4b29556a255aea95,L09 Alexander,Alexander_3_required,5,Alexander,May là cái chết do tự bốc cháy là khái niệm thế giới hiện đại đã hạn chế được triệt để.
+ababfd6e7703460e,L09 Alexander,Alexander_3_required,6,Alexander,Đúng vậy. Tôi mừng vì cậu đã giúp được.
+69f278cd5a2eb111,L09 Alexander,Alexander_3_required,7,Alexander,...Kỳ lạ khi có thể nói chuyện thoải mái với ai đó thế này.
+6221337862dcba2c,L09 Alexander,Alexander_3_required,8,Alexander,Tôi thấy như có thể nói với cậu bất cứ điều gì.
+cecec36c55a564ee,L09 Alexander,Alexander_3_required,9,Kobold,Bất cứ điều gì?
+7dbde0758389bd7b,L09 Alexander,Alexander_3_required,11,Alexander,Phải. Được thẳng thắn thế này thật sảng khoái.
+9bc918ab274337a8,L09 Alexander,Alexander_3_required,12,Alexander,Không hiểu sao nó chân thật hơn bất cứ điều gì người khác nói.
+35af415ffcb7f757,L09 Alexander,Alexander_3_required,13,Alexander,Này...
+c66fb72552f1fa4c,L09 Alexander,Alexander_3_required,14,Alexander,Tôi có một câu hỏi.
+bbff7b98d6da7061,L09 Alexander,Alexander_3_required,15,Kobold,Gì vậy?
+834032dfb827138e,L09 Alexander,Alexander_3_required,16,Kobold,Sao thế?
+71291e2e0c7ce300,L09 Alexander,Alexander_3_required,17,Alexander,Cậu có thể hỏi <i>tôi</i> một câu không?
+c8ac7dce03b1b9b7,L09 Alexander,Alexander_3_required,18,Kobold,Ý anh là sao?
+10f232e68c0c0443,L09 Alexander,Alexander_3_required,19,Kobold,Câu hỏi kiểu gì?
+5956cbc43e2c8c2b,L09 Alexander,Alexander_3_required,20,Alexander,Tôi chỉ muốn cậu hỏi tôi một câu. Câu nào cũng được.
+7bf3b1fff483809e,L09 Alexander,Alexander_3_required,21,Alexander,Gì cũng được. Tôi chỉ tò mò.
+# --- progress: Alexander_questions ---
+9da08a79c3f86ee0,L09 Alexander,Alexander_questions,1,Kobold,Đi dạy thì thế nào?
+337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold/Alexander,Anh có thích màu tím không?
+70523c9a506d9676,L09 Alexander,Alexander_questions,3,Kobold,Anh có thích to lớn không?
+3fbd83d375d6fa05,L09 Alexander,Alexander_questions,4,Kobold,Số 7 có vị gì?
+767b6d6bdc5b806a,L09 Alexander,Alexander_questions,5,Kobold,Anh nghĩ gì về tôi?
+8ed9fdad93b0f690,L09 Alexander,Alexander_questions,6,Kobold,Anh có hạnh phúc không?
+e5263ec7185a5166,L09 Alexander,Alexander_questions,7,Kobold,Huy hiệu của anh đẹp. Nó là gì vậy?
+bc116106c2929c42,L09 Alexander,Alexander_questions,8,Kobold,Tôi chỉ muốn hỏi thế thôi.
+a04d5511812a415b,L09 Alexander,Alexander_questions,9,Alexander,Đó là ước mơ của tôi.
+6861f7c274e3de2c,L09 Alexander,Alexander_questions,10,Alexander,Tôi thích được là một phần tốt đẹp trong cuộc sống của nhiều người.
+8743d170a315e668,L09 Alexander,Alexander_questions,11,Alexander,...Thật đáng sợ khi biết họ ngưỡng mộ tôi đến mức nào.
+7aebce70febcfb8c,L09 Alexander,Alexander_questions,12,Alexander,Và không chỉ theo nghĩa đen.
+0ad864ff0c0b3f21,L09 Alexander,Alexander_questions,13,Kobold,Anh dạy những môn gì?
+24244e96851180ca,L09 Alexander,Alexander_questions,14,Kobold,Anh là tấm gương tốt.
+f58328ac8301872f,L09 Alexander,Alexander_questions,15,Alexander,Chủ yếu là giả kim thuật. Thỉnh thoảng là lịch sử thế giới.
+771e997edf959694,L09 Alexander,Alexander_questions,16,Alexander,Tôi cũng đang cố bước sang khoa học xã hội.
+9986ef8860d34d9e,L09 Alexander,Alexander_questions,17,Alexander,Đó chính là điều đáng sợ.
+e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,Tôi thích việc ở bên cậu tôi không sợ thất bại.
+818a4fe04a76ce19,L09 Alexander,Alexander_questions,19,Alexander,Cậu hỏi vì tôi màu oải hương à?
+54a1b0b8e5f6fa32,L09 Alexander,Alexander_questions,20,Kobold,Ừ.
+046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,Không.
+b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,"Thì, tôi có thích màu đó. Nhưng tôi tin nó không liên quan đến màu của tôi."
+bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,Tôi có thích màu đó. Dù tôi tin nó không liên quan đến màu của chính tôi.
+line:ef052302,L09 Alexander,Alexander_questions,24,Alexander,"Còn cậu, cậu có thích màu tím không?"
+525ba3c4a2511183,L09 Alexander,Alexander_questions,27,Alexander,Ồ. tốt.
+3885f7429496059d,L09 Alexander,Alexander_questions,29,Alexander,Ồ. Được.
+8133434681c5d0c2,L09 Alexander,Alexander_questions,31,Alexander,Đó là câu khó trả lời.
+a3e6072e41a2ff07,L09 Alexander,Alexander_questions,32,Alexander,Tôi thích một phần. Được tôn trọng thì dễ chịu...
+b1ca0efdea534b71,L09 Alexander,Alexander_questions,33,Alexander,Nhưng sự tôn trọng ấy đi kèm kỳ vọng là tôi phải hành xử đúng như vẻ ngoài. Căng thẳng vô cùng.
+186edb7d24ea9459,L09 Alexander,Alexander_questions,34,Kobold,Ở cạnh tôi anh muốn thế nào cũng được.
+1a6be1fd03e5ae6f,L09 Alexander,Alexander_questions,35,Kobold,Tôi thích anh vì con người thật của anh.
+08063aff652b7108,L09 Alexander,Alexander_questions,36,Alexander,Cậu nói vậy thật tử tế.
+4f9390dd28090827,L09 Alexander,Alexander_questions,37,Alexander,Tôi muốn cởi mở hơn. Cảm giác thật tốt.
+b38834ce4594ad5c,L09 Alexander,Alexander_questions,38,Alexander,Chanh vàng.
+5f6bb166b079c336,L09 Alexander,Alexander_questions,39,Kobold,Không thể nào.
+aac4af2b645cf88e,L09 Alexander,Alexander_questions,40,Kobold,Kiểu... quả chanh vàng?
+0ee250681eda1a08,L09 Alexander,Alexander_questions,41,Alexander,"'Có thể chứ', không có gì tôi chắc chắn hơn."
+b83a1658171971d7,L09 Alexander,Alexander_questions,42,Alexander,Không. Một quả chanh xanh mà màu vàng.
+a87e0094e62cb429,L09 Alexander,Alexander_questions,43,Kobold,Anh là giáo sư mà. Chắc là đúng rồi.
+e154199e27c1d4a3,L09 Alexander,Alexander_questions,45,Alexander,"Đó là ngụy biện dựa vào thẩm quyền. Nhưng, phải. Tôi đúng."
+0c137b35abd3f637,L09 Alexander,Alexander_questions,47,Alexander,Cậu là...
+d4efe0db738b52b5,L09 Alexander,Alexander_questions,48,Alexander,Một dị thường.
+55c3e5daec20a64d,L09 Alexander,Alexander_questions,49,Kobold,Hả?
+2c291db1ddbe2b9d,L09 Alexander,Alexander_questions,50,Kobold,Vậy là tốt hay...?
+df2bc10ba434d57e,L09 Alexander,Alexander_questions,51,Alexander,Ý là cậu độc nhất.
+019d328b739d99e6,L09 Alexander,Alexander_questions,52,Kobold,Theo nghĩa tốt?
+c2667b3b3dc54c1a,L09 Alexander,Alexander_questions,53,Kobold,Theo nghĩa xấu?
+4f9b4a3cd9b0261a,L09 Alexander,Alexander_questions,54,Alexander,Dĩ nhiên! Cậu tuyệt vời.
+ebb1884c75b23e27,L09 Alexander,Alexander_questions,55,Alexander,Ôi trời! Không không. Cậu xuất sắc.
+3b2c32e616b24822,L09 Alexander,Alexander_questions,56,Alexander,Đúng vậy. Cậu là người rất tuyệt để ở bên.
+7e6a62b6d8659273,L09 Alexander,Alexander_questions,57,Alexander,Cậu là người đầu tiên tôi gặp mà kỳ vọng duy nhất là tôi hãy là...
+c48241cd21bb0d91,L09 Alexander,Alexander_questions,58,Alexander,Chính tôi.
+5a4d28241178ab01,L09 Alexander,Alexander_questions,59,Alexander,Có.
+216bb6e650af4cfc,L09 Alexander,Alexander_questions,60,Alexander,Tôi tin một phần là nhờ cậu.
+91ff270d6aaba6a4,L09 Alexander,Alexander_questions,61,Kobold,Nhưng tôi chỉ là thợ tắm của anh thôi mà?
+f06f453ab3d6251f,L09 Alexander,Alexander_questions,62,Kobold,Ngọt ngào quá.
+8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,63,Alexander,"Tôi biết. Nhưng được mở lòng với ai đó, dù chỉ thỉnh thoảng..."
+61639ef55caefda4,L09 Alexander,Alexander_questions,64,Alexander,Có tác dụng kỳ diệu.
+22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,66,Alexander,"Được mở lòng với ai đó, dù chỉ thỉnh thoảng..."
+439d8da114ab9162,L09 Alexander,Alexander_questions,68,Alexander,Cảm ơn cậu vì điều đó.
+33d3f6495bad4d3c,L09 Alexander,Alexander_questions,69,Alexander,"À, cái huy hiệu quanh đầu tôi?"
+91d69b4f1f9739cb,L09 Alexander,Alexander_questions,70,Alexander,Nhiều người nghĩ nó là một phần cơ thể tôi.
+dd0f2ff5e303f61a,L09 Alexander,Alexander_questions,71,Alexander,Nhưng nó là đồ trang trí! Huy hiệu gia tộc của tôi. Cậu thấy đấy...
+7271f9e9b21e5401,L09 Alexander,Alexander_questions,72,Alexander,"Lịch sử loài rồng rất phức tạp. Huy hiệu trang trí <size=85%> thường được <size=70%> rồng đeo để <size=55%>cho biết mình thuộc gia tộc nào! <size=40%> Đó là dấu ấn thú vị về di sản văn hóa <size=35%> và gia đình của họ. Tôi thường tự hỏi có nên tiếp tục đeo của mình không. <size=20%> Nhưng ràng buộc văn hóa và gia đình được xem là quan trọng trong truyền thống loài rồng! nên tôi phải tuân theo. <size=10%> Nước. Đất. Lửa. Khí. Ngày xưa, bốn quốc gia chung sống hòa thuận. Rồi mọi thứ thay đổi khi Hỏa Quốc tấn công."
+line:e90fee8e,L09 Alexander,Alexander_questions,73,Kobold,Ồ.
+0006b6926947b91b,L09 Alexander,Alexander_questions,74,Kobold,Anh nhắc lại được không?
+b6d573339ec0b66b,L09 Alexander,Alexander_questions,75,Alexander,"À, xin lỗi, tôi đam mê mấy chuyện này."
+9909f3ea3dffb93e,L09 Alexander,Alexander_questions,76,Alexander,Tôi mừng vì cậu thích huy hiệu của tôi.
+e5bccc3a053371ce,L09 Alexander,Alexander_questions,77,Alexander,...Không
+# --- progress: Alexander_3_required_end | if $has_asked_question ---
+c225b2626bb24d2c,L09 Alexander,Alexander_3_required_end,1,Alexander,Cảm ơn đã hỏi. Được hỏi những câu riêng tư thật thú vị.
+# --- jerkoff: Alexander_3_JerkOff_Start ---
+8342e51e14980481,L09 Alexander,Alexander_3_JerkOff_Start,1,Alexander,Ôi trời... Tôi không ngờ cậu lại... ra tay thế này
+ce664ef00487ef78,L09 Alexander,Alexander_3_JerkOff_Start,2,Alexander,<size=70%><i>cứ tiếp tục đi...</i>
+# --- cum: Alexander_3_Cum ---
+85503a54fcc74839,L09 Alexander,Alexander_3_Cum,1,Alexander,Uunf. Đ-đó là... Khá là mất thể diện.
+afa89c59eece65b9,L09 Alexander,Alexander_3_Cum,2,Alexander,<size=70%><i>nhưng dễ chịu... Cảm ơn.
+# --- outro: Alexander_3_Outro ---
+d96b34ffac75e750,L09 Alexander,Alexander_3_Outro,1,Alexander,Tôi <i>sạch bong</i>.
+6dae153117be9e8a,L09 Alexander,Alexander_3_Outro,2,Kobold,Tôi không bao giờ sót chỗ nào.
+941f66ab23bc1b9b,L09 Alexander,Alexander_3_Outro,4,Alexander,Tôi biết rõ. Được tắm kỹ có cảm giác rất khác!
+4598878b44333749,L09 Alexander,Alexander_3_Outro,5,Alexander,Đó là điều tôi thích nghe.
+7ea92f17440d2fae,L09 Alexander,Alexander_3_Outro,6,Alexander,Tôi sẽ quay lại. Có cậu làm bạn thật tốt.
+7bbef8475c6cdff7,L09 Alexander,Alexander_3_Outro,7,Kobold,Mong sớm gặp lại anh.
+17d54d35bc089567,L09 Alexander,Alexander_3_Outro,8,Kobold,Tôi mừng vì anh thấy thoải mái ở đây.
+
+# ===== Level 10: Ryan (Sunny) | ends PicnicCompleted =====
+# --- intro: Ryan_4_intro ---
+379060351b7eda00,L10 Ryan,Ryan_4_intro,1,Ryan,<b><i><size=130%>Bạn đã gợi ý Ryan cho Conrad chưa?
+8a798890fe938171,L10 Ryan,Ryan_4_intro,2,Kobold,rồi
+9390298f3fb0c5b1,L10 Ryan,Ryan_4_intro,3,Kobold,chưa
+578f5563ae25f1ce,L10 Ryan,Ryan_4_intro,4,Kobold,Ồ... Cậu ngậm gì trong miệng thế?
+c03386d6c9efb92a,L10 Ryan,Ryan_4_intro,5,Kobold,"Này Ryan, cậu có gì đó?"
+d85dcd17cab55fde,L10 Ryan,Ryan_4_intro,6,Ryan,Giỏ dã ngoại...
+b9c2f8ae41c83ebe,L10 Ryan,Ryan_4_intro,7,Ryan,Nói không rõ được.
+696058e475fae76a,L10 Ryan,Ryan_4_intro,8,Ryan,cho mình vào?
+1f843189eaccc2b6,L10 Ryan,Ryan_4_intro,9,Kobold,Ồ! Được. Tớ mở cổng!
+9cc8b0255238b35e,L10 Ryan,Ryan_4_intro,10,Kobold,"Rồi, tớ mở ngay đây."
+1facde273315d636,L10 Ryan,Ryan_4_intro,11,Ryan,Cảm ơnnn!
+# --- picnic: Ryan_egg_dialog | if $food_number ---
+ff7696a47d0cd4ed,L10 Ryan,Ryan_egg_dialog,1,Kobold,ôi trời tớ tưởng quả trứng là đồ trang trí.
+76dddaed85a8d844,L10 Ryan,Ryan_egg_dialog,2,Kobold,Trứng gì thế?
+9fe69182b150b8b1,L10 Ryan,Ryan_egg_dialog,3,Ryan,Hả? dĩ nhiên là không!
+f5d2571561dba2b0,L10 Ryan,Ryan_egg_dialog,4,Ryan,À. Cậu không quen ăn nguyên quả.
+718beb6db0dae659,L10 Ryan,Ryan_egg_dialog,5,Ryan,Ăn thế mới ngon nhất!
+c03f60d1d7bd67e5,L10 Ryan,Ryan_egg_dialog,6,Ryan,Ừm...
+4a7cf2bb1bd01e0b,L10 Ryan,Ryan_egg_dialog,7,Ryan,Màu xanh...?
+640cee0646ecb66c,L10 Ryan,Ryan_egg_dialog,8,Ryan,Mình cũng không rõ. Nó đang giảm giá ở WingCo.
+f887a50c6f7d1edc,L10 Ryan,Ryan_egg_dialog,9,Ryan,Nhưng ngon thật đấy!
+# --- picnic: ryan_food_dialogue ---
+8b555a411ea346ec,L10 Ryan,ryan_food_dialogue,1,Ryan,Vậy... Mình đang nghĩ về chuyện tình cảm của mình.
+03e1d33ec4a7f6e8,L10 Ryan,ryan_food_dialogue,2,Kobold,Sao thế?
+f1676448791feef6,L10 Ryan,ryan_food_dialogue,3,Ryan,"Kiểu, tương lai của chuyện tình cảm."
+9d2e28c9ae2ed8b4,L10 Ryan,ryan_food_dialogue,4,Ryan,Mình còn hơi háo hức nữa.
+91b32d6180935501,L10 Ryan,ryan_food_dialogue,5,Kobold,"Thì, cậu là một món hời mà."
+e5d632fba39e2f0f,L10 Ryan,ryan_food_dialogue,6,Kobold,Tớ mừng cho cậu!
+d228097b23b352e6,L10 Ryan,ryan_food_dialogue,7,Ryan,Ôi cậu này. Làm mình đỏ mặt mất.
+d94d7310f7d31a45,L10 Ryan,ryan_food_dialogue,9,Ryan,Rất mong được gặp những người mới.
+1121175da09c0008,L10 Ryan,ryan_food_dialogue,10,Ryan,"Nào, ăn thêm nhé?"
+6ebac8131d5267ac,L10 Ryan,ryan_food_dialogue,11,Ryan,Hừm...
+d2c7e6789d89f523,L10 Ryan,ryan_food_dialogue,13,Ryan,Mình đang nghĩ.
+67c0ce6aff865e1c,L10 Ryan,ryan_food_dialogue,14,Ryan,Khó mà tìm được người ngoài cái vòng quen của mình.
+d7f23a9907b74860,L10 Ryan,ryan_food_dialogue,15,Ryan,"Kiểu, mình yêu quý những người quanh mình, nhưng có nhiều gánh nặng ở đó."
+99daac47d7b305f6,L10 Ryan,ryan_food_dialogue,16,Ryan,Cậu hiểu chứ?
+1b4b607607b8c988,L10 Ryan,ryan_food_dialogue,17,Kobold,Có lý.
+dfcb7cbdb552d8f5,L10 Ryan,ryan_food_dialogue,18,Kobold,"Tớ hiểu sao cậu thấy vậy sau khi chia tay, ừ."
+f574c59b56179de8,L10 Ryan,ryan_food_dialogue,19,Ryan,"Ừ, từ lúc chia tay mình cứ tìm gì đó mới."
+0febbd04cce87646,L10 Ryan,ryan_food_dialogue,20,Ryan,Có lẽ là ai đó?
+b7fca6004f2d5325,L10 Ryan,ryan_food_dialogue,22,Ryan,Ừ. Sau chuyện như thế khó mà gỡ mấy nhóm bạn ra.
+8da113ef266e587f,L10 Ryan,ryan_food_dialogue,23,Ryan,Mình sẵn sàng làm thế. Nhưng mình muốn gì đó mới.
+baf0df26ea4f2e81,L10 Ryan,ryan_food_dialogue,24,Ryan,Có lẽ là ai đó mới...
+03ccd297eb346729,L10 Ryan,ryan_food_dialogue,25,Ryan,...Về chuyện mình nói lúc nãy.
+1032684d93c794bf,L10 Ryan,ryan_food_dialogue,26,Kobold,Sao?
+ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,27,Ryan,Cậu có biết ai mình có thể nói chuyện không? Kiểu... về chuyện tình cảm ấy?
+0a7119cfe1246546,L10 Ryan,ryan_food_dialogue,28,Kobold,"<gradient=""gold""><b>Tớ biết một con rồng đỏ. Tớ nghĩ cậu sẽ thích anh ấy! </b></gradient><size=70%> (Ghép Ryan với Conrad!)"
+4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,29,Kobold,"<gradient=""gold""><b>Ồ. Ừm. <size=70%> Tớ không ngại... Nếu người đó là tớ. </b></gradient><size=70%> (Chốt tình cảm với Ryan!)"
+bb7a6be711206298,L10 Ryan,ryan_food_dialogue,30,Kobold,"<gradient=""gold""><b>Tớ chưa nghĩ ra ai ngay.</b></gradient><size=70%> (Chốt tình cảm với Conrad!)"
+a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,31,Ryan/Alexander/Kobold,Ồ?
+line:1d491283,L10 Ryan,ryan_food_dialogue,31,Ryan,Hả?
+cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,32,Ryan,Ai vậy?
+ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,Anh ấy là một con rồng đỏ RẤT dễ thương hay đến tiệm tắm!
+4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,34,Kobold,Anh ấy là rồng đỏ. Tớ nghĩ hai người sẽ thích nhau!
+0ea02ee3f0c5673d,L10 Ryan,ryan_food_dialogue,35,Ryan,Ồ! Hình như mình thấy rồi. Con nhỏ nhỏ ấy hả?
+58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,Anh ấy thích gọi là 'hạn chế về chiều cao' hơn... Nhưng đúng.
+3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,Ừ! anh ấy đang muốn gặp người mới.
+474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,Ồ...
+ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,Dễ thương thật.
+c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,"Ồ, tuyệt. Có vẻ tụi mình giống nhau."
+82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,Mình nghĩ mình muốn gặp anh ấy!
+b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,Vậy tớ sẽ giới thiệu hai người.
+80c500f9c426d4cc,L10 Ryan,ryan_food_dialogue,43,Kobold,Tớ háo hức quá. Tớ sẽ giới thiệu hai người!
+ec786c9a7656b0f9,L10 Ryan,ryan_food_dialogue,45,Ryan,"Mình cũng vậy, cảm ơn!"
+line:3b6d644d,L10 Ryan,ryan_food_dialogue,46,Ryan,À.
+028dbc8d077c611f,L10 Ryan,ryan_food_dialogue,47,Ryan,<i>Ồ...
+ae590830c4c03fd1,L10 Ryan,ryan_food_dialogue,48,Ryan,Mình nghĩ mình cũng muốn cậu là người đó.
+b4066b4e58df8005,L10 Ryan,ryan_food_dialogue,49,Kobold,Vậy đây kiểu như... buổi hẹn đầu của tụi mình?
+8c7e5a49ec8fd685,L10 Ryan,ryan_food_dialogue,50,Kobold,Thật lòng thì. Tớ thích cậu được một thời gian rồi.
+710ea0057247cb51,L10 Ryan,ryan_food_dialogue,51,Ryan,Chắc là vậy!
+de4d091acdb6059c,L10 Ryan,ryan_food_dialogue,52,Ryan,"Thật à? Ôi, ngọt ngào quá."
+35e3561cd36f36d6,L10 Ryan,ryan_food_dialogue,53,Ryan,Mình không biết có ai lại có thể thích mình nhiều đến thế dễ dàng vậy.
+f05160456925af3f,L10 Ryan,ryan_food_dialogue,54,Ryan,"Nhân tiện, cậu dễ thương lắm."
+a01d64fcb9d7d3a5,L10 Ryan,ryan_food_dialogue,55,Kobold,Ừ. <size=90%>À... <size=80%>cậu biết đấy. Tớ kiểu... <size=70%>Haha. Ừ. Ừ hử!
+65691ff38c85e57c,L10 Ryan,ryan_food_dialogue,56,Kobold,Cậu cũng vậy!
+d323e565ed8ea749,L10 Ryan,ryan_food_dialogue,57,Ryan,Mình không định làm cậu bối rối đâu!
+145e6a2d848267cb,L10 Ryan,ryan_food_dialogue,58,Ryan,Mình chỉ... Hạnh phúc.
+0cc014df7d89d3e1,L10 Ryan,ryan_food_dialogue,59,Ryan,"Ôi, cảm ơn. Mình đẹp thế này là nhờ cậu tắm cho đấy!"
+eea7bdf3ab3f251c,L10 Ryan,ryan_food_dialogue,60,Ryan,Mình... Hạnh phúc.
+d619413abc4a1de1,L10 Ryan,ryan_food_dialogue,61,Ryan,Không sao!
+c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,Còn cậu thì sao? có đang hẹn hò ai không?
+2374bdd10aea40ba,L10 Ryan,ryan_food_dialogue,63,Kobold,"Có một con rồng đỏ, Conrad. Anh ấy... Nóng tính, nhưng dễ thương."
+58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,"Ừ! Conrad, anh ấy đáng yêu lắm. Dù anh ấy sẽ ghét việc tớ nói thế."
+3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"Ồ hả, là con rồng nhỏ mình thấy đi vào lúc nãy đúng không?"
+882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,Này! Anh ấy chỉ... 'hạn chế về chiều cao' thôi.
+1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,Ừ! chính là anh ấy.
+eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"Ồ, xin lỗi."
+dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,Có vẻ dễ thương!
+94ff2c4b836f0aef,L10 Ryan,ryan_food_dialogue,70,Ryan,"Tuyệt quá, anh ấy dễ thương!"
+abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,"Này ừm, cảm ơn lần nữa nhé."
+9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,Không có gì! Nóng lòng chờ cậu gặp Conrad.
+e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,"Không, phải cảm ơn cậu chứ. Tớ... Háo hức lắm."
+1f50e1361eaeacbf,L10 Ryan,ryan_food_dialogue,74,Kobold,Dĩ nhiên! Cảm ơn vì đồ ăn.
+489184ee3c2573f9,L10 Ryan,ryan_food_dialogue,75,Ryan,"Hah, ừ. Nghe vui đấy."
+28f3547a6af39629,L10 Ryan,ryan_food_dialogue,76,Ryan,"Mình sẽ kể cậu nghe mọi chuyện thế nào, nhé?"
+fcd75c87b326482c,L10 Ryan,ryan_food_dialogue,77,Kobold,Tớ háo hức muốn nghe!
+a66a9f98f63d5aaf,L10 Ryan,ryan_food_dialogue,78,Kobold,Ừ. Hai người sẽ dễ thương lắm.
+39619dc71b15dfde,L10 Ryan,ryan_food_dialogue,79,Ryan,Hôm nay thật vui...
+b2d03d0e5222d95c,L10 Ryan,ryan_food_dialogue,80,Ryan,Sớm gặp lại nhé?
+17c800776b082018,L10 Ryan,ryan_food_dialogue,81,Kobold,Mong là vậy! Tớ đi mở cổng.
+56372773e401e131,L10 Ryan,ryan_food_dialogue,82,Kobold,Ừ! Cảm ơn vì đồ ăn. Tớ đi mở cổng.
+97cffb9a377004b2,L10 Ryan,ryan_food_dialogue,83,Ryan,Ừ... Mình chưa bao giờ hẹn hò với kobold.
+50ce0561192b6b01,L10 Ryan,ryan_food_dialogue,84,Ryan,Nhưng mình đã biết là mình thích chuyện này lắm.
+e823adcc22fd50c2,L10 Ryan,ryan_food_dialogue,85,Kobold,Tớ thích cậu lắm.
+62e851c911a254bb,L10 Ryan,ryan_food_dialogue,86,Kobold,"Ừ, hôm nay tuyệt thật."
+773c0ce37ffbb546,L10 Ryan,ryan_food_dialogue,87,Ryan,Hê. Ừ. Mình cũng thích cậu.
+1c6058ce1c7242cf,L10 Ryan,ryan_food_dialogue,88,Ryan,Đúng là vậy. Cậu tuyệt vời.
+32e4e8851f8ac398,L10 Ryan,ryan_food_dialogue,89,Ryan,Cảm ơn đã chia sẻ đồ ăn với mình...
+0a94f0c3b65c425c,L10 Ryan,ryan_food_dialogue,90,Ryan,Mình mong được gặp lại cậu
+8c39f31ac476e20e,L10 Ryan,ryan_food_dialogue,91,Kobold,Tớ luôn mong gặp cậu. Tớ đi mở cổng.
+db8848bda5df285f,L10 Ryan,ryan_food_dialogue,92,Kobold,Cậu cũng vậy nhé! Tớ đi mở cổng.
+f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,Được! Sớm gặp lại.
+d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,"Vậy anh Conrad này, có vẻ cậu thích anh ấy?"
+6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,Hehe ừ.
+c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,Anh ấy hơi nhiều. Nhưng tớ thích.
+6525ecb4cd0f0eea,L10 Ryan,ryan_food_dialogue,97,Ryan,Dễ thương thật!
+6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,Cậu thích điều gì nhất ở anh ấy?
+a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,Anh ấy kiểu. SIÊU bự.
+dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"Anh ấy cộc cằn, nhưng cũng dịu dàng!"
+3c29c25f0a23d26a,L10 Ryan,ryan_food_dialogue,101,Kobold,"Anh ấy nhỏ, tớ thích được ngang tầm mắt với anh ấy."
+0911d52bc2d9f70b,L10 Ryan,ryan_food_dialogue,102,Kobold,Tớ thích... anh ấy.
+4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,"Ồ... Ừ, rồng nhỏ thường... Bù đắp."
+7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,"Mmm, ừ mình biết kiểu đó."
+d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,Có lý! Ừ rồng nhỏ vui lắm.
+97a18e09f3f990c5,L10 Ryan,ryan_food_dialogue,106,Ryan,Ôi... Ngọt ngào thật
+fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,Cậu phải kể mình nghe hai người ra sao nhé!
+37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,Cảm ơn đã chia sẻ đồ ăn với mình. Cậu là người bạn tuyệt vời.
+120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,Cảm ơn vì đồ ăn! Tớ đi mở cổng.
+94ddf87d22b36d07,L10 Ryan,ryan_food_dialogue,110,Kobold,"Cậu cũng là bạn tốt, tớ đi mở cổng."
+02ca8c073be8669d,L10 Ryan,ryan_food_dialogue,111,Ryan,"Được, hẹn gặp lại!"
+# --- picnic: Ryan_grab_basket ---
+3276ca6f923e3a2e,L10 Ryan,Ryan_grab_basket,1,Ryan,Bleh. Cảm ơn đã lấy giúp.
+1790d1bc285d158f,L10 Ryan,Ryan_grab_basket,2,Kobold,Cậu mang đồ ăn vào à?
+fab7cff668586c9b,L10 Ryan,Ryan_grab_basket,3,Kobold,Ryan! dễ thương quá.
+3f519f6990d85e4d,L10 Ryan,Ryan_grab_basket,4,Ryan,Ừ! Có đồ ăn hợp với cả hai chúng ta.
+38953523aa1d8dc9,L10 Ryan,Ryan_grab_basket,5,Ryan,"Hehe, cảm ơn. Có món hợp với cả hai chúng ta."
+f44e62ce0d92a9c3,L10 Ryan,Ryan_grab_basket,6,Ryan,Dù khẩu phần có thể hơi... cỡ rồng.
+dbe7ccbf37aed06a,L10 Ryan,Ryan_grab_basket,7,Kobold,Sao cậu mang hết vào đây?
+96082d9f598cc1db,L10 Ryan,Ryan_grab_basket,8,Kobold,Cậu có cần tắm không đấy?
+5be9d07e2e19a321,L10 Ryan,Ryan_grab_basket,9,Ryan,Cho cậu!
+eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> Và cho mình.
+5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,"Không, chắc là không."
+dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,Mình chỉ đến mang đồ ăn cho cậu thôi!
+7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,Nghĩ là nên mang gì đó ngon sau tất cả những gì cậu đã làm.
+414c0f3bb81740f3,L10 Ryan,Ryan_grab_basket,14,Ryan,Mong là được chứ?
+097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,Dĩ nhiên rồi!
+460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,"Tuyệt, mình mừng."
+6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,Vậy chắc là được rồi! Mình mừng.
+fe3e5d4e4925ddb6,L10 Ryan,Ryan_grab_basket,19,Ryan,Nào... Ăn chứ?
+# --- picnic: Ryan_grapes_dialog | if $food_number ---
+46ca5d912bed1dcc,L10 Ryan,Ryan_grapes_dialog,1,Kobold,Chùm nho đó trông ngon thật.
+33f099ac348159d4,L10 Ryan,Ryan_grapes_dialog,2,Kobold,"Ryan, không ăn cuống đâu..."
+174343e1e975e68b,L10 Ryan,Ryan_grapes_dialog,3,Ryan,Ngon thật! Nhưng cuống là phần mình thích nhất.
+976fdc62e4cbffcf,L10 Ryan,Ryan_grapes_dialog,4,Kobold,Đó chẳng phải... Gỗ sao?
+8e4f1f66ab3b3860,L10 Ryan,Ryan_grapes_dialog,5,Kobold,Chưa thử bao giờ.
+d053df82397c2f86,L10 Ryan,Ryan_grapes_dialog,6,Ryan,"Ừ, ngon lắm!"
+c994875a9f5c8520,L10 Ryan,Ryan_grapes_dialog,7,Ryan,Nhưng chắc cậu không nên ăn.
+025e9c74601a1a65,L10 Ryan,Ryan_grapes_dialog,8,Ryan,Dạ dày rồng hơi... khỏe hơn của cậu.
+b689b40a79b968df,L10 Ryan,Ryan_grapes_dialog,9,Ryan,Cậu không nên đâu.
+8d834797bd163119,L10 Ryan,Ryan_grapes_dialog,10,Ryan,Cậu cần có dạ dày rồng trước đã!
+27935fd7477eba77,L10 Ryan,Ryan_grapes_dialog,11,Ryan,Ai bảo?
+0b71d27200d13a33,L10 Ryan,Ryan_grapes_dialog,12,Kobold,Tớ?
+47252f2c75dea9ef,L10 Ryan,Ryan_grapes_dialog,13,Kobold,Sinh học...? <size=70%> <i>Chắc vậy?
+5af35db6f8fe39ad,L10 Ryan,Ryan_grapes_dialog,14,Ryan,Thì...
+79436a008466d243,L10 Ryan,Ryan_grapes_dialog,15,Ryan,Mình là kẻ phá luật!
+49e7a64aec55ff2a,L10 Ryan,Ryan_grapes_dialog,16,Ryan,"Đừng lo, rồng sinh ra để ăn mọi thứ."
+5f82b968ccbb4aaa,L10 Ryan,Ryan_grapes_dialog,17,Ryan,Mình tiêu hóa được gần như mọi thứ.
+f9a3f85545840310,L10 Ryan,Ryan_grapes_dialog,18,Ryan,Cuống chỉ là đồ ăn thêm thôi.
+53494acb38981cff,L10 Ryan,Ryan_grapes_dialog,19,Ryan,Dù nho lúc nào cũng thỏa được một cơn thèm nhất định.
+77e53d1b1d33b9f0,L10 Ryan,Ryan_grapes_dialog,20,Ryan,"À, hình như dính lên mặt rồi. úi."
+# --- picnic: Ryan_ham_dialog | if $food_number ---
+cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,RYAN CÁI XƯƠNG!
+523a9690a00a7803,L10 Ryan,Ryan_ham_dialog,2,Kobold,Cậu ăn hết nguyên cái thật... Ồ.
+618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,Mmph... Hử?
+5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,"Ồ, đó là phần mình thích nhất!"
+7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,Cậu tiêu hóa kiểu gì vậy?
+846f850b875979d4,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> nóng bỏng thật.
+f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,Mình là rồng mà.
+b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,Chắc chắn mình tiêu hóa được mọi thứ.
+a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,Thế à? Biết vậy cũng tốt...
+db22d9512845d515,L10 Ryan,Ryan_ham_dialog,10,Ryan,Đó là cách ngon nhất để thưởng thức đồ ăn.
+a5af381d1ec66e2a,L10 Ryan,Ryan_ham_dialog,11,Ryan,Thú vị thật; các cậu hai chân hay nhấm nháp bữa ăn.
+180983e0a4f4e327,L10 Ryan,Ryan_ham_dialog,12,Ryan,Nhưng không gì bằng một cú nuốt to!
+# --- picnic: Ryan_melon_dialog | if $food_number ---
+e1d0d09daa3129d9,L10 Ryan,Ryan_melon_dialog,1,Ryan,Quả đó suýt thì quá to...
+8725851a4492f86f,L10 Ryan,Ryan_melon_dialog,2,Kobold,Cậu còn chưa bổ quả dưa hấu.
+991947f3461b26a7,L10 Ryan,Ryan_melon_dialog,3,Kobold,Vị thế nào?
+7d20121dc2fa0757,L10 Ryan,Ryan_melon_dialog,4,Ryan,Ừừừ.
+41f87d2c55073e29,L10 Ryan,Ryan_melon_dialog,5,Ryan,Úi.
+4fafd5a0c9f29d5f,L10 Ryan,Ryan_melon_dialog,6,Ryan,Vẫn ngon mà! Mình thích cảm giác nó trôi xuống.
+dc8488830f9d7192,L10 Ryan,Ryan_melon_dialog,7,Ryan,Mình quên cắn nên... Không vị?
+7dedd07a7558afa9,L10 Ryan,Ryan_melon_dialog,8,Ryan,Nhưng trôi xuống đã lắm!
+8b4a775ae776722a,L10 Ryan,Ryan_melon_dialog,9,Kobold,<size=70%> ồ.
+ef03f59f06da8fa4,L10 Ryan,Ryan_melon_dialog,10,Kobold,"Kinh thật, cổ cậu chịu được nhiều thế."
+4fc09f2d61d5cc43,L10 Ryan,Ryan_melon_dialog,11,Ryan,Kobold hình như lúc nào cũng mê xem mình ăn.
+032ea150ccdf88be,L10 Ryan,Ryan_melon_dialog,12,Ryan,Đáng yêu lắm!
+aad3715a2f685dc3,L10 Ryan,Ryan_melon_dialog,13,Ryan,Nó sinh ra để nuốt nguyên đồ.
+b0a73a78b7d9045b,L10 Ryan,Ryan_melon_dialog,14,Kobold,<size=70%><i>Thế à?
+30ff5a696a0def56,L10 Ryan,Ryan_melon_dialog,16,Ryan,Ừ hử!
+901c77872c53d308,L10 Ryan,Ryan_melon_dialog,18,Ryan,Ừ! tiện lắm.
+# --- jerkoff: Ryan_4_JerkOff_Start ---
+2d434662c42f6a6c,L10 Ryan,Ryan_4_JerkOff_Start,1,Ryan,Cậu chắc chứ...? Ngay trước đồ ăn?
+031703a96ac0df8c,L10 Ryan,Ryan_4_JerkOff_Start,2,Ryan,Hê... được thôi.
+# --- cum: Ryan_4_Cum ---
+3b1c48772bd5889e,L10 Ryan,Ryan_4_Cum,1,Ryan,Phù... Sướng thật... Nhưng hơi bừa một chút.
+# --- mount_start: Ryan_4_Mount_Start ---
+2f31dcbcaa980550,L10 Ryan,Ryan_4_Mount_Start,1,Ryan,Ồ... Cậu muốn mình dùng cái đó? Ngay cả khi có đồ ăn? Được thôi!
+# --- mount_finish: Ryan_4_Mount_Finish ---
+833d21b8cd952764,L10 Ryan,Ryan_4_Mount_Finish,1,Ryan,Hơi bừa một chút... Vẫn đáng.
+
+# ===== Level 11: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_4 ---
+a67959dc39353129,L11 Conrad,Conrad_Intro_4,1,Conrad/Ryan/Alexander,Có gì đó sai với các cờ!
+c1a949184675fa92,L11 Conrad,Conrad_Intro_4,2,Conrad/Ryan/Alexander,Hãy giúp các nhà phát triển nhé..
+60f8f02dd7a80d00,L11 Conrad,Conrad_Intro_4,3,Kobold,conrad đã hẹn hò với ryan
+6e98155abad655c3,L11 Conrad,Conrad_Intro_4,4,Kobold,người chơi đã hẹn hò với conrad
+9cf9d4fc71363f68,L11 Conrad,Conrad_Intro_4,5,Kobold,người chơi đã hẹn hò với ryan
+67beed0c39e205b4,L11 Conrad,Conrad_Intro_4,6,Kobold,Chào Conrad!
+d22e2236304b2ef0,L11 Conrad,Conrad_Intro_4,7,Kobold,Sao trông anh vui thế?
+6183e901a5a22ddc,L11 Conrad,Conrad_Intro_4,8,Kobold,Chào conrad!
+3c0eb60cca3b1422,L11 Conrad,Conrad_Intro_4,9,Conrad,Ê kobold bự.
+ad13467d89f77645,L11 Conrad,Conrad_Intro_4,10,Conrad,Cậu có làm cái ờ...
+25aab860a8266c4c,L11 Conrad,Conrad_Intro_4,11,Conrad,Vảy hôm nay khác à? <size=70%><i>có chuyện đó không nhỉ...? </i><size=100%>Hôm nay trông cậu ổn đấy.
+42e1b9a73c953f33,L11 Conrad,Conrad_Intro_4,12,Kobold,Cảm ơn! Mấy thứ... Nhớp nháp này là gì vậy?
+be118711068118d5,L11 Conrad,Conrad_Intro_4,13,Kobold,"Hah. Conrad, anh cũng trông ổn."
+a4008861bf24c47d,L11 Conrad,Conrad_Intro_4,14,Kobold,Không có chuyện đó đâu... Nhưng cảm ơn!
+a951e05bf8506af1,L11 Conrad,Conrad_Intro_4,15,Conrad,Quả mọng.
+765af85f1bd7eafe,L11 Conrad,Conrad_Intro_4,17,Conrad,"Mà thôi,"
+199e91c738a75b4c,L11 Conrad,Conrad_Intro_4,18,Conrad,Còn phải nói!
+926069483fd35835,L11 Conrad,Conrad_Intro_4,19,Conrad,Haha... Ừ. Tôi không quen khen người khác lắm.
+8c9dc9229a7630ce,L11 Conrad,Conrad_Intro_4,20,Conrad,Tôi chỉ cần tắm nhanh... Có lẽ dùng cái bệ cũng hay.
+3ee865676f6e4c99,L11 Conrad,Conrad_Intro_4,21,Kobold/Ryan,Ồ thế à?
+5fae46a5c8669c29,L11 Conrad,Conrad_Intro_4,22,Kobold,Được! Tôi đi mở cổng.
+daa08f627cbbfb9e,L11 Conrad,Conrad_Intro_4,23,Conrad,Ừ... Nhưng chỉ khi cậu muốn thôi!
+20ee725c28fb397e,L11 Conrad,Conrad_Intro_4,24,Conrad,Tôi đang cố không ép buộc.
+374fe9cc22a15007,L11 Conrad,Conrad_Intro_4,25,Kobold,"Ôi, tôi đi mở cổng cho anh."
+line:34ec4db7,L11 Conrad,Conrad_Intro_4,26,Conrad,Cảm ơn nhé.
+line:188d4359,L11 Conrad,Conrad_Intro_4,27,Conrad,Cảm ơn nhé.
+ae53715099e0d53d,L11 Conrad,Conrad_Intro_4,28,Conrad,Ryan! Tôi gặp cậu ấy rồi.
+caefb85b87a51126,L11 Conrad,Conrad_Intro_4,29,Kobold,Hay! Mấy thứ... Nhớp nháp này là gì vậy?
+0452c0f1847f4a72,L11 Conrad,Conrad_Intro_4,30,Kobold,Thế nào rồi?
+940b2bb279fbfd8a,L11 Conrad,Conrad_Intro_4,33,Conrad,Cảm ơn đã giới thiệu tôi với Ryan.
+6c42e3202026a3e8,L11 Conrad,Conrad_Intro_4,34,Conrad,Thật lòng thì rất tốt.
+91b34251e9ff7711,L11 Conrad,Conrad_Intro_4,35,Conrad,Tôi chưa từng nghĩ người như cậu ấy lại hợp gu mình...
+abc0fe0ceed24339,L11 Conrad,Conrad_Intro_4,36,Kobold,Anh phải kể tôi nghe hết đấy.
+ab20df82132f07cc,L11 Conrad,Conrad_Intro_4,37,Conrad,"Tôi sẽ kể. Tôi chỉ cần tắm nhanh, và hôm nay không ngại dùng cái bệ."
+17c5f180de5a8348,L11 Conrad,Conrad_Intro_4,38,Conrad,"Phải <i>luyện tập</i> cho Ryan, nếu cậu hiểu ý tôi."
+9912569ea696f8ed,L11 Conrad,Conrad_Intro_4,39,Kobold,Conrad!
+106f99c061d35f26,L11 Conrad,Conrad_Intro_4,40,Kobold,Được rồi... được rồi. Tôi đi mở cổng.
+f71200a57e2d1d7a,L11 Conrad,Conrad_Intro_4,41,Conrad,Saooo? Khởi động kỹ là tốt mà!
+line:3484ab9d,L11 Conrad,Conrad_Intro_4,42,Conrad,Cảm ơn!
+65bee50d904e101d,L11 Conrad,Conrad_Intro_4,43,Conrad,Ê ê. Mừng là cậu mở cửa.
+4d5dda82efc31458,L11 Conrad,Conrad_Intro_4,44,Conrad,Muốn được xịt nước một trận. Dùng cái bệ nữa cũng không ngại.
+0ecdd0ec4c0cf66c,L11 Conrad,Conrad_Intro_4,45,Kobold,"Ooo, được thôi."
+3252727dec6314c5,L11 Conrad,Conrad_Intro_4,47,Kobold,Mấy thứ... Nhớp nháp này là gì vậy?
+91bc8d1d6dc8cdb7,L11 Conrad,Conrad_Intro_4,48,Conrad,Hê. Ừ.
+line:bc5d790a,L11 Conrad,Conrad_Intro_4,50,Conrad,Cảm ơn!
+line:4d868f2f,L11 Conrad,Conrad_Intro_4,51,Conrad,Cảm ơn!
+1aced2f074444bdc,L11 Conrad,Conrad_Intro_4,54,Kobold,Ồ. Được tôi đi mở cổng.
+# --- progress: Conrad_required_4 ---
+a5965f548b64e3cf,L11 Conrad,Conrad_required_4,1,Conrad,"Này, tôi có câu hỏi cho cậu."
+9ad0664c4ac1572a,L11 Conrad,Conrad_required_4,2,Kobold,Ồ thế à?
+d448809fdbbeaf11,L11 Conrad,Conrad_required_4,4,Kobold,Ồ thếếế à?
+51dbc8c7be16145b,L11 Conrad,Conrad_required_4,5,Kobold,"Sao thế, anh bạn to xác?"
+# --- progress: Conrad_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+e6071cb4e7c448c8,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,1,Conrad,"Với Ryan, tôi khá chắc tối nay bọn tôi sẽ hẹn hò."
+9ee7e6a6ebccf907,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,2,Conrad,Cậu có lời khuyên nào không?
+f7af2bd25c827e3d,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,3,Kobold,Hãy là chính mình!
+a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,Nhớ tắm thật sạch nhé. <size=70%><i>hehe.
+528e2755301df89e,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,5,Conrad,Tôi đang cố hết sức.
+71cfcccd17dc37fc,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,6,Conrad,"Đến giờ vẫn ổn, đúng không?"
+93a2ca86985333fe,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,7,Kobold,Tôi nghĩ vậy!
+55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Nếu người như Ryan mà quan tâm, thì anh đang làm rất tốt."
+line:c642cb17,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,Cảm ơn nhé.
+162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,Hah. Giá mà có kobold nào tắm cho tôi được.
+4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Giá mà.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,Tôi sẽ làm anh <i>sạch bong.
+7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Nói đùa thôi, tiệm tắm của cậu chắc chắn là nhất."
+207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,Cảm ơn. Trông đẹp thì thấy vui!
+# --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+a8ee5e15400fc208,L11 Conrad,Conrad_4_Conrad_Romanced,1,Conrad,Vậy... Hẹn hò. Tôi nghĩ tôi muốn đi sớm thôi!
+f2f6817fb49621c2,L11 Conrad,Conrad_4_Conrad_Romanced,3,Kobold,Tôi rất muốn!
+82ddb728ff9d18a9,L11 Conrad,Conrad_4_Conrad_Romanced,4,Conrad,Tôi đang nghĩ. Tuần sau mình đi chơi lúc nào đó nhé?
+fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,Nghe hay đấy.
+9a03666243082379,L11 Conrad,Conrad_4_Conrad_Romanced,6,Kobold,Tôi không ngại!
+67f68a72462bca9b,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad/Ryan,Tuyệt!
+line:70306ba1,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad,Được lắm!
+45ec6449f36fb5b9,L11 Conrad,Conrad_4_Conrad_Romanced,8,Conrad,Lần tới tôi đến tắm thì mình đi.
+ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,Tôi thích thế!
+38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,10,Kobold,Chốt vậy nhé.
+de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,11,Conrad/Kobold/Alexander,Tôi háo hức lắm.
+# --- progress: Conrad_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+8dc7f14f91542fe7,L11 Conrad,Conrad_Ryan_Romanced,1,Conrad,Vậy cậu và Ryan hả?
+498cb71ee3e20098,L11 Conrad,Conrad_Ryan_Romanced,2,Kobold,"Ồ, phải!"
+37d827f8025ee687,L11 Conrad,Conrad_Ryan_Romanced,3,Kobold,Cậu ấy hấp dẫn lắm.
+64db0ca49ca9563d,L11 Conrad,Conrad_Ryan_Romanced,4,Kobold,Cậu ấy là con rồng trong mơ của tôi.
+bdfc096fee84c4fb,L11 Conrad,Conrad_Ryan_Romanced,5,Conrad,Tôi mừng cho cậu!
+cb24c38318e64595,L11 Conrad,Conrad_Ryan_Romanced,6,Conrad,Nghe có vẻ thế.
+0e5b54a94da4725b,L11 Conrad,Conrad_Ryan_Romanced,8,Kobold,Còn anh? Có ai thú vị không?
+5f9173229e51d947,L11 Conrad,Conrad_Ryan_Romanced,9,Kobold,Ừ tôi cũng vui.
+68fa6f383249196c,L11 Conrad,Conrad_Ryan_Romanced,10,Conrad,Cũng có! Dạo này tôi ra ngoài nhiều hơn.
+e589607da4e2983d,L11 Conrad,Conrad_Ryan_Romanced,11,Conrad,Gặp một con sư vương ưng. Cỡ tôi...
+d69f5ee422fdf377,L11 Conrad,Conrad_Ryan_Romanced,12,Conrad,Tôi nghĩ cậu ta thích tôi.
+9aab87987aca7783,L11 Conrad,Conrad_Ryan_Romanced,13,Conrad,...<i><size=70%>ít nhất thì tôi thích cậu ta.
+7b42e92a68e914e0,L11 Conrad,Conrad_Ryan_Romanced,14,Conrad,Nghe vậy tốt quá.
+88b86bef7b86a770,L11 Conrad,Conrad_Ryan_Romanced,15,Conrad,Ừ cậu ta có vẻ biết chọc đúng chỗ.
+# --- jerkoff: Conrad_4_JerkOff_Start ---
+395b9d676b6c01c5,L11 Conrad,Conrad_4_JerkOff_Start,1,Conrad,"Ồ... Ngay bây giờ à? Được, tôi chơi."
+# --- cum: Conrad_4_Cum ---
+cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,Nnnf... Sướng hơn mấy quả mọng đó nhiều.
+# --- mount_start: Conrad_4_Mount_Start ---
+9c4eeb4a7cc4c1e1,L11 Conrad,Conrad_4_Mount_Start,1,Conrad,Ê! Cái bệ! Đã quá.
+# --- mount_finish: Conrad_4_Mount_Finish ---
+307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,Haah. Đây là tiệm tắm đỉnh nhất.
+# --- outro: Conrad_Outro_4 ---
+4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,Anh sạch hết rồi đấy!
+4a93a020168bbd0d,L11 Conrad,Conrad_Outro_4,2,Kobold,Chắc là xong rồi.
+2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,Sạch thế này trông anh ổn lắm!
+d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,<i>Tôi thích xịt nước vào anh.
+feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,Rồi đó! Chắc là xong.
+e2956ac74f8acb8e,L11 Conrad,Conrad_Outro_4,6,Kobold,Chắc là đủ mọi chỗ rồi.
+# --- outro: Conrad_Outro_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+0fa2abeece5fd3de,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,1,Conrad,Ừ! Thấy sạch rồi.
+1b5f2f27de868c08,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,2,Conrad,"Này ờ, cậu nghĩ tôi với Ryan <i>thật sự</i> sẽ thành không?"
+ebc110388e3748fa,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Kobold/Alexander,Dĩ nhiên!
+5bc10e8175dc9422,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,4,Kobold,Tôi mong vậy.
+3da3a77980cb9eb9,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,5,Conrad,Mong là cậu đúng.
+43e42fb816f1d2c2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,6,Conrad,"Ừ, tôi cũng vậy. Cậu ấy tốt thật."
+603a3749013e876b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,7,Conrad,Khó mà không hồi hộp sau mọi chuyện...
+189f4f64972cc1fe,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,8,Conrad,"Nhưng tôi ngầu mà, nên sẽ ổn thôi."
+40b8366766a655d6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,9,Conrad,Mong là vậy.
+dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,Buổi gặp đầu của bọn tôi tuyệt lắm!
+0a47996c4c389f39,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,11,Kobold,Thế à? kể tôi nghe đi!
+589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,Tuyệt! buổi hẹn đầu là khi nào?
+56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,"Cậu ấy gọi tôi, bọn tôi gặp nhau. Cậu ấy tốt kinh khủng."
+080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,"Cậu ấy bảo tôi dễ chịu, bọn tôi lên kế hoạch hẹn hò..."
+d98ca4f1aac91861,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,Và đó là lý do tôi ở đây! Tắm xong là đi gặp cậu ấy.
+35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,Ngay sau lần tắm này!
+d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,Bọn tôi sẽ đến một quán hải sản...
+5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,Tôi đã đặt chỗ ở câu lạc bộ rồi.
+6ffd2844813c419e,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,19,Kobold,Vậy tôi phải thả anh ra thôi!
+d547385bcae74ca2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,20,Kobold,Tôi mừng cho anh. Tôi mở cổng đây!
+9458fe24a9152c2b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,21,Conrad,Hah... Ừ tôi háo hức lắm.
+83a4b4bd32149db8,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,22,Conrad,"Cảm ơn, tôi cũng háo hức."
+# --- outro: Conrad_Outro_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ad0500f8d2500c0f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,1,Conrad,Sạch bong như mọi khi.
+297d60c9e5c25580,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,2,Conrad,"À, tôi nghĩ ra chỗ đi rồi."
+f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,Có một câu lạc bộ ở trung tâm. 'Wings'. Chỗ ruột của tôi từ lâu.
+5dcbc1f451fcc29d,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,6,Conrad,Tôi cũng có tiếng ở đó.
+99c9d7ee0966d8d1,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,7,Conrad,Tôi có thể lấy cho mình chỗ <i>đẹp nhất</i> xem show của họ.
+02f6a5560835daa6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,8,Kobold,"Hah, được. Tôi chơi."
+7137eb7d65d8f4d8,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,9,Kobold,Ooooh vậy chắc anh oách lắm.
+60c5caff4aee58e9,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,10,Conrad,"Mẹ nó, tôi phấn khích quá."
+d37d98f486ba54c5,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,11,Conrad,Tôi sẽ bắt đầu chuẩn bị.
+bf3d9317290e56b0,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,12,Conrad,Lần tới đến là tôi có chỗ đặt rồi!
+f11ccc8c0bd5ecbc,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,13,Conrad,Cậu mở cổng được không?
+ffcc816df16993e6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,14,Conrad,Còn phải nói.
+c25790cd739260fd,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,16,Conrad,Cậu mới là người oách
+b18d301dab41755f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,17,Conrad,Xin lỗi tôi tán tỉnh dở lắm. Cậu mở cổng được không?
+# --- outro: Conrad_Outro_4_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+6fe24a5cf11acb37,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,1,Conrad,Ừ! sạch như mọi khi.
+8f0378325ead68c7,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,2,Conrad,Cậu có kế hoạch gì với ryan không?
+a12011af4e943fb2,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,3,Kobold,Chưa chắc.
+c3393181a97b4208,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,4,Kobold,Tôi đang nghĩ đến một buổi hẹn sớm.
+5ef95c64f52e6263,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,5,Conrad,Cũng phải. Hai người trông dễ thương với nhau đấy.
+6d8a46a5e1da81ef,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,6,Conrad,Tôi thật lòng mong mọi chuyện suôn sẻ!
+1884386d93b6fccd,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,7,Conrad,Ừ! Thế thì tuyệt lắm.
+c5cace2191af6925,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,8,Conrad,Hai người thật sự dễ thương khi ở cạnh nhau...
+9e806b93dd0d48fe,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,9,Conrad,Mong mọi chuyện suôn sẻ.
+83a8afa550485db4,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,10,Conrad,"Chắc thế là hết rồi, cậu mở cổng được không?"
+
+# ===== Level 12: Alexander (Rainy) =====
+# --- intro: Alexander_4_intro ---
+0248808ddaa3479e,L12 Alexander,Alexander_4_intro,1,Alexander,Chào buổi tối!
+d3d306a15d158e29,L12 Alexander,Alexander_4_intro,2,Kobold,Chàooo! Chàoo!
+68094c643e49d3c6,L12 Alexander,Alexander_4_intro,3,Kobold,"Chào, Alexander!"
+e8c921ab9051f110,L12 Alexander,Alexander_4_intro,4,Alexander,"Hah, hào hứng như mọi khi."
+3b767556f3eeaa3b,L12 Alexander,Alexander_4_intro,5,Alexander,Thật tuyệt khi quay lại!
+96ed1471d1f86a4d,L12 Alexander,Alexander_4_intro,6,Alexander,Hôm nay mưa không ngớt!
+429d93ef0fafbe8a,L12 Alexander,Alexander_4_intro,7,Alexander,Không khí dễ chịu.
+a9945cd0cd165325,L12 Alexander,Alexander_4_intro,8,Kobold,Mưa dễ chịu.
+7259414f82b0b97a,L12 Alexander,Alexander_4_intro,9,Kobold,Tôi luôn ghét mưa.
+bfad19e22f9652cc,L12 Alexander,Alexander_4_intro,10,Alexander,"Đồng ý, dù tôi vẫn muốn được cho vào sớm nhất có thể."
+91a5c27ef059ab24,L12 Alexander,Alexander_4_intro,12,Alexander,Tôi hiểu vì sao cậu không thích sự bẩn thỉu nó gây ra.
+882df59f0a75b295,L12 Alexander,Alexander_4_intro,13,Alexander,Nhưng đó là lý do tôi ở đây!
+990e43e4f2687cdf,L12 Alexander,Alexander_4_intro,14,Kobold,Được! Tôi đi mở cổng cho anh.
+846b613e707ce00d,L12 Alexander,Alexander_4_intro,15,Kobold,Yip! <size=70%>(Cổng)
+1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,17,Alexander,"Mmm, tôi hiểu là cậu sẽ mở cổng?"
+56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,18,Kobold,Yip! <size=70%>(Vâng)
+fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,19,Alexander,Tôi không rõ sao đột nhiên tôi hiểu 'Yip' của cậu
+7a919cef111fe275,L12 Alexander,Alexander_4_intro,20,Kobold,Yip! <size=70%>(Là vì phần ngủ yên trong tâm trí rồng của anh đang nhớ lại cây cầu ngôn ngữ sâu thẳm giữa loài anh và loài tôi. Nó mang ý nghĩa và ý định sâu xa của tiếng 'Yip' kobold. Việc anh đột nhiên hiểu được chỉ là do mối liên kết của chúng ta lớn dần theo thời gian và đánh thức phần đó trong tâm trí anh.)
+6d8c462224bca1b5,L12 Alexander,Alexander_4_intro,21,Kobold,Yip! <size=70%>(không biết)
+8e7ead434fce5609,L12 Alexander,Alexander_4_intro,24,Alexander,Cậu mở cổng được không...?
+19be549c91d82ff3,L12 Alexander,Alexander_4_intro,25,Alexander,Cũng phải. Tôi sẽ đợi!
+# --- progress: Alexander_4_required ---
+c19ca0647cc1a583,L12 Alexander,Alexander_4_required,1,Alexander,Tôi đã nghĩ...
+6d9630067757f781,L12 Alexander,Alexander_4_required,2,Alexander,Tôi không thể không để ý... cái thiết bị đằng kia.
+7bd6925025a24288,L12 Alexander,Alexander_4_required,3,Alexander,"Đó là cái bệ, phải không?"
+54b9fbcd575cd0a7,L12 Alexander,Alexander_4_required,4,Kobold,Đúng vậy!
+1f5aad5cbae1a020,L12 Alexander,Alexander_4_required,5,Kobold,Anh muốn dùng không?
+36a85b3430aa6639,L12 Alexander,Alexander_4_required,6,Alexander,Tôi... đang tự hỏi...
+d2b8ae469c604bfb,L12 Alexander,Alexander_4_required,7,Alexander,Liệu tôi có thể ừm...
+577e4edfcd4fa53d,L12 Alexander,Alexander_4_required,8,Alexander,Có lẽ kiểu...
+4caa8162834de434,L12 Alexander,Alexander_4_required,9,Alexander,Chỉ là có thể...
+d89de41838a75fa0,L12 Alexander,Alexander_4_required,10,Kobold,Nếu anh muốn dùng thì cứ tự nhiên!
+68ad27123e1df879,L12 Alexander,Alexander_4_required,11,Kobold,"Không cần lo lắng đâu, Alexander!"
+6dece6f0ec399d4e,L12 Alexander,Alexander_4_required,12,Alexander,Tôi nghĩ tôi muốn?
+08ab3092d83ed1d3,L12 Alexander,Alexander_4_required,13,Alexander,Tôi biết. Tôi biết.
+81a4fcd2541ac990,L12 Alexander,Alexander_4_required,14,Alexander,Tôi nghĩ tôi muốn dùng nó?
+67c0f2a71f4ff613,L12 Alexander,Alexander_4_required,16,Alexander,Ờ... ừm...
+4640c27322f55d8c,L12 Alexander,Alexander_4_required,17,Alexander,Có thể...?
+9739b879143b91cf,L12 Alexander,Alexander_4_required,18,Alexander,Chỉ khi điều đó ổn...
+e2dce2bed173fba0,L12 Alexander,Alexander_4_required,20,Kobold,Dĩ nhiên là ổn. Nhờ Conrad mà tôi mới sắm nó.
+f12929f0cef567d7,L12 Alexander,Alexander_4_required,21,Alexander,Được rồi được rồi... Vậy tôi nghĩ tôi muốn dùng nó?
+76ea754cd53f21dc,L12 Alexander,Alexander_4_required,22,Alexander,Conrad...?
+18b51cf572e4b49a,L12 Alexander,Alexander_4_required,25,Kobold,Tôi không phiền!
+334a54e73cf69dc1,L12 Alexander,Alexander_4_required,26,Kobold,Tôi rất vui được lấy nó cho anh.
+7bd62126f382f565,L12 Alexander,Alexander_4_required,27,Alexander,Ừ hử... Cảm ơn.
+d2c15503eb28631b,L12 Alexander,Alexander_4_required,28,Alexander,Được... Cảm ơn.
+# --- jerkoff: Alexander_4_JerkOff_Start ---
+47122b215cc11a2b,L12 Alexander,Alexander_4_JerkOff_Start,1,Alexander,Ồ... Tôi nghĩ thế này cũng ổn~
+# --- cum: Alexander_4_Cum ---
+ed6a9612f44b19ea,L12 Alexander,Alexander_4_Cum,1,Alexander,phù... Cảm ơn vì điều đó.
+# --- mount_start: Alexander_4_Mount_Start ---
+1db0bf44f69526fc,L12 Alexander,Alexander_4_Mount_Start,1,Alexander,Cái bệ? Tôi... chắc là được!
+# --- mount_finish: Alexander_4_Mount_Finish ---
+76527d719ccc95a3,L12 Alexander,Alexander_4_Mount_Finish,1,Alexander,Điều đó... Dễ chịu hơn tôi tưởng.
+# --- outro: Alexander_4_Outro ---
+35278dc46019f9b9,L12 Alexander,Alexander_4_Outro,1,Alexander,Tôi thấy khá hơn nhiều.
+5547ec33b10091a2,L12 Alexander,Alexander_4_Outro,2,Alexander,Tôi... Biết cậu không hỏi.
+3ce3dec2bd740757,L12 Alexander,Alexander_4_Outro,3,Alexander,"Nhưng, tôi nghĩ cậu đã dạy tôi một điều."
+line:21c46e75,L12 Alexander,Alexander_4_Outro,4,Kobold,Hả?
+5eca8560307cac86,L12 Alexander,Alexander_4_Outro,5,Kobold,Nhưng anh là rồng giáo viên mà.
+419ecbf32abefda1,L12 Alexander,Alexander_4_Outro,6,Alexander,"Giáo sư, nhưng đúng. Cậu đã dạy."
+0b1b8529d2c3c5fc,L12 Alexander,Alexander_4_Outro,7,Alexander,Tôi nghĩ tôi thích được chăm sóc?
+4df2487e01509478,L12 Alexander,Alexander_4_Outro,8,Kobold,Hầu hết ai cũng thích!
+c9f8ba59379bb60a,L12 Alexander,Alexander_4_Outro,9,Kobold,Tôi thích chăm sóc anh.
+93786b06bef36348,L12 Alexander,Alexander_4_Outro,10,Alexander,"Thì, đúng. Ý tôi là theo cách... Nguyên thủy hơn?"
+b868cb066c4b572d,L12 Alexander,Alexander_4_Outro,11,Alexander,Nghe vậy thật tốt... Nhưng ý tôi là được chăm sóc theo cách... Nguyên thủy hơn?
+565a3630f0cfbcc5,L12 Alexander,Alexander_4_Outro,12,Alexander,Tôi thích khi cậu bảo tôi phải làm gì bằng một cái vỗ tay nhẹ.
+1161a29c118dbaa6,L12 Alexander,Alexander_4_Outro,13,Alexander,Tôi thích sự tự tin của cậu. Dù chỉ là chuyện tắm rửa.
+32c31015075eeede,L12 Alexander,Alexander_4_Outro,14,Alexander,"Thật dễ chịu khi buông quyền kiểm soát, dù chỉ một lúc."
+1651e2418c22d0c0,L12 Alexander,Alexander_4_Outro,15,Kobold,<size=70%> Một con rồng to giao quyền kiểm soát cho mình. Ồ.
+bd051341e68cc04e,L12 Alexander,Alexander_4_Outro,16,Kobold,Tôi vui khi cho anh một nơi để thư giãn.
+2e1f723e42b149be,L12 Alexander,Alexander_4_Outro,17,Alexander,Khá là mới mẻ phải không?
+8212cbdd05d21f37,L12 Alexander,Alexander_4_Outro,18,Alexander,"Tôi sẽ sớm quay lại, nhé? Cảm ơn đã tắm cho."
+b5f8ec9a6918d554,L12 Alexander,Alexander_4_Outro,19,Alexander,"Thật tự do. Tôi sẽ quay lại, nhé?"
+
+# ===== Level 13: Ryan (Sunny) =====
+# --- intro: Ryan_5_intro ---
+dcd95465ccb79997,L13 Ryan,Ryan_5_intro,6,Kobold,Chào anh bạn to xác.
+a4c1cb0899f204fc,L13 Ryan,Ryan_5_intro,8,Ryan,Chào... bạn nhỏ!
+df50afc7f5e2d994,L13 Ryan,Ryan_5_intro,9,Kobold,Tớ không nhỏ <i>đến thế</i> đâu...
+8061d3d1aed7c531,L13 Ryan,Ryan_5_intro,10,Kobold,"Vậy, đến tắm hả?"
+1107598aa9bc6c75,L13 Ryan,Ryan_5_intro,11,Ryan,"Ồ, xin lỗi..."
+061629ac669e11f8,L13 Ryan,Ryan_5_intro,12,Ryan,Chỉ định đùa theo thôi. Vui vì gặp cậu!
+cdc7ebc001250566,L13 Ryan,Ryan_5_intro,13,Ryan,Ừ!
+f8c3932b65e6bbb0,L13 Ryan,Ryan_5_intro,14,Ryan,Chào kobold!
+4a5d3b88460afb6b,L13 Ryan,Ryan_5_intro,15,Ryan,Mình quyết định thử làm bánh.
+b483e9c7e323807a,L13 Ryan,Ryan_5_intro,16,Ryan,Dạo này mình rảnh nhiều.
+afd9ef6045a7191c,L13 Ryan,Ryan_5_intro,17,Ryan,Hóa ra làm bánh bẩn lắm!
+808f38835d1deb53,L13 Ryan,Ryan_5_intro,18,Ryan,Mình cần tắm một trận.
+# --- intro: Ryan_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+efa367904267d1f9,L13 Ryan,Ryan_5_intro_ryan_romanced,1,Ryan,...Tắm cho buổi hẹn tối nay của tụi mình.
+d510da8dc09c7bd7,L13 Ryan,Ryan_5_intro_ryan_romanced,2,Kobold,À. ĐÚNG RỒI.
+cb4f55dc25088cef,L13 Ryan,Ryan_5_intro_ryan_romanced,3,Kobold,Tớ háo hức lắm.
+63b5ec8a662e7e8f,L13 Ryan,Ryan_5_intro_ryan_romanced,4,Ryan,May là mình ở đây để nhắc cậu.
+line:141c006f,L13 Ryan,Ryan_5_intro_ryan_romanced,5,Ryan,Mình cũng vậy.
+60004e58bb12dd3c,L13 Ryan,Ryan_5_intro_ryan_romanced,6,Ryan,Mình đợi ở cổng nhé!
+# --- intro: Ryan_5_intro ---
+3ff66f86649ed3f4,L13 Ryan,Ryan_5_intro,19,Kobold,Chào Ryan!
+bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,20,Ryan,Chào! Mình đến tắm.
+747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,24,Kobold,"Tuyệt, tớ đi mở cổng."
+1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,25,Kobold,Được! Tớ háo hức kể cậu nghe về Conrad.
+line:f103a4a8,L13 Ryan,Ryan_5_intro,27,Ryan,Thế à?
+4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,28,Kobold,Ừ! Tớ sắp hẹn hò với anh ấy.
+29301eae6840e128,L13 Ryan,Ryan_5_intro,29,Kobold,"Ừ hử, phải chuẩn bị cho buổi hẹn với anh ấy."
+154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,30,Ryan,Hào hứng thật!
+e1867b98d8ce23bd,L13 Ryan,Ryan_5_intro,31,Ryan,Vào trong rồi kể mình nghe thêm nhé.
+10dc92e80220fe9b,L13 Ryan,Ryan_5_intro,33,Kobold,Chàoooo Ryan.
+b57c370a0fcc7045,L13 Ryan,Ryan_5_intro,34,Ryan,Chào!
+cd80a4a851309647,L13 Ryan,Ryan_5_intro,38,Kobold,Buổi hẹn với Conrad thế nào?
+26eed1b65d0e1370,L13 Ryan,Ryan_5_intro,39,Kobold,KỂ TỚ NGHE VỀ CẬU VÀ CONRAD!
+b433dad7fc4cdb18,L13 Ryan,Ryan_5_intro,40,Ryan,Tuyệt lắm!
+cd235c4d7d27fbdb,L13 Ryan,Ryan_5_intro,41,Ryan,Ồ... Nôn nóng quá!
+7b1f5d058f2045c5,L13 Ryan,Ryan_5_intro,43,Ryan,Tụi mình đi ăn. Nói chuyện hợp lắm.
+4932dbc11ab131d4,L13 Ryan,Ryan_5_intro,44,Ryan,Chuyện này dẫn đến chuyện kia...
+1a86226c86c7138f,L13 Ryan,Ryan_5_intro,45,Ryan,Đến quán bar... Mọi thứ nóng lên. Cậu đoán được chuyện gì tiếp theo... <size=70%>Hah...
+# --- progress: Ryan_5_Required_ryan_romanced | if $ryan_romanced ---
+e61676df3c022293,L13 Ryan,Ryan_5_Required_ryan_romanced,1,Ryan,Vậy. Buổi hẹn tối nay của tụi mình...
+c022fa54258553ea,L13 Ryan,Ryan_5_Required_ryan_romanced,2,Ryan,Cậu muốn đi đâu?
+6c0884e4717c5d5b,L13 Ryan,Ryan_5_Required_ryan_romanced,3,Kobold,Cậu quyết đi!
+bbedb233b6bbe2ea,L13 Ryan,Ryan_5_Required_ryan_romanced,4,Kobold,Tớ muốn đi ăn ngoài.
+fb57b97d646f43c9,L13 Ryan,Ryan_5_Required_ryan_romanced,5,Kobold,Cậu có biết quán bar nào hay không?
+d2c0f4718541c240,L13 Ryan,Ryan_5_Required_ryan_romanced,6,Kobold,Đi xem phim thì sao?
+98ef145fb642c5b6,L13 Ryan,Ryan_5_Required_ryan_romanced,7,Ryan,Hay tụi mình chỉ... Đi dạo?
+4bad2b5ecfe22c4a,L13 Ryan,Ryan_5_Required_ryan_romanced,8,Ryan,Mình rất thích để mọi người cưỡi trên lưng.
+6e8c399ff118f405,L13 Ryan,Ryan_5_Required_ryan_romanced,9,Ryan,Cậu có hứng thú không?
+7da2aa0d4ef74597,L13 Ryan,Ryan_5_Required_ryan_romanced,10,Kobold,Nghe tuyệt đấy!
+db39ae73af1cfae5,L13 Ryan,Ryan_5_Required_ryan_romanced,11,Kobold,Thế chẳng phải hạ thấp cậu sao?
+3185b026252747c6,L13 Ryan,Ryan_5_Required_ryan_romanced,13,Ryan,Mình luôn thích chở bạn bè hai chân của mình...
+d2994ff918a23d86,L13 Ryan,Ryan_5_Required_ryan_romanced,14,Ryan,"Vậy là hẹn hò rồi, mình háo hức."
+3fdcf71c3e2f7ea0,L13 Ryan,Ryan_5_Required_ryan_romanced,15,Ryan,Ồ! Không hề. Vui lắm!
+8bacddc318adc2b9,L13 Ryan,Ryan_5_Required_ryan_romanced,16,Ryan,Mình chở mấy người bạn hai chân khác suốt.
+638c1801c65c6b0c,L13 Ryan,Ryan_5_Required_ryan_romanced,17,Ryan,Chắc chắn tụi mình sẽ nghĩ ra gì đó! cứ gặp mình ở cầu cảng!
+25f86d817a092ae1,L13 Ryan,Ryan_5_Required_ryan_romanced,18,Ryan,Ừ nghe được đấy.
+38ae2aec596ab356,L13 Ryan,Ryan_5_Required_ryan_romanced,19,Ryan,Cậu thấy hải sản thế nào?
+d7456d9e85366bc9,L13 Ryan,Ryan_5_Required_ryan_romanced,20,Kobold,Ừ. Tớ thích cá!
+925a663e1b23d966,L13 Ryan,Ryan_5_Required_ryan_romanced,21,Kobold,"Hừm, có lẽ món khác?"
+14d1fddd0115ee0d,L13 Ryan,Ryan_5_Required_ryan_romanced,22,Ryan,"Ồ, tuyệt. Mình mê cá hồi lắm."
+6b59acab736bd349,L13 Ryan,Ryan_5_Required_ryan_romanced,23,Ryan,"Thì, mình là rồng... nhưng... Cậu hiểu ý mình mà."
+334998266afc2476,L13 Ryan,Ryan_5_Required_ryan_romanced,24,Ryan,Vậy là hẹn hò rồi! Hải sản rồi tùy cơ ứng biến.
+a02af61e18efb0f0,L13 Ryan,Ryan_5_Required_ryan_romanced,25,Ryan,Mình biết một quán của dân ngựa khá ổn gần cầu cảng.
+cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,Kiểu fusion của loài ngựa ấy...
+8771d66a0a1ace3e,L13 Ryan,Ryan_5_Required_ryan_romanced,27,Ryan,Mình thích! Chắc cậu cũng sẽ thích.
+8cceef523eb8c739,L13 Ryan,Ryan_5_Required_ryan_romanced,28,Ryan,Vậy là hẹn hò rồi!
+5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,"À đúng, có chỗ hay ở trung tâm tên là wings."
+4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,Mình nghĩ chỗ đó ổn! Tối nào họ cũng có show hay.
+ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,"Có thể đến đó, rồi thuê phòng khách sạn... Hừm."
+line:2b560f59,L13 Ryan,Ryan_5_Required_ryan_romanced,33,Ryan,Thế à?
+435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Ryan,Mình nghĩ xem phim cũng vui!
+0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Ryan,Cậu đang nghĩ phim kiểu gì?
+b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Kobold,Yip-Man - Tiếng Yip Cuối Cùng
+45afe74b37ed6bb0,L13 Ryan,Ryan_5_Required_ryan_romanced,38,Kobold,Rồng của thiên hà 2
+a881cd2440d13252,L13 Ryan,Ryan_5_Required_ryan_romanced,39,Ryan,Ồ mình nghe nói phim đó hay.
+00712e7d97f1872a,L13 Ryan,Ryan_5_Required_ryan_romanced,41,Ryan,Phim Yip-Man sến lắm...
+037e3c0c446d2b14,L13 Ryan,Ryan_5_Required_ryan_romanced,42,Ryan,Nhưng xem với cậu chắc chắn mình sẽ thích!
+b1ac5509459ca2a4,L13 Ryan,Ryan_5_Required_ryan_romanced,43,Ryan,À ừ mình thích phần đầu.
+eb547bf48bc9637e,L13 Ryan,Ryan_5_Required_ryan_romanced,45,Ryan,Vậy là hẹn hò rồi. Mình háo hức.
+# --- progress: Ryan_5_Required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+1f2c5ed668dc8972,L13 Ryan,Ryan_5_Required_conrad_romanced,1,Ryan,"Vậy, kể mình nghe thêm về conrad đi!"
+522b54ddedc9ae6c,L13 Ryan,Ryan_5_Required_conrad_romanced,2,Kobold,Dạo này anh ấy dễ chịu hơn nhiều.
+9df47f9485e2d886,L13 Ryan,Ryan_5_Required_conrad_romanced,3,Kobold,Anh ấy kiểu... một cục bông mềm bọc đầy gai nhọn.
+2e0446089ab2f237,L13 Ryan,Ryan_5_Required_conrad_romanced,4,Ryan,Thế à? Nghe có vẻ hơi nóng tính.
+eb926b4bc196ac32,L13 Ryan,Ryan_5_Required_conrad_romanced,5,Ryan,Nhưng mình biết kiểu đó... Bên trong họ thường mềm lắm.
+8ea9e02ddeed61e3,L13 Ryan,Ryan_5_Required_conrad_romanced,6,Kobold,Ừ anh ấy tiến bộ nhiều.
+5085892250461c04,L13 Ryan,Ryan_5_Required_conrad_romanced,7,Kobold,Ừ. Tớ thích thế.
+53011f72775c8ca4,L13 Ryan,Ryan_5_Required_conrad_romanced,8,Ryan,Nghe vậy tốt quá.
+4fbcc070e27c4736,L13 Ryan,Ryan_5_Required_conrad_romanced,9,Ryan,Không gì hấp dẫn hơn một người đàn ông biết tiến bộ!
+aa8e7dea9ad61538,L13 Ryan,Ryan_5_Required_conrad_romanced,10,Ryan,Mình mừng vì hai người suôn sẻ.
+390bea406a842664,L13 Ryan,Ryan_5_Required_conrad_romanced,11,Ryan,Tuyệt quá. Mình mừng vì hai người suôn sẻ.
+f147cd900de98aeb,L13 Ryan,Ryan_5_Required_conrad_romanced,12,Ryan,"À, ừ, kiểu đó khá dễ thương."
+883fec192f3d1119,L13 Ryan,Ryan_5_Required_conrad_romanced,13,Ryan,"Theo mình nghe thì dạo này anh ấy tiến bộ nhiều, đúng không?"
+b5060af9808e8c7c,L13 Ryan,Ryan_5_Required_conrad_romanced,14,Kobold,"Ừ hử, anh ấy đang cố gắng."
+702195668cf48039,L13 Ryan,Ryan_5_Required_conrad_romanced,15,Kobold,Tớ nghĩ anh ấy từng ở trong môi trường xấu. Giờ khá hơn rồi.
+1e681c01b417052f,L13 Ryan,Ryan_5_Required_conrad_romanced,16,Ryan,"Chỉ cần thế thôi, đúng không?"
+9056022b2085d3b7,L13 Ryan,Ryan_5_Required_conrad_romanced,17,Ryan,Nhưng mình mừng vì hai người suôn sẻ.
+932d7df9b58f5376,L13 Ryan,Ryan_5_Required_conrad_romanced,18,Ryan,Nghe vậy tốt quá.
+# --- progress: Ryan_5_Required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e76e544c771880f3,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,1,Ryan,Conrad có nhắc đến cậu trong buổi hẹn của tụi mình.
+2e21aa0b86c092fb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,3,Kobold,Về chuyện gì?
+271a662aed24f160,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,4,Ryan,Kể mình nghe lần anh ấy bị đánh.
+1b0b214cb2df69ec,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,5,Ryan,Mình nghĩ cậu đã giúp anh ấy nhiều hơn cậu tưởng.
+ad14c398c575824b,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,7,Kobold,Tớ chỉ làm việc của mình thôi!
+daddaa15545566ce,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,8,Ryan,"Đúng, nhưng lúc đó anh ấy cần một người quan tâm."
+f03747feadc10e71,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,9,Ryan,"Anh ấy đã không được... Ừm, quan tâm từ lâu rồi, theo những gì mình hiểu."
+2ed3613575959ca6,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,10,Ryan,Dù cậu chỉ làm việc của mình... Mình nghĩ nó giúp anh ấy rất nhiều.
+658add118bb17ed5,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,11,Ryan,"Nên, thay mặt anh ấy cảm ơn cậu vì đã quan tâm."
+8ca78aefdf9d3b44,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,12,Ryan,Mình biết anh ấy hơi nóng tính và hay quên cảm ơn người khác.
+9176dd2bd815750c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,13,Kobold,Ôi... Cảm ơn.
+5a4dcf1ccff086af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,14,Kobold,Nghe vậy tớ vui lắm.
+6db8bf6280f68edb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,15,Ryan,À. Còn một chuyện nữa.
+49e6d82bb7d163af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,16,Ryan,Sau buổi hẹn tụi mình còn làm chuyện ấy nữa.
+e06e957ec854ab4c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,17,Kobold,<size=70%><i>Ồ...
+9b2ad1c8b149bf00,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,19,Ryan,"Hah, ừ. Conrad đúng là có kinh nghiệm..."
+bc156217e847a8df,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,20,Ryan,Saooo. Có gì sai đâu! nghĩ là cậu muốn biết.
+# --- jerkoff: Ryan_5_JerkOff_Start ---
+9fec39c7cefbaca2,L13 Ryan,Ryan_5_JerkOff_Start,1,Ryan,Hê... Hôm nay tay chân nhanh nhẹn nhỉ?
+# --- cum: Ryan_5_Cum ---
+6f8c64dde681ced5,L13 Ryan,Ryan_5_Cum,1,Ryan,Oof... Mình cần thế. Cảm ơn.
+# --- mount_start: Ryan_5_Mount_Start ---
+c7f3dbd886d929a7,L13 Ryan,Ryan_5_Mount_Start,1,Ryan,Cái bệ? Được thôi!
+# --- mount_finish: Ryan_5_Mount_Finish ---
+48ffbc93e2486713,L13 Ryan,Ryan_5_Mount_Finish,1,Ryan,Phù... Cảm ơn vì cái đó.
+# --- outro: Ryan_5_Outro_ryan_romanced | if $ryan_romanced ---
+6fc39ec69d974bb4,L13 Ryan,Ryan_5_Outro_ryan_romanced,1,Ryan,Mình nghĩ cậu làm sạch mọi chỗ rồi.
+c9e5fbe3317edd3f,L13 Ryan,Ryan_5_Outro_ryan_romanced,2,Ryan,Cậu biết nghĩa là gì rồi đấy...
+f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,TỐI HẸN HÒ!
+line:95aa0bf4,L13 Ryan,Ryan_5_Outro_ryan_romanced,5,Ryan,Dĩ nhiên rồi!
+0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Ryan,Nghĩa là mình sẵn sàng đi hẹn hò với một kobold nào đó.
+e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,"Mình biết cậu phải đóng cửa tiệm. Mình sẽ gửi địa chỉ rồi gặp nhau ở đó, nhé?"
+6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Kobold,Nghe hay đấy!
+line:a00f681d,L13 Ryan,Ryan_5_Outro_ryan_romanced,9,Kobold,Tớ mong lắm.
+7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,10,Ryan,Mình rất mong chờ chuyện này.
+line:363f6f6a,L13 Ryan,Ryan_5_Outro_ryan_romanced,11,Ryan,Mình cũng vậy.
+dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,12,Ryan,"Được, đi mở cổng đi rồi mình sẽ đến chỗ hẹn trước!"
+7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,13,Ryan,Sớm gặp lại.
+# --- outro: Ryan_5_Outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+b050469dea41d597,L13 Ryan,Ryan_5_Outro_conrad_romanced,2,Ryan,Cảm ơn đã giúp mình.
+25ec1c59caa5e66c,L13 Ryan,Ryan_5_Outro_conrad_romanced,3,Kobold,Tớ luôn vui khi được tắm cho cậu!
+2a67fb93196e8722,L13 Ryan,Ryan_5_Outro_conrad_romanced,5,Ryan,À... Không chỉ chuyện tắm.
+2140dcb75dc2d0f9,L13 Ryan,Ryan_5_Outro_conrad_romanced,6,Ryan,"Kiểu, nói chung."
+a6d4dab5c8699946,L13 Ryan,Ryan_5_Outro_conrad_romanced,7,Ryan,Lần chia tay hồi trước khá nặng nề.
+1fd66775cea2eb4b,L13 Ryan,Ryan_5_Outro_conrad_romanced,8,Ryan,Đây là một nơi trốn thoát dễ chịu.
+8f4dc96f133fa75c,L13 Ryan,Ryan_5_Outro_conrad_romanced,9,Ryan,Và mình thật sự mừng cho cậu và Conrad.
+8ed791569d35f02c,L13 Ryan,Ryan_5_Outro_conrad_romanced,10,Ryan,Lần tới mình đến gặp lại nhé?
+d38d6a1844481871,L13 Ryan,Ryan_5_Outro_conrad_romanced,11,Kobold,"Tớ luôn vui khi gặp cậu, Ryan."
+c88980c837fb6592,L13 Ryan,Ryan_5_Outro_conrad_romanced,12,Kobold,Tớ đi mở cổng cho cậu
+b1e1c4e40f4aaeec,L13 Ryan,Ryan_5_Outro_conrad_romanced,13,Ryan,Mình cũng vậy. Cảm ơn đã tắm cho.
+# --- outro: Ryan_5_Outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+c5f14714a1e0439c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,8,Ryan,Đây là một nơi trốn thoát tuyệt vời...
+3eb55bf5de9c718b,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,9,Ryan,Cậu còn giới thiệu mình với Conrad.
+7aa8987bf569468c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,10,Ryan,Anh ấy tuyệt lắm.
+
+# ===== Level 14: Conrad (Night) =====
+# --- intro: Conrad_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ab4070df9f9d3980,L14 Conrad,Conrad_5_intro_ryan_romanced,1,Conrad,"<size=140%>NÀY, <size=100%>muốn tắm."
+8597b1ea1423580d,L14 Conrad,Conrad_5_intro_ryan_romanced,2,Kobold,Chào Conrad.
+3ed1272125c54574,L14 Conrad,Conrad_5_intro_ryan_romanced,3,Kobold,Sao anh đến muộn thế?
+d90de33a2137108a,L14 Conrad,Conrad_5_intro_ryan_romanced,4,Conrad,"Ừ, là tôi."
+2ca9d5b1cf89ccc8,L14 Conrad,Conrad_5_intro_ryan_romanced,5,Conrad,Tối nay ra trung tâm. Cần phải sạch bong. Mà này...
+f5ebf2a456433609,L14 Conrad,Conrad_5_intro_ryan_romanced,6,Conrad,Nghe chuyện cậu với anh chàng xanh to bự. Ryan phải không?
+061d649bf4c733b7,L14 Conrad,Conrad_5_intro_ryan_romanced,7,Conrad,Cá là cậu vui lắm.
+4193e2b4730c89ad,L14 Conrad,Conrad_5_intro_ryan_romanced,8,Conrad,Mong là suôn sẻ.
+63ecf81d4e111712,L14 Conrad,Conrad_5_intro_ryan_romanced,9,Kobold,Suôn sẻ! Cảm ơn đã hỏi.
+0c7c795d2dd5eb76,L14 Conrad,Conrad_5_intro_ryan_romanced,10,Kobold,Suôn sẻ lắm.
+ae61bf1949b59852,L14 Conrad,Conrad_5_intro_ryan_romanced,12,Conrad,Giờ thì!
+25ba5fd876754270,L14 Conrad,Conrad_5_intro_ryan_romanced,13,Conrad,Conrad cần tắm!
+# --- intro: Conrad_5_intro_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+76777c9ea422832b,L14 Conrad,Conrad_5_intro_conrad_romanced,1,Conrad,Chào người đẹp
+0b7efee62380b6cd,L14 Conrad,Conrad_5_intro_conrad_romanced,2,Conrad,Trông tôi thế nào?
+060982be63865e2c,L14 Conrad,Conrad_5_intro_conrad_romanced,3,Kobold,Rất ngầu
+b6fff34d007d61c9,L14 Conrad,Conrad_5_intro_conrad_romanced,4,Kobold,Ờ..
+806a4d3418ed236d,L14 Conrad,Conrad_5_intro_conrad_romanced,5,Conrad,Ừ! Đúng thế!
+4bd075c280186208,L14 Conrad,Conrad_5_intro_conrad_romanced,6,Conrad,Nhưng không phải để đi hẹn hò.
+777560a71762cf9b,L14 Conrad,Conrad_5_intro_conrad_romanced,7,Conrad,Vậy rửa sạch đi cho buổi hẹn tối nay của mình.
+364ea49c3b6c9895,L14 Conrad,Conrad_5_intro_conrad_romanced,8,Conrad,Ha!
+3ef6b1f5eeda632e,L14 Conrad,Conrad_5_intro_conrad_romanced,9,Conrad,Đùa chút thôi.
+ec760ba3440257aa,L14 Conrad,Conrad_5_intro_conrad_romanced,10,Conrad,Ok vậy rửa sạch đi cho buổi hẹn tối nay của mình.
+line:d66b9155,L14 Conrad,Conrad_5_intro_conrad_romanced,11,Kobold,Tôi mong lắm.
+300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Kobold,Phải làm anh sạch bong!
+line:405b9622,L14 Conrad,Conrad_5_intro_conrad_romanced,13,Conrad,Tôi cũng vậy.
+260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,Hê... Còn phải nói.
+d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,Tôi phấn khích lắm.
+a652a464f67481de,L14 Conrad,Conrad_5_intro_conrad_romanced,16,Conrad,Đã có chỗ ở quán bar tôi nhắc lúc trước rồi.
+ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,Không khí ban đêm ở đó tuyệt cú mèo.
+18ed0c57d649df67,L14 Conrad,Conrad_5_intro_conrad_romanced,18,Conrad,Cậu sẽ thích.
+# --- intro: Conrad_5_intro_ryan_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+9ec8a28e82bf29dd,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,1,Conrad,Chàoooo.
+ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,Sao anh vui thế?
+9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,Buổi hẹn của tôi với Ryan...
+f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,Tuyệt cực kỳ!
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,Ê.
+4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,Xin lỗi đến muộn. Giấc ngủ tôi loạn hết rồi.
+258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,Tôi chỉ đến tắm thôi.
+b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,Anh phải kể tôi hết chi tiết về Ryan sớm đấy.
+9ab1cc314a249eac,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,12,Kobold,Được! Tôi đi mở cổng.
+1d28eb42dcdd879d,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,13,Conrad,Đừng lo. Tôi sẽ kể.
+line:5183a6f2,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,14,Conrad,Cảm ơn nhé.
+# --- progress: Conrad_5_required_ryan_romanced | if $ryan_romanced ---
+189bf8eff795718a,L14 Conrad,Conrad_5_required_ryan_romanced,1,Conrad,"Ê, xin lỗi đến muộn."
+cf69f255df6f95af,L14 Conrad,Conrad_5_required_ryan_romanced,2,Kobold,Không sao. Khoảng một tiếng nữa tôi mới đóng cửa.
+3aa0d9279bff43d9,L14 Conrad,Conrad_5_required_ryan_romanced,3,Kobold,Anh đến lúc nào cũng được!
+f135fa715daf4f0c,L14 Conrad,Conrad_5_required_ryan_romanced,4,Conrad,À. Được vậy thôi khỏi xin lỗi.
+line:aea0be6b,L14 Conrad,Conrad_5_required_ryan_romanced,5,Conrad,"Hê hê, cảm ơn nhé."
+b127befdbae1da68,L14 Conrad,Conrad_5_required_ryan_romanced,6,Conrad,Buổi hẹn của cậu với Ryan.
+e00a5000d0f2cd2a,L14 Conrad,Conrad_5_required_ryan_romanced,8,Conrad,Chuyện ấy thế nào.
+7bd3b05552e5bd75,L14 Conrad,Conrad_5_required_ryan_romanced,10,Kobold,Ồ. Ừm. <size=70%>Tốt.
+051b72b94276cf81,L14 Conrad,Conrad_5_required_ryan_romanced,11,Conrad,"Ê, hỏi thì có gì sai!"
+d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,Nghe có vẻ tốt đấy.
+83e2bb850a49b35e,L14 Conrad,Conrad_5_required_ryan_romanced,13,Conrad,"Hah, tôi cũng đoán thế."
+9f69f9b215b926ee,L14 Conrad,Conrad_5_required_ryan_romanced,14,Conrad,Cậu đúng là biết dùng tay.
+2c910bcdb2651bf0,L14 Conrad,Conrad_5_required_ryan_romanced,15,Conrad,Ghen tị thật!
+9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,16,Conrad,...Nhưng không phải kiểu kỳ cục xấu xa đâu.
+# --- progress: Conrad_5_required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+63b786e95b90bc5e,L14 Conrad,Conrad_5_required_conrad_romanced,1,Conrad,Vậy. Tối nay.
+line:a0479425,L14 Conrad,Conrad_5_required_conrad_romanced,3,Kobold,Tôi mong lắm.
+line:95e2f7cc,L14 Conrad,Conrad_5_required_conrad_romanced,4,Conrad,Ừ.
+6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,6,Conrad,Nên thế.
+06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,Cậu sẽ mê cho xem.
+6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,Ánh đèn ở khu đó cũng tuyệt.
+95e9b7e01259ac1e,L14 Conrad,Conrad_5_required_conrad_romanced,9,Conrad,Tạo không khí lắm.
+66e39f6379268a82,L14 Conrad,Conrad_5_required_conrad_romanced,10,Kobold,Để dành chuyện tạo không khí cho tối nay đi!
+f9ae65b8ce359331,L14 Conrad,Conrad_5_required_conrad_romanced,12,Conrad,Hah. Được.
+1d1baaa8db27cb04,L14 Conrad,Conrad_5_required_conrad_romanced,13,Conrad,À đúng.
+ff84a4b13b8be2a4,L14 Conrad,Conrad_5_required_conrad_romanced,14,Conrad,Tắm xong là tôi đi chuẩn bị chỗ cho mình.
+# --- progress: Conrad_5_required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+1598446fc49cdf80,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,1,Conrad,Ryan đúng là một con rồng tốt.
+e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold/Conrad,Đúng là vậy.
+73f5014bc8782ad4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,4,Conrad,"Ừ, cậu ấy tử tế với tôi lắm."
+953a9b287930c86a,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,5,Conrad,Cậu ấy... Chu đáo. Cũng rất hiểu chuyện.
+41d3eda9c195fe48,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,6,Conrad,Lúc mới gặp cậu ấy tôi lại quay về kịch bản cũ.
+42fb7bc16778c0a5,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,7,Conrad,... Thật lòng là hơi khốn nạn.
+66ad79997bc62825,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,8,Conrad,Cậu ấy chỉ... Biết nói gì để kéo tôi ra khỏi cái đó.
+7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,Hay quá!
+98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Kobold,Ryan dễ thương lắm
+7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,Ừ... Cậu ấy tuyệt thật.
+line:c7e1b369,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,12,Conrad,Đúng vậy thật.
+5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,13,Conrad,Cảm ơn đã giới thiệu tôi với cậu ấy.
+# --- jerkoff: Conrad_5_JerkOff_Start ---
+c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Hah... Giờ định giúp tôi bằng tay à? Được thôi.
+# --- cum: Conrad_5_Cum ---
+51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,Mẹ ơiii. Cậu đúng là biết cách xử một con rồng!
+# --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
+311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,Xong hết!
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Anh <i>sạch bong.
+2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,Có vẻ thế.
+af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,Đã quá.
+8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Cảm ơn đã tắm cho tôi muộn thế này.
+028e30f8adf6e6ad,L14 Conrad,Conrad_5_outro_ryan_romanced,6,Conrad,"Phải cập nhật chuyện cậu với Ryan cho tôi đấy, nhé?"
+a398eca1fb8d9924,L14 Conrad,Conrad_5_outro_ryan_romanced,7,Conrad,Mà thôi...
+234fc4abfc8d8619,L14 Conrad,Conrad_5_outro_ryan_romanced,8,Conrad,Thả <i>C bự</i> ra khỏi đây!
+a53a782390260e09,L14 Conrad,Conrad_5_outro_ryan_romanced,9,Kobold,C bự...?
+8e369560d1581070,L14 Conrad,Conrad_5_outro_ryan_romanced,10,Kobold,"Được rồi, Conrad."
+f6b30f28e561466d,L14 Conrad,Conrad_5_outro_ryan_romanced,12,Conrad,Ừừừ tôi không dùng cái biệt danh đó nữa đâu.
+ac2b2c6605839727,L14 Conrad,Conrad_5_outro_ryan_romanced,13,Conrad,Hah... Ừ...
+fc66fcc7fd7d0e4d,L14 Conrad,Conrad_5_outro_ryan_romanced,14,Conrad,"Được, gặp sau nhé!"
+# --- outro: Conrad_5_outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+9333db61bcc08052,L14 Conrad,Conrad_5_outro_conrad_romanced,1,Conrad,Sạch hết rồi...
+8b45593ada7894a3,L14 Conrad,Conrad_5_outro_conrad_romanced,2,Conrad,Cậu biết nghĩa là gì rồi đấy.
+53e54ad7b23e6757,L14 Conrad,Conrad_5_outro_conrad_romanced,3,Kobold,Tối hẹn hò!
+4f319a155b3e572c,L14 Conrad,Conrad_5_outro_conrad_romanced,4,Kobold,Tôi phải đóng cửa tiệm trước...
+f3296c9825518630,L14 Conrad,Conrad_5_outro_conrad_romanced,6,Conrad,Tôi sẽ giữ chỗ cho cậu trong lúc cậu đóng cửa.
+c215e512d572e96c,L14 Conrad,Conrad_5_outro_conrad_romanced,7,Conrad,"Tôi biết, tôi sẽ giữ chỗ cho cậu!"
+22d803e60de439a9,L14 Conrad,Conrad_5_outro_conrad_romanced,8,Conrad,Được! Tôi sẵn sàng đi rồi.
+092af5ec90bd21c7,L14 Conrad,Conrad_5_outro_conrad_romanced,9,Conrad,Tối nay tôi sẽ đợi cậu ở quán bar!
+# --- outro: Conrad_5_outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e079ff157877ea28,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,1,Conrad,Chắc cậu làm sạch mọi chỗ rồi!
+6749954edebda844,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,2,Conrad,Tôi sẽ không làm phiền cậu nữa.
+2bc72fd03dd6d9e7,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,3,Conrad,Cảm ơn đã cho tôi vào muộn thế này.
+f001e3ed4df7e0ee,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,4,Kobold,Không có gì!
+9d4a6cd35afcc17e,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,5,Kobold,"Lúc nào cũng vui khi có anh, Conrad."
+5e4e2c64bc630fa1,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,6,Conrad,Ừ hử. Tôi sẽ chỉnh lại giờ giấc ngủ...
+5c58c3e6d4c7dc65,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,7,Conrad,Cảm ơn. Tôi luôn vui khi ở đây.
+163137d1bff25904,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,8,Conrad,Mà thôi. Cậu đi mở cổng được không?
+94d29a68cf0c8c31,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,9,Conrad,Đêm không tự bắt đầu được đâu!
+
+# ===== Level 15: Alexander (Sunny) =====
+# --- intro: Alexander_5_intro ---
+bc3d56d7794e4370,L15 Alexander,Alexander_5_intro,6,Kobold,"Chào, Alexander."
+1bef44aeb393caf0,L15 Alexander,Alexander_5_intro,7,Kobold,Chào anh bạn to xác!
+2d8bd7d9bb5f85ba,L15 Alexander,Alexander_5_intro,8,Alexander,Xin chào.
+b048841add4ee6cf,L15 Alexander,Alexander_5_intro,10,Alexander,Tôi đến để tắm.
+beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,Mong là cậu vẫn ổn!
+906a59351176dc24,L15 Alexander,Alexander_5_intro,12,Kobold,Ổn! Vừa đi hẹn hò với Ryan.
+2a75724b922176cf,L15 Alexander,Alexander_5_intro,13,Alexander,Thế à? Con rồng xanh da trời tôi hay thấy quanh đây?
+1f4da5e1dde7e17c,L15 Alexander,Alexander_5_intro,14,Alexander,Thật mừng khi nghe cậu đang hẹn hò!
+50f1967e1e33cecf,L15 Alexander,Alexander_5_intro,15,Kobold,Ổn! Vừa đi hẹn hò với Conrad.
+0738da2a76bc2231,L15 Alexander,Alexander_5_intro,16,Alexander,Thế à? Con rồng đỏ nhỏ ấy?
+896dc87e931d64eb,L15 Alexander,Alexander_5_intro,18,Kobold,Ổn! Càng tốt hơn khi anh ở đây.
+0786859cb08f5ef9,L15 Alexander,Alexander_5_intro,19,Kobold,Tôi ổn!
+414ed962f4c8a03a,L15 Alexander,Alexander_5_intro,20,Alexander,Ồ. Thật... Tuyệt vời!
+10cdda610834ef77,L15 Alexander,Alexander_5_intro,21,Alexander,Tôi cũng vui khi ở đây.
+346865d8c1dd9693,L15 Alexander,Alexander_5_intro,22,Alexander,Thật mừng khi nghe vậy.
+f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"Dù sao thì, tôi cần được tắm."
+4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,Làm ngay!
+42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,Mong được tắm lắm.
+line:316bb26e,L15 Alexander,Alexander_5_intro,27,Alexander,Rất cảm kích.
+# --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
+067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,Tôi đã nghĩ...
+4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,Cậu có nghĩ tôi hấp dẫn không?
+303f7b0a567bfb2b,L15 Alexander,Alexander_5_romance_route,6,Kobold,CÓ.
+09141003dee8665c,L15 Alexander,Alexander_5_romance_route,7,Kobold,Có chứ!
+43c22d680a102c02,L15 Alexander,Alexander_5_romance_route,8,Kobold,Tôi nghĩ anh đẹp trai.
+4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,Tôi mừng quá!
+c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,Điều đó... khiến tôi tự tin hơn nhiều.
+2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,Thật sao?
+line:e00c6df5,L15 Alexander,Alexander_5_romance_route,14,Alexander,Rất cảm kích.
+8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,Điều đó khiến tôi tự tin hơn nhiều.
+4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,Vậy đến câu hỏi tiếp theo của tôi...
+96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,Tối nay cậu có muốn cùng tôi đến thư viện trường không...?
+558dbfba7857e37d,L15 Alexander,Alexander_5_romance_route,18,Alexander,Nó sẽ là một... buổi hẹn hò. Như hầu hết mọi người vẫn gọi.
+76eea215ea7ba450,L15 Alexander,Alexander_5_romance_route,19,Kobold,"<gradient=""gold""><b> Tôi không ngại! </b></gradient><size=70%> (Dẫn đến tình cảm với Alexander!)"
+500188b2a2627768,L15 Alexander,Alexander_5_romance_route,20,Kobold,"<gradient=""gold""><b> Tối nay tôi bận rồi. Xin lỗi. </b></gradient><size=70%> (Không có tình cảm!)"
+96b6a8b07a0781d0,L15 Alexander,Alexander_5_romance_route,22,Alexander,Tôi đã cân nhắc hỏi cậu điều này từ lâu rồi.
+942b49a7c66fb0bf,L15 Alexander,Alexander_5_romance_route,23,Alexander,À. Đừng lo.
+b1cb9d9c9d3d9661,L15 Alexander,Alexander_5_romance_route,24,Alexander,Được thôi. Vậy đừng để tôi làm gián đoạn việc tắm!
+# --- progress: Alexander_5_required ---
+861a7c80ccb8a4ba,L15 Alexander,Alexander_5_required,1,Alexander,"Vậy, buổi hẹn của cậu thế nào?"
+3481be04c35d76a2,L15 Alexander,Alexander_5_required,2,Kobold,Tuyệt lắm! Ryan dễ thương lắm.
+d26f0d306552c44a,L15 Alexander,Alexander_5_required,3,Kobold,Tuyệt lắm. Conrad hoang dã. Hoang dã kiểu tốt.
+cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,Tốt. Chúng tôi đã làm chuyện ấy.
+6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,Tốt. Cậu xứng đáng có một người đàn ông tử tế.
+9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,Tôi chắc cậu ấy cũng thấy cậu dễ mến!
+add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,"Cảm ơn, anh cũng dễ mến!"
+line:44701902,L15 Alexander,Alexander_5_required,8,Kobold,Cảm ơn ạ!
+01cb42db52da342d,L15 Alexander,Alexander_5_required,9,Alexander,Cảm ơn. Cậu nói vậy thật tử tế.
+line:d2401e75,L15 Alexander,Alexander_5_required,10,Alexander,Dĩ nhiên rồi!
+a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"Hah, cậu ta có vẻ thuộc kiểu hoang dã."
+5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,Tôi mừng vì cậu thích cậu ta. Tôi chắc cậu ta cũng thấy cậu dễ mến.
+line:e7e57d9c,L15 Alexander,Alexander_5_required,14,Kobold,Cảm ơn ạ!
+line:76f8c20c,L15 Alexander,Alexander_5_required,16,Alexander,Dĩ nhiên rồi!
+cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,Chắc nghĩa là hai người rất hợp nhau.
+# --- jerkoff: Alexander_5_JerkOff_Start ---
+caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> dễ chịu thật...</i>
+# --- cum: Alexander_5_Cum ---
+3eb65bb3b11e901c,L15 Alexander,Alexander_5_Cum,1,Alexander,Ồ... Xin lỗi vì làm bừa...
+# --- mount_start: Alexander_5_Mount_Start ---
+6df0c2c2617b9905,L15 Alexander,Alexander_5_Mount_Start,1,Alexander,Ôi trời. Tôi nghĩ tôi có thể dùng cái bệ!
+# --- mount_finish: Alexander_5_Mount_Finish ---
+31ea4258e44c77e4,L15 Alexander,Alexander_5_Mount_Finish,1,Alexander,Nnf... Tôi tin là tôi đã cần điều đó. Cảm ơn.
+# --- outro: Alexander_5_Outro ---
+026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,Cảm ơn đã tắm cho.
+7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,Tối nay... trong khuôn viên trường. Thư viện là tòa nhà tháp nhọn màu xanh lớn.
+f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,"Đến lối vào dành cho rồng, tôi sẽ cho cậu vào."
+line:b5d7d26f,L15 Alexander,Alexander_5_Outro,4,Alexander,Tôi rất mong chờ.
+5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,Tôi cũng vậy!
+6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,Nghe hay thật.
+line:99b6dc81,L15 Alexander,Alexander_5_Outro,7,Alexander,Rất vui khi nghe vậy.
+ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,Đúng là khá hay thật.
+6068953467a952bf,L15 Alexander,Alexander_5_Outro,9,Alexander,Tôi sẽ không làm phiền cậu nữa. Cảm ơn đã tắm cho.
+7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,10,Alexander,Tối nay gặp lại.
+4f8eb9eeb14b2f7d,L15 Alexander,Alexander_5_Outro,11,Alexander,Chắc là đủ mọi chỗ rồi.
+991fa15e47275ce0,L15 Alexander,Alexander_5_Outro,12,Alexander,Cảm ơn đã tắm cho!
+6d1255dd43802973,L15 Alexander,Alexander_5_Outro,13,Alexander,Tôi vui vì đã gặp cậu.
+5d5e0eafc7ef13d6,L15 Alexander,Alexander_5_Outro,14,Kobold,Tôi cũng vậy.
+63b9a103362edd6c,L15 Alexander,Alexander_5_Outro,15,Kobold,"Ôi, cảm ơn Alexander."
+6df8f8008c57cbac,L15 Alexander,Alexander_5_Outro,16,Alexander,"Dù sao thì, tôi sẽ không làm phiền cậu nữa."
+1cb7b221b7adda1c,L15 Alexander,Alexander_5_Outro,17,Alexander,Tạm biệt!
+
+# ===== Cutscenes (started by game code) =====
+# --- Alexander_SexScene ---
+266f7a45346224eb,Cutscene,Alexander_SexScene,1,Alexander,Chúng ta có thể cứ nằm đây...
+43b91c684627d3b6,Cutscene,Alexander_SexScene,2,Alexander,Cậu sẽ lo hết mọi thứ chứ?
+# --- Alexander_SexScene_Loop ---
+7d085d9765e3c5d6,Cutscene,Alexander_SexScene_Loop,1,Alexander,Ôi...
+f70738ec42aa401d,Cutscene,Alexander_SexScene_Loop,2,Alexander,Tay cậu khéo thật
+328ad033a139998d,Cutscene,Alexander_SexScene_Loop,3,Alexander,mmm..
+5ec1f7e700f37c3d,Cutscene,Alexander_SexScene_Loop,4,Alexander/Conrad/Ryan,..
+# --- Alexander_SexScene_Cum | if $alexander_sexscene_loops ---
+08ab4c0c6ca5fe6f,Cutscene,Alexander_SexScene_Cum,1,Kobold,Thế này ổn chứ?
+069e24aa896ea4cf,Cutscene,Alexander_SexScene_Cum,2,Alexander,Ổn... Đúng vậy.
+2c33dcef91e06624,Cutscene,Alexander_SexScene_Cum,3,Kobold,Tốt.
+2d731f1625c8064f,Cutscene,Alexander_SexScene_Cum,4,Alexander,Tôi... Sắp rồi
+4650860eb73dd16f,Cutscene,Alexander_SexScene_Cum,5,Kobold,Cố thêm chút nữa vì tôi nhé?
+860ede2808e2507c,Cutscene,Alexander_SexScene_Cum,6,Kobold,Cứ tự nhiên!
+16c36baab1491eb1,Cutscene,Alexander_SexScene_Cum,7,Alexander,Đ-được. Tôi sẽ cố.
+24537bfd61baf4a0,Cutscene,Alexander_SexScene_Cum,8,Alexander,Tôi không nghĩ mình kìm được nữa
+a63eed0b6b6a78c7,Cutscene,Alexander_SexScene_Cum,9,Kobold,Chưa. thêm chút nữa.
+35f5ee08b67fc0f5,Cutscene,Alexander_SexScene_Cum,10,Kobold,Cứ buông khi anh sẵn sàng.
+82af5427ecb85c11,Cutscene,Alexander_SexScene_Cum,11,Alexander,Vâng..
+847ec7301eab2bde,Cutscene,Alexander_SexScene_Cum,12,Alexander,Phù...
+c958ed597f3ee7b9,Cutscene,Alexander_SexScene_Cum,13,Alexander,Tôi thích chuyện này lắm.
+f3be3d62065c0791,Cutscene,Alexander_SexScene_Cum,14,Kobold,Tôi vui khi nghe vậy.
+6a629fe795ac84d7,Cutscene,Alexander_SexScene_Cum,15,Kobold,Giờ sao?
+4cc4342b97114697,Cutscene,Alexander_SexScene_Cum,16,Alexander,Phải... Nhưng tôi nghĩ chúng ta cần lau sàn.
+ee63118710aa5c5b,Cutscene,Alexander_SexScene_Cum,17,Alexander,Chúng ta sẽ cần lau sàn...
+8319d1715d2a4149,Cutscene,Alexander_SexScene_Cum,18,Alexander,<i><size=70%>ôi không.. cả sách nữa
+# --- Conrad_SexScene ---
+b6d2d6ccb52c5166,Cutscene,Conrad_SexScene,1,Conrad,Ôi trời! Cậu đúng là thích phiêu lưu!
+e5c48d779d6422b5,Cutscene,Conrad_SexScene,2,Kobold,mmph! (Ừ!)
+e0ecc38d8bbe3790,Cutscene,Conrad_SexScene,3,Conrad,Đừng nói khi miệng đang đầy
+# --- Conrad_SexScene_Loop ---
+d7e01674d2776085,Cutscene,Conrad_SexScene_Loop,1,Conrad,Thật tình tôi không hiểu cậu làm thế kiểu gì.
+9b277d164ba8a630,Cutscene,Conrad_SexScene_Loop,2,Conrad,Nhưng tôi không phàn nàn đâu.
+73433af885509f84,Cutscene,Conrad_SexScene_Loop,3,Conrad,Đã quá
+# --- Conrad_SexScene_Cum | if $conrad_sexscene_loops ---
+fcfcfc2c31be11e5,Cutscene,Conrad_SexScene_Cum,1,Conrad,Sẵn sàng chưa?
+6b426873374bb7a4,Cutscene,Conrad_SexScene_Cum,2,Kobold,Cho tôi chút nữa
+91213ceb7548b8dc,Cutscene,Conrad_SexScene_Cum,3,Kobold,Sẵn sàng!
+72e3cb39cf4a181a,Cutscene,Conrad_SexScene_Cum,4,Conrad,Conrad chịu được bao lâu cũng được
+3f2d1b3f808a4ec7,Cutscene,Conrad_SexScene_Cum,5,Conrad,Tôi có thể buông khi cậu sẵn sàng
+46438371960f0974,Cutscene,Conrad_SexScene_Cum,6,Kobold,Chưa.
+d893ccbfc95475bc,Cutscene,Conrad_SexScene_Cum,7,Kobold,Làm đi!
+aa1a7618e29e4482,Cutscene,Conrad_SexScene_Cum,8,Conrad,Ê tôi thì sao cũng được!
+aa116a5879e94072,Cutscene,Conrad_SexScene_Cum,9,Conrad,Tôi ấn tượng đấy.
+45a9ad3bf69b0498,Cutscene,Conrad_SexScene_Cum,10,Conrad,Sẵn sàng quay lại câu lạc bộ chưa?
+4db30f4a0f40d350,Cutscene,Conrad_SexScene_Cum,11,Kobold,Được thôi!
+# --- Ryan_Conrad_SexScene ---
+e86ce51d1dbf8280,Cutscene,Ryan_Conrad_SexScene,1,Ryan,Ryan: Mình chưa từng làm chuyện này ngoài trời
+848d254c8d63e6fb,Cutscene,Ryan_Conrad_SexScene,2,Conrad,Conrad: Đừng lo!
+3e0325398f9de675,Cutscene,Ryan_Conrad_SexScene,3,Conrad,Conrad: Tôi làm suốt
+d55845869b2cd946,Cutscene,Ryan_Conrad_SexScene,4,Ryan,Ryan: Chắc cũng khá hào hứng
+# --- Ryan_Conrad_SexScene_Loop ---
+59a6f968c75b792f,Cutscene,Ryan_Conrad_SexScene_Loop,1,Conrad,Conrad: Cậu thấy vui chứ?
+836b8c1db049dc01,Cutscene,Ryan_Conrad_SexScene_Loop,2,Ryan,Ryan: Ừ chắc chắn. Lo cho mình à?
+dd91f260275b5093,Cutscene,Ryan_Conrad_SexScene_Loop,3,Conrad,Conrad: Conrad chỉ tận hưởng thôi
+bf095ea55cdeb898,Cutscene,Ryan_Conrad_SexScene_Loop,4,Conrad,Conrad: Thật ra.. Ý tôi là..
+5001d1e4b306b6d9,Cutscene,Ryan_Conrad_SexScene_Loop,5,Conrad,Conrad: Tôi muốn chuyện này suôn sẻ
+4c3de56e34727c37,Cutscene,Ryan_Conrad_SexScene_Loop,6,Ryan,Ryan: Mình thấy đang rất tuyệt
+06cb256bd506fa70,Cutscene,Ryan_Conrad_SexScene_Loop,7,Ryan,Ryan: Mình thích lắm
+2e028541c13b150b,Cutscene,Ryan_Conrad_SexScene_Loop,8,Conrad,Conrad: Cậu sướng lắm
+# --- Ryan_Conrad_SexScene_Cum | if $ryan_conrad_sexscene_loops ---
+5142dd3610e4cc0c,Cutscene,Ryan_Conrad_SexScene_Cum,1,Conrad,Conrad: Tôi sắp nổ rồi
+357806c023d4c85e,Cutscene,Ryan_Conrad_SexScene_Cum,2,Kobold,Họ tiếp tục
+4e0f42eaaa70c70d,Cutscene,Ryan_Conrad_SexScene_Cum,3,Kobold,Họ lên đỉnh
+d8e952b1635e3fe5,Cutscene,Ryan_Conrad_SexScene_Cum,4,Ryan,Ryan: Mình nghĩ mình cũng sắp rồi..
+50504d8f1c0a5f1c,Cutscene,Ryan_Conrad_SexScene_Cum,7,Ryan,Ryan: Chà.. Vóc dáng thật sự là thứ duy nhất nhỏ ở cậu.
+e7a686aecb078b9e,Cutscene,Ryan_Conrad_SexScene_Cum,8,Conrad,Conrad: Còn phải nói!
+98087861fbfaa621,Cutscene,Ryan_Conrad_SexScene_Cum,9,Ryan,Ryan: Thật tuyệt
+be1dff750703beb9,Cutscene,Ryan_Conrad_SexScene_Cum,10,Conrad,Conrad: Ừ
+# --- Ryan_SexScene ---
+caa123c912750ed2,Cutscene,Ryan_SexScene,1,Ryan,Cậu chắc là vừa chứ?
+c8dda0f1b46383bc,Cutscene,Ryan_SexScene,2,Kobold,Kobold rất dẻo. Sẽ vừa.
+849b442f9a88c950,Cutscene,Ryan_SexScene,3,Kobold,Yip
+88f476f3d6ebac8d,Cutscene,Ryan_SexScene,4,Ryan,Ok cứ bảo mình nếu cậu thấy khó chịu hay gì nhé.
+# --- Ryan_SexScene_Loop ---
+48cf02e6d9e88966,Cutscene,Ryan_SexScene_Loop,1,Ryan,Ôi chao..
+8caf602c6f60f544,Cutscene,Ryan_SexScene_Loop,2,Ryan,Đây là lần đầu mình với một Kobold.
+db7bd45c48fe49a2,Cutscene,Ryan_SexScene_Loop,3,Ryan,Dễ chịu thật..
+# --- Ryan_SexScene_Cum | if $ryan_sexscene_loops ---
+eff478354f7f1b18,Cutscene,Ryan_SexScene_Cum,1,Ryan,Mình nghĩ mình sắp rồi..
+ddfa0f7133303565,Cutscene,Ryan_SexScene_Cum,2,Kobold,Tiếp thêm chút nữa nhé
+f76c951c6c97d8cd,Cutscene,Ryan_SexScene_Cum,3,Kobold,Cho tớ đi!
+27cb363532fd0324,Cutscene,Ryan_SexScene_Cum,4,Ryan,Ok mình làm được
+685d8bfcf6988796,Cutscene,Ryan_SexScene_Cum,5,Ryan,Khó kìm quá..
+8fdcf9b73762886e,Cutscene,Ryan_SexScene_Cum,6,Kobold,Tớ vẫn cần thêm!
+5128d4e4a722127f,Cutscene,Ryan_SexScene_Cum,7,Kobold,Làm đi!
+eb41a8966fdf7cfd,Cutscene,Ryan_SexScene_Cum,8,Ryan,Thế càng khó hơn!
+9c78a3c6942a7982,Cutscene,Ryan_SexScene_Cum,9,Ryan,Ok mình làm được..
+b9ed3621fb6dfbef,Cutscene,Ryan_SexScene_Cum,10,Ryan,Vui thật đấy.
+99955b75e0544165,Cutscene,Ryan_SexScene_Cum,11,Kobold,Đồng ý
+ee60aadc2fcea44d,Cutscene,Ryan_SexScene_Cum,12,Ryan,Cậu có thể ở lại đây nếu muốn.
+9d29fc6dcfe7c05d,Cutscene,Ryan_SexScene_Cum,13,Ryan,Mình đặt phòng cả đêm rồi.
+3736ec41338c7ad0,Cutscene,Ryan_SexScene_Cum,14,Kobold,Tớ rất muốn.
+
+# ===== Dragon reactions (started by game code) =====
+# --- DragonAlmostClean ---
+bae76fc276bb2030,Reaction,DragonAlmostClean,1,Dragon,"Ồ đỡ hơn rồi, nhưng tôi vẫn thấy bẩn."
+ce6aaf93738f317e,Reaction,DragonAlmostClean,2,Dragon,Cậu kiểm tra lại xem tôi sạch chưa được không?
+16584052fd337f09,Reaction,DragonAlmostClean,3,Kobold,Được
+c54cbee211a25e14,Reaction,DragonAlmostClean,4,Kobold,Được thôi
+# --- DragonAnnoyedByBuzzing ---
+d139edc8ffdc22b7,Reaction,DragonAnnoyedByBuzzing,1,Dragon,"Thôi đi, chúng ta chưa xong mà. Đúng không?"
+631ef624f4506ea7,Reaction,DragonAnnoyedByBuzzing,2,Kobold,Hehe
+# --- DragonColdBalls ---
+e820f3ec0397737f,Reaction,DragonColdBalls,1,Dragon,Ôi! Lạnh quá!
+8408ed2f21e73811,Reaction,DragonColdBalls,2,Dragon,Ối! Lạnh!
+46f3ba9fc7d04fa7,Reaction,DragonColdBalls,3,Dragon,Brrr! Nước lạnh!
+00221b8a2772003a,Reaction,DragonColdBalls,4,Dragon,Íp!
+# --- DragonConfusedAboutDismissal ---
+9b99cd22a6f3f85a,Reaction,DragonConfusedAboutDismissal,1,Dragon,Ồ xong rồi à?
+7022570f87a73481,Reaction,DragonConfusedAboutDismissal,2,Dragon,Tôi nghĩ cậu vẫn còn sót vài chỗ...
+27db29faa5e11bb6,Reaction,DragonConfusedAboutDismissal,3,Kobold,"Úi, lỗi tôi."
+4fff64bb7aeed72f,Reaction,DragonConfusedAboutDismissal,4,Kobold,Tôi không biết nút đó làm gì.
+b0869fc4ea46c5bd,Reaction,DragonConfusedAboutDismissal,5,Dragon,"Không sao,"
+cb554196ac99a428,Reaction,DragonConfusedAboutDismissal,6,Dragon,Ừ nó kêu BRRT haha.
+345b04bed8d1a7e0,Reaction,DragonConfusedAboutDismissal,7,Dragon,"Dù sao mừng là cậu chưa xong, tiếp tục nào!"
+# --- DragonSatisfiedAndLeaves ---
+7a8942e2613fa23c,Reaction,DragonSatisfiedAndLeaves,1,Dragon,Cảm ơn đã tắm cho tôi!!
+c92c35bb9f44dac4,Reaction,DragonSatisfiedAndLeaves,2,Dragon,Có lẽ lát nữa mình đi chơi nhé?
+8aff5108a050bcfa,Reaction,DragonSatisfiedAndLeaves,3,Kobold,Được!
+2cb6318b9f4550a8,Reaction,DragonSatisfiedAndLeaves,4,Kobold,ĐƯỢC!
+28454e931a2d3578,Reaction,DragonSatisfiedAndLeaves,5,Dragon,Tuyệt! Vậy gặp lại sau!
+
+# ===== Unused nodes (not reachable in the current game) =====
+# --- Alexander_1 ---
+31c53bea307f49d0,Unused,Alexander_1,1,Alexander/Ryan,Tôi đang giúp nhà giả kim với tới kệ cao
+f00ea25690e17adf,Unused,Alexander_1,2,Alexander,"Tôi nghe một tiếng nổ lớn, tôi không nghĩ Igwix sống sót."
+# --- Alexander_2 ---
+07874aa669e5cb8c,Unused,Alexander_2,1,Alexander,Nếu bị bắt vi phạm thêm một quy định nữa thì danh tiếng của tôi tiêu tan!
+cfe73695b2bdfe19,Unused,Alexander_2,2,Alexander,"Trường không được biết chuyện này, được chứ?"
+27b11f3f6bf12fe9,Unused,Alexander_2,3,Kobold,Trường nào?
+2d3935f374b6474e,Unused,Alexander_2,5,Alexander,"Trường Cao đẳng Cộng đồng Thần thuật Burnswick, dĩ nhiên!"
+7a5128354d6171d0,Unused,Alexander_2,6,Alexander,Trường danh giá nhất với những giáo sư danh giá như tôi:
+b34663a53a6541a7,Unused,Alexander_2,9,Alexander,"Tốt, tôi không thể để Trường Cao đẳng Cộng đồng Thần thuật Burnswick biết rằng giáo sư giỏi nhất của họ Alexander đã gây ra thêm một sự cố."
+b39b95373bf40c36,Unused,Alexander_2,11,Alexander,"Ôi trời, quên những gì tôi vừa nói đi!"
+# --- Alexander_3 ---
+2501ad553fd20454,Unused,Alexander_3,1,Alexander,"Tôi sẽ phải hồi sinh Igwix, ôi xấu hổ quá!"
+7b282582fab597eb,Unused,Alexander_3,2,Alexander,Tiệm thuốc sẽ bôi nhọ tên tôi hàng tháng trời.
+# --- Alexander_Dirty ---
+950b8260a6ca788f,Unused,Alexander_Dirty,1,Alexander,Nhìn tôi này! Tôi sẽ thành trò cười của sinh viên.
+97733f8db49fb168,Unused,Alexander_Dirty,2,Alexander,Làm ơn chà Igwix khỏi lưng tôi được không?
+# --- Alexander_Idle1 ---
+6a4162b247e5aae1,Unused,Alexander_Idle1,1,Alexander,Không thể tin Igwix lại mắc sai lầm thế này!
+5e971607fa926b31,Unused,Alexander_Idle1,2,Alexander,"Giờ thì tôi ở đây, agh!"
+# --- Alexander_Idle2 ---
+2a1b4481e851f727,Unused,Alexander_Idle2,1,Alexander,"Tôi đã cất công đi tắm kín đáo, tôi chắc là không bị theo dõi."
+26974d0189f0d75c,Unused,Alexander_Idle2,2,Alexander,Tôi chắc sẽ không ai biết...
+# --- Alexander_Idle3 ---
+db8cc14accf5dfe9,Unused,Alexander_Idle3,1,Alexander,"À, chỗ bẩn có hơi xót, cảm ơn."
+# --- Alexander_Soapy ---
+e17d9103818204a4,Unused,Alexander_Soapy,1,Alexander,"Xà phòng này không hợp với một giáo sư, cậu thấy không?"
+03c418e790b340c3,Unused,Alexander_Soapy,2,Alexander,Cho tôi biết khi cậu xả xong nhé.
+# --- Alexander_Intro ---
+f82f410ee41cad07,Unused,Alexander_Intro,1,Alexander,Psst..!
+fedb00f6c13cec68,Unused,Alexander_Intro,2,Kobold,Ơ... Xin chào?
+4359ca4e5c8fc816,Unused,Alexander_Intro,3,Kobold,Ai đó?
+9e2816aaa10403b6,Unused,Alexander_Intro,4,Alexander,Suỵt! Tôi không phải người quanh đây...
+8275f13b67a6687b,Unused,Alexander_Intro,5,Alexander,Giờ cậu có mở cửa không?
+7409deaefe456a49,Unused,Alexander_Intro,7,Alexander,Phù! Tôi gặp một tai nạn cần được xử lý... kín đáo.
+afb82d57a9c1ba48,Unused,Alexander_Intro,8,Alexander,Dỡ ngay rào chắn này để tôi vào.
+# --- Alexander_Outro ---
+0c2f6e570964b0c1,Unused,Alexander_Outro,1,Alexander,"Trời ơi, nhờ cậu tôi có cơ hội cứu vãn tình hình này."
+639110e1c4cc2914,Unused,Alexander_Outro,2,Alexander,Này cậu có nhớ tên trường tôi làm việc không?
+e35f2c7dd32a4059,Unused,Alexander_Outro,3,Kobold,Trường Cao đẳng Cộng đồng Thần thuật Burnswick
+8e3a0c6c1c068e67,Unused,Alexander_Outro,4,Kobold,Anh làm ở trường cao đẳng à?
+7bf1556708efd0d8,Unused,Alexander_Outro,5,Kobold,Không
+79acad09a68bf670,Unused,Alexander_Outro,6,Alexander,"Không! Ý tôi là, có, nhưng vì danh tiếng của tôi xin cậu giữ kín chuyện tôi đến đây."
+3730dccb6a6582be,Unused,Alexander_Outro,7,Alexander,Gì cơ? Tôi là giáo sư! Nhìn huy hiệu không thấy à?
+56723edcd935d476,Unused,Alexander_Outro,8,Alexander,Ồ!
+e0723f4408ee3eda,Unused,Alexander_Outro,9,Alexander,"Tôi hiểu cậu đang làm gì, cảm ơn."
+7973db48113175b5,Unused,Alexander_Outro,10,Alexander,"Tốt lắm, tôi cảm kích sự kín đáo của cậu, tôi đi tiệm thuốc đây."
+677412526f14044a,Unused,Alexander_Outro,14,Alexander,Tôi rất hài lòng với kết quả này..
+# --- ConradBeatup_1 ---
+72f9c6536242f235,Unused,ConradBeatup_1,2,Kobold,Tôi ở đây nếu anh cần ai đó để nói chuyện.
+67410be84ad1b8ac,Unused,ConradBeatup_1,3,Kobold,"Tôi sẽ lo việc này, anh đừng lo."
+5b207ccbfd5d5679,Unused,ConradBeatup_1,4,Conrad,Không.. Không sao... cảm ơn.
+b2139b5e4dc27f14,Unused,ConradBeatup_1,5,Conrad,... Cảm ơn..
+# --- ConradBeatup_2 ---
+b841443b4a7e3b82,Unused,ConradBeatup_2,1,Conrad,Này cảm ơn đã ở bên tôi...
+02febaeeb5306c30,Unused,ConradBeatup_2,2,Conrad,Có bạn bè để dựa vào thật tốt.
+# --- ConradBeatup_Idle1 ---
+7ff77420c3518210,Unused,ConradBeatup_Idle1,1,Conrad,"... Tôi tưởng bọn tôi là bạn tốt, bọn tôi làm chuyện ấy suốt mà!"
+13a3bd02487dab16,Unused,ConradBeatup_Idle1,2,Conrad,Tôi không hiểu..
+# --- ConradBeatup_Idle2 ---
+861f99e073cd06e2,Unused,ConradBeatup_Idle2,1,Conrad,Tôi tỏ ra cứng rắn nhưng chỉ là một con rồng nhỏ...
+e375cf5dd6f03d34,Unused,ConradBeatup_Idle2,2,Conrad,Họ đi quá xa rồi.
+# --- ConradBeatup_Intro ---
+19aa373fb830a05c,Unused,ConradBeatup_Intro,2,Kobold,Trời ơi anh bị thương!
+c7e055a695603f2b,Unused,ConradBeatup_Intro,3,Kobold,Anh ổn chứ?
+e4e0397bea6600f5,Unused,ConradBeatup_Intro,4,Conrad,"Này ờ, tôi chỉ cần tắm thôi."
+e36f54f748a69d3e,Unused,ConradBeatup_Intro,5,Kobold,"...Được, vào đi"
+# --- ConradBeatup_OutroDirty ---
+e17652524a905f18,Unused,ConradBeatup_OutroDirty,1,Conrad,... xong rồi à? Tôi vẫn còn bẩn..
+# --- ConradBeatup_OutroSoapy ---
+d0b060d51bc87feb,Unused,ConradBeatup_OutroSoapy,1,Conrad,... xong rồi à? Tôi vẫn còn xà phòng..
+# --- Conrad_1 ---
+5a208b2886d87937,Unused,Conrad_1,1,Conrad,"Ở đây cũng có ""kết thúc đặc biệt"" chứ?"
+d61259269b75dec9,Unused,Conrad_1,2,Kobold,Cái gì thế?
+1ea442a134b2a184,Unused,Conrad_1,4,Kobold,Không
+335bcdceb30ec6b8,Unused,Conrad_1,5,Conrad,"Thôi nào, không. Bạn ơi cậu phải làm vụ này. Tôi trả hậu!"
+2f7cc8c297b8d283,Unused,Conrad_1,6,Conrad,Đỉnh! Nóng lòng xem cậu làm!
+9d1528cc1118e4dd,Unused,Conrad_1,7,Conrad,Sao? Chỗ nào xịn cũng làm thế mà!
+# --- Conrad_2 ---
+d892eb1f696177b4,Unused,Conrad_2,1,Conrad,"Chỗ này cần tân trang, tôi biết nó cần gì!"
+0eaacb4d2b730370,Unused,Conrad_2,2,Conrad,Tôi có một gã có thể mang quà đến ngày mai để làm chỗ này tươm tất hơn.
+# --- Conrad_5_Mount_Finish ---
+28a96495be7701ea,Unused,Conrad_5_Mount_Finish,1,Conrad,Chết tiệt... Lúc nào cũng sướng.
+# --- Conrad_5_Mount_Start ---
+cda9c08deb782b6e,Unused,Conrad_5_Mount_Start,1,Conrad,"<i>Ooooh. </i>Cái bệ à? Đã quá, ông bạn."
+# --- Conrad_Idle1 ---
+06b2c581e253753a,Unused,Conrad_Idle1,1,Conrad,"Người ta bảo tôi có cái ấy to, đúng không?"
+ba07cdd711c7d570,Unused,Conrad_Idle1,2,Kobold,Ôi trời
+f2ea9d36d2c4032f,Unused,Conrad_Idle1,3,Kobold,Tôi từng thấy to hơn
+25cdc596cd23bedb,Unused,Conrad_Idle1,4,Conrad,Cậu nên sờ thử rồi kiểm tra giúp tôi
+c3565cd77a3dcba9,Unused,Conrad_Idle1,5,Conrad,"Nhưng không phải trong một gói cỡ này, đúng không??"
+# --- Conrad_Intro ---
+bc1e29287f60b297,Unused,Conrad_Intro,1,Conrad,Chào bạn hiền!
+f7a29676d9621163,Unused,Conrad_Intro,2,Conrad,"Conrad cần tắm, có chỗ cho hắn không?"
+8339b88ae51a85f6,Unused,Conrad_Intro,3,Kobold,"Có, mời lối này."
+255d982b3d4c772e,Unused,Conrad_Intro,5,Conrad,Tốt lắm!
+# --- Mount_Alexander_2_6 ---
+dcc524605bec9fd8,Unused,Mount_Alexander_2_6,1,Alexander,Cái gì..
+d010c18e5ff478ed,Unused,Mount_Alexander_2_6,2,Alexander,Ôi trời không..
+f025190cb1adde9c,Unused,Mount_Alexander_2_6,3,Alexander,"Tôi không muốn thô lỗ, nhưng tôi phải từ chối"
+eec9d16c87323040,Unused,Mount_Alexander_2_6,4,Alexander,Đây là chuyện thông thường à?
+929e50391bfd0646,Unused,Mount_Alexander_2_6,5,Kobold,Ồ đúng
+b6547fc9d980c16e,Unused,Mount_Alexander_2_6,6,Kobold,"Không, thật ra tôi vừa mới có nó"
+40df3c9d9e1d5126,Unused,Mount_Alexander_2_6,7,Alexander,Tôi hiểu..
+d3acad6a7014a598,Unused,Mount_Alexander_2_6,8,Alexander,Nghe thật tai tiếng
+ab5a3375052f41eb,Unused,Mount_Alexander_2_6,9,Alexander,Dù tôi không thể nói là mình không tò mò
+c5ba4f5f1cdff517,Unused,Mount_Alexander_2_6,10,Alexander,Dù vậy. Không phải lần này
+# --- RyanDate_1 ---
+14ecee0afc63c845,Unused,RyanDate_1,1,Ryan,Mình háo hức về buổi hẹn này quá!
+90ba900c65607127,Unused,RyanDate_1,2,Ryan,"Mình mang dưa hấu, bánh mì, nho và vài thứ khác."
+# --- RyanDate_2 ---
+690cf2b49eb95f79,Unused,RyanDate_2,1,Ryan,Cậu đang bận tâm chuyện gì à?
+1648a912c46f7fec,Unused,RyanDate_2,2,Kobold,Tối qua có chuyện xảy ra
+b3979a44b5b9376a,Unused,RyanDate_2,3,Ryan,Ôi không! Cậu muốn nói về nó không?
+02c33e4e3c09bc79,Unused,RyanDate_2,4,Kobold,"Chỉ là có chuyện xảy ra với Conrad, mong là anh ấy ổn."
+7680ca7ff15f1566,Unused,RyanDate_2,5,Ryan,Mình cũng mong anh ấy ổn.
+# --- RyanDate_3 ---
+7ba9e65f61ca2369,Unused,RyanDate_3,1,Ryan,Ngon quá!
+ff74b82dcb8a11d3,Unused,RyanDate_3,2,Kobold,"Chà, nhìn cậu ăn kiểu đó đúng là một trải nghiệm."
+5b14f19a86849ff5,Unused,RyanDate_3,3,Ryan,Kiểu gì?
+42af2c2067728998,Unused,RyanDate_3,4,Ryan,"Ồ kiểu, nuốt nguyên miếng ấy hả?"
+37f99dd7cbcf5b6f,Unused,RyanDate_3,5,Ryan,Tùy! Chuyện của rồng.
+# --- RyanDate_Idle1 ---
+bcda1f48383d915f,Unused,RyanDate_Idle1,1,Ryan,"Hehe, mình háo hức được quay lại hẹn hò."
+# --- RyanDate_Intro ---
+d5be54b666b3d38f,Unused,RyanDate_Intro,2,Ryan,"Mình đã nghĩ về điều cậu nói,"
+ffcaf369ac8b1a74,Unused,RyanDate_Intro,3,Ryan,về chuyện quay lại hẹn hò ấy...
+89f52a0dc3d757c1,Unused,RyanDate_Intro,4,Kobold,Ừ
+ecab929d37109ab0,Unused,RyanDate_Intro,5,Ryan,"Mình biết cậu bận quá, nên mình nghĩ sẽ mang buổi hẹn đến cho cậu!"
+92d9da0b0b22fd7a,Unused,RyanDate_Intro,6,Kobold,Tuyệt! Vào đi..
+# --- RyanDate_Outro ---
+638d7c049f321a6d,Unused,RyanDate_Outro,4,Ryan,Thật tuyệt! Mình thấy tự tin hơn nhiều về chuyện hẹn hò.
+line:bbca8a46,Unused,RyanDate_Outro,5,Ryan,Cảm ơn!
+# --- RyanExploded_Intro ---
+8e87e6b28fb697c4,Unused,RyanExploded_Intro,1,Ryan,Lại chào..
+53ca70e25fc42870,Unused,RyanExploded_Intro,3,Kobold,Lại là cậu?
+b99d68084de082b6,Unused,RyanExploded_Intro,5,Ryan,hê.. ừ.. xin lỗi..
+81f2cb133d548396,Unused,RyanExploded_Intro,6,Ryan,"Vậy là, mình gặp một sự cố.."
+line:e02f464d,Unused,RyanExploded_Intro,7,Ryan,Mình đang giúp nhà giả kim với tới kệ cao
+d3e25fe68c13c02d,Unused,RyanExploded_Intro,8,Ryan,Mình nghe một tiếng nổ lớn
+ce386faf68f3df7e,Unused,RyanExploded_Intro,9,Ryan,Không biết họ đi đâu nhưng mình lại thấy bẩn rồi.
+60c1424a59a1c912,Unused,RyanExploded_Intro,10,Ryan,Cậu tắm lại cho mình được không?
+917613bbf36e4b93,Unused,RyanExploded_Intro,11,Kobold,Dĩ nhiên! Mời lối này!
+# --- RyanExploded_OutroDirty ---
+f2bdff14318fd81c,Unused,RyanExploded_OutroDirty,1,Ryan,Mình nghĩ vẫn còn cảm thấy tro bụi vụ nổ trên người...
+6a1900ba2212696d,Unused,RyanExploded_OutroDirty,2,Ryan,Rửa thêm được không?
+85a39ab345d672ff,Unused,RyanExploded_OutroDirty,3,Kobold,Được
+1562d2eeb95b795a,Unused,RyanExploded_OutroDirty,4,Kobold,Lỗi tớ
+3bcf70f39eca74f1,Unused,RyanExploded_OutroDirty,5,Ryan,"Không sao, cảm ơn!"
+# --- RyanExploded_OutroSoapy ---
+9df62882448c291b,Unused,RyanExploded_OutroSoapy,1,Ryan,"Ơ, mình vẫn còn đầy xà phòng!"
+29d1991e26b1773d,Unused,RyanExploded_OutroSoapy,2,Ryan,Cậu rửa sạch được không?
+# --- RyanExploded_Outro ---
+a45ce5a6357ad76f,Unused,RyanExploded_Outro,4,Ryan,"Phù, mình sợ lại làm hỏng chuyện."
+ca1dd92cfbe2dcd5,Unused,RyanExploded_Outro,5,Ryan,Giờ họ sẽ không bao giờ cần biết!
+# --- RyanMuddy_Dirty ---
+58246ed8cfcdfa19,Unused,RyanMuddy_Dirty,1,Ryan,"Ừ mình dính đầy bùn, thích chạy nhảy trong công viên lắm."
+f27e94e23a2cc6eb,Unused,RyanMuddy_Dirty,2,Ryan,"Mình vẫn còn rất bẩn, cậu xát xà phòng cho mình thì tốt quá."
+# --- RyanMuddy_Idle1 ---
+c24aaf031df991a1,Unused,RyanMuddy_Idle1,1,Ryan,"Vậy ờ, bảo mình nếu cần mình di chuyển nhé."
+8bb630e0c8dc64ac,Unused,RyanMuddy_Idle1,2,Ryan,Cứ chạm tay vào mình và mình sẽ cố giúp.
+# --- RyanMuddy_Idle2 ---
+bcee068ce8220b8e,Unused,RyanMuddy_Idle2,1,Ryan,Cảm ơn đã tắm cho mình!
+2c4f3b41240d00cd,Unused,RyanMuddy_Idle2,2,Ryan,Mình mong chờ chuyện này lắm.
+# --- RyanMuddy_Idle3 ---
+e304ea7f521df3f2,Unused,RyanMuddy_Idle3,1,Ryan,Khi xong thì cứ bấm nút.
+ac51ca95656fffdd,Unused,RyanMuddy_Idle3,2,Ryan,"Cái nút trên tường, ý mình là thế."
+# --- RyanMuddy_Idle4 ---
+8fd85e09be693fbf,Unused,RyanMuddy_Idle4,1,Ryan,"Max bảo mình là con rồng vụng về,"
+d2261edb51b885d9,Unused,RyanMuddy_Idle4,2,Ryan,Mong là cậu giúp mình chứng minh họ sai!
+# --- RyanMuddy_Idle5 ---
+9df1eb0e35a5d36a,Unused,RyanMuddy_Idle5,1,Ryan,"Xà phòng, rồi xả!"
+5e7b1eae20d0fb72,Unused,RyanMuddy_Idle5,2,Ryan,Ít nhất là mình nghe nói thế.
+# --- RyanMuddy_Soapy ---
+73d08af95ae8835e,Unused,RyanMuddy_Soapy,1,Ryan,"Mình thích bong bóng, nhột lắm!"
+83af94fb3d626970,Unused,RyanMuddy_Soapy,2,Ryan,Nhưng mình cũng háo hức xem chúng trôi xuống cống.
+6bc811f815ef9e24,Unused,RyanMuddy_Soapy,3,Ryan,Dùng vòi xịt trên tường để rửa cho mình.
+# --- RyanMuddy_Idle7 ---
+255bd9c513473506,Unused,RyanMuddy_Idle7,1,Ryan,"Chà cảm ơn, dễ chịu thật."
+77ff00f75a7c2083,Unused,RyanMuddy_Idle7,2,Ryan,Dính bùn vui lắm cho đến khi nó bắt đầu khô.
+620caab5d90b8d3f,Unused,RyanMuddy_Idle7,3,Ryan,Mừng vì được rửa sạch.
+# --- RyanMuddy_Idle8 ---
+afa88441bc4fc8d9,Unused,RyanMuddy_Idle8,1,Ryan,"Ai ngờ rồng có thể bẩn đến thế, nhỉ?"
+2ea6d5d46861d1bf,Unused,RyanMuddy_Idle8,2,Ryan,Mình chạy nhảy trong rừng
+c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,"Chỉ nhận ra mình bẩn cỡ nào sau khi Max quát, haha."
+# --- RyanMuddy_Intro ---
+299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,Nghe nói dưới này có kobold tắm cho mình được?
+05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,Tớ chính LÀ kobold đó. Yip!
+d12499a3f17512de,Unused,RyanMuddy_Intro,7,Kobold,"Đúng, chào mừng đến Drag'N Wash!"
+213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,"Tuyệt, vậy ờ,"
+44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,"À thấy cái nút đằng kia rồi, hiểu rồi!"
+af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,Cảm ơn mình sẽ đợi!
+# --- RyanMuddy_Nag1 ---
+3605a9273b22288b,Unused,RyanMuddy_Nag1,1,Ryan,Này cậu lên phía trước chỗ mình nhìn thấy được không?
+720febc2a9d251aa,Unused,RyanMuddy_Nag1,2,Ryan,Mình có chuyện muốn nói!
+# --- RyanMuddy_Nag2 ---
+6852c864bbd2afef,Unused,RyanMuddy_Nag2,1,Ryan,Mình muốn nói chuyện mặt đối mặt!
+0918205f97d74d78,Unused,RyanMuddy_Nag2,2,Ryan,Cậu lên phía trước để mình nói chuyện được không.
+# --- RyanMuddy_Nag3 ---
+c8f453084718c8cc,Unused,RyanMuddy_Nag3,1,Ryan,Mình được dạy là nói chuyện với người nhỏ hơn thì nên nhìn mặt nhau mới lịch sự.
+# --- RyanMuddy_NaughtyTouch ---
+4d13604e28159e56,Unused,RyanMuddy_NaughtyTouch,1,Ryan,Để ý xem mấy cái chân đó đi đâu nhé?
+# --- RyanMuddy_Outro ---
+a46a0805bb6a5eda,Unused,RyanMuddy_Outro,1,Ryan,Cảm ơn đã tắm nhanh gọn!
+168c7d0bb7743dec,Unused,RyanMuddy_Outro,2,Ryan,Nhân tiện cậu có giận nếu người yêu làm bừa ở nhà không?
+3ae7f278ef092258,Unused,RyanMuddy_Outro,4,Kobold,Tùy
+0dfd80e1f981faca,Unused,RyanMuddy_Outro,6,Ryan,Ồ! Ừ có lý...
+8f207ab27746c010,Unused,RyanMuddy_Outro,7,Ryan,Chắc là tùy hoàn cảnh.
+86b57f75d4c04b75,Unused,RyanMuddy_Outro,8,Ryan,Mình biết cậu sẽ ủng hộ mình mà
+# --- RyanMuddy_SmallTalk ---
+0bf9a145c66c512b,Unused,RyanMuddy_SmallTalk,3,Kobold,Thật ra đây là lần đầu của tớ!
+4eb8bdb270c030ae,Unused,RyanMuddy_SmallTalk,5,Ryan,Ồ vậy là mới với cả hai chúng ta!
+ff152503516900ee,Unused,RyanMuddy_SmallTalk,6,Ryan,Với mình cũng mới...
+13d1c29ec8784cae,Unused,RyanMuddy_SmallTalk,7,Ryan,Mình ngạc nhiên là dễ chịu thế này.
+# --- Ryan_3_wont_use_mount ---
+9221ab210b374d30,Unused,Ryan_3_wont_use_mount,1,Ryan,Ồ... Mình không hứng thú dùng cái đó lúc này lắm.
+f3f18c2eea794920,Unused,Ryan_3_wont_use_mount,2,Ryan,Có lẽ để sau...?
+
+# ===== UI and other text (not part of the dialogue script) =====
+bc1b88907d3b748a,UI,,,UI,Âm thanh
+b3f848c2a09aa9ed,UI,,,UI,Âm lượng nhạc
+de7b57b57b05d020,UI,,,UI,Hiệu ứng âm thanh
+59a4a3f7f7caa060,UI,,,UI,Âm lượng môi trường
+31bcb8940fffb7d1,UI,,,UI,Lối chơi
+a874fca87cdd5e4e,UI,,,UI,Đồ họa
+d0db8b5e364b6989,UI,,,UI,Tùy chọn
+28f9044138a54b95,UI,,,UI,Trò chơi mới
+2a6b24ad28722034,UI,,,UI,Danh đề
+b3eb37acb66ba4bb,UI,,,UI,Thoát
+76900f1bfd16c8d4,UI,,,UI,Quay lại
+6a3041fb3ecba173,UI,,,UI,Góc nhìn camera
+d4055fafa3794fa8,UI,,,UI,Độ phân giải
+41ca171b0cbae01e,UI,,,UI,Độ sáng màn hình
+42e7fdbd13ba2a01,UI,,,UI,Tốc độ khung hình mục tiêu
+052810dae19607f5,UI,,,UI,VSync
+b63e857488f49396,UI,,,UI,Chế độ cửa sổ
+c461dbb2bab7d8bc,UI,,,UI,Toàn màn hình
+4571896d8a4d4162,UI,,,UI,Độ nhạy chuột
+43ff6e9485bf371e,UI,,,UI,Điều khiển cúi người
+3d03a1dea561d0db,UI,,,UI,Bật/tắt
+91d6e30620d99810,UI,,,UI,Nhấn/Giữ
+8e685d5409b3a543,UI,,,UI,Giữ
+6c359dddb1d4c36e,UI,,,UI,Kiểu biểu tượng gợi ý
+fd9baf7f335aa154,UI,,,UI,Đảo ngược nhìn dọc
+4d654c19179796ef,UI,,,UI,Giảm say hình khi xịt
+2316810a5de343dd,UI,,,UI,Bàn phím
+0286249762f7c943,UI,,,UI,Tự động
+c77c3af22c6429b2,UI,,,UI,Khử răng cưa
+130011756125313c,UI,,,UI,Bật
+ca7981b46ecf2c17,UI,,,UI,Tắt
+4883b7dfffb02e36,UI,,,UI,Độc quyền
+da43a1983d819a4d,UI,,,UI,Cửa sổ phóng to
+3f26603a2748fed3,UI,,,UI,Cửa sổ
+d640c7421da06661,UI,,,UI,Tiếp tục
+b6dcb96448c66497,UI,,,UI,ĐANG TẢI...
+f942d1e183d020b6,UI,,,UI,XÓA BẢN LƯU
+fae07a8540ff237b,UI,,,UI,Thật sự xóa bản lưu?
+ffb3c5f2edc34373,UI,,,UI,Menu tạm dừng
+3e49dd16f3893026,UI,,,UI,SẠCH
+4b36f28b2cf37677,UI,,,UI,CÓ XÀ PHÒNG
+e4e9ab13fc711176,UI,,,UI,MẢNH VỤN
+c9c8bf1eae99e1dc,UI,,,UI,CẦN NÓI CHUYỆN
+b98b0ff714ab5417,UI,,,UI,CẦN BĂNG BÓ
+dde8c08738fe9e59,UI,,,UI,CẦN DÙNG TAY
+a462b8c590652563,UI,,,UI,Nhập văn bản...
+bb23ec0586e24df5,UI,,,UI,Dưa hấu đấy!
+fa6bb50727553976,UI,,,UI,Được.
+77b845d22632a9ef,UI,,,UI,Vui vì gặp lại cậu.
+ed172a475c84204f,UI,,,UI,Tôi là giáo sư!
+43cc9e298a30c3af,UI,,,UI,Các cậu hai chân hay nhấm nháp bữa ăn.
+b735b39b4eea8b70,UI,,,Ryan,Mình chưa từng làm chuyện này ngoài trời
+c913913d57c38493,UI,,,Conrad,Đừng lo!
+d0ee8dcf7035040c,UI,,,Conrad,Tôi làm suốt
+b00675617fbac31a,UI,,,Ryan,Chắc cũng khá hào hứng
+816c197dfe2ac7e7,UI,,,Conrad,Tôi sắp nổ rồi
+fb490e9880f63f05,UI,,,Ryan,Mình nghĩ mình cũng sắp rồi..
+cb9cc6fadcf02cd5,UI,,,Ryan,Chà.. Vóc dáng thật sự là thứ duy nhất nhỏ ở cậu.
+b77039c811832311,UI,,,Ryan,Thật tuyệt
+cbc2935aebe3ca1f,UI,,,Conrad,Ừ
+1b01a1658c9a5adf,UI,,,Conrad,Cậu thấy vui chứ?
+0d8490d07a321596,UI,,,Ryan,Ừ chắc chắn. Lo cho mình à?
+3d42325316477a3a,UI,,,Conrad,Conrad chỉ tận hưởng thôi
+2fafbe5f3e7ff469,UI,,,Conrad,Thật ra.. Ý tôi là..
+df9b23df54ab5518,UI,,,Conrad,Tôi muốn chuyện này suôn sẻ
+b0bfa8fe9e70154c,UI,,,Ryan,Mình thấy đang rất tuyệt
+46fa21135fd9811b,UI,,,Ryan,Mình thích lắm
+b439ffe3e5553ddc,UI,,,Conrad,Cậu sướng lắm
+b92f91849d855b40,UI,,,UI,Conrad
+2d1e830624b2572a,UI,,,UI,Ryan
+e3becbaee46cc0df,UI,,,UI,Ngôn ngữ (Mod)
+6e58b577a084052a,UI,,,UI,Mod
+4850b174b713d88c,UI,,,UI,Bắt buộc
+37fe885f1406e372,UI,,,UI,Tắt từ lần khởi động sau
+9cc5c7f026ce0ca7,UI,,,UI,Bật từ lần khởi động sau
+fa20beae3754ffb1,UI,,,UI,"Mod khác cần mod này. Để vẫn tắt, nhấn ""Tắt"" một lần nữa."
+d57274b504a45b33,UI,,,UI,Không thể tắt ở đây vì nó được cài ngoài BepInEx/plugins
+fd35647f8ecb2f7d,UI,,,UI,Cần bởi mod
+9e6151acb057025d,UI,,,UI,Đang dùng mod
+b9d0dd131d07b5ad,UI,,,UI,"Các công cụ dùng chung cho mod của Drag'n Wash, bao gồm cả màn hình Mod này."
+1236e3be635f17c7,UI,,,UI,"Chơi Drag'n Wash bằng 16 ngôn ngữ. Dịch hội thoại, lựa chọn, giao diện và cài đặt."
+1cd1ca858aaea1d0,UI,,,UI,Chưa tải. Cần mod:
+eda662e0b5033180,UI,,,UI,Chưa tải. Không tương thích với:
+a8d12a246b72d98c,UI,,,UI,Chưa tải. Xem lý do trong BepInEx/LogOutput.log.
+7c862b0749e737c4,UI,,,UI,Bản vá tiền tải. Chạy trước các mod khác nên không thể tắt ở đây.
+74a883a037bc227f,UI,,,UI,Cài đặt
+21b111cbfe6e8fca,UI,,,UI,Mặc định
+bc5b45ae7b60692a,UI,,,UI,Đặt lại mặc định
+67529e7fdc6098a0,UI,,,UI,Lưu ngay lập tức. Một số mod chỉ áp dụng thay đổi sau khi khởi động lại.
+3d19e2d0333d7b19,UI,,,UI,Thay đổi mục này trong tệp cài đặt của mod tại BepInEx/config.
+dc20b3d5d2cddf82,UI,,,UI,Thư viện
+e0aaa77caac35ceb,UI,,,UI,Cho phép mod xem và thay thế văn bản trước khi trò chơi hiển thị.
+e33072d0f0267e46,UI,,,UI,"Báo cho mod biết lời thoại hoặc lựa chọn nào sắp hiển thị, kèm ID lời thoại và người nói."
+e6af4688a3314648,UI,,,UI,"Cửa sổ dùng chung trong trò chơi (F1), nơi mod thêm các thẻ công cụ phát triển và gỡ lỗi. Dùng được với chuột, tay cầm và Steam Deck."
+3839cc8c85e0dab6,UI,,,UI,"Phông chữ cho văn bản mà phông của trò chơi không hiển thị được, và tải texture cùng asset bundle mà không làm Direct3D 12 sập."
+507e6f82c57c2096,UI,,,UI,"Đọc và thay đổi các ô lưu và cờ sự kiện của trò chơi, và giữ bản sao của mọi phiên bản bản lưu để có thể hoàn tác mọi thay đổi."
+77777bd04fb7c9ae,UI,,,UI,Không dùng được trong phiên bản trò chơi này:
+014659ab9d98c8fe,UI,,,UI,Xung đột
+02e19c617a19bae7,UI,,,UI,Sửa cùng đoạn mã trò chơi với:
+61ec4dc622c31ea9,UI,,,UI,Sửa cùng đoạn mã trò chơi với các mod này và có thể ghi đè:
+c1c1009d3f37ec05,UI,,,UI,Có cập nhật
+4168cfb8a090a98c,UI,,,UI,Có phiên bản mới:
+cd6c9851e91ad7b6,UI,,,UI,Mở trang phát hành
+22e2bada8f1c65cd,UI,,,UI,Cập nhật
+f26f3275e735bdf6,UI,,,UI,Kiểm tra cập nhật
+a6a1b13028fd8c9c,UI,,,UI,Mỗi ngày một lần hỏi GitHub xem các mod đã khai báo kho GitHub có bản phát hành mới không. Không gửi thông tin nào về bạn hay trò chơi của bạn.
+fe199528850a4e24,UI,,,UI,Gỡ cài đặt
+63e38bd4b036193a,UI,,,UI,Hủy
+86965245a1d725c1,UI,,,UI,"Nhấn ""Gỡ cài đặt"" một lần nữa để xóa mod này ở lần khởi động trò chơi tiếp theo. Cài đặt của mod cũng sẽ bị xóa."
+e2b9759e2326caba,UI,,,UI,Sẽ bị xóa ở lần khởi động sau

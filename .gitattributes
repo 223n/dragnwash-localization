@@ -1,2 +1,13 @@
-*.sh text eol=lf
-*.cmd text eol=crlf
+# Text that ships or gets committed keeps LF everywhere. The CSVs matter most:
+# tools/hash-strings.ps1 and the in-game "Hash for commit" both run on Windows,
+# and without a rule here the result depends on the contributor's core.autocrlf.
+# A CRLF that lands inside a quoted multi-line translation becomes part of the
+# translated string, because CsvReader keeps every character inside quotes.
+*.sh  text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+
+# Belt and braces. Git already detects these as binary from their NUL bytes,
+# but an explicit rule keeps that true if a `* text=auto` line is ever added.
+*.bundle binary
+*.gif    binary

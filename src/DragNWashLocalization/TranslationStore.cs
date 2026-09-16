@@ -87,7 +87,7 @@ namespace DragNWashLocalization
             foreach (string localeDir in Directory.GetDirectories(translationsDir))
             {
                 string name = Path.GetFileName(localeDir);
-                if (name.StartsWith("_"))
+                if (name.StartsWith("_", StringComparison.Ordinal))
                 {
                     continue;
                 }
@@ -122,7 +122,7 @@ namespace DragNWashLocalization
             foreach (string localeDir in Directory.GetDirectories(translationsDir))
             {
                 string name = Path.GetFileName(localeDir);
-                if (name.StartsWith("_")) continue;
+                if (name.StartsWith("_", StringComparison.Ordinal)) continue;
                 string path = Path.Combine(localeDir, "strings.csv");
                 if (!File.Exists(path)) continue;
                 var texts = new List<string>();
@@ -180,6 +180,7 @@ namespace DragNWashLocalization
             }
 
             RebuildDiscoveredFile();
+            LineResolution.Rebuild(pluginDirectory);
         }
 
         private static void LoadFile(string path, string label)
@@ -312,6 +313,11 @@ namespace DragNWashLocalization
         // key form pass through; a key column is added ahead of translation.
         public static string HashFileInPlace(string pluginDirectory, string locale)
         {
+            // Rows without a speaker column fall back to SpeakerLookup, which
+            // scans every loaded object to build its table. Reset it once here
+            // so the scan happens at most once for the whole file rather than
+            // once per row.
+            SpeakerLookup.Reset();
             string localeDir = Path.Combine(pluginDirectory, "Translations", locale);
             string path = Path.Combine(localeDir, "strings.csv");
             // When a working copy exists it is the thing being edited, so the
@@ -447,8 +453,14 @@ namespace DragNWashLocalization
                     }
                 }
             }
-            using (var writer = new StreamWriter(path, append: false, new UTF8Encoding(false)))
+            // Written through SafeFile so a failure partway through leaves the
+            // previous file intact rather than a truncated one.
+            SafeFile.Write(path, new UTF8Encoding(false), writer =>
             {
+                // The published file is committed, and the repository keeps
+                // its CSVs in LF. WriteLine would use Environment.NewLine,
+                // so hashing on Windows would rewrite every line.
+                writer.NewLine = "\n";
                 writer.WriteLine("key,section,node,order,speaker,translation");
                 foreach (string comment in leadingComments)
                 {
@@ -500,7 +512,7 @@ namespace DragNWashLocalization
                         lineKept++;
                     }
                 }
-            }
+            });
 
             string from = input == working ? $" from the working copy ({fromPublished} row(s) kept from the published file)" : string.Empty;
             string ordered = order == null ? " No script order data found, so rows keep their input order." : $" Ordered by {Path.GetFileName(Path.GetDirectoryName(order.Source))}/script_order.csv.";
@@ -543,6 +555,12 @@ namespace DragNWashLocalization
         // session only appends genuinely new strings.
         private static void RebuildDiscoveredFile()
         {
+            // The discovered files carry the game's text in plain English; only
+            // a translator with the developer tools on gets them.
+            if (!DragNWash.ModFramework.DeveloperTools.Enabled)
+            {
+                return;
+            }
             string filePath = Path.Combine(_pluginDirectory, "Translations", "_discovered", "strings.csv");
 
             try
@@ -578,7 +596,7 @@ namespace DragNWashLocalization
                     kept.Add(CsvReader.Escape(source) + "," + CsvReader.Escape(draft ?? string.Empty));
                 }
 
-                using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
+                using (var writer = new StreamWriter(filePath, append: false, new UTF8Encoding(false)))
                 {
                     writer.WriteLine("source_en,translation");
                     foreach (string line in kept)
@@ -596,6 +614,12 @@ namespace DragNWashLocalization
         public static bool TryGetTranslation(string source, out string translation)
         {
             return ByKey.TryGetValue(KeyFor(source), out translation);
+        }
+
+        public static bool TryGetKeyTranslation(string key, out string translation)
+        {
+            translation = null;
+            return key != null && ByKey.TryGetValue(key, out translation);
         }
 
         public static bool TryGetLineTranslation(string lineId, out string translation)
@@ -648,6 +672,10 @@ namespace DragNWashLocalization
 
         public static void FlushDiscoveredToDisk()
         {
+            if (!DragNWash.ModFramework.DeveloperTools.Enabled)
+            {
+                return;
+            }
             string[] lines;
             lock (PendingDiscoveredLines)
             {
@@ -666,7 +694,7 @@ namespace DragNWashLocalization
                 string filePath = Path.Combine(dir, "strings.csv");
 
                 bool writeHeader = !File.Exists(filePath);
-                using (var writer = new StreamWriter(filePath, append: true, Encoding.UTF8))
+                using (var writer = new StreamWriter(filePath, append: true, new UTF8Encoding(false)))
                 {
                     if (writeHeader)
                     {
