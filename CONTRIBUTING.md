@@ -43,7 +43,7 @@ key,section,node,order,speaker,translation
 # --- phone: Ryan_1_PhoneTutorial | if $has_talked_to_ryan ---
 …
 # ===== UI and other text (not part of the dialogue script) =====
-bc1b88907d3b748a,UI,,,UI,Options
+d0db8b5e364b6989,UI,,,UI,Options
 ```
 
 - `section` … level number and dragon such as `L01 Ryan`, or `Cutscene` / `Reaction` / `Unused` / `UI`
