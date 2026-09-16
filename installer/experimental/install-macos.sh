@@ -60,6 +60,12 @@ FORCE_TERMINAL=0
 UI=""
 WARNINGS=""
 
+# The loop below shifts every argument away, and the language picker later
+# replaces the positional parameters again, so the invocation has to be kept
+# here to be able to log it at all. installer.log is usually the only
+# artefact a user can attach to a bug report.
+ARGV="$*"
+
 while [ $# -gt 0 ]; do
     case "$1" in
         --install) MODE=install ;;
@@ -658,7 +664,7 @@ patch_run_script() {
 }
 
 # ------------------------------------------------------------------ main ----
-log "---- start: $0 $* (mode=${MODE:-ask}, ui=$UI, gui=$GUI, payload=$PAYLOAD)"
+log "---- start: $0 $ARGV (mode=${MODE:-ask}, ui=$UI, gui=$GUI, payload=$PAYLOAD)"
 say "== $(t title)"
 
 if [ -z "$GAME_DIR" ]; then GAME_DIR="$(find_game || true)"; fi
