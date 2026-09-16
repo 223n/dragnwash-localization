@@ -64,11 +64,16 @@ namespace DragNWashLocalization
                 var fileOrder = new List<string>();
                 // line:xxxxxxxx -> translation, for rows that translate one line only.
                 var lineTranslations = new Dictionary<string, string>(StringComparer.Ordinal);
+                // key -> speaker. Seeded from the published file so a row the
+                // game cannot name right now keeps the name it was published
+                // with; anything the game knows overwrites it below.
+                var speakers = new Dictionary<string, string>(StringComparer.Ordinal);
                 foreach (var row in fresh ? new List<Dictionary<string, string>>() : CsvReader.ReadRows(published))
                 {
                     row.TryGetValue("key", out string key);
                     row.TryGetValue("source_en", out string src);
                     row.TryGetValue("translation", out string tr);
+                    row.TryGetValue("speaker", out string who);
                     key = key?.Trim();
                     if (TranslationKey.LooksLikeLineId(key))
                     {
@@ -89,11 +94,14 @@ namespace DragNWashLocalization
                         fileOrder.Add(key);
                     }
                     translations[key] = tr ?? string.Empty;
+                    if (!string.IsNullOrEmpty(who))
+                    {
+                        speakers[key] = who;
+                    }
                 }
 
                 // key -> English, from everything the game has in memory.
                 var sources = new Dictionary<string, string>(StringComparer.Ordinal);
-                var speakers = new Dictionary<string, string>(StringComparer.Ordinal);
                 var scriptOrder = new List<string>();
                 foreach (KeyValuePair<string, string> line in DialogueDumper.EnumerateOrderedLines())
                 {
