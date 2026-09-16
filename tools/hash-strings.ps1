@@ -71,10 +71,12 @@ function Read-Csv([string]$file) {
   # is about.
   $text = [System.IO.File]::ReadAllText($file, [System.Text.Encoding]::UTF8)
   if ($text.Trim() -eq '') { return @() }
-  # ConvertFrom-Csv takes the first physical line as the header, so a blank
-  # line above it becomes the header and every column is lost. The game
-  # (CsvReader.Parse) does not treat a blank line as a record either.
-  $text = $text -replace '^(?:[^\S\r\n]*\r?\n)+', ''
+  # ConvertFrom-Csv takes the first physical line as the header, so anything
+  # above it becomes the header and every column is lost. It skips a leading
+  # '#' line on its own, but not a blank line that follows one, so drop both
+  # here. The game (CsvReader.Parse) skips blank lines and treats '#' at the
+  # start of a record as a comment, so this matches it.
+  $text = $text -replace '^(?:[^\S\r\n]*\r?\n|#[^\r\n]*\r?\n)+', ''
   $rows = @($text | ConvertFrom-Csv)
   if ($rows.Count -eq 0) { return @() }
   # The first column's name, so a parsed comment row can be spotted by it.
