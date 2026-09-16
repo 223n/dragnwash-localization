@@ -100,7 +100,7 @@ line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Wonderful!,
 
 - Fill in only the line rows you want to differ. A line row with a translation wins for that one line; every other place keeps the hash row.
 - Empty line rows are fine to leave: *Hash for commit* publishes only the ones you filled in, at their place in the script.
-- Line IDs come from the game's script. If a game update changes one, that line falls back to the hash row. If an update edits a line's English instead, the line ID still finds the row (experimental, from the `experimental/stable-line-keys` branch): the translation keeps showing, and the line is listed for review in the log and the F1 window, because the English it was written for has changed.
+- Line IDs come from the game's script. If a game update changes one, that line falls back to the hash row. If an update edits a line's English instead, the line ID still finds the row (experimental, not yet in a release): the translation keeps showing, and the line is listed for review in the log and the F1 window, because the English it was written for has changed.
 - Line rows work for dialogue and options, not for UI text.
 
 ### Hash before committing

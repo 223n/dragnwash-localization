@@ -22,7 +22,7 @@ namespace DragNWashLocalization
     // 1.1.0 for ModInfo.UpdateRepository.
     [BepInDependency(ModFramework.Guid, "1.1.0")]
     [BepInDependency(DragNWash.ModFramework.Text.GameText.Guid, BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency(DragNWash.ModFramework.Dialogue.GameDialogue.Guid, BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(DragNWash.ModFramework.Dialogue.GameDialogue.Guid, "1.1.0")]
     [BepInDependency(ToolWindow.Guid, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(GameFonts.Guid, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(GameSaves.Guid, BepInDependency.DependencyFlags.HardDependency)]
