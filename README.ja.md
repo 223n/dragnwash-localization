@@ -217,7 +217,7 @@ Unity内部のキー名などを知る必要はありません。手順は [CONT
 
 ### 会話文をまとめて確認したい場合
 
-プラグイン導入後、ゲーム内（セーブをロードした後）で **F6キー** を押すと、全会話文が
+これらは開発者向けの機能です。先に **Options → Mods → Drag'n Wash ModFramework → Developer tools** をオンにしてください（遊ぶだけの人にはオフで、以下は何も動きません）。そのうえで、ゲーム内（セーブをロードした後）で **F6キー** を押すと、全会話文が
 `BepInEx/plugins/DragNWashLocalization/Translations/_discovered/dialogue_lines.csv`
 に一括で書き出されます（実機で1839行を確認済み）。
 

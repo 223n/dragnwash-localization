@@ -80,7 +80,7 @@ F6 / F7 の出力には `key` 列と `source_en` 列の両方が入っている�
 ### 新しい言語を始める
 
 1. `Translations/<locale>/` フォルダを作り（例: `ko`）、`name.txt` に表示名（例: `한국어`）を書く
-2. ゲームを起動し、**Options →「言語（Mod）」** か F1 → Tools の言語一覧で新しい言語を選ぶ（まだ訳が 0 件なので画面は英語のまま）
+2. 開発者ツールをオンにする：**Options → Mods → Drag'n Wash ModFramework → Developer tools**（初期設定はオフで、遊ぶだけの人には F1 の窓も書き出しも `_discovered` フォルダも出ません）。ゲームを起動し、**Options →「言語（Mod）」** か F1 → Tools の言語一覧で新しい言語を選ぶ（まだ訳が 0 件なので画面は英語のまま）
 3. **F1 → Tools → Export working copy** を押す。`strings.csv` がなくても、ゲームが持つ全行の英語原文を並べた
    空の作業コピー `_discovered/<locale>.working.csv` ができる
 4. あとは下記「原文を並べて作業する」と同じ。訳した行から順に画面へ反映される
