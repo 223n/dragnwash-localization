@@ -40,6 +40,46 @@ $SrcDir = Split-Path -Parent $Project
 $Dll = Join-Path $SrcDir 'bin/Release/DragNWashLocalization.dll'
 $OutDir = Join-Path $Root 'release'
 
+# 0. The version lives in two places: Plugin.PluginVersion, which the Mods
+#    screen shows, and the .csproj's <Version>/<FileVersion>, which become the
+#    DLL's file version and are what the installer shows. The .csproj comment
+#    says to keep them in step, but nothing checked it: a release that updated
+#    only one shipped a mod whose two version numbers disagree, and neither the
+#    build nor any test notices. Check before anything is built.
+#    <FileVersion> is checked too: it is a separate element, so it can drift on
+#    its own, and it is the one Windows shows in the file properties.
+#
+#    A missing element is not the same as a matching one, so the two are told
+#    apart. No <FileVersion> is fine: MSBuild takes it from <Version>. No
+#    <Version> is not: the assembly version falls back to 1.0.0.0 - and with
+#    both elements gone the file version is stamped 1.0.0.0 too - while
+#    Plugin.cs still says something else. That is the very drift this check
+#    exists to catch, so it must not read as "nothing to compare, carry on".
+#
+#    The values are trimmed: <Version> 1.1.2 </Version> is valid MSBuild and
+#    builds a 1.1.2 DLL, so it must not be reported as a mismatch.
+$PluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
+$PluginVersion = if ($PluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') { $Matches[1].Trim() } else { $null }
+$Csproj = Get-Content -LiteralPath $Project -Raw
+$CsprojVersion = if ($Csproj -match '<Version>([^<]*)</Version>') { $Matches[1].Trim() } else { $null }
+$CsprojFileVersion = if ($Csproj -match '<FileVersion>([^<]*)</FileVersion>') { $Matches[1].Trim() } else { $null }
+if (-not $PluginVersion -and -not $Version) {
+    throw 'Could not read PluginVersion from Plugin.cs. Pass -Version explicitly.'
+}
+if (-not $CsprojVersion) {
+    throw "No <Version> in $Project. Without it the assembly version falls back to 1.0.0.0 and nothing matches Plugin.PluginVersion. Add <Version> (and <FileVersion>) and keep both in step with it."
+}
+$Mismatched = @()
+if ($PluginVersion -and $PluginVersion -ne $CsprojVersion) {
+    $Mismatched += "<Version> $CsprojVersion"
+}
+if ($PluginVersion -and $CsprojFileVersion -and $PluginVersion -ne $CsprojFileVersion) {
+    $Mismatched += "<FileVersion> $CsprojFileVersion"
+}
+if ($Mismatched) {
+    throw "Version mismatch: Plugin.cs says $PluginVersion but the .csproj says $($Mismatched -join ' and '). Keep <Version> and <FileVersion> in step with Plugin.PluginVersion."
+}
+
 # 1. The reference assemblies are copied from the game install and never
 #    committed. Fail loudly and early with the list of what is missing.
 $Required = @(
@@ -93,15 +133,10 @@ if (-not (Test-Path -LiteralPath $Dll)) {
     throw "Build succeeded but $Dll was not produced."
 }
 
-# 3. Version: explicit argument wins, otherwise read PluginVersion from Plugin.cs.
+# 3. Version: explicit argument wins, otherwise the PluginVersion read in step 0,
+#    which already refused to go on without one.
 if (-not $Version) {
-    $pluginCs = Get-Content -LiteralPath (Join-Path $SrcDir 'Plugin.cs') -Raw
-    if ($pluginCs -match 'PluginVersion\s*=\s*"([^"]+)"') {
-        $Version = $Matches[1]
-    }
-    else {
-        throw 'Could not read PluginVersion from Plugin.cs. Pass -Version explicitly.'
-    }
+    $Version = $PluginVersion
 }
 
 # 4. Stage the files under the same layout the game expects, so extracting the
