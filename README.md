@@ -30,7 +30,7 @@ Installing is really easy.
 
 The installer finds the game through Steam on its own (or lets you pick the folder). If BepInEx is not installed yet, it downloads the official 5.4.23.5 release, verifies its SHA-256, and unpacks it for you. Then just start the game from Steam.
 
-Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish and Hebrew, and for fun Esperanto and Toki Pona (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when you ask and no other mod uses it. You can also uninstall in the game: **Options → Mods → Drag'n Wash Localization → Uninstall**, and the mod is removed the next time the game starts.
+Languages: 日本語 / 简体中文 / English (no translation), plus provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Korean, Russian, Polish, Hebrew, Ukrainian, Thai and Vietnamese, and for fun Esperanto and Toki Pona (see [Language packs](#language-packs)). The same window has an **Uninstall** button; save-history snapshots are kept by default, and BepInEx is removed together with the mod only when you ask and no other mod uses it. You can also uninstall in the game: **Options → Mods → Drag'n Wash Localization → Uninstall**, and the mod is removed the next time the game starts.
 
 If you prefer to do it by hand, follow the manual steps below.
 
@@ -192,6 +192,9 @@ The translation files were written by TomXV and ship in the same zip; contributo
 | `ru` | Русский | Provisional |
 | `pl` | Polski | Provisional |
 | `he` | עברית | Provisional, drawn right to left |
+| `uk` | Українська | Provisional |
+| `th` | ไทย | Provisional (a zero-width space between words lets lines break) |
+| `vi` | Tiếng Việt | Provisional |
 | `eo` | Esperanto | Provisional, just for fun |
 | `tok` | toki pona | Provisional, just for fun (a 137-word language, so expect it to be loose) |
 | `en` | English | The game's original text (no translation) |
