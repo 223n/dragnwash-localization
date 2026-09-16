@@ -3,6 +3,12 @@ name: Comment on translation check
 # Runs after "Check translations" finishes on a pull request and leaves
 # (or updates) one comment explaining why the check failed. It lives in
 # a separate workflow so it can comment on pull requests from forks.
+#
+# SECURITY: the artifact this job downloads is produced by a workflow that
+# ran on the pull request's own head. For the `pull_request` event GitHub
+# takes the workflow definition from that head, so a pull request from a
+# fork controls every byte of the artifact. Nothing read from it may decide
+# WHICH pull request is commented on, and its text is never trusted markup.
 
 on:
   workflow_run:
@@ -27,9 +33,52 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const pr = Number(fs.readFileSync('pr-number.txt', 'utf8').trim());
+            const { owner, repo } = context.repo;
+            const run = context.payload.workflow_run;
+
+            // Resolve the pull request from the head SHA carried by the
+            // workflow_run event, which only GitHub sets. Reading a number out
+            // of the artifact would let a fork aim this comment at any pull
+            // request in the repository: this job holds `pull-requests: write`
+            // and no `issues: write`, so plain issues are out of reach, but
+            // every pull request is not.
+            // workflow_run.pull_requests is empty for forks, so it cannot
+            // stand in for this lookup.
+            // sort/direction are explicit so the pick below does not depend on
+            // the API's default ordering.
+            const open = await github.paginate(github.rest.pulls.list, {
+              owner, repo, state: 'open',
+              sort: 'created', direction: 'asc', per_page: 100,
+            });
+            const matches = open.filter(p => p.head.sha === run.head_sha);
+            if (matches.length === 0) {
+              core.info(`No open pull request has head ${run.head_sha}; nothing to comment on.`);
+              return;
+            }
+            if (matches.length > 1) {
+              core.info(`Several open pull requests share head ${run.head_sha} (${matches.map(p => p.number).join(', ')}); commenting on the oldest.`);
+            }
+            const pr = matches[0].number;
+
+            // Also fork-controlled: the check could have been patched to write
+            // a zero here. Never call this a pass unless the run that produced
+            // the artifact actually succeeded, so the comment can never
+            // contradict the check status shown on the pull request.
             const status = fs.readFileSync('status.txt', 'utf8').trim();
-            const report = fs.readFileSync('report.txt', 'utf8').trim();
+            const passed = status === '0' && run.conclusion === 'success';
+
+            // Attacker-controlled text. Neutralise backticks so it cannot
+            // escape the fenced block below, and cap the length. Cutting on a
+            // UTF-16 boundary can split a surrogate pair and leave a lone
+            // surrogate, which the comment API rejects, so step back one unit
+            // when the cut lands between the halves of a pair.
+            const LIMIT = 20000;
+            let report = fs.readFileSync('report.txt', 'utf8').trim().replace(/`/g, '‵');
+            if (report.length > LIMIT) {
+              const last = report.charCodeAt(LIMIT - 1);
+              const end = (last >= 0xd800 && last <= 0xdbff) ? LIMIT - 1 : LIMIT;
+              report = report.slice(0, end);
+            }
             const marker = '<!-- translation-check -->';
 
             const hints = [];
@@ -46,8 +95,15 @@ jobs:
             if (hints.length === 0) hints.push('The full report below lists each problem with its file and line number.');
 
             let body;
-            if (status === '0') {
+            if (passed) {
               body = `${marker}\nThe translation check passed. Thank you for the contribution!`;
+            } else if (status === '0') {
+              body = [
+                marker,
+                'The translation check itself reported no problems, but the **Check translations** workflow did not succeed.',
+                '',
+                `See [the workflow run](${run.html_url}) for the step that failed.`,
+              ].join('\n');
             } else {
               body = [
                 marker,
@@ -66,9 +122,10 @@ jobs:
               ].join('\n');
             }
 
-            const { owner, repo } = context.repo;
             const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number: pr, per_page: 100 });
-            const mine = comments.find(c => c.body && c.body.startsWith(marker));
+            // Only ever edit a comment this workflow wrote. Without the author
+            // check, a human comment starting with the marker is overwritten.
+            const mine = comments.find(c => c.user && c.user.type === 'Bot' && c.body && c.body.startsWith(marker));
             if (mine) {
               await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
             } else if (status !== '0') {
