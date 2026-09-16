@@ -61,12 +61,20 @@ function Read-Csv([string]$file) {
   # is about.
   $text = [System.IO.File]::ReadAllText($file, [System.Text.Encoding]::UTF8)
   if ($text.Trim() -eq '') { return @() }
+  # ConvertFrom-Csv takes the first physical line as the header, so a blank
+  # line above it becomes the header and every column is lost. The game
+  # (CsvReader.Parse) does not treat a blank line as a record either.
+  $text = $text -replace '^(?:[^\S\r\n]*\r?\n)+', ''
+  $rows = @($text | ConvertFrom-Csv)
+  if ($rows.Count -eq 0) { return @() }
   # The first column's name, so a parsed comment row can be spotted by it.
   # A comment may itself contain a comma ('# ===== ... | sets a, b ====='), so
   # it can arrive split across several fields; only the first one matters.
-  $first = ((($text -split "\r?\n", 2)[0] -split ',')[0]).Trim('"')
-  if ($first -eq '') { return @() }
-  return (@($text | ConvertFrom-Csv) | Where-Object { -not ([string]$_.$first).StartsWith('#') })
+  # Taken from the header ConvertFrom-Csv actually used rather than from the
+  # first physical line: a comment line above the header would otherwise name
+  # a column that does not exist and turn the filter below into a no-op.
+  $first = @($rows[0].PSObject.Properties.Name)[0]
+  return ($rows | Where-Object { -not ([string]$_.$first).StartsWith('#') })
 }
 
 # ---- play order ------------------------------------------------------------
