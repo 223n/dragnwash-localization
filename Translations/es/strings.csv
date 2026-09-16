@@ -942,7 +942,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,Asegúrate de
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Si alguien como Ryan está interesado, lo estás haciendo genial."
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,Ja. Si tan solo hubiera un kóbold que pudiera limpiarme.
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Si tan solo.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,Me aseguraré de que quedes <i>impecable.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,Me aseguraré de que quedes <i>impecable.</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Bromas aparte, tu lavado es sin duda el mejor."
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,"Gracias. ¡Si te ves bien, te sientes bien!"
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1346,7 +1346,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Ja... ¿Me vas a hac
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,Jooooder. ¡Sí que sabes cómo tratar a un dragón!
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,¡Listo!
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Estás <i>impecable.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Estás <i>impecable.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,Eso parece.
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,De puta madre.
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Gracias por el lavado tan tarde en la noche.
