@@ -950,7 +950,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,一定要洗�
 line:c642cb17,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,謝了。
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,哈。要是有條狗頭人能幫我洗澡就好了。
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,要是有就好了。
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>我會把您洗得一塵不染。
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>我會把您洗得一塵不染。</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,說正經的，你洗得絕對是最好的。
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,謝了。人帥心情就好！
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1355,7 +1355,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,哈……現在要�
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,幹……你真懂怎麼伺候一條龍！
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,完成了！
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,<i>您一塵不染。
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,<i>您一塵不染。</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,看來是。
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,爽啦。
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,謝謝你這麼晚還幫我洗澡。
@@ -1897,7 +1897,7 @@ d57274b504a45b33,UI,,,UI,安裝在 BepInEx/plugins 之外，無法在此關閉
 fd35647f8ecb2f7d,UI,,,UI,需要它的模組
 9e6151acb057025d,UI,,,UI,使用的模組
 b9d0dd131d07b5ad,UI,,,UI,Drag'n Wash 模組共用的工具，包含這個模組畫面。
-1236e3be635f17c7,UI,,,UI,讓 Drag'n Wash 支援 13 種語言。翻譯對話、選項、介面和設定。
+1236e3be635f17c7,UI,,,UI,讓 Drag'n Wash 支援 16 種語言。翻譯對話、選項、介面和設定。
 1cd1ca858aaea1d0,UI,,,UI,未載入。需要：
 eda662e0b5033180,UI,,,UI,未載入。無法與以下模組同時使用：
 a8d12a246b72d98c,UI,,,UI,未載入。原因請查看 BepInEx/LogOutput.log。

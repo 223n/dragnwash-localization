@@ -943,7 +943,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,"Убедис
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Если кто-то вроде Райана заинтересовался, ты отлично справляешься."
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,"Ха. Вот бы был кобольд, который мог бы меня отмыть."
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Вот бы.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,"Я позабочусь, чтобы ты был <i>безупречно чист."
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,"Я позабочусь, чтобы ты был <i>безупречно чист.</i>"
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Шутки в сторону, твоя мойка точно лучшая."
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,Спасибо. Хорошо выглядишь — хорошо себя чувствуешь!
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1348,7 +1348,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Ха... Собира
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,"Бля-я-ядь. Ты и правда знаешь, как обращаться с драконом!"
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,Готово!
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Ты <i>безупречно чист.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Ты <i>безупречно чист.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,Похоже на то.
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,"Охренеть, да."
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Спасибо за мойку так поздно ночью.
@@ -1880,7 +1880,7 @@ d57274b504a45b33,UI,,,UI,"Установлен вне BepInEx/plugins, поэт�
 fd35647f8ecb2f7d,UI,,,UI,Нужен для
 9e6151acb057025d,UI,,,UI,Использует
 b9d0dd131d07b5ad,UI,,,UI,"Общие инструменты для модов Drag'n Wash, включая этот экран модов."
-1236e3be635f17c7,UI,,,UI,"Играйте в Drag'n Wash на 13 языках. Переводит диалоги, варианты ответов, интерфейс и настройки."
+1236e3be635f17c7,UI,,,UI,"Играйте в Drag'n Wash на 16 языках. Переводит диалоги, варианты ответов, интерфейс и настройки."
 1cd1ca858aaea1d0,UI,,,UI,Не загружен. Нужен мод
 eda662e0b5033180,UI,,,UI,Не загружен. Несовместим с
 a8d12a246b72d98c,UI,,,UI,Не загружен. Причина указана в BepInEx/LogOutput.log.

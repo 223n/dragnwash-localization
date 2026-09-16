@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using TMPro;
@@ -38,6 +39,9 @@ namespace DragNWashLocalization
         {
             if (TranslationStore.EntryCount == 0)
             {
+                // The button that gets here tells the user to watch the
+                // activity log, so this path must not be the only silent one.
+                Plugin.Log("[layout] No translations are loaded for the current language; nothing to check.");
                 return;
             }
 
@@ -136,13 +140,18 @@ namespace DragNWashLocalization
                         continue;
                     }
 
+                    // Invariant culture on purpose: the current culture would
+                    // write "1,5" where the decimal separator is a comma - de,
+                    // fr, es, pt-BR, ru, pl are all target languages of this
+                    // mod - and the value is not quoted, so the row would gain
+                    // a column and the file would no longer parse.
                     rows.Add(string.Concat(
                         CsvReader.Escape(source), ",",
                         CsvReader.Escape(translation), ",",
                         axis, ",",
-                        required.ToString("0.#"), ",",
-                        available.ToString("0.#"), ",",
-                        (required / available).ToString("0.##"), ",",
+                        required.ToString("0.#", CultureInfo.InvariantCulture), ",",
+                        available.ToString("0.#", CultureInfo.InvariantCulture), ",",
+                        (required / available).ToString("0.##", CultureInfo.InvariantCulture), ",",
                         CsvReader.Escape(path)));
                 }
             }
@@ -161,41 +170,79 @@ namespace DragNWashLocalization
             // Worst offenders first: the ratio is the last field before the path.
             rows.Sort((a, b) => RatioOf(b).CompareTo(RatioOf(a)));
 
-            string dir = Path.Combine(pluginDirectory, "Translations", "_discovered");
-            Directory.CreateDirectory(dir);
-            string filePath = Path.Combine(dir, "layout_risks.csv");
+            // Update() has no handler of its own, so anything thrown from here
+            // on - a pluginDirectory Path.Combine will not take, a directory
+            // that cannot be created, the report still open in a spreadsheet -
+            // would unwind out of the whole frame and skip the
+            // discovered-strings flush at the end of it. Every failure below
+            // leaves a line in the activity log instead, which is what the
+            // button that got us here told the user to watch.
+            string filePath;
+            try
+            {
+                string dir = Path.Combine(pluginDirectory, "Translations", "_discovered");
+                filePath = Path.Combine(dir, "layout_risks.csv");
+                Directory.CreateDirectory(dir);
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[layout] Could not prepare the report folder under {pluginDirectory}: {ex.Message}");
+                return;
+            }
+
+            string error;
+            bool written = TryWriteReport(filePath, rows, out error);
 
             // Written even when empty. Returning early here used to leave the
             // previous run's file on disk, so a clean result still read as a
             // list of problems.
             if (rows.Count == 0)
             {
-                try
+                if (!written)
                 {
-                    using (var empty = new StreamWriter(filePath, append: false, Encoding.UTF8))
-                    {
-                        empty.WriteLine("source_en,translation,axis,required_px,available_px,ratio,object_path");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Plugin.Log($"[layout] Could not clear the previous report: {ex.Message}");
+                    // The old rows are still on disk, so do not report a clean
+                    // result without saying the file disagrees with it.
+                    Plugin.Log($"[layout] {measured} translated label(s) measured, all fit, but {filePath} could not be rewritten ({error}); it still holds the previous run's rows.");
+                    return;
                 }
 
                 Plugin.Log($"[layout] {measured} translated label(s) measured, all fit. {autoSized} auto-size (they shrink rather than overflow), {unlaidOut} not laid out yet.");
                 return;
             }
 
-            using (var writer = new StreamWriter(filePath, append: false, Encoding.UTF8))
+            if (!written)
             {
-                writer.WriteLine("source_en,translation,axis,required_px,available_px,ratio,object_path");
-                foreach (string row in rows)
-                {
-                    writer.WriteLine(row);
-                }
+                Plugin.Log($"[layout] Could not write {filePath}: {error}");
+                return;
             }
 
             Plugin.Log($"[layout] {rows.Count} of {measured} translated label(s) need a look ({autoSized} auto-size, reported as 'shrink' rather than overflow); see {filePath}");
+        }
+
+        // No BOM: every other CSV this mod writes is plain UTF-8, and a BOM in
+        // front of the header turns the first column name into something the
+        // readers that do not strip it fail to match.
+        private static bool TryWriteReport(string filePath, List<string> rows, out string error)
+        {
+            try
+            {
+                using (var writer = new StreamWriter(filePath, append: false, new UTF8Encoding(false)))
+                {
+                    writer.WriteLine("source_en,translation,axis,required_px,available_px,ratio,object_path");
+                    foreach (string row in rows)
+                    {
+                        writer.WriteLine(row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+
+            error = null;
+            return true;
         }
 
         private static double RatioOf(string row)
@@ -207,7 +254,9 @@ namespace DragNWashLocalization
                 // Walk back from the path field, which may itself contain commas.
                 for (int i = parts.Length - 1; i >= 0; i--)
                 {
-                    if (double.TryParse(parts[i], out value))
+                    // Written with the invariant culture above, so read it back
+                    // the same way; the current culture would fail to parse it.
+                    if (double.TryParse(parts[i], NumberStyles.Float, CultureInfo.InvariantCulture, out value))
                     {
                         return value;
                     }

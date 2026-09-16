@@ -96,7 +96,32 @@ namespace DragNWashLocalization
         private bool _preloadedEverything;
         private bool _saidToolsOff;
 
+        // Unity logs an exception thrown from Awake and then calls Update every
+        // frame anyway. Update dereferences the config entries Awake binds, so
+        // a single failure during startup turns into a NullReferenceException
+        // on every frame for the rest of the session. Guard it instead.
+        private bool _ready;
+
         private void Awake()
+        {
+            try
+            {
+                Initialise();
+                _ready = true;
+            }
+            catch (Exception ex)
+            {
+                // The tabs are added at the very end of Initialise, so reaching
+                // here normally means none exist; take them back anyway for the
+                // case where the failure came after they were added. A tab that
+                // is listed but belongs to a plugin that never finished
+                // starting looks alive and does nothing.
+                RemoveToolTabs();
+                Logger.LogError($"DragNWashLocalization failed to start, so it will stay idle this session: {ex}");
+            }
+        }
+
+        private void Initialise()
         {
             _instance = this;
             PluginDirectory = Path.GetDirectoryName(Info.Location);
@@ -174,12 +199,16 @@ namespace DragNWashLocalization
 
             PrepareWindowCharacters();
             GameFonts.CharactersPrepared += () => ToolWindow.PrepareCharacters(GameFonts.PreparedCharacters);
-            AddToolTabs();
-            OptionsLanguage.Register(_availableLocales, LocaleDisplayName, () => _committedLocale, RequestLocale, CommitLocale);
 
             var harmony = new Harmony(PluginGuid);
             harmony.PatchAll();
             TmpTextHook.Install();
+
+            // Last, so that a failure anywhere above leaves nothing for the
+            // player to press. The Options row in particular cannot be taken
+            // back: the framework has no API to remove a choice once added.
+            AddToolTabs();
+            OptionsLanguage.Register(_availableLocales, LocaleDisplayName, () => _committedLocale, RequestLocale, CommitLocale);
 
             Logger.LogInfo($"DragNWashLocalization loaded. TargetLocale={TargetLocale.Value}, loaded entries={TranslationStore.EntryCount}, ignore patterns={IgnoreRules.PatternCount}, graphics={SystemInfo.graphicsDeviceType}");
         }
@@ -224,8 +253,16 @@ namespace DragNWashLocalization
         private void PrepareWindowCharacters()
         {
             var text = new StringBuilder(GameFonts.PreparedCharacters);
+            // Three things the window shows that the mod does not get to choose:
+            // where the game was installed, what the folders under Translations
+            // are called, and what the config file says the language is. The
+            // About tab prints all three, and the activity log reaches the same
+            // font with the install path whenever a line names a written file.
+            text.Append(PluginDirectory);
+            text.Append(TargetLocale.Value);
             foreach (string locale in _availableLocales)
             {
+                text.Append(locale);
                 text.Append(LocaleDisplayName(locale));
             }
             foreach (FlagInfo flag in GameFlags.Catalog)
@@ -308,6 +345,11 @@ namespace DragNWashLocalization
 
         private void Update()
         {
+            if (!_ready)
+            {
+                return;
+            }
+
             // Locale switching is requested from OnGUI but performed here: it
             // reads files and rasterizes glyphs, neither of which belongs in a
             // render callback.
@@ -391,6 +433,10 @@ namespace DragNWashLocalization
                 _pendingRestoreSnapshot = null;
                 _pendingRestoreSlot = null;
                 string result = GameSaves.Restore(slot, snapshot);
+                // The Saves tab cached the slot before the restore: the button
+                // asked for a refresh, but a repaint in that same frame can run
+                // it before this line does the work. Ask again now.
+                _savesRefreshAt = 0;
                 Log("[saves] " + result);
                 ToolWindow.ShowNotice(result);
             }
@@ -445,7 +491,7 @@ namespace DragNWashLocalization
             _availableLocales = new[] { "en" }
                 .Concat(Directory.GetDirectories(translationsDir)
                     .Select(Path.GetFileName)
-                    .Where(name => !name.StartsWith("_") && name != "en")
+                    .Where(name => !name.StartsWith("_", StringComparison.Ordinal) && name != "en")
                     .OrderBy(name => name, StringComparer.Ordinal))
                 .ToArray();
             foreach (string locale in _availableLocales)

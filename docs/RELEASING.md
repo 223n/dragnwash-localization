@@ -38,6 +38,15 @@ pwsh tools/pack.ps1
 This creates `release/DragNWashLocalization-<version>.zip` with the following structure:
 
 ```text
+BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
+BepInEx/plugins/DragNWash.ModFramework/DragNWash.ModFramework.dll
+BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt
+BepInEx/plugins/DragNWash.ModFramework/icon.png
+BepInEx/plugins/DragNWash.ModFramework.Text/DragNWash.ModFramework.Text.dll
+BepInEx/plugins/DragNWash.ModFramework.Dialogue/DragNWash.ModFramework.Dialogue.dll
+BepInEx/plugins/DragNWash.ModFramework.ToolWindow/DragNWash.ModFramework.ToolWindow.dll
+BepInEx/plugins/DragNWash.ModFramework.Assets/DragNWash.ModFramework.Assets.dll
+BepInEx/plugins/DragNWash.ModFramework.Saves/DragNWash.ModFramework.Saves.dll
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
@@ -54,9 +63,15 @@ README.md
 README.ja.md
 ```
 
+Two of those are conditional: `pack.ps1` copies `BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt` only when the framework checkout has a `LICENSE` at its root, and `icon.png` only when it has `src/DragNWash.ModFramework/icon.png`. Everything else in the list is always written.
+
 `Install.exe` and `install-steamdeck.sh` are Drag'n Wash ModFramework's shared installers, which `pack.ps1` builds and copies from the framework checkout ([docs/INSTALLER.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.md) there). `pack.ps1` also writes `mod-install.json`: this mod's folder, the player's data to keep, its config file, and the language question with every shipped pack. The `Install.exe` build is deterministic, so antivirus reputation is not reset with each release; `pack.ps1` prints its SHA-256, which should match the previous release while the framework's `installer/` is unchanged. Users double-click it to install, update, or uninstall. Extracting the `BepInEx/` directory into the game folder by hand still works. The experimental macOS script in `installer/experimental/` is not packaged.
 
 To install it, extract the archive into the game directory and merge the included `BepInEx/` directory.
+
+### 2b. Or let GitHub build it
+
+The **Build** workflow (Actions) does step 2 on a Windows runner: on a push to `main`, on a `v*` tag, or by hand (with a framework branch or tag to ship). It checks out Drag'n Wash ModFramework, fetches the reference assemblies from the private repository `TomXV/dragnwash-libs` with the `LIBS_TOKEN` secret, runs `tools/pack.ps1 -FrameworkPath`, and uploads the zip as a workflow artifact. A tag also creates a **draft** release with the zip attached, so the flow is: bump the version, commit, push the tag, wait for the workflow, then write the notes on the draft and publish it. The workflow never runs for pull requests. After a game update, refresh the private repository with `tools/copy-libs.ps1` (from both repositories' game installs). Local `pack.ps1` stays as the fallback.
 
 ### 3. Validate the package
 
@@ -82,6 +97,8 @@ The release notes should say that `Install.exe` and `install-steamdeck.sh` downl
 Do not move a tag that has already been pushed. If a published release has to be rebuilt (for example to add a file to its zip), delete the GitHub release and its tag first, then tag the new commit, build, and create the release again as above. Deleting the release resets its download count. If the release was a pre-release, decide before publishing whether the new one should be the latest release.
 
 ## Why releases are not built in CI
+
+> Since 2026-09-16 they can be: see [2b](#2b-or-let-github-build-it). The reference assemblies live in a private repository that only the Build workflow reads; this public repository still never contains them.
 
 The game DLLs required for compilation, including `UnityEngine.CoreModule.dll` and `YarnSpinner.dll`, cannot be included in the repository. GitHub Actions therefore cannot compile the plugin. Builds are created locally, and only the resulting ZIP is attached to a release.
 

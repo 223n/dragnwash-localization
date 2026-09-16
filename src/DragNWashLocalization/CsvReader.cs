@@ -123,13 +123,17 @@ namespace DragNWashLocalization
             return records;
         }
 
+        // A leading '#' is quoted too: Parse() treats a '#' at the start of a
+        // record as a comment, so an unquoted one would make the whole row
+        // vanish on read-back. Quoting is enough: a record that opens with '"'
+        // enters the quoted branch, where '#' is just another character.
         public static string Escape(string value)
         {
-            if (value == null)
+            if (string.IsNullOrEmpty(value))
             {
                 return string.Empty;
             }
-            bool needsQuotes = value.IndexOfAny(new[] { ',', '"', '\n', '\r' }) >= 0;
+            bool needsQuotes = value[0] == '#' || value.IndexOfAny(new[] { ',', '"', '\n', '\r' }) >= 0;
             if (!needsQuotes)
             {
                 return value;

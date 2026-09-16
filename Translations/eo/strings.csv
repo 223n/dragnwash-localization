@@ -941,7 +941,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,"Certiĝu, ke
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Se iu kiel Ryan interesiĝas, vi bonege sukcesas."
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,"Ha. Se nur estus koboldo, kiu povus purigi min."
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Se nur.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,"Mi certigos, ke vi estu <i>senmakula."
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,"Mi certigos, ke vi estu <i>senmakula.</i>"
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Ŝercoj flanken, via lavejo estas sendube la plej bona."
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,"Dankon. Bone aspekti, bone senti!"
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1345,7 +1345,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Ha... Nun vi skuos m
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,"Feeeek. Vi vere scias, kiel prilabori drakon!"
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,Ĉio farita!
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Vi estas <i>senmakula.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Vi estas <i>senmakula.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,Ŝajnas tiel.
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,Diable jes.
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Dankon pro la lavado tiel malfrue en la nokto.
@@ -1875,7 +1875,7 @@ d57274b504a45b33,UI,,,UI,"Instalita ekster BepInEx/plugins, do ĝi ne estas mal�
 fd35647f8ecb2f7d,UI,,,UI,Bezonata de
 9e6151acb057025d,UI,,,UI,Uzas
 b9d0dd131d07b5ad,UI,,,UI,"Komunaj iloj por modifoj de Drag'n Wash, inkluzive de ĉi tiu ekrano de modifoj."
-1236e3be635f17c7,UI,,,UI,"Ludu Drag'n Wash en 13 lingvoj. Tradukas dialogojn, elektojn, fasadon kaj agordojn."
+1236e3be635f17c7,UI,,,UI,"Ludu Drag'n Wash en 16 lingvoj. Tradukas dialogojn, elektojn, fasadon kaj agordojn."
 1cd1ca858aaea1d0,UI,,,UI,Ne ŝargita. Ĝi bezonas
 eda662e0b5033180,UI,,,UI,Ne ŝargita. Ĝi ne funkcias kune kun
 a8d12a246b72d98c,UI,,,UI,Ne ŝargita. La kialo estas en BepInEx/LogOutput.log.

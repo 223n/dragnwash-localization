@@ -6,7 +6,7 @@ body:
     id: locale
     attributes:
       label: 言語 / Language
-      options: ["ja", "zh-Hans", "other"]
+      options: ["ja", "zh-Hans", "zh-Hant", "de", "fr", "es", "pt-BR", "ko", "ru", "pl", "he", "eo", "tok", "other"]
     validations:
       required: true
   - type: input

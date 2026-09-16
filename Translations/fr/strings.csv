@@ -942,7 +942,7 @@ a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,Assure-toi d'
 55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Si quelqu'un comme Ryan est intéressé, tu t'en sors très bien."
 162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,Hah. Si seulement il y avait un kobold pour me laver.
 4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Si seulement.
-6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,Je vais faire en sorte que tu sois <i>impeccable.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,Je vais faire en sorte que tu sois <i>impeccable.</i>
 7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Blague à part, ton lavage est clairement le meilleur."
 207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,"Merci. Être beau, c'est se sentir bien !"
 # --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
@@ -1346,7 +1346,7 @@ c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,"Hah... Tu vas me br
 51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,Puuutain. Tu sais vraiment t'y prendre avec un dragon !
 # --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
 311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,C'est fini !
-84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Tu es <i>impeccable.
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,Tu es <i>impeccable.</i>
 2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,On dirait bien.
 af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,Putain ouais.
 8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Merci pour le lavage si tard dans la nuit.
@@ -1876,7 +1876,7 @@ d57274b504a45b33,UI,,,UI,"Installé hors de BepInEx/plugins, impossible de le d�
 fd35647f8ecb2f7d,UI,,,UI,Requis par
 9e6151acb057025d,UI,,,UI,Utilise
 b9d0dd131d07b5ad,UI,,,UI,"Outils communs aux mods de Drag'n Wash, dont cet écran des mods."
-1236e3be635f17c7,UI,,,UI,"Jouez à Drag'n Wash en 13 langues. Traduit les dialogues, les choix, l'interface et les options."
+1236e3be635f17c7,UI,,,UI,"Jouez à Drag'n Wash en 16 langues. Traduit les dialogues, les choix, l'interface et les options."
 1cd1ca858aaea1d0,UI,,,UI,Non chargé. Il a besoin de
 eda662e0b5033180,UI,,,UI,Non chargé. Il ne peut pas fonctionner avec
 a8d12a246b72d98c,UI,,,UI,Non chargé. La raison figure dans BepInEx/LogOutput.log.

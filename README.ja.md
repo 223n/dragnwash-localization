@@ -30,7 +30,7 @@
 
 ゲームフォルダは Steam から勝手に見つけます（見つからなければ選ぶだけ）。BepInEx が入っていなければ、公式の 5.4.23.5 を自動でダウンロードして入れます（SHA-256 で検証済み）。あとは Steam からゲームを起動するだけです。
 
-言語は 日本語 / 简体中文 / English（翻訳しない）に加えて、仮翻訳の繁体字中国語・ドイツ語・フランス語・スペイン語・ブラジルポルトガル語・韓国語・ロシア語・ポーランド語・ヘブライ語、面白枠のエスペラント・トキポナから選べます（[言語パック](#言語パック)参照）。同じ画面に「アンインストール」ボタンもあり、セーブ履歴は既定で残します。BepInEx は、選んだときに、他の Mod がなければ一緒に消せます。ゲームの中の **Options → Mods → Drag'n Wash Localization → Uninstall** からもアンインストールでき、次にゲームを起動したときに削除されます。
+言語は 日本語 / 简体中文 / English（翻訳しない）に加えて、仮翻訳の繁体字中国語・ドイツ語・フランス語・スペイン語・ブラジルポルトガル語・韓国語・ロシア語・ポーランド語・ヘブライ語・ウクライナ語・タイ語・ベトナム語、面白枠のエスペラント・トキポナから選べます（[言語パック](#言語パック)参照）。同じ画面に「アンインストール」ボタンもあり、セーブ履歴は既定で残します。BepInEx は、選んだときに、他の Mod がなければ一緒に消せます。ゲームの中の **Options → Mods → Drag'n Wash Localization → Uninstall** からもアンインストールでき、次にゲームを起動したときに削除されます。
 
 手動で導入したい場合は、以下の手順に従ってください。
 
@@ -192,6 +192,9 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 | `ru` | Русский | 仮翻訳 |
 | `pl` | Polski | 仮翻訳 |
 | `he` | עברית | 仮翻訳（右から左に表示） |
+| `uk` | Українська | 仮翻訳 |
+| `th` | ไทย | 仮翻訳（単語の間にゼロ幅スペースを入れて折り返せるようにしています） |
+| `vi` | Tiếng Việt | 仮翻訳 |
 | `eo` | Esperanto | 仮翻訳（面白枠） |
 | `tok` | toki pona | 仮翻訳（面白枠。単語が 137 個しかない言語なので、かなりざっくり） |
 | `en` | English | ゲーム本来の英語（翻訳なし） |
@@ -205,10 +208,10 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 `key,section,node,order,speaker,translation` の列を持ちます。`key` は英語原文のハッシュ、`section` / `node` / `order` はゲーム内のどこ（レベルと会話）で流れるかをプレイ順で示し、`speaker` は誰の台詞かです。`#` で始まる行は `# ===== Level 1: Ryan (Sunny) =====` のような見出しで、ファイルを上から読むと台本のように流れが追えます。
 おすすめの作業手順：
 
-1. ゲーム内で **F1 → Tools → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
+1. ゲーム内で **F1 → Translation → Export working copy** を押す。`Translations/_discovered/<locale>.working.csv`
    に、各行の英語原文を並べた作業用ファイル（`key,section,node,order,speaker,source_en,translation`）が、同じ見出しつきでゲーム内の実行順に書き出されます
 2. `translation` 列を編集して保存する。起動中のゲームにその場で反映されます
-3. コミット前に **F1 → Tools → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す
+3. コミット前に **F1 → Translation → Hash for commit**（または `tools/hash-strings.ps1`）で、英語原文を含まない `strings.csv` を作り直す
 
 リポジトリにはゲームの英語台本を含めない方針で、**製品版を持っている人だけが翻訳できる**仕組みです。
 各言語フォルダには表示名を書いた1行の `name.txt`（例: `日本語`）があり、インストーラーとゲーム内メニューに表示されます。
@@ -228,7 +231,17 @@ Unity内部のキー名などを知る必要はありません。手順は [CONT
 前後を見ながら訳せます。登場するドラゴンは Conrad / Ryan / Alexander の3体です。
 
 訳したい行を `Translations/<locale>/strings.csv` にコピーし、`translation` 列を埋めて
-PRを送ってください（`node` や `key` など余分な列が付いたままでも問題なく読み込まれます）。
+実機で確認してください（`node` や `key` など余分な列が付いたままでもプラグインは問題なく読み込みます）。
+
+**PR を送る前に、公開用ファイルを作り直してください。** ゲーム内の **Hash for commit** ボタン
+（または `tools/hash-strings.ps1`）を使います。
+自動チェックが受け付けるのは公開形式のヘッダだけです。*Hash for commit* が書く
+`key,section,node,order,speaker,translation` のほか、短い `key,speaker,translation` と `key,translation`
+も通ります。作業ファイルのヘッダはどれにも当てはまらないため、
+`source_en` などダンプ由来の列が残ったファイルは弾かれます。
+英語原文を含む PR を作らないことは、このリポジトリの
+一番の前提でもあります。詳しくは [CONTRIBUTING.ja.md](CONTRIBUTING.ja.md#コミット前にハッシュ化する) を参照してください。
+
 すでに訳した行は `translation` 列に訳が入った状態で出力されるので、再ダンプしても
 作業は失われません。
 
@@ -298,7 +311,7 @@ PRを送ってください（`node` や `key` など余分な列が付いたま�
 
 同じタブの **PROGRESS** 欄では、レベル番号を **-** / **+** で変えて **Apply** できます。
 先に進める方向はネタバレの可能性があるので確認が出ます。**Flags...** を押すと、ゲームが使う
-イベントフラグが分類（レベル進行 / ストーリー / 恋愛 / シーン発生条件 / シーン視聴済み / アイテム）と
+イベントフラグが分類（レベル進行 / ストーリー / 恋愛 / シーン発生条件 / シーン視聴済み / 洗浄セッション / アイテム / デバッグ）と
 説明つきで全部並びます。セーブにまだ存在しないフラグも「unset」として表示され、値をクリックすると
 unset → true → false の順に切り替わります。検索欄で絞り込み、**Reset all to false...** で全フラグを
 一括で false にできます（レベル番号は保持）。一覧は DLL の隣の `FlagCatalog.csv` から読むので、

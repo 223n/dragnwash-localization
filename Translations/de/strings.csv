@@ -24,13 +24,13 @@ b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,Yip!
 ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"Ah, ich seh den Knopf da, alles klar!"
 425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"Okay, ich warte hier. Danke."
 # --- phone: Ryan_1_PhoneTutorial ---
-9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Hallo, <i>„Drag'n wash Franchise 223""...</i> Haben Sie schon mit Ihrem ersten Kunden gesprochen?"
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Hallo, <i>„Drag'n wash Franchise 223“...</i> Haben Sie schon mit Ihrem ersten Kunden gesprochen?"
 276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,Gerade eben!
 d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,"Ja, hab ich."
 38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"Ah, gut."
 ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
 4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,Dann... einen produktiven Tag noch.
-07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Hallo, <i>„Drag'n wash Franchise 223""...</i> Haben Sie schon herausgefunden, wie man interagiert?"
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Hallo, <i>„Drag'n wash Franchise 223“...</i> Haben Sie schon herausgefunden, wie man interagiert?"
 3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,Nö.
 01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,"Ich glaub, ich hab's raus!"
 085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,Ah...
@@ -52,7 +52,7 @@ e99ba1a86146f1aa,L01 Ryan,Ryan_1_required,8,Ryan,Eine nette Auszeit von allem da
 c2aa03c999eb7731,L01 Ryan,Ryan_1_nag,1,Ryan,"Hey, ich muss dir was sagen!"
 5b798fca0ab51d6c,L01 Ryan,Ryan_1_nag,2,Ryan,"Könntest du hochkommen, wo ich dich sehen kann?"
 # --- jerkoff: ryan_jerk_off_no ---
-2e75bb6a3610c11b,L01 Ryan,ryan_jerk_off_no,1,Ryan,"Hey... vielleicht kannst du später etwas mehr „Hand anlegen""?"
+2e75bb6a3610c11b,L01 Ryan,ryan_jerk_off_no,1,Ryan,Hey... vielleicht kannst du später etwas mehr „Hand anlegen“?
 # --- mount_start: ryan_mount_no ---
 91c3bf04fb99ce8b,L01 Ryan,ryan_mount_no,1,Ryan,"Hm, den Bock lass ich heute lieber aus."
 # --- outro: Ryan_1_Outro ---
@@ -62,7 +62,7 @@ c3bbf19f280c6dde,L01 Ryan,Ryan_1_Outro,3,Kobold,Gern geschehen.
 66984a1e53d3e869,L01 Ryan,Ryan_1_Outro,4,Kobold,Mhm! Komm jederzeit wieder.
 d629b0ed3f97727c,L01 Ryan,Ryan_1_Outro,6,Ryan,Ich werde diesen Laden auf jeden Fall weiterempfehlen.
 e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,Ich merk mir diesen Ort auf jeden Fall.
-29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,8,Ryan,"Haha. „Yip"" auch an dich."
+29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,8,Ryan,Haha. „Yip“ auch an dich.
 0712e97652e51758,L01 Ryan,Ryan_1_Outro,9,Ryan,"Tja, das hat Spaß gemacht, bis später dann!"
 17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,10,Ryan,"Machst du mir das Tor auf, damit ich raus kann?"
 1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,12,Ryan/Conrad/Kobold/Dragon,Danke!
@@ -148,7 +148,7 @@ f33ca08a17779409,L03 Alexander,alexander_jerk_off_no,1,Alexander,"<i>Oh.</i> Ich
 # --- outro: Alexander_1_Outro ---
 d202075090a8960b,L03 Alexander,Alexander_1_Outro,1,Alexander,"Ich muss sagen, Sie haben ebenso gute Arbeit geleistet wie private Wäscher."
 b6069e62e167364f,L03 Alexander,Alexander_1_Outro,3,Kobold,"Mmmhm, ich gebe immer mein Bestes."
-981447d1952fe850,L03 Alexander,Alexander_1_Outro,4,Alexander,"Haha, „Yip"", in der Tat."
+981447d1952fe850,L03 Alexander,Alexander_1_Outro,4,Alexander,"Haha, „Yip“, in der Tat."
 5d7279822bcee7dd,L03 Alexander,Alexander_1_Outro,5,Alexander,Meine Studenten könnten sich von Ihrer Arbeitsmoral eine Scheibe abschneiden!
 8117291ab8529b4f,L03 Alexander,Alexander_1_Outro,6,Alexander,"Ich würde wirklich gern noch weiterplaudern, aber die Vorlesung beginnt bald."
 dae0c0aa3ae01c37,L03 Alexander,Alexander_1_Outro,7,Alexander,...Ich danke Ihnen dafür.
@@ -557,7 +557,7 @@ f38b3b8fcf6bf031,L09 Alexander,Alexander_3_intro,20,Alexander,Wie? Ein aufrichti
 3cf6fd8e7e50386c,L09 Alexander,Alexander_3_intro,22,Kobold,"Wie kommt es, dass Sie voller Tinte sind?"
 5d2cee363540fc7a,L09 Alexander,Alexander_3_intro,23,Alexander,Ich... hm.
 26b3089f5ee4a463,L09 Alexander,Alexander_3_intro,24,Alexander,"Ich <i>glaube </i>, ich muss <i>auf dem Weg hierher</i> ein Tintenfass verschüttet haben. Recht ungeschickt von mir!"
-7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,25,Kobold,"„Glaube"", „auf dem Weg hierher""? Dann waren Sie vorher gar nicht voller Tinte..."
+7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,25,Kobold,"„Glaube“, „auf dem Weg hierher“? Dann waren Sie vorher gar nicht voller Tinte..."
 b356a126e4318643,L09 Alexander,Alexander_3_intro,26,Alexander/Kobold/Ryan,Oh.
 cd5592e5e3140daa,L09 Alexander,Alexander_3_intro,27,Alexander,Richtig.
 2a0200c46ee1b662,L09 Alexander,Alexander_3_intro,29,Alexander,"Um ehrlich zu sein, ich habe mich schmutzig gemacht, um herzukommen."
@@ -623,7 +623,7 @@ b1ca0efdea534b71,L09 Alexander,Alexander_questions,33,Alexander,"Allerdings geht
 b38834ce4594ad5c,L09 Alexander,Alexander_questions,38,Alexander,Nach gelber Limette.
 5f6bb166b079c336,L09 Alexander,Alexander_questions,39,Kobold,Niemals.
 aac4af2b645cf88e,L09 Alexander,Alexander_questions,40,Kobold,Also... wie eine Zitrone?
-0ee250681eda1a08,L09 Alexander,Alexander_questions,41,Alexander,"„Doch, immer."" Nichts weiß ich mit größerer Gewissheit."
+0ee250681eda1a08,L09 Alexander,Alexander_questions,41,Alexander,"„Doch, immer.“ Nichts weiß ich mit größerer Gewissheit."
 b83a1658171971d7,L09 Alexander,Alexander_questions,42,Alexander,"Nein. Eine Limette, die gelb ist."
 a87e0094e62cb429,L09 Alexander,Alexander_questions,43,Kobold,Sie sind hier der Professor. Muss also stimmen.
 e154199e27c1d4a3,L09 Alexander,Alexander_questions,45,Alexander,"Das ist ein Autoritätsargument, ein Fehlschluss. Aber ja. Ich habe recht."
@@ -729,7 +729,7 @@ cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,32,Ryan,Wer ist das?
 ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,"Er ist ein RICHTIG süßer roter Drake, der zur Wäsche kommt!"
 4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,34,Kobold,"Er ist ein roter Drache. Ich glaub, ihr zwei würdet euch mögen!"
 0ea02ee3f0c5673d,L10 Ryan,ryan_food_dialogue,35,Ryan,"Oh! Ich glaub, den hab ich gesehen. Der Winzige, ja?"
-58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,"Er bevorzugt „vertikal benachteiligt""... Aber ja."
+58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,Er bevorzugt „vertikal benachteiligt“... Aber ja.
 3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,"Mhm! Er versucht, neue Leute kennenzulernen."
 474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,Oh...
 ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,Das ist echt süß.
@@ -757,7 +757,7 @@ c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,Und wie sieht's bei dir aus
 2374bdd10aea40ba,L10 Ryan,ryan_food_dialogue,63,Kobold,"Da ist dieser rote Drache, Conrad. Er ist... hitzköpfig, aber süß."
 58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,"Ja! Conrad, er ist zum Anbeißen. Auch wenn er es hassen würde, dass ich das sage."
 3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"Oh, hm, das ist der winzige Drake, den ich vor einer Weile reinkommen sah, ja?"
-882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,"Hey! Er ist nur... „vertikal benachteiligt""."
+882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,Hey! Er ist nur... „vertikal benachteiligt“.
 1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,Mhm! Das ist er.
 eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"Oh, sorry."
 dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,Der klingt süß!
@@ -1013,7 +1013,7 @@ d547385bcae74ca2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,20,Kobold,Ich fr
 # --- outro: Conrad_Outro_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
 ad0500f8d2500c0f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,1,Conrad,Ich fühl mich makellos wie immer.
 297d60c9e5c25580,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,2,Conrad,"Oh, und ich hab rausgefunden, wo wir hingehen."
-f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,"Da ist so ein Club in der Innenstadt. „Wings"". Ein alter Favorit von mir."
+f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,Da ist so ein Club in der Innenstadt. „Wings“. Ein alter Favorit von mir.
 5dcbc1f451fcc29d,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,6,Conrad,Ich bin da so 'ne Art große Nummer.
 99c9d7ee0966d8d1,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,7,Conrad,Ich könnte uns die <i>besten</i> Plätze für ihre Show besorgen.
 02f6a5560835daa6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,8,Kobold,"Hah, okay. Ich bin dabei."
@@ -1055,8 +1055,8 @@ bfad19e22f9652cc,L12 Alexander,Alexander_4_intro,10,Alexander,"Ganz meine Meinun
 846b613e707ce00d,L12 Alexander,Alexander_4_intro,15,Kobold,Yip! <size=70%>(Tor)
 1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,17,Alexander,"Mmm, ich verstehe das so, dass Sie das Tor öffnen werden?"
 56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,18,Kobold,Yip! <size=70%>(Ja)
-fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,19,Alexander,"Ich bin mir nicht sicher, weshalb ich Ihre „Yips"" plötzlich verstehe."
-7a919cef111fe275,L12 Alexander,Alexander_4_intro,20,Kobold,"Yip! <size=70%>(Das liegt daran, dass der schlummernde Teil Ihres drakonischen Verstandes sich an die tief verankerte Sprachbrücke zwischen Ihrer und meiner Art erinnert. Sie trägt die tiefe Bedeutung und Absicht der Kobold-„Yips"" in sich. Dieses plötzliche Verständnis rührt schlicht daher, dass unsere Verbindung mit der Zeit gewachsen ist und diesen Teil Ihres Verstandes aktiviert hat.)"
+fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,19,Alexander,"Ich bin mir nicht sicher, weshalb ich Ihre „Yips“ plötzlich verstehe."
+7a919cef111fe275,L12 Alexander,Alexander_4_intro,20,Kobold,"Yip! <size=70%>(Das liegt daran, dass der schlummernde Teil Ihres drakonischen Verstandes sich an die tief verankerte Sprachbrücke zwischen Ihrer und meiner Art erinnert. Sie trägt die tiefe Bedeutung und Absicht der Kobold-„Yips“ in sich. Dieses plötzliche Verständnis rührt schlicht daher, dass unsere Verbindung mit der Zeit gewachsen ist und diesen Teil Ihres Verstandes aktiviert hat.)"
 6d8c462224bca1b5,L12 Alexander,Alexander_4_intro,21,Kobold,Yip! <size=70%>(Keine Ahnung)
 8e7ead434fce5609,L12 Alexander,Alexander_4_intro,24,Alexander,Könnten Sie das Tor öffnen...?
 19be549c91d82ff3,L12 Alexander,Alexander_4_intro,25,Alexander,Nun gut. Ich warte!
@@ -1656,7 +1656,7 @@ e17652524a905f18,Unused,ConradBeatup_OutroDirty,1,Conrad,... du bist fertig? Ich
 # --- ConradBeatup_OutroSoapy ---
 d0b060d51bc87feb,Unused,ConradBeatup_OutroSoapy,1,Conrad,... du bist fertig? Ich bin noch voller Seife...
 # --- Conrad_1 ---
-5a208b2886d87937,Unused,Conrad_1,1,Conrad,"Macht ihr hier auch „besondere Abschlüsse""?"
+5a208b2886d87937,Unused,Conrad_1,1,Conrad,Macht ihr hier auch „besondere Abschlüsse“?
 d61259269b75dec9,Unused,Conrad_1,2,Kobold,Was ist das?
 1ea442a134b2a184,Unused,Conrad_1,4,Kobold,Nein
 335bcdceb30ec6b8,Unused,Conrad_1,5,Conrad,"Ja, nee. Alter, da musst du einsteigen. Ich zahl gut!"
@@ -1881,7 +1881,7 @@ d57274b504a45b33,UI,,,UI,"Außerhalb von BepInEx/plugins installiert, kann hier 
 fd35647f8ecb2f7d,UI,,,UI,Benötigt von
 9e6151acb057025d,UI,,,UI,Verwendet
 b9d0dd131d07b5ad,UI,,,UI,"Gemeinsame Werkzeuge für Drag'n Wash-Mods, darunter dieser Mods-Bildschirm."
-1236e3be635f17c7,UI,,,UI,"Spiele Drag'n Wash in 13 Sprachen. Übersetzt Dialoge, Antworten, Oberfläche und Optionen."
+1236e3be635f17c7,UI,,,UI,"Spiele Drag'n Wash in 16 Sprachen. Übersetzt Dialoge, Antworten, Oberfläche und Optionen."
 1cd1ca858aaea1d0,UI,,,UI,Nicht geladen. Benötigt
 eda662e0b5033180,UI,,,UI,Nicht geladen. Nicht zusammen nutzbar mit
 a8d12a246b72d98c,UI,,,UI,Nicht geladen. Der Grund steht in BepInEx/LogOutput.log.
