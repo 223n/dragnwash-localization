@@ -762,6 +762,10 @@ $(t known_issue_ask)" 0; then
     if [ -z "$LANG_CHOICE" ] || { [ "$LANG_CHOICE" != en ] && [ ! -d "$PAYLOAD/Translations/$LANG_CHOICE" ]; }; then
         fail "Unknown language: ${LANG_CHOICE:-?}"
     fi
+    # The directory test above also accepts "ja/", and the code is spliced
+    # into a sed s/// replacement further down, where / and & change what the
+    # expression means. Locale directory names never need anything else.
+    case "$LANG_CHOICE" in *[!A-Za-z0-9_-]*) fail "Unknown language: $LANG_CHOICE" ;; esac
 
     ask_yes "$(t confirm_install)
 $GAME_DIR" 1 || exit 1
