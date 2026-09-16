@@ -149,8 +149,11 @@ namespace DragNWashLocalization
             }
             int flowCount = levels.Select(l => l.Asset).Distinct().Count();
 
-            using (var w = new StreamWriter(path, false, Encoding.UTF8))
+            using (var w = new StreamWriter(path, false, new UTF8Encoding(false)))
             {
+                // Copied into the repository as data/level_flow.csv, which is
+                // LF like every other CSV here.
+                w.NewLine = "\n";
                 w.WriteLine("flow_asset,level,dragon,intro,progress_dialogs,idle_dialogs,nag_dialogs,phone,outro,jerkoff_dialog,cum_dialog,mount_start,mount_finish,spawn_flag,set_flags,end_flags,weather,player_spawn");
                 foreach (string r in rows) w.WriteLine(r);
             }
@@ -282,7 +285,7 @@ namespace DragNWashLocalization
                 }
             }
 
-            using (var w = new StreamWriter(path, false, Encoding.UTF8))
+            using (var w = new StreamWriter(path, false, new UTF8Encoding(false)))
             {
                 w.WriteLine("yarn_project,node,index,kind,detail,headers");
                 foreach (string r in rows) w.WriteLine(r);
