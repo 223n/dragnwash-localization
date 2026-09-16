@@ -151,10 +151,21 @@ namespace DragNWashLocalization
             Head("DRAG'N WASH LOCALIZATION");
             Body($"Version {version}" + (string.IsNullOrEmpty(build) ? "" : $"   (build {build})"));
             Body("An unofficial fan-made multilingual localization mod. It is not affiliated with, endorsed by, or supported by the developers of Drag'n Wash.");
+            Body("It changes no game files: the game's text is replaced as it is shown, so a game update never breaks your install, and uninstalling leaves the game as it was.");
+            Body("");
+
+            Head("BUILT ON DRAG'N WASH MODFRAMEWORK");
+            Body($"Core {DragNWash.ModFramework.ModFramework.Version}. A small shared base for Drag'n Wash mods: the Mods screen in Options, update notices, one installer every mod can ship, and libraries for text, dialogue, assets, saves and this tool window. Its first rule is that every mod runs safely together.");
+            Body("The framework is a separate open project. Anyone can build a mod on it: github.com/TomXV/dragnwash-modframework");
+            Body("");
+
+            Head("TOOLS IN THIS WINDOW");
+            Body("For translators and mod makers, not needed for playing: the Translation tab (working copies, exports, hot reload), the Saves tab, the framework's Assets tab (see what is loaded, replace textures) and Console (the log with levels, and commands).");
+            Body("What people make with these tools is their own work and their own responsibility. Nothing here exports or ships the game's files as part of this mod.");
             Body("");
 
             Head("CREDITS");
-            Body("Created by TomXV. All translation files by TomXV.");
+            Body("Created by TomXV. Translation files by TomXV, with corrections from contributors credited in the README and in each language file.");
             Body("Source, issues and translation contributions: github.com/TomXV/dragnwash-localization");
             Body("");
 
