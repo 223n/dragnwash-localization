@@ -16,6 +16,13 @@ script_order.csv. Nothing from there is committed; this tool only writes keys.
         Runs the four resolver layers from the old script order over the game's
         current lines and reports how many lines each layer finds, and which
         lines need a human look. Prints counts and identifiers only, never text.
+
+    python tools/rekey.py packs --discovered <dir> [--old data/script_order.csv] [--dry-run]
+        For every line the update changed, adds a row with the line's new key
+        to each Translations/<locale>/strings.csv, right after the row with the
+        old key and with the same translation, so the line stays translated
+        with the plain hash lookup too. Old rows are kept. Then copy the new
+        script_order.csv into data/ and run augment.
 """
 import argparse
 import csv
@@ -113,8 +120,9 @@ def resolve(records, by_id, by_key, by_norm, by_node, line_id, node, speaker, te
     return tied[0], "fuzzy", True
 
 
-def replay(args):
-    records = [Record(r) for r in read_order(args.old)]
+def matches(old_order: Path, discovered: Path):
+    """Yields (line, record or None, layer, needs_review) for every current line."""
+    records = [Record(r) for r in read_order(old_order)]
     by_id = {r.line_id: r for r in records if r.line_id}
     by_key = {}
     for r in records:
@@ -125,14 +133,21 @@ def replay(args):
             by_norm[r.norm].append(r)
         if r.node:
             by_node[r.node].append(r)
-    counts = Counter()
-    review = []
-    for line in read_lines(args.discovered):
+    for line in read_lines(discovered):
         hit = resolve(records, by_id, by_key, by_norm, by_node, line["line_id"], line["node"], line["speaker"], line["source_en"])
         if hit is None:
+            yield line, None, None, False
+        else:
+            yield line, hit[0], hit[1], hit[2]
+
+
+def replay(args):
+    counts = Counter()
+    review = []
+    for line, rec, layer, needs_review in matches(args.old, args.discovered):
+        if rec is None:
             counts["not found (new line?)"] += 1
             continue
-        rec, layer, needs_review = hit
         counts[layer + (" (text changed)" if needs_review else "")] += 1
         if needs_review:
             review.append((line["node"], line["line_id"], rec.line_id, layer))
@@ -142,6 +157,43 @@ def replay(args):
         print(f"\n{len(review)} line(s) to review (node, line id now, record it matched, layer):")
         for row in review:
             print("  " + "  ".join(row))
+    return 0
+
+
+def packs(args):
+    # old key -> new keys the same lines carry now (only where they differ)
+    moved = defaultdict(set)
+    for line, rec, layer, needs_review in matches(args.old, args.discovered):
+        if rec is None or not needs_review:
+            continue
+        new_key = lk.key(line["source_en"])
+        if new_key != rec.key:
+            moved[rec.key].add(new_key)
+    if not moved:
+        print("No line changed its key; the packs are up to date.")
+        return 0
+    total = 0
+    for pack in sorted((ROOT / "Translations").glob("*/strings.csv")):
+        raw = pack.read_bytes()
+        newline = "\r\n" if b"\r\n" in raw else "\n"
+        lines = raw.decode("utf-8-sig").split(newline)
+        present = {l.split(",", 1)[0] for l in lines if l and not l.startswith("#")}
+        out, added = [], 0
+        for l in lines:
+            out.append(l)
+            if not l or l.startswith("#"):
+                continue
+            key, _, rest = l.partition(",")
+            for new_key in sorted(moved.get(key, ())):
+                if new_key not in present:
+                    out.append(new_key + "," + rest)
+                    present.add(new_key)
+                    added += 1
+        if added and not args.dry_run:
+            pack.write_bytes((newline.join(out)).encode("utf-8"))
+        print(f"{pack.relative_to(ROOT)}: {added} row(s) {'would be ' if args.dry_run else ''}added")
+        total += added
+    print(f"{len(moved)} key(s) moved; {total} row(s) {'would be ' if args.dry_run else ''}added across the packs. Those lines are worth a look: the English changed.")
     return 0
 
 
@@ -156,6 +208,11 @@ def main(argv):
     r.add_argument("--discovered", type=Path, required=True)
     r.add_argument("--old", type=Path, default=ORDER)
     r.set_defaults(run=replay)
+    k = sub.add_parser("packs")
+    k.add_argument("--discovered", type=Path, required=True)
+    k.add_argument("--old", type=Path, default=ORDER)
+    k.add_argument("--dry-run", action="store_true")
+    k.set_defaults(run=packs)
     args = p.parse_args(argv[1:])
     return args.run(args)
 
