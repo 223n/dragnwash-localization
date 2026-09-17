@@ -104,7 +104,9 @@ if (-not (Test-Path -LiteralPath (Join-Path $FrameworkPath 'src/DragNWash.ModFra
     throw "Drag'n Wash ModFramework not found at '$FrameworkPath'. Pass -FrameworkPath."
 }
 # The framework and the libraries the mod depends on. Every one is shipped, so
-# the Mods screen never lists a library as missing.
+# the Mods screen never lists a library as missing. The framework's Inspector
+# library is left out on purpose: this mod does not use it, and it is a tool
+# for mod makers that a translation release has no reason to carry.
 $FrameworkProjects = @(
     'DragNWash.ModFramework',
     'DragNWash.ModFramework.Text',
