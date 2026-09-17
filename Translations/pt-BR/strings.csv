@@ -1910,3 +1910,20 @@ fe199528850a4e24,UI,,,UI,Desinstalar
 63e38bd4b036193a,UI,,,UI,Cancelar
 86965245a1d725c1,UI,,,UI,"Pressione ""Desinstalar"" de novo para remover este mod na próxima vez que o jogo iniciar. As configurações dele também são removidas."
 e2b9759e2326caba,UI,,,UI,Será removido na próxima inicialização
+0d21bd52022ca7f7,UI,,,UI,Online
+4128f75bc14cb290,UI,,,UI,Usa a internet:
+df0880be16beba51,UI,,,UI,Conectou-se sem avisar a:
+57e8a431deec0d70,UI,,,UI,Internet
+08b39d1ef62da47d,UI,,,UI,Este mod não informa que usa a internet.
+5abdf73450d24379,UI,,,UI,Para quê:
+c1e450770d88b778,UI,,,UI,O que é enviado:
+3090d827c103d5fb,UI,,,UI,Como desativar:
+068109fd3f73fbbb,UI,,,UI,Não informado
+e21a8c81f7921504,UI,,,UI,Visto nesta sessão
+da5cbc2185c976ff,UI,,,UI,Nenhuma conexão até agora.
+285202c5ed5c42de,UI,,,UI,não declarado pelo mod
+a9043748d4bf169d,UI,,,UI,A vigilância de conexões está desativada (Mods → Drag'n Wash ModFramework → Configurações → Vigiar conexões).
+1c0285d6d7fef2fc,UI,,,UI,"O framework apenas observa: não bloqueia nada, e um mod pode contorná-lo."
+1744b96470b51bf3,UI,,,UI,Rede
+fa25265454345a35,UI,,,UI,Vigiar conexões
+4e9ec4e264c704c6,UI,,,UI,"Registra quais mods se conectam à internet e marca na tela de mods os que fazem isso sem avisar. Apenas observa: nada é bloqueado, e um mod pode contorná-lo."

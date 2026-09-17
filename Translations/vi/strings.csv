@@ -1945,3 +1945,20 @@ fe199528850a4e24,UI,,,UI,Gỡ cài đặt
 63e38bd4b036193a,UI,,,UI,Hủy
 86965245a1d725c1,UI,,,UI,"Nhấn ""Gỡ cài đặt"" một lần nữa để xóa mod này ở lần khởi động trò chơi tiếp theo. Cài đặt của mod cũng sẽ bị xóa."
 e2b9759e2326caba,UI,,,UI,Sẽ bị xóa ở lần khởi động sau
+0d21bd52022ca7f7,UI,,,UI,Trực tuyến
+4128f75bc14cb290,UI,,,UI,Dùng internet:
+df0880be16beba51,UI,,,UI,Kết nối mà không khai báo tới:
+57e8a431deec0d70,UI,,,UI,Internet
+08b39d1ef62da47d,UI,,,UI,Mod này không khai báo là có dùng internet.
+5abdf73450d24379,UI,,,UI,Để làm gì:
+c1e450770d88b778,UI,,,UI,Gửi đi những gì:
+3090d827c103d5fb,UI,,,UI,Cách tắt:
+068109fd3f73fbbb,UI,,,UI,Không ghi rõ
+e21a8c81f7921504,UI,,,UI,Đã thấy trong phiên này
+da5cbc2185c976ff,UI,,,UI,Chưa có kết nối nào.
+285202c5ed5c42de,UI,,,UI,mod không khai báo
+a9043748d4bf169d,UI,,,UI,Theo dõi kết nối đang tắt (Mod → Drag'n Wash ModFramework → Cài đặt → Theo dõi kết nối).
+1c0285d6d7fef2fc,UI,,,UI,"Framework chỉ theo dõi: không chặn gì cả, và mod có thể lách qua."
+1744b96470b51bf3,UI,,,UI,Mạng
+fa25265454345a35,UI,,,UI,Theo dõi kết nối
+4e9ec4e264c704c6,UI,,,UI,"Ghi lại mod nào kết nối internet và đánh dấu trên màn hình Mod những mod làm vậy mà không khai báo. Chỉ theo dõi: không chặn gì cả, và mod có thể lách qua."

@@ -1905,3 +1905,20 @@ fe199528850a4e24,UI,,,UI,Malinstali
 63e38bd4b036193a,UI,,,UI,Nuligi
 86965245a1d725c1,UI,,,UI,"Premu „Malinstali“ denove por forigi ĉi tiun modifon, kiam la ludo venontfoje startos. Ĝiaj agordoj ankaŭ estos forigitaj."
 e2b9759e2326caba,UI,,,UI,Forigota ĉe la venonta starto
+0d21bd52022ca7f7,UI,,,UI,Enreta
+4128f75bc14cb290,UI,,,UI,Uzas la interreton:
+df0880be16beba51,UI,,,UI,Konektiĝis sen anonci al:
+57e8a431deec0d70,UI,,,UI,Interreto
+08b39d1ef62da47d,UI,,,UI,"Ĉi tiu modifo ne anoncas, ke ĝi uzas la interreton."
+5abdf73450d24379,UI,,,UI,Por kio:
+c1e450770d88b778,UI,,,UI,Kio estas sendata:
+3090d827c103d5fb,UI,,,UI,Kiel malŝalti:
+068109fd3f73fbbb,UI,,,UI,Ne indikita
+e21a8c81f7921504,UI,,,UI,Vidita en ĉi tiu seanco
+da5cbc2185c976ff,UI,,,UI,Ankoraŭ neniuj konektoj.
+285202c5ed5c42de,UI,,,UI,ne anoncita de la modifo
+a9043748d4bf169d,UI,,,UI,Observado de konektoj estas malŝaltita (Modifoj → Drag'n Wash ModFramework → Agordoj → Observi konektojn).
+1c0285d6d7fef2fc,UI,,,UI,"La kadro nur observas: ĝi blokas nenion, kaj modifo povas eviti ĝin."
+1744b96470b51bf3,UI,,,UI,Reto
+fa25265454345a35,UI,,,UI,Observi konektojn
+4e9ec4e264c704c6,UI,,,UI,"Notas, kiuj modifoj konektiĝas al la interreto, kaj markas en la ekrano de modifoj tiujn, kiuj faras tion sen anonci. Ĝi nur observas: nenio estas blokata, kaj modifo povas eviti ĝin."

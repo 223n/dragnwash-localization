@@ -1906,3 +1906,20 @@ fe199528850a4e24,UI,,,UI,Désinstaller
 63e38bd4b036193a,UI,,,UI,Annuler
 86965245a1d725c1,UI,,,UI,Appuyez à nouveau sur « Désinstaller » pour supprimer ce mod au prochain lancement du jeu. Ses réglages sont aussi supprimés.
 e2b9759e2326caba,UI,,,UI,Supprimé au prochain lancement
+0d21bd52022ca7f7,UI,,,UI,En ligne
+4128f75bc14cb290,UI,,,UI,Utilise Internet :
+df0880be16beba51,UI,,,UI,S'est connecté sans le déclarer à :
+57e8a431deec0d70,UI,,,UI,Internet
+08b39d1ef62da47d,UI,,,UI,Ce mod n'indique pas qu'il utilise Internet.
+5abdf73450d24379,UI,,,UI,À quoi ça sert :
+c1e450770d88b778,UI,,,UI,Ce qui est envoyé :
+3090d827c103d5fb,UI,,,UI,Comment le désactiver :
+068109fd3f73fbbb,UI,,,UI,Non précisé
+e21a8c81f7921504,UI,,,UI,Vu pendant cette session
+da5cbc2185c976ff,UI,,,UI,Aucune connexion pour l'instant.
+285202c5ed5c42de,UI,,,UI,non déclaré par le mod
+a9043748d4bf169d,UI,,,UI,La surveillance des connexions est désactivée (Mods → Drag'n Wash ModFramework → Paramètres → Surveiller les connexions).
+1c0285d6d7fef2fc,UI,,,UI,"Le framework ne fait que surveiller : il ne bloque rien, et un mod peut le contourner."
+1744b96470b51bf3,UI,,,UI,Réseau
+fa25265454345a35,UI,,,UI,Surveiller les connexions
+4e9ec4e264c704c6,UI,,,UI,"Note quels mods se connectent à Internet et signale dans l'écran des mods ceux qui le font sans le déclarer. Il ne fait que surveiller : rien n'est bloqué, et un mod peut le contourner."
