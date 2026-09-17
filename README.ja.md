@@ -364,6 +364,8 @@ CJKフォント表示、会話・UIの一括抽出、ゲーム内デバッグメ
 翻訳者向けドキュメント、リリース手順を実装・実機確認済みです。
 詳細は [docs/PLAN.ja.md](docs/PLAN.ja.md) を参照してください。
 
+これからの予定（他の Mod のテキストの翻訳を含む）は [docs/ROADMAP.ja.md](docs/ROADMAP.ja.md) にあります。
+
 ## Drag'n Wash ModFramework
 
 v1.0.0 から、この Mod は前提 Mod **Drag'n Wash ModFramework** の上で動きます。ほかの Drag'n Wash の Mod も、この上に作れます。
