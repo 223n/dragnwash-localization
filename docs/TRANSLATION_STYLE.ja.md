@@ -1,6 +1,6 @@
 # 翻訳スタイルガイド（キャラクター別）
 
-[English](TRANSLATION_STYLE.md)
+[English](TRANSLATION_STYLE.md) | [한국어](TRANSLATION_STYLE.ko.md)
 
 このガイドは**日本語訳**向けです。全言語に共通するキャラクターの性格と、仮翻訳の各言語パックで使った表記の一覧は
 [英語版](TRANSLATION_STYLE.md) の「Every language」にあります。

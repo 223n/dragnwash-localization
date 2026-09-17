@@ -1,6 +1,6 @@
 # Translation Style Guide by Character
 
-[日本語](TRANSLATION_STYLE.ja.md)
+[日本語](TRANSLATION_STYLE.ja.md) | [한국어](TRANSLATION_STYLE.ko.md)
 
 Maintaining a **consistent voice for each character** is the highest priority in every language. Inconsistent speech patterns quickly reduce the quality of a translation. The first part of this guide applies to all languages; language-specific wording follows.
 
