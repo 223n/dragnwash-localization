@@ -340,7 +340,7 @@ Because the game-derived reference assemblies cannot be committed, releases are 
 
 ## A note to the developers
 
-This is an unofficial fan project and is not affiliated with Gator Dragon Games. It contains no game assets and no script text: English lines are stored only as SHA-256 hashes, and the game's files are never modified (BepInEx loads the plugin at runtime). If you are a member of the development team and have any concerns, please open an issue on this repository or contact the maintainer, and the project will be adjusted or taken down as you prefer.
+This is an unofficial fan project and is not affiliated with Gator Dragon Games. It follows the [content policy](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/CONTENT_POLICY.md) of Drag'n Wash ModFramework and contains none of the game's assets or script text as they are: English lines are stored only as SHA-256 hashes, and the game's files are never modified (BepInEx loads the plugin at runtime). If you are a member of the development team and have any concerns, please open an issue on this repository or contact the maintainer, and the project will be adjusted or taken down as you prefer.
 
 ## Credits
 

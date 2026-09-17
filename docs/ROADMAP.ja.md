@@ -36,10 +36,10 @@ Drag'n Wash Localization のこれからの予定です。予定は変わるこ�
 
 ## 決まっていないこと
 
-- **テクスチャの翻訳**（[#4](https://github.com/TomXV/dragnwash-localization/issues/4)）：メニューのボタン、ロード画面、壁の看板は絵です。フレームワークでは、すでに PNG でテクスチャを差し替えられます。この Mod は、開発元の了承なしにゲームの絵を描き直したものは同梱しません。描いて公開すること自体は、各自の責任でどなたでもできます。
+- **テクスチャの翻訳**（[#4](https://github.com/TomXV/dragnwash-localization/issues/4)）：メニューのボタン、ロード画面、壁の看板は絵です。フレームワークでは、すでに PNG でテクスチャを差し替えられます。訳した絵は、フレームワークの[コンテンツポリシー](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/CONTENT_POLICY.ja.md)に従います。手で描いたものやゲームの絵に手を加えたものはよく、ゲームの絵をそのまま入れることはしません。
 
 ## 予定していないこと
 
 - Mod 内での機械翻訳。
-- ゲームのファイル、英語の台本、描き直したゲームの絵の配布。
+- ゲームのファイルや英語の台本を、手を加えずにそのまま配布すること（[コンテンツポリシー](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/CONTENT_POLICY.ja.md)）。
 - 他の Mod の訳をこのリポジトリで持つこと。

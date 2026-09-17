@@ -36,10 +36,10 @@ German, French, Spanish, Brazilian Portuguese, Russian, Polish, Hebrew, Ukrainia
 
 ## Open questions
 
-- **Translated textures** ([#4](https://github.com/TomXV/dragnwash-localization/issues/4)): menu buttons, the loading screen and the wall signs are pictures. The framework can already replace textures with PNGs. This mod will not ship redrawn versions of the game's art without the developers' OK; anyone can draw and publish their own, on their own responsibility.
+- **Translated textures** ([#4](https://github.com/TomXV/dragnwash-localization/issues/4)): menu buttons, the loading screen and the wall signs are pictures. The framework can already replace textures with PNGs. Translated versions follow the framework's [content policy](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/CONTENT_POLICY.md): art drawn by hand or changed from the game's is fine, the game's own images unchanged are not.
 
 ## Not planned
 
 - Machine translation inside the mod.
-- Shipping the game's files, its English script, or redrawn game art.
+- Shipping the game's files or its English script unchanged ([content policy](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/CONTENT_POLICY.md)).
 - Translations of other mods kept in this repository.
