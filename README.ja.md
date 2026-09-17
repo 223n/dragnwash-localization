@@ -397,6 +397,8 @@ Drag'n Wash の Mod を作っていて、フレームワークに欲しい機能
 
 - この Mod の**ロゴ**（Mods 画面のアイコン、`icon.png`）は **Mister ERIO** さん（[@mistererio](https://github.com/mistererio)）が描き、許可を得て使っています。
 - Drag'n Wash ModFramework に同梱されている Options 画面の **Mods ボタン**も、Mister ERIO さんの作品です。
+- Drag'n Wash ModFramework の**ロゴとアイコン**（アイコンはこの zip にも入っています）は、**NotaGames** さん（[@NotaGames](https://github.com/NotaGames)）の作品です。
+- 韓国語パックは **Hotcake** さんに校正していただきました。
 - 言語パックを改善してくださった翻訳者の方は、[言語パック](#言語パック)の表に記載しています。
 
 ## ライセンス

@@ -346,8 +346,10 @@ This is an unofficial fan project and is not affiliated with Gator Dragon Games.
 
 - The mod's **logo** (its icon on the Mods screen, `icon.png`) was drawn by **Mister ERIO** ([@mistererio](https://github.com/mistererio)) and is used with permission.
 - The Options screen's **Mods button** that ships with Drag'n Wash ModFramework is Mister ERIO's work too.
+- Drag'n Wash ModFramework's **logo and icon** (the icon ships in this zip) were drawn by **NotaGames** ([@NotaGames](https://github.com/NotaGames)).
+- The Korean pack was proofread by **Hotcake**.
 - Translators who improved a language pack are credited in the [Language packs](#language-packs) table.
 
 ## License
 
-See [LICENSE](LICENSE) for the plugin's code license. The artwork under [Credits](#credits) belongs to its artist and is not covered by it. This repository does not include assets or code from the game. Translations are treated as contributions from their respective translators.
+See [LICENSE](LICENSE) for the plugin's code license. The artwork under [Credits](#credits) belongs to its artists and is not covered by it. This repository does not include assets or code from the game. Translations are treated as contributions from their respective translators.

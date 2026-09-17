@@ -229,7 +229,8 @@ namespace DragNWashLocalization
 
             Head("CREDITS");
             Body("Created by TomXV. Translation files by TomXV, with corrections from contributors credited in the README and in each language file.");
-            Body("Logo by Mister ERIO, who also drew the framework's Mods button.");
+            Body("Korean proofread by Hotcake.");
+            Body("This mod's logo by Mister ERIO, who also drew the framework's Mods button. The framework's logo and icon by NotaGames.");
             Body("Source, issues and translation contributions: github.com/TomXV/dragnwash-localization");
             Body("");
 
@@ -244,7 +245,8 @@ namespace DragNWashLocalization
             Body("");
 
             Head("LICENSE");
-            Body("The mod is MIT licensed (see LICENSE in the repository).");
+            Body("The mod's code is MIT licensed (see LICENSE in the repository).");
+            Body("The artwork named under Credits (this mod's logo, the framework's icon and its Mods button) belongs to its artists, is used with their permission, and is not covered by the MIT license.");
             Body("The bundled menu font is Noto Sans JP, (c) 2014-2021 Adobe, with Reserved Font Name 'Source', under the SIL Open Font License 1.1. Its full text ships next to the plugin as dragnwash-menufont-LICENSE.txt.");
             Body("");
 

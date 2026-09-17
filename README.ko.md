@@ -351,6 +351,8 @@ Drag'n Wash 모드를 개발 중이고 프레임워크에 있었으면 하는 �
 
 - 이 모드의 **로고**(모드 화면의 아이콘, `icon.png`)는 **Mister ERIO**([@mistererio](https://github.com/mistererio))가 그렸으며, 허락을 받아 사용하고 있습니다.
 - Drag'n Wash ModFramework에 포함된 Options 화면의 **Mods 버튼**도 Mister ERIO의 작품입니다.
+- Drag'n Wash ModFramework의 **로고와 아이콘**(아이콘은 이 zip에도 포함)은 **NotaGames**([@NotaGames](https://github.com/NotaGames))의 작품입니다.
+- 한국어 팩은 **Hotcake**가 교정해 주었습니다.
 - 언어 팩을 개선해 주신 번역자는 [Language packs](#language-packs) 표에 표기되어 있습니다.
 
 ## 라이선스
