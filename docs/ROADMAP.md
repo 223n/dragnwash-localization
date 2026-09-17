@@ -4,7 +4,7 @@
 
 Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-17.
 
-## Next release: v1.2.0 (in the next few days)
+## Released: v1.2.0 (2026-09-17)
 
 - Ukrainian, Thai and Vietnamese (provisional), for 16 languages.
 - Korean proofread by a native speaker (thanks, Hotcake).
