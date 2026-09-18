@@ -4,6 +4,11 @@
 
 Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-17.
 
+## Released: v1.2.1 (2026-09-19)
+
+- The Saves tab finds saves made after the game update of 2026-09-14 again (Drag'n Wash ModFramework 1.2.1).
+- The working copy fills the English of screens that were not open when it was exported ([#31](https://github.com/TomXV/dragnwash-localization/issues/31)).
+
 ## Released: v1.2.0 (2026-09-17)
 
 - Ukrainian, Thai and Vietnamese (provisional), for 16 languages.
