@@ -172,6 +172,15 @@ foreach ($art in 'icon.png', 'ModsButton0.png', 'ModsButton1.png') {
         Copy-Item -LiteralPath $FrameworkArt -Destination (Join-Path $Stage 'BepInEx/plugins/DragNWash.ModFramework')
     }
 }
+# The framework's crash reporter (Windows), next to the core DLL, when the
+# framework checkout has it (ModFramework after 1.2.1). Built deterministically.
+$ReporterProject = Join-Path $FrameworkPath 'crashreporter/DragNWash.CrashReporter.csproj'
+if (Test-Path -LiteralPath $ReporterProject) {
+    Write-Host "Building the crash reporter ..."
+    dotnet build $ReporterProject -c Release
+    if ($LASTEXITCODE -ne 0) { throw 'Build of the crash reporter failed.' }
+    Copy-Item -LiteralPath (Join-Path $FrameworkPath 'crashreporter/bin/Release/CrashReporter.exe') -Destination (Join-Path $Stage 'BepInEx/plugins/DragNWash.ModFramework')
+}
 # This mod's icon on the Mods screen (the logo by Mister ERIO).
 Copy-Item -LiteralPath (Join-Path $Root 'src/DragNWashLocalization/icon.png') -Destination $PluginDir
 Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
