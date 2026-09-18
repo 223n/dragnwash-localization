@@ -38,6 +38,7 @@ namespace DragNWashLocalization
                 {
                     RightToLeft.Apply(instance, perLine);
                     context.Text = perLine;
+                    TranslationStore.NoteSeenSource(source);
                     if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
                         TranslationStore.IsFirstApplication(lineId + "|" + source))
                     {
@@ -56,6 +57,7 @@ namespace DragNWashLocalization
                 if (translated)
                 {
                     context.Text = translation;
+                    TranslationStore.NoteSeenSource(source);
                 }
                 else if (!context.IsRefresh)
                 {

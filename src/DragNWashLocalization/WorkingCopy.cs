@@ -16,7 +16,8 @@ namespace DragNWashLocalization
     //
     // written as _discovered/<locale>.working.csv (never committed), in script
     // order, with the English filled in from the loaded Yarn project, every
-    // TMP_Text in the scene, and whatever play has discovered so far. Rows
+    // TMP_Text in the scene, whatever play has discovered so far, and the English
+    // remembered from earlier sessions (seen_sources.csv). Rows
     // whose key matches nothing the game has loaded are kept with an empty
     // source_en rather than dropped.
     //
@@ -152,6 +153,16 @@ namespace DragNWashLocalization
                                 scriptOrder.Add(key);
                             }
                         }
+                    }
+                }
+
+                // Text shown in an earlier session but not on screen now (the
+                // Mods screen, a menu opened once): its English was remembered.
+                foreach (KeyValuePair<string, string> remembered in TranslationStore.ReadSeenSources(pluginDirectory))
+                {
+                    if (!sources.ContainsKey(remembered.Key))
+                    {
+                        sources[remembered.Key] = remembered.Value;
                     }
                 }
 

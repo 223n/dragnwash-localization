@@ -487,7 +487,18 @@ namespace DragNWashLocalization
                 _savesSlots = GameSaves.Slots();
                 if (_savesSlot == null || !_savesSlots.Contains(_savesSlot))
                 {
-                    _savesSlot = _savesSlots.Count > 0 ? _savesSlots[0] : null;
+                    // The slot played last, whatever order the buttons are in.
+                    _savesSlot = null;
+                    DateTime newest = DateTime.MinValue;
+                    foreach (string slot in _savesSlots)
+                    {
+                        DateTime written = File.GetLastWriteTimeUtc(GameSaves.SavePath(slot));
+                        if (_savesSlot == null || written > newest)
+                        {
+                            _savesSlot = slot;
+                            newest = written;
+                        }
+                    }
                 }
                 _savesList = _savesSlot != null ? GameSaves.Snapshots(_savesSlot) : new List<SaveSnapshot>();
                 _savesFlags = _savesSlot != null ? GameSaves.ReadFlags(_savesSlot) : new List<SaveFlag>();

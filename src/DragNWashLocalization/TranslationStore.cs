@@ -37,6 +37,12 @@ namespace DragNWashLocalization
         private static readonly ConcurrentDictionary<string, byte> DiscoveredText = new ConcurrentDictionary<string, byte>();
         private static readonly ConcurrentDictionary<string, byte> AppliedOnce = new ConcurrentDictionary<string, byte>();
         private static readonly List<string> PendingDiscoveredLines = new List<string>();
+        // Keys whose English has been shown at least once, in any session, and
+        // the rows still to be written to _discovered/seen_sources.csv. The
+        // working copy fills its source_en column from that file for text that
+        // is not on screen when it is exported (the Mods screen, rare menus).
+        private static readonly ConcurrentDictionary<string, byte> SeenKeys = new ConcurrentDictionary<string, byte>();
+        private static readonly List<string> PendingSeenLines = new List<string>();
 
         private static string _pluginDirectory;
 
@@ -168,6 +174,15 @@ namespace DragNWashLocalization
             lock (PendingDiscoveredLines)
             {
                 PendingDiscoveredLines.Clear();
+            }
+            SeenKeys.Clear();
+            lock (PendingSeenLines)
+            {
+                PendingSeenLines.Clear();
+            }
+            foreach (KeyValuePair<string, string> seen in ReadSeenSources(pluginDirectory))
+            {
+                SeenKeys.TryAdd(seen.Key, 0);
             }
 
             if (!string.IsNullOrEmpty(locale))
@@ -670,12 +685,100 @@ namespace DragNWashLocalization
             }
         }
 
+        public static string SeenSourcesPath(string pluginDirectory)
+        {
+            return Path.Combine(pluginDirectory, "Translations", "_discovered", "seen_sources.csv");
+        }
+
+        // key -> English for every text shown with a translation in an earlier
+        // or this session (developer tools on). Local only, like the other
+        // _discovered files.
+        public static List<KeyValuePair<string, string>> ReadSeenSources(string pluginDirectory)
+        {
+            var list = new List<KeyValuePair<string, string>>();
+            string path = SeenSourcesPath(pluginDirectory);
+            try
+            {
+                if (File.Exists(path))
+                {
+                    foreach (var row in CsvReader.ReadRows(path))
+                    {
+                        if (row.TryGetValue("key", out string key) && row.TryGetValue("source_en", out string source) &&
+                            !string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(source))
+                        {
+                            list.Add(new KeyValuePair<string, string>(key, source));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[dump] Failed to read seen sources: {ex.Message}");
+            }
+            return list;
+        }
+
+        // A translated text was shown: remember its English once, so a later
+        // working copy can name it even when it is not on screen.
+        public static void NoteSeenSource(string source)
+        {
+            if (string.IsNullOrEmpty(source) || !DragNWash.ModFramework.DeveloperTools.Enabled)
+            {
+                return;
+            }
+            string key = KeyFor(source);
+            if (!SeenKeys.TryAdd(key, 0) || IgnoreRules.IsIgnored(source))
+            {
+                return;
+            }
+            lock (PendingSeenLines)
+            {
+                PendingSeenLines.Add(CsvReader.Escape(key) + "," + CsvReader.Escape(source));
+            }
+        }
+
+        private static void FlushSeenToDisk()
+        {
+            string[] lines;
+            lock (PendingSeenLines)
+            {
+                if (PendingSeenLines.Count == 0)
+                {
+                    return;
+                }
+                lines = PendingSeenLines.ToArray();
+                PendingSeenLines.Clear();
+            }
+            try
+            {
+                string filePath = SeenSourcesPath(_pluginDirectory);
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                bool writeHeader = !File.Exists(filePath);
+                using (var writer = new StreamWriter(filePath, append: true, new UTF8Encoding(false)))
+                {
+                    if (writeHeader)
+                    {
+                        writer.WriteLine("key,source_en");
+                    }
+                    foreach (string line in lines)
+                    {
+                        writer.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log($"[dump] Failed to write seen sources: {ex.Message}");
+            }
+        }
+
         public static void FlushDiscoveredToDisk()
         {
             if (!DragNWash.ModFramework.DeveloperTools.Enabled)
             {
                 return;
             }
+            FlushSeenToDisk();
             string[] lines;
             lock (PendingDiscoveredLines)
             {
