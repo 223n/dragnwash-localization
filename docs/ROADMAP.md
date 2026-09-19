@@ -4,6 +4,10 @@
 
 Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-17.
 
+## Released: v1.3.0 (2026-09-19)
+
+- Runs on Drag'n Wash ModFramework 1.3.0: fewer crashes on Direct3D 12, and a crash report window when the game does crash.
+
 ## Released: v1.2.1 (2026-09-19)
 
 - The Saves tab finds saves made after the game update of 2026-09-14 again (Drag'n Wash ModFramework 1.2.1).
