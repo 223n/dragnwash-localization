@@ -375,6 +375,7 @@ v1.0.0 から、この Mod は前提 Mod **Drag'n Wash ModFramework** の上で�
 - **更新のお知らせ。** v1.1.0 から、この Mod やフレームワークの新しいリリースが出ると、タイトル画面に **1 update available in Mods** と出て、**Options → Mods** からリリースページを開けます。フレームワークが 1 日 1 回 GitHub に最新リリースを問い合わせるだけで、あなたやゲームについての情報は送らず、ダウンロードもしません。止めるには **Mods → Drag'n Wash ModFramework → 設定 → 更新を確認する** をオフにしてください。
 - **プレイヤーの方へ。** リリースの zip とインストーラーにフレームワークも入っています。v1.1.0 からのインストーラーは、どの Drag'n Wash の Mod も同梱できるフレームワークの共通インストーラーです。この Mod をアンインストールしても、ほかの Mod が入っていればフレームワークは残します
 - **翻訳者の方へ。** CSV の形式と翻訳用ツールは変わりません。今までの翻訳パックや協力はそのまま使えます
+- **説明書** は、フレームワークの [Wiki](https://github.com/TomXV/dragnwash-modframework/wiki/Home-ja) にあります。Mods 画面、クラッシュレポート、F1 の開発者ツール、そしてこの Mod には入っていない [Inspector](https://github.com/TomXV/dragnwash-modframework/wiki/Inspector-ja)（入れ方も Wiki にあります）です
 
 Drag'n Wash の Mod を作っていて、フレームワークに欲しい機能があれば、Issue で教えてください。
 

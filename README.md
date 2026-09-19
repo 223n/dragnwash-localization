@@ -323,6 +323,7 @@ From v1.0.0 this mod runs on **Drag'n Wash ModFramework**, a prerequisite mod th
 - **For players.** The release zip and the installers include the framework. From v1.1.0 the installers are the framework's shared ones, which every Drag'n Wash mod can ship. Uninstalling this mod keeps the framework when another mod is installed.
 - **Update notices.** From v1.1.0 the title screen says **1 update available in Mods** when a newer release of this mod or the framework is out, and **Options → Mods** has a button to its release page. Once a day the framework asks GitHub for the latest release and sends nothing about you or your game; nothing is downloaded. Switch it off in **Mods → Drag'n Wash ModFramework → Settings → Check for updates**.
 - **For translators.** The CSV format and the translation tools are unchanged; existing packs and contributions carry over.
+- **Its documentation** is the framework's [wiki](https://github.com/TomXV/dragnwash-modframework/wiki): the Mods screen, crash reports, the developer tools behind F1, and the [Inspector](https://github.com/TomXV/dragnwash-modframework/wiki/Inspector), which this mod does not ship (the wiki says how to add it).
 
 If you make mods for Drag'n Wash and have ideas for what the framework should provide, please open an issue.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Keep data/script_order.csv and the packs in step with the game after an update
-(experimental; see Drag'n Wash ModFramework's docs/STABLE_LINE_KEYS.md).
+(experimental; see https://github.com/TomXV/dragnwash-modframework/wiki/Dialogue).
 
 Needs the game's own data, which the plugin writes under
 BepInEx/plugins/DragNWashLocalization/Translations/_discovered/ (F6 in the game):

@@ -222,7 +222,7 @@ Copy-Item -LiteralPath (Join-Path $Root 'README.ja.md') -Destination $Stage
 
 # The installers: Drag'n Wash ModFramework's shared Install.exe and
 # install-steamdeck.sh, the same files every mod ships (see the framework's
-# docs/INSTALLER.md). Install.exe is built deterministically, so its hash and the
+# https://github.com/TomXV/dragnwash-modframework/wiki/Installer). Install.exe is built deterministically, so its hash and the
 # antivirus reputation that follows it stay the same from release to release.
 $InstallerProject = Join-Path $FrameworkPath 'installer/DragNWash.Installer.csproj'
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue (Join-Path $FrameworkPath 'installer/bin'), (Join-Path $FrameworkPath 'installer/obj')

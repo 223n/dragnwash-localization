@@ -6,7 +6,7 @@ namespace DragNWashLocalization
 {
     // Finds the translation for a line of dialogue even after a game update
     // edited its English (experimental; see the framework's
-    // docs/STABLE_LINE_KEYS.md).
+    // https://github.com/TomXV/dragnwash-modframework/wiki/Dialogue).
     //
     // data/script_order.csv (the shipped one, which the packs were keyed
     // against) knows every line's ID, hash, node and speaker,

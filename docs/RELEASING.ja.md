@@ -72,7 +72,7 @@ README.ja.md
 
 うち 4 つは条件付きです。`pack.ps1` は、フレームワークのチェックアウト直下に `LICENSE` があるときだけ `BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt` を、そのチェックアウトの `src/DragNWash.ModFramework/` にあるときだけ `icon.png`・`ModsButton0.png`・`ModsButton1.png` をコピーします。他のファイルは常に書き出されます。
 
-`Install.exe` と `install-steamdeck.sh` は Drag'n Wash ModFramework の共通インストーラーで、`pack.ps1` がフレームワークのチェックアウトからビルド・コピーします（説明はフレームワークの [docs/INSTALLER.ja.md](https://github.com/TomXV/dragnwash-modframework/blob/main/docs/INSTALLER.ja.md)）。`pack.ps1` は `mod-install.json` も書き出します。この Mod のフォルダー、残すプレイヤーのデータ、設定ファイル、同梱するすべての言語パックを選べる言語の質問が入ります。`Install.exe` のビルドは決定的で、ウイルス対策ソフトの評価がリリースのたびにリセットされません。`pack.ps1` が SHA-256 を表示するので、フレームワークの `installer/` が変わっていなければ前のリリースと同じになっているか確認してください。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。`installer/experimental/` の実験的な macOS 用スクリプトは zip に入れません。
+`Install.exe` と `install-steamdeck.sh` は Drag'n Wash ModFramework の共通インストーラーで、`pack.ps1` がフレームワークのチェックアウトからビルド・コピーします（説明はフレームワークの [Installer (wiki)](https://github.com/TomXV/dragnwash-modframework/wiki/Installer-ja)）。`pack.ps1` は `mod-install.json` も書き出します。この Mod のフォルダー、残すプレイヤーのデータ、設定ファイル、同梱するすべての言語パックを選べる言語の質問が入ります。`Install.exe` のビルドは決定的で、ウイルス対策ソフトの評価がリリースのたびにリセットされません。`pack.ps1` が SHA-256 を表示するので、フレームワークの `installer/` が変わっていなければ前のリリースと同じになっているか確認してください。利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。従来どおり `BepInEx/` を手動でゲームフォルダに重ねる方法も使えます。`installer/experimental/` の実験的な macOS 用スクリプトは zip に入れません。
 
 ### 2b. GitHub にビルドさせる
 
