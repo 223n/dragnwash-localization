@@ -4,24 +4,13 @@
 
 Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-20.
 
-## Released: v1.3.0 (2026-09-19)
+## Released: v1.4.0 (2026-09-20)
 
-- Runs on Drag'n Wash ModFramework 1.3.0: fewer crashes on Direct3D 12, and a crash report window when the game does crash.
+- Translations shipped by other mods ([#28](https://github.com/TomXV/dragnwash-localization/issues/28)), an experimental beta feature that is off by default.
+- Translated pictures per language ([#4](https://github.com/TomXV/dragnwash-localization/issues/4)): the machinery, with no pictures drawn yet.
+- Runs on Drag'n Wash ModFramework 1.4.0.
 
-## Released: v1.2.1 (2026-09-19)
-
-- The Saves tab finds saves made after the game update of 2026-09-14 again (Drag'n Wash ModFramework 1.2.1).
-- The working copy fills the English of screens that were not open when it was exported ([#31](https://github.com/TomXV/dragnwash-localization/issues/31)).
-
-## Released: v1.2.0 (2026-09-17)
-
-- Ukrainian, Thai and Vietnamese (provisional), for 16 languages.
-- Korean proofread by a native speaker (thanks, Hotcake).
-- Translations that survive a game update editing a line.
-- A logo by Mister ERIO.
-- Runs on Drag'n Wash ModFramework 1.2.0.
-
-## Built, in the next release
+The two entries below say what each of them does.
 
 ### Translations for other mods ([#28](https://github.com/TomXV/dragnwash-localization/issues/28))
 
@@ -40,6 +29,23 @@ Mods that add their own text (new mechanics, UI, dialogue) should be translatabl
 Menu buttons, the loading screen's door sign and the signs on the walls are pictures. Under the framework's content policy, this repository carries pictures drawn by hand or changed from the game's, per language, with the artists credited. They go in `Translations/<locale>/textures/`, with a `fallback.txt` naming the languages to fall back to. A **Translate pictures** setting turns them off; on Direct3D 12 a language change takes effect after a restart. The framework's Assets library 1.2.0 carries the language-specific texture replacements underneath.
 
 - Design: [docs/TRANSLATED_TEXTURES.md](TRANSLATED_TEXTURES.md). Status: **built and tested in the game (Direct3D 12); in the mod from the next release. No pictures are drawn yet** - the machinery is there, and any language can start adding them.
+
+## Released: v1.3.0 (2026-09-19)
+
+- Runs on Drag'n Wash ModFramework 1.3.0: fewer crashes on Direct3D 12, and a crash report window when the game does crash.
+
+## Released: v1.2.1 (2026-09-19)
+
+- The Saves tab finds saves made after the game update of 2026-09-14 again (Drag'n Wash ModFramework 1.2.1).
+- The working copy fills the English of screens that were not open when it was exported ([#31](https://github.com/TomXV/dragnwash-localization/issues/31)).
+
+## Released: v1.2.0 (2026-09-17)
+
+- Ukrainian, Thai and Vietnamese (provisional), for 16 languages.
+- Korean proofread by a native speaker (thanks, Hotcake).
+- Translations that survive a game update editing a line.
+- A logo by Mister ERIO.
+- Runs on Drag'n Wash ModFramework 1.2.0.
 
 ## Planned
 

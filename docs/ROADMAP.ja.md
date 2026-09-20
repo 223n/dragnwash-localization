@@ -4,24 +4,13 @@
 
 Drag'n Wash Localization のこれからの予定です。予定は変わることがあり、日付は近いものだけ書いています。更新日：2026-09-20。
 
-## リリース済み：v1.3.0（2026-09-19）
+## リリース済み：v1.4.0（2026-09-20）
 
-- Drag'n Wash ModFramework 1.3.0 の上で動きます。Direct3D 12 でのクラッシュが減り、落ちたときはクラッシュレポートのウィンドウが出ます。
+- 他の Mod が同梱する訳（[#28](https://github.com/TomXV/dragnwash-localization/issues/28)）。β版の実験的機能で、既定はオフです。
+- 言語ごとの絵の翻訳（[#4](https://github.com/TomXV/dragnwash-localization/issues/4)）。仕組みだけで、絵はまだ描かれていません。
+- Drag'n Wash ModFramework 1.4.0 の上で動きます。
 
-## リリース済み：v1.2.1（2026-09-19）
-
-- 2026-09-14 のゲームのアップデート以降に作ったセーブを、Saves タブがまた見つけられるように（Drag'n Wash ModFramework 1.2.1）。
-- 書き出したときに開いていなかった画面の英語も、作業用ファイルに入るように（[#31](https://github.com/TomXV/dragnwash-localization/issues/31)）。
-
-## リリース済み：v1.2.0（2026-09-17）
-
-- ウクライナ語・タイ語・ベトナム語（仮翻訳）を追加し、16 言語に。
-- 韓国語を母語話者が校正（Hotcake さん、ありがとうございます）。
-- ゲームの更新で台詞の文面が変わっても、翻訳が消えないように。
-- Mister ERIO さんによるロゴ。
-- Drag'n Wash ModFramework 1.2.0 の上で動きます。
-
-## できていて、次のリリースに入るもの
+それぞれの中身は、下の 2 つの項目のとおりです。
 
 ### 他の Mod のテキストの翻訳（[#28](https://github.com/TomXV/dragnwash-localization/issues/28)）
 
@@ -40,6 +29,23 @@ Drag'n Wash Localization のこれからの予定です。予定は変わるこ�
 メニューのボタン、ロード画面の扉の札、壁の看板は絵です。フレームワークのコンテンツポリシーに基づき、手で描いた絵やゲームの絵に手を加えたものを、言語ごとにこのリポジトリに入れます。描いた人はクレジットに載せます。置き場所は `Translations/<locale>/textures/` で、`fallback.txt` にたどる言語を書けます。**Translate pictures** の設定でオフにでき、Direct3D 12 では言語を変えたあと再起動で切り替わります。土台は、フレームワークの Assets 1.2.0 の言語ごとのテクスチャ差し替えです。
 
 - 設計：[docs/TRANSLATED_TEXTURES.ja.md](TRANSLATED_TEXTURES.ja.md)。状況：**ゲーム内（Direct3D 12）まで確認済み。次のリリースから入ります。絵はまだ一枚もありません**——仕組みだけ先にあり、どの言語からでも足せます。
+
+## リリース済み：v1.3.0（2026-09-19）
+
+- Drag'n Wash ModFramework 1.3.0 の上で動きます。Direct3D 12 でのクラッシュが減り、落ちたときはクラッシュレポートのウィンドウが出ます。
+
+## リリース済み：v1.2.1（2026-09-19）
+
+- 2026-09-14 のゲームのアップデート以降に作ったセーブを、Saves タブがまた見つけられるように（Drag'n Wash ModFramework 1.2.1）。
+- 書き出したときに開いていなかった画面の英語も、作業用ファイルに入るように（[#31](https://github.com/TomXV/dragnwash-localization/issues/31)）。
+
+## リリース済み：v1.2.0（2026-09-17）
+
+- ウクライナ語・タイ語・ベトナム語（仮翻訳）を追加し、16 言語に。
+- 韓国語を母語話者が校正（Hotcake さん、ありがとうございます）。
+- ゲームの更新で台詞の文面が変わっても、翻訳が消えないように。
+- Mister ERIO さんによるロゴ。
+- Drag'n Wash ModFramework 1.2.0 の上で動きます。
 
 ## 予定していること
 
