@@ -305,8 +305,11 @@ With **Window Mode** set to **Exclusive** on DirectX 12, switching to another wi
 
 To avoid it, do one of these:
 
-- Add `-force-d3d11` to the launch options: in Steam, **Drag'n Wash → Properties → General → Launch Options**. Verified: with it, switching windows in Exclusive fullscreen no longer freezes.
-- Set **Window Mode** to **Fullscreen** instead of **Exclusive**. Only exclusive fullscreen changes the display mode when you switch windows, so this should avoid it too (not tested yet).
+- Set **Window Mode** to **Fullscreen** instead of **Exclusive**. Only exclusive fullscreen changes the display mode when you switch windows. Checked on September 20, 2026: on DirectX 12, with the Steam overlay on, switching windows again and again in this mode did not freeze the game, and the log carried no swap chain error at all.
+- Add `-force-d3d11` to the launch options: in Steam, **Drag'n Wash → Properties → General → Launch Options**. Also checked: with it, switching windows in Exclusive fullscreen no longer freezes.
+
+> [!NOTE]
+> On September 20, 2026 the freeze did not happen in **Exclusive** either, on the machine it was first found on, with the same graphics driver and the Steam overlay running. It is not known what changed - the framework's DirectX 12 fix in 1.3.0 removed a different crash, not this one - so this section stays: if the game freezes when you switch windows, either of the two above is the way out.
 
 ## Current status
 
