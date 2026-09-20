@@ -1,0 +1,34 @@
+# The checks and the translators' tools, in the image docker/Dockerfile
+# describes.
+#
+#   docker compose run --rm checks      every check CI runs
+#   docker compose run --rm hash ja     hash a language before committing
+#   docker compose run --rm shell       a shell in the same image
+#
+# The working tree is mounted at /work; nothing is copied into the image, so a
+# file changed on the host is checked - and rewritten - where it is.
+#
+# See docs/DOCKER.md.
+services:
+  checks:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: dragnwash-localization-ci:local
+    volumes:
+      - .:/work
+    working_dir: /work
+    command: ["docker/checks.sh"]
+
+  hash:
+    extends:
+      service: checks
+    entrypoint: ["docker/hash.sh"]
+    command: []
+
+  shell:
+    extends:
+      service: checks
+    command: ["bash"]
+    stdin_open: true
+    tty: true

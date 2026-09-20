@@ -129,14 +129,15 @@ line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Wonderful!,
 ### コミット前にハッシュ化する
 
 PR を送る前に、公開用の `strings.csv` を作り直してください。作業ファイル（`_discovered/<locale>.working.csv`）が
-あればそこから、なければ `strings.csv` 自身の `source_en` 行から生成されます。方法は2つ：
+あればそこから、なければ `strings.csv` 自身の `source_en` 行から生成されます。方法は3つ：
 
 - ゲーム内 **F1 → Translation → Hash for commit**（現在の言語のファイルを書き換えます）
 - `tools/hash-strings.ps1` を引数なしで実行（全言語）
+- Docker があれば、どの OS でも、手元に何も入れずに: `docker compose run --rm hash ja`（1 言語）、`docker compose run --rm hash`（全部）。[docs/DOCKER.ja.md](docs/DOCKER.ja.md) を見てください。
 
 `-Path` はこれとは別の動きをします。**渡したファイルをその場で変換するだけ**で、作業ファイルを探しません。公開用の `strings.csv` に対して使ってください。作業ファイルを渡すと公開形式で上書きされ、`source_en` 列と未翻訳の行がすべて失われます。
 
-**英語原文が残った `strings.csv` は PR で受け付けません。** PR ごとに自動チェックが走り、形式が違う場合は理由を英語でコメントします。直してプッシュすれば同じコメントが更新されます。
+**英語原文が残った `strings.csv` は PR で受け付けません。** PR ごとに自動チェックが走り、形式が違う場合は理由を英語でコメントします。直してプッシュすれば同じコメントが更新されます。プッシュする前に同じチェックを回すなら、Docker で `docker compose run --rm checks` です。
 
 カンマ・引用符・改行を含む場合は、フィールドを `"` で囲んでください（引用符は `""` と
 エスケープ）。詳細は [RFC 4180](https://datatracker.ietf.org/doc/html/rfc4180) 準拠です。

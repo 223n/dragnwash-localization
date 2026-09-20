@@ -1,29 +1,49 @@
 name: Check translations
 
+# The checks run inside the image docker/Dockerfile describes, which is where
+# Python comes from. A translator runs the same checks, in the same image:
+#
+#   docker compose run --rm checks
+#
+# docker/ci-image.sh pulls the published image, or builds it from the
+# Dockerfile when it cannot be pulled - which is what happens for a pull
+# request from a fork, and is why one needs no permission of any kind.
+# See docs/DOCKER.md.
 on:
   pull_request:
   push:
     branches: [main]
 
-# Only the checkout needs anything. A pull request from a fork gets a
-# read-only token regardless, but a push to main would otherwise run with
-# the repository default.
+# Only the checkout and the image need anything. A pull request from a fork
+# gets a read-only token regardless, but a push to main would otherwise run
+# with the repository default.
 permissions:
   contents: read
+  packages: read
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # The image is this repository's package, so a pull needs a sign-in. It
+      # is allowed to fail: a pull request from a fork has no reach into it,
+      # and docker/ci-image.sh then builds the image from the Dockerfile.
+      - name: Sign in to the container registry
+        uses: docker/login-action@v3
+        continue-on-error: true
         with:
-          python-version: "3.12"
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: The checks' image
+        id: image
+        run: echo "tag=$(docker/ci-image.sh)" >> "$GITHUB_OUTPUT"
       - name: Validate published strings.csv files
         id: validate
         run: |
           set +e
-          python tools/check-translations.py | tee report.txt
+          docker run --rm -v "$PWD":/work -w /work "${{ steps.image.outputs.tag }}" python tools/check-translations.py | tee report.txt
           echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
       # No pull request number here on purpose: a fork controls this file on
       # its own head, so the comment workflow must not learn the number from
@@ -39,9 +59,9 @@ jobs:
             report.txt
             status.txt
       - name: Compare every file with the fingerprints of real game installs
-        run: python tools/check-game-files.py
+        run: docker run --rm -v "$PWD":/work -w /work "${{ steps.image.outputs.tag }}" python tools/check-game-files.py
       - name: Line keys match the vectors (tools/linekeys.py, same as the framework's)
-        run: python tools/linekeys.py --check
+        run: docker run --rm -v "$PWD":/work -w /work "${{ steps.image.outputs.tag }}" python tools/linekeys.py --check
       - name: Fail if the check found problems
         if: steps.validate.outputs.status != '0'
         run: |
@@ -54,5 +74,5 @@ jobs:
             cat report.txt
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
-          echo "::error title=Translation check failed::tools/check-translations.py found problems; see the annotations and the job summary. Run it locally with: python tools/check-translations.py"
+          echo "::error title=Translation check failed::tools/check-translations.py found problems; see the annotations and the job summary. Run it locally with: python tools/check-translations.py (or docker compose run --rm checks)"
           exit 1

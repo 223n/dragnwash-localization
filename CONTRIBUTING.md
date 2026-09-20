@@ -111,10 +111,11 @@ Rebuild the published `strings.csv` before opening a pull request. It is generat
 
 - In the game: **F1 → Translation → Hash for commit** (rewrites the current language's file)
 - `tools/hash-strings.ps1` with no arguments (all languages)
+- With Docker, on any system and with nothing of your own installed: `docker compose run --rm hash ja` (one language) or `docker compose run --rm hash` (all of them). See [docs/DOCKER.md](docs/DOCKER.md).
 
 `-Path` is different: it converts exactly the files given, in place, and does **not** look for a working copy. Use it on a published `strings.csv`; passing a working copy overwrites it with the published form, losing its `source_en` column and every untranslated row.
 
-**A `strings.csv` that still contains English is not accepted.** Every pull request is checked automatically, and when the format is wrong a comment explains why in English. Push a fix and the same comment is updated.
+**A `strings.csv` that still contains English is not accepted.** Every pull request is checked automatically, and when the format is wrong a comment explains why in English. Push a fix and the same comment is updated. To run those checks before you push, with Docker: `docker compose run --rm checks`.
 
 Wrap fields containing commas, quotes or line breaks in `"` (escape quotes as `""`), per [RFC 4180](https://datatracker.ietf.org/doc/html/rfc4180).
 
