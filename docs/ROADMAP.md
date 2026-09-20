@@ -2,7 +2,7 @@
 
 [日本語](ROADMAP.ja.md)
 
-Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-17.
+Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-20.
 
 ## Released: v1.3.0 (2026-09-19)
 
@@ -21,24 +21,27 @@ Where Drag'n Wash Localization is going. Plans change; dates are given only when
 - A logo by Mister ERIO.
 - Runs on Drag'n Wash ModFramework 1.2.0.
 
-## Planned
+## Built, in the next release
 
 ### Translations for other mods ([#28](https://github.com/TomXV/dragnwash-localization/issues/28))
 
 Mods that add their own text (new mechanics, UI, dialogue) should be translatable too.
 
 - **What works now:** text a mod shows with TextMeshPro already goes through the same lookup as the game's, and untranslated lines show up in the exports. Text drawn with IMGUI or legacy uGUI `Text` does not.
-- **The plan:** each mod ships its own translations in `<mod folder>/Translations/<locale>/strings.csv`, and this mod loads them after its own packs. A mod's file never overrides the game's lines. This repository does not carry other mods' translations.
-- It will come as an **experimental beta feature, off by default**: how it behaves with other mods is uncharted territory, so you turn it on knowing that.
-- Machine translation will not be built in.
+- **How it works:** each mod ships its own translations in `<mod folder>/Translations/<locale>/strings.csv`, and this mod loads them after its own packs. A mod's file never overrides the game's lines; where two mods translate the same line, neither is used and both are named in the log. The exports carry a mod column, so a line's owner is visible.
+- It is an **experimental beta feature, off by default**: how it behaves with other mods is uncharted territory, so you turn it on knowing that.
+- Machine translation is not built in.
 - Other mods are tested when their authors ask.
-- Design: [docs/MOD_TRANSLATIONS.md](MOD_TRANSLATIONS.md). Status: **designed, not built yet.**
+- This repository does not carry other mods' translations.
+- Design: [docs/MOD_TRANSLATIONS.md](MOD_TRANSLATIONS.md). Status: **built and tested in the game with a test mod; in the mod from the next release.**
 
 ### Translated pictures ([#4](https://github.com/TomXV/dragnwash-localization/issues/4))
 
-Menu buttons, the loading screen's door sign and the signs on the walls are pictures. Under the framework's content policy, this repository will carry pictures drawn by hand or changed from the game's, per language, with the artists credited. A setting turns them off; on Direct3D 12 they change after a restart. The framework gets language-specific texture replacements for it.
+Menu buttons, the loading screen's door sign and the signs on the walls are pictures. Under the framework's content policy, this repository carries pictures drawn by hand or changed from the game's, per language, with the artists credited. They go in `Translations/<locale>/textures/`, with a `fallback.txt` naming the languages to fall back to. A **Translate pictures** setting turns them off; on Direct3D 12 a language change takes effect after a restart. The framework's Assets library 1.2.0 carries the language-specific texture replacements underneath.
 
-- Design: [docs/TRANSLATED_TEXTURES.md](TRANSLATED_TEXTURES.md). Status: **designed, not built yet.**
+- Design: [docs/TRANSLATED_TEXTURES.md](TRANSLATED_TEXTURES.md). Status: **built and tested in the game (Direct3D 12); in the mod from the next release. No pictures are drawn yet** - the machinery is there, and any language can start adding them.
+
+## Planned
 
 ### Native-speaker reviews
 
