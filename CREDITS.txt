@@ -1,0 +1,52 @@
+Drag'n Wash Localization - credits
+==================================
+
+The mod's code and the translations are under the MIT license (LICENSE in the
+repository). The artwork below is not: it was drawn for this project by the
+people named, who keep their rights to it. Do not reuse it in another project
+without asking them.
+
+Artwork
+-------
+
+Mister ERIO (https://github.com/mistererio)
+  This mod's logo, shown as its icon on the Mods screen (icon.png). Also the
+  Mods button on the game's Options screen, which ships with Drag'n Wash
+  ModFramework.
+
+NotaGames (https://github.com/NotaGames)
+  Drag'n Wash ModFramework's logo and its "Dg" icon, which ships in this zip.
+
+Translations
+------------
+
+Japanese and Simplified Chinese are supervised by the author. Korean was
+proofread by a native speaker, Hotcake. The other packs - Traditional Chinese,
+German, French, Spanish, Brazilian Portuguese, Russian, Polish, Hebrew,
+Ukrainian, Thai, Vietnamese, Esperanto and toki pona - are provisional and
+waiting for a native speaker; the language table in README.md says which is
+which.
+
+A correction to any pack is welcome as a pull request, and whoever reviews a
+language is named here from the release after it.
+
+Code and fixes
+--------------
+
+223n (https://github.com/223n)
+  Fixes across the repository, sent as pull requests.
+
+Thanks
+------
+
+Gator Dragon Games, for making Drag'n Wash and for letting mods like this one
+exist.
+
+Everyone who reported a line that reads wrong, a screen that overflows or a
+language that was missing.
+
+---
+
+Are you missing from this list? It is not deliberate: open an issue at
+https://github.com/TomXV/dragnwash-localization/issues and it will be fixed in
+the next release.

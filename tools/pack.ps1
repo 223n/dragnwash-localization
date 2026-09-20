@@ -219,6 +219,7 @@ Get-ChildItem -LiteralPath $SrcTranslations -Directory |
 # folder offline, and most of them read Japanese.
 Copy-Item -LiteralPath (Join-Path $Root 'README.md') -Destination $Stage
 Copy-Item -LiteralPath (Join-Path $Root 'README.ja.md') -Destination $Stage
+Copy-Item -LiteralPath (Join-Path $Root 'CREDITS.txt') -Destination $Stage
 
 # The installers: Drag'n Wash ModFramework's shared Install.exe and
 # install-steamdeck.sh, the same files every mod ships (see the framework's
