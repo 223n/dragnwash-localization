@@ -28,7 +28,7 @@ Where Drag'n Wash Localization is going. Plans change; dates are given only when
 Mods that add their own text (new mechanics, UI, dialogue) should be translatable too.
 
 - **What works now:** text a mod shows with TextMeshPro already goes through the same lookup as the game's, and untranslated lines show up in the exports. Text drawn with IMGUI or legacy uGUI `Text` does not.
-- **How it works:** each mod ships its own translations in `<mod folder>/Translations/<locale>/strings.csv`, and this mod loads them after its own packs. A mod's file never overrides the game's lines; where two mods translate the same line, neither is used and both are named in the log. The exports carry a mod column, so a line's owner is visible.
+- **How it works:** each mod ships its own translations in `<mod folder>/Translations/<locale>/strings.csv`, and this mod loads them after its own packs. A mod's file never overrides the game's lines; where two packs translate the same line differently, the one read first is kept (this mod's own pack, then the others in GUID order, the same order every time), the other is recorded as a conflict, and the log and F1 → Translation name both and say whose is used. The exports carry a mod column, so a line's owner is visible.
 - It is an **experimental beta feature, off by default**: how it behaves with other mods is uncharted territory, so you turn it on knowing that.
 - Machine translation is not built in.
 - Other mods are tested when their authors ask.
