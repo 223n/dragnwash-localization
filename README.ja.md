@@ -32,6 +32,8 @@
 
 ゲームフォルダーはSteamから勝手に見つけてくれます。見つからなかったときも、自分で選ぶだけです。
 BepInExが入っていなければ、公式の5.4.23.5を自動でダウンロードし、SHA-256で確かめてから入れます。
+このModが動く土台のDrag'n Wash ModFrameworkも、ゲームのフォルダーに新しいものが入っていなければ、同じようにフレームワークのGitHubのリリースから取ってきます。
+ダウンロードする前には、ちゃんと確認が出ます。
 あとはSteamからゲームを起動するだけです。
 
 言語は「日本語」「简体中文」「English（翻訳しない）」に加えて、
@@ -105,6 +107,7 @@ Linuxネイティブ版のゲームとLinux版BepInExで動きます。
 
 スクリプトはSteamのライブラリからゲームを探し（SDカードの中も探します）、
 公式のLinux版BepInEx 5.4.23.5をダウンロードしてSHA-256で確かめます。
+Drag'n Wash ModFrameworkも、新しいものが入っていなければ同じように取ってきます。
 それから `run_bepinex.sh` の `executable_name="DragNWash"` を設定してModをコピーし、
 ゲームの起動オプションに `./run_bepinex.sh %command%` を足します。前から設定してあるオプションはそのまま残ります。
 更新や削除も同じコマンドで行い、**インストール / 更新** か **アンインストール** を選ぶだけです。
@@ -122,6 +125,7 @@ Steamを起動し直します。終了する前に確認が出ますが、`--clo
 1. [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip) を
    ゲームフォルダー（`~/.local/share/Steam/steamapps/common/Drag'n Wash/`）に展開する。
 2. このModのzipの `BepInEx/` を同じ場所に重ねる。
+   Drag'n Wash ModFrameworkも重ねる（下の「手動で導入する」の3.を参照）。
 3. `run_bepinex.sh` を開き、`executable_name="DragNWash"` にして保存。
    `chmod +x run_bepinex.sh` で実行権限を付ける。
 4. Steamのゲームのプロパティ → 起動オプションに `./run_bepinex.sh %command%`
@@ -171,6 +175,8 @@ Deckで言語を変えるときは、コントローラーで **Options → 言�
 - [BepInEx 5 Windows x64（Mono）版](https://github.com/BepInEx/BepInEx/releases)
 - このリポジトリの [Releasesページ](https://github.com/TomXV/dragnwash-localization/releases) で配布している
   最新版の `DragNWashLocalization-<version>.zip`
+- Drag'n Wash ModFrameworkの [Releasesページ](https://github.com/TomXV/dragnwash-modframework/releases) の
+  `DragNWash.ModFramework-<version>.zip`（Modのzipの `mod-install.json` にある `framework.version` の版か、それより新しいもの）
 
 > [!IMPORTANT]
 > ReleasesのAssetsにある `DragNWashLocalization-<version>.zip` を使ってください。
@@ -203,10 +209,10 @@ BepInExと同じ**ゲームルート**に展開します。`BepInEx` フォル�
 <Drag'n Washのフォルダー>/BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 ```
 
-zipには、このModの土台になっているDrag'n Wash ModFrameworkも入っています。
-中身はプラグインごとのフォルダー `BepInEx/plugins/DragNWash.ModFramework`、`DragNWash.ModFramework.Text`、
-`.Dialogue`、`.ToolWindow`、`.Assets`、`.Saves` と、`BepInEx/patchers/DragNWash.ModFramework.Preloader.dll` で、
-どれも残しておいてください。
+このModが動く土台のDrag'n Wash ModFrameworkは、このzipには入っていません。
+フレームワークのzipから、次のものも同じゲームルートにコピーしてください。
+フォルダー `BepInEx/plugins/DragNWash.ModFramework`、`DragNWash.ModFramework.Text`、
+`.Dialogue`、`.ToolWindow`、`.Assets`、`.Saves` と、`BepInEx/patchers/DragNWash.ModFramework.Preloader.dll` です。
 ほかのModがもっと新しいModFrameworkを入れているときは、新しいほうを残してください。
 
 `plugins` とDLLの間に、ZIPファイルや `DragNWashLocalization-<version>` フォルダーが挟まらないようにしてください。
@@ -523,7 +529,8 @@ v1.1.0からは、このModやフレームワークの新しいリリースが�
 フレームワークが1日1回、GitHubに最新リリースを問い合わせるだけで、あなたやゲームについての情報は送らず、ダウンロードもしません。
 止めたいときは **Mods → Drag'n Wash ModFramework → 設定 → 更新を確認する** をオフにしてください。
 
-プレイヤーの方向けには、リリースのzipとインストーラーにフレームワークも入れてあります。
+プレイヤーの方向けに言うと、リリースのzipにはフレームワークは入っていません。
+ゲームのフォルダーに新しいものがなければ、インストーラーがこのModを作ったときの版をGitHubから取ってきます。
 v1.1.0からのインストーラーは、どのDrag'n WashのModも同梱できるフレームワークの共通インストーラーです。
 このModをアンインストールしても、ほかのModが入っていればフレームワークは残します。
 
@@ -566,7 +573,7 @@ Drag'n Wash ModFrameworkの[コンテンツポリシー](https://github.com/TomX
 - このModの**ロゴ**（Mods画面のアイコン、`icon.png`）は **Mister ERIO** さん（[@mistererio](https://github.com/mistererio)）が描いたもので、
   許可をいただいて使っています。
 - Drag'n Wash ModFrameworkに同梱されているOptions画面の **Mods ボタン**も、Mister ERIOさんの作品です。
-- Drag'n Wash ModFrameworkの**ロゴとアイコン**（アイコンはこのzipにも入っています）は、
+- Drag'n Wash ModFrameworkの**ロゴとアイコン**（アイコンはフレームワークに入っています）は、
   **NotaGames** さん（[@NotaGames](https://github.com/NotaGames)）の作品です。
 - 韓国語パックは **Hotcake** さんに校正していただきました。
 - 言語パックを良くしてくださった翻訳者の方は、[言語パック](#言語パック)の表に載せています。

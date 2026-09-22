@@ -31,7 +31,7 @@
 
 ## 봤죠? 쉽습니다. ( ･´ｰ･｀) HEH! YIP!
 
-설치 프로그램이 Steam에서 게임 위치를 알아서 찾아 주고, 폴더를 직접 고를 수도 있어요. BepInEx가 아직 없으면 공식 5.4.23.5 릴리스를 받아 SHA-256을 확인한 다음 압축까지 알아서 풀어 줘요. 그다음엔 Steam에서 게임을 실행하기만 하면 돼요.
+설치 프로그램이 Steam에서 게임 위치를 알아서 찾아 주고, 폴더를 직접 고를 수도 있어요. BepInEx가 아직 없으면 공식 5.4.23.5 릴리스를 받아 SHA-256을 확인한 다음 압축까지 알아서 풀어 줘요. 모드가 쓰는 Drag'n Wash ModFramework도 게임 폴더에 충분히 새로운 버전이 없으면 같은 식으로 프레임워크의 GitHub 릴리스에서 받아 와요. 받기 전에 먼저 물어봐요. 그다음엔 Steam에서 게임을 실행하기만 하면 돼요.
 
 고를 수 있는 언어는 日本語 / 简体中文 / English(번역 없음), 원어민이 교정한 한국어, 번체 중국어, 독일어, 프랑스어, 스페인어, 브라질 포르투갈어, 러시아어, 폴란드어, 히브리어, 우크라이나어, 태국어, 베트남어 임시 팩, 그리고 재미로 넣은 에스페란토와 토키 포나예요([Language packs](#language-packs) 참고). 같은 창에 **Uninstall** 버튼도 있어요. 기본적으로 세이브 히스토리 스냅샷은 남겨 두고, BepInEx는 직접 요청했고 다른 모드가 쓰지 않을 때만 모드와 같이 지워요. 게임 안에서도 지울 수 있는데, **Options → Mods → Drag'n Wash Localization → Uninstall**을 누르면 다음에 게임을 시작할 때 모드가 제거돼요.
 
@@ -88,7 +88,7 @@ Desktop Mode에서 **설치 스크립트(권장)**를 이렇게 실행하세요:
 4. **Install / Update**를 고르고 언어를 선택해요. 실행 옵션을 설정하려면 Steam을 잠깐 꺼야 하는데, 스크립트가 먼저 물어본 다음 나중에 Steam을 다시 실행해 줘요.
 5. Gaming Mode로 돌아가서 게임을 실행해요. 언어는 나중에 **Options → Language (Mod)**에서 바꿀 수 있어요.
 
-스크립트는 Steam 라이브러리(SD 카드 포함)에서 게임을 찾고, 공식 Linux BepInEx 5.4.23.5를 받아 SHA-256을 확인해요. 그다음 `run_bepinex.sh`에 `executable_name="DragNWash"`를 설정하고 모드를 복사한 뒤, 원래 있던 옵션은 그대로 두고 게임 실행 옵션에 `./run_bepinex.sh %command%`를 추가해요. 업데이트나 삭제도 같은 명령을 다시 실행해서 **Install / Update**나 **Uninstall**을 고르면 돼요. 제거할 때 세이브 히스토리는 남겨 두고, 다른 BepInEx 모드가 필요로 하지 않으면 실행 옵션에서 `./run_bepinex.sh`를 빼고 BepInEx도 지울지 물어봐요. `--install`과 `--uninstall`을 붙이면 확인 질문을 건너뛰어요.
+스크립트는 Steam 라이브러리(SD 카드 포함)에서 게임을 찾고, 공식 Linux BepInEx 5.4.23.5를 받아 SHA-256을 확인해요. 충분히 새로운 Drag'n Wash ModFramework가 없으면 그것도 같은 식으로 받아요. 그다음 `run_bepinex.sh`에 `executable_name="DragNWash"`를 설정하고 모드를 복사한 뒤, 원래 있던 옵션은 그대로 두고 게임 실행 옵션에 `./run_bepinex.sh %command%`를 추가해요. 업데이트나 삭제도 같은 명령을 다시 실행해서 **Install / Update**나 **Uninstall**을 고르면 돼요. 제거할 때 세이브 히스토리는 남겨 두고, 다른 BepInEx 모드가 필요로 하지 않으면 실행 옵션에서 `./run_bepinex.sh`를 빼고 BepInEx도 지울지 물어봐요. `--install`과 `--uninstall`을 붙이면 확인 질문을 건너뛰어요.
 
 Steam은 켜져 있는 동안 실행 옵션을 덮어쓰기 때문에, 실행 옵션을 바꿔야 할 때는 스크립트가 Steam을 끄고 고친 다음 다시 켜요. 기본적으로는 먼저 물어보고, `--close-steam`을 붙이면 묻지 않아요. 어떤 단계가 제대로 안 되면 마지막 대화상자에서 그 사실과 직접 바꿔야 할 항목을 알려 줘요. 실행할 때마다 로그가 `~/.local/state/dragnwash-installer/installer.log`에 남아요.
 
@@ -96,7 +96,7 @@ Steam은 켜져 있는 동안 실행 옵션을 덮어쓰기 때문에, 실행 �
 <summary>Deck 수동 설치</summary>
 
 1. [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip)을 게임 폴더(`~/.local/share/Steam/steamapps/common/Drag'n Wash/`)에 풀어요.
-2. 이 모드의 `BepInEx/` 폴더를 같은 곳에 합쳐 넣어요.
+2. 이 모드의 `BepInEx/` 폴더를 같은 곳에 합쳐 넣어요. Drag'n Wash ModFramework도 합쳐 넣어요(아래 수동 설치 3단계 참고).
 3. `run_bepinex.sh`를 열어 `executable_name="DragNWash"`로 설정하고 저장한 다음 `chmod +x run_bepinex.sh`를 실행해요.
 4. Steam 게임 속성 → 실행 옵션에 `./run_bepinex.sh %command%`를 넣어요.
 5. 게임을 실행하고 **Options → Language (Mod)**에서 언어를 바꿔요.
@@ -124,6 +124,7 @@ Deck에서 언어를 바꿀 때는 컨트롤러로 **Options → Language (Mod)*
 - Drag'n Wash의 Windows Steam 버전
 - [BepInEx 5 for 64-bit Windows (Mono)](https://github.com/BepInEx/BepInEx/releases)
 - 이 저장소 [Releases 페이지](https://github.com/TomXV/dragnwash-localization/releases)의 최신 `DragNWashLocalization-<version>.zip`
+- Drag'n Wash ModFramework [Releases 페이지](https://github.com/TomXV/dragnwash-modframework/releases)의 `DragNWash.ModFramework-<version>.zip`: 모드 zip의 `mod-install.json`에 있는 `framework.version` 버전 또는 그보다 최신 버전
 
 > [!IMPORTANT]
 > 릴리스 자산에서 `DragNWashLocalization-<version>.zip` 파일을 받으세요. GitHub가 자동으로 만드는 **Source code** 아카이브는 설치할 수 있는 모드 패키지가 아니에요. Releases 페이지에 모드 ZIP이 없다면 설치할 수 있는 빌드가 아직 안 나온 거예요.
@@ -150,7 +151,7 @@ Steam에서 **Drag'n Wash**를 우클릭하고 **관리 → 로컬 파일 보기
 <Drag'n Wash folder>/BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 ```
 
-zip에는 이 모드가 쓰는 Drag'n Wash ModFramework도 같이 들어 있어요. 플러그인별 폴더 `BepInEx/plugins/DragNWash.ModFramework`, `DragNWash.ModFramework.Text`, `.Dialogue`, `.ToolWindow`, `.Assets`, `.Saves`와 `BepInEx/patchers/DragNWash.ModFramework.Preloader.dll`인데, 전부 지우지 말고 두세요. 다른 모드가 이미 더 새로운 ModFramework를 설치했다면 새 파일 쪽을 남겨 두세요.
+이 zip에는 모드가 쓰는 Drag'n Wash ModFramework가 들어 있지 않아요. 프레임워크 zip에서 다음 항목도 같은 게임 루트에 복사해 주세요. 폴더 `BepInEx/plugins/DragNWash.ModFramework`, `DragNWash.ModFramework.Text`, `.Dialogue`, `.ToolWindow`, `.Assets`, `.Saves`, 그리고 `BepInEx/patchers/DragNWash.ModFramework.Preloader.dll`이에요. 다른 모드가 이미 더 새로운 ModFramework를 설치했다면 새 파일 쪽을 남겨 두세요.
 
 `plugins`와 DLL 사이에 ZIP 파일 자체나 `DragNWashLocalization-<version>` 같은 폴더가 한 겹 더 끼어 있으면 안 돼요.
 
@@ -325,7 +326,7 @@ v1.0.0부터 이 모드는 **Drag'n Wash ModFramework** 위에서 동작해요. 
 
 - 게임에 훅을 거는 과정에서 이 모드가 만든 기능 중 다른 모드에도 쓸모 있는 부분을 프레임워크로 떼어 냈어요. 설치된 모든 모드의 설정과 켜기/끄기를 보여 주는 **Mods** 화면(Options → Mods), 게임 Options의 언어 행, 텍스트가 표시되기 전의 재작성, 대사/선택지 이벤트, 공유 F1 도구 창, Direct3D 12에서 안전한 폰트, 세이브 히스토리가 여기에 들어가요.
 - 이렇게 나눠 두면 게임이 업데이트돼도 프레임워크만 변경을 따라가면 되고, 그 위의 모드는 계속 동작할 수 있어요. 2026-09-14 업데이트가 딱 이런 종류의 변경이었어요.
-- 플레이어용 릴리스 zip과 설치 프로그램에는 프레임워크가 같이 들어 있어요. v1.1.0부터 설치 프로그램은 모든 Drag'n Wash 모드가 같이 쓸 수 있는 프레임워크의 공용 설치 프로그램이에요. 이 모드를 지워도 다른 모드가 설치돼 있으면 프레임워크는 남아요.
+- 플레이어용 릴리스 zip에는 프레임워크가 들어 있지 않아요. 게임 폴더에 충분히 새로운 버전이 없으면, 설치 프로그램이 이 모드를 빌드할 때 쓴 버전을 GitHub에서 받아 와요. v1.1.0부터 설치 프로그램은 모든 Drag'n Wash 모드가 같이 쓸 수 있는 프레임워크의 공용 설치 프로그램이에요. 이 모드를 지워도 다른 모드가 설치돼 있으면 프레임워크는 남아요.
 - v1.1.0부터는 이 모드나 프레임워크의 새 릴리스가 나오면 타이틀 화면에 **1 update available in Mods**가 뜨고, **Options → Mods**에 릴리스 페이지로 가는 버튼이 생겨요. 프레임워크는 하루에 한 번 GitHub에 최신 릴리스를 물어보기만 하고, 사용자나 게임에 대한 정보는 보내지 않으며 아무것도 내려받지 않아요. 이 알림은 **Mods → Drag'n Wash ModFramework → Settings → Check for updates**에서 끌 수 있어요.
 - 번역하는 분들에게는 CSV 형식과 번역 도구가 바뀌지 않으니, 기존 팩과 기여한 내용을 그대로 이어 갈 수 있어요.
 
@@ -353,7 +354,7 @@ Drag'n Wash 모드를 만들고 있는데 프레임워크에 있었으면 하는
 
 - 이 모드의 **로고**(모드 화면의 아이콘, `icon.png`)는 **Mister ERIO**([@mistererio](https://github.com/mistererio))가 그렸고, 허락을 받아 쓰고 있어요.
 - Drag'n Wash ModFramework에 들어 있는 Options 화면의 **Mods 버튼**도 Mister ERIO의 작품이에요.
-- Drag'n Wash ModFramework의 **로고와 아이콘**(아이콘은 이 zip에도 포함)은 **NotaGames**([@NotaGames](https://github.com/NotaGames))의 작품이에요.
+- Drag'n Wash ModFramework의 **로고와 아이콘**(아이콘은 프레임워크에 포함)은 **NotaGames**([@NotaGames](https://github.com/NotaGames))의 작품이에요.
 - 한국어 팩은 **Hotcake**가 교정해 주었어요.
 - 언어 팩을 다듬어 주신 번역자분들은 [Language packs](#language-packs) 표에 적혀 있어요.
 

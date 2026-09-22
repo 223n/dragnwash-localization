@@ -15,7 +15,8 @@ Mister ERIO (https://github.com/mistererio)
   ModFramework.
 
 NotaGames (https://github.com/NotaGames)
-  Drag'n Wash ModFramework's logo and its "Dg" icon, which ships in this zip.
+  Drag'n Wash ModFramework's logo and its "Dg" icon, which ships with the
+  framework.
 
 Translations
 ------------
