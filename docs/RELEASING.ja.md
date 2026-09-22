@@ -18,10 +18,11 @@
 - Drag'n Wash（Steam版）がインストール済み
 - `src/DragNWashLocalization/libs/` にゲーム由来の参照アセンブリが揃っている（`.csproj` のコメントに一覧あり）
 - .NET SDKとPowerShell 7（`pwsh`）
-- [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) を
-  このリポジトリの隣にチェックアウトしてある（または `pack.ps1` に `-FrameworkPath` を渡す）。
-  フレームワーク側の `libs/` はその `tools/copy-libs.ps1` でコピーしておく。
-  `pack.ps1` がフレームワークもビルドし、中核・ライブラリ・プリローダーパッチャーをzipに入れます
+- `framework-version.txt` に書いた [Drag'n Wash ModFramework](https://github.com/TomXV/dragnwash-modframework) のリリースが公開済み。
+  `pack.ps1` がそのzipを `.cache/framework/` にダウンロードし（`-FrameworkZip` で渡すこともできる）、
+  中のライブラリに対してModをビルドし、インストーラーもそこから取ります。
+  Modのzipにはフレームワークを入れません。
+  新しいフレームワークに上げるときは、先にそのフレームワークを公開し、`framework-version.txt` を上げるPRを別に出します
 - GitHub Releasesをコマンドラインで作る場合は [`gh`](https://cli.github.com/)
 
 ## 手順
@@ -52,17 +53,6 @@ pwsh tools/pack.ps1
 中身は次のとおりです。
 
 ```text
-BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
-BepInEx/plugins/DragNWash.ModFramework/DragNWash.ModFramework.dll
-BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt
-BepInEx/plugins/DragNWash.ModFramework/icon.png
-BepInEx/plugins/DragNWash.ModFramework/ModsButton0.png
-BepInEx/plugins/DragNWash.ModFramework/ModsButton1.png
-BepInEx/plugins/DragNWash.ModFramework.Text/DragNWash.ModFramework.Text.dll
-BepInEx/plugins/DragNWash.ModFramework.Dialogue/DragNWash.ModFramework.Dialogue.dll
-BepInEx/plugins/DragNWash.ModFramework.ToolWindow/DragNWash.ModFramework.ToolWindow.dll
-BepInEx/plugins/DragNWash.ModFramework.Assets/DragNWash.ModFramework.Assets.dll
-BepInEx/plugins/DragNWash.ModFramework.Saves/DragNWash.ModFramework.Saves.dll
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/icon.png
 BepInEx/plugins/DragNWashLocalization/CREDITS.txt
@@ -80,30 +70,32 @@ install-steamdeck.sh
 mod-install.json
 README.md
 README.ja.md
+CREDITS.txt
 ```
 
-うち4つは条件付きです。
-`pack.ps1` は、フレームワークのチェックアウト直下に `LICENSE` があるときだけ`BepInEx/plugins/DragNWash.ModFramework/LICENSE.txt` を、
-そのチェックアウトの `src/DragNWash.ModFramework/` にあるときだけ `icon.png`・`ModsButton0.png`・`ModsButton1.png` をコピーします。
-他のファイルは常に書き出されます。
-
-`Install.exe` と `install-steamdeck.sh` はDrag'n Wash ModFrameworkの共通インストーラーで、
-`pack.ps1` がフレームワークのチェックアウトからビルド・コピーします
+`Install.exe` と `install-steamdeck.sh` はDrag'n Wash ModFrameworkの共通インストーラーです
 （説明はフレームワークの [Installer (wiki)](https://github.com/TomXV/dragnwash-modframework/wiki/Installer-ja)）。
-`pack.ps1` は `mod-install.json` も書き出します。
+`pack.ps1` は、固定したフレームワークのリリースの `installer/` から、ビルドし直さずにそのままコピーします。
+そのためSHA-256はそのリリースのものと同じで、このModのリリースでウイルス対策ソフトの評価がリセットされません。
+`pack.ps1` がSHA-256を表示します。
+`pack.ps1` は `mod-install.json`（schema 2）も書き出します。
+ゲームのフォルダーに十分に新しいフレームワークが無いときにインストーラーが取るリリース
+（`framework`: 版、zipのSHA-256とサイズ、`needs` = ライブラリごとの最低版。ビルドしたDLLの `BepInDependency` から読みます）、
 このModのフォルダー、残すプレイヤーのデータ、設定ファイル、同梱するすべての言語パックを選べる言語の質問が入ります。
-`Install.exe` のビルドは決定的で、ウイルス対策ソフトの評価がリリースのたびにリセットされません。
-`pack.ps1` がSHA-256を表示するので、フレームワークの `installer/` が変わっていなければ前のリリースと同じになっているか確認してください。
-利用者はこれをダブルクリックしてインストール・更新・アンインストールを行います。
-従来どおり `BepInEx/` を手動でゲームフォルダーに重ねる方法も使えます。
+固定したリリースのライブラリが最低版より古いと、`pack.ps1` は失敗します。
+利用者は `Install.exe` をダブルクリックしてインストール・更新・アンインストールを行います。
+従来どおり `BepInEx/` を手動でゲームフォルダーに重ねる方法も使えます（フレームワークのzipも一緒に）。
 `installer/experimental/` の実験的なmacOS用スクリプトはzipに入れません。
 
 ### 2b. GitHub にビルドさせる
 
 Actionsの **Build** ワークフローが、手順2をWindowsのrunnerで行います。
-`main` へのpush、`v*` のタグ、手動実行（同梱するフレームワークのブランチかタグを指定）のときに動きます。
-Drag'n Wash ModFrameworkをチェックアウトし、参照アセンブリを非公開リポジトリ `TomXV/dragnwash-libs` から
-`LIBS_TOKEN` シークレットで取り、`tools/pack.ps1 -FrameworkPath` を回して、zipを成果物として残します。
+`main` へのpush、`v*` のタグ、手動実行のときに動きます。
+`framework-version.txt` のDrag'n Wash ModFrameworkのリリースを `SHA256SUMS` と一緒にダウンロードし、
+そのファイル、GitHubがassetに持つdigest、自分で計算した値の3つが一致しないと失敗します
+（`SHA256SUMS` の無いフレームワークのリリースは固定できません）。
+参照アセンブリを非公開リポジトリ `TomXV/dragnwash-libs` から
+`LIBS_TOKEN` シークレットで取り、`tools/pack.ps1 -FrameworkZip` を回して、zipを成果物として残します。
 タグのときはzipを添えた **下書き** のリリースも作るので、
 流れは「バージョンを上げる → コミット → タグをpush → ワークフローを待つ → 下書きにノートを書いて公開」です。
 PRでは動きません。
@@ -130,8 +122,8 @@ gh release create v0.2.0 release/DragNWashLocalization-0.2.0.zip `
 タグ名は `v` 付き（`v0.2.0`）で統一します。
 Web UIからでも構いません（Releases → Draft a new release → タグ作成 → zipをアップロード）。
 
-リリースノートには、`Install.exe` と `install-steamdeck.sh` はBepInExを自動で導入すること、
-手動で導入する場合はBepInEx 5が別途必要なこと、対応環境を書いてください（[README](../README.ja.md) を参照）。
+リリースノートには、`Install.exe` と `install-steamdeck.sh` はBepInExとDrag'n Wash ModFrameworkを自動で導入すること、
+手動で導入する場合はBepInEx 5とフレームワークのzip（`framework-version.txt` の版。そのリリースのページへのリンク付き）が別途必要なこと、対応環境を書いてください（[README](../README.ja.md) を参照）。
 
 ## 公開済みのリリースを作り直す
 

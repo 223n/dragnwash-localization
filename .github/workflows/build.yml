@@ -5,12 +5,18 @@ name: Build
 # The plugin compiles against the game's own assemblies, which this public
 # repository must never contain. They live in the private repository
 # TomXV/dragnwash-libs and are fetched with LIBS_TOKEN, a fine-grained token
-# with read access to that repository only, kept as an Actions secret. The
-# zip also ships Drag'n Wash ModFramework, built here from its repository.
+# with read access to that repository only, kept as an Actions secret.
 # This workflow runs only on pushes to main or dev, on tags and by hand, never
 # for pull requests, so a fork can never reach the token.
 # In a fork the job is skipped: the fork has no LIBS_TOKEN, and a push to
 # its main would otherwise end in a failed run.
+#
+# The mod is built against one published Drag'n Wash ModFramework release, the
+# version in framework-version.txt, never against a branch. Its zip is taken
+# from that release only when the release's SHA256SUMS, the digest GitHub keeps
+# for the asset and the hash computed here agree. The mod's zip does not carry
+# the framework: its mod-install.json names that release, and the installers
+# fetch it.
 #
 # After the build, the unit tests in tests/ run too.
 #
@@ -26,10 +32,6 @@ on:
     branches: [main, dev]
     tags: ["v*"]
   workflow_dispatch:
-    inputs:
-      framework_ref:
-        description: "Drag'n Wash ModFramework branch or tag to ship"
-        default: main
 
 permissions:
   contents: write
@@ -53,12 +55,66 @@ jobs:
           }
           Write-Host "LIBS_TOKEN is set."
 
-      - name: Get Drag'n Wash ModFramework
-        uses: actions/checkout@v7
-        with:
-          repository: TomXV/dragnwash-modframework
-          ref: ${{ github.event.inputs.framework_ref || 'main' }}
-          path: framework
+      - name: Get the pinned Drag'n Wash ModFramework release
+        id: framework
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Three hashes of the one zip must agree: the release's SHA256SUMS, the
+          # asset digest GitHub computed when it was uploaded, and this download's.
+          # A mismatch means the asset changed after it was published, or the
+          # download is damaged; either way it is not used.
+          function Fail([string]$title, [string]$message) {
+            Write-Host "::error title=$title::$message"
+            "### Build failed: $title`n`n$message" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+            exit 1
+          }
+          $version = (Get-Content -Raw framework-version.txt).Trim()
+          if ($version -notmatch '^\d+\.\d+\.\d+$') {
+            Fail 'framework-version.txt is not a version' "It says '$version'. Put the one framework release this mod is built against in it, like 1.4.3."
+          }
+          $repo = 'TomXV/dragnwash-modframework'
+          $name = "DragNWash.ModFramework-$version.zip"
+
+          $json = gh api "repos/$repo/releases/tags/v$version"
+          if ($LASTEXITCODE -ne 0) {
+            Fail "ModFramework v$version is not published" "framework-version.txt pins $version, but $repo has no published release v$version (a draft cannot be downloaded). Publish that framework release first, or pin a published one."
+          }
+          $release = $json | ConvertFrom-Json
+          $asset = $release.assets | Where-Object { $_.name -eq $name }
+          if (-not $asset) {
+            Fail "ModFramework v$version has no $name" "The release v$version of $repo does not carry $name. Pin a framework release that does."
+          }
+          if (-not ($release.assets | Where-Object { $_.name -eq 'SHA256SUMS' })) {
+            Fail "ModFramework v$version has no SHA256SUMS" "The release v$version of $repo carries no SHA256SUMS, so its zip cannot be checked. Pin a framework release that carries SHA256SUMS (framework-version.txt)."
+          }
+          if ("$($asset.digest)" -notmatch '^sha256:([0-9a-f]{64})$') {
+            Fail "No digest for $name" "GitHub reports no SHA-256 digest for $name in v$version ('$($asset.digest)'). Pin a framework release whose assets were uploaded with a digest."
+          }
+          $digest = $Matches[1]
+
+          New-Item -ItemType Directory -Force .framework | Out-Null
+          gh release download "v$version" -R $repo -p $name -p SHA256SUMS -D .framework
+          if ($LASTEXITCODE -ne 0) {
+            Fail "ModFramework v$version could not be downloaded" "gh release download failed for $name and SHA256SUMS from $repo v$version. Re-run the job; if it fails again, check that the release is still published."
+          }
+          $zip = (Resolve-Path ".framework/$name").Path
+          $local = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+          $listed = @(Get-Content .framework/SHA256SUMS |
+            Where-Object { $_ -match '^([0-9a-fA-F]{64}) [ *](.+)$' -and $Matches[2].Trim() -eq $name } |
+            ForEach-Object { ($_ -split ' ')[0].ToLowerInvariant() } |
+            Sort-Object -Unique)
+          if ($listed.Count -ne 1) {
+            Fail "SHA256SUMS does not list $name" "SHA256SUMS in $repo v$version should list $name once, with one hash; it has $($listed.Count). Pin a framework release whose SHA256SUMS lists its zip."
+          }
+          if ($local -ne $listed[0] -or $local -ne $digest -or (Get-Item $zip).Length -ne $asset.size) {
+            Fail "ModFramework v$version does not match its hashes" "$name was not used: downloaded $local ($((Get-Item $zip).Length) bytes), SHA256SUMS $($listed[0]), GitHub digest $digest ($($asset.size) bytes). A published release must never change its assets; re-run once, and if they still differ, find out what changed in $repo v$version before building."
+          }
+          Write-Host "$name`: SHA256SUMS, the GitHub digest and this download agree ($local)."
+          "zip=$zip" | Out-File -Append $env:GITHUB_OUTPUT
+          "version=$version" | Out-File -Append $env:GITHUB_OUTPUT
+          "sha256=$local" | Out-File -Append $env:GITHUB_OUTPUT
 
       - name: Get the reference assemblies (private, never committed here)
         uses: actions/checkout@v7
@@ -67,32 +123,28 @@ jobs:
           token: ${{ secrets.LIBS_TOKEN }}
           path: .libs-private
 
-      - name: Put them where the projects expect them
+      - name: Put them where the project expects them
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force src/DragNWashLocalization/libs, framework/src/DragNWash.ModFramework/libs | Out-Null
+          New-Item -ItemType Directory -Force src/DragNWashLocalization/libs | Out-Null
           Copy-Item .libs-private/localization/*.dll src/DragNWashLocalization/libs/
-          Copy-Item .libs-private/modframework/*.dll framework/src/DragNWash.ModFramework/libs/
           Remove-Item -Recurse -Force .libs-private
           (Get-ChildItem src/DragNWashLocalization/libs).Count
 
       - name: Check that every referenced assembly is there
         shell: pwsh
         run: |
-          # Every <HintPath>libs/X.dll</HintPath> in this project and in the framework's must exist after the copy above.
+          # Every <HintPath>libs\X.dll</HintPath> in this project must exist after the
+          # copy above. The DragNWash.ModFramework*.dll ones are not in dragnwash-libs:
+          # pack.ps1 takes them from the framework release above and checks them itself.
           $missing = @()
-          $sets = @(
-            @{ Projects = Get-ChildItem src/DragNWashLocalization/*.csproj; Libs = 'src/DragNWashLocalization/libs'; Folder = 'localization' },
-            @{ Projects = Get-ChildItem framework/src/*/*.csproj; Libs = 'framework/src/DragNWash.ModFramework/libs'; Folder = 'modframework' }
-          )
-          foreach ($set in $sets) {
-            foreach ($csproj in $set.Projects) {
-              $text = Get-Content -Raw $csproj
-              foreach ($m in [regex]::Matches($text, 'libs/([A-Za-z0-9.]+\.dll)')) {
-                $dll = $m.Groups[1].Value
-                if (-not (Test-Path "$($set.Libs)/$dll")) {
-                  $missing += "$dll in dragnwash-libs/$($set.Folder) (referenced by $($csproj.Name))"
-                }
+          foreach ($csproj in Get-ChildItem src/DragNWashLocalization/*.csproj) {
+            $text = Get-Content -Raw $csproj
+            foreach ($m in [regex]::Matches($text, 'libs[\\/]([A-Za-z0-9.]+\.dll)')) {
+              $dll = $m.Groups[1].Value
+              if ($dll -like 'DragNWash.ModFramework*') { continue }
+              if (-not (Test-Path "src/DragNWashLocalization/libs/$dll")) {
+                $missing += "$dll in dragnwash-libs/localization (referenced by $($csproj.Name))"
               }
             }
           }
@@ -108,29 +160,32 @@ jobs:
         with:
           dotnet-version: "8.0.x"
 
-      - name: Build and pack (with the framework from its checkout)
+      - name: Build and pack (against the pinned framework release)
         shell: pwsh
+        env:
+          FRAMEWORK_ZIP: ${{ steps.framework.outputs.zip }}
+          FRAMEWORK_VERSION: ${{ steps.framework.outputs.version }}
+          FRAMEWORK_SHA256: ${{ steps.framework.outputs.sha256 }}
         run: |
           # Compiler errors are annotated by the .NET problem matcher; pack.ps1's own
           # checks throw with a reason, which is turned into an annotation here.
           try {
-            pwsh tools/pack.ps1 -FrameworkPath (Join-Path $PWD framework)
+            pwsh tools/pack.ps1 -FrameworkZip $env:FRAMEWORK_ZIP
             if ($LASTEXITCODE -ne 0) { throw "tools/pack.ps1 exited with $LASTEXITCODE (see the lines above for the build error)." }
           } catch {
             Write-Host "::error title=Build and pack failed::$($_.Exception.Message)"
-            "### Build failed`n`n$($_.Exception.Message)`n`nCompiler errors, if any, are listed as annotations on this run. A 'needs core X' or missing-member error means the framework checkout (ref ``${{ github.event.inputs.framework_ref || 'main' }}``) is older than what this mod expects." | Out-File -Append $env:GITHUB_STEP_SUMMARY
+            "### Build failed`n`n$($_.Exception.Message)`n`nCompiler errors, if any, are listed as annotations on this run. A missing-member error, or 'too old for this mod', means the pinned framework release (framework-version.txt, ``$env:FRAMEWORK_VERSION``) is older than what this mod needs: pin a newer published release." | Out-File -Append $env:GITHUB_STEP_SUMMARY
             exit 1
           }
           $zip = Get-ChildItem release/*.zip | Select-Object -First 1
-          $fw = git -C framework rev-parse --short HEAD
-          "### Built ``$($zip.Name)`` ($([math]::Round($zip.Length / 1KB)) KB) from ``$env:GITHUB_REF_NAME`` at ``$($env:GITHUB_SHA.Substring(0, 7))``, with Drag'n Wash ModFramework ``${{ github.event.inputs.framework_ref || 'main' }}`` at ``$fw``" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+          "### Built ``$($zip.Name)`` ($([math]::Round($zip.Length / 1KB)) KB) from ``$env:GITHUB_REF_NAME`` at ``$($env:GITHUB_SHA.Substring(0, 7))``, against Drag'n Wash ModFramework ``$env:FRAMEWORK_VERSION`` (the published release, sha256 ``$env:FRAMEWORK_SHA256``)" | Out-File -Append $env:GITHUB_STEP_SUMMARY
 
       - name: Unit tests
         shell: pwsh
         run: |
           # The tests compile the plugin's own source files and need
           # DragNWash.ModFramework.Dialogue.dll in libs/, which the pack step above
-          # copied there from the framework's build.
+          # took from the pinned framework release.
           dotnet test tests/DragNWashLocalization.Tests
           if ($LASTEXITCODE -ne 0) {
             Write-Host "::error title=Unit tests failed::dotnet test exited with $LASTEXITCODE. The failing tests are listed in this step's log."
