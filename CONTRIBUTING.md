@@ -190,6 +190,7 @@ Every pack except Japanese and Simplified Chinese is provisional: complete, but 
 - Tag structure matches the source.
 - No duplicate rows, no rows with an empty `translation`.
 - One language and a coherent scope per pull request.
+- Open it against the `dev` branch. Work collects there and goes to `main` together before a release.
 
 ## Writing the pull request
 
