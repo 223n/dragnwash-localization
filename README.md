@@ -314,7 +314,7 @@ To avoid it, do one of these:
 
 ## Current status
 
-v1.5.0 is out as a pre-release, and v1.4.0 is still the latest full release. In v1.5.0 the F1 window's Activity log, Translation, Saves and About tabs were gone through one by one, and every language pack translates the new Mods screen. The zip no longer carries Drag'n Wash ModFramework: `Install.exe` and `install-steamdeck.sh` fetch ModFramework 1.5.0 from its own release and check it before installing.
+v1.5.0 is the latest release. In it, the F1 window's Activity log, Translation, Saves and About tabs were gone through one by one, and every language pack translates the new Mods screen. The zip no longer carries Drag'n Wash ModFramework: `Install.exe` and `install-steamdeck.sh` fetch ModFramework 1.5.0 from its own release and check it before installing.
 
 Earlier releases, newest first:
 
