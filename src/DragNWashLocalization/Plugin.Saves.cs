@@ -14,7 +14,6 @@ namespace DragNWashLocalization
         private int _editLevel;
         private int _editLevelBase = -2;
         private string _editLevelSlot;
-        private bool _progressConfirm;
         // The history row that holds what the save holds now, or -1.
         private int _currentIndex = -1;
         private bool _saveExists;
@@ -26,7 +25,9 @@ namespace DragNWashLocalization
         private bool _showFlags;
         private List<SaveFlag> _savesFlags = new List<SaveFlag>();
         private string _flagFilter = "";
-        private bool _flagClearConfirm;
+        // ToolWindow.Confirm's ids: one question at a time in the window.
+        private const string ConfirmLevelAhead = PluginGuid + ".saves.levelahead";
+        private const string ConfirmResetFlags = PluginGuid + ".saves.resetflags";
         private bool _showOnceLines;
 
         // One row of the flag editor: catalog entry (may be null) + save state.
@@ -166,21 +167,14 @@ namespace DragNWashLocalization
         private static bool FlagControlsOnOneRow(float innerWidth) =>
             innerWidth - 24 - FlagOnceWidth - FlagResetWidth - 16 >= 140;
 
-        private GUIContent FlagClearQuestion()
-        {
-            int edits = FlagEditCount(_savesSlot);
-            return new GUIContent($"Set all {_savesFlags.Count} flags in this save to false? The level stays, and the save as it is now is kept as a snapshot first." +
-                (edits > 0 ? $" The {Count(edits, "change")} not written yet are dropped." : ""));
-        }
-
         // Where the flag rows start in the scroll view: under the controls and,
         // while it is asked, the Reset all question.
         private float FlagRowsTop(float innerWidth)
         {
             float top = 4 + (FlagControlsOnOneRow(innerWidth) ? 34 : 68);
-            if (_flagClearConfirm)
+            if (ToolWindow.IsConfirming(ConfirmResetFlags))
             {
-                top += S.WrappedLabel.CalcHeight(FlagClearQuestion(), innerWidth - 24) + 4 + 38;
+                top += 38;
             }
             return top;
         }
@@ -270,9 +264,6 @@ namespace DragNWashLocalization
                 {
                     if (slot != _savesSlot)
                     {
-                        // A question asked about the slot just left isn't
-                        // about this one.
-                        _flagClearConfirm = false;
                         _savesScroll = Vector2.zero;
                     }
                     _savesSlot = slot;
@@ -562,7 +553,6 @@ namespace DragNWashLocalization
                 _editLevelSlot = _savesSlot;
                 _editLevelBase = current;
                 _editLevel = current;
-                _progressConfirm = false;
             }
 
             GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, 26), "PROGRESS", S.Label);
@@ -575,19 +565,20 @@ namespace DragNWashLocalization
                 _editLevel == current ? $"level {current}" : $"level {current}  ->  {_editLevel}", LineLabel(false));
             if (GUI.Button(new Rect(bx, area.y + y, 40, RowHeight), "-", S.Button) && _editLevel > 0)
             {
-                _editLevel--; _progressConfirm = false;
+                _editLevel--;
             }
             if (GUI.Button(new Rect(bx + 46, area.y + y, 40, RowHeight), "+", S.Button))
             {
-                _editLevel++; _progressConfirm = false;
+                _editLevel++;
             }
             bool canApply = _editLevel != current && current >= 0;
+            bool askingAhead = ToolWindow.IsConfirming(ConfirmLevelAhead) && _editLevel > current;
             GUI.enabled = canApply;
-            if (GUI.Button(new Rect(bx + 98, area.y + y, 90, RowHeight), "Apply", S.Button))
+            if (GUI.Button(new Rect(bx + 98, area.y + y, 90, RowHeight), "Apply", askingAhead ? S.SelectedButton : S.Button))
             {
                 if (_editLevel > current)
                 {
-                    _progressConfirm = true;   // going forward can spoil the story
+                    ToolWindow.AskConfirm(ConfirmLevelAhead);   // going forward can spoil the story
                 }
                 else
                 {
@@ -636,21 +627,15 @@ namespace DragNWashLocalization
             }
             y = switchY + 36;
 
-            if (_progressConfirm)
+            // Only while the level asked about is still ahead; otherwise the
+            // question runs out on its own.
+            if (askingAhead)
             {
-                var warn = new GUIContent($"Warning: jumping ahead to level {_editLevel} may spoil content you have not seen. Continue?");
-                float wh = S.Label.CalcHeight(warn, innerWidth);
-                GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, wh), warn, S.Label);
-                y += wh + 4;
-                if (GUI.Button(new Rect(area.x + 12, area.y + y, 120, RowHeight), "Yes, continue", S.Button))
+                if (ToolWindow.Confirm(new Rect(area.x + 12, area.y + y, innerWidth, RowHeight), ConfirmLevelAhead,
+                    $"Jump ahead to level {_editLevel}? It may spoil what you haven't seen.", "Yes, jump ahead",
+                    $"Yes sets {GameSaves.ShortName(_savesSlot)} to level {_editLevel}; the save now is kept, and Undo last change puts it back. Cancel or 5 s leaves it. Esc = Cancel."))
                 {
                     RunSaveEdit(_savesSlot, () => GameSaves.SetLevel(PluginGuid, _savesSlot, _editLevel));
-                    _progressConfirm = false;
-                }
-                if (GUI.Button(new Rect(area.x + 140, area.y + y, 90, RowHeight), "Cancel", S.Button))
-                {
-                    _progressConfirm = false;
-                    _editLevel = current;
                 }
                 y += 36;
             }
@@ -767,12 +752,7 @@ namespace DragNWashLocalization
             float searchWidth = oneRow ? innerWidth - 24 - FlagOnceWidth - FlagResetWidth - 16 : innerWidth - 24;
             if ((dbg & 1) == 0)
             {
-                var searchRect = new Rect(12, fy, searchWidth, RowHeight);
-                string newFilter = GUI.TextField(searchRect, _flagFilter ?? "", S.TextField);
-                if (string.IsNullOrEmpty(newFilter))
-                {
-                    GUI.Label(new Rect(searchRect.x + 6, searchRect.y, searchRect.width - 6, searchRect.height), "Search flags", S.MutedLabel);
-                }
+                string newFilter = ToolWindow.FilterField(new Rect(12, fy, searchWidth, RowHeight), _flagFilter, "Search flags", S);
                 if (newFilter != _flagFilter)
                 {
                     _flagFilter = newFilter;
@@ -791,21 +771,22 @@ namespace DragNWashLocalization
             }
             // Nothing to reset while no flag in the save is true; an edit that
             // changes nothing would still keep a snapshot.
-            GUI.enabled = _anyFlagTrue || _flagClearConfirm;
-            if (GUI.Button(new Rect(bx + FlagOnceWidth + 8, fy, FlagResetWidth, RowHeight), "Reset all to false...", _flagClearConfirm ? S.SelectedButton : S.Button))
+            bool askingReset = ToolWindow.IsConfirming(ConfirmResetFlags);
+            GUI.enabled = _anyFlagTrue || askingReset;
+            if (GUI.Button(new Rect(bx + FlagOnceWidth + 8, fy, FlagResetWidth, RowHeight), "Reset all to false...", askingReset ? S.SelectedButton : S.Button))
             {
-                _flagClearConfirm = !_flagClearConfirm;
+                ToolWindow.AskConfirm(ConfirmResetFlags);
             }
             GUI.enabled = true;
             fy += 34;
 
-            if (_flagClearConfirm)
+            if (askingReset)
             {
-                GUIContent question = FlagClearQuestion();
-                float qh = S.WrappedLabel.CalcHeight(question, innerWidth - 24);
-                GUI.Label(new Rect(12, fy, innerWidth - 24, qh), question, S.WrappedLabel);
-                fy += qh + 4;
-                if (GUI.Button(new Rect(12, fy, 120, RowHeight), "Yes, reset", S.Button))
+                int pending = FlagEditCount(_savesSlot);
+                if (ToolWindow.Confirm(new Rect(12, fy, innerWidth - 24, RowHeight), ConfirmResetFlags,
+                    $"Set all {_savesFlags.Count} flags to false? The level is kept.", "Yes, reset",
+                    $"Yes sets every flag in {GameSaves.ShortName(_savesSlot)} to false; the save now is kept, and Undo last change puts it back." +
+                    (pending > 0 ? $" The {Count(pending, "change")} not written yet go." : "") + " Cancel or 5 s leaves it. Esc = Cancel."))
                 {
                     var all = new List<KeyValuePair<string, bool>>();
                     foreach (SaveFlag f in _savesFlags) all.Add(new KeyValuePair<string, bool>(f.Id, false));
@@ -814,11 +795,6 @@ namespace DragNWashLocalization
                         _flagEdits.Remove(_savesSlot);
                         _flagEditsLeft = false;
                     }
-                    _flagClearConfirm = false;
-                }
-                if (GUI.Button(new Rect(140, fy, 90, RowHeight), "Cancel", S.Button))
-                {
-                    _flagClearConfirm = false;
                 }
                 fy += 38;
             }
@@ -838,9 +814,15 @@ namespace DragNWashLocalization
                         GUI.Label(new Rect(12, ry + 4, innerWidth - 24, 26), r.ShownId, LineLabel(false));
                     continue;
                 }
-                GUI.Label(new Rect(24, ry, Mathf.Max(60, innerWidth * 0.42f), RowHeight), r.ShownId, LineLabel(false));
+                // Cut with "..." to their columns; the whole of both is on the
+                // hint line while the pointer is on the row.
+                float idWidth = Mathf.Max(60, innerWidth * 0.42f);
+                float descWidth = Mathf.Max(40, innerWidth * 0.58f - 130);
+                GUI.Label(new Rect(24, ry, idWidth, RowHeight), ToolWindow.Elide(r.ShownId, LineLabel(false), idWidth - 8), LineLabel(false));
                 if ((dbg & 2) == 0)
-                    GUI.Label(new Rect(24 + Mathf.Max(60, innerWidth * 0.42f), ry, Mathf.Max(40, innerWidth * 0.58f - 130), RowHeight), r.ShownDescription, LineLabel(true));
+                    GUI.Label(new Rect(24 + idWidth, ry, descWidth, RowHeight), ToolWindow.Elide(r.ShownDescription, LineLabel(true), descWidth - 4), LineLabel(true));
+                ToolWindow.Hint(new Rect(24, ry, idWidth + descWidth, RowHeight),
+                    string.IsNullOrEmpty(r.ShownDescription) ? r.ShownId : r.ShownId + ": " + r.ShownDescription);
                 // The value it is going to have: a change not written yet, else
                 // the save's own.
                 bool changed = edits != null && edits.ContainsKey(r.Id);
