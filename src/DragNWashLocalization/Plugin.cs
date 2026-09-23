@@ -507,6 +507,11 @@ namespace DragNWashLocalization
                 // asked for a refresh, but a repaint in that same frame can run
                 // it before this line does the work. Ask again now.
                 _savesRefreshAt = 0;
+                bool failed = result.StartsWith("Restore failed", StringComparison.Ordinal);
+                if (!failed && DropFlagEditsAfterRestore(slot))
+                {
+                    result += " Your flag changes that weren't applied were dropped.";
+                }
                 Log("[saves] " + result);
                 ToolWindow.ShowNotice(result);
             }

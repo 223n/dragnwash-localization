@@ -528,6 +528,19 @@ namespace DragNWashLocalization
                          saveText == _undoWritten && File.Exists(_undoSnapshot.Path);
         }
 
+        // After a restore went through. Flag changes clicked on the save it
+        // replaced don't belong on the one put back, and a later Apply would
+        // write them over it. Returns true when there were any.
+        private bool DropFlagEditsAfterRestore(string slot)
+        {
+            if (slot == null || !_flagEdits.Remove(slot))
+            {
+                return false;
+            }
+            _flagEditsLeft = _flagEdits.Count > 0 && _flagEditsLeft;
+            return true;
+        }
+
         // The level editor, and the switch between the history and the flags.
         // Returns where the next part starts.
         private float DrawSavesProgress(Rect area, float y, float innerWidth)
