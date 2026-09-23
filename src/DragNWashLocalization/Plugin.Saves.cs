@@ -636,7 +636,7 @@ namespace DragNWashLocalization
                     : new Rect(switchX + historyWidth + 8 + flagsWidth + 8, area.y + switchY, undoWidth, RowHeight);
                 if (PointerOn(undoRect, false))
                 {
-                    ToolWindow.Hint($"Puts back {When(_undoSnapshot)} (level {_undoSnapshot.Level}), the save from just before this change." + OldestDropsOff());
+                    ToolWindow.Hint($"Puts back {When(_undoSnapshot)} (level {_undoSnapshot.Level}), the save from just before this change." + OldestDropsOff() + DroppedByRestore());
                 }
                 if (GUI.Button(undoRect, "Undo last change", S.Button))
                 {
@@ -760,7 +760,7 @@ namespace DragNWashLocalization
                 var restoreRect = new Rect(innerWidth - 12 - restoreWidth, y, restoreWidth, RowHeight);
                 if (!isCurrent && PointerOn(restoreRect, true))
                 {
-                    ToolWindow.Hint($"Puts {When(s)} (level {s.Level}) back as {GameSaves.ShortName(_savesSlot)}'s save. The save it replaces is kept." + OldestDropsOff());
+                    ToolWindow.Hint($"Puts {When(s)} (level {s.Level}) back as {GameSaves.ShortName(_savesSlot)}'s save. The save it replaces is kept." + OldestDropsOff() + DroppedByRestore());
                 }
                 if (!isCurrent && GUI.Button(restoreRect, "Restore", S.Button))
                 {
@@ -794,6 +794,11 @@ namespace DragNWashLocalization
             }
             return $" The oldest snapshot ({When(_savesList[_savesList.Count - 1])}) drops off to make room.";
         }
+
+        // Said on Restore and Undo last change while the slot has flag changes
+        // not written yet: a restore drops them (DropFlagEditsAfterRestore).
+        private string DroppedByRestore() =>
+            FlagEditCount(_savesSlot) > 0 ? " Your changes that aren't applied yet will be dropped." : "";
 
         // "13:20:40" for today, the date as well for another day.
         private static string When(SaveSnapshot s) =>
