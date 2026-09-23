@@ -4,7 +4,7 @@
 
 Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-23.
 
-## Pre-release: v1.5.0 (2026-09-23)
+## Released: v1.5.0 (2026-09-23)
 
 - The F1 window's Activity log, Translation, Saves and About tabs, gone through one by one.
 - Every language pack translates the new Mods screen of Drag'n Wash ModFramework 1.5.0.
