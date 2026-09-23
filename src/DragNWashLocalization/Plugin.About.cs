@@ -109,7 +109,7 @@ namespace DragNWashLocalization
             const float pad = 12, bar = 3;
             string build = BuildId();
             string locale = TargetLocale.Value;
-            string language = locale == "en" ? "English" : LocaleDisplayName(locale);
+            string language = AboutLanguageName(locale);
             if (!MenuFontCanDraw(language))
             {
                 language = locale;
@@ -153,26 +153,46 @@ namespace DragNWashLocalization
         private const string SteamGuideEnglishUrl = "https://steamcommunity.com/sharedfiles/filedetails/?id=3801420947";
         private const string FrameworkWikiUrl = "https://github.com/TomXV/dragnwash-modframework/wiki";
 
+        // A link's name and address, the address already split into the domain
+        // and the rest, so nothing is cut up again on every OnGUI call.
+        private sealed class AboutLinkInfo
+        {
+            public readonly string Label, Url, Domain, Path;
+
+            public AboutLinkInfo(string label, string url)
+            {
+                Label = label;
+                Url = url;
+                string shown = url.Substring(url.IndexOf("//", StringComparison.Ordinal) + 2);
+                int slash = shown.IndexOf('/');
+                Domain = slash < 0 ? shown : shown.Substring(0, slash);
+                Path = slash < 0 ? "" : shown.Substring(slash);
+            }
+        }
+
+        private static readonly AboutLinkInfo RepositoryLink = new AboutLinkInfo("This mod on GitHub", RepositoryUrl);
+        private static readonly AboutLinkInfo IssuesLink = new AboutLinkInfo("Report a problem", RepositoryUrl + "/issues");
+        private static readonly AboutLinkInfo SteamGuideJapaneseLink = new AboutLinkInfo("Steam guide", SteamGuideJapaneseUrl);
+        private static readonly AboutLinkInfo SteamGuideEnglishLink = new AboutLinkInfo("Steam guide", SteamGuideEnglishUrl);
+        private static readonly AboutLinkInfo FrameworkWikiLink = new AboutLinkInfo("ModFramework wiki", FrameworkWikiUrl);
+
         private void DrawAboutLinks()
         {
-            AboutLink("This mod on GitHub", RepositoryUrl);
-            AboutLink("Report a problem", RepositoryUrl + "/issues");
-            AboutLink("Steam guide", TargetLocale.Value == "ja" ? SteamGuideJapaneseUrl : SteamGuideEnglishUrl);
-            AboutLink("ModFramework wiki", FrameworkWikiUrl);
+            AboutLink(RepositoryLink);
+            AboutLink(IssuesLink);
+            AboutLink(TargetLocale.Value == "ja" ? SteamGuideJapaneseLink : SteamGuideEnglishLink);
+            AboutLink(FrameworkWikiLink);
             _aboutY += 2;
             GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), "Open switches to your web browser.", S.MutedLabel);
             _aboutY += 30;
         }
 
-        private void AboutLink(string label, string url)
+        private void AboutLink(AboutLinkInfo link)
         {
             const float labelWidth = 150, buttonWidth = 70, gap = 8;
-            string shown = url.Substring(url.IndexOf("//", StringComparison.Ordinal) + 2);
-            int slash = shown.IndexOf('/');
-            string domain = slash < 0 ? shown : shown.Substring(0, slash);
-            string path = slash < 0 ? "" : shown.Substring(slash);
-            float domainWidth = S.Label.CalcSize(new GUIContent(domain)).x;
-            float pathWidth = S.MutedLabel.CalcSize(new GUIContent(path)).x;
+            string label = link.Label, url = link.Url, domain = link.Domain, path = link.Path;
+            float domainWidth = AboutTextWidth(domain);
+            float pathWidth = AboutTextWidth(path);
             float buttonsWidth = 2 * buttonWidth + gap;
 
             // One line when it all fits; in a narrow window the address goes
@@ -238,8 +258,19 @@ namespace DragNWashLocalization
             public string Names = "";
         }
 
-        private static readonly Dictionary<string, LocaleCredit> _localeCredits =
-            new Dictionary<string, LocaleCredit>(StringComparer.Ordinal);
+        // A line of the language table, worked out once at startup: the list
+        // of installed languages does not change while the game runs.
+        private sealed class AboutLanguageRow
+        {
+            public string Locale;
+            public string Name;      // as the window draws it (see RightToLeft)
+            public string Tag;       // null for English, which is no pack
+            public Color TagColor;
+            public int Rank;
+            public string By;
+        }
+
+        private static readonly List<AboutLanguageRow> _aboutLanguages = new List<AboutLanguageRow>();
 
         private static LocaleCredit ReadLocaleCredit(string locale, StringBuilder text)
         {
@@ -267,7 +298,7 @@ namespace DragNWashLocalization
                     }
                     else
                     {
-                        names.Add(line);
+                        names.Add(RightToLeft.ForLeftToRightDrawing(line));
                         text.Append(line);
                     }
                 }
@@ -286,14 +317,28 @@ namespace DragNWashLocalization
         private string LoadAboutFiles()
         {
             var text = new StringBuilder();
-            _localeCredits.Clear();
+            _aboutLanguages.Clear();
             foreach (string locale in _availableLocales)
             {
-                if (locale != "en")
+                var row = new AboutLanguageRow
                 {
-                    _localeCredits[locale] = ReadLocaleCredit(locale, text);
+                    Locale = locale,
+                    Name = RightToLeft.ForLeftToRightDrawing(locale == "en" ? "English" : LocaleDisplayName(locale)),
+                };
+                if (locale == "en")
+                {
+                    row.By = "the game's own text";
+                    row.Rank = 9;   // English goes last
                 }
+                else
+                {
+                    LocaleCredit credit = ReadLocaleCredit(locale, text);
+                    LocaleStatus(credit.Status, out row.Tag, out row.TagColor, out row.Rank);
+                    row.By = credit.Names;
+                }
+                _aboutLanguages.Add(row);
             }
+            _aboutLanguages.Sort((a, b) => a.Rank != b.Rank ? a.Rank.CompareTo(b.Rank) : string.CompareOrdinal(a.Locale, b.Locale));
             _credits = null;
             string path = Path.Combine(PluginDirectory, "CREDITS.txt");
             try
@@ -341,7 +386,7 @@ namespace DragNWashLocalization
                 }
                 items.Add(new CreditItem
                 {
-                    Who = entry ? WithoutAddress(block[0].Trim()) : null,
+                    Who = entry ? RightToLeft.ForLeftToRightDrawing(WithoutAddress(block[0].Trim())) : null,
                     Text = string.Join(" ", words),
                 });
                 block.Clear();
@@ -406,6 +451,7 @@ namespace DragNWashLocalization
             // under the other when the window is too narrow for two columns.
             float whoWidth = Mathf.Min(180, _aboutWidth * 0.35f);
             bool twoColumns = _aboutWidth >= 360;
+            bool skipping = false;
             foreach (CreditItem item in _credits)
             {
                 if (item.Heading != null)
@@ -413,6 +459,18 @@ namespace DragNWashLocalization
                     _aboutY += 6;
                     GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), ToolWindow.Drawable(item.Heading), S.Label);
                     _aboutY += 28;
+                    // The file's Translations section lists the packs in prose
+                    // and points at README.md; in here the table under
+                    // Languages says the same thing better.
+                    skipping = string.Equals(item.Heading, "Translations", StringComparison.OrdinalIgnoreCase);
+                    if (skipping)
+                    {
+                        AboutText("Who checked each language is in the table under Languages, just below.");
+                    }
+                }
+                else if (skipping)
+                {
+                    continue;
                 }
                 else if (item.Who != null)
                 {
@@ -472,58 +530,43 @@ namespace DragNWashLocalization
                 _aboutTagBase = S.MutedLabel;
                 _aboutTagStyle = new GUIStyle(S.MutedLabel) { alignment = TextAnchor.MiddleCenter };
             }
-
-            var rows = new List<string>(_availableLocales);
-            rows.Sort((a, b) =>
-            {
-                int ra = AboutLocaleRank(a), rb = AboutLocaleRank(b);
-                return ra != rb ? ra.CompareTo(rb) : string.CompareOrdinal(a, b);
-            });
-
-            float nameWidth = Mathf.Clamp(_aboutWidth * 0.25f, 90, 170);
-            const float codeWidth = 70;
-            float tagWidth = _aboutTagStyle.CalcSize(new GUIContent("PROVISIONAL")).x + 16;
-            float inUseWidth = S.Label.CalcSize(new GUIContent("in use")).x;
-            float byX = 24 + nameWidth + codeWidth + tagWidth + 12;
-            // In a narrow window who checked it goes on a line of its own.
-            bool byBelow = 12 + _aboutWidth - byX < 120;
-            if (rows.Count == 0)
+            if (_aboutLanguages.Count == 0)
             {
                 AboutText("No language folders installed.");
                 return;
             }
-            foreach (string locale in rows)
-            {
-                bool inUse = locale == TargetLocale.Value;
-                string name = locale == "en" ? "English" : LocaleDisplayName(locale);
-                if (!MenuFontCanDraw(name))
-                {
-                    name = locale;
-                }
-                string by;
-                bool hasTag = locale != "en";
-                string tag = null;
-                Color color = ToolWindow.MutedColor;
-                if (hasTag)
-                {
-                    LocaleCredit credit = _localeCredits.TryGetValue(locale, out LocaleCredit c) ? c : new LocaleCredit();
-                    LocaleStatus(credit.Status, out tag, out color, out int _);
-                    by = credit.Names;
-                }
-                else
-                {
-                    by = "the game's own text";
-                }
 
+            // The name column is as wide as the widest name, so a long one is
+            // not cut off, but it leaves room for the code and the tag.
+            const float codeWidth = 70;
+            float tagWidth = AboutTextWidth("PROVISIONAL") + 16;
+            float inUseWidth = AboutTextWidth("in use");
+            float widestName = 0, widestBy = 0;
+            foreach (AboutLanguageRow row in _aboutLanguages)
+            {
+                widestName = Mathf.Max(widestName, AboutTextWidth(AboutRowName(row)));
+                widestBy = Mathf.Max(widestBy, AboutTextWidth(row.By));
+            }
+            float nameWidth = Mathf.Clamp(widestName + 16, 90, Mathf.Max(90, _aboutWidth - codeWidth - tagWidth - 24));
+            float byX = 24 + nameWidth + codeWidth + tagWidth + 12;
+            // Who checked it goes on a line of its own when it does not fit
+            // beside the tag, with room left for "in use".
+            bool byBelow = 12 + _aboutWidth - byX < Mathf.Max(120, widestBy + inUseWidth + 12);
+
+            foreach (AboutLanguageRow row in _aboutLanguages)
+            {
+                bool inUse = row.Locale == TargetLocale.Value;
+                string by = row.By;
                 float rowHeight = byBelow && (by.Length > 0 || inUse) ? 54 : 28;
                 if (inUse)
                 {
                     ToolWindow.Fill(new Rect(12, _aboutY, 2, rowHeight - 2), ToolWindow.AccentColor);
                 }
-                GUI.Label(new Rect(24, _aboutY, nameWidth - 8, 26), ToolWindow.Drawable(name), S.Label);
-                GUI.Label(new Rect(24 + nameWidth, _aboutY, codeWidth - 8, 26), locale, S.MutedLabel);
-                if (hasTag)
+                GUI.Label(new Rect(24, _aboutY, nameWidth - 8, 26), ToolWindow.Drawable(AboutRowName(row)), S.Label);
+                GUI.Label(new Rect(24 + nameWidth, _aboutY, codeWidth - 8, 26), row.Locale, S.MutedLabel);
+                if (row.Tag != null)
                 {
+                    Color color = row.TagColor;
                     var box = new Rect(24 + nameWidth + codeWidth, _aboutY + 2, tagWidth, 22);
                     ToolWindow.Fill(new Rect(box.x, box.y, box.width, 1), color);
                     ToolWindow.Fill(new Rect(box.x, box.yMax - 1, box.width, 1), color);
@@ -531,7 +574,7 @@ namespace DragNWashLocalization
                     ToolWindow.Fill(new Rect(box.xMax - 1, box.y, 1, box.height), color);
                     Color previous = _aboutTagStyle.normal.textColor;
                     _aboutTagStyle.normal.textColor = color;
-                    GUI.Label(box, tag, _aboutTagStyle);
+                    GUI.Label(box, row.Tag, _aboutTagStyle);
                     _aboutTagStyle.normal.textColor = previous;
                 }
 
@@ -552,16 +595,49 @@ namespace DragNWashLocalization
             _aboutY += 8;
         }
 
-        // English, which is no pack, goes last.
-        private static int AboutLocaleRank(string locale)
+        // The language's own name when the window font has its letters (the
+        // bundled font has no Hebrew or Thai, for one), its code when not.
+        private string AboutRowName(AboutLanguageRow row)
         {
-            if (locale == "en")
+            return MenuFontCanDraw(row.Name) ? row.Name : row.Locale;
+        }
+
+        // A language's name as the table shows it, for the card at the top.
+        private static string AboutLanguageName(string locale)
+        {
+            foreach (AboutLanguageRow row in _aboutLanguages)
             {
-                return 9;
+                if (row.Locale == locale)
+                {
+                    return row.Name;
+                }
             }
-            LocaleCredit credit = _localeCredits.TryGetValue(locale, out LocaleCredit c) ? c : new LocaleCredit();
-            LocaleStatus(credit.Status, out string _, out Color _, out int rank);
-            return rank;
+            return locale == "en" ? "English" : RightToLeft.ForLeftToRightDrawing(LocaleDisplayName(locale));
+        }
+
+        // Widths of the short strings the tab lines things up by, measured
+        // once: IMGUI calls OnGUI several times a frame. Label and MutedLabel
+        // share a font and size, so one measure does for both.
+        private readonly Dictionary<string, float> _aboutWidths = new Dictionary<string, float>(StringComparer.Ordinal);
+        private GUIStyle _aboutWidthsBase;
+
+        private float AboutTextWidth(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return 0;
+            }
+            if (_aboutWidthsBase != S.Label)
+            {
+                _aboutWidthsBase = S.Label;
+                _aboutWidths.Clear();
+            }
+            if (!_aboutWidths.TryGetValue(text, out float width))
+            {
+                width = S.Label.CalcSize(new GUIContent(text)).x;
+                _aboutWidths[text] = width;
+            }
+            return width;
         }
 
         // What a bug report needs to say about this install, a few lines to
@@ -587,7 +663,8 @@ namespace DragNWashLocalization
 
         // The user's own folder becomes %USERPROFILE%; any other ...\Users\<name>
         // or /home/<name> left in the path (a Steam library elsewhere, Proton's
-        // Z: drive on Steam Deck) becomes <user>.
+        // Z: drive on Steam Deck) becomes <user>. Only the copy goes through
+        // this; the tab itself shows the real path.
         private static readonly Regex UserFolder = new Regex(@"([\\/](?:users|home)[\\/])[^\\/]+", RegexOptions.IgnoreCase);
 
         private static string WithoutUserName(string path)
@@ -609,7 +686,23 @@ namespace DragNWashLocalization
             {
                 // No profile folder to name; the pattern below still applies.
             }
-            return UserFolder.Replace(path, "$1<user>");
+            path = UserFolder.Replace(path, "$1<user>");
+
+            // And a folder named just like the account anywhere else, such as
+            // D:\taro\SteamLibrary.
+            try
+            {
+                string user = Environment.UserName;
+                if (!string.IsNullOrEmpty(user) && user.Length > 1)
+                {
+                    path = Regex.Replace(path, @"(?<=^|[\\/])" + Regex.Escape(user) + @"(?=[\\/]|$)", "<user>", RegexOptions.IgnoreCase);
+                }
+            }
+            catch (Exception)
+            {
+                // No account name to look for.
+            }
+            return path;
         }
 
         // A heading in the accent colour with a thin line under it, so it does

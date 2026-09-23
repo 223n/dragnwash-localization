@@ -17,16 +17,16 @@
 #     BepInEx/plugins/DragNWash.ModFramework*/<the framework and its libraries>.dll
 #     BepInEx/patchers/DragNWash.ModFramework.Preloader.dll
 #     BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll, icon.png
-#     BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv
+#     BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv, CREDITS.txt
 #     BepInEx/plugins/DragNWashLocalization/dragnwash-menufont.bundle
 #     BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt
 #     BepInEx/plugins/DragNWashLocalization/data/script_order.csv, level_flow.csv
-#     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
+#     BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv, name.txt, credits.txt
 #     BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
 #     Install.exe                <- Drag'n Wash ModFramework's shared installer (Windows)
 #     install-steamdeck.sh       <- the same for Steam Deck / Linux: bash install-steamdeck.sh
 #     mod-install.json           <- what the installers need to know about this mod
-#     README.md, README.ja.md
+#     README.md, README.ja.md, CREDITS.txt
 param(
     [string]$Version,
     [string]$FrameworkPath
