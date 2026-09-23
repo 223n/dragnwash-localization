@@ -104,13 +104,16 @@ namespace DragNWashLocalization
         }
 
         // One line as the tab draws it: already passed through Drawable, and
-        // measured at the width it was measured for.
+        // measured at the width it was measured for. Copying takes the text as
+        // it was logged, characters the window font cannot draw included.
         private struct LogRow
         {
             public long Seq;
             public LogKind Kind;
             public string Drawn;
             public float Height;
+            public string Line;
+            public string Text;
         }
 
         private readonly List<LogRow> _logRows = new List<LogRow>();
@@ -276,7 +279,7 @@ namespace DragNWashLocalization
                 string drawn = ToolWindow.Drawable(text);
                 missing |= drawn != text;
                 float height = _logStyles[(int)line.Kind].CalcHeight(new GUIContent(drawn), width);
-                _logRows.Add(new LogRow { Seq = line.Seq, Kind = line.Kind, Drawn = drawn, Height = height });
+                _logRows.Add(new LogRow { Seq = line.Seq, Kind = line.Kind, Drawn = drawn, Height = height, Line = text, Text = line.Text });
                 _logContentHeight += height;
             }
             _logRowsRetryAt = missing ? Time.unscaledTime + 1f : -1;
@@ -343,10 +346,14 @@ namespace DragNWashLocalization
                 }
                 bx += bw + 6;
             }
-            const float buttonsWidth = 110;
+            const float buttonsWidth = 70 + 6 + 110;
             if (x + w - buttonsWidth - bx < 0)
             {
                 y += RowHeight + 6;
+            }
+            if (GUI.Button(new Rect(x + w - buttonsWidth, y, 70, RowHeight), "Copy", S.Button))
+            {
+                CopyShownLines();
             }
             if (GUI.Button(new Rect(x + w - 110, y, 110, RowHeight), "Clear log", S.Button))
             {
@@ -373,6 +380,21 @@ namespace DragNWashLocalization
                 RebuildLogRows(contentWidth);
             }
 
+            // Lines that came while the log was scrolled up: a button in the
+            // corner says how many and goes down to them. Where it is, the
+            // lines under it take no clicks, since IMGUI hands a click to the
+            // control drawn first and the lines are drawn before the button.
+            int fresh = 0;
+            for (int i = _logRows.Count - 1; i >= 0 && _logRows[i].Seq > _logSeenSeq; i--)
+            {
+                fresh++;
+            }
+            string freshLabel = fresh == 1 ? "1 new line  v" : $"{fresh} new lines  v";
+            float freshWidth = S.Button.CalcSize(new GUIContent(freshLabel)).x + 16;
+            var freshRect = new Rect(viewport.xMax - 20 - 8 - freshWidth, viewport.yMax - RowHeight - 8, freshWidth, RowHeight);
+            bool showFresh = !_followLog && fresh > 0;
+            bool overFresh = showFresh && freshRect.Contains(Event.current.mousePosition);
+
             float bottom = Mathf.Max(0, _logContentHeight - viewport.height);
             if (_followLog)
             {
@@ -396,7 +418,21 @@ namespace DragNWashLocalization
             {
                 if (ry + row.Height >= _logScroll.y && ry <= _logScroll.y + viewport.height)
                 {
-                    GUI.Label(new Rect(0, ry, contentWidth, row.Height), row.Drawn, _logStyles[(int)row.Kind]);
+                    // Click a line to copy it; the line under the pointer gets
+                    // the panel colour behind it.
+                    var rowRect = new Rect(0, ry, contentWidth, row.Height);
+                    bool hot = !overFresh && rowRect.Contains(Event.current.mousePosition);
+                    if (hot && Event.current.type == EventType.Repaint)
+                    {
+                        ToolWindow.Fill(rowRect, ToolWindow.PanelColor);
+                    }
+                    GUI.Label(rowRect, row.Drawn, _logStyles[(int)row.Kind]);
+                    if (!overFresh && GUI.Button(rowRect, new GUIContent("", "Click a line to copy it."), GUIStyle.none))
+                    {
+                        GUIUtility.systemCopyBuffer = row.Text;
+                        string shown = row.Text.Length > 80 ? row.Text.Substring(0, 77) + "..." : row.Text;
+                        ToolWindow.ShowNotice(ToolWindow.Drawable("Copied: " + shown));
+                    }
                 }
                 ry += row.Height;
             }
@@ -414,26 +450,32 @@ namespace DragNWashLocalization
                 _followLog = false;
             }
 
-            // Lines that came while the log was scrolled up: a button in the
-            // corner says how many and goes down to them.
-            int fresh = 0;
-            for (int i = _logRows.Count - 1; i >= 0 && _logRows[i].Seq > _logSeenSeq; i--)
-            {
-                fresh++;
-            }
             if (_followLog || fresh == 0)
             {
                 _logSeenSeq = _logRows.Count > 0 ? Math.Max(_logSeenSeq, _logRows[_logRows.Count - 1].Seq) : _logSeenSeq;
             }
-            else
+            else if (showFresh && GUI.Button(freshRect, freshLabel, S.Button))
             {
-                string label = fresh == 1 ? "1 new line  v" : $"{fresh} new lines  v";
-                float bw = S.Button.CalcSize(new GUIContent(label)).x + 16;
-                if (GUI.Button(new Rect(viewport.xMax - 20 - 8 - bw, viewport.yMax - RowHeight - 8, bw, RowHeight), label, S.Button))
-                {
-                    _followLog = true;
-                }
+                _followLog = true;
             }
+        }
+
+        // The lines the toggles leave shown, with their times, for a bug
+        // report or a note.
+        private void CopyShownLines()
+        {
+            if (_logRows.Count == 0)
+            {
+                ToolWindow.ShowNotice("Nothing to copy.");
+                return;
+            }
+            var lines = new string[_logRows.Count];
+            for (int i = 0; i < _logRows.Count; i++)
+            {
+                lines[i] = _logRows[i].Line;
+            }
+            GUIUtility.systemCopyBuffer = string.Join("\n", lines);
+            ToolWindow.ShowNotice(lines.Length == 1 ? "Copied 1 line." : $"Copied {lines.Length} lines.");
         }
     }
 }
