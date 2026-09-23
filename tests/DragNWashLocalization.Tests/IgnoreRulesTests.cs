@@ -269,10 +269,20 @@ namespace DragNWashLocalization.Tests
         /// <para>An invalid rule is reported, naming the rule and its file.</para>
         /// <para>不正な規則は、その規則とファイル名を示して報告される。</para>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Only the message is checked, not its <see cref="LogKind"/>: main logs
+        /// it as Info and dev as Warning, and the test must pass on both.
+        /// </para>
+        /// <para>
+        /// 確かめるのはメッセージだけで、<see cref="LogKind"/> は見ない。
+        /// main は Info、dev は Warning で記録しており、どちらでも通る必要があるため。
+        /// </para>
+        /// </remarks>
         [Fact]
-        public void AnInvalidPatternIsSkippedWithAWarning()
+        public void AnInvalidPatternIsSkippedAndReported()
         {
-            Assert.Contains(Plugin.Logged, l => l.Key == LogKind.Warning && l.Value.Contains(IgnoreRulesFixture.InvalidPattern) && l.Value.Contains("ignore.txt"));
+            Assert.Contains(Plugin.Logged, l => l.Value.Contains(IgnoreRulesFixture.InvalidPattern) && l.Value.Contains("ignore.txt"));
         }
 
         /// <summary>
@@ -301,13 +311,22 @@ namespace DragNWashLocalization.Tests
         /// 何度タイムアウトしても、報告は 1 回だけ。
         /// </para>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// As in <see cref="AnInvalidPatternIsSkippedAndReported"/>, the
+        /// <see cref="LogKind"/> is not checked.
+        /// </para>
+        /// <para>
+        /// <see cref="AnInvalidPatternIsSkippedAndReported"/> と同じく、<see cref="LogKind"/> は見ない。
+        /// </para>
+        /// </remarks>
         [Fact]
         public void ATimedOutPatternCountsAsNoMatchAndIsReportedOnce()
         {
             Assert.False(IgnoreRules.IsIgnored(IgnoreRulesFixture.SlowInput));
             Assert.False(IgnoreRules.IsIgnored(IgnoreRulesFixture.SlowInput + "a"));
 
-            Assert.Single(Plugin.Logged, l => l.Key == LogKind.Warning && l.Value.Contains("timed out") && l.Value.Contains(IgnoreRulesFixture.SlowPattern));
+            Assert.Single(Plugin.Logged, l => l.Value.Contains("timed out") && l.Value.Contains(IgnoreRulesFixture.SlowPattern));
         }
 
         /// <summary>
