@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using DragNWash.ModFramework.Dialogue;
 using DragNWash.ModFramework.ToolWindow;
 
 namespace DragNWashLocalization
@@ -92,6 +93,7 @@ namespace DragNWashLocalization
                 });
 
             y = DrawEditStep(y, width, locale);
+            y = DrawReviewList(y, width);
 
             y = StepButton(y, width, "3", _pendingLayoutCheck ? "Checking..." : "Check layout",
                 "Finds translated labels that don't fit. Open the screens you want checked first.",
@@ -160,6 +162,93 @@ namespace DragNWashLocalization
                 }
             }
             return WrappedText(x, y, textWidth, ToolWindow.Drawable(status), problem != null ? TabStyles.Warning : S.WrappedLabel) + 10;
+        }
+
+        private const int MaxReviewRows = 40;
+        private List<LineResolution.Review> _reviews = new List<LineResolution.Review>();
+        private int _reviewsCount = -1;
+        private float _reviewsAt;
+
+        // Lines whose English a game update changed: the old translation is
+        // shown, and the translator should look at them. Only the line ID,
+        // node and speaker are listed, never the English itself, and Copy ID
+        // puts the ID on the clipboard to search the working copy with. The
+        // best guesses (Fuzzy) are the likeliest to be wrong, so they go first.
+        private float DrawReviewList(float y, float width)
+        {
+            int count = LineResolution.ReviewCount;
+            if (count == 0)
+            {
+                return y;
+            }
+            if (count != _reviewsCount || Time.unscaledTime >= _reviewsAt + 2f)
+            {
+                _reviewsCount = count;
+                _reviewsAt = Time.unscaledTime;
+                _reviews = LineResolution.ReviewList;
+                _reviews.Sort((a, b) =>
+                {
+                    int byLayer = ReviewOrder(a.Layer).CompareTo(ReviewOrder(b.Layer));
+                    return byLayer != 0 ? byLayer : string.CompareOrdinal(a.LineId ?? a.Key, b.LineId ?? b.Key);
+                });
+            }
+
+            float x = 12 + StepIndent, w = width - StepIndent;
+            GUI.Label(new Rect(x, y, w, 26), $"LINES TO REVIEW  ({count})", S.Label);
+            y += 30;
+            y = WrappedText(x, y, w,
+                "Their English changed in a game update, so the old translation is still shown. Check them in the working copy. The list starts over on every reload and fills again as the lines come up.",
+                S.WrappedLabel) + 6;
+
+            const float copyWidth = 90, lineHeight = 24;
+            float textWidth = Mathf.Max(60, w - copyWidth - 8);
+            for (int i = 0; i < _reviews.Count && i < MaxReviewRows; i++)
+            {
+                LineResolution.Review r = _reviews[i];
+                string id = r.LineId ?? r.Key ?? "";
+                float idWidth = Mathf.Min(textWidth, S.Label.CalcSize(new GUIContent(id)).x);
+                GUI.Label(new Rect(x, y + 3, idWidth, lineHeight), id, S.Label);
+                GUI.Label(new Rect(x + idWidth + 12, y + 3, Mathf.Max(0, textWidth - idWidth - 12), lineHeight),
+                    ToolWindow.Drawable($"{r.Node ?? "-"} / {r.Speaker ?? "-"}"), S.MutedLabel);
+                GUI.Label(new Rect(x, y + 3 + lineHeight, textWidth, lineHeight), HowMatched(r.Layer),
+                    r.Layer == LineMatchLayer.Fuzzy ? TabStyles.Warning : S.MutedLabel);
+                if (GUI.Button(new Rect(x + w - copyWidth, y + 3 + (2 * lineHeight - RowHeight) / 2, copyWidth, RowHeight), "Copy ID", S.Button))
+                {
+                    // The ID only, on this machine's clipboard.
+                    GUIUtility.systemCopyBuffer = id;
+                    ToolWindow.ShowNotice($"Copied {id}. Search the working copy for it.");
+                }
+                y += 2 * lineHeight + 8;
+                ToolWindow.Fill(new Rect(x, y - 1, w, 1), ToolWindow.PanelColor);
+            }
+            if (_reviews.Count > MaxReviewRows)
+            {
+                y = WrappedText(x, y + 4, w, $"... and {_reviews.Count - MaxReviewRows} more. \"tl review\" in the Console lists them all.", S.WrappedLabel);
+            }
+            return y + 12;
+        }
+
+        private static int ReviewOrder(LineMatchLayer layer)
+        {
+            switch (layer)
+            {
+                case LineMatchLayer.Fuzzy: return 0;
+                case LineMatchLayer.Normalized: return 1;
+                case LineMatchLayer.LineId: return 2;
+                default: return 3;
+            }
+        }
+
+        // How the line was recognised, in words rather than the layer's name.
+        private static string HowMatched(LineMatchLayer layer)
+        {
+            switch (layer)
+            {
+                case LineMatchLayer.Fuzzy: return "English changed, best guess";
+                case LineMatchLayer.Normalized: return "Only punctuation or case changed";
+                case LineMatchLayer.LineId: return "Same line, English edited";
+                default: return layer.ToString();
+            }
         }
 
         private float StepNumber(float y, string number)
