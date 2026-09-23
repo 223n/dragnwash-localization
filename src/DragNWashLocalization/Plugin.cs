@@ -298,7 +298,9 @@ namespace DragNWashLocalization
             // are called, and what the config file says the language is. The
             // About tab prints all three, and the activity log reaches the same
             // font with the install path whenever a line names a written file.
+            // The About tab also shows the names in the credits files.
             text.Append(PluginDirectory);
+            text.Append(LoadAboutFiles());
             text.Append(TargetLocale.Value);
             foreach (string locale in _availableLocales)
             {

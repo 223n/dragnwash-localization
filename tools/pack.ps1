@@ -184,6 +184,9 @@ if (Test-Path -LiteralPath $ReporterProject) {
 # This mod's icon on the Mods screen (the logo by Mister ERIO).
 Copy-Item -LiteralPath (Join-Path $Root 'src/DragNWashLocalization/icon.png') -Destination $PluginDir
 Copy-Item -LiteralPath (Join-Path $Root 'FlagCatalog.csv') -Destination $PluginDir
+# The credits go next to the plugin too (as well as at the top of the zip,
+# below): the About tab in the F1 menu reads them from there.
+Copy-Item -LiteralPath (Join-Path $Root 'CREDITS.txt') -Destination $PluginDir
 # Menu font for systems whose OS fonts have no CJK glyphs (Steam Deck).
 Copy-Item -LiteralPath (Join-Path $Root 'assets/menufont/dragnwash-menufont.bundle') -Destination $PluginDir
 Copy-Item -LiteralPath (Join-Path $Root 'assets/menufont/OFL.txt') -Destination (Join-Path $PluginDir 'dragnwash-menufont-LICENSE.txt')

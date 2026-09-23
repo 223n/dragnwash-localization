@@ -51,6 +51,7 @@ BepInEx/plugins/DragNWash.ModFramework.Assets/DragNWash.ModFramework.Assets.dll
 BepInEx/plugins/DragNWash.ModFramework.Saves/DragNWash.ModFramework.Saves.dll
 BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 BepInEx/plugins/DragNWashLocalization/icon.png
+BepInEx/plugins/DragNWashLocalization/CREDITS.txt
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/name.txt

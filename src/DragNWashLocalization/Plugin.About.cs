@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using UnityEngine;
 using DragNWash.ModFramework.ToolWindow;
 
@@ -66,10 +68,7 @@ namespace DragNWashLocalization
             AboutText("A small shared base for Drag'n Wash mods. It gives you the Mods screen in Options, update notices, one installer for every mod, and this tool window. Its first rule is that mods run safely together. It's a separate open project, and anyone can build a mod on it.");
 
             AboutHeading("CREDITS");
-            AboutText("Created by TomXV. Translation files by TomXV, with corrections from contributors credited in the README and in each language file.");
-            AboutText("Korean proofread by Hotcake.");
-            AboutText("This mod's logo by Mister ERIO, who also drew the framework's Mods button. The framework's logo and icon by NotaGames.");
-            AboutText("Source, issues and translation contributions: github.com/TomXV/dragnwash-localization");
+            DrawAboutCredits();
 
             AboutHeading("LANGUAGES");
             AboutText("Supervised by the author: Japanese (ja), Simplified Chinese (zh-Hans).");
@@ -211,6 +210,177 @@ namespace DragNWashLocalization
                 ToolWindow.ShowNotice("Address copied to the clipboard.");
             }
             _aboutY += RowHeight + 6;
+        }
+
+        // CREDITS.txt, which tools/pack.ps1 puts next to the plugin as well as
+        // at the top of the zip, so a new name only has to be written there
+        // and not here too. Read once at startup; null when the file is not
+        // there (a hand-made install from an older zip), and the tab then
+        // shows the credits it always had.
+        private sealed class CreditItem
+        {
+            public string Heading;   // a section title, such as "Artwork"
+            public string Who;       // an entry's name, its URL left out
+            public string Text;      // what they did, or a paragraph
+        }
+
+        private static List<CreditItem> _credits;
+
+        // Everything the About tab reads from files, loaded now. Returns the
+        // text for PrepareWindowCharacters: a name in the credits may be in
+        // any script.
+        private static string LoadAboutFiles()
+        {
+            var text = new StringBuilder();
+            _credits = null;
+            string path = Path.Combine(PluginDirectory, "CREDITS.txt");
+            try
+            {
+                if (File.Exists(path))
+                {
+                    string[] lines = File.ReadAllLines(path, Encoding.UTF8);
+                    _credits = ParseCredits(lines);
+                    foreach (string line in lines)
+                    {
+                        text.Append(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log($"[about] Could not read CREDITS.txt: {ex.Message}");
+            }
+            return text.ToString();
+        }
+
+        // The layout CREDITS.txt is written in: a title over a ==== line,
+        // sections over ---- lines, an entry as a name (and URL) with what they
+        // did indented under it, other paragraphs as they are, and a "---"
+        // line before the closing note.
+        private static List<CreditItem> ParseCredits(string[] lines)
+        {
+            var items = new List<CreditItem>();
+            var block = new List<string>();
+            void Flush()
+            {
+                if (block.Count == 0)
+                {
+                    return;
+                }
+                bool entry = block.Count > 1 && !Indented(block[0]);
+                for (int k = 1; k < block.Count && entry; k++)
+                {
+                    entry = Indented(block[k]);
+                }
+                var words = new List<string>();
+                for (int k = entry ? 1 : 0; k < block.Count; k++)
+                {
+                    words.Add(block[k].Trim());
+                }
+                items.Add(new CreditItem
+                {
+                    Who = entry ? WithoutAddress(block[0].Trim()) : null,
+                    Text = string.Join(" ", words),
+                });
+                block.Clear();
+            }
+
+            // The title and its ==== line: the tab has its own heading.
+            int start = lines.Length > 1 && IsRule(lines[1], '=') ? 2 : 0;
+            for (int i = start; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (line.Trim().Length == 0)
+                {
+                    Flush();
+                }
+                else if (IsRule(line, '-'))
+                {
+                    Flush();
+                    items.Add(new CreditItem());   // the "---" before the closing note
+                }
+                else if (i + 1 < lines.Length && IsRule(lines[i + 1], '-') && block.Count == 0)
+                {
+                    items.Add(new CreditItem { Heading = line.Trim() });
+                    i++;
+                }
+                else
+                {
+                    block.Add(line);
+                }
+            }
+            Flush();
+            return items;
+        }
+
+        private static bool Indented(string line) => line.Length > 0 && char.IsWhiteSpace(line[0]);
+
+        private static bool IsRule(string line, char c)
+        {
+            string t = line.Trim();
+            return t.Length >= 3 && t.Trim(c).Length == 0;
+        }
+
+        // "223n (https://github.com/223n)" -> "223n". The tab links only to
+        // this project's own pages.
+        private static string WithoutAddress(string who)
+        {
+            int open = who.IndexOf(" (http", StringComparison.Ordinal);
+            return open > 0 && who.EndsWith(")", StringComparison.Ordinal) ? who.Substring(0, open) : who;
+        }
+
+        private void DrawAboutCredits()
+        {
+            if (_credits == null)
+            {
+                AboutText("Created by TomXV. Translation files by TomXV, with corrections from contributors credited in the README and in each language file.");
+                AboutText("Korean proofread by Hotcake.");
+                AboutText("This mod's logo by Mister ERIO, who also drew the framework's Mods button. The framework's logo and icon by NotaGames.");
+                return;
+            }
+
+            AboutText("Made by TomXV.");
+            // Names in a column of their own, what they did beside them; one
+            // under the other when the window is too narrow for two columns.
+            float whoWidth = Mathf.Min(180, _aboutWidth * 0.35f);
+            bool twoColumns = _aboutWidth >= 360;
+            foreach (CreditItem item in _credits)
+            {
+                if (item.Heading != null)
+                {
+                    _aboutY += 6;
+                    GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), ToolWindow.Drawable(item.Heading), S.Label);
+                    _aboutY += 28;
+                }
+                else if (item.Who != null)
+                {
+                    string who = ToolWindow.Drawable(item.Who);
+                    var what = new GUIContent(ToolWindow.Drawable(item.Text));
+                    if (twoColumns)
+                    {
+                        float h = Mathf.Max(26, S.WrappedLabel.CalcHeight(what, _aboutWidth - whoWidth - 12));
+                        GUI.Label(new Rect(24, _aboutY, whoWidth - 12, 26), who, S.Label);
+                        GUI.Label(new Rect(12 + whoWidth + 12, _aboutY + 3, _aboutWidth - whoWidth - 12, h), what, S.WrappedLabel);
+                        _aboutY += h + 6;
+                    }
+                    else
+                    {
+                        GUI.Label(new Rect(24, _aboutY, _aboutWidth - 12, 26), who, S.Label);
+                        _aboutY += 26;
+                        float h = S.WrappedLabel.CalcHeight(what, _aboutWidth - 24);
+                        GUI.Label(new Rect(36, _aboutY, _aboutWidth - 24, h), what, S.WrappedLabel);
+                        _aboutY += h + 6;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(item.Text))
+                {
+                    AboutText(ToolWindow.Drawable(item.Text));
+                }
+                else
+                {
+                    _aboutY += 8;
+                }
+            }
         }
 
         // A heading in the accent colour with a thin line under it, so it does
