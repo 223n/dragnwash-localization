@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using BepInEx.Configuration;
+using DragNWash.ModFramework;
 using DragNWash.ModFramework.ToolWindow;
 using UnityEngine;
 
@@ -29,8 +31,9 @@ namespace DragNWashLocalization
     // time and its kind's colour.
     public partial class Plugin
     {
-        // Only the lines in view are drawn, so this bounds memory rather than
-        // the geometry drawn each frame (which the Direct3D 12 bug chokes on).
+        // For each of the two lists below. Only the lines in view are drawn, so
+        // this bounds memory rather than the geometry drawn each frame (which
+        // the Direct3D 12 bug chokes on).
         private const int MaxLogLines = 100;
 
         private sealed class LogLine
@@ -43,7 +46,11 @@ namespace DragNWashLocalization
             public int Count = 1;
         }
 
-        private static readonly List<LogLine> LogBuffer = new List<LogLine>();
+        // Text lines are kept apart from the rest: opening a menu logs dozens
+        // of [OK] lines, which would otherwise push a result or a failure out
+        // before anyone saw it. LogLines is also the lock for both.
+        private static readonly List<LogLine> LogLines = new List<LogLine>();
+        private static readonly List<LogLine> TextLines = new List<LogLine>();
         private static LogLine _lastLogLine;
         private static long _logSeq;
 
@@ -67,7 +74,7 @@ namespace DragNWashLocalization
                     }
                 }
 
-                lock (LogBuffer)
+                lock (LogLines)
                 {
                     // A button pressed twice gives the same line twice. Dropping
                     // the second made the press look lost; it is counted instead.
@@ -80,10 +87,11 @@ namespace DragNWashLocalization
                     }
 
                     var line = new LogLine { Seq = ++_logSeq, Time = DateTime.Now, Kind = kind, Text = message };
-                    LogBuffer.Add(line);
-                    if (LogBuffer.Count > MaxLogLines)
+                    List<LogLine> list = kind == LogKind.Text ? TextLines : LogLines;
+                    list.Add(line);
+                    if (list.Count > MaxLogLines)
                     {
-                        LogBuffer.RemoveAt(0);
+                        list.RemoveAt(0);
                     }
                     _lastLogLine = line;
                     _logVersion++;
@@ -117,6 +125,65 @@ namespace DragNWashLocalization
         private bool _followLog = true;
         private bool _logNeedsScroll;
         private GUIStyle[] _logStyles;
+        private GUIStyle _logToggleOn;
+        private GUIStyle _logToggleOff;
+        private int _logRowsShown = -1;
+        private int _logHidden;
+        private int _logHiddenText;
+
+        // Which kinds the tab shows, one bit per LogKind; the toggles above the
+        // log change it and the config keeps it.
+        internal static ConfigEntry<string> ActivityLogShown;
+        private static int _logShownMask = -1;
+
+        private static readonly (LogKind kind, string label)[] LogToggles =
+        {
+            (LogKind.Error, "Error"), (LogKind.Warning, "Warning"), (LogKind.Result, "Result"), (LogKind.Info, "Info"), (LogKind.Text, "Text"),
+        };
+
+        private void BindActivityLogSettings()
+        {
+            ActivityLogShown = Config.Bind(
+                "Debug",
+                "ActivityLogShown",
+                "Error, Warning, Result, Info, Text",
+                new ConfigDescription(
+                    "The kinds of line the Activity log in the tool window (F1) shows. The toggles above the log change this.",
+                    null, new SettingMeta { Advanced = true }));
+            _logShownMask = ParseLogKinds(ActivityLogShown.Value);
+            ActivityLogShown.SettingChanged += (sender, args) => _logShownMask = ParseLogKinds(ActivityLogShown.Value);
+        }
+
+        // Names this does not know are skipped, so a typo in the config file
+        // hides only the kind it misspelt.
+        private static int ParseLogKinds(string value)
+        {
+            int mask = 0;
+            foreach (string part in (value ?? "").Split(','))
+            {
+                foreach (LogKind kind in Enum.GetValues(typeof(LogKind)))
+                {
+                    if (string.Equals(part.Trim(), kind.ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        mask |= 1 << (int)kind;
+                    }
+                }
+            }
+            return mask;
+        }
+
+        private static string FormatLogKinds(int mask)
+        {
+            var names = new List<string>();
+            foreach (LogKind kind in Enum.GetValues(typeof(LogKind)))
+            {
+                if ((mask & (1 << (int)kind)) != 0)
+                {
+                    names.Add(kind.ToString());
+                }
+            }
+            return string.Join(", ", names.ToArray());
+        }
 
         private static readonly Color LogInfoColor = new Color(0.86f, 0.91f, 0.94f);
 
@@ -148,6 +215,10 @@ namespace DragNWashLocalization
                 style.hover.textColor = KindColor(kind);
                 _logStyles[(int)kind] = style;
             }
+            // The kind toggles, drawn like the Console's: words on a painted
+            // panel with room on the left for the square that says on or off.
+            _logToggleOn = new GUIStyle(S.Label) { padding = new RectOffset(28, 10, 0, 0), wordWrap = false };
+            _logToggleOff = new GUIStyle(S.MutedLabel) { padding = new RectOffset(28, 10, 0, 0), wordWrap = false };
         }
 
         // Errors and warnings say so in words too, for anyone who cannot tell
@@ -162,11 +233,25 @@ namespace DragNWashLocalization
         private void RebuildLogRows(float width)
         {
             var copies = new List<LogLine>();
-            lock (LogBuffer)
+            _logHidden = 0;
+            _logHiddenText = 0;
+            lock (LogLines)
             {
                 _logRowsVersion = _logVersion;
-                foreach (LogLine line in LogBuffer)
+                _logRowsShown = _logShownMask;
+                // Both lists are in the order the lines came; merged back by it.
+                int i = 0, j = 0;
+                while (i < LogLines.Count || j < TextLines.Count)
                 {
+                    LogLine line = j >= TextLines.Count || (i < LogLines.Count && LogLines[i].Seq < TextLines[j].Seq)
+                        ? LogLines[i++]
+                        : TextLines[j++];
+                    if ((_logShownMask & (1 << (int)line.Kind)) == 0)
+                    {
+                        _logHidden++;
+                        if (line.Kind == LogKind.Text) _logHiddenText++;
+                        continue;
+                    }
                     copies.Add(new LogLine { Seq = line.Seq, Time = line.Time, Kind = line.Kind, Text = line.Text, Count = line.Count });
                 }
             }
@@ -194,9 +279,10 @@ namespace DragNWashLocalization
 
         private void ClearLog()
         {
-            lock (LogBuffer)
+            lock (LogLines)
             {
-                LogBuffer.Clear();
+                LogLines.Clear();
+                TextLines.Clear();
                 _lastLogLine = null;
                 _logVersion++;
             }
@@ -207,23 +293,83 @@ namespace DragNWashLocalization
         private void DrawActivityLog(Rect area)
         {
             EnsureLogStyles();
-            if (GUI.Button(new Rect(area.x, area.y, 122, RowHeight), _followLog ? "Follow: ON" : "Follow: OFF",
+            const float pad = 0;
+            float x = area.x + pad, y = area.y + pad, w = area.width - 2 * pad;
+
+            // Kind toggles, wrapping onto more rows in a narrow window, then
+            // the buttons on the right, on a row of their own when the toggles
+            // leave no room beside them. A toggle that is on has a bar in its
+            // kind's colour along the top and a filled square; one that is off
+            // has an empty square and dimmer words. Bar and square are painted
+            // with Fill, not font glyphs, so the font atlas is untouched.
+            float bx = x;
+            foreach ((LogKind kind, string label) in LogToggles)
+            {
+                int bit = 1 << (int)kind;
+                bool on = (_logShownMask & bit) != 0;
+                float bw = Mathf.Max(70, _logToggleOn.CalcSize(new GUIContent(label)).x);
+                if (bx + bw > x + w && bx > x)
+                {
+                    bx = x;
+                    y += RowHeight + 6;
+                }
+                var r = new Rect(bx, y, bw, RowHeight);
+                var square = new Rect(bx + 10, y + (RowHeight - 10) / 2, 10, 10);
+                ToolWindow.Fill(r, ToolWindow.PanelColor);
+                if (on)
+                {
+                    ToolWindow.Fill(new Rect(r.x, r.y, r.width, 3), KindColor(kind));
+                    ToolWindow.Fill(square, KindColor(kind));
+                }
+                else
+                {
+                    ToolWindow.Fill(new Rect(square.x, square.y, square.width, 1), ToolWindow.MutedColor);
+                    ToolWindow.Fill(new Rect(square.x, square.yMax - 1, square.width, 1), ToolWindow.MutedColor);
+                    ToolWindow.Fill(new Rect(square.x, square.y + 1, 1, square.height - 2), ToolWindow.MutedColor);
+                    ToolWindow.Fill(new Rect(square.xMax - 1, square.y + 1, 1, square.height - 2), ToolWindow.MutedColor);
+                }
+                if (GUI.Button(r, label, on || r.Contains(Event.current.mousePosition) ? _logToggleOn : _logToggleOff))
+                {
+                    _logShownMask = on ? _logShownMask & ~bit : _logShownMask | bit;
+                    if (ActivityLogShown != null)
+                    {
+                        ActivityLogShown.Value = FormatLogKinds(_logShownMask);
+                    }
+                }
+                bx += bw + 6;
+            }
+            const float buttonsWidth = 122 + 8 + 110;
+            if (x + w - buttonsWidth - bx < 0)
+            {
+                y += RowHeight + 6;
+            }
+            if (GUI.Button(new Rect(x + w - buttonsWidth, y, 122, RowHeight), _followLog ? "Follow: ON" : "Follow: OFF",
                 _followLog ? S.SelectedButton : S.Button))
             {
                 _followLog = !_followLog;
                 _logNeedsScroll = _followLog;
             }
-            if (GUI.Button(new Rect(area.x + 130, area.y, 110, RowHeight), "Clear log", S.Button))
+            if (GUI.Button(new Rect(x + w - 110, y, 110, RowHeight), "Clear log", S.Button))
             {
                 ClearLog();
                 ToolWindow.ShowNotice("Log cleared.");
             }
+            y += RowHeight + 6;
 
-            var viewport = new Rect(area.x, area.y + 40, area.width, Mathf.Max(20, area.height - 40));
+            string note = $"{_logRows.Count} / {MaxLogLines}";
+            if (_logHidden > 0)
+            {
+                note += _logHidden == _logHiddenText ? $", {_logHidden} text line(s) hidden" : $", {_logHidden} hidden";
+            }
+            GUI.Label(new Rect(x, y, w, RowHeight), note, S.MutedLabel);
+            y += RowHeight;
+
+            var viewport = new Rect(x, y, w, Mathf.Max(20, area.yMax - pad - y));
             ToolWindow.Fill(viewport, ToolWindow.InsetColor);
             float contentWidth = Mathf.Max(40, viewport.width - 24);
             bool retry = _logRowsRetryAt >= 0 && Time.unscaledTime >= _logRowsRetryAt;
-            if (_logRowsVersion != _logVersion || !Mathf.Approximately(_logRowsWidth, contentWidth) || retry)
+            if (_logRowsVersion != _logVersion || _logRowsShown != _logShownMask ||
+                !Mathf.Approximately(_logRowsWidth, contentWidth) || retry)
             {
                 bool grew = _logRowsVersion != _logVersion;
                 RebuildLogRows(contentWidth);
@@ -251,19 +397,16 @@ namespace DragNWashLocalization
                     "No activity yet.\nOpen a game menu or dialogue to capture text.", S.WrappedLabel);
             }
             // Only the lines in view are drawn.
-            float y = 0;
+            float ry = 0;
             foreach (LogRow row in _logRows)
             {
-                if (y + row.Height >= _logScroll.y && y <= _logScroll.y + viewport.height)
+                if (ry + row.Height >= _logScroll.y && ry <= _logScroll.y + viewport.height)
                 {
-                    GUI.Label(new Rect(0, y, contentWidth, row.Height), row.Drawn, _logStyles[(int)row.Kind]);
+                    GUI.Label(new Rect(0, ry, contentWidth, row.Height), row.Drawn, _logStyles[(int)row.Kind]);
                 }
-                y += row.Height;
+                ry += row.Height;
             }
             GUI.EndScrollView();
-
-            GUI.Label(new Rect(area.x + 250, area.y, Mathf.Max(0, area.width - 250), RowHeight),
-                $"{_logRows.Count} / {MaxLogLines}", S.MutedLabel);
         }
     }
 }

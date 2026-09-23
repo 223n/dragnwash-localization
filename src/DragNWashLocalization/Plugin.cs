@@ -114,6 +114,7 @@ namespace DragNWashLocalization
                 "VerboseTextLog",
                 true,
                 "Log every text replacement, translated or not, in the activity log of the tool window (F1).");
+            BindActivityLogSettings();
 
             DumpDialogueKey = Config.Bind(
                 "Debug",
