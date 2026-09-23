@@ -519,7 +519,7 @@ namespace DragNWashLocalization
                     result += " Your flag changes that weren't applied were dropped.";
                 }
                 Log("[saves] " + result);
-                ToolWindow.ShowNotice(result);
+                ToolWindow.ShowNotice(result, result.StartsWith("Restore failed", StringComparison.Ordinal) ? NoticeKind.Error : NoticeKind.Info);
             }
 
             if (_pendingWorkingCopy && !hold)

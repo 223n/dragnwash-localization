@@ -317,7 +317,7 @@ namespace DragNWashLocalization
                 ? (edits == 0 ? "Click a value to change it. Nothing is written until you press Apply."
                     : edits == 1 ? "Apply writes it. The save before it is kept as a snapshot."
                     : $"Apply writes all {edits} in one go. The save before it is kept as one snapshot.")
-                :"A snapshot is taken every time the game writes the save. After a restore, go to the title screen and load the slot. Saving in game writes over it again.");
+                : "A snapshot is taken every time the game writes the save. After a restore, go to the title screen and load the slot. Saving in game writes over it again.");
             float footerHeight = S.MutedLabel.CalcHeight(footerText, innerWidth);
             // The footer sits at the bottom; in a window too short for it, it
             // is left out rather than drawn over the rows above.
@@ -502,7 +502,7 @@ namespace DragNWashLocalization
             string result = edit();
             Log("[saves] " + result + logDetail);
             // A flag's id is in it, and another mod's flag can have any characters.
-            ToolWindow.ShowNotice(ToolWindow.Drawable(result));
+            ToolWindow.ShowNotice(ToolWindow.Drawable(result), result.StartsWith("Edit failed", StringComparison.Ordinal) ? NoticeKind.Error : NoticeKind.Info);
             _savesRefreshAt = 0;
             string after = ReadText(savePath);
             if (before == null || after == null || after == before)
@@ -611,6 +611,7 @@ namespace DragNWashLocalization
                 var undoRect = undoOnFirst
                     ? new Rect(undoX, area.y + y, undoWidth, RowHeight)
                     : new Rect(switchX + historyWidth + 8 + flagsWidth + 8, area.y + switchY, undoWidth, RowHeight);
+                ToolWindow.Hint(undoRect, $"Puts back {When(_undoSnapshot)} (level {_undoSnapshot.Level}), the save from just before this change.");
                 if (GUI.Button(undoRect, "Undo last change", S.Button))
                 {
                     // A restore like the History's: the save it replaces is
@@ -724,7 +725,12 @@ namespace DragNWashLocalization
                 string label = _savesLabelsFit || i >= _savesShortLabels.Count ? s.Label : _savesShortLabels[i];
                 GUI.Label(new Rect(12 + markWidth, y, labelWidth, RowHeight), label, LineLabel(false));
                 // Nothing to restore on the row the save already is.
-                if (!isCurrent && GUI.Button(new Rect(innerWidth - 12 - restoreWidth, y, restoreWidth, RowHeight), "Restore", S.Button))
+                var restoreRect = new Rect(innerWidth - 12 - restoreWidth, y, restoreWidth, RowHeight);
+                if (!isCurrent)
+                {
+                    ToolWindow.Hint(restoreRect, $"Puts {When(s)} (level {s.Level}) back as {GameSaves.ShortName(_savesSlot)}'s save. The save it replaces is kept.");
+                }
+                if (!isCurrent && GUI.Button(restoreRect, "Restore", S.Button))
                 {
                     _pendingRestoreSlot = _savesSlot;
                     _pendingRestoreSnapshot = s;
@@ -734,16 +740,20 @@ namespace DragNWashLocalization
         }
 
         // The P4 selection: the row on the panel colour with a 2 px accent
-        // line on its left, and the word in the accent colour.
+        // line on its left, and the tag in the accent colour.
         private void DrawCurrentMark(float y, float innerWidth)
         {
             ToolWindow.Fill(new Rect(4, y - 2, innerWidth - 8, RowHeight + 4), ToolWindow.PanelColor);
             ToolWindow.Fill(new Rect(4, y - 2, 2, RowHeight + 4), ToolWindow.AccentColor);
             Color previous = GUI.contentColor;
             GUI.contentColor = ToolWindow.AccentColor;
-            GUI.Label(new Rect(12, y, 76, RowHeight), "CURRENT", LineLabel(false));
+            GUI.Label(new Rect(12, y, 76, RowHeight), "CURRENT", S.Tag);
             GUI.contentColor = previous;
         }
+
+        // "13:20:40" for today, the date as well for another day.
+        private static string When(SaveSnapshot s) =>
+            s.Taken.Date == DateTime.Today ? s.Taken.ToString("HH:mm:ss") : s.Taken.ToString("yyyy-MM-dd HH:mm:ss");
 
         // Inside the scroll view; rows outside visibleTop..visibleBottom are
         // skipped.
