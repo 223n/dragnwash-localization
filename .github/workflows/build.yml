@@ -7,8 +7,8 @@ name: Build
 # TomXV/dragnwash-libs and are fetched with LIBS_TOKEN, a fine-grained token
 # with read access to that repository only, kept as an Actions secret. The
 # zip also ships Drag'n Wash ModFramework, built here from its repository.
-# This workflow runs only on pushes to main, on tags and by hand, never for
-# pull requests, so a fork can never reach the token.
+# This workflow runs only on pushes to main or dev, on tags and by hand, never
+# for pull requests, so a fork can never reach the token.
 # In a fork the job is skipped: the fork has no LIBS_TOKEN, and a push to
 # its main would otherwise end in a failed run.
 #
