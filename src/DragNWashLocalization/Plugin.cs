@@ -508,6 +508,10 @@ namespace DragNWashLocalization
                 // it before this line does the work. Ask again now.
                 _savesRefreshAt = 0;
                 bool failed = result.StartsWith("Restore failed", StringComparison.Ordinal);
+                if (!failed)
+                {
+                    _restoredFrom[slot] = snapshot.Path;
+                }
                 if (!failed && DropFlagEditsAfterRestore(slot))
                 {
                     result += " Your flag changes that weren't applied were dropped.";

@@ -438,13 +438,20 @@ namespace DragNWashLocalization
             return text == null ? null : VersionEntry.Replace(text.Trim(), "[", 1);
         }
 
+        // The snapshot each slot was last restored from in this session. Two
+        // snapshots can hold the same save; CURRENT goes on the one the
+        // player put back rather than on the newer twin.
+        private readonly Dictionary<string, string> _restoredFrom = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
         // Every row is compared, not just the newest: after a restore or an
-        // edit, the save matches an older row or none at all.
+        // edit, the save matches an older row or none at all. Of several
+        // matches, the one restored from wins, else the newest.
         private void FindCurrentSnapshot(string saveText)
         {
             _saveExists = saveText != null;
             _currentIndex = -1;
             string save = ForCompare(saveText);
+            _restoredFrom.TryGetValue(_savesSlot ?? "", out string restoredFrom);
             var listed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < _savesList.Count; i++)
             {
@@ -463,7 +470,8 @@ namespace DragNWashLocalization
                         _snapshotText[snapshot.Path] = new KeyValuePair<DateTime, string>(snapshot.Taken, text);
                     }
                 }
-                if (_currentIndex < 0 && save != null && text == save)
+                if (save != null && text == save &&
+                    (_currentIndex < 0 || (restoredFrom != null && string.Equals(snapshot.Path, restoredFrom, StringComparison.OrdinalIgnoreCase))))
                 {
                     _currentIndex = i;
                 }
