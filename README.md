@@ -363,9 +363,9 @@ Everyone who takes part follows the [code of conduct](CODE_OF_CONDUCT.md). If yo
 
 ## Distribution and releases
 
-[docs/RELEASING.md](docs/RELEASING.md) explains how to build and distribute the release ZIP.
+[docs/RELEASING.md](docs/RELEASING.md) explains how the release ZIP gets built and put out.
 
-The reference assemblies that come from the game can't be committed, so releases are built locally and uploaded to GitHub Releases.
+The reference assemblies that come from the game can't be committed here, so the ZIP is built by the **Build** workflow on GitHub Actions, which reads them from a private repository. Pushing a `v*` tag makes a draft release with the ZIP attached, and then a person writes the notes and publishes it.
 
 ## A note to the developers
 

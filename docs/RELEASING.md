@@ -2,7 +2,7 @@
 
 [日本語](RELEASING.ja.md)
 
-This document describes how to distribute the mod. Building the plugin requires game-derived reference assemblies in `libs/`. They cannot be committed to this repository for copyright reasons. As a result, **the plugin cannot be built in CI; releases must be built locally on a computer with the game installed** and uploaded to GitHub Releases.
+This document describes how to distribute the mod. Building the plugin requires game-derived reference assemblies in `libs/`. They cannot be committed to this repository for copyright reasons. So they live in a private repository instead, and the **Build** workflow on GitHub Actions reads them from there to build the release zip (see [2b](#2b-or-let-github-build-it)). Building locally on a computer with the game installed still works as a fallback.
 
 Translation-only changes do not require a build. Translators should see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
