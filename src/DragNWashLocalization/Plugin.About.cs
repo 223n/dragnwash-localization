@@ -59,6 +59,9 @@ namespace DragNWashLocalization
             DrawAboutCard();
             AboutText("It doesn't touch the game's files. Text is swapped as it appears on screen, so game updates don't break it, and uninstalling puts everything back the way it was.");
 
+            AboutHeading("LINKS");
+            DrawAboutLinks();
+
             AboutHeading("BUILT ON DRAG'N WASH MODFRAMEWORK");
             AboutText("A small shared base for Drag'n Wash mods. It gives you the Mods screen in Options, update notices, one installer for every mod, and this tool window. Its first rule is that mods run safely together. It's a separate open project, and anyone can build a mod on it.");
 
@@ -92,14 +95,6 @@ namespace DragNWashLocalization
                 "Graphics", SystemInfo.graphicsDeviceType.ToString(),
                 "Platform", Application.platform.ToString());
             AboutText($"Plugin folder: {PluginDirectory}");
-
-            _aboutY += 6;
-            if (GUI.Button(new Rect(12, _aboutY, 260, RowHeight), "Copy the repository address", S.Button))
-            {
-                GUIUtility.systemCopyBuffer = "https://github.com/TomXV/dragnwash-localization";
-                ToolWindow.ShowNotice("Repository address copied to the clipboard.");
-            }
-            _aboutY += RowHeight;
 
             _aboutHeight = _aboutY + 16;
             GUI.EndScrollView();
@@ -145,6 +140,77 @@ namespace DragNWashLocalization
             y = _aboutY + 6;
             GUI.Label(new Rect(x, y, w, disclaimerHeight), disclaimer, S.WrappedLabel);
             _aboutY = saved + height + 10;
+        }
+
+        // The project's own pages and nothing else. The address is shown in
+        // full, the domain brighter than the rest, so it is plain where Open
+        // goes before pressing it. Copy stays for when a browser is no help:
+        // switching away from exclusive fullscreen, or Steam Deck game mode.
+        private const string RepositoryUrl = "https://github.com/TomXV/dragnwash-localization";
+        private const string SteamGuideJapaneseUrl = "https://steamcommunity.com/sharedfiles/filedetails/?id=3801418794";
+        private const string SteamGuideEnglishUrl = "https://steamcommunity.com/sharedfiles/filedetails/?id=3801420947";
+        private const string FrameworkWikiUrl = "https://github.com/TomXV/dragnwash-modframework/wiki";
+
+        private void DrawAboutLinks()
+        {
+            AboutLink("This mod on GitHub", RepositoryUrl);
+            AboutLink("Report a problem", RepositoryUrl + "/issues");
+            AboutLink("Steam guide", TargetLocale.Value == "ja" ? SteamGuideJapaneseUrl : SteamGuideEnglishUrl);
+            AboutLink("ModFramework wiki", FrameworkWikiUrl);
+            _aboutY += 2;
+            GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), "Open switches to your web browser.", S.MutedLabel);
+            _aboutY += 30;
+        }
+
+        private void AboutLink(string label, string url)
+        {
+            const float labelWidth = 150, buttonWidth = 70, gap = 8;
+            string shown = url.Substring(url.IndexOf("//", StringComparison.Ordinal) + 2);
+            int slash = shown.IndexOf('/');
+            string domain = slash < 0 ? shown : shown.Substring(0, slash);
+            string path = slash < 0 ? "" : shown.Substring(slash);
+            float domainWidth = S.Label.CalcSize(new GUIContent(domain)).x;
+            float pathWidth = S.MutedLabel.CalcSize(new GUIContent(path)).x;
+            float buttonsWidth = 2 * buttonWidth + gap;
+
+            // One line when it all fits; in a narrow window the address goes
+            // under the name and the buttons under the address.
+            bool oneLine = labelWidth + domainWidth + pathWidth + 16 + buttonsWidth <= _aboutWidth;
+            GUI.Label(new Rect(12, _aboutY, labelWidth, RowHeight), label, S.Label);
+            float urlX = 12 + labelWidth;
+            if (!oneLine && labelWidth + domainWidth + pathWidth > _aboutWidth)
+            {
+                _aboutY += 26;
+                urlX = 24;
+            }
+            GUI.Label(new Rect(urlX, _aboutY, domainWidth, RowHeight), domain, S.Label);
+            GUI.Label(new Rect(urlX + domainWidth, _aboutY, Mathf.Max(20, 12 + _aboutWidth - urlX - domainWidth), RowHeight), path, S.MutedLabel);
+
+            float buttonX = 12 + _aboutWidth - buttonsWidth;
+            if (!oneLine)
+            {
+                _aboutY += 28;
+                buttonX = urlX;
+            }
+            if (GUI.Button(new Rect(buttonX, _aboutY, buttonWidth, RowHeight), "Open", S.Button))
+            {
+                try
+                {
+                    Application.OpenURL(url);
+                    ToolWindow.ShowNotice("Opening your web browser. If nothing shows up, use Copy.");
+                }
+                catch (Exception ex)
+                {
+                    Log($"[about] Could not open {url}: {ex.Message}");
+                    ToolWindow.ShowNotice("Couldn't open the browser. Use Copy instead.");
+                }
+            }
+            if (GUI.Button(new Rect(buttonX + buttonWidth + gap, _aboutY, buttonWidth, RowHeight), "Copy", S.Button))
+            {
+                GUIUtility.systemCopyBuffer = url;
+                ToolWindow.ShowNotice("Address copied to the clipboard.");
+            }
+            _aboutY += RowHeight + 6;
         }
 
         // A heading in the accent colour with a thin line under it, so it does
