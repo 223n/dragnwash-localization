@@ -122,8 +122,13 @@ namespace DragNWashLocalization
         // the rows are built again a little later to pick it up.
         private float _logRowsRetryAt = -1;
         private Vector2 _logScroll;
+        // Following the end, as the Console does: at the bottom the log
+        // follows new lines, scrolled up it stays put, and scrolled back down
+        // it follows again.
         private bool _followLog = true;
-        private bool _logNeedsScroll;
+        // The newest line seen while following; lines after it are the "new
+        // lines" the button below the log jumps to.
+        private long _logSeenSeq;
         private GUIStyle[] _logStyles;
         private GUIStyle _logToggleOn;
         private GUIStyle _logToggleOff;
@@ -338,16 +343,10 @@ namespace DragNWashLocalization
                 }
                 bx += bw + 6;
             }
-            const float buttonsWidth = 122 + 8 + 110;
+            const float buttonsWidth = 110;
             if (x + w - buttonsWidth - bx < 0)
             {
                 y += RowHeight + 6;
-            }
-            if (GUI.Button(new Rect(x + w - buttonsWidth, y, 122, RowHeight), _followLog ? "Follow: ON" : "Follow: OFF",
-                _followLog ? S.SelectedButton : S.Button))
-            {
-                _followLog = !_followLog;
-                _logNeedsScroll = _followLog;
             }
             if (GUI.Button(new Rect(x + w - 110, y, 110, RowHeight), "Clear log", S.Button))
             {
@@ -371,24 +370,19 @@ namespace DragNWashLocalization
             if (_logRowsVersion != _logVersion || _logRowsShown != _logShownMask ||
                 !Mathf.Approximately(_logRowsWidth, contentWidth) || retry)
             {
-                bool grew = _logRowsVersion != _logVersion;
                 RebuildLogRows(contentWidth);
-                if (grew && _followLog) _logNeedsScroll = true;
             }
 
-            Event current = Event.current;
-            if (viewport.Contains(current.mousePosition) &&
-                (current.type == EventType.ScrollWheel ||
-                 (current.type == EventType.MouseDown && current.mousePosition.x >= viewport.xMax - 20)))
+            float bottom = Mathf.Max(0, _logContentHeight - viewport.height);
+            if (_followLog)
             {
-                _followLog = false;
-                _logNeedsScroll = false;
+                _logScroll.y = bottom;
             }
-            float maxScroll = Mathf.Max(0, _logContentHeight - viewport.height);
-            _logScroll.y = _logNeedsScroll ? maxScroll : Mathf.Clamp(_logScroll.y, 0, maxScroll);
-            _logNeedsScroll = false;
-
-            if (ToolWindow.ApplyScroll(viewport, ref _logScroll)) { _followLog = false; _logNeedsScroll = false; }
+            Vector2 before = _logScroll;
+            ToolWindow.ApplyScroll(viewport, ref _logScroll);
+            // The scroll view takes the wheel event for itself, so it is
+            // looked at before.
+            bool wheel = Event.current.type == EventType.ScrollWheel && viewport.Contains(Event.current.mousePosition);
             _logScroll = GUI.BeginScrollView(viewport, _logScroll,
                 new Rect(0, 0, contentWidth, Mathf.Max(viewport.height - 1, _logContentHeight)), false, true);
             if (_logRows.Count == 0)
@@ -407,6 +401,39 @@ namespace DragNWashLocalization
                 ry += row.Height;
             }
             GUI.EndScrollView();
+            if (wheel)
+            {
+                _followLog = false;
+            }
+            if (_logScroll.y >= bottom - 2)
+            {
+                _followLog = true;
+            }
+            else if (_logScroll != before)
+            {
+                _followLog = false;
+            }
+
+            // Lines that came while the log was scrolled up: a button in the
+            // corner says how many and goes down to them.
+            int fresh = 0;
+            for (int i = _logRows.Count - 1; i >= 0 && _logRows[i].Seq > _logSeenSeq; i--)
+            {
+                fresh++;
+            }
+            if (_followLog || fresh == 0)
+            {
+                _logSeenSeq = _logRows.Count > 0 ? Math.Max(_logSeenSeq, _logRows[_logRows.Count - 1].Seq) : _logSeenSeq;
+            }
+            else
+            {
+                string label = fresh == 1 ? "1 new line  v" : $"{fresh} new lines  v";
+                float bw = S.Button.CalcSize(new GUIContent(label)).x + 16;
+                if (GUI.Button(new Rect(viewport.xMax - 20 - 8 - bw, viewport.yMax - RowHeight - 8, bw, RowHeight), label, S.Button))
+                {
+                    _followLog = true;
+                }
+            }
         }
     }
 }
