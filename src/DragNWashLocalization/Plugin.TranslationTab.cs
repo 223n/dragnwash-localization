@@ -129,6 +129,11 @@ namespace DragNWashLocalization
             {
                 name = EnglishLanguageName(locale);
             }
+            else
+            {
+                // The window draws in stored order; a Hebrew name would read backwards.
+                name = RightToLeft.ForLeftToRightDrawing(name);
+            }
             return name == locale ? locale : $"{name} ({locale})";
         }
 

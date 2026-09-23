@@ -70,14 +70,102 @@ namespace DragNWashLocalization
             if (string.IsNullOrEmpty(text)) return false;
             foreach (char c in text)
             {
-                if ((c >= '\u0590' && c <= '\u08FF') ||
-                    (c >= '\uFB1D' && c <= '\uFDFF') ||
-                    (c >= '\uFE70' && c <= '\uFEFC'))
+                if (IsRightToLeftLetter(c))
                 {
                     return true;
                 }
             }
             return false;
+        }
+
+        private static bool IsRightToLeftLetter(char c)
+        {
+            return (c >= '\u0590' && c <= '\u08FF') ||
+                   (c >= '\uFB1D' && c <= '\uFDFF') ||
+                   (c >= '\uFE70' && c <= '\uFEFC');
+        }
+
+        private static bool IsLeftToRightLetter(char c)
+        {
+            return char.IsLetterOrDigit(c) && !IsRightToLeftLetter(c);
+        }
+
+        // The F1 window (IMGUI) draws a string left to right in the order it is
+        // stored, so a Hebrew name there would read backwards. This puts the
+        // characters in the order they are seen. A line that starts in Hebrew
+        // is turned around with its runs of Latin letters and digits turned
+        // back; a line that starts in Latin letters keeps its order with the
+        // Hebrew runs in it turned around. Brackets in the turned parts are
+        // mirrored. Enough for a language name or a translator's name. It is
+        // not the whole Unicode bidi algorithm, and Arabic would also need its
+        // letters joined, which this does not do.
+        internal static string ForLeftToRightDrawing(string text)
+        {
+            if (!HasRightToLeftLetters(text)) return text;
+            char[] c = text.ToCharArray();
+            bool rightToLeftLine = false;
+            foreach (char ch in c)
+            {
+                if (IsRightToLeftLetter(ch)) { rightToLeftLine = true; break; }
+                if (IsLeftToRightLetter(ch)) break;
+            }
+            if (rightToLeftLine)
+            {
+                TurnAround(c, 0, c.Length);
+                TurnRunsAround(c, IsLeftToRightLetter, IsRightToLeftLetter);
+            }
+            else
+            {
+                TurnRunsAround(c, IsRightToLeftLetter, IsLeftToRightLetter);
+            }
+            return new string(c);
+        }
+
+        // Turns around each run that starts and ends with a letter of one
+        // direction, going over spaces and punctuation but not over a letter of
+        // the other direction. Turning a run back also mirrors its brackets
+        // back.
+        private static void TurnRunsAround(char[] c, Func<char, bool> inRun, Func<char, bool> endsRun)
+        {
+            int i = 0;
+            while (i < c.Length)
+            {
+                if (!inRun(c[i]))
+                {
+                    i++;
+                    continue;
+                }
+                int end = i;
+                for (int j = i; j < c.Length && !endsRun(c[j]); j++)
+                {
+                    if (inRun(c[j])) end = j;
+                }
+                TurnAround(c, i, end - i + 1);
+                i = end + 1;
+            }
+        }
+
+        private static void TurnAround(char[] c, int start, int length)
+        {
+            Array.Reverse(c, start, length);
+            for (int k = start; k < start + length; k++)
+            {
+                c[k] = Mirrored(c[k]);
+            }
+        }
+
+        private static char Mirrored(char c)
+        {
+            switch (c)
+            {
+                case '(': return ')';
+                case ')': return '(';
+                case '[': return ']';
+                case ']': return '[';
+                case '<': return '>';
+                case '>': return '<';
+                default: return c;
+            }
         }
     }
 }
