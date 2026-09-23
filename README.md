@@ -381,4 +381,4 @@ This is an unofficial fan project and isn't affiliated with Gator Dragon Games. 
 
 ## License
 
-The plugin's code license is in [LICENSE](LICENSE). The artwork listed under [Credits](#credits) belongs to its artists and isn't covered by it. This repository doesn't include any assets or code from the game. Translations count as contributions from the people who translated them.
+The plugin's code and the translations are under the MIT license ([LICENSE](LICENSE)). Each translation is still the work of the people who translated it, and they're named in the language table and under [Credits](#credits). The artwork listed under Credits belongs to its artists and isn't covered by the license. This repository doesn't include any assets or code from the game.

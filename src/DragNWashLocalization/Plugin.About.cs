@@ -80,7 +80,7 @@ namespace DragNWashLocalization
             AboutText("What people make with these tools is their own work and their own responsibility. Nothing here exports or ships the game's files as part of this mod.");
 
             AboutHeading("LICENSE");
-            AboutText("The mod's code is MIT licensed (see LICENSE in the repository).");
+            AboutText("The mod's code and its translations are MIT licensed (see LICENSE in the repository). Each translation is the work of the people named under Languages and Credits.");
             AboutText("The artwork named under Credits (this mod's logo, the framework's icon and its Mods button) belongs to its artists, is used with their permission, and is not covered by the MIT license.");
             AboutText("The bundled menu font is Noto Sans JP, (c) 2014-2021 Adobe, with Reserved Font Name 'Source', under the SIL Open Font License 1.1. Its full text ships next to the plugin as dragnwash-menufont-LICENSE.txt.");
 
