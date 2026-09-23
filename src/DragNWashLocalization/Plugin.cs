@@ -27,17 +27,18 @@ namespace DragNWashLocalization
     [BepInDependency(DragNWash.ModFramework.Text.GameText.Guid, "1.0.0")]
     // Dialogue 1.1.0 for LineKey and LineResolver (ScriptOrder, LineResolution).
     [BepInDependency(DragNWash.ModFramework.Dialogue.GameDialogue.Guid, "1.1.0")]
-    // ToolWindow 1.1.0 for the Console tab's "tl" command: AddCommand's
-    // completion overload and Drawable (Plugin.ImGui.cs, Plugin.ActivityLog.cs).
-    // The colours and Padding the Activity log uses came in the same version.
-    [BepInDependency(ToolWindow.Guid, "1.1.0")]
+    // ToolWindow 1.5.0 for the notices with a kind (NoticeKind), questions in
+    // place (AskConfirm, IsConfirming, Confirm), Hint, Elide and FilterField,
+    // which the Saves tab and Update call directly. Only Busy, on the
+    // Translation tab, is looked for and skipped when it's missing.
+    [BepInDependency(ToolWindow.Guid, "1.5.0")]
     // Assets 1.0.0: GameFonts is used unconditionally and every member this mod
     // calls was already there. Translated pictures need Assets 1.2.0
     // (AssetReplacements), but that is caught and skipped below, not required.
     [BepInDependency(GameFonts.Guid, "1.0.0")]
-    // Saves 1.0.0: every GameSaves and GameFlags member this mod calls was
-    // already there.
-    [BepInDependency(GameSaves.Guid, "1.0.0")]
+    // Saves 1.5.0 for GameSaves.Keep, how many snapshots the Saves tab says
+    // are kept.
+    [BepInDependency(GameSaves.Guid, "1.5.0")]
     public partial class Plugin : BaseUnityPlugin
     {
         public const string PluginGuid = "com.tomxv.dragnwash.localization";
