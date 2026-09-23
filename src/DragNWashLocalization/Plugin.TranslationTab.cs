@@ -535,7 +535,35 @@ namespace DragNWashLocalization
                 result.Body = BodyOf(said);
             }
             _lastResult = result;
-            ToolWindow.ShowNotice(result.Short ?? result.Title);
+            ShowResultNotice(result.Short ?? result.Title, result.Kind);
+        }
+
+        private static bool _plainNoticesOnly;
+
+        // With the colour bar of its kind (ModFramework 1.5.0 and later); a
+        // framework without coloured notices shows it plain.
+        private static void ShowResultNotice(string message, ResultKind kind)
+        {
+            if (!_plainNoticesOnly)
+            {
+                try
+                {
+                    ShowColouredNotice(message, kind);
+                    return;
+                }
+                catch (Exception ex) when (ex is MissingMethodException || ex is TypeLoadException)
+                {
+                    _plainNoticesOnly = true;
+                }
+            }
+            ToolWindow.ShowNotice(message);
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+        private static void ShowColouredNotice(string message, ResultKind kind)
+        {
+            ToolWindow.ShowNotice(message,
+                kind == ResultKind.Failed ? NoticeKind.Error : kind == ResultKind.Warning ? NoticeKind.Warning : NoticeKind.Info);
         }
 
         private void RunWorkingCopy()
