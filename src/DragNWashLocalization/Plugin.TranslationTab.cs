@@ -56,6 +56,8 @@ namespace DragNWashLocalization
         }
 
         private bool _languagesOpen;
+        private GUIStyle _languageNameBase;
+        private GUIStyle _languageNameStyle;
         private int _toolsDrawnFrame = -10;
         // Set when this tab asked for a language, so Update says how it went.
         private bool _announceLocale;
@@ -68,9 +70,17 @@ namespace DragNWashLocalization
             if (!_languagesOpen)
             {
                 string name = LanguageLabel(_pendingLocale ?? TargetLocale.Value);
-                float nameWidth = Mathf.Max(0, Mathf.Min(width - 110 - 118, S.Label.CalcSize(new GUIContent(name)).x));
+                // On one line: the label style wraps, and a name measured a
+                // pixel short (as Japanese in the fallback font is) went onto
+                // a second line, cut off at the top.
+                if (!ReferenceEquals(_languageNameBase, S.Label))
+                {
+                    _languageNameBase = S.Label;
+                    _languageNameStyle = OneLine(S.Label);
+                }
+                float nameWidth = Mathf.Max(0, Mathf.Min(width - 110 - 118, Mathf.Ceil(_languageNameStyle.CalcSize(new GUIContent(name)).x) + 2));
                 GUI.Label(new Rect(12, y, 110, RowHeight), "LANGUAGE", S.Label);
-                GUI.Label(new Rect(122, y, nameWidth, RowHeight), name, S.Label);
+                GUI.Label(new Rect(122, y, nameWidth, RowHeight), name, _languageNameStyle);
                 if (GUI.Button(new Rect(122 + nameWidth + 12, y, 106, RowHeight), "Change...", S.Button))
                 {
                     _languagesOpen = true;
