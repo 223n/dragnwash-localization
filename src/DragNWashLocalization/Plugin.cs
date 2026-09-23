@@ -28,7 +28,8 @@ namespace DragNWashLocalization
     // Dialogue 1.1.0 for LineKey and LineResolver (ScriptOrder, LineResolution).
     [BepInDependency(DragNWash.ModFramework.Dialogue.GameDialogue.Guid, "1.1.0")]
     // ToolWindow 1.1.0 for the Console tab's "tl" command: AddCommand's
-    // completion overload and Drawable (Plugin.ImGui.cs).
+    // completion overload and Drawable (Plugin.ImGui.cs, Plugin.ActivityLog.cs).
+    // The colours and Padding the Activity log uses came in the same version.
     [BepInDependency(ToolWindow.Guid, "1.1.0")]
     // Assets 1.0.0: GameFonts is used unconditionally and every member this mod
     // calls was already there. Translated pictures need Assets 1.2.0

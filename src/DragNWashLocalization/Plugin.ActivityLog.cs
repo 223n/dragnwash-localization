@@ -132,6 +132,8 @@ namespace DragNWashLocalization
         // The newest line seen while following; lines after it are the "new
         // lines" the button below the log jumps to.
         private long _logSeenSeq;
+        // Cleared by the player, which the empty log then says.
+        private bool _logCleared;
         private GUIStyle[] _logStyles;
         private GUIStyle _logToggleOn;
         private GUIStyle _logToggleOff;
@@ -296,13 +298,16 @@ namespace DragNWashLocalization
             }
             TranslationStore.ResetAppliedOnceTracking();
             _logScroll = Vector2.zero;
+            _logCleared = true;
         }
 
         private void DrawActivityLog(Rect area)
         {
             EnsureLogStyles();
-            const float pad = 0;
-            float x = area.x + pad, y = area.y + pad, w = area.width - 2 * pad;
+            // The Console's margin at the sides and the bottom; the status line
+            // above already leaves a gap at the top.
+            const float pad = ToolWindow.Padding;
+            float x = area.x + pad, y = area.y, w = area.width - 2 * pad;
 
             // Kind toggles, wrapping onto more rows in a narrow window, then
             // the buttons on the right, on a row of their own when the toggles
@@ -346,7 +351,7 @@ namespace DragNWashLocalization
                 }
                 bx += bw + 6;
             }
-            const float buttonsWidth = 70 + 6 + 110;
+            const float buttonsWidth = 70 + 6 + 70;
             if (x + w - buttonsWidth - bx < 0)
             {
                 y += RowHeight + 6;
@@ -355,24 +360,32 @@ namespace DragNWashLocalization
             {
                 CopyShownLines();
             }
-            if (GUI.Button(new Rect(x + w - 110, y, 110, RowHeight), "Clear log", S.Button))
+            // No confirmation: only this view is emptied, and the same lines
+            // stay in LogOutput.log and the Console.
+            if (GUI.Button(new Rect(x + w - 70, y, 70, RowHeight), "Clear", S.Button))
             {
                 ClearLog();
                 ToolWindow.ShowNotice("Log cleared.");
             }
             y += RowHeight + 6;
 
-            string note = $"{_logRows.Count} / {MaxLogLines}";
+            string note = _logRows.Count == 1 ? "1 line" : $"{_logRows.Count} lines";
             if (_logHidden > 0)
             {
-                note += _logHidden == _logHiddenText ? $", {_logHidden} text line(s) hidden" : $", {_logHidden} hidden";
+                note += _logHidden == _logHiddenText
+                    ? (_logHidden == 1 ? ", 1 text line hidden" : $", {_logHidden} text lines hidden")
+                    : $", {_logHidden} hidden";
             }
-            GUI.Label(new Rect(x, y, w, RowHeight), note, S.MutedLabel);
-            y += RowHeight;
+            note += $".  The newest {MaxLogLines} text lines and {MaxLogLines} others are kept.";
+            // Sized from the text: in a narrow window it takes two lines.
+            var noteContent = new GUIContent(note);
+            float noteHeight = Mathf.Max(RowHeight, S.WrappedLabel.CalcHeight(noteContent, w));
+            GUI.Label(new Rect(x, y, w, noteHeight), noteContent, S.WrappedLabel);
+            y += noteHeight;
 
             var viewport = new Rect(x, y, w, Mathf.Max(20, area.yMax - pad - y));
             ToolWindow.Fill(viewport, ToolWindow.InsetColor);
-            float contentWidth = Mathf.Max(40, viewport.width - 24);
+            float contentWidth = Mathf.Max(40, viewport.width - 20);
             bool retry = _logRowsRetryAt >= 0 && Time.unscaledTime >= _logRowsRetryAt;
             if (_logRowsVersion != _logVersion || _logRowsShown != _logShownMask ||
                 !Mathf.Approximately(_logRowsWidth, contentWidth) || retry)
@@ -406,11 +419,10 @@ namespace DragNWashLocalization
             // looked at before.
             bool wheel = Event.current.type == EventType.ScrollWheel && viewport.Contains(Event.current.mousePosition);
             _logScroll = GUI.BeginScrollView(viewport, _logScroll,
-                new Rect(0, 0, contentWidth, Mathf.Max(viewport.height - 1, _logContentHeight)), false, true);
+                new Rect(0, 0, contentWidth, Mathf.Max(viewport.height - 1, _logContentHeight)), false, false);
             if (_logRows.Count == 0)
             {
-                GUI.Label(new Rect(12, 12, contentWidth - 24, 64),
-                    "No activity yet.\nOpen a game menu or dialogue to capture text.", S.WrappedLabel);
+                GUI.Label(new Rect(12, 12, contentWidth - 24, 64), EmptyLogText(), S.WrappedLabel);
             }
             // Only the lines in view are drawn.
             float ry = 0;
@@ -458,6 +470,24 @@ namespace DragNWashLocalization
             {
                 _followLog = true;
             }
+        }
+
+        // What an empty log says depends on why it is empty.
+        private string EmptyLogText()
+        {
+            if (_logHidden > 0)
+            {
+                return _logHidden == 1 ? "1 line is hidden by the toggles above." : $"{_logHidden} lines are hidden by the toggles above.";
+            }
+            if (_logCleared)
+            {
+                return "Cleared. New lines show up here.";
+            }
+            if (VerboseTextLog != null && !VerboseTextLog.Value)
+            {
+                return "Tool results and problems show up here. Text lines are off ([Debug] VerboseTextLog).";
+            }
+            return "No activity yet.\nOpen a game menu or dialogue to capture text.";
         }
 
         // The lines the toggles leave shown, with their times, for a bug
