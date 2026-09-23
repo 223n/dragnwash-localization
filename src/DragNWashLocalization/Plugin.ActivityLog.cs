@@ -137,9 +137,14 @@ namespace DragNWashLocalization
         private GUIStyle[] _logStyles;
         private GUIStyle _logToggleOn;
         private GUIStyle _logToggleOff;
+        private float[] _logToggleWidths;
         private int _logRowsShown = -1;
         private int _logHidden;
         private int _logHiddenText;
+        // The line count above the log, as last drawn.
+        private GUIContent _logNote;
+        private int _logNoteRows, _logNoteHidden, _logNoteHiddenText;
+        private float _logNoteWidth, _logNoteHeight;
 
         // Which kinds the tab shows, one bit per LogKind; the toggles above the
         // log change it and the config keeps it.
@@ -229,6 +234,12 @@ namespace DragNWashLocalization
             // panel with room on the left for the square that says on or off.
             _logToggleOn = new GUIStyle(S.Label) { padding = new RectOffset(28, 10, 0, 0), wordWrap = false };
             _logToggleOff = new GUIStyle(S.MutedLabel) { padding = new RectOffset(28, 10, 0, 0), wordWrap = false };
+            // Measured once: OnGUI runs several times a frame.
+            _logToggleWidths = new float[LogToggles.Length];
+            for (int i = 0; i < LogToggles.Length; i++)
+            {
+                _logToggleWidths[i] = Mathf.Max(70, _logToggleOn.CalcSize(new GUIContent(LogToggles[i].label)).x);
+            }
         }
 
         // Errors and warnings say so in words too, for anyone who cannot tell
@@ -316,11 +327,12 @@ namespace DragNWashLocalization
             // has an empty square and dimmer words. Bar and square are painted
             // with Fill, not font glyphs, so the font atlas is untouched.
             float bx = x;
-            foreach ((LogKind kind, string label) in LogToggles)
+            for (int t = 0; t < LogToggles.Length; t++)
             {
+                (LogKind kind, string label) = LogToggles[t];
                 int bit = 1 << (int)kind;
                 bool on = (_logShownMask & bit) != 0;
-                float bw = Mathf.Max(70, _logToggleOn.CalcSize(new GUIContent(label)).x);
+                float bw = _logToggleWidths[t];
                 if (bx + bw > x + w && bx > x)
                 {
                     bx = x;
@@ -369,19 +381,29 @@ namespace DragNWashLocalization
             }
             y += RowHeight + 6;
 
-            string note = _logRows.Count == 1 ? "1 line" : $"{_logRows.Count} lines";
-            if (_logHidden > 0)
+            // Made again only when the counts or the width change, since OnGUI
+            // runs several times a frame. Sized from the text: in a narrow
+            // window it takes two lines.
+            if (_logNote == null || _logNoteRows != _logRows.Count || _logNoteHidden != _logHidden ||
+                _logNoteHiddenText != _logHiddenText || !Mathf.Approximately(_logNoteWidth, w))
             {
-                note += _logHidden == _logHiddenText
-                    ? (_logHidden == 1 ? ", 1 text line hidden" : $", {_logHidden} text lines hidden")
-                    : $", {_logHidden} hidden";
+                _logNoteRows = _logRows.Count;
+                _logNoteHidden = _logHidden;
+                _logNoteHiddenText = _logHiddenText;
+                _logNoteWidth = w;
+                string note = _logRows.Count == 1 ? "1 line" : $"{_logRows.Count} lines";
+                if (_logHidden > 0)
+                {
+                    note += _logHidden == _logHiddenText
+                        ? (_logHidden == 1 ? ", 1 text line hidden" : $", {_logHidden} text lines hidden")
+                        : $", {_logHidden} hidden";
+                }
+                note += $". The newest {MaxLogLines} text lines and {MaxLogLines} others are kept.";
+                _logNote = new GUIContent(note);
+                _logNoteHeight = Mathf.Max(RowHeight, S.WrappedLabel.CalcHeight(_logNote, w));
             }
-            note += $".  The newest {MaxLogLines} text lines and {MaxLogLines} others are kept.";
-            // Sized from the text: in a narrow window it takes two lines.
-            var noteContent = new GUIContent(note);
-            float noteHeight = Mathf.Max(RowHeight, S.WrappedLabel.CalcHeight(noteContent, w));
-            GUI.Label(new Rect(x, y, w, noteHeight), noteContent, S.WrappedLabel);
-            y += noteHeight;
+            GUI.Label(new Rect(x, y, w, _logNoteHeight), _logNote, S.WrappedLabel);
+            y += _logNoteHeight;
 
             var viewport = new Rect(x, y, w, Mathf.Max(20, area.yMax - pad - y));
             ToolWindow.Fill(viewport, ToolWindow.InsetColor);
@@ -402,11 +424,21 @@ namespace DragNWashLocalization
             {
                 fresh++;
             }
-            string freshLabel = fresh == 1 ? "1 new line  v" : $"{fresh} new lines  v";
-            float freshWidth = S.Button.CalcSize(new GUIContent(freshLabel)).x + 16;
-            var freshRect = new Rect(viewport.xMax - 20 - 8 - freshWidth, viewport.yMax - RowHeight - 8, freshWidth, RowHeight);
             bool showFresh = !_followLog && fresh > 0;
+            string freshLabel = null;
+            var freshRect = new Rect();
+            if (showFresh)
+            {
+                freshLabel = fresh == 1 ? "1 new line  v" : $"{fresh} new lines  v";
+                float freshWidth = S.Button.CalcSize(new GUIContent(freshLabel)).x + 16;
+                freshRect = new Rect(viewport.xMax - 20 - 8 - freshWidth, viewport.yMax - RowHeight - 8, freshWidth, RowHeight);
+            }
             bool overFresh = showFresh && freshRect.Contains(Event.current.mousePosition);
+            // A line scrolled half out of view still has its rect above or
+            // below the viewport; the pointer there (over the line count, say)
+            // must not light it up or copy it. The buttons are still called, so
+            // the controls after them keep the same IDs from event to event.
+            bool pointerInLog = viewport.Contains(Event.current.mousePosition);
 
             float bottom = Mathf.Max(0, _logContentHeight - viewport.height);
             if (_followLog)
@@ -433,16 +465,22 @@ namespace DragNWashLocalization
                     // Click a line to copy it; the line under the pointer gets
                     // the panel colour behind it.
                     var rowRect = new Rect(0, ry, contentWidth, row.Height);
-                    bool hot = !overFresh && rowRect.Contains(Event.current.mousePosition);
+                    bool hot = pointerInLog && !overFresh && rowRect.Contains(Event.current.mousePosition);
                     if (hot && Event.current.type == EventType.Repaint)
                     {
                         ToolWindow.Fill(rowRect, ToolWindow.PanelColor);
                     }
                     GUI.Label(rowRect, row.Drawn, _logStyles[(int)row.Kind]);
-                    if (!overFresh && GUI.Button(rowRect, new GUIContent("", "Click a line to copy it."), GUIStyle.none))
+                    if (!overFresh && GUI.Button(rowRect, CopyLineTip, GUIStyle.none) && pointerInLog)
                     {
                         GUIUtility.systemCopyBuffer = row.Text;
-                        string shown = row.Text.Length > 80 ? row.Text.Substring(0, 77) + "..." : row.Text;
+                        string shown = row.Text;
+                        if (shown.Length > 80)
+                        {
+                            // Not between the two halves of a surrogate pair.
+                            int cut = char.IsHighSurrogate(shown[76]) ? 76 : 77;
+                            shown = shown.Substring(0, cut) + "...";
+                        }
                         ToolWindow.ShowNotice(ToolWindow.Drawable("Copied: " + shown));
                     }
                 }
@@ -471,6 +509,8 @@ namespace DragNWashLocalization
                 _followLog = true;
             }
         }
+
+        private static readonly GUIContent CopyLineTip = new GUIContent("", "Click a line to copy it.");
 
         // What an empty log says depends on why it is empty.
         private string EmptyLogText()
