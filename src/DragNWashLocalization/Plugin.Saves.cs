@@ -228,6 +228,7 @@ namespace DragNWashLocalization
                 _savesFlags = _savesSlot != null ? GameSaves.ReadFlags(_savesSlot) : new List<SaveFlag>();
                 _savesLevel = _savesSlot != null ? GameSaves.ReadLevel(_savesSlot) : -1;
                 _newestMatchesSave = _savesSlot != null && _savesList.Count > 0 && GameSaves.SnapshotMatchesSave(_savesSlot, _savesList[0]);
+                CheckUndo(_savesSlot != null ? ReadText(GameSaves.SavePath(_savesSlot)) : null);
                 PruneFlagEdits();
                 RebuildFlagRows();
             }
@@ -361,15 +362,78 @@ namespace DragNWashLocalization
                 parts.Add($"{kv.Key} = {(kv.Value ? "true" : "false")}");
             }
             string what = list.Count == 1 ? parts[0] : $"{list.Count} flags changed";
-            string result = GameSaves.SetFlags(PluginGuid, _savesSlot, list, what);
-            Log("[saves] " + result + (list.Count > 1 ? $" ({string.Join(", ", parts)})" : ""));
-            // Kept for another try when the write failed.
-            if (!result.StartsWith("Edit failed", StringComparison.Ordinal))
+            // Kept for another try when the write failed. Ones the save turns
+            // out to have already go at the next refresh (PruneFlagEdits).
+            if (RunSaveEdit(_savesSlot, () => GameSaves.SetFlags(PluginGuid, _savesSlot, list, what),
+                list.Count > 1 ? $" ({string.Join(", ", parts)})" : ""))
             {
                 _flagEdits.Remove(_savesSlot);
             }
             _flagEditsLeft = false;
+        }
+
+        // What "Undo last change" puts back: the snapshot of the save from just
+        // before the last change made here, while the save still holds what
+        // that change wrote.
+        private string _undoSlot;
+        private SaveSnapshot _undoSnapshot;
+        private string _undoWritten;
+        private bool _undoValid;
+
+        private static string ReadText(string path)
+        {
+            try
+            {
+                return File.Exists(path) ? File.ReadAllText(path) : null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        // Every change to a save goes through here. The result goes to the
+        // notice strip as well as the log: it says the slot has to be loaded
+        // again from the title screen, which the player would otherwise never
+        // see. Returns true when the save changed.
+        private bool RunSaveEdit(string slot, Func<string> edit, string logDetail = "")
+        {
+            string savePath = GameSaves.SavePath(slot);
+            string before = ReadText(savePath);
+            string result = edit();
+            Log("[saves] " + result + logDetail);
+            ToolWindow.ShowNotice(result);
             _savesRefreshAt = 0;
+            string after = ReadText(savePath);
+            if (before == null || after == null || after == before)
+            {
+                return false;
+            }
+
+            // The library kept the save from before the change as a snapshot:
+            // a new one, or the newest one when it already held the same.
+            _undoValid = false;
+            foreach (SaveSnapshot s in GameSaves.Snapshots(slot))
+            {
+                if (ReadText(s.Path) == before)
+                {
+                    _undoSlot = slot;
+                    _undoSnapshot = s;
+                    _undoWritten = after;
+                    _undoValid = true;
+                    break;
+                }
+            }
+            return true;
+        }
+
+        // At the refresh: Undo stays only while the save is what the change
+        // wrote. Once the game saved, or something was restored, it would put
+        // back something other than what the player expects.
+        private void CheckUndo(string saveText)
+        {
+            _undoValid = _undoSnapshot != null && _undoSlot == _savesSlot && saveText != null &&
+                         saveText == _undoWritten && File.Exists(_undoSnapshot.Path);
         }
 
         // The level editor, and the switch between the history and the flags.
@@ -410,30 +474,44 @@ namespace DragNWashLocalization
                 }
                 else
                 {
-                    Log("[saves] " + GameSaves.SetLevel(PluginGuid, _savesSlot, _editLevel));
-                    _savesRefreshAt = 0;
+                    RunSaveEdit(_savesSlot, () => GameSaves.SetLevel(PluginGuid, _savesSlot, _editLevel));
                 }
             }
             GUI.enabled = true;
 
-            // History | Flags at the right end of the row; in a narrow window
-            // on a row of its own instead of over the buttons.
-            const float historyWidth = 90, flagsWidth = 80;
-            float switchX = area.x + 12 + innerWidth - historyWidth - 8 - flagsWidth;
-            if (switchX < area.x + 414)
+            // Undo last change after Apply, then History | Flags at the right
+            // end. What does not fit goes on a second row, decided by the
+            // width alone so nothing jumps when Undo comes and goes.
+            const float undoWidth = 150, historyWidth = 90, flagsWidth = 80;
+            float right = area.x + 12 + innerWidth;
+            bool undoOnFirst = area.x + 414 + undoWidth <= right;
+            bool switchOnFirst = area.x + 414 + undoWidth + 8 + historyWidth + 8 + flagsWidth <= right;
+            float switchX = switchOnFirst ? right - flagsWidth - 8 - historyWidth : area.x + 12;
+            float switchY = switchOnFirst ? y : y + 36;
+            if (_undoValid && _undoSlot == _savesSlot)
             {
-                y += 36;
-                switchX = area.x + 12;
+                var undoRect = undoOnFirst
+                    ? new Rect(area.x + 414, area.y + y, undoWidth, RowHeight)
+                    : new Rect(switchX + historyWidth + 8 + flagsWidth + 8, area.y + switchY, undoWidth, RowHeight);
+                if (GUI.Button(undoRect, "Undo last change", S.Button))
+                {
+                    // A restore like the History's: the save it replaces is
+                    // kept as a snapshot too, so the undo can be undone.
+                    _pendingRestoreSlot = _undoSlot;
+                    _pendingRestoreSnapshot = _undoSnapshot;
+                    _undoValid = false;
+                    _savesRefreshAt = 0;
+                }
             }
-            if (GUI.Button(new Rect(switchX, area.y + y, historyWidth, RowHeight), "History", _showFlags ? S.Button : S.SelectedButton))
+            if (GUI.Button(new Rect(switchX, area.y + switchY, historyWidth, RowHeight), "History", _showFlags ? S.Button : S.SelectedButton))
             {
                 _showFlags = false;
             }
-            if (GUI.Button(new Rect(switchX + historyWidth + 8, area.y + y, flagsWidth, RowHeight), "Flags", _showFlags ? S.SelectedButton : S.Button))
+            if (GUI.Button(new Rect(switchX + historyWidth + 8, area.y + switchY, flagsWidth, RowHeight), "Flags", _showFlags ? S.SelectedButton : S.Button))
             {
                 _showFlags = true;
             }
-            y += 36;
+            y = switchY + 36;
 
             if (_progressConfirm)
             {
@@ -443,9 +521,8 @@ namespace DragNWashLocalization
                 y += wh + 4;
                 if (GUI.Button(new Rect(area.x + 12, area.y + y, 120, RowHeight), "Yes, continue", S.Button))
                 {
-                    Log("[saves] " + GameSaves.SetLevel(PluginGuid, _savesSlot, _editLevel));
+                    RunSaveEdit(_savesSlot, () => GameSaves.SetLevel(PluginGuid, _savesSlot, _editLevel));
                     _progressConfirm = false;
-                    _savesRefreshAt = 0;
                 }
                 if (GUI.Button(new Rect(area.x + 140, area.y + y, 90, RowHeight), "Cancel", S.Button))
                 {
@@ -525,11 +602,12 @@ namespace DragNWashLocalization
                 {
                     var all = new List<KeyValuePair<string, bool>>();
                     foreach (SaveFlag f in _savesFlags) all.Add(new KeyValuePair<string, bool>(f.Id, false));
-                    Log("[saves] " + GameSaves.SetFlags(PluginGuid, _savesSlot, all, $"all {all.Count} flags set to false"));
-                    _flagEdits.Remove(_savesSlot);
-                    _flagEditsLeft = false;
+                    if (RunSaveEdit(_savesSlot, () => GameSaves.SetFlags(PluginGuid, _savesSlot, all, $"all {all.Count} flags set to false")))
+                    {
+                        _flagEdits.Remove(_savesSlot);
+                        _flagEditsLeft = false;
+                    }
                     _flagClearConfirm = false;
-                    _savesRefreshAt = 0;
                 }
                 if (GUI.Button(new Rect(140, fy, 90, RowHeight), "Cancel", S.Button))
                 {
