@@ -69,6 +69,7 @@ BepInEx/plugins/DragNWashLocalization/CREDITS.txt
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/strings.csv
 BepInEx/plugins/DragNWashLocalization/Translations/ignore.txt
 BepInEx/plugins/DragNWashLocalization/Translations/<locale>/name.txt
+BepInEx/plugins/DragNWashLocalization/Translations/<locale>/credits.txt
 BepInEx/plugins/DragNWashLocalization/FlagCatalog.csv
 BepInEx/plugins/DragNWashLocalization/dragnwash-menufont.bundle
 BepInEx/plugins/DragNWashLocalization/dragnwash-menufont-LICENSE.txt

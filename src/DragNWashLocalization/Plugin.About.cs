@@ -71,13 +71,8 @@ namespace DragNWashLocalization
             DrawAboutCredits();
 
             AboutHeading("LANGUAGES");
-            AboutText("Supervised by the author: Japanese (ja), Simplified Chinese (zh-Hans).");
-            AboutText("Converted from the supervised Simplified Chinese: Traditional Chinese (zh-Hant).");
-            AboutText("Proofread by a native speaker: Korean (ko), by Hotcake.");
-            AboutText("Provisional, not reviewed by native speakers: German (de), French (fr), Spanish (es), Brazilian Portuguese (pt-BR), Russian (ru), Polish (pl), Hebrew (he), Ukrainian (uk), Thai (th), Vietnamese (vi).");
-            AboutText("Just for fun: Esperanto (eo), Toki Pona (tok).");
-            AboutText("Provisional lines may read unnaturally. Native speakers: corrections are very welcome as pull requests.");
-            AboutText("Installed in this copy: " + string.Join(", ", _availableLocales ?? new string[0]));
+            DrawAboutLanguages();
+            AboutText("No native speaker has checked the provisional packs yet, so some lines may sound off. If it's your language, corrections are very welcome as pull requests.");
 
             AboutHeading("TOOLS IN THIS WINDOW");
             AboutText("These are for translators and mod makers, and you don't need them to play. There's the Translation tab (working copies, exports, hot reload), the Saves tab, the framework's Assets tab (see what's loaded, replace textures) and Console (the log with levels, and commands).");
@@ -226,12 +221,71 @@ namespace DragNWashLocalization
 
         private static List<CreditItem> _credits;
 
+        // Translations/<locale>/credits.txt: the pack's status on the first
+        // line (supervised, proofread, converted, provisional or fun), then who
+        // checked it, one per line. A pack without the file is provisional.
+        private sealed class LocaleCredit
+        {
+            public string Status = "provisional";
+            public string Names = "";
+        }
+
+        private static readonly Dictionary<string, LocaleCredit> _localeCredits =
+            new Dictionary<string, LocaleCredit>(StringComparer.Ordinal);
+
+        private static LocaleCredit ReadLocaleCredit(string locale, StringBuilder text)
+        {
+            var credit = new LocaleCredit();
+            string path = Path.Combine(Path.Combine(PluginDirectory, "Translations"), Path.Combine(locale, "credits.txt"));
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    return credit;
+                }
+                var names = new List<string>();
+                bool first = true;
+                foreach (string raw in File.ReadAllLines(path, Encoding.UTF8))
+                {
+                    string line = raw.Trim();
+                    if (line.Length == 0 || line.StartsWith("#", StringComparison.Ordinal))
+                    {
+                        continue;
+                    }
+                    if (first)
+                    {
+                        credit.Status = line.ToLowerInvariant();
+                        first = false;
+                    }
+                    else
+                    {
+                        names.Add(line);
+                        text.Append(line);
+                    }
+                }
+                credit.Names = string.Join(", ", names);
+            }
+            catch (Exception ex)
+            {
+                Log($"[about] Could not read {locale}/credits.txt: {ex.Message}");
+            }
+            return credit;
+        }
+
         // Everything the About tab reads from files, loaded now. Returns the
         // text for PrepareWindowCharacters: a name in the credits may be in
         // any script.
-        private static string LoadAboutFiles()
+        private string LoadAboutFiles()
         {
             var text = new StringBuilder();
+            _localeCredits.Clear();
+            foreach (string locale in _availableLocales)
+            {
+                if (locale != "en")
+                {
+                    _localeCredits[locale] = ReadLocaleCredit(locale, text);
+                }
+            }
             _credits = null;
             string path = Path.Combine(PluginDirectory, "CREDITS.txt");
             try
@@ -381,6 +435,125 @@ namespace DragNWashLocalization
                     _aboutY += 8;
                 }
             }
+        }
+
+        // What a status looks like in the table: its tag, the tag's colour and
+        // where it sorts. Colours are the window's own, each at least 4.5:1 on
+        // the tab's background. An unknown word reads as provisional.
+        private static void LocaleStatus(string status, out string tag, out Color color, out int rank)
+        {
+            switch (status)
+            {
+                case "supervised": tag = "SUPERVISED"; color = ToolWindow.AccentColor; rank = 0; break;
+                case "proofread": tag = "PROOFREAD"; color = ToolWindow.AccentColor; rank = 1; break;
+                case "converted": tag = "CONVERTED"; color = ToolWindow.WarningColor; rank = 2; break;
+                case "fun": tag = "FOR FUN"; color = ToolWindow.MutedColor; rank = 4; break;
+                default: tag = "PROVISIONAL"; color = ToolWindow.WarningColor; rank = 3; break;
+            }
+        }
+
+        private GUIStyle _aboutTagStyle;
+        private GUIStyle _aboutTagBase;
+
+        // One line per installed language: its name, code, status and who
+        // checked it, the one in use marked with the accent line.
+        private void DrawAboutLanguages()
+        {
+            if (_aboutTagStyle == null || _aboutTagBase != S.MutedLabel)
+            {
+                _aboutTagBase = S.MutedLabel;
+                _aboutTagStyle = new GUIStyle(S.MutedLabel) { alignment = TextAnchor.MiddleCenter };
+            }
+
+            var rows = new List<string>(_availableLocales);
+            rows.Sort((a, b) =>
+            {
+                int ra = AboutLocaleRank(a), rb = AboutLocaleRank(b);
+                return ra != rb ? ra.CompareTo(rb) : string.CompareOrdinal(a, b);
+            });
+
+            float nameWidth = Mathf.Clamp(_aboutWidth * 0.25f, 90, 170);
+            const float codeWidth = 70;
+            float tagWidth = _aboutTagStyle.CalcSize(new GUIContent("PROVISIONAL")).x + 16;
+            float inUseWidth = S.Label.CalcSize(new GUIContent("in use")).x;
+            float byX = 24 + nameWidth + codeWidth + tagWidth + 12;
+            // In a narrow window who checked it goes on a line of its own.
+            bool byBelow = 12 + _aboutWidth - byX < 120;
+            if (rows.Count == 0)
+            {
+                AboutText("No language folders installed.");
+                return;
+            }
+            foreach (string locale in rows)
+            {
+                bool inUse = locale == TargetLocale.Value;
+                string name = locale == "en" ? "English" : LocaleDisplayName(locale);
+                if (!MenuFontCanDraw(name))
+                {
+                    name = locale;
+                }
+                string by;
+                bool hasTag = locale != "en";
+                string tag = null;
+                Color color = ToolWindow.MutedColor;
+                if (hasTag)
+                {
+                    LocaleCredit credit = _localeCredits.TryGetValue(locale, out LocaleCredit c) ? c : new LocaleCredit();
+                    LocaleStatus(credit.Status, out tag, out color, out int _);
+                    by = credit.Names;
+                }
+                else
+                {
+                    by = "the game's own text";
+                }
+
+                float rowHeight = byBelow && (by.Length > 0 || inUse) ? 54 : 28;
+                if (inUse)
+                {
+                    ToolWindow.Fill(new Rect(12, _aboutY, 2, rowHeight - 2), ToolWindow.AccentColor);
+                }
+                GUI.Label(new Rect(24, _aboutY, nameWidth - 8, 26), ToolWindow.Drawable(name), S.Label);
+                GUI.Label(new Rect(24 + nameWidth, _aboutY, codeWidth - 8, 26), locale, S.MutedLabel);
+                if (hasTag)
+                {
+                    var box = new Rect(24 + nameWidth + codeWidth, _aboutY + 2, tagWidth, 22);
+                    ToolWindow.Fill(new Rect(box.x, box.y, box.width, 1), color);
+                    ToolWindow.Fill(new Rect(box.x, box.yMax - 1, box.width, 1), color);
+                    ToolWindow.Fill(new Rect(box.x, box.y, 1, box.height), color);
+                    ToolWindow.Fill(new Rect(box.xMax - 1, box.y, 1, box.height), color);
+                    Color previous = _aboutTagStyle.normal.textColor;
+                    _aboutTagStyle.normal.textColor = color;
+                    GUI.Label(box, tag, _aboutTagStyle);
+                    _aboutTagStyle.normal.textColor = previous;
+                }
+
+                float lineY = byBelow ? _aboutY + 26 : _aboutY;
+                float left = byBelow ? 36 : byX;
+                float right = 12 + _aboutWidth;
+                if (inUse)
+                {
+                    GUI.Label(new Rect(right - inUseWidth, lineY, inUseWidth, 26), "in use", AboutHeadStyle);
+                    right -= inUseWidth + 12;
+                }
+                if (by.Length > 0)
+                {
+                    GUI.Label(new Rect(left, lineY, Mathf.Max(20, right - left), 26), ToolWindow.Drawable(by), S.MutedLabel);
+                }
+                _aboutY += rowHeight;
+            }
+            _aboutY += 8;
+        }
+
+        // English, which is no pack, goes last.
+        private static int AboutLocaleRank(string locale)
+        {
+            if (locale == "en")
+            {
+                return 9;
+            }
+            LocaleCredit credit = _localeCredits.TryGetValue(locale, out LocaleCredit c) ? c : new LocaleCredit();
+            LocaleStatus(credit.Status, out string _, out Color _, out int rank);
+            return rank;
         }
 
         // A heading in the accent colour with a thin line under it, so it does

@@ -203,10 +203,13 @@ Get-ChildItem -LiteralPath $SrcTranslations -Directory |
     ForEach-Object {
         $dest = Join-Path $TranslationsDir $_.Name
         New-Item -ItemType Directory -Force -Path $dest | Out-Null
-        # Only the published file and the display name ship.
+        # Only the published file, the display name and the status and
+        # reviewers for the About tab ship.
         Copy-Item -LiteralPath (Join-Path $_.FullName 'strings.csv') -Destination $dest
-        $nameFile = Join-Path $_.FullName 'name.txt'
-        if (Test-Path -LiteralPath $nameFile) { Copy-Item -LiteralPath $nameFile -Destination $dest }
+        foreach ($small in 'name.txt', 'credits.txt') {
+            $smallFile = Join-Path $_.FullName $small
+            if (Test-Path -LiteralPath $smallFile) { Copy-Item -LiteralPath $smallFile -Destination $dest }
+        }
         # Translated pictures (docs/TRANSLATED_TEXTURES.md): the PNGs, their credits and the fallback list.
         $textures = Join-Path $_.FullName 'textures'
         if (Test-Path -LiteralPath $textures) {

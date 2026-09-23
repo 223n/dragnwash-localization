@@ -23,6 +23,10 @@ Whatever you put in `Translations/<locale>/name.txt` is shown as the language's 
 
 For example `ja/name.txt` → `日本語`, `zh-Hans/name.txt` → `简体中文`. It's one line, in UTF-8. If the file isn't there, the folder name is shown instead. So adding a language is just a folder, a `strings.csv` and a `name.txt`.
 
+### Status and reviewers (`credits.txt`)
+
+The language table on the F1 menu's **About** tab reads `Translations/<locale>/credits.txt`. The first line is the pack's status: `supervised`, `proofread`, `converted`, `provisional` or `fun`. Each line after it is the name of someone who checked the pack. A pack without the file shows as provisional. You don't need to touch it in your pull request; the maintainer updates it along with the other credits.
+
 ## Basic flow
 
 1. Fork this repository.
@@ -242,7 +246,8 @@ In the pull request's *Credit* section, say whether you want to be credited and 
 - the language's row in the README's language pack table
 - the comment at the top of the pack's `strings.csv`
 - the notes of the release that includes your change
-- the About screens of the in-game F1 menu and the installer (from the next release on)
+- the pack's `credits.txt`, which the in-game F1 menu's About tab shows (from the next release on)
+- the About screen of the installer (from the next release on)
 
 How the pack's status is worded (for example whether a partial review changes "provisional") is decided per pull request. If you'd rather not be credited, nothing gets added, though your commits still show in the repository history.
 
