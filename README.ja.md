@@ -468,8 +468,13 @@ DirectX 12で **ウィンドウモード** を **排他的フルスクリーン*
 
 ## 現在のステータス
 
-最新のリリースは **v1.4.0** です。
-ほかのModのテキストも翻訳できるようになり
+**v1.5.0** をプレリリースで出しています（正式リリースの最新は **v1.4.0** のままです）。
+v1.5.0 では、F1 のウィンドウのアクティビティログ、翻訳、Saves、About の各タブを 1 つずつ見直し、
+新しい Mods 画面の文言も全部の言語パックで訳しました。
+zip には Drag'n Wash ModFramework を入れなくなり、
+`Install.exe` と `install-steamdeck.sh` が ModFramework 1.5.0 を専用のリリースから取ってきて、確かめてから入れます。
+
+**v1.4.0** では、ほかのModのテキストも翻訳できるようになり
 （実験的なβ版で、既定はオフです。[#28](https://github.com/TomXV/dragnwash-localization/issues/28)）、
 言語ごとに絵を差し替えられるようにもなりました
 （[#4](https://github.com/TomXV/dragnwash-localization/issues/4)。

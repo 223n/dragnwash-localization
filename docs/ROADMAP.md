@@ -2,7 +2,13 @@
 
 [日本語](ROADMAP.ja.md)
 
-Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-20.
+Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-23.
+
+## Pre-release: v1.5.0 (2026-09-23)
+
+- The F1 window's Activity log, Translation, Saves and About tabs, gone through one by one.
+- Every language pack translates the new Mods screen of Drag'n Wash ModFramework 1.5.0.
+- The zip no longer carries the framework: the installers fetch ModFramework 1.5.0 from its own release and check it first.
 
 ## Released: v1.4.0 (2026-09-20)
 

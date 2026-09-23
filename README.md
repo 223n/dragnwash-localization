@@ -314,9 +314,11 @@ To avoid it, do one of these:
 
 ## Current status
 
-v1.4.0 is the latest release. Text from other mods can be translated (experimental and off by default, [#28](https://github.com/TomXV/dragnwash-localization/issues/28)), and pictures can be translated per language ([#4](https://github.com/TomXV/dragnwash-localization/issues/4); that's the machinery, and no pictures have been drawn yet). It runs on Drag'n Wash ModFramework 1.4.0, which brings mods with no code, the operations registry and the Bridge.
+v1.5.0 is out as a pre-release, and v1.4.0 is still the latest full release. In v1.5.0 the F1 window's Activity log, Translation, Saves and About tabs were gone through one by one, and every language pack translates the new Mods screen. The zip no longer carries Drag'n Wash ModFramework: `Install.exe` and `install-steamdeck.sh` fetch ModFramework 1.5.0 from its own release and check it before installing.
 
 Earlier releases, newest first:
+
+- v1.4.0 made text from other mods translatable (experimental and off by default, [#28](https://github.com/TomXV/dragnwash-localization/issues/28)) and pictures translatable per language ([#4](https://github.com/TomXV/dragnwash-localization/issues/4); that's the machinery, and no pictures have been drawn yet), on Drag'n Wash ModFramework 1.4.0.
 
 - v1.3.0 brought fewer crashes on Direct3D 12 and a window that tells you what happened when the game does crash (with Drag'n Wash ModFramework 1.3.0).
 - v1.2.1 made the Saves tab find saves made after the game update of September 14, 2026 again, and gave translators' working copies the English of screens that weren't open.

@@ -42,7 +42,7 @@ namespace DragNWashLocalization
     {
         public const string PluginGuid = "com.tomxv.dragnwash.localization";
         public const string PluginName = "DragNWashLocalization";
-        public const string PluginVersion = "1.4.0";
+        public const string PluginVersion = "1.5.0";
 
         internal static ConfigEntry<string> TargetLocale;
         internal static ConfigEntry<int> FlagPanelDebug;
