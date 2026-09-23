@@ -31,22 +31,38 @@ namespace DragNWashLocalization
         private GUIStyle _aboutHeadStyle;
         private GUIStyle _aboutHeadBase;
 
-        // Headings in the accent colour. Same font, size and weight as Label:
-        // a bold or bigger face would be another font texture to fill, which
-        // is the upload Direct3D 12 does not survive.
-        private GUIStyle AboutHeadStyle
+        private GUIStyle _aboutLineStyle;
+        private GUIStyle _aboutMutedLineStyle;
+
+        // Label, MutedLabel and the accent colour, each kept to one line. The
+        // game's label skin wraps words, and a rect sized to the measured
+        // width can still wrap its last letter onto a second line that the
+        // row height cuts off ("Languag" over "e"). Headings use the same
+        // font, size and weight as Label: a bold or bigger face would be
+        // another font texture to fill, which is the upload Direct3D 12 does
+        // not survive.
+        private void EnsureAboutStyles()
         {
-            get
+            if (_aboutHeadStyle != null && _aboutHeadBase == S.Label)
             {
-                if (_aboutHeadStyle == null || _aboutHeadBase != S.Label)
-                {
-                    _aboutHeadBase = S.Label;
-                    _aboutHeadStyle = new GUIStyle(S.Label);
-                    _aboutHeadStyle.normal.textColor = ToolWindow.AccentColor;
-                }
-                return _aboutHeadStyle;
+                return;
             }
+            _aboutHeadBase = S.Label;
+            _aboutLineStyle = OneLine(S.Label);
+            _aboutMutedLineStyle = OneLine(S.MutedLabel);
+            _aboutHeadStyle = OneLine(S.Label);
+            _aboutHeadStyle.normal.textColor = ToolWindow.AccentColor;
+            _aboutWidths.Clear();
         }
+
+        private static GUIStyle OneLine(GUIStyle from)
+        {
+            return new GUIStyle(from) { wordWrap = false, clipping = TextClipping.Clip };
+        }
+
+        private GUIStyle AboutHeadStyle { get { EnsureAboutStyles(); return _aboutHeadStyle; } }
+        private GUIStyle AboutLine { get { EnsureAboutStyles(); return _aboutLineStyle; } }
+        private GUIStyle AboutMutedLine { get { EnsureAboutStyles(); return _aboutMutedLineStyle; } }
 
         private void DrawAbout(Rect area)
         {
@@ -130,7 +146,7 @@ namespace DragNWashLocalization
             ToolWindow.Fill(new Rect(card.x, card.y, bar, card.height), ToolWindow.AccentColor);
 
             float y = _aboutY + pad;
-            GUI.Label(new Rect(x, y, w, 26), "DRAG'N WASH LOCALIZATION", S.Label);
+            GUI.Label(new Rect(x, y, w, 26), "DRAG'N WASH LOCALIZATION", AboutLine);
             y += 28;
             float saved = _aboutY;
             _aboutY = y;
@@ -183,7 +199,7 @@ namespace DragNWashLocalization
             AboutLink(TargetLocale.Value == "ja" ? SteamGuideJapaneseLink : SteamGuideEnglishLink);
             AboutLink(FrameworkWikiLink);
             _aboutY += 2;
-            GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), "Open switches to your web browser.", S.MutedLabel);
+            GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), "Open switches to your web browser.", AboutMutedLine);
             _aboutY += 30;
         }
 
@@ -198,15 +214,15 @@ namespace DragNWashLocalization
             // One line when it all fits; in a narrow window the address goes
             // under the name and the buttons under the address.
             bool oneLine = labelWidth + domainWidth + pathWidth + 16 + buttonsWidth <= _aboutWidth;
-            GUI.Label(new Rect(12, _aboutY, labelWidth, RowHeight), label, S.Label);
+            GUI.Label(new Rect(12, _aboutY, labelWidth, RowHeight), label, AboutLine);
             float urlX = 12 + labelWidth;
             if (!oneLine && labelWidth + domainWidth + pathWidth > _aboutWidth)
             {
                 _aboutY += 26;
                 urlX = 24;
             }
-            GUI.Label(new Rect(urlX, _aboutY, domainWidth, RowHeight), domain, S.Label);
-            GUI.Label(new Rect(urlX + domainWidth, _aboutY, Mathf.Max(20, 12 + _aboutWidth - urlX - domainWidth), RowHeight), path, S.MutedLabel);
+            GUI.Label(new Rect(urlX, _aboutY, domainWidth, RowHeight), domain, AboutLine);
+            GUI.Label(new Rect(urlX + domainWidth, _aboutY, Mathf.Max(20, 12 + _aboutWidth - urlX - domainWidth), RowHeight), path, AboutMutedLine);
 
             float buttonX = 12 + _aboutWidth - buttonsWidth;
             if (!oneLine)
@@ -457,7 +473,7 @@ namespace DragNWashLocalization
                 if (item.Heading != null)
                 {
                     _aboutY += 6;
-                    GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), ToolWindow.Drawable(item.Heading), S.Label);
+                    GUI.Label(new Rect(12, _aboutY, _aboutWidth, 26), ToolWindow.Drawable(item.Heading), AboutLine);
                     _aboutY += 28;
                     // The file's Translations section lists the packs in prose
                     // and points at README.md; in here the table under
@@ -479,13 +495,13 @@ namespace DragNWashLocalization
                     if (twoColumns)
                     {
                         float h = Mathf.Max(26, S.WrappedLabel.CalcHeight(what, _aboutWidth - whoWidth - 12));
-                        GUI.Label(new Rect(24, _aboutY, whoWidth - 12, 26), who, S.Label);
+                        GUI.Label(new Rect(24, _aboutY, whoWidth - 12, 26), who, AboutLine);
                         GUI.Label(new Rect(12 + whoWidth + 12, _aboutY + 3, _aboutWidth - whoWidth - 12, h), what, S.WrappedLabel);
                         _aboutY += h + 6;
                     }
                     else
                     {
-                        GUI.Label(new Rect(24, _aboutY, _aboutWidth - 12, 26), who, S.Label);
+                        GUI.Label(new Rect(24, _aboutY, _aboutWidth - 12, 26), who, AboutLine);
                         _aboutY += 26;
                         float h = S.WrappedLabel.CalcHeight(what, _aboutWidth - 24);
                         GUI.Label(new Rect(36, _aboutY, _aboutWidth - 24, h), what, S.WrappedLabel);
@@ -512,7 +528,7 @@ namespace DragNWashLocalization
             {
                 case "supervised": tag = "SUPERVISED"; color = ToolWindow.AccentColor; rank = 0; break;
                 case "proofread": tag = "PROOFREAD"; color = ToolWindow.AccentColor; rank = 1; break;
-                case "converted": tag = "CONVERTED"; color = ToolWindow.WarningColor; rank = 2; break;
+                case "converted": tag = "CONVERTED"; color = ToolWindow.MutedColor; rank = 2; break;
                 case "fun": tag = "FOR FUN"; color = ToolWindow.MutedColor; rank = 4; break;
                 default: tag = "PROVISIONAL"; color = ToolWindow.WarningColor; rank = 3; break;
             }
@@ -525,10 +541,10 @@ namespace DragNWashLocalization
         // checked it, the one in use marked with the accent line.
         private void DrawAboutLanguages()
         {
-            if (_aboutTagStyle == null || _aboutTagBase != S.MutedLabel)
+            if (_aboutTagStyle == null || _aboutTagBase != AboutMutedLine)
             {
-                _aboutTagBase = S.MutedLabel;
-                _aboutTagStyle = new GUIStyle(S.MutedLabel) { alignment = TextAnchor.MiddleCenter };
+                _aboutTagBase = AboutMutedLine;
+                _aboutTagStyle = new GUIStyle(AboutMutedLine) { alignment = TextAnchor.MiddleCenter };
             }
             if (_aboutLanguages.Count == 0)
             {
@@ -540,7 +556,7 @@ namespace DragNWashLocalization
             // not cut off, but it leaves room for the code and the tag.
             const float codeWidth = 70;
             float tagWidth = AboutTextWidth("PROVISIONAL") + 16;
-            float inUseWidth = AboutTextWidth("in use");
+            float inUseWidth = AboutTextWidth("in use") + 4;
             float widestName = 0, widestBy = 0;
             foreach (AboutLanguageRow row in _aboutLanguages)
             {
@@ -562,8 +578,8 @@ namespace DragNWashLocalization
                 {
                     ToolWindow.Fill(new Rect(12, _aboutY, 2, rowHeight - 2), ToolWindow.AccentColor);
                 }
-                GUI.Label(new Rect(24, _aboutY, nameWidth - 8, 26), ToolWindow.Drawable(AboutRowName(row)), S.Label);
-                GUI.Label(new Rect(24 + nameWidth, _aboutY, codeWidth - 8, 26), row.Locale, S.MutedLabel);
+                GUI.Label(new Rect(24, _aboutY, nameWidth - 8, 26), ToolWindow.Drawable(AboutRowName(row)), AboutLine);
+                GUI.Label(new Rect(24 + nameWidth, _aboutY, codeWidth - 8, 26), row.Locale, AboutMutedLine);
                 if (row.Tag != null)
                 {
                     Color color = row.TagColor;
@@ -588,7 +604,7 @@ namespace DragNWashLocalization
                 }
                 if (by.Length > 0)
                 {
-                    GUI.Label(new Rect(left, lineY, Mathf.Max(20, right - left), 26), ToolWindow.Drawable(by), S.MutedLabel);
+                    GUI.Label(new Rect(left, lineY, Mathf.Max(20, right - left), 26), ToolWindow.Drawable(by), AboutMutedLine);
                 }
                 _aboutY += rowHeight;
             }
@@ -619,7 +635,6 @@ namespace DragNWashLocalization
         // once: IMGUI calls OnGUI several times a frame. Label and MutedLabel
         // share a font and size, so one measure does for both.
         private readonly Dictionary<string, float> _aboutWidths = new Dictionary<string, float>(StringComparer.Ordinal);
-        private GUIStyle _aboutWidthsBase;
 
         private float AboutTextWidth(string text)
         {
@@ -627,14 +642,10 @@ namespace DragNWashLocalization
             {
                 return 0;
             }
-            if (_aboutWidthsBase != S.Label)
-            {
-                _aboutWidthsBase = S.Label;
-                _aboutWidths.Clear();
-            }
+            GUIStyle style = AboutLine;
             if (!_aboutWidths.TryGetValue(text, out float width))
             {
-                width = S.Label.CalcSize(new GUIContent(text)).x;
+                width = style.CalcSize(new GUIContent(text)).x;
                 _aboutWidths[text] = width;
             }
             return width;
@@ -738,6 +749,13 @@ namespace DragNWashLocalization
         {
             int perLine = width >= AboutPairWideWidth ? 2 : 1;
             float column = width / perLine;
+            // The keys line up in a column as wide as the widest of them.
+            float keyWidth = 0;
+            for (int i = 0; i + 1 < keysAndValues.Length; i += 2)
+            {
+                keyWidth = Mathf.Max(keyWidth, AboutTextWidth(keysAndValues[i]) + 4);
+            }
+            keyWidth = Mathf.Min(keyWidth, column * 0.5f);
             for (int i = 0; i + 1 < keysAndValues.Length; i += 2)
             {
                 int n = i / 2;
@@ -746,9 +764,8 @@ namespace DragNWashLocalization
                 {
                     _aboutY += 26;
                 }
-                float keyWidth = S.MutedLabel.CalcSize(new GUIContent(keysAndValues[i])).x;
-                GUI.Label(new Rect(cx, _aboutY, keyWidth, 26), keysAndValues[i], S.MutedLabel);
-                GUI.Label(new Rect(cx + keyWidth + 8, _aboutY, Mathf.Max(20, column - keyWidth - 16), 26), keysAndValues[i + 1], S.Label);
+                GUI.Label(new Rect(cx, _aboutY, keyWidth, 26), keysAndValues[i], AboutMutedLine);
+                GUI.Label(new Rect(cx + keyWidth + 8, _aboutY, Mathf.Max(20, column - keyWidth - 16), 26), keysAndValues[i + 1], AboutLine);
             }
             _aboutY += 26;
         }
