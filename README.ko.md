@@ -175,7 +175,7 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 - BepInEx와 모드를 둘 다 게임 실행 파일이 있는 폴더에 풀었는지 확인하세요.
 - DLL이 위에 적은 경로에 정확히 있는지 확인하세요.
 - `BepInEx/LogOutput.log`를 열어 보세요. 파일이 없으면 BepInEx부터 로드되지 않은 거예요. 파일이 있으면 `DragNWashLocalization`를 검색해서 그 근처에 에러가 있는지 보세요.
-- Options를 열 때 Direct3D 12 크래시가 난다면 [Windows에서 Options 열 때 크래시](#crash-when-opening-options-on-windows)에 적힌 해결 방법을 따라 하세요.
+- Options를 열 때 Direct3D 12 크래시가 난다면 [Windows에서 Options 열 때 크래시](#windows에서-options-열-때-크래시)에 적힌 해결 방법을 따라 하세요.
 - 예전에 게임 파일을 덮어쓰는 번역(예: `DragNWash_Data`에 파일 복사)을 설치한 적이 있다면, 게임의 영어 원문이 이미 없어져서 모드가 번역할 대상을 찾지 못해요. 먼저 Steam에서 게임을 우클릭 → **속성** → **설치된 파일** → **게임 파일 무결성 확인**으로 원본 파일을 되돌린 다음, 모드를 다시 설치하세요. 이렇게 덮어쓰는 번역은 게임이 업데이트되면 깨지거나 아예 안 돌아가지만, 이 모드는 게임 파일을 건드리지 않아요.
 
 ## Language packs
