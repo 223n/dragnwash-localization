@@ -337,7 +337,12 @@ namespace DragNWashLocalization
                 if (_lastLogVersion != _logVersion)
                 {
                     _lastLogVersion = _logVersion;
-                    _logText = string.Join("\n", LogBuffer.ToArray());
+                    // Log lines carry text the mod did not choose: another mod's
+                    // translation read after startup, symbols in the game's own
+                    // English. Drawing a character the window font has not
+                    // prepared uploads its atlas mid-frame, which is the
+                    // Direct3D 12 crash; Drawable shows those as '?' instead.
+                    _logText = ToolWindow.Drawable(string.Join("\n", LogBuffer.ToArray()));
                     changed = true;
                 }
             }
