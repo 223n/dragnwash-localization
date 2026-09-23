@@ -27,6 +27,14 @@ namespace DragNWashLocalization
 
         private void DrawTools(Rect area)
         {
+            // Back from another tab or a closed window: the language list
+            // starts folded again.
+            if (Time.frameCount - _toolsDrawnFrame > 2)
+            {
+                _languagesOpen = false;
+            }
+            _toolsDrawnFrame = Time.frameCount;
+
             ToolWindow.Fill(area, ToolWindow.InsetColor);
             float innerWidth = Mathf.Max(100, area.width - 36);
             float width = innerWidth - 12;
@@ -48,6 +56,7 @@ namespace DragNWashLocalization
         }
 
         private bool _languagesOpen;
+        private int _toolsDrawnFrame = -10;
         // Set when this tab asked for a language, so Update says how it went.
         private bool _announceLocale;
 
@@ -205,6 +214,7 @@ namespace DragNWashLocalization
         }
 
         private float _workingCopyCheckedAt = -10;
+        private string _workingCopyCheckedFor;
         private bool _workingCopyExists;
 
         // Step 2: which file hot reload is watching, when it last read it and
@@ -231,9 +241,10 @@ namespace DragNWashLocalization
             y += RowHeight + 4;
 
             // Checked now and then rather than on every draw.
-            if (Time.unscaledTime >= _workingCopyCheckedAt + 2f)
+            if (Time.unscaledTime >= _workingCopyCheckedAt + 2f || locale != _workingCopyCheckedFor)
             {
                 _workingCopyCheckedAt = Time.unscaledTime;
+                _workingCopyCheckedFor = locale;
                 _workingCopyExists = File.Exists(WorkingCopy.PathFor(PluginDirectory, locale));
             }
             string watched = _workingCopyExists ? "_discovered/" + WorkingCopy.FileNameFor(locale) : locale + "/strings.csv";
@@ -756,7 +767,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                ToolWindow.ShowNotice("Could not open the folder: " + ex.Message);
+                ToolWindow.ShowNotice(ToolWindow.Drawable("Could not open the folder: " + ex.Message));
             }
         }
 
