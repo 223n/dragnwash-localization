@@ -47,28 +47,121 @@ namespace DragNWashLocalization
             }
         }
 
+        private bool _languagesOpen;
+        // Set when this tab asked for a language, so Update says how it went.
+        private bool _announceLocale;
+
+        // One line, "LANGUAGE  Japanese (ja)  Change...": players switch in
+        // Options (Language (Mod)), so here it only needs to be at hand. The
+        // list opens on Change... and closes again once a language is picked.
         private float DrawLanguages(float y, float width)
         {
-            GUI.Label(new Rect(12, y, width, 26), "LANGUAGE", S.Label);
-            y += 34;
-            float buttonWidth = (width - 16) / 3;
+            if (!_languagesOpen)
+            {
+                string name = LanguageLabel(_pendingLocale ?? TargetLocale.Value);
+                float nameWidth = Mathf.Max(0, Mathf.Min(width - 110 - 118, S.Label.CalcSize(new GUIContent(name)).x));
+                GUI.Label(new Rect(12, y, 110, RowHeight), "LANGUAGE", S.Label);
+                GUI.Label(new Rect(122, y, nameWidth, RowHeight), name, S.Label);
+                if (GUI.Button(new Rect(122 + nameWidth + 12, y, 106, RowHeight), "Change...", S.Button))
+                {
+                    _languagesOpen = true;
+                }
+                return y + RowHeight;
+            }
+
+            GUI.Label(new Rect(12, y, width - 100, 26), "LANGUAGE", S.Label);
+            if (GUI.Button(new Rect(12 + width - 90, y, 90, RowHeight), "Close", S.Button))
+            {
+                _languagesOpen = false;
+            }
+            y += 30;
+            y = WrappedText(12, y, width - 100, "Pick one. Text on screen changes now, and it's saved for the next start too.", S.WrappedLabel) + 8;
+
+            int columns = width >= 3 * 160 + 16 ? 3 : 2;
+            float buttonWidth = (width - 8 * (columns - 1)) / columns;
             for (int i = 0; i < _availableLocales.Length; i++)
             {
                 string locale = _availableLocales[i];
+                // "> " as well as the colour, so the choice doesn't rest on colour alone.
                 bool selected = locale == TargetLocale.Value;
-                string label = LocaleDisplayName(locale);
-                if (!MenuFontCanDraw(label)) label = locale;
-                if (GUI.Button(new Rect(12 + (i % 3) * (buttonWidth + 8), y + (i / 3) * 38, buttonWidth, RowHeight),
-                    selected ? label + "  [active]" : label, selected ? S.SelectedButton : S.Button))
+                if (GUI.Button(new Rect(12 + (i % columns) * (buttonWidth + 8), y + (i / columns) * 38, buttonWidth, RowHeight),
+                    (selected ? "> " : "") + LanguageLabel(locale), selected ? S.SelectedButton : S.Button))
                 {
-                    _pendingLocale = locale;
-                    _pendingLocalePersist = true;
-                    ToolWindow.ShowNotice("See Activity log for the language change result.");
+                    _languagesOpen = false;
+                    if (!selected)
+                    {
+                        _pendingLocale = locale;
+                        _pendingLocalePersist = true;
+                        _announceLocale = true;
+                    }
                 }
             }
             if (_availableLocales.Length == 0)
                 GUI.Label(new Rect(12, y, width, RowHeight), "No language folders installed.", S.MutedLabel);
-            return y + Mathf.Max(1, Mathf.Ceil(_availableLocales.Length / 3f)) * 38 - 8;
+            return y + Mathf.Max(1, Mathf.Ceil(_availableLocales.Length / (float)columns)) * 38 - 8;
+        }
+
+        // Called by Update once a language picked here is in use.
+        private void AnnounceLocale(string locale)
+        {
+            if (_announceLocale)
+            {
+                _announceLocale = false;
+                ToolWindow.ShowNotice($"Switched to {LanguageLabel(locale)}: {TranslationStore.EntryCount} entries. Saved.");
+            }
+        }
+
+        // "Name (code)". A name the window font cannot draw (Thai and Hebrew)
+        // is given in English instead.
+        private string LanguageLabel(string locale)
+        {
+            string name = LocaleDisplayName(locale);
+            if (!MenuFontCanDraw(name))
+            {
+                name = EnglishLanguageName(locale);
+            }
+            return name == locale ? locale : $"{name} ({locale})";
+        }
+
+        private static readonly Dictionary<string, string> _englishNames = new Dictionary<string, string>();
+
+        // For when a culture is missing from the runtime's own table.
+        private static readonly Dictionary<string, string> FallbackEnglishNames = new Dictionary<string, string>
+        {
+            ["he"] = "Hebrew",
+            ["th"] = "Thai",
+        };
+
+        private static string EnglishLanguageName(string locale)
+        {
+            if (_englishNames.TryGetValue(locale, out string cached))
+            {
+                return cached;
+            }
+            string name = null;
+            try
+            {
+                name = System.Globalization.CultureInfo.GetCultureInfo(locale).EnglishName;
+            }
+            catch (Exception)
+            {
+                // Not a culture this runtime knows.
+            }
+            if (string.IsNullOrEmpty(name) || name.StartsWith("Unknown", StringComparison.Ordinal) || !IsAscii(name))
+            {
+                name = FallbackEnglishNames.TryGetValue(locale, out string known) ? known : locale;
+            }
+            _englishNames[locale] = name;
+            return name;
+        }
+
+        private static bool IsAscii(string text)
+        {
+            foreach (char c in text)
+            {
+                if (c > 127) return false;
+            }
+            return true;
         }
 
         // 1 working copy, 2 edit and save, 3 layout check, 4 hash. The hash

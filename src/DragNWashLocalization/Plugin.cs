@@ -455,6 +455,10 @@ namespace DragNWashLocalization
                 Log(reloadOnly
                     ? $"Reloaded {locale} ({(ModTranslations.Enabled ? $"with {ModTranslations.Packs.Count} other mod(s)" : "other mods' translations off")}). Loaded entries={TranslationStore.EntryCount}"
                     : $"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}", LogKind.Result);
+                if (!reloadOnly)
+                {
+                    AnnounceLocale(locale);
+                }
             }
 
             // Everything from here on is for translators and mod makers; a
