@@ -15,7 +15,11 @@ namespace DragNWashLocalization
         private int _editLevelBase = -2;
         private string _editLevelSlot;
         private bool _progressConfirm;
-        private bool _newestMatchesSave;
+        // The history row that holds what the save holds now, or -1.
+        private int _currentIndex = -1;
+        private bool _saveExists;
+        // Snapshot files never change once written, so each is read once.
+        private readonly Dictionary<string, string> _snapshotText = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         private bool _showFlags;
         private List<SaveFlag> _savesFlags = new List<SaveFlag>();
         private string _flagFilter = "";
@@ -227,8 +231,9 @@ namespace DragNWashLocalization
                 _savesList = _savesSlot != null ? GameSaves.Snapshots(_savesSlot) : new List<SaveSnapshot>();
                 _savesFlags = _savesSlot != null ? GameSaves.ReadFlags(_savesSlot) : new List<SaveFlag>();
                 _savesLevel = _savesSlot != null ? GameSaves.ReadLevel(_savesSlot) : -1;
-                _newestMatchesSave = _savesSlot != null && _savesList.Count > 0 && GameSaves.SnapshotMatchesSave(_savesSlot, _savesList[0]);
-                CheckUndo(_savesSlot != null ? ReadText(GameSaves.SavePath(_savesSlot)) : null);
+                string saveText = _savesSlot != null ? ReadText(GameSaves.SavePath(_savesSlot)) : null;
+                FindCurrentSnapshot(saveText);
+                CheckUndo(saveText);
                 PruneFlagEdits();
                 RebuildFlagRows();
             }
@@ -296,7 +301,7 @@ namespace DragNWashLocalization
             }
 
             var view = new Rect(area.x, area.y + y, area.width, Mathf.Max(40, area.height - y - footerHeight - 12));
-            float contentHeight = flagsOpen ? FlagRowsHeight(innerWidth) : _savesList.Count * 36;
+            float contentHeight = flagsOpen ? FlagRowsHeight(innerWidth) : (_savesList.Count + (ShowSaveNotListed ? 1 : 0)) * 36;
             ToolWindow.ApplyScroll(view, ref _savesScroll);
             _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, contentHeight)), false, false);
             if (flagsOpen)
@@ -391,6 +396,57 @@ namespace DragNWashLocalization
                 return null;
             }
         }
+
+        private static readonly System.Text.RegularExpressions.Regex VersionEntry =
+            new System.Text.RegularExpressions.Regex("^\\[\\s*\\{\\s*\"version\"\\s*:\\s*\\d+\\s*\\}\\s*,?\\s*");
+
+        // A snapshot from before the game update of 2026-09-14 comes back with
+        // a {"version":1} entry added in front, so that entry is left out of
+        // the comparison.
+        private static string ForCompare(string text)
+        {
+            return text == null ? null : VersionEntry.Replace(text.Trim(), "[", 1);
+        }
+
+        // Every row is compared, not just the newest: after a restore or an
+        // edit, the save matches an older row or none at all.
+        private void FindCurrentSnapshot(string saveText)
+        {
+            _saveExists = saveText != null;
+            _currentIndex = -1;
+            string save = ForCompare(saveText);
+            var listed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            for (int i = 0; i < _savesList.Count; i++)
+            {
+                string path = _savesList[i].Path;
+                listed.Add(path);
+                if (!_snapshotText.TryGetValue(path, out string text))
+                {
+                    text = ForCompare(ReadText(path));
+                    if (text != null)
+                    {
+                        _snapshotText[path] = text;
+                    }
+                }
+                if (_currentIndex < 0 && save != null && text == save)
+                {
+                    _currentIndex = i;
+                }
+            }
+            // Files pushed out of the history, or of another slot.
+            if (_snapshotText.Count > listed.Count)
+            {
+                var gone = new List<string>();
+                foreach (string path in _snapshotText.Keys)
+                {
+                    if (!listed.Contains(path)) gone.Add(path);
+                }
+                foreach (string path in gone) _snapshotText.Remove(path);
+            }
+        }
+
+        // The row above the history when the save matches none of it.
+        private bool ShowSaveNotListed => _saveExists && _currentIndex < 0;
 
         // Every change to a save goes through here. The result goes to the
         // notice strip as well as the log: it says the slot has to be loaded
@@ -537,20 +593,45 @@ namespace DragNWashLocalization
         // Inside the scroll view.
         private void DrawSnapshotRows(float innerWidth)
         {
-            for (int i = 0; i < _savesList.Count; i++)
+            // Every row keeps a column for the CURRENT mark, so the dates line up.
+            const float markWidth = 90;
+            float y = 0;
+            if (ShowSaveNotListed)
+            {
+                DrawCurrentMark(y, innerWidth);
+                GUI.Label(new Rect(12 + markWidth, y, innerWidth - 24 - markWidth, RowHeight),
+                    "The save now: not in the list yet, changed since the newest snapshot", S.MutedLabel);
+                y += 36;
+            }
+            for (int i = 0; i < _savesList.Count; i++, y += 36)
             {
                 SaveSnapshot s = _savesList[i];
-                // "current" only when the newest snapshot really is the save on
-                // disk; after a progress or flag edit it is the pre-edit state.
-                bool isCurrent = i == 0 && _newestMatchesSave;
-                GUI.Label(new Rect(12, i * 36, innerWidth - 130, RowHeight), (isCurrent ? "current   " : "") + s.Label, S.Label);
-                if (!isCurrent && GUI.Button(new Rect(innerWidth - 110, i * 36, 98, RowHeight), "Restore", S.Button))
+                bool isCurrent = i == _currentIndex;
+                if (isCurrent)
+                {
+                    DrawCurrentMark(y, innerWidth);
+                }
+                GUI.Label(new Rect(12 + markWidth, y, innerWidth - 130 - markWidth, RowHeight), s.Label, S.Label);
+                // Nothing to restore on the row the save already is.
+                if (!isCurrent && GUI.Button(new Rect(innerWidth - 110, y, 98, RowHeight), "Restore", S.Button))
                 {
                     _pendingRestoreSlot = _savesSlot;
                     _pendingRestoreSnapshot = s;
                     _savesRefreshAt = 0;
                 }
             }
+        }
+
+        // The P4 selection: the row on the panel colour with a 2 px accent
+        // line on its left, and the word in the accent colour.
+        private void DrawCurrentMark(float y, float innerWidth)
+        {
+            ToolWindow.Fill(new Rect(4, y - 2, innerWidth - 8, RowHeight + 4), ToolWindow.PanelColor);
+            ToolWindow.Fill(new Rect(4, y - 2, 2, RowHeight + 4), ToolWindow.AccentColor);
+            Color previous = GUI.contentColor;
+            GUI.contentColor = ToolWindow.AccentColor;
+            GUI.Label(new Rect(12, y, 86, RowHeight), "CURRENT", S.Label);
+            GUI.contentColor = previous;
         }
 
         // Inside the scroll view.
