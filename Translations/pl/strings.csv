@@ -1954,3 +1954,9 @@ d8f9dfaea2d00f89,UI,,,UI,Ekran modów
 6ad27bd4ec33b079,UI,,,UI,Migawka
 6aac1c42e81bfc11,UI,,,UI,Każda klatka
 804bf37820856b9e,UI,,,UI,"Kładzie rozmyty obraz gry za listą i szczegółami, jak matowe szkło. Migawka robi obraz na nowo co 0,2 sekundy. Każda klatka robi go w każdej klatce, więc szkło rusza się razem z grą, kosztem trochę większej pracy karty graficznej. Wył. zostawia tylko ciemne, półprzezroczyste panele. Jeśli obrazu nie da się zrobić, panele wyglądają jak przy Wył., a dziennik mówi dlaczego."
+b92aac75152ab328,UI,,,UI,Ten sam klawisz co
+8ba391628be0d7e1,UI,,,UI,Nie przyjęto
+2500ecd4097d27aa,UI,,,UI,Ile razy przeładowano w tej sesji
+2f7d5fa49a67f87b,UI,,,UI,"To, co teraz działa, nie jest plikiem wczytanym przez BepInEx."
+c3db47aff1d7221d,UI,,,UI,Oba na niego zareagują.
+0afead460dc30929,UI,,,UI,Wszystkie na niego zareagują.

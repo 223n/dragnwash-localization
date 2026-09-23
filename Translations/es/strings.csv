@@ -1952,3 +1952,9 @@ d8f9dfaea2d00f89,UI,,,UI,Pantalla de mods
 6ad27bd4ec33b079,UI,,,UI,Instantánea
 6aac1c42e81bfc11,UI,,,UI,Cada fotograma
 804bf37820856b9e,UI,,,UI,"Pone una imagen borrosa del juego detrás de la lista y los detalles, como vidrio esmerilado. Instantánea vuelve a tomar la imagen cada 0,2 segundos. Cada fotograma la toma en cada fotograma, así que el vidrio se mueve con el juego, con un poco más de trabajo para la tarjeta gráfica. Desactivado deja solo los paneles oscuros semitransparentes. Si no se puede hacer la imagen, los paneles se ven como con Desactivado, y el registro dice por qué."
+b92aac75152ab328,UI,,,UI,Misma tecla que
+8ba391628be0d7e1,UI,,,UI,No aceptado
+2500ecd4097d27aa,UI,,,UI,Veces recargado en esta sesión
+2f7d5fa49a67f87b,UI,,,UI,Lo que se ejecuta ahora no es el archivo que cargó BepInEx.
+c3db47aff1d7221d,UI,,,UI,Los dos responderán.
+0afead460dc30929,UI,,,UI,Todos responderán.

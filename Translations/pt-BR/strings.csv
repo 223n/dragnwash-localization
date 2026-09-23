@@ -1956,3 +1956,9 @@ d8f9dfaea2d00f89,UI,,,UI,Tela de mods
 6ad27bd4ec33b079,UI,,,UI,Instantâneo
 6aac1c42e81bfc11,UI,,,UI,Todo quadro
 804bf37820856b9e,UI,,,UI,"Coloca uma imagem desfocada do jogo atrás da lista e dos detalhes, como vidro fosco. Instantâneo tira a imagem de novo a cada 0,2 segundo. Todo quadro tira em todo quadro, então o vidro se mexe com o jogo, com um pouco mais de trabalho para a placa de vídeo. Desligado deixa só os painéis escuros semitransparentes. Se a imagem não puder ser feita, os painéis ficam como em Desligado, e o log diz por quê."
+b92aac75152ab328,UI,,,UI,Mesma tecla que
+8ba391628be0d7e1,UI,,,UI,Não aceito
+2500ecd4097d27aa,UI,,,UI,Vezes recarregado nesta sessão
+2f7d5fa49a67f87b,UI,,,UI,O que roda agora não é o arquivo que o BepInEx carregou.
+c3db47aff1d7221d,UI,,,UI,Os dois vão responder.
+0afead460dc30929,UI,,,UI,Todos vão responder.

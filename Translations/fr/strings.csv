@@ -1952,3 +1952,9 @@ d8f9dfaea2d00f89,UI,,,UI,Écran des mods
 6ad27bd4ec33b079,UI,,,UI,Instantané
 6aac1c42e81bfc11,UI,,,UI,Chaque image
 804bf37820856b9e,UI,,,UI,"Place une image floue du jeu derrière la liste et les détails, comme du verre dépoli. Instantané reprend l'image toutes les 0,2 secondes. Chaque image la reprend à chaque image, donc le verre bouge avec le jeu, pour un peu plus de travail de la carte graphique. Désactivé ne laisse que les panneaux sombres translucides. Si l'image ne peut pas être faite, les panneaux ont l'air comme avec Désactivé, et le journal dit pourquoi."
+b92aac75152ab328,UI,,,UI,Même touche que
+8ba391628be0d7e1,UI,,,UI,Non accepté
+2500ecd4097d27aa,UI,,,UI,Rechargements pendant cette session
+2f7d5fa49a67f87b,UI,,,UI,Ce qui tourne maintenant n'est pas le fichier chargé par BepInEx.
+c3db47aff1d7221d,UI,,,UI,Les deux y répondront.
+0afead460dc30929,UI,,,UI,Tous y répondront.

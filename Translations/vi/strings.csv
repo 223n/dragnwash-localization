@@ -1991,3 +1991,9 @@ d8f9dfaea2d00f89,UI,,,UI,Màn hình mod
 6ad27bd4ec33b079,UI,,,UI,Chụp nhanh
 6aac1c42e81bfc11,UI,,,UI,Mỗi khung hình
 804bf37820856b9e,UI,,,UI,"Đặt một hình mờ của trò chơi phía sau danh sách và phần chi tiết, giống như kính mờ. Chụp nhanh chụp lại hình mỗi 0,2 giây. Mỗi khung hình chụp ở từng khung hình, nên kính chuyển động theo trò chơi, card đồ họa phải làm thêm một chút. Tắt chỉ để lại các bảng tối nửa trong suốt. Nếu không tạo được hình, các bảng trông như khi Tắt, và nhật ký sẽ ghi lý do."
+b92aac75152ab328,UI,,,UI,Cùng phím với
+8ba391628be0d7e1,UI,,,UI,Không được chấp nhận
+2500ecd4097d27aa,UI,,,UI,Số lần tải lại trong lần chạy này
+2f7d5fa49a67f87b,UI,,,UI,Thứ đang chạy bây giờ không phải là tệp BepInEx đã tải.
+c3db47aff1d7221d,UI,,,UI,Cả hai sẽ phản hồi phím này.
+0afead460dc30929,UI,,,UI,Tất cả sẽ phản hồi phím này.

@@ -1957,3 +1957,9 @@ d8f9dfaea2d00f89,UI,,,UI,Mods-Bildschirm
 6ad27bd4ec33b079,UI,,,UI,Schnappschuss
 6aac1c42e81bfc11,UI,,,UI,Jedes Bild
 804bf37820856b9e,UI,,,UI,"Legt ein unscharfes Bild des Spiels hinter die Liste und die Details, wie Milchglas. Schnappschuss nimmt das Bild alle 0,2 Sekunden neu auf. Jedes Bild nimmt es in jedem Frame auf, sodass sich das Glas mit dem Spiel bewegt, bei etwas mehr Arbeit für die Grafikkarte. Aus lässt nur die dunklen, durchscheinenden Flächen. Wenn das Bild nicht erstellt werden kann, sehen die Flächen aus wie bei Aus, und das Log sagt, warum."
+b92aac75152ab328,UI,,,UI,Gleiche Taste wie
+8ba391628be0d7e1,UI,,,UI,Nicht angenommen
+2500ecd4097d27aa,UI,,,UI,Wie oft in dieser Sitzung neu geladen
+2f7d5fa49a67f87b,UI,,,UI,"Was jetzt läuft, ist nicht die Datei, die BepInEx geladen hat."
+c3db47aff1d7221d,UI,,,UI,Beide reagieren darauf.
+0afead460dc30929,UI,,,UI,Alle reagieren darauf.
