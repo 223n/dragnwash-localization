@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using DragNWash.ModFramework.ToolWindow;
 
@@ -88,7 +89,14 @@ namespace DragNWashLocalization
                 "Game", $"Unity {Application.unityVersion}",
                 "Graphics", SystemInfo.graphicsDeviceType.ToString(),
                 "Platform", Application.platform.ToString());
-            AboutText($"Plugin folder: {PluginDirectory}");
+            AboutText(ToolWindow.Drawable($"Plugin folder: {PluginDirectory}"));
+            _aboutY += 2;
+            if (GUI.Button(new Rect(12, _aboutY, 220, RowHeight), "Copy for a bug report", S.Button))
+            {
+                GUIUtility.systemCopyBuffer = BugReportText();
+                ToolWindow.ShowNotice("Copied. Paste it into your report.");
+            }
+            _aboutY += RowHeight;
 
             _aboutHeight = _aboutY + 16;
             GUI.EndScrollView();
@@ -554,6 +562,54 @@ namespace DragNWashLocalization
             LocaleCredit credit = _localeCredits.TryGetValue(locale, out LocaleCredit c) ? c : new LocaleCredit();
             LocaleStatus(credit.Status, out string _, out Color _, out int rank);
             return rank;
+        }
+
+        // What a bug report needs to say about this install, a few lines to
+        // paste. The folder is shown in full on screen (it is the player's own
+        // PC), but the copy hides the user name in it: that is often a real
+        // name, and the text is meant to be posted in public.
+        private string BugReportText()
+        {
+            string build = BuildId();
+            var text = new StringBuilder();
+            text.Append("Drag'n Wash Localization ").Append(PluginVersion);
+            if (!string.IsNullOrEmpty(build))
+            {
+                text.Append(" (build ").Append(build).Append(')');
+            }
+            text.Append('\n');
+            text.Append("ModFramework core ").Append(DragNWash.ModFramework.ModFramework.Version).Append('\n');
+            text.Append($"Language {TargetLocale.Value}, {TranslationStore.EntryCount} lines loaded, {LineResolution.ReviewCount} to review\n");
+            text.Append($"Unity {Application.unityVersion}, {SystemInfo.graphicsDeviceType}, {Application.platform}\n");
+            text.Append("Plugin folder: ").Append(WithoutUserName(PluginDirectory));
+            return text.ToString();
+        }
+
+        // The user's own folder becomes %USERPROFILE%; any other ...\Users\<name>
+        // or /home/<name> left in the path (a Steam library elsewhere, Proton's
+        // Z: drive on Steam Deck) becomes <user>.
+        private static readonly Regex UserFolder = new Regex(@"([\\/](?:users|home)[\\/])[^\\/]+", RegexOptions.IgnoreCase);
+
+        private static string WithoutUserName(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                return "";
+            }
+            try
+            {
+                string home = (Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) ?? "").TrimEnd('\\', '/');
+                if (home.Length > 3 && path.StartsWith(home, StringComparison.OrdinalIgnoreCase) &&
+                    (path.Length == home.Length || path[home.Length] == '\\' || path[home.Length] == '/'))
+                {
+                    path = "%USERPROFILE%" + path.Substring(home.Length);
+                }
+            }
+            catch (Exception)
+            {
+                // No profile folder to name; the pattern below still applies.
+            }
+            return UserFolder.Replace(path, "$1<user>");
         }
 
         // A heading in the accent colour with a thin line under it, so it does
