@@ -292,7 +292,9 @@ namespace DragNWashLocalization
             // them from the text instead of assuming one line.
             var headingText = new GUIContent(flagsOpen
                 ? $"EVENT FLAGS  ({GameSaves.ShortName(_savesSlot)}, {_savesFlags.Count} set)"
-                : $"HISTORY  ({Count(_savesList.Count, "snapshot")}, newest first)");
+                : _savesList.Count >= GameSaves.Keep
+                    ? $"HISTORY  ({_savesList.Count} of {GameSaves.Keep} kept, the oldest drops off next)"
+                    : $"HISTORY  ({_savesList.Count} of {GameSaves.Keep} kept, newest first)");
             float headingHeight = S.Label.CalcHeight(headingText, innerWidth);
             GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, headingHeight), headingText, S.Label);
             y += headingHeight + 6;
@@ -306,8 +308,8 @@ namespace DragNWashLocalization
 
             var footerText = new GUIContent(flagsOpen
                 ? (edits == 0 ? "Click a value to change it. Nothing is written until you press Apply."
-                    : edits == 1 ? "Apply writes it. The save before it is kept as a snapshot."
-                    : $"Apply writes all {edits} in one go. The save before it is kept as one snapshot.")
+                    : edits == 1 ? "Apply writes it. The save before it is kept as a snapshot." + OldestDropsOff()
+                    : $"Apply writes all {edits} in one go. The save before it is kept as one snapshot." + OldestDropsOff())
                 : "A snapshot is taken every time the game writes the save. After a restore, go to the title screen and load the slot. Saving in game writes over it again.");
             float footerHeight = S.MutedLabel.CalcHeight(footerText, innerWidth);
             // The footer sits at the bottom; in a window too short for it, it
@@ -602,7 +604,7 @@ namespace DragNWashLocalization
                 var undoRect = undoOnFirst
                     ? new Rect(undoX, area.y + y, undoWidth, RowHeight)
                     : new Rect(switchX + historyWidth + 8 + flagsWidth + 8, area.y + switchY, undoWidth, RowHeight);
-                ToolWindow.Hint(undoRect, $"Puts back {When(_undoSnapshot)} (level {_undoSnapshot.Level}), the save from just before this change.");
+                ToolWindow.Hint(undoRect, $"Puts back {When(_undoSnapshot)} (level {_undoSnapshot.Level}), the save from just before this change." + OldestDropsOff());
                 if (GUI.Button(undoRect, "Undo last change", S.Button))
                 {
                     // A restore like the History's: the save it replaces is
@@ -633,7 +635,7 @@ namespace DragNWashLocalization
             {
                 if (ToolWindow.Confirm(new Rect(area.x + 12, area.y + y, innerWidth, RowHeight), ConfirmLevelAhead,
                     $"Jump ahead to level {_editLevel}? It may spoil what you haven't seen.", "Yes, jump ahead",
-                    $"Yes sets {GameSaves.ShortName(_savesSlot)} to level {_editLevel}; the save now is kept, and Undo last change puts it back. Cancel or 5 s leaves it. Esc = Cancel."))
+                    $"Yes sets {GameSaves.ShortName(_savesSlot)} to level {_editLevel}; the save now is kept, and Undo last change puts it back." + OldestDropsOff() + " Cancel or 5 s leaves it. Esc = Cancel."))
                 {
                     RunSaveEdit(_savesSlot, () => GameSaves.SetLevel(PluginGuid, _savesSlot, _editLevel));
                 }
@@ -713,7 +715,7 @@ namespace DragNWashLocalization
                 var restoreRect = new Rect(innerWidth - 12 - restoreWidth, y, restoreWidth, RowHeight);
                 if (!isCurrent)
                 {
-                    ToolWindow.Hint(restoreRect, $"Puts {When(s)} (level {s.Level}) back as {GameSaves.ShortName(_savesSlot)}'s save. The save it replaces is kept.");
+                    ToolWindow.Hint(restoreRect, $"Puts {When(s)} (level {s.Level}) back as {GameSaves.ShortName(_savesSlot)}'s save. The save it replaces is kept." + OldestDropsOff());
                 }
                 if (!isCurrent && GUI.Button(restoreRect, "Restore", S.Button))
                 {
@@ -734,6 +736,18 @@ namespace DragNWashLocalization
             GUI.contentColor = ToolWindow.AccentColor;
             GUI.Label(new Rect(12, y, 76, RowHeight), "CURRENT", S.Tag);
             GUI.contentColor = previous;
+        }
+
+        // Said wherever a change is about to be made: with the history full, the
+        // snapshot of the save as it is now pushes the oldest one out. None is
+        // taken when the newest snapshot already holds the save.
+        private string OldestDropsOff()
+        {
+            if (_savesList.Count == 0 || _savesList.Count < GameSaves.Keep || _currentIndex == 0)
+            {
+                return "";
+            }
+            return $" The oldest snapshot ({When(_savesList[_savesList.Count - 1])}) drops off to make room.";
         }
 
         // "13:20:40" for today, the date as well for another day.
@@ -785,7 +799,7 @@ namespace DragNWashLocalization
                 int pending = FlagEditCount(_savesSlot);
                 if (ToolWindow.Confirm(new Rect(12, fy, innerWidth - 24, RowHeight), ConfirmResetFlags,
                     $"Set all {_savesFlags.Count} flags to false? The level is kept.", "Yes, reset",
-                    $"Yes sets every flag in {GameSaves.ShortName(_savesSlot)} to false; the save now is kept, and Undo last change puts it back." +
+                    $"Yes sets every flag in {GameSaves.ShortName(_savesSlot)} to false; the save now is kept, and Undo last change puts it back." + OldestDropsOff() +
                     (pending > 0 ? $" The {Count(pending, "change")} not written yet go." : "") + " Cancel or 5 s leaves it. Esc = Cancel."))
                 {
                     var all = new List<KeyValuePair<string, bool>>();
