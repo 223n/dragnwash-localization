@@ -148,17 +148,17 @@ namespace DragNWashLocalization
                 }
                 int total = changed + added + removed;
                 if (total > MaxDiffLines) Plugin.Log($"[reload] ... and {total - MaxDiffLines} more");
-                Plugin.Log($"[reload] {locale}: {changed} changed, {added} added, {removed} removed ({TranslationStore.EntryCount} entries). Applied to text on screen.");
+                Plugin.Log($"[reload] {locale}: {changed} changed, {added} added, {removed} removed ({TranslationStore.EntryCount} entries). Applied to text on screen.", LogKind.Result);
             }
             catch (IOException ex)
             {
                 // Still being written; the next poll will see a newer time.
                 foreach (Watched w in Files) w.LastSeen = DateTime.MinValue;
-                Plugin.Log($"[reload] File busy, will retry: {ex.Message}");
+                Plugin.Log($"[reload] File busy, will retry: {ex.Message}", LogKind.Warning);
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[reload] Failed to reload translations: {ex.Message}");
+                Plugin.Log($"[reload] Failed to reload translations: {ex.Message}", LogKind.Error);
             }
         }
 

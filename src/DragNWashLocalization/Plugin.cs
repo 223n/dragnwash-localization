@@ -43,11 +43,6 @@ namespace DragNWashLocalization
         public const string PluginName = "DragNWashLocalization";
         public const string PluginVersion = "1.4.0";
 
-        // Every visible line costs dynamic geometry each frame the window is
-        // open, and that scratch memory is what the Direct3D 12 bug chokes on at
-        // present time.
-        private const int MaxLogLines = 100;
-
         internal static ConfigEntry<string> TargetLocale;
         internal static ConfigEntry<int> FlagPanelDebug;
         internal static ConfigEntry<bool> PreloadAllLocales;
@@ -62,46 +57,8 @@ namespace DragNWashLocalization
         internal static string PluginDirectory;
 
         private static Plugin _instance;
-        private static readonly List<string> LogBuffer = new List<string>();
-        private static string _lastLogMessage;
-
-        // Count alone stops changing once the buffer is full, which would freeze
-        // the rendered log. Bumped on every mutation instead.
-        private static int _logVersion;
-
-        internal static void Log(string message)
-        {
-            // Logging failures must not propagate into the game's text updates.
-            try
-            {
-                _instance?.Logger.LogInfo(message);
-
-                lock (LogBuffer)
-                {
-                    if (message == _lastLogMessage)
-                    {
-                        return;
-                    }
-                    _lastLogMessage = message;
-
-                    LogBuffer.Add(message);
-                    if (LogBuffer.Count > MaxLogLines)
-                    {
-                        LogBuffer.RemoveAt(0);
-                    }
-                    _logVersion++;
-                }
-            }
-            catch
-            {
-                // Swallow - see comment above.
-            }
-        }
-
-        private Vector2 _logScroll;
         private Vector2 _localeScroll;
         private string[] _availableLocales = Array.Empty<string>();
-        private int _lastLogVersion = -1;
 
         // The language last saved (config file), as opposed to one being
         // previewed from the Options dropdown.
@@ -293,7 +250,7 @@ namespace DragNWashLocalization
             }
             catch (MissingMethodException)
             {
-                Log("[pictures] The framework's Assets library is older than 1.2.0; translated pictures are not shown.");
+                Log("[pictures] The framework's Assets library is older than 1.2.0; translated pictures are not shown.", LogKind.Warning);
             }
             catch (Exception ex)
             {
@@ -385,11 +342,11 @@ namespace DragNWashLocalization
             {
                 SetLocaleValue(locale, save: true);
                 _committedLocale = locale;
-                Log($"Language {locale} saved from the Options screen.");
+                Log($"Language {locale} saved from the Options screen.", LogKind.Result);
             }
             catch (Exception ex)
             {
-                Log($"Could not save the language setting: {ex.Message}");
+                Log($"Could not save the language setting: {ex.Message}", LogKind.Error);
             }
         }
 
@@ -477,7 +434,7 @@ namespace DragNWashLocalization
                     {
                         Log(reloadOnly
                             ? $"[font] Other mods' translations use {unprepared} character(s) no font was prepared for at startup; restart the game to prepare them."
-                            : $"[font] {locale} was installed after startup and has {unprepared} character(s) no font was prepared for; restart the game to prepare them.");
+                            : $"[font] {locale} was installed after startup and has {unprepared} character(s) no font was prepared for; restart the game to prepare them.", LogKind.Warning);
                     }
                 }
                 TmpTextHook.RefreshAll();
@@ -489,7 +446,7 @@ namespace DragNWashLocalization
                 HotReload.Track(PluginDirectory, locale);
                 Log(reloadOnly
                     ? $"Reloaded {locale} ({(ModTranslations.Enabled ? $"with {ModTranslations.Packs.Count} other mod(s)" : "other mods' translations off")}). Loaded entries={TranslationStore.EntryCount}"
-                    : $"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}");
+                    : $"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}", LogKind.Result);
             }
 
             // Everything from here on is for translators and mod makers; a
@@ -501,7 +458,7 @@ namespace DragNWashLocalization
                 if ((DumpDialogueKey.Value.IsDown() || DumpUiTextKey.Value.IsDown()) && !_saidToolsOff)
                 {
                     _saidToolsOff = true;
-                    Log("[tools] Exports and hot reload are part of the developer tools, which are off. Turn them on in Options > Mods > Drag'n Wash ModFramework > Developer tools.");
+                    Log("[tools] Exports and hot reload are part of the developer tools, which are off. Turn them on in Options > Mods > Drag'n Wash ModFramework > Developer tools.", LogKind.Warning);
                 }
                 return;
             }
@@ -541,7 +498,8 @@ namespace DragNWashLocalization
             if (_pendingWorkingCopy)
             {
                 _pendingWorkingCopy = false;
-                Log(WorkingCopy.Export(PluginDirectory, TargetLocale.Value));
+                string exported = WorkingCopy.Export(PluginDirectory, TargetLocale.Value, out LogKind exportKind);
+                Log(exported, exportKind);
             }
 
             if (_pendingHashFile)
@@ -549,13 +507,14 @@ namespace DragNWashLocalization
                 _pendingHashFile = false;
                 // Rewrites the file; hot reload then re-reads it, which is a
                 // no-op for the table since every row resolves to the same key.
-                Log(TranslationStore.HashFileInPlace(PluginDirectory, TargetLocale.Value));
+                string hashed = TranslationStore.HashFileInPlace(PluginDirectory, TargetLocale.Value, out LogKind hashKind);
+                Log(hashed, hashKind);
             }
 
             if (_pendingFlowDump)
             {
                 _pendingFlowDump = false;
-                Log(FlowDumper.Export(PluginDirectory));
+                Log(FlowDumper.Export(PluginDirectory), LogKind.Result);
             }
 
             if (_pendingLayoutCheck)
@@ -596,7 +555,5 @@ namespace DragNWashLocalization
                 IgnoreRules.AddExact(LocaleDisplayName(locale));
             }
         }
-
-        private string _logText = string.Empty;
     }
 }

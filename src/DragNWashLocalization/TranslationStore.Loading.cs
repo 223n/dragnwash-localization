@@ -99,7 +99,7 @@ namespace DragNWashLocalization
 
                     if (badKeys > 0)
                     {
-                        Plugin.Log($"[load] {badKeys} row(s) in {label} were skipped: {string.Join("; ", examples)}{(badKeys > examples.Count ? "; ..." : "")}");
+                        Plugin.Log($"[load] {badKeys} row(s) in {label} were skipped: {string.Join("; ", examples)}{(badKeys > examples.Count ? "; ..." : "")}", LogKind.Warning);
                     }
                 }
             }
@@ -107,7 +107,7 @@ namespace DragNWashLocalization
             {
                 // Typically a sharing violation from an editor holding the file
                 // exclusively. Keep going with whatever else loaded.
-                Plugin.Log($"[load] Could not read {label}: {ex.Message}. Close the program holding it and save the file again to hot reload.");
+                Plugin.Log($"[load] Could not read {label}: {ex.Message}. Close the program holding it and save the file again to hot reload.", LogKind.Error);
             }
         }
 
@@ -129,7 +129,7 @@ namespace DragNWashLocalization
                 if (size > ModTranslations.MaxFileBytes)
                 {
                     pack.Problem = $"larger than {ModTranslations.MaxFileBytes / (1024 * 1024)} MB, not read";
-                    Plugin.Log($"[mods] {label} is {size / 1024} KB, larger than {ModTranslations.MaxFileBytes / (1024 * 1024)} MB; not read.");
+                    Plugin.Log($"[mods] {label} is {size / 1024} KB, larger than {ModTranslations.MaxFileBytes / (1024 * 1024)} MB; not read.", LogKind.Warning);
                     ModTranslations.NoteLoaded(pack);
                     return;
                 }
@@ -149,7 +149,7 @@ namespace DragNWashLocalization
                     if (pack.Rows >= ModTranslations.MaxRowsPerMod)
                     {
                         pack.Problem = $"only the first {ModTranslations.MaxRowsPerMod} rows read";
-                        Plugin.Log($"[mods] {label}: only the first {ModTranslations.MaxRowsPerMod} rows are read.");
+                        Plugin.Log($"[mods] {label}: only the first {ModTranslations.MaxRowsPerMod} rows are read.", LogKind.Warning);
                         break;
                     }
                     Dictionary<string, string> table = TranslationKey.LooksLikeLineId(key) ? ByLineId : ByKey;
@@ -161,7 +161,7 @@ namespace DragNWashLocalization
                             ModTranslations.NoteConflict(pack, key, other, existing, translation);
                             if (logged++ < MaxConflictsLogged)
                             {
-                                Plugin.Log($"[mods] Conflict: {pack.Name} translates \"{DescribeKey(key)}\" as \"{translation}\", {other} as \"{existing}\"; {other}'s is kept.");
+                                Plugin.Log($"[mods] Conflict: {pack.Name} translates \"{DescribeKey(key)}\" as \"{translation}\", {other} as \"{existing}\"; {other}'s is kept.", LogKind.Warning);
                             }
                         }
                         continue;
@@ -176,14 +176,14 @@ namespace DragNWashLocalization
                 }
                 if (badKeys > 0)
                 {
-                    Plugin.Log($"[mods] {badKeys} row(s) in {label} were skipped: not a key, a line ID or English.");
+                    Plugin.Log($"[mods] {badKeys} row(s) in {label} were skipped: not a key, a line ID or English.", LogKind.Warning);
                 }
                 Plugin.Log($"[mods] {label}: {pack.Rows} line(s){(pack.Conflicts > 0 ? $", {pack.Conflicts} conflict(s) left out" : "")}.");
             }
             catch (Exception ex)
             {
                 pack.Problem = "could not be read: " + ex.Message;
-                Plugin.Log($"[mods] Could not read {label}: {ex.Message}. That file is skipped; nothing else is affected.");
+                Plugin.Log($"[mods] Could not read {label}: {ex.Message}. That file is skipped; nothing else is affected.", LogKind.Error);
             }
             ModTranslations.NoteLoaded(pack);
         }

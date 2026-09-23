@@ -298,7 +298,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[order] Could not read {path}: {ex.Message}");
+                Plugin.Log($"[order] Could not read {path}: {ex.Message}", LogKind.Error);
                 return null;
             }
             _cached = data;

@@ -114,7 +114,7 @@ namespace DragNWashLocalization
                 }
                 Reviews[id] = new Review { LineId = entry.LineId, Node = entry.Node, Speaker = entry.Speaker, Key = entry.Key, Layer = layer };
             }
-            Plugin.Log($"[review] {id} ({entry.Node}, {entry.Speaker}) matched by {layer}: its English changed, check the translation.");
+            Plugin.Log($"[review] {id} ({entry.Node}, {entry.Speaker}) matched by {layer}: its English changed, check the translation.", LogKind.Warning);
         }
     }
 }

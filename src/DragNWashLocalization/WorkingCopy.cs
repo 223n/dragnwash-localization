@@ -50,8 +50,10 @@ namespace DragNWashLocalization
             return TranslationKey.LooksLikeKey(lowered) ? lowered : key;
         }
 
-        public static string Export(string pluginDirectory, string locale)
+        // The kind is Error when the file could not be written.
+        public static string Export(string pluginDirectory, string locale, out LogKind kind)
         {
+            kind = LogKind.Result;
             try
             {
                 string localeDir = Path.Combine(pluginDirectory, "Translations", locale);
@@ -307,6 +309,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
+                kind = LogKind.Error;
                 return $"[working] Failed: {ex.Message}";
             }
         }

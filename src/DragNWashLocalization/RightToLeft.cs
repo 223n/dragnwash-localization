@@ -59,7 +59,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[rtl] Could not set the text direction: {ex.Message}");
+                Plugin.Log($"[rtl] Could not set the text direction: {ex.Message}", LogKind.Error);
             }
         }
 

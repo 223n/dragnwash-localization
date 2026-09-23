@@ -176,11 +176,6 @@ namespace DragNWashLocalization
             _toolTabs.Clear();
         }
 
-        private bool _followLog = true;
-        private bool _logNeedsScroll;
-        private float _logContentHeight;
-        private float _logContentWidth = -1;
-
         // The language and entry count above the translation tabs.
         private void DrawWithStatus(Rect area, Action<Rect> draw)
         {
@@ -306,82 +301,6 @@ namespace DragNWashLocalization
             {
                 return string.Empty;
             }
-        }
-
-        private void DrawActivityLog(Rect area)
-        {
-            if (GUI.Button(new Rect(area.x, area.y, 122, RowHeight), _followLog ? "Follow: ON" : "Follow: OFF",
-                _followLog ? S.SelectedButton : S.Button))
-            {
-                _followLog = !_followLog;
-                _logNeedsScroll = _followLog;
-            }
-            if (GUI.Button(new Rect(area.x + 130, area.y, 110, RowHeight), "Clear log", S.Button))
-            {
-                lock (LogBuffer)
-                {
-                    LogBuffer.Clear();
-                    _lastLogMessage = null;
-                    _logVersion++;
-                }
-                TranslationStore.ResetAppliedOnceTracking();
-                _logScroll = Vector2.zero;
-                ToolWindow.ShowNotice("Log cleared.");
-            }
-
-            bool changed = false;
-            int count;
-            lock (LogBuffer)
-            {
-                count = LogBuffer.Count;
-                if (_lastLogVersion != _logVersion)
-                {
-                    _lastLogVersion = _logVersion;
-                    // Log lines carry text the mod did not choose: another mod's
-                    // translation read after startup, symbols in the game's own
-                    // English. Drawing a character the window font has not
-                    // prepared uploads its atlas mid-frame, which is the
-                    // Direct3D 12 crash; Drawable shows those as '?' instead.
-                    _logText = ToolWindow.Drawable(string.Join("\n", LogBuffer.ToArray()));
-                    changed = true;
-                }
-            }
-
-            var viewport = new Rect(area.x, area.y + 40, area.width, Mathf.Max(20, area.height - 40));
-            ToolWindow.Fill(viewport, ToolWindow.InsetColor);
-            float contentWidth = Mathf.Max(40, viewport.width - 24);
-            if (changed || !Mathf.Approximately(_logContentWidth, contentWidth))
-            {
-                _logContentWidth = contentWidth;
-                _logContentHeight = string.IsNullOrEmpty(_logText) ? 0 :
-                    S.LogLabel.CalcHeight(new GUIContent(_logText), contentWidth);
-                if (_followLog) _logNeedsScroll = true;
-            }
-
-            Event current = Event.current;
-            if (viewport.Contains(current.mousePosition) &&
-                (current.type == EventType.ScrollWheel ||
-                 (current.type == EventType.MouseDown && current.mousePosition.x >= viewport.xMax - 20)))
-            {
-                _followLog = false;
-                _logNeedsScroll = false;
-            }
-            float maxScroll = Mathf.Max(0, _logContentHeight - viewport.height);
-            _logScroll.y = _logNeedsScroll ? maxScroll : Mathf.Clamp(_logScroll.y, 0, maxScroll);
-            _logNeedsScroll = false;
-
-            if (ToolWindow.ApplyScroll(viewport, ref _logScroll)) { _followLog = false; _logNeedsScroll = false; }
-            _logScroll = GUI.BeginScrollView(viewport, _logScroll,
-                new Rect(0, 0, contentWidth, Mathf.Max(viewport.height - 1, _logContentHeight)), false, true);
-            if (count == 0)
-                GUI.Label(new Rect(12, 12, contentWidth - 24, 64),
-                    "No activity yet.\nOpen a game menu or dialogue to capture text.", S.WrappedLabel);
-            else
-                GUI.Label(new Rect(0, 0, contentWidth, _logContentHeight), _logText, S.LogLabel);
-            GUI.EndScrollView();
-
-            GUI.Label(new Rect(area.x + 250, area.y, Mathf.Max(0, area.width - 250), RowHeight),
-                $"{count} / {MaxLogLines}", S.MutedLabel);
         }
 
         private void DrawTools(Rect area)

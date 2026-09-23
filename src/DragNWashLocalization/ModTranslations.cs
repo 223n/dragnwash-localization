@@ -155,13 +155,13 @@ namespace DragNWashLocalization
                     if (Directory.Exists(Path.Combine(pluginDirectory, "Translations", locale))) continue;
                     if (SaidUnknown.Add(mod + "|" + locale))
                     {
-                        Plugin.Log($"[mods] {mod}: Translations/{locale} is skipped; Drag'n Wash Localization has no {locale} pack. Add the language here first.");
+                        Plugin.Log($"[mods] {mod}: Translations/{locale} is skipped; Drag'n Wash Localization has no {locale} pack. Add the language here first.", LogKind.Warning);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[mods] {mod}: could not list its Translations folder: {ex.Message}");
+                Plugin.Log($"[mods] {mod}: could not list its Translations folder: {ex.Message}", LogKind.Error);
             }
         }
 
