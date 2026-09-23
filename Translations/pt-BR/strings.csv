@@ -1951,3 +1951,8 @@ b5c120b316c237a0,UI,,,UI,Salvo
 c0d5bf6b1b7403fc,UI,,,UI,Mostrar configurações avançadas
 8c0d6671eddcace2,UI,,,UI,Vale depois de reiniciar o jogo.
 dc670595f5b3640c,UI,,,UI,Recarregado
+5c3d37b67aa6aa8e,UI,,,UI,Vidro fosco
+d8f9dfaea2d00f89,UI,,,UI,Tela de mods
+6ad27bd4ec33b079,UI,,,UI,Instantâneo
+6aac1c42e81bfc11,UI,,,UI,Todo quadro
+804bf37820856b9e,UI,,,UI,"Coloca uma imagem desfocada do jogo atrás da lista e dos detalhes, como vidro fosco. Instantâneo tira a imagem de novo a cada 0,2 segundo. Todo quadro tira em todo quadro, então o vidro se mexe com o jogo, com um pouco mais de trabalho para a placa de vídeo. Desligado deixa só os painéis escuros semitransparentes. Se a imagem não puder ser feita, os painéis ficam como em Desligado, e o log diz por quê."

@@ -1949,3 +1949,8 @@ b5c120b316c237a0,UI,,,UI,Zapisano
 c0d5bf6b1b7403fc,UI,,,UI,Pokaż ustawienia zaawansowane
 8c0d6671eddcace2,UI,,,UI,Zadziała po ponownym uruchomieniu gry.
 dc670595f5b3640c,UI,,,UI,Przeładowany
+5c3d37b67aa6aa8e,UI,,,UI,Matowe szkło
+d8f9dfaea2d00f89,UI,,,UI,Ekran modów
+6ad27bd4ec33b079,UI,,,UI,Migawka
+6aac1c42e81bfc11,UI,,,UI,Każda klatka
+804bf37820856b9e,UI,,,UI,"Kładzie rozmyty obraz gry za listą i szczegółami, jak matowe szkło. Migawka robi obraz na nowo co 0,2 sekundy. Każda klatka robi go w każdej klatce, więc szkło rusza się razem z grą, kosztem trochę większej pracy karty graficznej. Wył. zostawia tylko ciemne, półprzezroczyste panele. Jeśli obrazu nie da się zrobić, panele wyglądają jak przy Wył., a dziennik mówi dlaczego."

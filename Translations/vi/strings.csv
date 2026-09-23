@@ -1986,3 +1986,8 @@ b5c120b316c237a0,UI,,,UI,Đã lưu
 c0d5bf6b1b7403fc,UI,,,UI,Hiện cài đặt nâng cao
 8c0d6671eddcace2,UI,,,UI,Có hiệu lực sau khi khởi động lại trò chơi.
 dc670595f5b3640c,UI,,,UI,Đã tải lại
+5c3d37b67aa6aa8e,UI,,,UI,Kính mờ
+d8f9dfaea2d00f89,UI,,,UI,Màn hình mod
+6ad27bd4ec33b079,UI,,,UI,Chụp nhanh
+6aac1c42e81bfc11,UI,,,UI,Mỗi khung hình
+804bf37820856b9e,UI,,,UI,"Đặt một hình mờ của trò chơi phía sau danh sách và phần chi tiết, giống như kính mờ. Chụp nhanh chụp lại hình mỗi 0,2 giây. Mỗi khung hình chụp ở từng khung hình, nên kính chuyển động theo trò chơi, card đồ họa phải làm thêm một chút. Tắt chỉ để lại các bảng tối nửa trong suốt. Nếu không tạo được hình, các bảng trông như khi Tắt, và nhật ký sẽ ghi lý do."

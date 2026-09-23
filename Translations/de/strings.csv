@@ -1952,3 +1952,8 @@ b5c120b316c237a0,UI,,,UI,Gespeichert
 c0d5bf6b1b7403fc,UI,,,UI,Erweiterte Einstellungen anzeigen
 8c0d6671eddcace2,UI,,,UI,Wirkt nach einem Neustart des Spiels.
 dc670595f5b3640c,UI,,,UI,Neu geladen
+5c3d37b67aa6aa8e,UI,,,UI,Milchglas
+d8f9dfaea2d00f89,UI,,,UI,Mods-Bildschirm
+6ad27bd4ec33b079,UI,,,UI,Schnappschuss
+6aac1c42e81bfc11,UI,,,UI,Jedes Bild
+804bf37820856b9e,UI,,,UI,"Legt ein unscharfes Bild des Spiels hinter die Liste und die Details, wie Milchglas. Schnappschuss nimmt das Bild alle 0,2 Sekunden neu auf. Jedes Bild nimmt es in jedem Frame auf, sodass sich das Glas mit dem Spiel bewegt, bei etwas mehr Arbeit für die Grafikkarte. Aus lässt nur die dunklen, durchscheinenden Flächen. Wenn das Bild nicht erstellt werden kann, sehen die Flächen aus wie bei Aus, und das Log sagt, warum."

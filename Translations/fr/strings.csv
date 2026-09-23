@@ -1947,3 +1947,8 @@ b5c120b316c237a0,UI,,,UI,Enregistré
 c0d5bf6b1b7403fc,UI,,,UI,Afficher les paramètres avancés
 8c0d6671eddcace2,UI,,,UI,Prend effet après le redémarrage du jeu.
 dc670595f5b3640c,UI,,,UI,Rechargé
+5c3d37b67aa6aa8e,UI,,,UI,Verre dépoli
+d8f9dfaea2d00f89,UI,,,UI,Écran des mods
+6ad27bd4ec33b079,UI,,,UI,Instantané
+6aac1c42e81bfc11,UI,,,UI,Chaque image
+804bf37820856b9e,UI,,,UI,"Place une image floue du jeu derrière la liste et les détails, comme du verre dépoli. Instantané reprend l'image toutes les 0,2 secondes. Chaque image la reprend à chaque image, donc le verre bouge avec le jeu, pour un peu plus de travail de la carte graphique. Désactivé ne laisse que les panneaux sombres translucides. Si l'image ne peut pas être faite, les panneaux ont l'air comme avec Désactivé, et le journal dit pourquoi."

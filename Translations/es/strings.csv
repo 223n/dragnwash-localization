@@ -1947,3 +1947,8 @@ b5c120b316c237a0,UI,,,UI,Guardado
 c0d5bf6b1b7403fc,UI,,,UI,Mostrar ajustes avanzados
 8c0d6671eddcace2,UI,,,UI,Se aplica al reiniciar el juego.
 dc670595f5b3640c,UI,,,UI,Recargado
+5c3d37b67aa6aa8e,UI,,,UI,Vidrio esmerilado
+d8f9dfaea2d00f89,UI,,,UI,Pantalla de mods
+6ad27bd4ec33b079,UI,,,UI,Instantánea
+6aac1c42e81bfc11,UI,,,UI,Cada fotograma
+804bf37820856b9e,UI,,,UI,"Pone una imagen borrosa del juego detrás de la lista y los detalles, como vidrio esmerilado. Instantánea vuelve a tomar la imagen cada 0,2 segundos. Cada fotograma la toma en cada fotograma, así que el vidrio se mueve con el juego, con un poco más de trabajo para la tarjeta gráfica. Desactivado deja solo los paneles oscuros semitransparentes. Si no se puede hacer la imagen, los paneles se ven como con Desactivado, y el registro dice por qué."

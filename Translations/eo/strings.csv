@@ -1946,3 +1946,8 @@ b5c120b316c237a0,UI,,,UI,Konservita
 c0d5bf6b1b7403fc,UI,,,UI,Montri altnivelajn agordojn
 8c0d6671eddcace2,UI,,,UI,Efikas post restarto de la ludo.
 dc670595f5b3640c,UI,,,UI,Reŝargita
+5c3d37b67aa6aa8e,UI,,,UI,Frosta vitro
+d8f9dfaea2d00f89,UI,,,UI,Ekrano de modifoj
+6ad27bd4ec33b079,UI,,,UI,Momentfoto
+6aac1c42e81bfc11,UI,,,UI,Ĉiu kadro
+804bf37820856b9e,UI,,,UI,"Metas malklaran bildon de la ludo malantaŭ la listo kaj la detaloj, kiel frosta vitro. Momentfoto refaras la bildon ĉiujn 0,2 sekundojn. Ĉiu kadro faras ĝin en ĉiu kadro, do la vitro moviĝas kun la ludo, kun iom pli da laboro por la grafika karto. Malŝaltita lasas nur la malhelajn travideblajn panelojn. Se la bildo ne povas esti farita, la paneloj aspektas kiel kun Malŝaltita, kaj la protokolo diras kial."
