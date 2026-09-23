@@ -99,7 +99,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"Failed to read ignore.txt: {ex.Message}");
+                Plugin.Log($"Failed to read ignore.txt: {ex.Message}", LogKind.Error);
             }
         }
 
@@ -112,7 +112,7 @@ namespace DragNWashLocalization
             }
             catch (ArgumentException ex)
             {
-                Plugin.Log($"Skipping invalid ignore pattern from {origin}: {pattern} ({ex.Message})");
+                Plugin.Log($"Skipping invalid ignore pattern from {origin}: {pattern} ({ex.Message})", LogKind.Warning);
             }
         }
 
@@ -152,7 +152,7 @@ namespace DragNWashLocalization
                     if (!TimeoutReported[i])
                     {
                         TimeoutReported[i] = true;
-                        Plugin.Log($"Ignore pattern timed out after {MatchTimeout.TotalMilliseconds:0} ms and is treated as no match: {Patterns[i]}");
+                        Plugin.Log($"Ignore pattern timed out after {MatchTimeout.TotalMilliseconds:0} ms and is treated as no match: {Patterns[i]}", LogKind.Warning);
                     }
                 }
                 catch (Exception)

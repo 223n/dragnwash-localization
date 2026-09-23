@@ -12,8 +12,10 @@ namespace DragNWashLocalization
         // Rewrite the locale file so every row is keyed by hash and carries no
         // English. This is what makes the file safe to publish. Rows already in
         // key form pass through; a key column is added ahead of translation.
-        public static string HashFileInPlace(string pluginDirectory, string locale)
+        // The kind is Warning when there was no file to hash.
+        public static string HashFileInPlace(string pluginDirectory, string locale, out LogKind kind)
         {
+            kind = LogKind.Result;
             // Rows without a speaker column fall back to SpeakerLookup, which
             // scans every loaded object to build its table. Reset it once here
             // so the scan happens at most once for the whole file rather than
@@ -27,6 +29,7 @@ namespace DragNWashLocalization
             string input = File.Exists(working) ? working : path;
             if (!File.Exists(input))
             {
+                kind = LogKind.Warning;
                 return $"[hash] {locale}/strings.csv not found.";
             }
 

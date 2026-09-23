@@ -37,10 +37,25 @@ namespace DragNWashLocalization
 
         private static float _nextPoll;
         private static readonly List<Watched> Files = new List<Watched>();
+        private static string _trackedLocale;
+
+        // What the Translation tab shows at step 2: when the language was last
+        // read again and what changed, or why a file could not be read.
+        public static DateTime? LastReload { get; private set; }
+        public static string LastChanges { get; private set; }
+        public static string Problem { get; private set; }
 
         public static void Track(string pluginDirectory, string locale)
         {
             Files.Clear();
+            if (locale != _trackedLocale)
+            {
+                // Another language: the last reload was of the one before.
+                _trackedLocale = locale;
+                LastReload = null;
+                LastChanges = null;
+                Problem = null;
+            }
             foreach (string path in new[]
             {
                 Path.Combine(pluginDirectory, "Translations", locale, "strings.csv"),
@@ -109,11 +124,7 @@ namespace DragNWashLocalization
             {
                 // Snapshot so the log can say what actually changed, which is
                 // what a translator iterating on a line wants to see.
-                var before = new Dictionary<string, string>(StringComparer.Ordinal);
-                foreach (KeyValuePair<string, string> kv in TranslationStore.Entries)
-                {
-                    before[kv.Key] = kv.Value;
-                }
+                Dictionary<string, string> before = Snapshot();
 
                 TranslationStore.Load(pluginDirectory, locale);
                 // Any character the edit introduced would otherwise be
@@ -148,18 +159,55 @@ namespace DragNWashLocalization
                 }
                 int total = changed + added + removed;
                 if (total > MaxDiffLines) Plugin.Log($"[reload] ... and {total - MaxDiffLines} more");
-                Plugin.Log($"[reload] {locale}: {changed} changed, {added} added, {removed} removed ({TranslationStore.EntryCount} entries). Applied to text on screen.");
+                Plugin.Log($"[reload] {locale}: {changed} changed, {added} added, {removed} removed ({TranslationStore.EntryCount} entries). Applied to text on screen.", LogKind.Result);
+                Note(changed, added, removed);
             }
             catch (IOException ex)
             {
                 // Still being written; the next poll will see a newer time.
                 foreach (Watched w in Files) w.LastSeen = DateTime.MinValue;
-                Plugin.Log($"[reload] File busy, will retry: {ex.Message}");
+                Plugin.Log($"[reload] File busy, will retry: {ex.Message}", LogKind.Warning);
+                Problem = $"File busy, will retry: {ex.Message}";
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[reload] Failed to reload translations: {ex.Message}");
+                Plugin.Log($"[reload] Failed to reload translations: {ex.Message}", LogKind.Error);
+                Problem = $"Failed to reload translations: {ex.Message}";
             }
+        }
+
+        // The table as it is now, to compare with after a reload.
+        public static Dictionary<string, string> Snapshot()
+        {
+            var table = new Dictionary<string, string>(StringComparer.Ordinal);
+            foreach (KeyValuePair<string, string> kv in TranslationStore.Entries)
+            {
+                table[kv.Key] = kv.Value;
+            }
+            return table;
+        }
+
+        // A reload that did not come from the file watch ("Reload now", or the
+        // setting for other mods' translations): counted the same way, not
+        // listed line by line.
+        public static void NoteReload(Dictionary<string, string> before)
+        {
+            int changed = 0, added = 0;
+            var left = new Dictionary<string, string>(before, StringComparer.Ordinal);
+            foreach (KeyValuePair<string, string> kv in TranslationStore.Entries)
+            {
+                if (!left.TryGetValue(kv.Key, out string old)) added++;
+                else if (old != kv.Value) changed++;
+                left.Remove(kv.Key);
+            }
+            Note(changed, added, left.Count);
+        }
+
+        private static void Note(int changed, int added, int removed)
+        {
+            LastReload = DateTime.Now;
+            LastChanges = $"{changed} changed, {added} added, {removed} removed";
+            Problem = null;
         }
 
         private static DateTime SafeWriteTime(string path)

@@ -76,7 +76,7 @@ namespace DragNWashLocalization
                 }
                 catch (Exception ex)
                 {
-                    Plugin.Log($"[font] Could not read {path} for font preparation: {ex.Message}");
+                    Plugin.Log($"[font] Could not read {path} for font preparation: {ex.Message}", LogKind.Error);
                 }
                 result[name] = texts;
             }
@@ -98,7 +98,7 @@ namespace DragNWashLocalization
                     }
                     catch (Exception ex)
                     {
-                        Plugin.Log($"[font] Could not read {pack.Value} for font preparation: {ex.Message}");
+                        Plugin.Log($"[font] Could not read {pack.Value} for font preparation: {ex.Message}", LogKind.Error);
                     }
                 }
             }

@@ -7,6 +7,8 @@ obj/
 # release packaging (tools/pack.ps1)
 release/
 *.zip
+# the pinned Drag'n Wash ModFramework release, downloaded by tools/pack.ps1
+.cache/
 
 # game reference assemblies copied locally for compiling against (never commit game files)
 libs/

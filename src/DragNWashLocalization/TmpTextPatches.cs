@@ -18,7 +18,8 @@ namespace DragNWashLocalization
             _rewriter = GameText.AddRewriter(Plugin.PluginGuid, Rewrite);
             Plugin.Log(GameText.IsAvailable
                 ? "[text] Translating through Drag'n Wash ModFramework's text library."
-                : "[text] The text library is unavailable on this game build; nothing will be translated.");
+                : "[text] The text library is unavailable on this game build; nothing will be translated.",
+                GameText.IsAvailable ? LogKind.Info : LogKind.Error);
         }
 
         private static void Rewrite(TextContext context)
@@ -46,7 +47,7 @@ namespace DragNWashLocalization
                     if (Plugin.VerboseTextLog != null && Plugin.VerboseTextLog.Value &&
                         TranslationStore.IsFirstApplication(lineId + "|" + source))
                     {
-                        Plugin.Log($"[OK] {lineId} \"{source}\" -> \"{perLine}\"");
+                        Plugin.Log($"[OK] {lineId} \"{source}\" -> \"{perLine}\"", LogKind.Text);
                     }
                     return;
                 }
@@ -78,13 +79,13 @@ namespace DragNWashLocalization
                 {
                     Plugin.Log(translated
                         ? $"[OK] \"{source}\" -> \"{translation}\""
-                        : $"[--] \"{source}\"");
+                        : $"[--] \"{source}\"", LogKind.Text);
                 }
             }
             catch (Exception ex)
             {
                 // A localization failure must not prevent TMP from setting text.
-                Plugin.Log($"[text] Failed to localize text: {ex.Message}");
+                Plugin.Log($"[text] Failed to localize text: {ex.Message}", LogKind.Error);
             }
         }
 

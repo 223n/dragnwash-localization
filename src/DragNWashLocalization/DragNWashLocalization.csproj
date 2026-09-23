@@ -5,8 +5,8 @@
     <AssemblyName>DragNWashLocalization</AssemblyName>
     <LangVersion>latest</LangVersion>
     <!-- Keep in sync with Plugin.PluginVersion; the installer shows this. -->
-    <Version>1.4.0</Version>
-    <FileVersion>1.4.0</FileVersion>
+    <Version>1.5.0</Version>
+    <FileVersion>1.5.0</FileVersion>
     <Nullable>disable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RootNamespace>DragNWashLocalization</RootNamespace>
@@ -42,9 +42,9 @@
       libs/UnityEngine.TextCoreFontEngineModule.dll <- <Game>/DragNWash_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll
 
     The DragNWash.ModFramework*.dll references do not come from the game. They
-    are built from the framework's own repository and copied into libs/ by
-    tools/pack.ps1 (see the comment at the top of that script). Building this
-    project by hand needs them there too.
+    come from the published framework release named in framework-version.txt,
+    copied into libs/ by tools/pack.ps1 (see the comment at the top of that
+    script). Building this project by hand needs them there too.
 
     tools/pack.ps1 checks this same list before it builds; keep the two in step.
   -->

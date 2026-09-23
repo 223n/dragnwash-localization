@@ -1928,3 +1928,38 @@ a9043748d4bf169d,UI,,,UI,Die Verbindungsüberwachung ist aus (Mods → Drag'n Wa
 1744b96470b51bf3,UI,,,UI,Netzwerk
 fa25265454345a35,UI,,,UI,Verbindungen überwachen
 4e9ec4e264c704c6,UI,,,UI,"Hält fest, welche Mods sich mit dem Internet verbinden, und markiert im Mods-Bildschirm die, die das ohne Angabe tun. Es beobachtet nur: Nichts wird blockiert, und ein Mod kann es umgehen."
+4efca0d10c5feb8e,UI,,,UI,Info
+2a78025de6aae5e7,UI,,,UI,Auswählen
+49c266baaaa70981,UI,,,UI,Suchen
+8e5ea509893e6dfd,UI,,,UI,Tabs
+b186b72af3a9220b,UI,,,UI,Mods suchen
+a52ace420f2175d0,UI,,,UI,Alle
+c1ebc7817870e5be,UI,,,UI,Zu prüfen
+5425c8a0e9f51e45,UI,,,UI,Deine Mods
+62ef6fd92ee145d9,UI,,,UI,Bibliotheken
+039a4ba79024f646,UI,,,UI,Keine passenden Mods.
+c38e30b78746dd5d,UI,,,UI,Neustart nötig
+9b41ba20b8a3c870,UI,,,UI,Nicht geladen
+c0bf75bd78bf9572,UI,,,UI,Ändern
+735e90830151725a,UI,,,UI,Taste drücken...
+255b076dd8285543,UI,,,UI,Einstellungen suchen
+17e2e45fabbbe2d7,UI,,,UI,Keine passenden Einstellungen.
+05b2c6a1fcb6bbf8,UI,,,UI,Manche Mods übernehmen eine Änderung erst nach einem Neustart.
+ddffc64c97ab01fa,UI,,,UI,Mods werden geprüft...
+5a94893163d16669,UI,,,UI,Diese Seite konnte nicht angezeigt werden. Näheres steht in BepInEx/LogOutput.log.
+d8b8392e2c542950,UI,,,UI,Erneut versuchen
+b5c120b316c237a0,UI,,,UI,Gespeichert
+c0d5bf6b1b7403fc,UI,,,UI,Erweiterte Einstellungen anzeigen
+8c0d6671eddcace2,UI,,,UI,Wirkt nach einem Neustart des Spiels.
+dc670595f5b3640c,UI,,,UI,Neu geladen
+5c3d37b67aa6aa8e,UI,,,UI,Milchglas
+d8f9dfaea2d00f89,UI,,,UI,Mods-Bildschirm
+6ad27bd4ec33b079,UI,,,UI,Schnappschuss
+6aac1c42e81bfc11,UI,,,UI,Jedes Bild
+804bf37820856b9e,UI,,,UI,"Legt ein unscharfes Bild des Spiels hinter die Liste und die Details, wie Milchglas. Schnappschuss nimmt das Bild alle 0,2 Sekunden neu auf. Jedes Bild nimmt es in jedem Frame auf, sodass sich das Glas mit dem Spiel bewegt, bei etwas mehr Arbeit für die Grafikkarte. Aus lässt nur die dunklen, durchscheinenden Flächen. Wenn das Bild nicht erstellt werden kann, sehen die Flächen aus wie bei Aus, und das Log sagt, warum."
+b92aac75152ab328,UI,,,UI,Gleiche Taste wie
+8ba391628be0d7e1,UI,,,UI,Nicht angenommen
+2500ecd4097d27aa,UI,,,UI,Wie oft in dieser Sitzung neu geladen
+2f7d5fa49a67f87b,UI,,,UI,"Was jetzt läuft, ist nicht die Datei, die BepInEx geladen hat."
+c3db47aff1d7221d,UI,,,UI,Beide reagieren darauf.
+0afead460dc30929,UI,,,UI,Alle reagieren darauf.

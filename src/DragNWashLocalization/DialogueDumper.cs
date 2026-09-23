@@ -41,13 +41,13 @@ namespace DragNWashLocalization
 
             if (projects.Length == 0)
             {
-                Plugin.Log("[dump] No YarnProject is loaded yet. Get into a scene where dialogue can run (even without triggering a conversation) and try again.");
+                Plugin.Log("[dump] No YarnProject is loaded yet. Get into a scene where dialogue can run (even without triggering a conversation) and try again.", LogKind.Warning);
                 return;
             }
 
             if (EntriesField == null || LocalizedStringField == null)
             {
-                Plugin.Log("[dump] ERROR: the Localization layout has changed and DialogueDumper needs updating.");
+                Plugin.Log("[dump] ERROR: the Localization layout has changed and DialogueDumper needs updating.", LogKind.Error);
                 return;
             }
 
@@ -131,7 +131,7 @@ namespace DragNWashLocalization
                 }
             }
 
-            Plugin.Log($"[dump] Wrote {rows.Count} line(s): {ordered} in script order across {nodeCount} node(s), {unreferenced} not reached from any node -> {path}");
+            Plugin.Log($"[dump] Wrote {rows.Count} line(s): {ordered} in script order across {nodeCount} node(s), {unreferenced} not reached from any node -> {path}", LogKind.Result);
         }
 
         private static string FormatRow(YarnProject project, string nodeName, int order, string kind,
@@ -180,7 +180,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[dump] Could not read node names from {project.name}: {ex.Message}");
+                Plugin.Log($"[dump] Could not read node names from {project.name}: {ex.Message}", LogKind.Warning);
                 return Array.Empty<string>();
             }
         }

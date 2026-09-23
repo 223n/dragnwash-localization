@@ -186,7 +186,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[flow] {method} failed: {ex.InnerException?.Message ?? ex.Message}");
+                Plugin.Log($"[flow] {method} failed: {ex.InnerException?.Message ?? ex.Message}", LogKind.Error);
                 return null;
             }
         }

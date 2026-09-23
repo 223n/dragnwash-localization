@@ -41,7 +41,7 @@ namespace DragNWashLocalization
             {
                 // The button that gets here tells the user to watch the
                 // activity log, so this path must not be the only silent one.
-                Plugin.Log("[layout] No translations are loaded for the current language; nothing to check.");
+                Plugin.Log("[layout] No translations are loaded for the current language; nothing to check.", LogKind.Warning);
                 return;
             }
 
@@ -157,13 +157,13 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[layout] Layout check failed: {ex.Message}");
+                Plugin.Log($"[layout] Layout check failed: {ex.Message}", LogKind.Error);
                 return;
             }
 
             if (measured == 0)
             {
-                Plugin.Log("[layout] No translated text is on screen yet; open the screens you want checked first.");
+                Plugin.Log("[layout] No translated text is on screen yet; open the screens you want checked first.", LogKind.Warning);
                 return;
             }
 
@@ -186,7 +186,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[layout] Could not prepare the report folder under {pluginDirectory}: {ex.Message}");
+                Plugin.Log($"[layout] Could not prepare the report folder under {pluginDirectory}: {ex.Message}", LogKind.Error);
                 return;
             }
 
@@ -202,21 +202,21 @@ namespace DragNWashLocalization
                 {
                     // The old rows are still on disk, so do not report a clean
                     // result without saying the file disagrees with it.
-                    Plugin.Log($"[layout] {measured} translated label(s) measured, all fit, but {filePath} could not be rewritten ({error}); it still holds the previous run's rows.");
+                    Plugin.Log($"[layout] {measured} translated label(s) measured, all fit, but {filePath} could not be rewritten ({error}); it still holds the previous run's rows.", LogKind.Warning);
                     return;
                 }
 
-                Plugin.Log($"[layout] {measured} translated label(s) measured, all fit. {autoSized} auto-size (they shrink rather than overflow), {unlaidOut} not laid out yet.");
+                Plugin.Log($"[layout] {measured} translated label(s) measured, all fit. {autoSized} auto-size (they shrink rather than overflow), {unlaidOut} not laid out yet.", LogKind.Result);
                 return;
             }
 
             if (!written)
             {
-                Plugin.Log($"[layout] Could not write {filePath}: {error}");
+                Plugin.Log($"[layout] Could not write {filePath}: {error}", LogKind.Error);
                 return;
             }
 
-            Plugin.Log($"[layout] {rows.Count} of {measured} translated label(s) need a look ({autoSized} auto-size, reported as 'shrink' rather than overflow); see {filePath}");
+            Plugin.Log($"[layout] {rows.Count} of {measured} translated label(s) need a look ({autoSized} auto-size, reported as 'shrink' rather than overflow); see {filePath}", LogKind.Result);
         }
 
         // No BOM: every other CSV this mod writes is plain UTF-8, and a BOM in

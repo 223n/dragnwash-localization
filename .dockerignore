@@ -8,4 +8,5 @@
 **/libs/
 Translations/_discovered/
 release/
+.cache/
 *.zip

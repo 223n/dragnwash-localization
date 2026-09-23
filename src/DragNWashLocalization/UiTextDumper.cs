@@ -90,7 +90,7 @@ namespace DragNWashLocalization
 
                 if (rows.Count == 0)
                 {
-                    Plugin.Log("[ui] No UI text found.");
+                    Plugin.Log("[ui] No UI text found.", LogKind.Warning);
                     return;
                 }
 
@@ -110,11 +110,11 @@ namespace DragNWashLocalization
                     }
                 }
 
-                Plugin.Log($"[ui] {rows.Count} UI string(s) ({translated} already translated, {ignored} ignored) -> {path}");
+                Plugin.Log($"[ui] {rows.Count} UI string(s) ({translated} already translated, {ignored} ignored) -> {path}", LogKind.Result);
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[ui] Failed to export UI text: {ex.Message}");
+                Plugin.Log($"[ui] Failed to export UI text: {ex.Message}", LogKind.Error);
             }
         }
 

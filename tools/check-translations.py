@@ -16,6 +16,10 @@ A published Translations/<locale>/strings.csv must:
 and nothing under Translations/_discovered/ may be committed - the working
 copies there carry the game's script in plain English.
 
+Translations/<locale>/credits.txt, when there is one, starts with the pack's
+status (supervised, proofread, converted, provisional or fun); the lines after
+it name who checked the pack. The About tab in the F1 menu shows both.
+
 Translated pictures in Translations/<locale>/textures/ (docs/TRANSLATED_TEXTURES.md)
 must be PNG files of at most 4096x4096 and 8 MB, each with a row in
 textures/credits.csv (file,author,note); textures/fallback.txt may name other
@@ -166,6 +170,22 @@ def check_fallback(file: Path, locale_dir: Path) -> list:
     return problems
 
 
+CREDIT_STATUSES = ("supervised", "proofread", "converted", "provisional", "fun")
+
+
+def check_credits(file: Path) -> list:
+    """credits.txt: the status first, then one name per line ('#' lines are notes)."""
+    with open(file, encoding="utf-8-sig") as fh:
+        lines = [(i, line.strip()) for i, line in enumerate(fh, 1)]
+    lines = [(i, line) for i, line in lines if line and not line.startswith("#")]
+    if not lines:
+        return [f"{display(file)}: empty; the first line is the status ({', '.join(CREDIT_STATUSES)})"]
+    i, status = lines[0]
+    if status.lower() not in CREDIT_STATUSES:
+        return [f"{display(file)}:{i}: \"{status}\" is not a status; use one of {', '.join(CREDIT_STATUSES)}"]
+    return []
+
+
 def check_textures(textures: Path) -> list:
     problems = []
     pngs = {}
@@ -243,6 +263,9 @@ def main() -> int:
             problems.extend(check_file(strings))
         else:
             problems.append(f"{display(locale_dir)}: no strings.csv")
+        credits = locale_dir / "credits.txt"
+        if credits.exists():
+            problems.extend(check_credits(credits))
         textures = locale_dir / "textures"
         if textures.is_dir():
             problems.extend(check_textures(textures))

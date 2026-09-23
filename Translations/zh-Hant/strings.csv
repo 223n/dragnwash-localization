@@ -1944,3 +1944,38 @@ a9043748d4bf169d,UI,,,UI,連線監視已關閉（模組 → Drag'n Wash ModFrame
 1744b96470b51bf3,UI,,,UI,網路
 fa25265454345a35,UI,,,UI,監視連線
 4e9ec4e264c704c6,UI,,,UI,記錄哪些模組連上網際網路，並在模組畫面中標出未聲明就連網的模組。只做監視：不會阻擋任何連線，模組也可以繞過它。
+4efca0d10c5feb8e,UI,,,UI,簡介
+2a78025de6aae5e7,UI,,,UI,選擇
+49c266baaaa70981,UI,,,UI,搜尋
+8e5ea509893e6dfd,UI,,,UI,分頁
+b186b72af3a9220b,UI,,,UI,搜尋模組
+a52ace420f2175d0,UI,,,UI,全部
+c1ebc7817870e5be,UI,,,UI,需要注意
+5425c8a0e9f51e45,UI,,,UI,你的模組
+62ef6fd92ee145d9,UI,,,UI,函式庫
+039a4ba79024f646,UI,,,UI,沒有符合的模組。
+c38e30b78746dd5d,UI,,,UI,需重新啟動
+9b41ba20b8a3c870,UI,,,UI,未載入
+c0bf75bd78bf9572,UI,,,UI,變更
+735e90830151725a,UI,,,UI,請按一個鍵...
+255b076dd8285543,UI,,,UI,搜尋設定
+17e2e45fabbbe2d7,UI,,,UI,沒有符合的設定。
+05b2c6a1fcb6bbf8,UI,,,UI,部分模組需要重新啟動後才會套用變更。
+ddffc64c97ab01fa,UI,,,UI,正在檢查模組...
+5a94893163d16669,UI,,,UI,無法顯示此頁面。請查看 BepInEx/LogOutput.log。
+d8b8392e2c542950,UI,,,UI,重試
+b5c120b316c237a0,UI,,,UI,已儲存
+c0d5bf6b1b7403fc,UI,,,UI,顯示進階設定
+8c0d6671eddcace2,UI,,,UI,重新啟動遊戲後生效。
+dc670595f5b3640c,UI,,,UI,已重新載入
+5c3d37b67aa6aa8e,UI,,,UI,毛玻璃
+d8f9dfaea2d00f89,UI,,,UI,模組畫面
+6ad27bd4ec33b079,UI,,,UI,快照
+6aac1c42e81bfc11,UI,,,UI,每一幀
+804bf37820856b9e,UI,,,UI,在列表和詳細資訊後面放一張模糊的遊戲畫面，看起來像毛玻璃。「快照」每 0.2 秒重新拍一次。「每一幀」每幀都拍，玻璃會跟著遊戲動，顯示卡的工作會多一點。「關」只留下深色的半透明面板。如果畫面做不出來，面板會和「關」時一樣，原因會寫在記錄檔裡。
+b92aac75152ab328,UI,,,UI,使用同一按鍵的設定
+8ba391628be0d7e1,UI,,,UI,未被接受
+2500ecd4097d27aa,UI,,,UI,本次啟動重新載入的次數
+2f7d5fa49a67f87b,UI,,,UI,現在執行的不是 BepInEx 載入的那個檔案。
+c3db47aff1d7221d,UI,,,UI,按下這個鍵時，兩者都會回應。
+0afead460dc30929,UI,,,UI,按下這個鍵時，它們都會回應。

@@ -72,7 +72,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[dump] Failed to rebuild discovered strings: {ex.Message}");
+                Plugin.Log($"[dump] Failed to rebuild discovered strings: {ex.Message}", LogKind.Error);
             }
         }
 
@@ -131,7 +131,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[dump] Failed to read seen sources: {ex.Message}");
+                Plugin.Log($"[dump] Failed to read seen sources: {ex.Message}", LogKind.Error);
             }
             return list;
         }
@@ -186,7 +186,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[dump] Failed to write seen sources: {ex.Message}");
+                Plugin.Log($"[dump] Failed to write seen sources: {ex.Message}", LogKind.Error);
             }
         }
 
@@ -229,7 +229,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[dump] Failed to write discovered strings: {ex.Message}");
+                Plugin.Log($"[dump] Failed to write discovered strings: {ex.Message}", LogKind.Error);
             }
         }
     }

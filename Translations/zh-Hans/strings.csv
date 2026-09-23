@@ -1940,3 +1940,38 @@ a9043748d4bf169d,UI,,,UI,连接监视已关闭（模组 → Drag'n Wash ModFrame
 1744b96470b51bf3,UI,,,UI,网络
 fa25265454345a35,UI,,,UI,监视连接
 4e9ec4e264c704c6,UI,,,UI,记录哪些模组连接了互联网，并在模组画面中标出未声明就联网的模组。只做监视：不会阻止任何连接，模组也可以绕过它。
+4efca0d10c5feb8e,UI,,,UI,简介
+2a78025de6aae5e7,UI,,,UI,选择
+49c266baaaa70981,UI,,,UI,搜索
+8e5ea509893e6dfd,UI,,,UI,标签页
+b186b72af3a9220b,UI,,,UI,搜索模组
+a52ace420f2175d0,UI,,,UI,全部
+c1ebc7817870e5be,UI,,,UI,需要注意
+5425c8a0e9f51e45,UI,,,UI,你的模组
+62ef6fd92ee145d9,UI,,,UI,库
+039a4ba79024f646,UI,,,UI,没有匹配的模组。
+c38e30b78746dd5d,UI,,,UI,需重新启动
+9b41ba20b8a3c870,UI,,,UI,未加载
+c0bf75bd78bf9572,UI,,,UI,更改
+735e90830151725a,UI,,,UI,请按一个键...
+255b076dd8285543,UI,,,UI,搜索设置
+17e2e45fabbbe2d7,UI,,,UI,没有匹配的设置。
+05b2c6a1fcb6bbf8,UI,,,UI,部分模组需要重新启动后才会应用更改。
+ddffc64c97ab01fa,UI,,,UI,正在检查模组...
+5a94893163d16669,UI,,,UI,无法显示此页面。请查看 BepInEx/LogOutput.log。
+d8b8392e2c542950,UI,,,UI,重试
+b5c120b316c237a0,UI,,,UI,已保存
+c0d5bf6b1b7403fc,UI,,,UI,显示高级设置
+8c0d6671eddcace2,UI,,,UI,重新启动游戏后生效。
+dc670595f5b3640c,UI,,,UI,已重新加载
+5c3d37b67aa6aa8e,UI,,,UI,毛玻璃
+d8f9dfaea2d00f89,UI,,,UI,模组界面
+6ad27bd4ec33b079,UI,,,UI,快照
+6aac1c42e81bfc11,UI,,,UI,每一帧
+804bf37820856b9e,UI,,,UI,在列表和详情后面放一张模糊的游戏画面，看起来像毛玻璃。“快照”每 0.2 秒重新拍一次。“每一帧”每帧都拍，玻璃会跟着游戏动，显卡的工作会多一点。“关”只留下深色的半透明面板。如果画面做不出来，面板会和“关”时一样，原因会写在日志里。
+b92aac75152ab328,UI,,,UI,使用同一按键的设置
+8ba391628be0d7e1,UI,,,UI,未被接受
+2500ecd4097d27aa,UI,,,UI,本次启动重新加载的次数
+2f7d5fa49a67f87b,UI,,,UI,现在运行的不是 BepInEx 加载的那个文件。
+c3db47aff1d7221d,UI,,,UI,按下这个键时，两者都会响应。
+0afead460dc30929,UI,,,UI,按下这个键时，它们都会响应。

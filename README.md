@@ -28,7 +28,7 @@ Installing is really easy.
 
 ## See? EASY. ( ･´ｰ･｀) HEH! YIP!
 
-The installer finds the game through Steam by itself, or you can point it at the folder. If BepInEx isn't installed yet, it downloads the official 5.4.23.5 release, checks its SHA-256 and unpacks it for you. After that, just start the game from Steam.
+The installer finds the game through Steam by itself, or you can point it at the folder. If BepInEx isn't installed yet, it downloads the official 5.4.23.5 release, checks its SHA-256 and unpacks it for you. Drag'n Wash ModFramework, which the mod runs on, comes the same way: if the game folder doesn't have a new enough one, the installer gets it from the framework's GitHub release. It asks you before it downloads anything. After that, just start the game from Steam.
 
 You get 日本語, 简体中文 and English (no translation), Korean proofread by a native speaker, provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Russian, Polish, Hebrew, Ukrainian, Thai and Vietnamese, and Esperanto and Toki Pona for fun (see [Language packs](#language-packs)). The same window has an **Uninstall** button. It keeps your save-history snapshots unless you say otherwise, and it only removes BepInEx along with the mod if you ask and no other mod uses it. You can uninstall from inside the game as well: **Options → Mods → Drag'n Wash Localization → Uninstall**, and the mod is gone the next time the game starts.
 
@@ -85,7 +85,7 @@ It works with the game's native Linux build and the Linux build of BepInEx. `Ins
 4. Choose **Install / Update**, then pick a language. Steam has to close for a moment so the launch option can be set. The script asks you first and starts Steam again afterwards.
 5. Go back to Gaming Mode and start the game. You can change the language later in **Options → Language (Mod)**.
 
-The script finds the game in your Steam libraries (an SD card counts too), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256, and sets `executable_name="DragNWash"` in `run_bepinex.sh`. Then it copies the mod and adds `./run_bepinex.sh %command%` to the game's launch options, keeping whatever options you already had. To update or remove the mod, run the same command again and choose **Install / Update** or **Uninstall**. Uninstalling keeps your save history and takes `./run_bepinex.sh` back out of the launch options when no other BepInEx mod needs it. It also offers to remove BepInEx. `--install` and `--uninstall` skip the question.
+The script finds the game in your Steam libraries (an SD card counts too), downloads the official Linux BepInEx 5.4.23.5 and checks its SHA-256. If the game folder doesn't have a new enough Drag'n Wash ModFramework, it gets that the same way. Then it sets `executable_name="DragNWash"` in `run_bepinex.sh`. Then it copies the mod and adds `./run_bepinex.sh %command%` to the game's launch options, keeping whatever options you already had. To update or remove the mod, run the same command again and choose **Install / Update** or **Uninstall**. Uninstalling keeps your save history and takes `./run_bepinex.sh` back out of the launch options when no other BepInEx mod needs it. It also offers to remove BepInEx. `--install` and `--uninstall` skip the question.
 
 Steam rewrites launch options while it's running, so when the launch option has to change, the script closes Steam, edits it and starts Steam again. It asks first; `--close-steam` skips that question. If a step couldn't be done, the last dialog says so and tells you what to change by hand. Every run is logged to `~/.local/state/dragnwash-installer/installer.log`.
 
@@ -93,7 +93,7 @@ Steam rewrites launch options while it's running, so when the launch option has 
 <summary>Manual installation on the Deck</summary>
 
 1. Extract [BepInEx_linux_x64_5.4.23.5.zip](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_linux_x64_5.4.23.5.zip) into the game folder (`~/.local/share/Steam/steamapps/common/Drag'n Wash/`).
-2. Merge this mod's `BepInEx/` folder into the same place.
+2. Merge this mod's `BepInEx/` folder into the same place, and Drag'n Wash ModFramework's too (see [step 3](#3-install-dragn-wash-localization) of the manual installation).
 3. Open `run_bepinex.sh`, set `executable_name="DragNWash"`, save, and run `chmod +x run_bepinex.sh`.
 4. In Steam, game properties → Launch options: `./run_bepinex.sh %command%`
 5. Start the game. Change the language in **Options → Language (Mod)**.
@@ -121,6 +121,7 @@ To change the language on the Deck, use **Options → Language (Mod)** with the 
 - The Windows Steam version of Drag'n Wash
 - [BepInEx 5 for 64-bit Windows (Mono)](https://github.com/BepInEx/BepInEx/releases)
 - The latest `DragNWashLocalization-<version>.zip` from this repository's [Releases page](https://github.com/TomXV/dragnwash-localization/releases)
+- `DragNWash.ModFramework-<version>.zip` from Drag'n Wash ModFramework's [Releases page](https://github.com/TomXV/dragnwash-modframework/releases): the version in `framework.version` of the mod zip's `mod-install.json`, or newer
 
 > [!IMPORTANT]
 > Download the file called `DragNWashLocalization-<version>.zip` from the release assets. The **Source code** archives GitHub generates automatically aren't mod packages you can install. If the Releases page doesn't have a mod ZIP yet, no installable build has been published.
@@ -147,7 +148,7 @@ The plugin DLL should end up here:
 <Drag'n Wash folder>/BepInEx/plugins/DragNWashLocalization/DragNWashLocalization.dll
 ```
 
-The zip also brings Drag'n Wash ModFramework, which the mod runs on, as one folder per plugin next to it: `BepInEx/plugins/DragNWash.ModFramework`, `DragNWash.ModFramework.Text`, `.Dialogue`, `.ToolWindow`, `.Assets` and `.Saves`, plus `BepInEx/patchers/DragNWash.ModFramework.Preloader.dll`. Keep all of them. If another mod already installed a newer ModFramework, keep the newer files.
+Drag'n Wash ModFramework, which the mod runs on, isn't in this zip. Copy these from the framework's zip into the same game root too: the folders `BepInEx/plugins/DragNWash.ModFramework`, `DragNWash.ModFramework.Text`, `.Dialogue`, `.ToolWindow`, `.Assets` and `.Saves`, and `BepInEx/patchers/DragNWash.ModFramework.Preloader.dll`. If another mod already installed a newer ModFramework, keep the newer files.
 
 Don't leave the ZIP itself, or an extra `DragNWashLocalization-<version>` folder, between `plugins` and the DLL.
 
@@ -313,9 +314,11 @@ To avoid it, do one of these:
 
 ## Current status
 
-v1.4.0 is the latest release. Text from other mods can be translated (experimental and off by default, [#28](https://github.com/TomXV/dragnwash-localization/issues/28)), and pictures can be translated per language ([#4](https://github.com/TomXV/dragnwash-localization/issues/4); that's the machinery, and no pictures have been drawn yet). It runs on Drag'n Wash ModFramework 1.4.0, which brings mods with no code, the operations registry and the Bridge.
+v1.5.0 is out as a pre-release, and v1.4.0 is still the latest full release. In v1.5.0 the F1 window's Activity log, Translation, Saves and About tabs were gone through one by one, and every language pack translates the new Mods screen. The zip no longer carries Drag'n Wash ModFramework: `Install.exe` and `install-steamdeck.sh` fetch ModFramework 1.5.0 from its own release and check it before installing.
 
 Earlier releases, newest first:
+
+- v1.4.0 made text from other mods translatable (experimental and off by default, [#28](https://github.com/TomXV/dragnwash-localization/issues/28)) and pictures translatable per language ([#4](https://github.com/TomXV/dragnwash-localization/issues/4); that's the machinery, and no pictures have been drawn yet), on Drag'n Wash ModFramework 1.4.0.
 
 - v1.3.0 brought fewer crashes on Direct3D 12 and a window that tells you what happened when the game does crash (with Drag'n Wash ModFramework 1.3.0).
 - v1.2.1 made the Saves tab find saves made after the game update of September 14, 2026 again, and gave translators' working copies the English of screens that weren't open.
@@ -343,7 +346,7 @@ A lot of what this mod did to hook into the game is useful to other mods too, so
 
 The point is that when the game updates, only the framework has to catch up, and the mods built on it keep working. The update of September 14, 2026 is the kind of change it deals with in one place.
 
-For players, the release zip and the installers include the framework. From v1.1.0 the installers are the framework's shared ones, which any Drag'n Wash mod can ship. If you uninstall this mod while another mod is installed, the framework stays.
+For players, the release zip doesn't include the framework. If the game folder doesn't have a new enough one, the installers get the version this mod was built with from GitHub. From v1.1.0 the installers are the framework's shared ones, which any Drag'n Wash mod can ship. If you uninstall this mod while another mod is installed, the framework stays.
 
 From v1.1.0 the title screen says **1 update available in Mods** when there's a newer release of this mod or the framework, and **Options → Mods** has a button that takes you to its release page. Once a day the framework asks GitHub for the latest release. It sends nothing about you or your game, and it doesn't download anything. You can switch it off in **Mods → Drag'n Wash ModFramework → Settings → Check for updates**.
 
@@ -375,10 +378,10 @@ This is an unofficial fan project and isn't affiliated with Gator Dragon Games. 
 
 - The mod's **logo** (its icon on the Mods screen, `icon.png`) was drawn by **Mister ERIO** ([@mistererio](https://github.com/mistererio)) and is used with permission.
 - The **Mods button** on the Options screen, which ships with Drag'n Wash ModFramework, is Mister ERIO's work too.
-- Drag'n Wash ModFramework's **logo and icon** (the icon ships in this zip) were drawn by **NotaGames** ([@NotaGames](https://github.com/NotaGames)).
+- Drag'n Wash ModFramework's **logo and icon** (the icon ships with the framework) were drawn by **NotaGames** ([@NotaGames](https://github.com/NotaGames)).
 - The Korean pack was proofread by **Hotcake**.
 - Translators who improved a language pack are credited in the [Language packs](#language-packs) table.
 
 ## License
 
-The plugin's code license is in [LICENSE](LICENSE). The artwork listed under [Credits](#credits) belongs to its artists and isn't covered by it. This repository doesn't include any assets or code from the game. Translations count as contributions from the people who translated them.
+The plugin's code and the translations are under the MIT license ([LICENSE](LICENSE)). Each translation is still the work of the people who translated it, and they're named in the language table and under [Credits](#credits). The artwork listed under Credits belongs to its artists and isn't covered by the license. This repository doesn't include any assets or code from the game.

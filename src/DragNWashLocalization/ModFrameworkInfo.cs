@@ -33,7 +33,7 @@ namespace DragNWashLocalization
             }
             catch (Exception ex)
             {
-                Plugin.Log($"[modframework] Could not register with Drag'n Wash ModFramework: {ex.Message}");
+                Plugin.Log($"[modframework] Could not register with Drag'n Wash ModFramework: {ex.Message}", LogKind.Error);
             }
         }
     }

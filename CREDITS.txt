@@ -15,17 +15,18 @@ Mister ERIO (https://github.com/mistererio)
   ModFramework.
 
 NotaGames (https://github.com/NotaGames)
-  Drag'n Wash ModFramework's logo and its "Dg" icon, which ships in this zip.
+  Drag'n Wash ModFramework's logo and its "Dg" icon, which ships with the
+  framework.
 
 Translations
 ------------
 
 Japanese and Simplified Chinese are supervised by the author. Korean was
-proofread by a native speaker, Hotcake. The other packs - Traditional Chinese,
-German, French, Spanish, Brazilian Portuguese, Russian, Polish, Hebrew,
-Ukrainian, Thai, Vietnamese, Esperanto and toki pona - are provisional and
-waiting for a native speaker; the language table in README.md says which is
-which.
+proofread by a native speaker, Hotcake. Traditional Chinese is converted from
+the Simplified Chinese pack. The other packs - German, French, Spanish,
+Brazilian Portuguese, Russian, Polish, Hebrew, Ukrainian, Thai, Vietnamese,
+Esperanto and toki pona - are provisional and waiting for a native speaker;
+the language table in README.md says which is which.
 
 A correction to any pack is welcome as a pull request, and whoever reviews a
 language is named here from the release after it.
