@@ -1,0 +1,117 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Unit tests for the parts of the plugin that do not need the game.
+    プラグインのうち、ゲームがなくても動く部分の単体テスト。
+
+    The plugin itself cannot be referenced: it compiles against Unity, BepInEx
+    and the newest Drag'n Wash ModFramework, and most of it only runs inside
+    the game. Instead, the source files below are compiled into this assembly
+    as they are, and Stubs/ stands in for the little they call outside
+    themselves (Plugin.Log). A file that gains a dependency on Unity can no
+    longer be listed here; move what is worth testing out of it instead.
+    プラグイン本体は参照できない。Unity、BepInEx、最新の Drag'n Wash
+    ModFramework に対してビルドされ、大半はゲームの中でしか動かないため。
+    代わりに下のソースファイルをそのままこのアセンブリにコンパイルし、
+    それらが外部で呼ぶわずかなもの（Plugin.Log）は Stubs/ で置き換える。
+    Unity に依存するようになったファイルはここに載せられなくなるので、
+    テストしたい部分をそのファイルから切り出すこと。
+
+    Same target as the plugin, so the tests see the same framework APIs
+    (File.Replace, Regex timeouts) the game's Mono runtime provides.
+    ターゲットはプラグインと同じにしてある。ゲームの Mono ランタイムが提供する
+    のと同じ API（File.Replace、正規表現のタイムアウト）でテストするため。
+
+    Run them with "dotnet test tests/DragNWashLocalization.Tests". For
+    coverage, add the "XPlat Code Coverage" collector, with its
+    IncludeTestAssembly setting on: the plugin's files are compiled into this
+    assembly, which coverlet otherwise leaves out.
+    実行は "dotnet test tests/DragNWashLocalization.Tests"。カバレッジを
+    取るときは "XPlat Code Coverage" コレクターを追加し、IncludeTestAssembly
+    を有効にする。プラグインのファイルはこのアセンブリにコンパイルされており、
+    coverlet は既定ではテストアセンブリを計測しないため。
+  -->
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>DragNWashLocalization.Tests</RootNamespace>
+    <!--
+      Makes the compiler check the XML documentation comments: malformed XML,
+      a cref that points nowhere, and a public member left undocumented are
+      all reported as warnings.
+      XML ドキュメントコメントをコンパイラーに検査させる。XML の書式誤り、
+      存在しないものを指す cref、ドキュメントのない公開メンバーは、いずれも
+      警告として報告される。
+    -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PluginSource>..\..\src\DragNWashLocalization\</PluginSource>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="$(PluginSource)CsvReader.cs" Link="Plugin\CsvReader.cs" />
+    <Compile Include="$(PluginSource)IgnoreRules.cs" Link="Plugin\IgnoreRules.cs" />
+    <Compile Include="$(PluginSource)SafeFile.cs" Link="Plugin\SafeFile.cs" />
+    <Compile Include="$(PluginSource)TranslationKey.cs" Link="Plugin\TranslationKey.cs" />
+    <Compile Include="$(PluginSource)TranslationStore.cs" Link="Plugin\TranslationStore.cs" />
+  </ItemGroup>
+
+  <!--
+    LineKey.Hash, which TranslationStore.KeyFor calls. It comes from the
+    framework's build, like the plugin's own copy (see the plugin's .csproj),
+    and the tests check it against ci/linekey-vectors.json.
+    TranslationStore.KeyFor が呼ぶ LineKey.Hash。プラグインが使うものと同じく
+    framework のビルド成果物で（プラグインの .csproj を参照）、テストでは
+    ci/linekey-vectors.json と照合する。
+
+    It is referenced from a copy of its own under obj/, not from libs/.
+    MSBuild looks for a reference's dependencies in the folder it sits in;
+    in libs/ it finds Unity's netstandard 2.1 assemblies, copies them next to
+    the tests and writes a binding redirect to netstandard 2.1, which .NET
+    Framework cannot load. LineKey itself needs none of them.
+    libs/ から直接ではなく、obj/ 配下に置いた専用のコピーを参照する。
+    MSBuild は参照先と同じフォルダーから依存アセンブリを探すため、libs/ だと
+    Unity の netstandard 2.1 アセンブリを見つけてテストの横にコピーし、
+    .NET Framework では読み込めない netstandard 2.1 へのバインディング
+    リダイレクトを書いてしまう。LineKey 自体はそのどれも必要としない。
+  -->
+  <PropertyGroup>
+    <DialogueSource>$(PluginSource)libs\DragNWash.ModFramework.Dialogue.dll</DialogueSource>
+    <DialogueCopy>$(BaseIntermediateOutputPath)framework\DragNWash.ModFramework.Dialogue.dll</DialogueCopy>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="DragNWash.ModFramework.Dialogue">
+      <HintPath>$(DialogueCopy)</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyDialogueAssembly" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(DialogueSource)')" Text="$(DialogueSource) is missing. The tests need DragNWash.ModFramework.Dialogue.dll there, as the plugin does (see the plugin's .csproj)." />
+    <Copy SourceFiles="$(DialogueSource)" DestinationFiles="$(DialogueCopy)" SkipUnchangedFiles="true" />
+  </Target>
+
+  <ItemGroup>
+    <!--
+      JavaScriptSerializer, to read the vectors without another package.
+      追加のパッケージなしでベクトルの JSON を読むための JavaScriptSerializer。
+    -->
+    <Reference Include="System.Web.Extensions" />
+    <None Include="..\..\ci\linekey-vectors.json" Link="linekey-vectors.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" PrivateAssets="all" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
