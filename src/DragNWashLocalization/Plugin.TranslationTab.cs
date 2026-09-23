@@ -53,6 +53,79 @@ namespace DragNWashLocalization
             {
                 _toolsHeight = y + 12;
             }
+
+            string busy = BusyText();
+            if (busy != null && ShowBusy(busy) && Event.current.type == EventType.Repaint)
+            {
+                _busyPainted = true;
+            }
+        }
+
+        // A tool pressed here freezes the game for as long as it runs, so the
+        // tab first shows the framework's Busy panel for one frame and Update
+        // starts the tool after that (a hotkey runs at once, as before).
+        private bool _busyPainted;
+        private int _toolAskedFrame = -1;
+        private static bool _noBusyPanel;
+
+        private string BusyText()
+        {
+            if (_pendingWorkingCopy) return "Exporting the working copy...";
+            if (_pendingHashFile) return "Hashing strings.csv...";
+            if (_pendingLayoutCheck) return "Checking the layout...";
+            if (_pendingDump) return "Exporting dialogue...";
+            if (_pendingUiDump) return "Exporting UI text...";
+            if (_pendingFlowDump) return "Exporting the game flow...";
+            return null;
+        }
+
+        // False on a framework without the Busy panel (before ModFramework 1.5.0).
+        private static bool ShowBusy(string what)
+        {
+            if (_noBusyPanel)
+            {
+                return false;
+            }
+            try
+            {
+                MarkBusy(what);
+                return true;
+            }
+            catch (MissingMethodException)
+            {
+                _noBusyPanel = true;
+                return false;
+            }
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+        private static void MarkBusy(string what)
+        {
+            ToolWindow.Busy(what);
+        }
+
+        // Called by Update: true while a tool asked for from the tab should
+        // wait for the Busy panel to be on screen. Not for long: a closed
+        // window, or a panel that never shows, lets it go a few frames later.
+        private bool HoldToolsForBusy()
+        {
+            if (BusyText() == null)
+            {
+                _toolAskedFrame = -1;
+                _busyPainted = false;
+                return false;
+            }
+            if (_toolAskedFrame < 0)
+            {
+                _toolAskedFrame = Time.frameCount;
+            }
+            bool hold = !_busyPainted && !_noBusyPanel && ToolWindow.IsOpen && Time.frameCount - _toolAskedFrame < 5;
+            if (!hold)
+            {
+                _toolAskedFrame = -1;
+                _busyPainted = false;
+            }
+            return hold;
         }
 
         private bool _languagesOpen;

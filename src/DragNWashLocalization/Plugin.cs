@@ -483,14 +483,16 @@ namespace DragNWashLocalization
             }
 
             // The tools keep what they said for the Translation tab
-            // (Plugin.TranslationTab.cs).
-            if (DumpDialogueKey.Value.IsDown() || _pendingDump)
+            // (Plugin.TranslationTab.cs), and one pressed there waits until
+            // the tab shows it is busy.
+            bool hold = HoldToolsForBusy();
+            if (DumpDialogueKey.Value.IsDown() || (_pendingDump && !hold))
             {
                 _pendingDump = false;
                 RunDialogueExport();
             }
 
-            if (DumpUiTextKey.Value.IsDown() || _pendingUiDump)
+            if (DumpUiTextKey.Value.IsDown() || (_pendingUiDump && !hold))
             {
                 _pendingUiDump = false;
                 RunUiTextExport();
@@ -520,13 +522,13 @@ namespace DragNWashLocalization
                 ToolWindow.ShowNotice(result);
             }
 
-            if (_pendingWorkingCopy)
+            if (_pendingWorkingCopy && !hold)
             {
                 _pendingWorkingCopy = false;
                 RunWorkingCopy();
             }
 
-            if (_pendingHashFile)
+            if (_pendingHashFile && !hold)
             {
                 _pendingHashFile = false;
                 // Rewrites the file; hot reload then re-reads it, which is a
@@ -534,13 +536,13 @@ namespace DragNWashLocalization
                 RunHash();
             }
 
-            if (_pendingFlowDump)
+            if (_pendingFlowDump && !hold)
             {
                 _pendingFlowDump = false;
                 RunFlowExport();
             }
 
-            if (_pendingLayoutCheck)
+            if (_pendingLayoutCheck && !hold)
             {
                 _pendingLayoutCheck = false;
                 RunLayoutCheck();
