@@ -12,6 +12,8 @@ name: Build
 # In a fork the job is skipped: the fork has no LIBS_TOKEN, and a push to
 # its main would otherwise end in a failed run.
 #
+# After the build, the unit tests in tests/ run too.
+#
 # Every run uploads release/DragNWashLocalization-<version>.zip as a workflow
 # artifact. A v* tag also creates a DRAFT GitHub release with the zip attached;
 # publishing it stays a person's decision.
@@ -122,6 +124,19 @@ jobs:
           $zip = Get-ChildItem release/*.zip | Select-Object -First 1
           $fw = git -C framework rev-parse --short HEAD
           "### Built ``$($zip.Name)`` ($([math]::Round($zip.Length / 1KB)) KB) from ``$env:GITHUB_REF_NAME`` at ``$($env:GITHUB_SHA.Substring(0, 7))``, with Drag'n Wash ModFramework ``${{ github.event.inputs.framework_ref || 'main' }}`` at ``$fw``" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+
+      - name: Unit tests
+        shell: pwsh
+        run: |
+          # The tests compile the plugin's own source files and need
+          # DragNWash.ModFramework.Dialogue.dll in libs/, which the pack step above
+          # copied there from the framework's build.
+          dotnet test tests/DragNWashLocalization.Tests
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "::error title=Unit tests failed::dotnet test exited with $LASTEXITCODE. The failing tests are listed in this step's log."
+            "### Unit tests failed`n`nThe failing tests are in this step's log. Run them locally with ``dotnet test tests/DragNWashLocalization.Tests``." | Out-File -Append $env:GITHUB_STEP_SUMMARY
+            exit 1
+          }
 
       - name: Keep the zip as a workflow artifact
         uses: actions/upload-artifact@v7
