@@ -87,10 +87,7 @@ namespace DragNWashLocalization
                     ToolWindow.ShowNotice("See Activity log for the working copy result.");
                 });
 
-            y = StepNumber(y, "2");
-            GUI.Label(new Rect(12 + StepIndent, y, width - StepIndent, RowHeight), "Edit the working copy and save it.", S.Label);
-            y = WrappedText(12 + StepIndent, y + RowHeight, width - StepIndent,
-                "Hot reload puts your changes on screen, no restart needed.", S.WrappedLabel) + 10;
+            y = DrawEditStep(y, width, locale);
 
             y = StepButton(y, width, "3", _pendingLayoutCheck ? "Checking..." : "Check layout",
                 "Finds translated labels that don't fit. Open the screens you want checked first.",
@@ -110,9 +107,62 @@ namespace DragNWashLocalization
             return y - 10;
         }
 
+        private float _workingCopyCheckedAt = -10;
+        private bool _workingCopyExists;
+
+        // Step 2: which file hot reload is watching, when it last read it and
+        // what changed, or in the warning colour why it could not read it (a
+        // spreadsheet program holding the file, usually). "Reload now" does
+        // what the console's "tl reload" does, for when hot reload is off.
+        private float DrawEditStep(float y, float width, string locale)
+        {
+            StepNumber(y, "2");
+            const float reloadWidth = 120;
+            float x = 12 + StepIndent;
+            float textWidth = width - StepIndent;
+            bool buttonBeside = textWidth - reloadWidth - 8 >= S.Label.CalcSize(new GUIContent("Edit the working copy and save it.")).x;
+            GUI.Label(new Rect(x, y, textWidth, RowHeight), "Edit the working copy and save it.", S.Label);
+            if (!buttonBeside)
+            {
+                y += RowHeight + 4;
+            }
+            if (GUI.Button(new Rect(buttonBeside ? x + textWidth - reloadWidth : x, y, reloadWidth, RowHeight),
+                _pendingReload ? "Reloading..." : "Reload now", S.Button))
+            {
+                _pendingReload = true;
+            }
+            y += RowHeight + 4;
+
+            // Checked now and then rather than on every draw.
+            if (Time.unscaledTime >= _workingCopyCheckedAt + 2f)
+            {
+                _workingCopyCheckedAt = Time.unscaledTime;
+                _workingCopyExists = System.IO.File.Exists(WorkingCopy.PathFor(PluginDirectory, locale));
+            }
+            string watched = _workingCopyExists ? "_discovered/" + WorkingCopy.FileNameFor(locale) : locale + "/strings.csv";
+
+            string problem = HotReload.Problem ?? TranslationStore.LastLoadProblem;
+            string status;
+            if (problem != null)
+            {
+                status = problem;
+            }
+            else
+            {
+                status = HotReloadTranslations.Value
+                    ? $"Hot reload on, watching {watched}."
+                    : "Hot reload is off ([Debug] HotReloadTranslations). Press Reload now after you save.";
+                if (HotReload.LastReload.HasValue)
+                {
+                    status += $" Last reload {HotReload.LastReload.Value:HH:mm:ss}: {HotReload.LastChanges}.";
+                }
+            }
+            return WrappedText(x, y, textWidth, ToolWindow.Drawable(status), problem != null ? TabStyles.Warning : S.WrappedLabel) + 10;
+        }
+
         private float StepNumber(float y, string number)
         {
-            GUI.Label(new Rect(12, y, StepIndent - 12, RowHeight), number, S.Label);
+            GUI.Label(new Rect(12, y, StepIndent - 12, RowHeight), number, TabStyles.Accent);
             return y;
         }
 
@@ -125,6 +175,38 @@ namespace DragNWashLocalization
                 press();
             }
             return WrappedText(12 + StepIndent, y + RowHeight + 4, width - StepIndent, description, S.WrappedLabel) + 10;
+        }
+
+        // The window's styles in the colours this tab needs. Made again when
+        // the window makes its own styles again.
+        private sealed class TranslationTabStyles
+        {
+            public GUIStyle From;
+            public GUIStyle Accent;
+            public GUIStyle Warning;
+        }
+        private readonly TranslationTabStyles _tabStyles = new TranslationTabStyles();
+
+        private TranslationTabStyles TabStyles
+        {
+            get
+            {
+                if (_tabStyles.From != S.WrappedLabel || _tabStyles.Accent == null)
+                {
+                    _tabStyles.From = S.WrappedLabel;
+                    _tabStyles.Accent = Tinted(S.Label, ToolWindow.AccentColor);
+                    _tabStyles.Warning = Tinted(S.WrappedLabel, ToolWindow.WarningColor);
+                }
+                return _tabStyles;
+            }
+        }
+
+        private static GUIStyle Tinted(GUIStyle from, Color color)
+        {
+            var style = new GUIStyle(from);
+            style.normal.textColor = color;
+            style.hover.textColor = color;
+            return style;
         }
 
         private float WrappedText(float x, float y, float width, string text, GUIStyle style)

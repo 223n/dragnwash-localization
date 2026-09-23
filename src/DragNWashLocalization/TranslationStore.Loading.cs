@@ -9,9 +9,14 @@ namespace DragNWashLocalization
     // (a key, a line ID or the English).
     internal static partial class TranslationStore
     {
+        // Why the last load could not read one of this language's files, for
+        // the Translation tab; null when every file was read.
+        public static string LastLoadProblem { get; private set; }
+
         public static void Load(string pluginDirectory, string locale)
         {
             _pluginDirectory = pluginDirectory;
+            LastLoadProblem = null;
             IgnoreRules.Load(pluginDirectory);
             ByKey.Clear();
             ByLineId.Clear();
@@ -107,7 +112,8 @@ namespace DragNWashLocalization
             {
                 // Typically a sharing violation from an editor holding the file
                 // exclusively. Keep going with whatever else loaded.
-                Plugin.Log($"[load] Could not read {label}: {ex.Message}. Close the program holding it and save the file again to hot reload.", LogKind.Error);
+                LastLoadProblem = $"Could not read {label}: {ex.Message}. Close the program holding it and save the file again to hot reload.";
+                Plugin.Log("[load] " + LastLoadProblem, LogKind.Error);
             }
         }
 

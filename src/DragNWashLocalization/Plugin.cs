@@ -410,6 +410,8 @@ namespace DragNWashLocalization
                 {
                     _committedLocale = locale;
                 }
+                // For the Translation tab's "Last reload" line.
+                Dictionary<string, string> before = reloadOnly ? HotReload.Snapshot() : null;
                 RightToLeft.SetLocale(locale);
                 TranslationStore.Load(PluginDirectory, locale);
                 GameFonts.SetLanguage(locale);
@@ -446,6 +448,10 @@ namespace DragNWashLocalization
                     OptionsLanguage.Refresh();
                 }
                 HotReload.Track(PluginDirectory, locale);
+                if (before != null)
+                {
+                    HotReload.NoteReload(before);
+                }
                 Log(reloadOnly
                     ? $"Reloaded {locale} ({(ModTranslations.Enabled ? $"with {ModTranslations.Packs.Count} other mod(s)" : "other mods' translations off")}). Loaded entries={TranslationStore.EntryCount}"
                     : $"Switched locale to {locale}. Loaded entries={TranslationStore.EntryCount}", LogKind.Result);
