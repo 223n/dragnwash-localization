@@ -18,8 +18,11 @@ namespace DragNWashLocalization
         // The history row that holds what the save holds now, or -1.
         private int _currentIndex = -1;
         private bool _saveExists;
-        // Snapshot files never change once written, so each is read once.
-        private readonly Dictionary<string, string> _snapshotText = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        // Snapshot files don't change once written, so each is read once. The
+        // time it was written is kept with it: framework 1.4.3 writes a second
+        // snapshot taken in the same second over the first, under its name.
+        private readonly Dictionary<string, KeyValuePair<DateTime, string>> _snapshotText =
+            new Dictionary<string, KeyValuePair<DateTime, string>>(StringComparer.OrdinalIgnoreCase);
         private bool _showFlags;
         private List<SaveFlag> _savesFlags = new List<SaveFlag>();
         private string _flagFilter = "";
@@ -34,8 +37,15 @@ namespace DragNWashLocalization
             public string Description;
             public bool? Value;   // null = never set in this save
             public bool IsHeader;
+            // As drawn: through ToolWindow.Drawable, since a flag another mod
+            // wrote into the save can have any characters, and a header in
+            // capitals. Made with the row, not on every pass.
+            public string ShownId;
+            public string ShownDescription;
         }
         private List<FlagRow> _flagRows = new List<FlagRow>();
+        // Reset all to false has something to do: a flag in the save is true.
+        private bool _anyFlagTrue;
 
         // Flag values clicked but not written yet, per slot (id -> the value it
         // gets). Apply writes them in one edit, so a round of clicking costs
@@ -90,9 +100,11 @@ namespace DragNWashLocalization
         {
             _flagRows.Clear();
             var inSave = new Dictionary<string, bool>(StringComparer.Ordinal);
+            _anyFlagTrue = false;
             foreach (SaveFlag f in _savesFlags)
             {
                 inSave[f.Id] = f.Value;
+                _anyFlagTrue |= f.Value;
             }
 
             string filter = (_flagFilter ?? "").Trim();
@@ -136,8 +148,13 @@ namespace DragNWashLocalization
 
             foreach (string g in groups)
             {
-                _flagRows.Add(new FlagRow { IsHeader = true, Id = g, Group = g });
-                _flagRows.AddRange(byGroup[g]);
+                _flagRows.Add(new FlagRow { IsHeader = true, Id = g, Group = g, ShownId = ToolWindow.Drawable(g.ToUpperInvariant()) });
+                foreach (FlagRow row in byGroup[g])
+                {
+                    row.ShownId = ToolWindow.Drawable(row.Id);
+                    row.ShownDescription = ToolWindow.Drawable(row.Description ?? "");
+                    _flagRows.Add(row);
+                }
             }
         }
 
@@ -233,6 +250,7 @@ namespace DragNWashLocalization
                 _savesLevel = _savesSlot != null ? GameSaves.ReadLevel(_savesSlot) : -1;
                 string saveText = _savesSlot != null ? ReadText(GameSaves.SavePath(_savesSlot)) : null;
                 FindCurrentSnapshot(saveText);
+                MakeShortLabels();
                 CheckUndo(saveText);
                 PruneFlagEdits();
                 RebuildFlagRows();
@@ -244,10 +262,19 @@ namespace DragNWashLocalization
             float x = 12;
             foreach (string slot in _savesSlots)
             {
-                string shown = GameSaves.ShortName(slot);
+                // "*" on a slot with flag changes not written yet: its band only
+                // shows while it is the one picked.
+                string shown = FlagEditCount(slot) > 0 ? GameSaves.ShortName(slot) + " *" : GameSaves.ShortName(slot);
                 float w = 90;
                 if (GUI.Button(new Rect(area.x + x, area.y + y, w, RowHeight), shown, slot == _savesSlot ? S.SelectedButton : S.Button))
                 {
+                    if (slot != _savesSlot)
+                    {
+                        // A question asked about the slot just left isn't
+                        // about this one.
+                        _flagClearConfirm = false;
+                        _savesScroll = Vector2.zero;
+                    }
                     _savesSlot = slot;
                     // The rest of the listing reloads at the top of the next
                     // pass, but the progress editor below reads the level in
@@ -304,13 +331,16 @@ namespace DragNWashLocalization
             float contentHeight = flagsOpen ? FlagRowsHeight(innerWidth) : (_savesList.Count + (ShowSaveNotListed ? 1 : 0)) * 36;
             ToolWindow.ApplyScroll(view, ref _savesScroll);
             _savesScroll = GUI.BeginScrollView(view, _savesScroll, new Rect(0, 0, innerWidth, Mathf.Max(view.height, contentHeight)), false, false);
+            // Only the rows in sight are drawn: a save can hold hundreds of
+            // flags, and IMGUI draws the tab several times a frame.
+            float visibleTop = _savesScroll.y, visibleBottom = _savesScroll.y + view.height;
             if (flagsOpen)
             {
-                DrawFlagRows(innerWidth);
+                DrawFlagRows(innerWidth, visibleTop, visibleBottom);
             }
             else
             {
-                DrawSnapshotRows(innerWidth);
+                DrawSnapshotRows(innerWidth, visibleTop, visibleBottom);
             }
             GUI.EndScrollView();
 
@@ -418,14 +448,19 @@ namespace DragNWashLocalization
             var listed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < _savesList.Count; i++)
             {
-                string path = _savesList[i].Path;
-                listed.Add(path);
-                if (!_snapshotText.TryGetValue(path, out string text))
+                SaveSnapshot snapshot = _savesList[i];
+                listed.Add(snapshot.Path);
+                string text;
+                if (_snapshotText.TryGetValue(snapshot.Path, out KeyValuePair<DateTime, string> known) && known.Key == snapshot.Taken)
                 {
-                    text = ForCompare(ReadText(path));
+                    text = known.Value;
+                }
+                else
+                {
+                    text = ForCompare(ReadText(snapshot.Path));
                     if (text != null)
                     {
-                        _snapshotText[path] = text;
+                        _snapshotText[snapshot.Path] = new KeyValuePair<DateTime, string>(snapshot.Taken, text);
                     }
                 }
                 if (_currentIndex < 0 && save != null && text == save)
@@ -458,7 +493,8 @@ namespace DragNWashLocalization
             string before = ReadText(savePath);
             string result = edit();
             Log("[saves] " + result + logDetail);
-            ToolWindow.ShowNotice(result);
+            // A flag's id is in it, and another mod's flag can have any characters.
+            ToolWindow.ShowNotice(ToolWindow.Drawable(result));
             _savesRefreshAt = 0;
             string after = ReadText(savePath);
             if (before == null || after == null || after == before)
@@ -510,19 +546,23 @@ namespace DragNWashLocalization
 
             GUI.Label(new Rect(area.x + 12, area.y + y, innerWidth, 26), "PROGRESS", S.Label);
             y += 32;
-            GUI.Label(new Rect(area.x + 12, area.y + y, 200, RowHeight),
-                _editLevel == current ? $"level {current}" : $"level {current}  ->  {_editLevel}", S.Label);
-            if (GUI.Button(new Rect(area.x + 216, area.y + y, 40, RowHeight), "-", S.Button) && _editLevel > 0)
+            // The level takes what the buttons leave, up to 200, so Apply stays
+            // inside the narrowest window.
+            float levelWidth = Mathf.Clamp(innerWidth - 40 - 6 - 40 - 12 - 90 - 4, 100, 200);
+            float bx = area.x + 12 + levelWidth + 4;
+            GUI.Label(new Rect(area.x + 12, area.y + y, levelWidth, RowHeight),
+                _editLevel == current ? $"level {current}" : $"level {current}  ->  {_editLevel}", LineLabel(false));
+            if (GUI.Button(new Rect(bx, area.y + y, 40, RowHeight), "-", S.Button) && _editLevel > 0)
             {
                 _editLevel--; _progressConfirm = false;
             }
-            if (GUI.Button(new Rect(area.x + 262, area.y + y, 40, RowHeight), "+", S.Button))
+            if (GUI.Button(new Rect(bx + 46, area.y + y, 40, RowHeight), "+", S.Button))
             {
                 _editLevel++; _progressConfirm = false;
             }
             bool canApply = _editLevel != current && current >= 0;
             GUI.enabled = canApply;
-            if (GUI.Button(new Rect(area.x + 314, area.y + y, 90, RowHeight), "Apply", S.Button))
+            if (GUI.Button(new Rect(bx + 98, area.y + y, 90, RowHeight), "Apply", S.Button))
             {
                 if (_editLevel > current)
                 {
@@ -540,14 +580,15 @@ namespace DragNWashLocalization
             // width alone so nothing jumps when Undo comes and goes.
             const float undoWidth = 150, historyWidth = 90, flagsWidth = 80;
             float right = area.x + 12 + innerWidth;
-            bool undoOnFirst = area.x + 414 + undoWidth <= right;
-            bool switchOnFirst = area.x + 414 + undoWidth + 8 + historyWidth + 8 + flagsWidth <= right;
+            float undoX = bx + 98 + 90 + 10;
+            bool undoOnFirst = undoX + undoWidth <= right;
+            bool switchOnFirst = undoX + undoWidth + 8 + historyWidth + 8 + flagsWidth <= right;
             float switchX = switchOnFirst ? right - flagsWidth - 8 - historyWidth : area.x + 12;
             float switchY = switchOnFirst ? y : y + 36;
             if (_undoValid && _undoSlot == _savesSlot)
             {
                 var undoRect = undoOnFirst
-                    ? new Rect(area.x + 414, area.y + y, undoWidth, RowHeight)
+                    ? new Rect(undoX, area.y + y, undoWidth, RowHeight)
                     : new Rect(switchX + historyWidth + 8 + flagsWidth + 8, area.y + switchY, undoWidth, RowHeight);
                 if (GUI.Button(undoRect, "Undo last change", S.Button))
                 {
@@ -559,13 +600,17 @@ namespace DragNWashLocalization
                     _savesRefreshAt = 0;
                 }
             }
-            if (GUI.Button(new Rect(switchX, area.y + switchY, historyWidth, RowHeight), "History", _showFlags ? S.Button : S.SelectedButton))
+            // Each list starts at its top: the history's scroll means nothing
+            // in the flags.
+            if (GUI.Button(new Rect(switchX, area.y + switchY, historyWidth, RowHeight), "History", _showFlags ? S.Button : S.SelectedButton) && _showFlags)
             {
                 _showFlags = false;
+                _savesScroll = Vector2.zero;
             }
-            if (GUI.Button(new Rect(switchX + historyWidth + 8, area.y + switchY, flagsWidth, RowHeight), "Flags", _showFlags ? S.SelectedButton : S.Button))
+            if (GUI.Button(new Rect(switchX + historyWidth + 8, area.y + switchY, flagsWidth, RowHeight), "Flags", _showFlags ? S.SelectedButton : S.Button) && !_showFlags)
             {
                 _showFlags = true;
+                _savesScroll = Vector2.zero;
             }
             y = switchY + 36;
 
@@ -590,30 +635,75 @@ namespace DragNWashLocalization
             return y;
         }
 
-        // Inside the scroll view.
-        private void DrawSnapshotRows(float innerWidth)
+        // S.Label and S.MutedLabel wrap. A history or flag row has room for
+        // one line, so its text stops at the column's edge instead of
+        // spilling into the rows around it.
+        private GUIStyle _lineBasis, _lineLabel, _lineMuted;
+
+        private GUIStyle LineLabel(bool muted)
+        {
+            if (!ReferenceEquals(_lineBasis, S.Label))
+            {
+                _lineBasis = S.Label;
+                _lineLabel = new GUIStyle(S.Label) { wordWrap = false, clipping = TextClipping.Clip };
+                _lineMuted = new GUIStyle(S.MutedLabel) { wordWrap = false, clipping = TextClipping.Clip };
+            }
+            return muted ? _lineMuted : _lineLabel;
+        }
+
+        private const string SaveNotListedText = "The save now isn't in the list yet. It changed after the newest snapshot.";
+
+        // "09-22 22:15  level 1", or the time alone for today: for a window
+        // too narrow for the whole date. Made at the refresh.
+        private readonly List<string> _savesShortLabels = new List<string>();
+        private float _savesLabelFitWidth = -1;
+        private bool _savesLabelsFit = true;
+
+        private void MakeShortLabels()
+        {
+            _savesShortLabels.Clear();
+            foreach (SaveSnapshot s in _savesList)
+            {
+                _savesShortLabels.Add((s.Taken.Date == DateTime.Today ? s.Taken.ToString("HH:mm:ss") : s.Taken.ToString("MM-dd HH:mm")) + "  level " + s.Level);
+            }
+        }
+
+        // Inside the scroll view; rows outside visibleTop..visibleBottom are
+        // skipped.
+        private void DrawSnapshotRows(float innerWidth, float visibleTop, float visibleBottom)
         {
             // Every row keeps a column for the CURRENT mark, so the dates line up.
-            const float markWidth = 90;
+            const float markWidth = 80, restoreWidth = 80;
+            float labelWidth = innerWidth - 12 - markWidth - restoreWidth - 20;
+            if (labelWidth != _savesLabelFitWidth)
+            {
+                // Measured once per width: every full label is as long as this one.
+                _savesLabelFitWidth = labelWidth;
+                _savesLabelsFit = LineLabel(false).CalcSize(new GUIContent("2026-09-23 00:00:00  level 00")).x <= labelWidth;
+            }
             float y = 0;
             if (ShowSaveNotListed)
             {
                 DrawCurrentMark(y, innerWidth);
-                GUI.Label(new Rect(12 + markWidth, y, innerWidth - 24 - markWidth, RowHeight),
-                    "The save now: not in the list yet, changed since the newest snapshot", S.MutedLabel);
+                GUI.Label(new Rect(12 + markWidth, y, innerWidth - 24 - markWidth, RowHeight), SaveNotListedText, LineLabel(true));
                 y += 36;
             }
             for (int i = 0; i < _savesList.Count; i++, y += 36)
             {
+                if (y + RowHeight < visibleTop || y > visibleBottom)
+                {
+                    continue;
+                }
                 SaveSnapshot s = _savesList[i];
                 bool isCurrent = i == _currentIndex;
                 if (isCurrent)
                 {
                     DrawCurrentMark(y, innerWidth);
                 }
-                GUI.Label(new Rect(12 + markWidth, y, innerWidth - 130 - markWidth, RowHeight), s.Label, S.Label);
+                string label = _savesLabelsFit || i >= _savesShortLabels.Count ? s.Label : _savesShortLabels[i];
+                GUI.Label(new Rect(12 + markWidth, y, labelWidth, RowHeight), label, LineLabel(false));
                 // Nothing to restore on the row the save already is.
-                if (!isCurrent && GUI.Button(new Rect(innerWidth - 110, y, 98, RowHeight), "Restore", S.Button))
+                if (!isCurrent && GUI.Button(new Rect(innerWidth - 12 - restoreWidth, y, restoreWidth, RowHeight), "Restore", S.Button))
                 {
                     _pendingRestoreSlot = _savesSlot;
                     _pendingRestoreSnapshot = s;
@@ -630,12 +720,13 @@ namespace DragNWashLocalization
             ToolWindow.Fill(new Rect(4, y - 2, 2, RowHeight + 4), ToolWindow.AccentColor);
             Color previous = GUI.contentColor;
             GUI.contentColor = ToolWindow.AccentColor;
-            GUI.Label(new Rect(12, y, 86, RowHeight), "CURRENT", S.Label);
+            GUI.Label(new Rect(12, y, 76, RowHeight), "CURRENT", LineLabel(false));
             GUI.contentColor = previous;
         }
 
-        // Inside the scroll view.
-        private void DrawFlagRows(float innerWidth)
+        // Inside the scroll view; rows outside visibleTop..visibleBottom are
+        // skipped.
+        private void DrawFlagRows(float innerWidth, float visibleTop, float visibleBottom)
         {
             float fy = 4;
 
@@ -667,10 +758,14 @@ namespace DragNWashLocalization
                 _showOnceLines = !_showOnceLines;
                 RebuildFlagRows();
             }
+            // Nothing to reset while no flag in the save is true; an edit that
+            // changes nothing would still keep a snapshot.
+            GUI.enabled = _anyFlagTrue || _flagClearConfirm;
             if (GUI.Button(new Rect(bx + FlagOnceWidth + 8, fy, FlagResetWidth, RowHeight), "Reset all to false...", _flagClearConfirm ? S.SelectedButton : S.Button))
             {
                 _flagClearConfirm = !_flagClearConfirm;
             }
+            GUI.enabled = true;
             fy += 34;
 
             if (_flagClearConfirm)
@@ -702,15 +797,19 @@ namespace DragNWashLocalization
             {
                 FlagRow r = _flagRows[i];
                 float ry = fy + i * 30;
+                if (ry + 30 < visibleTop || ry > visibleBottom)
+                {
+                    continue;
+                }
                 if (r.IsHeader)
                 {
                     if ((dbg & 8) == 0)
-                        GUI.Label(new Rect(12, ry + 4, innerWidth - 24, 26), r.Id.ToUpperInvariant(), S.Label);
+                        GUI.Label(new Rect(12, ry + 4, innerWidth - 24, 26), r.ShownId, LineLabel(false));
                     continue;
                 }
-                GUI.Label(new Rect(24, ry, Mathf.Max(60, innerWidth * 0.42f), RowHeight), r.Id, S.Label);
+                GUI.Label(new Rect(24, ry, Mathf.Max(60, innerWidth * 0.42f), RowHeight), r.ShownId, LineLabel(false));
                 if ((dbg & 2) == 0)
-                    GUI.Label(new Rect(24 + Mathf.Max(60, innerWidth * 0.42f), ry, Mathf.Max(40, innerWidth * 0.58f - 130), RowHeight), r.Description ?? "", S.MutedLabel);
+                    GUI.Label(new Rect(24 + Mathf.Max(60, innerWidth * 0.42f), ry, Mathf.Max(40, innerWidth * 0.58f - 130), RowHeight), r.ShownDescription, LineLabel(true));
                 // The value it is going to have: a change not written yet, else
                 // the save's own.
                 bool changed = edits != null && edits.ContainsKey(r.Id);
