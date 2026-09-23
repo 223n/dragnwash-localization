@@ -476,16 +476,18 @@ namespace DragNWashLocalization
                 HotReload.Tick(PluginDirectory, TargetLocale.Value);
             }
 
+            // The tools keep what they said for the Translation tab
+            // (Plugin.TranslationTab.cs).
             if (DumpDialogueKey.Value.IsDown() || _pendingDump)
             {
                 _pendingDump = false;
-                DialogueDumper.DumpAll(PluginDirectory);
+                RunDialogueExport();
             }
 
             if (DumpUiTextKey.Value.IsDown() || _pendingUiDump)
             {
                 _pendingUiDump = false;
-                UiTextDumper.DumpAll(PluginDirectory);
+                RunUiTextExport();
             }
 
             if (_pendingRestoreSnapshot != null)
@@ -506,8 +508,7 @@ namespace DragNWashLocalization
             if (_pendingWorkingCopy)
             {
                 _pendingWorkingCopy = false;
-                string exported = WorkingCopy.Export(PluginDirectory, TargetLocale.Value, out LogKind exportKind);
-                Log(exported, exportKind);
+                RunWorkingCopy();
             }
 
             if (_pendingHashFile)
@@ -515,20 +516,19 @@ namespace DragNWashLocalization
                 _pendingHashFile = false;
                 // Rewrites the file; hot reload then re-reads it, which is a
                 // no-op for the table since every row resolves to the same key.
-                string hashed = TranslationStore.HashFileInPlace(PluginDirectory, TargetLocale.Value, out LogKind hashKind);
-                Log(hashed, hashKind);
+                RunHash();
             }
 
             if (_pendingFlowDump)
             {
                 _pendingFlowDump = false;
-                Log(FlowDumper.Export(PluginDirectory), LogKind.Result);
+                RunFlowExport();
             }
 
             if (_pendingLayoutCheck)
             {
                 _pendingLayoutCheck = false;
-                LayoutChecker.Report(PluginDirectory, LayoutRiskThreshold.Value);
+                RunLayoutCheck();
             }
 
             // Periodic, main-thread, low-frequency: see the comment on

@@ -1,4 +1,8 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using DragNWash.ModFramework.ToolWindow;
 
@@ -32,6 +36,7 @@ namespace DragNWashLocalization
             float y = DrawLanguages(8, width);
             y = DrawSteps(y + 12, width);
             y = DrawGameTextExports(y + 12, width);
+            y = DrawLastResult(y, width);
             y = DrawOtherMods(y, width);
 
             GUI.EndScrollView();
@@ -84,7 +89,6 @@ namespace DragNWashLocalization
                 () =>
                 {
                     _pendingWorkingCopy = true;
-                    ToolWindow.ShowNotice("See Activity log for the working copy result.");
                 });
 
             y = DrawEditStep(y, width, locale);
@@ -94,7 +98,6 @@ namespace DragNWashLocalization
                 () =>
                 {
                     _pendingLayoutCheck = true;
-                    ToolWindow.ShowNotice("See Activity log for the layout check result.");
                 });
 
             y = StepButton(y, width, "4", _pendingHashFile ? "Hashing..." : $"Hash {locale} for commit",
@@ -102,7 +105,6 @@ namespace DragNWashLocalization
                 () =>
                 {
                     _pendingHashFile = true;
-                    ToolWindow.ShowNotice("See Activity log for the hashing result.");
                 });
             return y - 10;
         }
@@ -137,7 +139,7 @@ namespace DragNWashLocalization
             if (Time.unscaledTime >= _workingCopyCheckedAt + 2f)
             {
                 _workingCopyCheckedAt = Time.unscaledTime;
-                _workingCopyExists = System.IO.File.Exists(WorkingCopy.PathFor(PluginDirectory, locale));
+                _workingCopyExists = File.Exists(WorkingCopy.PathFor(PluginDirectory, locale));
             }
             string watched = _workingCopyExists ? "_discovered/" + WorkingCopy.FileNameFor(locale) : locale + "/strings.csv";
 
@@ -166,7 +168,7 @@ namespace DragNWashLocalization
             return y;
         }
 
-        private float StepButton(float y, float width, string number, string label, string description, System.Action press)
+        private float StepButton(float y, float width, string number, string label, string description, Action press)
         {
             StepNumber(y, number);
             float buttonWidth = Mathf.Min(width - StepIndent, Mathf.Max(160, S.Button.CalcSize(new GUIContent(label)).x + 24));
@@ -184,6 +186,7 @@ namespace DragNWashLocalization
             public GUIStyle From;
             public GUIStyle Accent;
             public GUIStyle Warning;
+            public GUIStyle Plain;
         }
         private readonly TranslationTabStyles _tabStyles = new TranslationTabStyles();
 
@@ -196,6 +199,7 @@ namespace DragNWashLocalization
                     _tabStyles.From = S.WrappedLabel;
                     _tabStyles.Accent = Tinted(S.Label, ToolWindow.AccentColor);
                     _tabStyles.Warning = Tinted(S.WrappedLabel, ToolWindow.WarningColor);
+                    _tabStyles.Plain = Tinted(S.WrappedLabel, S.Label.normal.textColor);
                 }
                 return _tabStyles;
             }
@@ -228,7 +232,7 @@ namespace DragNWashLocalization
             bool oneRow = width >= 3 * 150 + 16;
             float buttonWidth = oneRow ? (width - 16) / 3 : width;
             float x = 12;
-            void Export(string label, System.Action press)
+            void Export(string label, Action press)
             {
                 if (GUI.Button(new Rect(x, y, buttonWidth, RowHeight), label, S.Button))
                 {
@@ -240,20 +244,360 @@ namespace DragNWashLocalization
             Export(_pendingDump ? "Exporting..." : $"Dialogue  ({DumpDialogueKey.Value})", () =>
             {
                 _pendingDump = true;
-                ToolWindow.ShowNotice("See Activity log for the dialogue export result.");
             });
             Export(_pendingUiDump ? "Exporting..." : $"UI text  ({DumpUiTextKey.Value})", () =>
             {
                 _pendingUiDump = true;
-                ToolWindow.ShowNotice("See Activity log for the UI text export result.");
             });
             Export(_pendingFlowDump ? "Exporting..." : "Game flow", () =>
             {
                 _pendingFlowDump = true;
-                ToolWindow.ShowNotice("See Activity log for the flow export result.");
             });
             return oneRow ? y + RowHeight : y - 8;
         }
+
+        // ---- the last result -------------------------------------------------
+
+        private enum ResultKind { Done, Warning, Failed }
+
+        private sealed class ToolResult
+        {
+            public ResultKind Kind;
+            public string Title;
+            // The notice in the footer; the title when there is nothing shorter.
+            public string Short;
+            public string Body;
+            // The file (or folder) it wrote, for Copy path; null for none.
+            public string Path;
+        }
+
+        // Set in Update, read by the draw; both run on the main thread.
+        private ToolResult _lastResult;
+
+        // Lines the running tool logs, or null when no tool is running. Written
+        // under the LogLines lock (Plugin.Log).
+        private static List<string> _captured;
+
+        // Runs one tool from Update and keeps what it said for the tab, with a
+        // short version as the notice. A tool that returns its message has it
+        // logged here; the dumpers and the layout check log their own lines,
+        // which are picked up while they run. Only lines with the tool's own
+        // tags are kept: a line of dialogue can log a review note meanwhile.
+        // A tool that returns its message, and the kind to log it as.
+        private delegate string ToolRun(out LogKind kind);
+
+        private void RunTool(string what, string tags, ToolRun run, Func<List<string>, ToolResult> describe)
+        {
+            var said = new List<string>();
+            lock (LogLines)
+            {
+                _captured = said;
+            }
+            ToolResult result;
+            try
+            {
+                string message = run(out LogKind kind);
+                if (message != null)
+                {
+                    Log(message, kind);
+                }
+                lock (LogLines)
+                {
+                    _captured = null;
+                }
+                said.RemoveAll(line => !line.StartsWith("[", StringComparison.Ordinal) ||
+                    tags.IndexOf(line.Substring(0, Math.Max(1, line.IndexOf(']') + 1)), StringComparison.Ordinal) < 0);
+                result = describe(said);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"{what} failed: {ex}");
+                Log($"[tools] {what} failed: {ex.Message}", LogKind.Error);
+                result = new ToolResult { Kind = ResultKind.Failed, Title = what + " failed.", Body = ex.Message };
+            }
+            finally
+            {
+                lock (LogLines)
+                {
+                    _captured = null;
+                }
+            }
+            if (result.Body == null)
+            {
+                result.Body = BodyOf(said);
+            }
+            _lastResult = result;
+            ToolWindow.ShowNotice(result.Short ?? result.Title);
+        }
+
+        private void RunWorkingCopy()
+        {
+            string locale = TargetLocale.Value;
+            RunTool("Working copy", "[working]", (out LogKind kind) => WorkingCopy.Export(PluginDirectory, locale, out kind), said =>
+            {
+                var r = new ToolResult { Path = WorkingCopy.PathFor(PluginDirectory, locale) };
+                string m = Said(said, "[working] Wrote");
+                if (m == null)
+                {
+                    r.Kind = ResultKind.Failed;
+                    r.Title = "Working copy not written.";
+                    r.Path = null;
+                    return r;
+                }
+                r.Kind = m.Contains("No script order data found") ? ResultKind.Warning : ResultKind.Done;
+                r.Title = "Working copy written.";
+                string rows = Number(m, @"Wrote (\d+) row"), untranslated = Number(m, @"(\d+) still untranslated");
+                if (rows != null && untranslated != null)
+                {
+                    r.Short = $"Working copy written: {rows} rows, {untranslated} untranslated.";
+                }
+                return r;
+            });
+        }
+
+        private void RunHash()
+        {
+            string locale = TargetLocale.Value;
+            RunTool("Hashing", "[hash]", (out LogKind kind) => TranslationStore.HashFileInPlace(PluginDirectory, locale, out kind), said =>
+            {
+                var r = new ToolResult { Path = Path.Combine(PluginDirectory, "Translations", locale, "strings.csv") };
+                string m = Said(said, "[hash]");
+                if (m == null || !m.Contains(" written"))
+                {
+                    r.Kind = ResultKind.Failed;
+                    r.Title = $"{locale}/strings.csv not rebuilt.";
+                    r.Path = null;
+                    return r;
+                }
+                int.TryParse(Number(m, @"(\d+) malformed dropped"), out int dropped);
+                bool stale = m.Contains("export it again");
+                r.Kind = dropped > 0 || stale ? ResultKind.Warning : ResultKind.Done;
+                r.Title = $"{locale}/strings.csv written" +
+                    (dropped > 0 ? $", {dropped} row(s) dropped" : "") +
+                    (stale ? ", but the working copy looks older than the game" : "") + ".";
+                return r;
+            });
+        }
+
+        private void RunFlowExport()
+        {
+            RunTool("Game flow export", "[flow][graph][order]", (out LogKind kind) => { kind = LogKind.Result; return FlowDumper.Export(PluginDirectory); }, said =>
+            {
+                // Three files: level flow, dialogue graph, script order.
+                string m = Said(said, "[flow]") ?? "";
+                int wrote = Regex.Matches(m, @"\[(flow|graph|order)\] Wrote").Count;
+                var r = new ToolResult { Path = Path.Combine(PluginDirectory, "Translations", "_discovered") };
+                r.Kind = wrote == 3 ? ResultKind.Done : ResultKind.Warning;
+                r.Title = wrote == 3 ? "Game flow exported." : wrote > 0 ? "Game flow exported in part." : "Game flow not exported.";
+                if (wrote == 0) r.Path = null;
+                return r;
+            });
+        }
+
+        private void RunDialogueExport()
+        {
+            RunTool("Dialogue export", "[dump]", (out LogKind kind) => { kind = LogKind.Info; DialogueDumper.DumpAll(PluginDirectory); return null; }, said =>
+            {
+                var r = new ToolResult { Path = DiscoveredFile("dialogue_lines.csv") };
+                string m = Said(said, "[dump] Wrote");
+                if (m != null)
+                {
+                    r.Kind = Said(said, "[dump] Could not") != null ? ResultKind.Warning : ResultKind.Done;
+                    r.Title = "Dialogue exported.";
+                    string lines = Number(m, @"Wrote (\d+) line");
+                    if (lines != null) r.Short = $"Dialogue exported: {lines} lines.";
+                    return r;
+                }
+                r.Path = null;
+                bool notYet = Said(said, "[dump] No YarnProject") != null;
+                r.Kind = notYet ? ResultKind.Warning : ResultKind.Failed;
+                r.Title = notYet ? "No dialogue is loaded yet." : "Dialogue not exported.";
+                return r;
+            });
+        }
+
+        private void RunUiTextExport()
+        {
+            RunTool("UI text export", "[ui]", (out LogKind kind) => { kind = LogKind.Info; UiTextDumper.DumpAll(PluginDirectory); return null; }, said =>
+            {
+                var r = new ToolResult { Path = DiscoveredFile("ui_texts.csv") };
+                string m = Said(said, "[ui]");
+                if (m != null && m.Contains("UI string(s)"))
+                {
+                    r.Kind = ResultKind.Done;
+                    r.Title = "UI text exported.";
+                    string count = Number(m, @"\[ui\] (\d+) UI string");
+                    if (count != null) r.Short = $"UI text exported: {count} strings.";
+                    return r;
+                }
+                r.Path = null;
+                bool none = m != null && m.Contains("No UI text found");
+                r.Kind = none ? ResultKind.Warning : ResultKind.Failed;
+                r.Title = none ? "No UI text found." : "UI text not exported.";
+                return r;
+            });
+        }
+
+        private void RunLayoutCheck()
+        {
+            RunTool("Layout check", "[layout]", (out LogKind kind) => { kind = LogKind.Info; LayoutChecker.Report(PluginDirectory, LayoutRiskThreshold.Value); return null; }, said =>
+            {
+                var r = new ToolResult();
+                string m = Said(said, "[layout]") ?? "";
+                if (m.Contains("need a look"))
+                {
+                    r.Kind = ResultKind.Warning;
+                    string count = Number(m, @"\[layout\] (\d+) of");
+                    r.Title = count != null ? $"{count} label(s) need a look." : "Some labels need a look.";
+                    r.Path = DiscoveredFile("layout_risks.csv");
+                }
+                else if (m.Contains("all fit"))
+                {
+                    r.Kind = m.Contains("could not be rewritten") ? ResultKind.Warning : ResultKind.Done;
+                    r.Title = "Every translated label fits.";
+                }
+                else if (m.Contains("nothing to check") || m.Contains("No translated text is on screen"))
+                {
+                    r.Kind = ResultKind.Warning;
+                    r.Title = "Nothing to check yet.";
+                }
+                else
+                {
+                    r.Kind = ResultKind.Failed;
+                    r.Title = "Layout check failed.";
+                }
+                return r;
+            });
+        }
+
+        private static string DiscoveredFile(string name) => Path.Combine(PluginDirectory, "Translations", "_discovered", name);
+
+        // The last line the tool logged that starts with the prefix.
+        private static string Said(List<string> said, string prefix)
+        {
+            for (int i = said.Count - 1; i >= 0; i--)
+            {
+                if (said[i].StartsWith(prefix, StringComparison.Ordinal)) return said[i];
+            }
+            return null;
+        }
+
+        private static string Number(string text, string pattern)
+        {
+            Match match = Regex.Match(text ?? "", pattern);
+            return match.Success ? match.Groups[1].Value : null;
+        }
+
+        // What the tool logged, one line per message and without the "[tag]"
+        // in front. The game flow export puts its three results on one line.
+        private static string BodyOf(List<string> said)
+        {
+            var lines = new List<string>();
+            foreach (string message in said)
+            {
+                foreach (string part in message.Replace("  [", "\n[").Split('\n'))
+                {
+                    lines.Add(Regex.Replace(part, @"^\[[a-z]+\] ", ""));
+                }
+            }
+            return string.Join("\n", lines);
+        }
+
+        private float DrawLastResult(float y, float width)
+        {
+            ToolResult r = _lastResult;
+            if (r == null)
+            {
+                return y;
+            }
+            y += 20;
+            GUI.Label(new Rect(12, y, width, 26), "LAST RESULT", S.Label);
+            y += 30;
+
+            float textX = 12 + 13, textWidth = width - 23;
+            var title = new GUIContent(ToolWindow.Drawable(r.Title));
+            var body = new GUIContent(ToolWindow.Drawable(r.Body ?? ""));
+            float titleHeight = TabStyles.Plain.CalcHeight(title, textWidth);
+            float bodyHeight = string.IsNullOrEmpty(r.Body) ? 0 : S.WrappedLabel.CalcHeight(body, textWidth);
+            float height = 8 + titleHeight + (bodyHeight > 0 ? 2 + bodyHeight : 0) + (r.Path != null ? 8 + RowHeight : 0) + 8;
+
+            ToolWindow.Fill(new Rect(12, y, width, height), ToolWindow.PanelColor);
+            ToolWindow.Fill(new Rect(12, y, 3, height),
+                r.Kind == ResultKind.Failed ? ToolWindow.ErrorColor : r.Kind == ResultKind.Warning ? ToolWindow.WarningColor : ToolWindow.AccentColor);
+            float ty = y + 8;
+            GUI.Label(new Rect(textX, ty, textWidth, titleHeight), title, TabStyles.Plain);
+            ty += titleHeight + 2;
+            if (bodyHeight > 0)
+            {
+                GUI.Label(new Rect(textX, ty, textWidth, bodyHeight), body, S.WrappedLabel);
+                ty += bodyHeight;
+            }
+            if (r.Path != null)
+            {
+                ty += 8;
+                if (GUI.Button(new Rect(textX, ty, 120, RowHeight), "Copy path", S.Button))
+                {
+                    // The path only, on this machine's clipboard.
+                    GUIUtility.systemCopyBuffer = r.Path;
+                    ToolWindow.ShowNotice("Path copied.");
+                }
+                if (CanOpenFolders && GUI.Button(new Rect(textX + 128, ty, 120, RowHeight), "Open folder", S.Button))
+                {
+                    OpenFolder(r.Path);
+                }
+            }
+            return y + height;
+        }
+
+        private static bool? _canOpenFolders;
+
+        // Windows only. Under Proton (Steam Deck) the folder would open in
+        // Wine's own file manager, if at all, behind the game in Gaming Mode.
+        private static bool CanOpenFolders
+        {
+            get
+            {
+                if (_canOpenFolders == null)
+                {
+                    _canOpenFolders = Application.platform == RuntimePlatform.WindowsPlayer && !RunningUnderWine();
+                }
+                return _canOpenFolders.Value;
+            }
+        }
+
+        private static void OpenFolder(string path)
+        {
+            try
+            {
+                string folder = Directory.Exists(path) ? path : Path.GetDirectoryName(path);
+                Application.OpenURL(new Uri(folder).AbsoluteUri);
+            }
+            catch (Exception ex)
+            {
+                ToolWindow.ShowNotice("Could not open the folder: " + ex.Message);
+            }
+        }
+
+        // Wine (and Proton) export wine_get_version from their ntdll; Windows
+        // does not. The framework's crash reporter tells them apart the same way.
+        private static bool RunningUnderWine()
+        {
+            try
+            {
+                IntPtr ntdll = GetModuleHandle("ntdll.dll");
+                return ntdll != IntPtr.Zero && GetProcAddress(ntdll, "wine_get_version") != IntPtr.Zero;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr GetModuleHandle(string name);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Ansi)]
+        private static extern IntPtr GetProcAddress(IntPtr module, string name);
 
         private float DrawOtherMods(float y, float width)
         {

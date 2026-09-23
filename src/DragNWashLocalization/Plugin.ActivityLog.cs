@@ -76,6 +76,9 @@ namespace DragNWashLocalization
 
                 lock (LogLines)
                 {
+                    // Before the repeat check: a tool that says the same thing
+                    // twice in a row still said it (Plugin.TranslationTab.cs).
+                    _captured?.Add(message);
                     // A button pressed twice gives the same line twice. Dropping
                     // the second made the press look lost; it is counted instead.
                     if (_lastLogLine != null && _lastLogLine.Text == message && _lastLogLine.Kind == kind)
