@@ -25,7 +25,7 @@ For example `ja/name.txt` → `日本語`, `zh-Hans/name.txt` → `简体中文`
 
 ### Status and reviewers (`credits.txt`)
 
-The language table on the F1 menu's **About** tab reads `Translations/<locale>/credits.txt`. The first line is the pack's status: `supervised`, `proofread`, `converted`, `provisional` or `fun`. Each line after it is the name of someone who checked the pack. A pack without the file shows as provisional. You don't need to touch it in your pull request; the maintainer updates it along with the other credits.
+The language table on the F1 menu's **About** tab reads `Translations/<locale>/credits.txt`. The first line is the pack's status: `supervised`, `native` (translated by a native speaker), `proofread`, `converted`, `provisional` or `fun`. Each line after it is the name of someone who checked the pack. A pack without the file shows as provisional. You don't need to touch it in your pull request; the maintainer updates it along with the other credits.
 
 ## Basic flow
 
@@ -194,6 +194,7 @@ Every pack except Japanese and Simplified Chinese is provisional. They're comple
 - The tags are laid out the same as in the source.
 - There are no duplicate rows and no rows with an empty `translation`.
 - Each pull request covers one language and one sensible chunk of work.
+- Your commits are made with an email that's on your GitHub account, or with your GitHub no-reply address (both are on [github.com/settings/emails](https://github.com/settings/emails)). Otherwise GitHub can't tell the commits are yours, and the **Commit checker** fails.
 
 ## Writing the pull request
 

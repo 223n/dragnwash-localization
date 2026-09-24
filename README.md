@@ -30,7 +30,7 @@ Installing is really easy.
 
 The installer finds the game through Steam by itself, or you can point it at the folder. If BepInEx isn't installed yet, it downloads the official 5.4.23.5 release, checks its SHA-256 and unpacks it for you. Drag'n Wash ModFramework, which the mod runs on, comes the same way: if the game folder doesn't have a new enough one, the installer gets it from the framework's GitHub release. It asks you before it downloads anything. After that, just start the game from Steam.
 
-You get 日本語, 简体中文 and English (no translation), Korean proofread by a native speaker, provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Russian, Polish, Hebrew, Ukrainian, Thai and Vietnamese, and Esperanto and Toki Pona for fun (see [Language packs](#language-packs)). The same window has an **Uninstall** button. It keeps your save-history snapshots unless you say otherwise, and it only removes BepInEx along with the mod if you ask and no other mod uses it. You can uninstall from inside the game as well: **Options → Mods → Drag'n Wash Localization → Uninstall**, and the mod is gone the next time the game starts.
+You get 日本語, 简体中文 and English (no translation), Korean proofread by a native speaker, Turkish translated by a native speaker, provisional packs for Traditional Chinese, German, French, Spanish, Brazilian Portuguese, Russian, Polish, Hebrew, Ukrainian, Thai and Vietnamese, and Esperanto and Toki Pona for fun (see [Language packs](#language-packs)). The same window has an **Uninstall** button. It keeps your save-history snapshots unless you say otherwise, and it only removes BepInEx along with the mod if you ask and no other mod uses it. You can uninstall from inside the game as well: **Options → Mods → Drag'n Wash Localization → Uninstall**, and the mod is gone the next time the game starts.
 
 If you'd rather do it by hand, the manual steps are below.
 
@@ -196,6 +196,7 @@ TomXV wrote the translation files, and they come in the same zip. Contributors w
 | `uk` | Українська | Provisional |
 | `th` | ไทย | Provisional (a zero-width space between words lets lines break) |
 | `vi` | Tiếng Việt | Provisional |
+| `tr` | Türkçe | Translated by a native speaker, [DarkBloodKing](https://github.com/Darkbloodking00) |
 | `eo` | Esperanto | Provisional, just for fun |
 | `tok` | toki pona | Provisional, just for fun (it's a 137-word language, so expect it to be loose) |
 | `en` | English | The game's original text (no translation) |
