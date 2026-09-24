@@ -294,6 +294,7 @@ PRごとに自動チェックが走っていて、形式が違うと理由を英
 - 書式タグの構造が原文と同じか。
 - 重複した行や、`translation` が空の行を入れていないか。
 - 1つのPRには、1つの言語の、ひとまとまりの範囲だけを入れてください。
+- コミットのメールアドレスが、自分の GitHub アカウントに登録してあるものか、GitHub の no-reply アドレスになっているか（どちらも [github.com/settings/emails](https://github.com/settings/emails) で見られます）。そうでないと、GitHub がそのコミットをあなたのものだと分からず、**Commit checker** が失敗します。
 
 ## Pull Request の書き方
 

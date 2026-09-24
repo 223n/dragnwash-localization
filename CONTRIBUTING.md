@@ -194,6 +194,7 @@ Every pack except Japanese and Simplified Chinese is provisional. They're comple
 - The tags are laid out the same as in the source.
 - There are no duplicate rows and no rows with an empty `translation`.
 - Each pull request covers one language and one sensible chunk of work.
+- Your commits are made with an email that's on your GitHub account, or with your GitHub no-reply address (both are on [github.com/settings/emails](https://github.com/settings/emails)). Otherwise GitHub can't tell the commits are yours, and the **Commit checker** fails.
 
 ## Writing the pull request
 
