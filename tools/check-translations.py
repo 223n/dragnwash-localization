@@ -17,7 +17,7 @@ and nothing under Translations/_discovered/ may be committed - the working
 copies there carry the game's script in plain English.
 
 Translations/<locale>/credits.txt, when there is one, starts with the pack's
-status (supervised, proofread, converted, provisional or fun); the lines after
+status (supervised, native, proofread, converted, provisional or fun); the lines after
 it name who checked the pack. The About tab in the F1 menu shows both.
 
 Translated pictures in Translations/<locale>/textures/ (docs/TRANSLATED_TEXTURES.md)
@@ -170,7 +170,7 @@ def check_fallback(file: Path, locale_dir: Path) -> list:
     return problems
 
 
-CREDIT_STATUSES = ("supervised", "proofread", "converted", "provisional", "fun")
+CREDIT_STATUSES = ("supervised", "native", "proofread", "converted", "provisional", "fun")
 
 
 def check_credits(file: Path) -> list:

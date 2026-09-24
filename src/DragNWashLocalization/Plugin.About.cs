@@ -266,7 +266,7 @@ namespace DragNWashLocalization
         private static List<CreditItem> _credits;
 
         // Translations/<locale>/credits.txt: the pack's status on the first
-        // line (supervised, proofread, converted, provisional or fun), then who
+        // line (supervised, native, proofread, converted, provisional or fun), then who
         // checked it, one per line. A pack without the file is provisional.
         private sealed class LocaleCredit
         {
@@ -527,6 +527,7 @@ namespace DragNWashLocalization
             switch (status)
             {
                 case "supervised": tag = "SUPERVISED"; color = ToolWindow.AccentColor; rank = 0; break;
+                case "native": tag = "NATIVE"; color = ToolWindow.AccentColor; rank = 1; break;
                 case "proofread": tag = "PROOFREAD"; color = ToolWindow.AccentColor; rank = 1; break;
                 case "converted": tag = "CONVERTED"; color = ToolWindow.MutedColor; rank = 2; break;
                 case "fun": tag = "FOR FUN"; color = ToolWindow.MutedColor; rank = 4; break;

@@ -25,7 +25,7 @@ For example `ja/name.txt` → `日本語`, `zh-Hans/name.txt` → `简体中文`
 
 ### Status and reviewers (`credits.txt`)
 
-The language table on the F1 menu's **About** tab reads `Translations/<locale>/credits.txt`. The first line is the pack's status: `supervised`, `proofread`, `converted`, `provisional` or `fun`. Each line after it is the name of someone who checked the pack. A pack without the file shows as provisional. You don't need to touch it in your pull request; the maintainer updates it along with the other credits.
+The language table on the F1 menu's **About** tab reads `Translations/<locale>/credits.txt`. The first line is the pack's status: `supervised`, `native` (translated by a native speaker), `proofread`, `converted`, `provisional` or `fun`. Each line after it is the name of someone who checked the pack. A pack without the file shows as provisional. You don't need to touch it in your pull request; the maintainer updates it along with the other credits.
 
 ## Basic flow
 

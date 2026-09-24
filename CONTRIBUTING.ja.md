@@ -31,7 +31,7 @@ Unityの内部キー名もプログラミングの知識もまったく要りま
 ### 状態と見た人（`credits.txt`）
 
 F1メニューの **About** タブの言語の表は、`Translations/<locale>/credits.txt` を読んで出しています。
-1行目がパックの状態で、`supervised`、`proofread`、`converted`、`provisional`、`fun` のどれかです。
+1行目がパックの状態で、`supervised`、`native`（ネイティブが翻訳）、`proofread`、`converted`、`provisional`、`fun` のどれかです。
 2行目からは、そのパックを見てくれた人の名前を1行に1人ずつ書きます。
 ファイルがないパックは provisional として出ます。
 PRでこのファイルを触る必要はありません。ほかのクレジットと一緒にメンテナーが直します。
