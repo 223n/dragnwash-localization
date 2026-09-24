@@ -457,7 +457,7 @@ namespace DragNWashLocalization
             if (_credits == null)
             {
                 AboutText("Created by TomXV. Translation files by TomXV, with corrections from contributors credited in the README and in each language file.");
-                AboutText("Korean proofread by Hotcake.");
+                AboutText("Korean proofread by Hotcake. Turkish translated by DarkBloodKing.");
                 AboutText("This mod's logo by Mister ERIO, who also drew the framework's Mods button. The framework's logo and icon by NotaGames.");
                 return;
             }

@@ -22,7 +22,9 @@ Translations
 ------------
 
 Japanese and Simplified Chinese are supervised by the author. Korean was
-proofread by a native speaker, Hotcake. Traditional Chinese is converted from
+proofread by a native speaker, Hotcake. Turkish was translated by a native
+speaker, DarkBloodKing (https://github.com/Darkbloodking00). Traditional
+Chinese is converted from
 the Simplified Chinese pack. The other packs - German, French, Spanish,
 Brazilian Portuguese, Russian, Polish, Hebrew, Ukrainian, Thai, Vietnamese,
 Esperanto and toki pona - are provisional and waiting for a native speaker;

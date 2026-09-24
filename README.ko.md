@@ -33,7 +33,7 @@
 
 설치 프로그램이 Steam에서 게임 위치를 알아서 찾아 주고, 폴더를 직접 고를 수도 있어요. BepInEx가 아직 없으면 공식 5.4.23.5 릴리스를 받아 SHA-256을 확인한 다음 압축까지 알아서 풀어 줘요. 모드가 쓰는 Drag'n Wash ModFramework도 게임 폴더에 충분히 새로운 버전이 없으면 같은 식으로 프레임워크의 GitHub 릴리스에서 받아 와요. 받기 전에 먼저 물어봐요. 그다음엔 Steam에서 게임을 실행하기만 하면 돼요.
 
-고를 수 있는 언어는 日本語 / 简体中文 / English(번역 없음), 원어민이 교정한 한국어, 번체 중국어, 독일어, 프랑스어, 스페인어, 브라질 포르투갈어, 러시아어, 폴란드어, 히브리어, 우크라이나어, 태국어, 베트남어 임시 팩, 그리고 재미로 넣은 에스페란토와 토키 포나예요([Language packs](#language-packs) 참고). 같은 창에 **Uninstall** 버튼도 있어요. 기본적으로 세이브 히스토리 스냅샷은 남겨 두고, BepInEx는 직접 요청했고 다른 모드가 쓰지 않을 때만 모드와 같이 지워요. 게임 안에서도 지울 수 있는데, **Options → Mods → Drag'n Wash Localization → Uninstall**을 누르면 다음에 게임을 시작할 때 모드가 제거돼요.
+고를 수 있는 언어는 日本語 / 简体中文 / English(번역 없음), 원어민이 교정한 한국어, 원어민이 번역한 튀르키예어, 번체 중국어, 독일어, 프랑스어, 스페인어, 브라질 포르투갈어, 러시아어, 폴란드어, 히브리어, 우크라이나어, 태국어, 베트남어 임시 팩, 그리고 재미로 넣은 에스페란토와 토키 포나예요([Language packs](#language-packs) 참고). 같은 창에 **Uninstall** 버튼도 있어요. 기본적으로 세이브 히스토리 스냅샷은 남겨 두고, BepInEx는 직접 요청했고 다른 모드가 쓰지 않을 때만 모드와 같이 지워요. 게임 안에서도 지울 수 있는데, **Options → Mods → Drag'n Wash Localization → Uninstall**을 누르면 다음에 게임을 시작할 때 모드가 제거돼요.
 
 직접 설치하고 싶다면 아래 수동 설치 방법을 따라 하세요.
 
@@ -199,6 +199,7 @@ BepInEx/config/com.tomxv.dragnwash.localization.cfg
 | `uk` | Українська | 임시 |
 | `th` | ไทย | 임시 (단어 사이의 폭 없는 공백으로 줄바꿈) |
 | `vi` | Tiếng Việt | 임시 |
+| `tr` | Türkçe | 원어민 번역, [DarkBloodKing](https://github.com/Darkbloodking00) |
 | `eo` | Esperanto | 임시, 재미용 |
 | `tok` | toki pona | 임시, 재미용 (137개 단어 언어라 의역이 많을 수 있음) |
 | `en` | English | 게임 원본 텍스트 (번역 없음) |
