@@ -1,0 +1,2144 @@
+key,section,node,order,speaker,translation
+
+# ===== Level 1: Ryan (Sunny) | sets level_1 | ends level_1_complete =====
+# --- intro: Ryan_1_intro ---
+0da72197e898ebe1,L01 Ryan,Ryan_1_intro,1,Ryan,Kimse var mı?
+334d016f755cd6dc,L01 Ryan,Ryan_1_intro,2,Kobold,Merhaba!
+dfba3eb46cb5fc14,L01 Ryan,Ryan_1_intro,3,Ryan,Ah merhaba! şey..
+30985c07d735bdc3,L01 Ryan,Ryan_1_intro,4,Ryan,Buralarda bir yerde beni yıkayabilecek koboldların olduğu duydum da...
+08c8207cff7cb565,L01 Ryan,Ryan_1_intro,5,Ryan,Doğru yere mi geldim acaba?
+32cfb777c0a1ca30,L01 Ryan,Ryan_1_intro,6,Kobold,Mhm! <i>işte</i> o kobold ben oluyorum!
+eec1e26d3338868e,L01 Ryan,Ryan_1_intro,7,Kobold,"Evet doğru, Drag'n wash'a hoş geldiniz!"
+b8e3a13e8da1caf6,L01 Ryan,Ryan_1_intro,8,Ryan,"Haha, gerçekten de öylesin!"
+84f325bca745e504,L01 Ryan,Ryan_1_intro,9,Ryan/Alexander,Harika!
+line:6046bedf,L01 Ryan,Ryan_1_intro,9,Ryan,Harika!
+900e8c593033c189,L01 Ryan,Ryan_1_intro,10,Ryan,İsmim Ryan. Şey...
+092808653667e9ff,L01 Ryan,Ryan_1_intro,11,Ryan,içeri nasıl girebilirim?
+0f3f0b7e817061e6,L01 Ryan,Ryan_1_intro,12,Kobold,"Bekle bir saniye, bariyeri açmam lazım."
+b8a4a2d6c54c16d8,L01 Ryan,Ryan_1_intro,13,Kobold,İvit!
+273533e355fd12cf,L01 Ryan,Ryan_1_intro,14,Ryan,Ne dedin...?
+3faa3f1d46e0e544,L01 Ryan,Ryan_1_intro,15,Kobold,"Ah- şey... bariyeri açacağım!"
+ce6db45f1866ad91,L01 Ryan,Ryan_1_intro,16,Ryan,"Ha, şimdi çözdüm! İçerideki tuşu yeni görüyorum"
+425d9584e840b683,L01 Ryan,Ryan_1_intro,17,Ryan,"Peki, burada bekliyor olacağım. Teşekkürler."
+# --- phone: Ryan_1_PhoneTutorial ---
+9bb3073cec0eb0c7,L01 Ryan,Ryan_1_PhoneTutorial,1,Phone,"Alo, <i>'Drag'n wash franchise'ı 223'...</i> İlk müşterinle konuştun mu?"
+276bc2be4d36787f,L01 Ryan,Ryan_1_PhoneTutorial,2,Kobold,Az önce konuştum!
+d3c6dd1cf6eefa2a,L01 Ryan,Ryan_1_PhoneTutorial,3,Kobold,Evet.
+38526f3244d3b009,L01 Ryan,Ryan_1_PhoneTutorial,4,Phone,"Ah, harika."
+ab5df625bc76dbd4,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone/Ryan/Alexander/Conrad/Kobold,...
+line:7426a997,L01 Ryan,Ryan_1_PhoneTutorial,5,Phone,...
+4d4a3684433b7f10,L01 Ryan,Ryan_1_PhoneTutorial,6,Phone,Peki o zaman- Verimli bir gün dilerim.
+07c91bff06f38512,L01 Ryan,Ryan_1_PhoneTutorial,7,Phone,"Alo, <i>'Drag'n wash franchise'ı 223'...</i> Müşterilerle nasıl etkileşim kuracağını çözdün mü?"
+3d08b37cdf5c2183,L01 Ryan,Ryan_1_PhoneTutorial,8,Kobold,Yok...
+01888febaebd67cd,L01 Ryan,Ryan_1_PhoneTutorial,9,Kobold,ama başaracağım!
+085283be600618d2,L01 Ryan,Ryan_1_PhoneTutorial,10,Phone,Ah...
+4ad86617a918d8ec,L01 Ryan,Ryan_1_PhoneTutorial,11,Phone,"O halde, pencereye git ve müşterinle konuş."
+af789b5c60f24630,L01 Ryan,Ryan_1_PhoneTutorial,12,Phone,Tabii ki daha sonra onları içeri alman gerek.
+bb645759b5bd99d4,L01 Ryan,Ryan_1_PhoneTutorial,13,Phone,Mükemmel. O zaman pencereye git ve müşterini selamla.
+474ab3afa218a5df,L01 Ryan,Ryan_1_PhoneTutorial,14,Kobold,Tamam!
+7d869361bdb13d98,L01 Ryan,Ryan_1_PhoneTutorial,15,Phone,Günün verimli geçsin.
+# --- progress: Ryan_1_required ---
+098ac93ca7999f8c,L01 Ryan,Ryan_1_required,1,Ryan,Pekala lisanslı bir ejder yıkayıcısısın öyle mi?
+7b999e621945fe90,L01 Ryan,Ryan_1_required,2,Kobold,Hıhı!
+1cb7709c2b6cdc0b,L01 Ryan,Ryan_1_required,3,Kobold,İşe başladığım yalnızca birkaç hafta oldu!
+9b9024cada67653e,L01 Ryan,Ryan_1_required,4,Ryan,Oh öyle mi!
+fbd8fe3b49aed7c5,L01 Ryan,Ryan_1_required,5,Ryan,Ben de genelde işte evdeki hortumla idare ediyordum...
+3f742efbf9edb2ee,L01 Ryan,Ryan_1_required,6,Ryan,Oh ikimiz de çömeziz idesene!
+e6c276d67e994ed5,L01 Ryan,Ryan_1_required,7,Ryan,"Aslında, bunun ne kadar da iyi hissettirdiğine şaşırdım doğrusu."
+e99ba1a86146f1aa,L01 Ryan,Ryan_1_required,8,Ryan,Hayatın tüm o koşuşturmacası içerisinde hoş bir kaçış yolu.
+line:decf872a,L01 Ryan,Ryan_1_required,9,Ryan,...
+# --- nag: Ryan_1_nag ---
+c2aa03c999eb7731,L01 Ryan,Ryan_1_nag,1,Ryan,Hey!
+5b798fca0ab51d6c,L01 Ryan,Ryan_1_nag,2,Ryan,Seni görebileceğim bir yere çıkarsan bir şey söyleyeceğim sana.
+# --- jerkoff: ryan_jerk_off_no ---
+2e75bb6a3610c11b,L01 Ryan,ryan_jerk_off_no,1,Ryan,Heyy- Belki o ellerini başka zaman 'üzerime koyarsın'?
+# --- mount_start: ryan_mount_no ---
+91c3bf04fb99ce8b,L01 Ryan,ryan_mount_no,1,Ryan,"Hm, sanırım bineği kullanmak istemiyorum."
+# --- outro: Ryan_1_Outro ---
+0d26aa953ca02c41,L01 Ryan,Ryan_1_Outro,1,Ryan,Eminim tertemiz olmuşumdur!
+699cdec6a62f5ff3,L01 Ryan,Ryan_1_Outro,2,Ryan,Hortumla yıkanmaktan çok daha hoştu.
+c3bbf19f280c6dde,L01 Ryan,Ryan_1_Outro,3,Kobold,Rica ederim.
+66984a1e53d3e869,L01 Ryan,Ryan_1_Outro,4,Kobold,Mhm! Yine bekleriz.
+d629b0ed3f97727c,L01 Ryan,Ryan_1_Outro,6,Ryan,Bu mekanı başkalarına da tanıtacağım
+e12cf68db48908a3,L01 Ryan,Ryan_1_Outro,7,Ryan,Kesinlikle burayı unutmayacağım.
+29a9062b9b45c6ef,L01 Ryan,Ryan_1_Outro,8,Ryan,Haha. Asıl sana 'İvit!'.
+0712e97652e51758,L01 Ryan,Ryan_1_Outro,9,Ryan,"Neyse, iyi vakit geçirdim, görüşmek üzere!"
+17f93a33eafe382c,L01 Ryan,Ryan_1_Outro,10,Ryan,Çıkmam için bariyeri açabilir misin?
+1aa7b1c1d5fb1fd6,L01 Ryan,Ryan_1_Outro,12,Ryan/Conrad/Kobold/Dragon,Sağ ol!
+line:b588bf4c,L01 Ryan,Ryan_1_Outro,12,Ryan,Teşekkürler!
+
+# ===== Level 2: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_1 ---
+d391aece578e396f,L02 Conrad,Conrad_Intro_1,1,Conrad,"<gradient=""yellow - orange""><size=140%>HEY! </gradient><size=100%>Yıkanma yeri burası, değil mi?"
+e2b71fbe0e3a8220,L02 Conrad,Conrad_Intro_1,2,Conrad,Pürüssüz olmalıyım. Senin işin de tam olarak bu herhalde. <size=70%> Doğru mu?
+198e07bd20a7e40b,L02 Conrad,Conrad_Intro_1,3,Kobold,"Mhm, bu taraftan."
+d474060b980dd4bb,L02 Conrad,Conrad_Intro_1,4,Kobold,Şöyle buyrun.
+6c70580a9b88273d,L02 Conrad,Conrad_Intro_1,5,Conrad,Hoş. Bariyeri açman lazım tabii. Conrad'i içeri al!
+# --- progress: Conrad_required_1 ---
+87e002767e44df8e,L02 Conrad,Conrad_required_1,1,Conrad,Şe<size=90%>e<size=80%>e<size=70%>e<size=60%>y... <size=100%>Merak ediyordum da
+2d6d31d664759240,L02 Conrad,Conrad_required_1,2,Conrad,"Burası <i>mutlu sonla</i> biten mekanlardan, değil mi?"
+906e9b3e20a54dc2,L02 Conrad,Conrad_required_1,3,Kobold,Buradaki tüm sonlar mutlu biter!
+c41cb150dfd261d8,L02 Conrad,Conrad_required_1,4,Kobold,Yani... cinsel şeyler mi?
+0c503978e6cd3a78,L02 Conrad,Conrad_required_1,5,Conrad,Aaa... Kastım aslında-
+c9ce0c4dd28236fa,L02 Conrad,Conrad_required_1,6,Conrad,"Benim gibi, <size=60%>büyük ejderleri<size=100%> de boşaltıyor musunuz burada?"
+daac14e0bc00f0ad,L02 Conrad,Conrad_required_1,7,Kobold,Ha- Ne- <size=80%>oha. <size=60%>biz şey-
+824dda92c5ffbad9,L02 Conrad,Conrad_required_1,8,Kobold,"Oh, hayır."
+33cb9fb42cd6a080,L02 Conrad,Conrad_required_1,9,Conrad,Ne!? bu olamaz! Bineğiniz bile yok mu sizin...?
+96b0e7561e23fcbb,L02 Conrad,Conrad_required_1,10,Kobold,aaa... <size=60%>hayır?
+175ccc13192756d4,L02 Conrad,Conrad_required_1,11,Conrad,"O halde bir tane alsanız iyi olur!"
+fcc67c51c62fb4e9,L02 Conrad,Conrad_required_1,12,Conrad,En azından hala ellerin iş görebilir. Heh.
+a29919179016a4e8,L02 Conrad,Conrad_required_1,13,Conrad,Öyle mi? Binek bile görmüyorum ben buradan.
+6ec80eb8deb5afd8,L02 Conrad,Conrad_required_1,14,Kobold,"Ya... ni, bizde ondan yok."
+22706d3faee3b165,L02 Conrad,Conrad_required_1,15,Kobold,"Hayır, burada o tarz şeyler sunmuyoruz."
+4a8d1297fbe8f246,L02 Conrad,Conrad_required_1,16,Conrad,Ah be yazık oldu. Bunu değiştirseniz iyi olur.
+# --- jerkoff: Conrad_1_JerkOff_Start ---
+6d4db2b6b39822b2,L02 Conrad,Conrad_1_JerkOff_Start,1,Conrad,Oh işte böyle.
+8fc6411ffc04a8f3,L02 Conrad,Conrad_1_JerkOff_Start,2,Conrad,Devam et.
+# --- cum: Conrad_1_Cum ---
+e51f82fb1e4773ad,L02 Conrad,Conrad_1_Cum,1,Conrad,<size=140%> SİKTİR!
+6d721d6e2ad2ae1c,L02 Conrad,Conrad_1_Cum,2,Conrad,<size=100%> Fena iyi hissettirdi!
+# --- mount_start: conrad_mount_no ---
+b902443f60bdba87,L02 Conrad,conrad_mount_no,1,Conrad,Ooh. Aaa.
+ccdcfc48472b3533,L02 Conrad,conrad_mount_no,2,Conrad,"Normalde bineği geri çevirmem ama bu seferlik kalsın"
+# --- outro: Conrad_Outro_1 ---
+2edaf16ee5b742a8,L02 Conrad,Conrad_Outro_1,1,Conrad,Temizlik fena değildi.
+882508b81f97e7cf,L02 Conrad,Conrad_Outro_1,2,Conrad,Ama gittiğim diğer tüm yıkamalarda en azından binek vardı
+51335374627e92a3,L02 Conrad,Conrad_Outro_1,3,Kobold,Üzgünüm...
+598e348ffe7cc978,L02 Conrad,Conrad_Outro_1,4,Kobold,Söz veriyorum bir tane alacağım!
+3eba607f0573bf98,L02 Conrad,Conrad_Outro_1,5,Conrad,Özür dileme! Git bir binek al!
+4e52b9a8b0ae1335,L02 Conrad,Conrad_Outro_1,6,Conrad,Kendine saygısı olan tüm temizlikçiler bir ejderi nasıl tatmin edeceğini bilir.
+25d0b6008550c533,L02 Conrad,Conrad_Outro_1,7,Kobold,Tamam. Binek sipariş vereceğim.
+2e92d12d86bf03a5,L02 Conrad,Conrad_Outro_1,8,Conrad,"İyi. 'Neyse, çıkar beni artık."
+426726c5d08284a8,L02 Conrad,Conrad_Outro_1,9,Conrad,"Peki, öyle yapsan iyi olur. Eğer buraya geldiğimde bir tane bile görmezsem..."
+28c3830dac3b9c5b,L02 Conrad,Conrad_Outro_1,10,Kobold,Bu bir tehdit mi...?
+fac432bdcfb4b753,L02 Conrad,Conrad_Outro_1,11,Conrad,"Aaa, hayır, sadece çok FENA kırılırım."
+ee7433c3dd161b65,L02 Conrad,Conrad_Outro_1,12,Conrad,Her neyse- Çıkar beni.
+
+# ===== Level 3: Alexander (Sunny) =====
+# --- intro: Alexander_1_intro ---
+dbca31128a900488,L03 Alexander,Alexander_1_intro,1,Alexander,"İyi akşamlar. Bu işletme randevusuz da ejder kabul ediyor, doğru mudur?"
+a6208f4370193b60,L03 Alexander,Alexander_1_intro,2,Kobold,Evet ediyoruz! Siz... üniversiteden misiniz...?
+fdf9d60aca05c19e,L03 Alexander,Alexander_1_intro,4,Alexander,"Öyleyim, sorgucumdan çıkarmış olmalısın! Simya öğretiyorum."
+12456a9c2599222e,L03 Alexander,Alexander_1_intro,5,Alexander,... Daha doğrusu yakında bir sınıfa öğretiyor olacağım.
+cccd2e909950ad59,L03 Alexander,Alexander_1_intro,6,Alexander,Mükemmel.
+f5b90500599eaa0a,L03 Alexander,Alexander_1_intro,7,Alexander,"Çabucak bitmesini istiyorum, öğrenciler kendi başlarına ders veremezler."
+26f8788d21d9fd7d,L03 Alexander,Alexander_1_intro,8,Kobold,Vay be... Daha önce hiç öğretmen bir ejderi yıkamamıştım.
+7cc55c8bb6442b93,L03 Alexander,Alexander_1_intro,9,Kobold,"Tamam, bariyeri açıyorum!"
+c9b9bda16ee1d468,L03 Alexander,Alexander_1_intro,10,Alexander,"Öğretim görevlisi- ama haklısın, herkese açık yerlerde yıkanmaya genelde gitmiyorum."
+8569efc4ed5a6273,L03 Alexander,Alexander_1_intro,11,Alexander/Ryan,Teşekkür ederim.
+line:836d1b13,L03 Alexander,Alexander_1_intro,11,Alexander,Teşekkür ederim.
+57c2b1f349d8b9e9,L03 Alexander,Alexander_1_intro,12,Alexander,"Oh, ayriyetten bu denli pis olduğum için de özür diliyorum."
+c44510120d3f5f7e,L03 Alexander,Alexander_1_intro,13,Alexander,Halim pişman olunası...
+550840616bc8148d,L03 Alexander,Alexander_1_intro,14,Kobold,O kadar da... pis değilsin.
+21e1f6bc71429bdb,L03 Alexander,Alexander_1_intro,15,Kobold,Sorun değil. Senin için yolu açayım!
+14ddfac745bc0ec3,L03 Alexander,Alexander_1_intro,16,Alexander,"Hayır, öyleyim."
+line:4da86a7a,L03 Alexander,Alexander_1_intro,17,Alexander,...
+65b94d53036df4ac,L03 Alexander,Alexander_1_intro,18,Alexander,Bariyeri rica edersem açar mısın?
+f602395a77ff68c4,L03 Alexander,Alexander_1_intro,19,Kobold,Oh. Pardon. Üzgünüm.
+# --- progress: Alexander_1_required ---
+8bb197f659df9e12,L03 Alexander,Alexander_1_required,1,Alexander,Biliyor musun... Bu ortam gayet hoşmuş. Bayağı... proleterya.
+c3971608b1a13f1b,L03 Alexander,Alexander_1_required,2,Kobold,pro- <i><size=70%>ney?
+3afdda2c098fc834,L03 Alexander,Alexander_1_required,3,Kobold/Alexander/Ryan,Teşekkür ederim!
+line:8512365e,L03 Alexander,Alexander_1_required,3,Kobold,Teşekkür ederim!
+90d6678c9549b1e0,L03 Alexander,Alexander_1_required,4,Alexander,"Oh, yani... işçi sınıfı?"
+55c80016618e1bc5,L03 Alexander,Alexander_1_required,5,Alexander,"Üzgünüm, sadece yıkaman hoşuma gidiyor demek istedim."
+02fa2a9691178177,L03 Alexander,Alexander_1_required,6,Alexander,Tabii ki
+32e117cdd1f56f3f,L03 Alexander,Alexander_1_required,7,Alexander,Hemen buracıkta halka açık bu tarz yerlerin var olduğunu kim bilebilirdi ki!
+# --- jerkoff: alexander_jerk_off_no ---
+f33ca08a17779409,L03 Alexander,alexander_jerk_off_no,1,Alexander,<i>Oh.</i> Buna şu anlık hazır olduğumu sanmıyorum.
+# --- mount_start: alexander_mount_no ---
+170ebd10775afd58,L03 Alexander,alexander_mount_no,1,Alexander,Bunu... bugün kullanmak isteyeceğimden emin değilim.
+# --- outro: Alexander_1_Outro ---
+d202075090a8960b,L03 Alexander,Alexander_1_Outro,1,Alexander,"Yalan söyleyemeyeceğim, özel bir temizlikçi olarak iyi iş çıkardın."
+b6069e62e167364f,L03 Alexander,Alexander_1_Outro,3,Kobold,"Mmmhm, her zaman elimden geleni yaparım."
+981447d1952fe850,L03 Alexander,Alexander_1_Outro,4,Alexander,"Haha, 'İvit' tabii ki."
+5d7279822bcee7dd,L03 Alexander,Alexander_1_Outro,5,Alexander,Öğrencilerim senin iş etiğinden bir ya da iki şey öğrenebilirler!
+8117291ab8529b4f,L03 Alexander,Alexander_1_Outro,6,Alexander,"Gerçekten daha fazla sohbet etmek isterdim ama yakında dersim başlıyor."
+dae0c0aa3ae01c37,L03 Alexander,Alexander_1_Outro,7,Alexander,...Yaptıkların için teşekkür ederim.
+
+# ===== Level 4: Ryan (Sunny) =====
+# --- intro: Ryan_2_intro ---
+7825d92f67bdcdef,L04 Ryan,Ryan_2_intro,1,Ryan,Tekrar merhaba!
+cd26586143766826,L04 Ryan,Ryan_2_intro,2,Kobold,"Selam, Ryan!"
+6a67a8866ec70c09,L04 Ryan,Ryan_2_intro,4,Ryan,"Hey selam, tekrar uğrayabildiğime mutluyum."
+921bd4effdaa2a2f,L04 Ryan,Ryan_2_intro,5,Ryan,Haha... o sesi çıkarmayı seviyor olmalısın.
+387d0da740d0826e,L04 Ryan,Ryan_2_intro,6,Ryan,Tekrar yıkanmam lazım.
+e542b800ecfc350a,L04 Ryan,Ryan_2_intro,7,Ryan,Birazcık evden uzaklaşmaya çalışıyorum.
+78b22bcc76942425,L04 Ryan,Ryan_2_intro,8,Ryan,Bazı arkadaşlarımla takıldım.
+21abbb56e463a200,L04 Ryan,Ryan_2_intro,9,Ryan,Keçeli kalemlerle iyi eğlendik...
+da3405e1151a476e,L04 Ryan,Ryan_2_intro,10,Ryan,ama sanırım artık temizlenmenin vakti geldi.
+41dc14e2cd744b1b,L04 Ryan,Ryan_2_intro,11,Kobold,"Oh, tabii ki. İçeri buyur."
+b231225bfcc08d4c,L04 Ryan,Ryan_2_intro,12,Kobold,İyi misin?
+056b5511850d7220,L04 Ryan,Ryan_2_intro,13,Ryan,"Tamam, sağ ol."
+b4e4d893367947a0,L04 Ryan,Ryan_2_intro,14,Ryan,"Evet, bir şeyim yok. Kusura bakma."
+c9cdea9d31e53d5b,L04 Ryan,Ryan_2_intro,15,Ryan,Sadece biraz kötü bir gündü. Buranın iyi geleceğini umuyorum!
+line:e9d40a5c,L04 Ryan,Ryan_2_intro,16,Ryan,...
+ab74167fe23c9db5,L04 Ryan,Ryan_2_intro,17,Ryan,"Neyse, şey bariyer?"
+5cbc0ceea57587db,L04 Ryan,Ryan_2_intro,18,Kobold,Oh- Ha. Hemen açıyorum.
+08411b780900fb59,L04 Ryan,Ryan_2_intro,19,Kobold,Tabii ki. Bir saniye!
+a386908e3024f35e,L04 Ryan,Ryan_2_intro,20,Ryan,Harika.
+# --- progress: Ryan_2_required ---
+580684f8909e025d,L04 Ryan,Ryan_2_required,1,Ryan,Hey.
+b4eff799a0271863,L04 Ryan,Ryan_2_required,2,Kobold,Hm?
+fad448038cd06268,L04 Ryan,Ryan_2_required,3,Kobold,Naber?
+a1dd2ff2d1ef6beb,L04 Ryan,Ryan_2_required,4,Ryan,Sana bir soru sorabilir miyim?
+2acd4405a7f14ae3,L04 Ryan,Ryan_2_required,5,Kobold,"Zaten sormuş oldun, her şey yolunda mı?"
+c10c037156053bfe,L04 Ryan,Ryan_2_required,6,Kobold,Olur.
+4f6d869aa239596c,L04 Ryan,Ryan_2_required,7,Ryan,"Oh, doğru. Pardon."
+0fa0dff561f86016,L04 Ryan,Ryan_2_required,8,Ryan,"Şey, ilişkilerlerde... ."
+9a38b89ed035e464,L04 Ryan,Ryan_2_required,9,Ryan,"Eğer bir ilişki <i>çok</i> inişli çıkışlıysa ve biteceğine eminsen"
+9b943020b9ae2658,L04 Ryan,Ryan_2_required,10,Ryan,"onu kurtarmak için her şeyi denediysen"
+line:695ef750,L04 Ryan,Ryan_2_required,11,Ryan,...
+954ba66a076849a5,L04 Ryan,Ryan_2_required,12,Ryan,o ilişkiye ne zaman son vereceğini nereden bilirsin?
+f173e528733bb05a,L04 Ryan,Ryan_2_required,13,Kobold,Ah- Ryan...
+7b102f547a549072,L04 Ryan,Ryan_2_required,14,Kobold,Ben... buna cevap verebileceğimden emin değilim.
+d74bb8fcbf89b62a,L04 Ryan,Ryan_2_required,15,Ryan,Biliyorum. Sana bunların yükünü boşaltmamam gerekiyor.
+64973f6ac9ac08be,L04 Ryan,Ryan_2_required,16,Ryan,"Sadece, yanında olmak çok huzur verici olan birisin."
+93fa9e1a16f34a7d,L04 Ryan,Ryan_2_required,17,Ryan,Haklısın... Buna cevap verebilmenin imkanı yok.
+797653f5e081152e,L04 Ryan,Ryan_2_required,18,Ryan,"Sadece, burada kötü muamele görmediğime mutluyum."
+b11d41e01fefb995,L04 Ryan,Ryan_2_required,20,Kobold,Sağ ol. Seninle olmak benim de hoşuma gidiyor.
+c6df1e087ef5d8e4,L04 Ryan,Ryan_2_required,21,Kobold,Umarım işler yoluna girer.
+ebb96171ea7628a0,L04 Ryan,Ryan_2_required,22,Ryan/Kobold/Alexander,Sevindim.
+line:286fec49,L04 Ryan,Ryan_2_required,22,Ryan,Sevindim.
+91c0e3e9014024af,L04 Ryan,Ryan_2_required,23,Ryan,umarım.
+# --- outro: Ryan_2_Outro ---
+cb57ee6155ed6ca5,L04 Ryan,Ryan_2_Outro,1,Ryan,İşte böyle. Tertemiz oldum.
+f6d370e531334fab,L04 Ryan,Ryan_2_Outro,2,Ryan,Biraz önce sana içimi döktüğüm için özür dilerim.
+a402a75e0522e087,L04 Ryan,Ryan_2_Outro,3,Kobold,Sorun değil!
+94e0ea6f97e24a81,L04 Ryan,Ryan_2_Outro,4,Kobold,Biliyorum hayat bazen sert olabiliyor.
+4f66abc45de7ff53,L04 Ryan,Ryan_2_Outro,5,Ryan/Alexander,Çok kibarsın.
+line:15f55959,L04 Ryan,Ryan_2_Outro,5,Ryan,Çok kibarsın.
+ee65a6c9748b539c,L04 Ryan,Ryan_2_Outro,6,Ryan,Keşke her şey filmlerdeki gibi kolay olsa.
+0e95dd9dae12e50e,L04 Ryan,Ryan_2_Outro,7,Kobold,"Tekrar görüşmek üzere, Ryan."
+78c778b6ee0575d9,L04 Ryan,Ryan_2_Outro,8,Kobold,"Daha fazla dertleşmek istersen hala vaktim var."
+f204fcc6b711621e,L04 Ryan,Ryan_2_Outro,9,Ryan,"Tekrar gelirim, teşekkürler."
+72eaafd8ad3f6b0d,L04 Ryan,Ryan_2_Outro,10,Ryan,Emin misin? Çok hoş şeyler... değiller.
+fe454a1e25772898,L04 Ryan,Ryan_2_Outro,11,Kobold,Haklısın. Burnumu sokmamam gerekirdi.
+513af1a2eeeef9b6,L04 Ryan,Ryan_2_Outro,12,Kobold,"Sorun değil, buna ihtiyacın var gibi duruyor."
+f3ff11acd1b54309,L04 Ryan,Ryan_2_Outro,13,Ryan,Sorun değil. Teşekkür ederim gene de.
+0b61ba409dc46906,L04 Ryan,Ryan_2_Outro,14,Ryan,"Eh, haklısın."
+5459b9d74fb7a529,L04 Ryan,Ryan_2_Outro,15,Ryan,Şimdi. Kız arkadaşım benden önce evdeydi. O aslında evden çalışan bir ejder.
+2cd54468954ee8c7,L04 Ryan,Ryan_2_Outro,16,Ryan,Eve biraz kirli gittim. Sonra o da bana bağırdı.
+f7e4ec27dd7d6527,L04 Ryan,Ryan_2_Outro,17,Ryan,"Yıkanmaya gitmemi söyledi ve aşırı derecede alıngan davranıyordu."
+2880304176197c02,L04 Ryan,Ryan_2_Outro,18,Ryan,Çamurlu olduğuma... <i>bayağı</i> sinirliydi.
+250b97243d1df1f7,L04 Ryan,Ryan_2_Outro,19,Kobold,Geldiğin ilk sefer bu yüzden mi buradaydın?
+bc78d04f7d5861dc,L04 Ryan,Ryan_2_Outro,20,Kobold,Bana aşırı tepki vermiş gibi geldi.
+08a70054f59e703a,L04 Ryan,Ryan_2_Outro,21,Ryan,Yani...
+6079131a1c79adef,L04 Ryan,Ryan_2_Outro,22,Ryan,Ama cidden bana çok yardımın dokunuyor.
+92536deee525f694,L04 Ryan,Ryan_2_Outro,23,Ryan,Düşünmeme fırsat yarattın.
+c3be2f1d3fa4404d,L04 Ryan,Ryan_2_Outro,25,Ryan,Ben de öyle düşündüm.
+9ebcf8a46cc189b7,L04 Ryan,Ryan_2_Outro,26,Ryan,Bence başka bir şeye sinirli...
+8c3115a4e2a9a664,L04 Ryan,Ryan_2_Outro,27,Ryan,Sadece işte öfkesini benden çıkarması hoşuma gitmiyor.
+393d8e5925dc5937,L04 Ryan,Ryan_2_Outro,31,Ryan,Her neyse-
+7258b4e037805024,L04 Ryan,Ryan_2_Outro,32,Ryan,Beni dinlediğin için teşekkürler.
+951382e00968439d,L04 Ryan,Ryan_2_Outro,33,Kobold,"Her zaman, Ryan."
+c41f39341b6c49ef,L04 Ryan,Ryan_2_Outro,34,Kobold,Tabii ki dinleyeceğim. Bütün bunları yaşadığın için üzgünüm.
+line:6b245989,L04 Ryan,Ryan_2_Outro,35,Ryan,Çok sağ ol.
+553b3b011e56f6e2,L04 Ryan,Ryan_2_Outro,36,Ryan,Üzülme. Bir şekilde hallederim.
+bd7468846a30d095,L04 Ryan,Ryan_2_Outro,37,Kobold,Gidip bariyeri açayım sana.
+a7f68522a6e41971,L04 Ryan,Ryan_2_Outro,38,Ryan,"Olur, görüşmek üzere!"
+
+# ===== Level 5: Conrad (Rainy) | sets level_5 | ends MedkitCompleted, level_5_complete =====
+# --- intro: Conrad_Intro_2 ---
+ed1060b120921b51,L05 Conrad,Conrad_Intro_2,1,Conrad,Hiç ilk yardım çantan var mı?
+33b8a4a45ccc09d4,L05 Conrad,Conrad_Intro_2,2,Kobold,Neler oldu sana!?
+0a1daca6a7ffe060,L05 Conrad,Conrad_Intro_2,3,Kobold,"Yapma ya, Conrad. iyi misin?"
+20e5d8710e635ec0,L05 Conrad,Conrad_Intro_2,4,Conrad,Bilmen gerekmiyor.
+20e7bf03f9acda80,L05 Conrad,Conrad_Intro_2,5,Conrad,"Şimdi, ilk yardım çantan var mı yok mu?"
+b5df9715ed2e91ed,L05 Conrad,Conrad_Intro_2,6,Conrad,İyi mi görünüyorum sence?
+b91e8be1b03d1b61,L05 Conrad,Conrad_Intro_2,7,Conrad,Hayır. Görünmüyorum. İlk yardım çantan var mı yok mu şimdi?
+f974998c16103aa0,L05 Conrad,Conrad_Intro_2,8,Kobold,"Evet, Bir tane var."
+8ca82a3bb03f138c,L05 Conrad,Conrad_Intro_2,9,Kobold,"Var ama sana ne oldu böyle?"
+a94b34f629b2029a,L05 Conrad,Conrad_Intro_2,10,Conrad,Sadece... şu bariyeri aç gitsin.
+# --- progress: Conrad_required_2 ---
+4356fa179bb80e09,L05 Conrad,Conrad_required_2,1,Conrad,Ben tam bir salağım.
+d886f3d923f9c796,L05 Conrad,Conrad_required_2,2,Conrad,Bu tam olarak uzak durmam gereken boklardan biriydi!
+ea8c1853a7d5966c,L05 Conrad,Conrad_required_2,3,Kobold,Neler olduğunu mu anlatmak istiyorsun...?
+bded00d07cb1e457,L05 Conrad,Conrad_required_2,4,Kobold,İncinmiş olduğuna üzgünüm...
+02f000041eb5ab82,L05 Conrad,Conrad_required_2,5,Conrad,Hayır be! Yediğim boktan utanıyorum.
+line:4810891f,L05 Conrad,Conrad_required_2,6,Conrad,...
+58356b98fdf40dc3,L05 Conrad,Conrad_required_2,7,Conrad,Buna burnunu sokmanı istemiyorum!
+line:d90d368f,L05 Conrad,Conrad_required_2,8,Conrad,...
+cb7847cb63566364,L05 Conrad,Conrad_required_2,9,Conrad,Sadece işte...
+b48f291ebc6b18fe,L05 Conrad,Conrad_required_2,10,Conrad,Kendimi sürekli bu durumlara sokmaktan nefret ediyorum.
+519b07c299436f2a,L05 Conrad,Conrad_required_2,11,Conrad,Yavaş yavaş suçun <i>bende</i> olduğunu hissettiriyor.
+f5ad489eeba50b01,L05 Conrad,Conrad_required_2,12,Kobold,"<i>Bu</i> senin suçun değil, Conrad."
+6402f4608ceb7bbb,L05 Conrad,Conrad_required_2,13,Kobold,Yaralandığın için çok üzgünüm. Sana bunu kim yaptı?
+8e59613d6cd60464,L05 Conrad,Conrad_required_2,14,Conrad,Bu sefer gerçekten benim suçum gibi geliyor...
+7058e362e43623f0,L05 Conrad,Conrad_required_2,15,Conrad,Barda bir drake vardı... Çok aptalca davrandım. Çenemi susturamadım.
+ea289ebcdd7e81ef,L05 Conrad,Conrad_required_2,16,Conrad,Sadece bardaki bir draketi. Çok salaktım... Çenemi kapatamadım.
+aff317c06781bc70,L05 Conrad,Conrad_required_2,17,Conrad,Anlamıyorum! Neden böyle davranıyorum?
+da5eed4c72eb1073,L05 Conrad,Conrad_required_2,18,Kobold,Nasıl davranıyorsun?
+193bb66a944990a8,L05 Conrad,Conrad_required_2,19,Kobold,"Bence bayağı havalısın, Conrad."
+c69250ea092a7fcd,L05 Conrad,Conrad_required_2,20,Conrad,Bir... pislik gibi mi? Biliyorum yakından içler acısı biriyim.
+c2f21da58e28df4f,L05 Conrad,Conrad_required_2,21,Conrad,Sen kibar birisin. Ben bu nezaketi hak etmiyorum.
+9c529e9f79f39a21,L05 Conrad,Conrad_required_2,22,Conrad,Bir pisliğim. Öyle olduğumu biliyorum.
+4b7317a793a0f728,L05 Conrad,Conrad_required_2,23,Conrad,Biraz önce sana patladığım için özür dilerim.
+c4c0c9950baa723f,L05 Conrad,Conrad_required_2,24,Conrad,Bunu hak etmedin sen.
+9fa8cd9193124e79,L05 Conrad,Conrad_required_2,25,Kobold,İyi birisin. Belli ki hayatından bir sürü kötü olay geçiyor.
+249133e0671a807b,L05 Conrad,Conrad_required_2,26,Kobold,Sorun değil.
+c61717fe95ec2b9c,L05 Conrad,Conrad_required_2,27,Conrad,Sana bağırmak için bir sebep değil gene de bu.
+652daa6043287e1b,L05 Conrad,Conrad_required_2,28,Conrad,Daha fazla bahane yok.
+65b4e7b9caad6028,L05 Conrad,Conrad_required_2,29,Conrad,"Hayır, sorun. Daha fazla bahane yok."
+334ade0356dff453,L05 Conrad,Conrad_required_2,30,Conrad,Daha iyi olmam gerek. Daha iyi olmak <i>istiyorum</i>.
+1d190e45e1ddc239,L05 Conrad,Conrad_required_2,31,Conrad,Sadece ahh... Kimseye bunları söylediğimi anlatma.
+3969155d983b9b32,L05 Conrad,Conrad_required_2,32,Kobold,Sırların benimle mühürlü.
+bd7f2cf961e397ca,L05 Conrad,Conrad_required_2,33,Kobold,Anlatmam.
+0cd12abef67edc64,L05 Conrad,Conrad_required_2,34,Conrad,...Sağ ol.
+bbaef120c3a81475,L05 Conrad,Conrad_required_2,35,Conrad,Ayrıca ilk yardım çantan olduğuna mutluyum... Bayağı hazırlıklısın.
+# --- jerkoff: conrad_jerk_off_no ---
+f81a53c29135dfa5,L05 Conrad,conrad_jerk_off_no,1,Conrad,Hey ah... Şimdi olmaz.
+# --- outro: Conrad_Outro_2 ---
+7f9f3c8d0db46cbf,L05 Conrad,Conrad_Outro_2,1,Conrad,Şimdiden çok daha iyi hissediyorum.
+d4a62b147d5a622b,L05 Conrad,Conrad_Outro_2,2,Kobold,Fiziksel olarak mı duygusal olarak mı?
+line:42f5fd9d,L05 Conrad,Conrad_Outro_2,3,Kobold,Sevindim.
+0d49a74e82a2356a,L05 Conrad,Conrad_Outro_2,4,Conrad,İkisi de.
+c38c5771c6cf6118,L05 Conrad,Conrad_Outro_2,5,Conrad/Ryan,Ben de.
+line:d4c5faea,L05 Conrad,Conrad_Outro_2,5,Conrad,Ben de.
+7e30c436a9112ecd,L05 Conrad,Conrad_Outro_2,6,Conrad,İyi... birisin.
+229bd072e07a3d53,L05 Conrad,Conrad_Outro_2,7,Conrad,Cidden. Öylesin.
+ba15304b6e669701,L05 Conrad,Conrad_Outro_2,8,Kobold,Sadece doğru olduğuna inandığım şeyi yapıyorum.
+1fb463b57138c081,L05 Conrad,Conrad_Outro_2,9,Kobold,Bence sen de iyi birisin. Kendini geliştirmek zordur.
+56c81331bdf0858e,L05 Conrad,Conrad_Outro_2,10,Conrad,Umarım bu kounda senden de bir şeyler kapabilirim.
+3e2cb05f5d39c6e5,L05 Conrad,Conrad_Outro_2,11,Conrad,"Sağ ol, zor olsa da iyi olacağım. Sana söz."
+8a3ca437a0d6d164,L05 Conrad,Conrad_Outro_2,12,Conrad,Şöyle pullarından çekileyim artık...
+c90e3d1d20fadd0f,L05 Conrad,Conrad_Outro_2,13,Conrad,Buraya tekrar uğrayacağımdan eminim.
+
+# ===== Level 6: Alexander (Night) | sets level_6_started =====
+# --- intro: Alexander_2_intro ---
+44aa15e695b4e0d5,L06 Alexander,Alexander_2_intro,1,Alexander,Yıldızlara şükür açıksın.
+840851d0f7570dd9,L06 Alexander,Alexander_2_intro,2,Kobold,Alexander...?
+d786fe5166ed78b0,L06 Alexander,Alexander_2_intro,3,Kobold,"Aaaa, aslında açık değiliz."
+b5707c134254e827,L06 Alexander,Alexander_2_intro,4,Alexander,Evet. Temizlenmeye ihtiyacım var. Durum son derece acil!
+5962824d5ad2d472,L06 Alexander,Alexander_2_intro,5,Alexander,Bu işi yalnızca sen yapabilirsin.
+4006d568c80ab534,L06 Alexander,Alexander_2_intro,6,Alexander,"Sana iki katı, hayır üç katı ödeme yapacağım- Bu işi yalnızca sen halledebilirsin!"
+a17a2764777e0b60,L06 Alexander,Alexander_2_intro,7,Kobold,"Oh. O halde, evet açığız."
+1e5b9c4d7c7853fa,L06 Alexander,Alexander_2_intro,8,Alexander,Mükemmel!
+e36d5a8ffbc61b8c,L06 Alexander,Alexander_2_intro,9,Kobold,ne oldu peki?
+c43599f1e3538c5c,L06 Alexander,Alexander_2_intro,10,Kobold,gecenin bu saatinde ne işin var burada?
+c63c466c3e28f286,L06 Alexander,Alexander_2_intro,11,Alexander,"Meslektaşım, profesör Igwyx, beni merdiven olarak kullanmak istedi."
+dfb6e95e4715f76e,L06 Alexander,Alexander_2_intro,12,Alexander,"Endamımın sağlayacağı yükseklik avantajını düşününce sonra ben de ona izin verdim."
+9da4c08f2c9d94f9,L06 Alexander,Alexander_2_intro,13,Alexander,Fakat...
+149351e2d565febf,L06 Alexander,Alexander_2_intro,14,Alexander,Yöntemlerinde bir hata vardı.
+b54a89ba26aaeaa1,L06 Alexander,Alexander_2_intro,15,Kobold,HERİF ÖLDÜ MÜ!?
+0ee302086c5ae61a,L06 Alexander,Alexander_2_intro,16,Kobold,Nereye gitti peki...?
+2cc9a59ae14e4845,L06 Alexander,Alexander_2_intro,17,Alexander,ne?
+3b20ece829b0bd68,L06 Alexander,Alexander_2_intro,18,Alexander,yok ölmedi.
+93f6d587969b0e78,L06 Alexander,Alexander_2_intro,19,Alexander,"Aniden alevlenmesinden sonra ona biraz gizlilik tanımak istedim."
+1d37ba6f405ce0fd,L06 Alexander,Alexander_2_intro,20,Alexander,Şu anda fiziksel formu dinlenme odasında tekrar bir araya geliyor.
+27c227129d961114,L06 Alexander,Alexander_2_intro,21,Alexander,Kendine saygısı olan tüm büyücülerin elinde hazır anka kuşu tüyü olur.
+9e99fec970b38818,L06 Alexander,Alexander_2_intro,22,Kobold,Doğru. Anka kuşu tüyü. Çok barizdi.
+0549826a698aad1c,L06 Alexander,Alexander_2_intro,23,Kobold,Tamam. Dükkanı açacağım. Bana bir saniye ver.
+9e85e9ab574cfc16,L06 Alexander,Alexander_2_intro,24,Alexander,Meslektaşım olmayan kişilerin cehaletini unutmuşum. Özür dilerim.
+359439ec513e7e35,L06 Alexander,Alexander_2_intro,25,Kobold,"Öyledir, gidip bariyeri açayım"
+28fa9c1bb5161161,L06 Alexander,Alexander_2_intro,26,Alexander,Acele et! Burada itibarım söz konusu.
+# --- progress: Alexander_2_required ---
+cc99c01887a9b5f1,L06 Alexander,Alexander_2_required,1,Alexander,Tüm bu çileden derin utanç duyuyorum.
+e33e953efb157171,L06 Alexander,Alexander_2_required,2,Kobold,Çok büyütme. Anlattığına göre herkes zaten iyi gibi.
+c054502c35602985,L06 Alexander,Alexander_2_required,3,Kobold,Utanç duymana gerek yok.
+98cbb728e5fb19f2,L06 Alexander,Alexander_2_required,4,Alexander,Dert ettiğim şey hiçbir zaman bu olmadı. Oldukça riske duyarlı olan bir ejderim.
+c1d152bd1a4b22f1,L06 Alexander,Alexander_2_required,5,Alexander,Bu söylediğin oldukça kibardı .
+0da1bbeb76d9ef60,L06 Alexander,Alexander_2_required,6,Alexander,"Ancak, kendi <i>imajım</i> Igwyx'in uçup giden fiziksel formundan çok daha kalıcı."
+54021b5f26568c41,L06 Alexander,Alexander_2_required,7,Alexander,Endişemin kaynağı da tam olarak bu...
+3a363409d3ae72f1,L06 Alexander,Alexander_2_required,8,Alexander,İşte bu yüzden bu işi en iyi sen yapabilirsin!
+# --- outro: Alexander_2_Outro ---
+abc1043955962614,L06 Alexander,Alexander_2_Outro,1,Alexander,Tekrardan tertemizim. Gecenin bu saatinden beni içeri aldığın için teşekkür ederim.
+2de23f0bdf3de327,L06 Alexander,Alexander_2_Outro,2,Kobold,Para... mmm...
+082cb158de32f2d9,L06 Alexander,Alexander_2_Outro,3,Kobold,Sorun değil.
+374214d86f810d53,L06 Alexander,Alexander_2_Outro,4,Alexander,"Hah, o da bir motivasyon."
+7ff22bb553842005,L06 Alexander,Alexander_2_Outro,5,Alexander,"Artık değil, en azından!"
+01b524bd7165a166,L06 Alexander,Alexander_2_Outro,6,Alexander,Bende bu denli utanç uyandıran sırlarımı hiç bu şekilde birine açık edeceğimi düşünmemiştim.
+704866fd76bd9fb8,L06 Alexander,Alexander_2_Outro,7,Kobold,Yardım etmekten her zaman mutluluk duyarım. <i><size=70%> özellikle de bu kadar büyük bir ejdere.
+dd573253630e8021,L06 Alexander,Alexander_2_Outro,8,Kobold,Bana güveniyor olmana mutluyum.
+d6b066332b6d8b9a,L06 Alexander,Alexander_2_Outro,9,Alexander,Bu işten eğlence çıkarmandan ben de mutluyum.
+762c20b866b7b263,L06 Alexander,Alexander_2_Outro,10,Alexander,Ben de.
+5fc37d4eda289c06,L06 Alexander,Alexander_2_Outro,11,Alexander,Seninle konuşmak neden bu kadar kolay emin değilim.
+5a2661b79c536b73,L06 Alexander,Alexander_2_Outro,12,Alexander,Herkesin üzerimdeki bakışları ağır bir yük taşıyor sanki.
+0ddbb1a880fb5b54,L06 Alexander,Alexander_2_Outro,13,Alexander,Seninki hariç. Bu hoş bir şey.
+df9e3e9397757b17,L06 Alexander,Alexander_2_Outro,14,Kobold,Beklentiler saçmaaaa.
+5b4ce4081cac21b5,L06 Alexander,Alexander_2_Outro,15,Kobold,Yalnızca işimi yapıyorum!
+1acd1b8d362287ec,L06 Alexander,Alexander_2_Outro,16,Alexander,Öyleler...
+cbbaf40d803468a2,L06 Alexander,Alexander_2_Outro,17,Alexander,İşinde iyisin.
+line:3b568c14,L06 Alexander,Alexander_2_Outro,19,Alexander,Teşekkür ederim.
+
+# ===== Level 7: Ryan (Sunny) =====
+# --- intro: Ryan_3_intro ---
+49e50c5be7d1583e,L07 Ryan,Ryan_3_intro,2,Kobold,Ryan!
+346181d6c9954315,L07 Ryan,Ryan_3_intro,3,Kobold,Tekrar hoş geldin!
+c1cff3dbff6bfce2,L07 Ryan,Ryan_3_intro,4,Ryan,Yine ben.
+03810482331af8e2,L07 Ryan,Ryan_3_intro,5,Ryan,Burada olmaktan mutluyum.
+e1a42aae663ccf1f,L07 Ryan,Ryan_3_intro,6,Ryan,Tekrar yıkanmak için geldim.
+fc7ed7b68999fdae,L07 Ryan,Ryan_3_intro,7,Ryan,Şey...
+be0667bb01a8cd65,L07 Ryan,Ryan_3_intro,8,Ryan,Neyse. Bariyeri açabilir misin?
+20ed966db540aaaf,L07 Ryan,Ryan_3_intro,9,Kobold,"Doğru, hemen gidip açayım."
+6c0973b0166d3528,L07 Ryan,Ryan_3_intro,10,Kobold,Ryan? İyi olduğuna emin... misin?
+8dff101cb2298f67,L07 Ryan,Ryan_3_intro,12,Ryan,Hayır pek de değilim.
+1990b3ec8cd88a48,L07 Ryan,Ryan_3_intro,13,Ryan,Sana birazcık anlatırım. Şimdilik benim için bariyeri açabilir misin?
+85fec70372b092bb,L07 Ryan,Ryan_3_intro,14,Kobold/Conrad,Tabii ki.
+line:7311dc01,L07 Ryan,Ryan_3_intro,14,Kobold,Tamam.
+33e04b2f805d0e1a,L07 Ryan,Ryan_3_intro,15,Kobold,Peki. Umarım gene de iyisindir.
+f51bead488e14b65,L07 Ryan,Ryan_3_intro,16,Ryan/Conrad/Alexander,Sağ ol.
+line:e521db76,L07 Ryan,Ryan_3_intro,16,Ryan,Sağ ol.
+aac215f048e8ee54,L07 Ryan,Ryan_3_intro,17,Ryan,İyi olacağım.
+# --- progress: Ryan_3_required ---
+eb256f4dcddfee94,L07 Ryan,Ryan_3_required,1,Ryan,Biraz önceki konu hakkında konuşmak istiyorum.
+1a17d73907f63be1,L07 Ryan,Ryan_3_required,2,Ryan,Birkaç gün önce...
+87a781aa9b0c0136,L07 Ryan,Ryan_3_required,3,Ryan,sevgilimden ayrıldım...
+f68b8d76138a2a69,L07 Ryan,Ryan_3_required,4,Kobold,Oh... Çok üzüldüm.
+d6077ef6cdb59db1,L07 Ryan,Ryan_3_required,5,Kobold,"Ah, Ryan."
+d296154ff317814a,L07 Ryan,Ryan_3_required,6,Ryan,Üzülme. Yapmam gerekiyordu. Onunla mutlu değildim.
+8a2e2803c1bc2ea7,L07 Ryan,Ryan_3_required,7,Ryan,O da benimle mutlu değildi.
+d9e1edc2e966ec26,L07 Ryan,Ryan_3_required,8,Ryan,Tabii ki sebebi ne olursa olsun bu kararı almak yine de beni mutlu etmiyor.
+769c31039308d04d,L07 Ryan,Ryan_3_required,9,Kobold,Kendin için en iyi olan seçimi yapmış olduğuna mutluyum.
+460c50191c964260,L07 Ryan,Ryan_3_required,10,Kobold,Sonlar hiçbir zaman kolay değildir.
+8825be71018f7f88,L07 Ryan,Ryan_3_required,11,Ryan,Doğru. En azından bu sayede seninle tanışmış oldum.
+3e43d550d0572c10,L07 Ryan,Ryan_3_required,12,Ryan,Doğru... kolay değiller...
+8948d011be56c311,L07 Ryan,Ryan_3_required,13,Ryan,"ama en azından, seninle tanışmış oldum!"
+e484863d425a58e8,L07 Ryan,Ryan_3_required,14,Kobold,"Teşekkür ederim, Ryan. Ben de seninle tanışmış olduğuma mutluyum."
+1af4464c602a423a,L07 Ryan,Ryan_3_required,15,Kobold/Conrad,"Ah, çok sağ ol."
+line:011f1458,L07 Ryan,Ryan_3_required,15,Kobold,"Ah, çok sağ ol."
+e39173e934f56c78,L07 Ryan,Ryan_3_required,16,Ryan,Beni yıkaman gerçekten üstümdeki yükleri alıyor.
+94f45fc9f39121cd,L07 Ryan,Ryan_3_required,17,Ryan,Ayrıca çok hoşuma gidiyor.
+# --- outro: Ryan_3_Outro ---
+01e6332ab274c6d3,L07 Ryan,Ryan_3_Outro,1,Ryan,Sanırım hepsi bu kadardı.
+26fef1581467462d,L07 Ryan,Ryan_3_Outro,2,Ryan,Sağ ol. Sayende her şey çok daha kolay.
+021d801f68652852,L07 Ryan,Ryan_3_Outro,3,Kobold,"Her zaman beklerim, Ryan."
+dc18b85912d460dd,L07 Ryan,Ryan_3_Outro,4,Kobold,En sevdiğim müşterilerimden birisin!
+7ee443bc5e93fadb,L07 Ryan,Ryan_3_Outro,5,Ryan,Beni hep evimde hissettiriyorsun.
+c851929ab3cd9537,L07 Ryan,Ryan_3_Outro,6,Ryan,Ah... Çok sağ ol. Sence seni...
+e0464d0955af808a,L07 Ryan,Ryan_3_Outro,7,Ryan,iyi bir dostum olarak görmem tuhaf mı?
+674d9f74349966ca,L07 Ryan,Ryan_3_Outro,8,Kobold,"<size=70%><i>Ha-</i> hayır, bence çok hoş bir şey."
+e2c8744d410cb6f6,L07 Ryan,Ryan_3_Outro,9,Kobold,Ben de seni dostum olarak görüyorum.
+29fee2ec355f7967,L07 Ryan,Ryan_3_Outro,10,Ryan,Oh- Sevindim!
+51200db7892ee7e1,L07 Ryan,Ryan_3_Outro,11,Ryan,Hah... sağ ol.
+91c56a4e9213a4b0,L07 iRyan,Ryan_3_Outro,12,Ryan,Neyse. O pullarını rahat bırakayım artık.
+523791f6550c3508,L07 Ryan,Ryan_3_Outro,13,Ryan,"Yine geleceğim, tamam mı?"
+667cadad21e120f0,L07 Ryan,Ryan_3_Outro,14,Kobold,Tamam! Gidip sana bariyeri açayım.
+18f0197237db4a52,L07 Ryan,Ryan_3_Outro,15,Kobold,Tekrar görüşmek üzere!
+952d54adb781ab58,L07 Ryan,Ryan_3_Outro,16,Ryan,Teşekkürler. Yakında görüşmek üzere.
+
+# ===== Level 8: Conrad (Sunny) | sets DeliveredMountFrame =====
+# --- intro: Conrad_Intro_3 ---
+c2ce80cda53b3e12,L08 Conrad,Conrad_Intro_3,1,Conrad,Naber tosun.
+ef92f8b9796dcaad,L08 Conrad,Conrad_Intro_3,2,Kobold,Ben bir... koboldum.
+3faf8798d815fbcc,L08 Conrad,Conrad_Intro_3,3,Kobold,Selam Conrad.
+fe810d1ef6bbca3f,L08 Conrad,Conrad_Intro_3,4,Conrad,Ah... her neyse işte.
+fe59e121f203b436,L08 Conrad,Conrad_Intro_3,5,Conrad,Heh. Doğru. O ben oluyorum.
+a911f2d8e77038c7,L08 Conrad,Conrad_Intro_3,6,Conrad,"Sanki sana bir sipariş gelmiş gibi, değil mi?"
+403e617f71fdbd7d,L08 Conrad,Conrad_Intro_3,7,Conrad,Açtığın o kasalarda ne vardı?
+2fa26a557574f06d,L08 Conrad,Conrad_Intro_3,8,Kobold,Binek gelmiş.
+ba689238087b547e,L08 Conrad,Conrad_Intro_3,9,Kobold,İstediğin binek.
+a1d3f8d9c7e16f54,L08 Conrad,Conrad_Intro_3,10,Conrad,<size=160%>SONUNDA!
+24f5fb4981989960,L08 Conrad,Conrad_Intro_3,11,Conrad,<size=100%>Yani- İyiymiş.
+086c8ec178979d9b,L08 Conrad,Conrad_Intro_3,12,Conrad,"Hadi, beni içeri al! O şeyi denemek istiyorum!"
+8b742c36f3da7059,L08 Conrad,Conrad_Intro_3,13,Kobold,Peki...
+3a1b28ba58f06ac8,L08 Conrad,Conrad_Intro_3,14,Kobold,Gidip bariyeri açayım.
+c2ac4efff25192d6,L08 Conrad,Conrad_Intro_3,15,Conrad,Senin... içine değil.
+line:610824ef,L08 Conrad,Conrad_Intro_3,16,Conrad,...
+faa0b4a641d866a4,L08 Conrad,Conrad_Intro_3,17,Conrad,Devam edelim~!
+f030a371b944e9be,L08 Conrad,Conrad_Intro_3,18,Conrad/Ryan,Kesinlikle!
+line:db592d76,L08 Conrad,Conrad_Intro_3,18,Conrad,Kesinlikle!
+# --- phone: Conrad_3_PhoneTutorial ---
+eb8e96751da9e008,L08 Conrad,Conrad_3_PhoneTutorial,1,Phone,Binek için olan siparişinizi aldık!
+4369749a5a3394e9,L08 Conrad,Conrad_3_PhoneTutorial,2,Kobold,Ne..?
+339397c0d1c1f21f,L08 Conrad,Conrad_3_PhoneTutorial,3,Phone,"Bu sabah geldi, bariyerin yanında olmalı."
+f1968abec4612ffb,L08 Conrad,Conrad_3_PhoneTutorial,4,Phone,"Levye ile açıp içindekileri depoya at, olur mu?"
+435c7e974ca94c84,L08 Conrad,Conrad_3_PhoneTutorial,6,Phone,Muhteşem. <i>Verimli</i> günler.
+# --- idle: Conrad_idle_3_1 ---
+37950c8a8db90865,L08 Conrad,Conrad_idle_3_1,1,Conrad,Bineği önüme koy da bir güzel sikeyim.
+8f224115163c0dbe,L08 Conrad,Conrad_idle_3_1,2,Conrad,"Hey, Ellerini yarağımın üstüne geri koy- iyi hisettiriyor!"
+785bfdcdb6a67739,L08 Conrad,Conrad_idle_3_1,3,Conrad,"Ah neyse, bariyeri açar mısın?"
+# --- idle: Conrad_idle_3_2 ---
+c1dc3477631255b7,L08 Conrad,Conrad_idle_3_2,1,Conrad,Binek seçimini takdir ettim. Getirebilir misin?
+4557c47a615d9810,L08 Conrad,Conrad_idle_3_2,2,Conrad,Pekiii. Beni çekicek misin?
+7e079188b55eb03d,L08 Conrad,Conrad_idle_3_2,3,Conrad,Bunun için sağ ol. Fena iyi geldi.
+# --- jerkoff: Conrad_started_jerkoff_3 ---
+ccd88381d07a0b21,L08 Conrad,Conrad_started_jerkoff_3,1,Conrad,"Ah harika, işte böyle.. devam et."
+# --- cum: Conrad_finished_jerkoff_3 ---
+10069c101bcc95c1,L08 Conrad,Conrad_finished_jerkoff_3,1,Conrad,...!
+82d37703a9140210,L08 Conrad,Conrad_finished_jerkoff_3,2,Conrad,"Fenaydı, ellerini nasıl kullanman gerektiğini biliyorsun."
+95be71f702fae4a6,L08 Conrad,Conrad_finished_jerkoff_3,5,Kobold,Hah... <size=70%> evet.
+b60c2f975eedb833,L08 Conrad,Conrad_finished_jerkoff_3,6,Kobold,Tabii ki biliyorum. İşinin <i>ehli</i> bir koboldum.
+f9e0d3cba1f3548e,L08 Conrad,Conrad_finished_jerkoff_3,7,Conrad,Bir koboldun neyi sevdiğini bilmesi her zaman iyidir.
+0eb2a1e25a35e85e,L08 Conrad,Conrad_finished_jerkoff_3,8,Conrad,Ben de öyleyimdir...
+line:a6531779,L08 Conrad,Conrad_finished_jerkoff_3,9,Conrad,...
+83d081eadc40b86b,L08 Conrad,Conrad_finished_jerkoff_3,10,Conrad,sikime dokunulmasında.
+# --- cum: Conrad_Outro_3 | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+6f64e0cc9b162541,L08 Conrad,Conrad_Outro_3,1,Conrad,"Bak, şey. Merak ediyordum da..'"
+dd5acacdb6c59489,L08 Conrad,Conrad_Outro_3,2,Conrad,şimdi bunu sormak kulağa biraz garip gelebilir amaaaa...
+7f39f874a107d858,L08 Conrad,Conrad_Outro_3,3,Conrad,"acaba takılabileceğim hiç güzel yerler veya birilerini biliyor musun?"
+df48dbfe82678dea,L08 Conrad,Conrad_Outro_3,4,Kobold,"<gradient=""gold""><b> Bildiğim bir ejder var, ismi Ryan. İkinizi tanıştırmamı ister misin? </b></gradient><size=70%>(Conrad/Ryan sevişme sahnesini açar YA DA Ryan ile ilişki yapmanızı sağlar)"
+7b870878852ee72d,L08 Conrad,Conrad_Outro_3,5,Kobold,"<gradient=""gold""><b> Seninle takılmaya hayır demezdim... </b></gradient><size=70%> (Conrad ile ilişki yapmanızı sağlar)"
+ac6820f366b18b44,L08 Conrad,Conrad_Outro_3,6,Conrad,Başka bir ejder mi? Genelde diğer ejderlerle anlaşamam...
+de6f58682bdaacf9,L08 Conrad,Conrad_Outro_3,7,Kobold,"Oh, hayır. Ryan çok tatlıdır."
+d4185d9f80a34228,L08 Conrad,Conrad_Outro_3,8,Kobold,"Korkma, çok kibar biri."
+9df619228ba627fc,L08 Conrad,Conrad_Outro_3,9,Conrad,Peki. O zaman tanışmayı isterim.
+d88679eede302f8e,L08 Conrad,Conrad_Outro_3,10,Kobold,Sonraki sefer onu gördüğümde sormaya çalışırım.
+7984d45df6290f6c,L08 Conrad,Conrad_Outro_3,11,Kobold,Bence yeni sen'e bayılacak!
+bf35fcb679c816dd,L08 Conrad,Conrad_Outro_3,12,Conrad,Teşekkür ederim. Çok minnettar olurum.
+d32db8ee98680d0f,L08 Conrad,Conrad_Outro_3,13,Conrad,Umarım öyle olur. Biriyle yeni bir sayfa açmak çok istiyorum.
+8623a4b26a9521d8,L08 Conrad,Conrad_Outro_3,14,Conrad,Artık gitsem iyi olur.
+30dcd5391100eeba,L08 Conrad,Conrad_Outro_3,15,Conrad,Tavsiyen için teşekkürler!
+f1ad7345d30997b4,L08 Conrad,Conrad_Outro_3,16,Kobold,Teşekküre gerek yok. Gidip bariyeri açayım.
+404cba15a4acdcfe,L08 Conrad,Conrad_Outro_3,17,Kobold,Tabii ki de.
+8bf9f7d2ecce0105,L08 Conrad,Conrad_Outro_3,18,Conrad,Ooooh.
+8929fe2569ae7455,L08 Conrad,Conrad_Outro_3,19,Conrad,Belki de bu hoşuma gider!
+2358a2257260501f,L08 Conrad,Conrad_Outro_3,20,Conrad,Bayağı yakışıklısın.
+c650e0aadadba99c,L08 Conrad,Conrad_Outro_3,21,Conrad,...ve kibar.
+296f2ab03f8676ef,L08 Conrad,Conrad_Outro_3,23,Kobold,Bence sen de özelsin.
+17cf3cc7179b6817,L08 Conrad,Conrad_Outro_3,24,Conrad,Bu ses... bana ilk defa ivit dedin.
+c2599750a4dd9247,L08 Conrad,Conrad_Outro_3,25,Kobold,"Kobold dilinde bu, iyi iş yapıyorsun, demek."
+6f2ff920e860570d,L08 Conrad,Conrad_Outro_3,26,Conrad,Oh... hah. Hoşuma gitti.
+8b7bdfb88553e72f,L08 Conrad,Conrad_Outro_3,27,Conrad,Sözlerin kulağıma şiir gibi geliyor.
+e8ae0da9edb0a314,L08 Conrad,Conrad_Outro_3,28,Conrad,Peki. Çıkmak ister misin?
+781cbcfcd7920f3f,L08 Conrad,Conrad_Outro_3,29,Kobold,Çok hızlısın... ama sanırım isterim!
+5f9a2b795615ba6a,L08 Conrad,Conrad_Outro_3,30,Kobold,Evet.
+508f3cf175389841,L08 Conrad,Conrad_Outro_3,31,Conrad,Sanırım denemek isterim!
+c282dd1133ff96d4,L08 Conrad,Conrad_Outro_3,32,Conrad,Peki! Daha sonra uğrarım.
+bfc65061708379d6,L08 Conrad,Conrad_Outro_3,33,Kobold,"<size=70%><i> Hassiktir, az önce bir ejderle randevu ayarladım."
+cf78ef26075ae223,L08 Conrad,Conrad_Outro_3,34,Kobold,Olur! Bariyeri açayım.
+6b8aa4fb55221728,L08 Conrad,Conrad_Outro_3,35,Conrad,Hmm?
+c395eb5878798c08,L08 Conrad,Conrad_Outro_3,36,Kobold,Oh! boşver. Bariyeri açayım bare.
+102e28eb7d17c7dd,L08 Conrad,Conrad_Outro_3,37,Conrad,"Oh, peki. Sağ ol."
+ca518354e1f14735,L08 Conrad,Conrad_Outro_3,38,Conrad,"Peki, teşekkürler."
+# --- cum: Conrad_finished_jerkoff_3 ---
+5dffcc40132f0ec4,L08 Conrad,Conrad_finished_jerkoff_3,11,Conrad,Now I'm eyeballing the mount...
+45c2b89acdcfd55d,L08 Conrad,Conrad_finished_jerkoff_3,12,Conrad,Let me give it a try!
+57725c300be82fa5,L08 Conrad,Conrad_finished_jerkoff_3,13,Kobold,Oh okay. I'll go grab it.
+1976e7477a26b680,L08 Conrad,Conrad_finished_jerkoff_3,14,Kobold/Ryan,Sure!
+line:05c673e7,L08 Conrad,Conrad_finished_jerkoff_3,14,Kobold,Sure!
+9e50b8e48f012f1f,L08 Conrad,Conrad_finished_jerkoff_3,15,Conrad,Hell yeah
+# --- mount_start: Conrad_placed_mount_3 ---
+b9778eb1fe076168,L08 Conrad,Conrad_placed_mount_3,1,Conrad,Hah! İşte bineğimiz!
+86b1b615d536c6c9,L08 Conrad,Conrad_placed_mount_3,2,Conrad,Şe<size=90%>e<size=80%>e<size=70%>e<size=60%>y... <size=100%>pis sayılmam ama <i>~pisleşebilirim~</i> anlıyor musun?
+449244744c8bbd8a,L08 Conrad,Conrad_placed_mount_3,3,Kobold,Yani buraya sadece şey yapmak için mi...
+f8c28806b84cad3d,L08 Conrad,Conrad_placed_mount_3,4,Kobold,Anlıyorum. Çok da pahalı değildi.
+cd4ecc87775c0780,L08 Conrad,Conrad_placed_mount_3,5,Conrad,Buraya bir şeyleri sikmek ve beni çekmeni umarak geldim.
+01e3f480dfe7930d,L08 Conrad,Conrad_placed_mount_3,6,Conrad,Beni çekmeni ve bu bineği sikmek istiyorum.
+7f9240260973e0ce,L08 Conrad,Conrad_placed_mount_3,7,Kobold,Çok... açık sözlüsün.
+e0b48878cb57c01f,L08 Conrad,Conrad_placed_mount_3,8,Conrad,Doğam gereği! Biliyorum ben çok şeyim...
+1bd882b6a6343777,L08 Conrad,Conrad_placed_mount_3,9,Conrad,havalı.
+line:045f5836,L08 Conrad,Conrad_placed_mount_3,10,Conrad,...
+557321787688acff,L08 Conrad,Conrad_placed_mount_3,11,Conrad,Neyse. Artık şu şeyi kullanayım!
+78e9c032e409d82d,L08 Conrad,Conrad_placed_mount_3,12,Conrad,"Hah, güzel. Artık şu şeyin içine girelim bare!"
+# --- mount_finish: Conrad_finished_mount_3 ---
+81b18a3cc2f69ea7,L08 Conrad,Conrad_finished_mount_3,1,Conrad,Haaah.
+748b06c5c3f0552b,L08 Conrad,Conrad_finished_mount_3,2,Conrad,Bu...
+e92da2c203110197,L08 Conrad,Conrad_finished_mount_3,3,Conrad,bayağı <i>iyi</i> hissettirdi.
+bcd00a8f7b94c7f1,L08 Conrad,Conrad_finished_mount_3,4,Kobold,Kendini kaptırmış duruyordun.
+67d7d2492d388d84,L08 Conrad,Conrad_finished_mount_3,5,Kobold,Kendini tatmin etmiş duruyordun.
+65e7a40050eb4acf,L08 Conrad,Conrad_finished_mount_3,6,Conrad,Her zaman kaptırırım~
+5c9126f1405a306c,L08 Conrad,Conrad_finished_mount_3,7,Conrad,Fena hem de!
+d45c21a765584d3b,L08 Conrad,Conrad_finished_mount_3,8,Kobold,İyi... Şimdi ne olacak?
+ae7bb31b012d1f51,L08 Conrad,Conrad_finished_mount_3,9,Conrad,"Şimdi, ikinci posta var!"
+18b0b44df315e792,L08 Conrad,Conrad_finished_mount_3,10,Kobold,Gene mi...?
+f395d053e5dcf326,L08 Conrad,Conrad_finished_mount_3,11,Conrad,"Yok hayır, lisanslı temizlikçi olan sen değil misin?"
+5117686f8d936e47,L08 Conrad,Conrad_finished_mount_3,12,Conrad,Yani elini kullanmayı bilen!
+a441237f7aea8d53,L08 Conrad,Conrad_finished_mount_3,13,Kobold,Oha. <size=70%>peki.
+d2e773775c5bf598,L08 Conrad,Conrad_finished_mount_3,14,Kobold,Doğru öyleyim. İşe koyulayım.
+d126a37255fb8144,L08 Conrad,Conrad_finished_mount_3,15,Conrad,Hah. Doğru. <size=70%><i>Temizlik okulunda ejderleri çekmeyi öğrenmeniz iyi bir şey...
+fba1924f5f79713e,L08 Conrad,Conrad_finished_mount_3,16,Conrad,"Neyse, her yerimi ellemede iyi şanslar."
+# --- mount_finish: Conrad_OutroDirty ---
+9b363afaa9dc8a5f,L08 Conrad,Conrad_OutroDirty,1,Conrad,Hala leş gibiyim!
+44aa54eec876d22e,L08 Conrad,Conrad_OutroDirty,2,Kobold,Pardon benim hatam
+85d8ae405abc5722,L08 Conrad,Conrad_OutroDirty,3,Kobold,Hay aksi
+# --- mount_finish: Conrad_OutroSoapy ---
+d7bb84bfc322967e,L08 Conrad,Conrad_OutroSoapy,1,Conrad,Her tarafım sabun!
+# --- mount_finish: ErrorHasOccurred ---
+9241fa9324783298,L08 Conrad,ErrorHasOccurred,1,ErrorHasOccurred,Hassiktir oyun çöktü
+fbc99d34c317d087,L08 Conrad,ErrorHasOccurred,2,ErrorHasOccurred,eğer bu yazıyı görüyorsanız ya kendinize bir kahve alın ya da bug report yollayın
+be7e08152c8d1556,L08 Conrad,ErrorHasOccurred,3,ErrorHasOccurred,çok pardon!
+# --- mount_finish: Conrad_Outro | if $conrad_jerked_off_3 $conrad_used_mount_3 ---
+f16474a9900a4418,L08 Conrad,Conrad_Outro,1,Conrad/Alexander/Ryan,==
+line:a8e2f13e,L08 Conrad,Conrad_Outro,1,Conrad,==
+01cf590e183ce38a,L08 Conrad,Conrad_Outro,2,Conrad,title: Conrad_OutroDone
+cb3f91d54eee30e5,L08 Conrad,Conrad_Outro,3,Conrad/Alexander/Ryan,---
+line:db5b3129,L08 Conrad,Conrad_Outro,3,Conrad,---
+c571db95fc1e4f78,L08 Conrad,Conrad_Outro,4,Conrad,"Ahh, all cleaned and with a lighter load."
+e374c1b3adfa0cf8,L08 Conrad,Conrad_Outro,5,Conrad,"Thanks mate, see you tomorrow then."
+
+# ===== Level 9: Alexander (Sunny) =====
+# --- intro: Alexander_3_intro ---
+36cd0d2b83086eeb,L09 Alexander,Alexander_3_intro,1,Alexander/Conrad,Hey merhaba.
+line:5dacf226,L09 Alexander,Alexander_3_intro,1,Alexander,Hey merhaba.
+bc15783521246457,L09 Alexander,Alexander_3_intro,2,Kobold/Alexander,Alexander!
+line:fe3996b8,L09 Alexander,Alexander_3_intro,2,Kobold,Alexander!
+3cbf350078abb1bf,L09 Alexander,Alexander_3_intro,3,Kobold,"Hey, tekrar hoş geldin!"
+516ad83185e96dfb,L09 Alexander,Alexander_3_intro,4,Alexander,"Haha, evet benim. Seni de görmek güzel."
+f1d9c9797985d9a2,L09 Alexander,Alexander_3_intro,5,Alexander,Tekrar gelebildiğime mutluyum.
+9f59b5e841a0d2ad,L09 Alexander,Alexander_3_intro,6,Alexander,Üstümü başımı boya ettim!
+fda3c419d5174cb2,L09 Alexander,Alexander_3_intro,7,Alexander,"Gerçekten batırmışım, değil mi?"
+b5d76009b084e709,L09 Alexander,Alexander_3_intro,8,Kobold,"Eh, benim işim zaten seni temizlemek!"
+4f921c2b968fe884,L09 Alexander,Alexander_3_intro,9,Kobold,"Vay be, gerçekten her yerine bulaşmış!"
+256ae0739ddd2dbc,L09 Alexander,Alexander_3_intro,10,Alexander,Öyle duruyor! Beni yıkamasını istediğim tek kobold sensin.
+f114f26d23d53dc1,L09 Alexander,Alexander_3_intro,11,Kobold,"Ah, çok sağ ol Alexander."
+1f01b93ae3777189,L09 Alexander,Alexander_3_intro,12,Kobold,Özel temizlikçilerin yok muydu senin?
+92b7fef7172975fa,L09 Alexander,Alexander_3_intro,13,Alexander,Rica ederim! Hoş bir işletme yürütüyorsun.
+df2a4df0381808af,L09 Alexander,Alexander_3_intro,14,Alexander,Endişelenecek bir şey yok. Temizlikçi sendikası... benden bile daha güçlü.
+1bdc19a56262fbc5,L09 Alexander,Alexander_3_intro,15,Alexander,<size=70%>Benden maaş almaya devam ediyorlar.
+b0134babb7e75550,L09 Alexander,Alexander_3_intro,16,Alexander,En sevdiğim koboldu görmek için iyi mi iyi bir bahane.
+7d926d6395419270,L09 Alexander,Alexander_3_intro,17,Kobold,Ah... Çok naziksin!
+line:20f96302,L09 Alexander,Alexander_3_intro,18,Kobold,Alexander!
+6ad0fe6dcc2efa30,L09 Alexander,Alexander_3_intro,19,Alexander,"Rica ederim, hoş bir işletme yürütüyorsun."
+f38b3b8fcf6bf031,L09 Alexander,Alexander_3_intro,20,Alexander,Ama ne? Sahi bir iltifatın kimseye zararı yok!
+350955b9410d95a5,L09 Alexander,Alexander_3_intro,21,Kobold,Senin gibi birinin hiç bu kadar pasaklı olmasını beklemezdim!
+3cf6fd8e7e50386c,L09 Alexander,Alexander_3_intro,22,Kobold,Her yerin boya nasıl oldu?
+5d2cee363540fc7a,L09 Alexander,Alexander_3_intro,23,Alexander,Şey... hm.
+26b3089f5ee4a463,L09 Alexander,Alexander_3_intro,24,Alexander,Ben <i>galiba </i>yolda <i>buraya gelirken</i> mürekkepliği üstüme döktüm. Ne kadar da sakarım!
+7f1cf0605a577a0a,L09 Alexander,Alexander_3_intro,25,Kobold,"'galiba' mı, 'buraya gelirken' mi? O zaman buraya yürürken üzerine mürekkep bulaşmamıştı..."
+b356a126e4318643,L09 Alexander,Alexander_3_intro,26,Alexander/Kobold/Ryan,Oh.
+line:8441bf7b,L09 Alexander,Alexander_3_intro,26,Alexander,Oh.
+cd5592e5e3140daa,L09 Alexander,Alexander_3_intro,27,Alexander,Haklısın.
+line:759a495e,L09 Alexander,Alexander_3_intro,28,Alexander,...
+2a0200c46ee1b662,L09 Alexander,Alexander_3_intro,29,Alexander,"Doğrusu, buraya gelmek için üstümü kirlettim."
+b4d680dde83d7847,L09 Alexander,Alexander_3_intro,30,Kobold,Ne şekersin. Selam vermek için mürekkeple kaplı olmana gerek yok!
+42d72aa4b0b39750,L09 Alexander,Alexander_3_intro,31,Kobold,Oh! O zaman seni daha bekletmeyeyim. Gidip bariyeri açacağım.
+9eb8cd756595cf24,L09 Alexander,Alexander_3_intro,32,Alexander,Cidden mi?
+5f9846717183dcc1,L09 Alexander,Alexander_3_intro,33,Alexander,Aklımda bulundururum. İşlerin karşılıklı olmasına alışmışım sadece.
+2ea5b920a0a9a519,L09 Alexander,Alexander_3_intro,34,Kobold,Seni her zaman beklerim. Gidip bariyeri açayım.
+line:d60f2dc0,L09 Alexander,Alexander_3_intro,35,Alexander,Teşekkür ederim.
+# --- progress: Alexander_3_required ---
+a59f7f35644dcdbb,L09 Alexander,Alexander_3_required,1,Alexander,Daha önce anlattığım kendini kurban eden meslektaşım- Profesör Igwyx.
+10b4110dad07d576,L09 Alexander,Alexander_3_required,2,Alexander,İşe tekrar başladı bile. O zaman yardım ettiğin için teşekkürler.
+b8baebdff88a847f,L09 Alexander,Alexander_3_required,3,Kobold,"Önemli değil, ilk başta beni korkutmadın değil."
+a2aff5b173ae96bb,L09 Alexander,Alexander_3_required,4,Kobold,Oh çok iyi. Sapasağlam olduğunu mutluyum.
+4b29556a255aea95,L09 Alexander,Alexander_3_required,5,Alexander,Şanslıyız ki rastgele kendiliğinden yanma fenomenini modern dünyada artık tamamen çözmüş haldeyiz.
+ababfd6e7703460e,L09 Alexander,Alexander_3_required,6,Alexander,Tek parça evet. Yardım ettiğine minnettarım.
+69f278cd5a2eb111,L09 Alexander,Alexander_3_required,7,Alexander,...Biriyle bu kadar rahat konuşabilmek tuhaf geliyor.
+6221337862dcba2c,L09 Alexander,Alexander_3_required,8,Alexander,Sana her şeyi anlatabilir mişim gibi hissediyorum.
+cecec36c55a564ee,L09 Alexander,Alexander_3_required,9,Kobold,Her şeyi mi?
+7dbde0758389bd7b,L09 Alexander,Alexander_3_required,11,Alexander,Evet. Bu kadar samimi olabilmek içimi kıpır kıpır yapıyor.
+9bc918ab274337a8,L09 Alexander,Alexander_3_required,12,Alexander,Nedense bu diğer herkesin dediği her şeyden bile daha içten geldi.
+35af415ffcb7f757,L09 Alexander,Alexander_3_required,13,Alexander,"Şey, bir sorum olduğunu..."
+c66fb72552f1fa4c,L09 Alexander,Alexander_3_required,14,Alexander,varsaysak.
+bbff7b98d6da7061,L09 Alexander,Alexander_3_required,15,Kobold,Sorun ne?
+834032dfb827138e,L09 Alexander,Alexander_3_required,16,Kobold,Hayrola?
+71291e2e0c7ce300,L09 Alexander,Alexander_3_required,17,Alexander,<i>Bana</i> bir soru sorabilir misin?
+c8ac7dce03b1b9b7,L09 Alexander,Alexander_3_required,18,Kobold,Nasıl yani?
+10f232e68c0c0443,L09 Alexander,Alexander_3_required,19,Kobold,Ne tür bir soru?
+5956cbc43e2c8c2b,L09 Alexander,Alexander_3_required,20,Alexander,Sadece bana soru sormanı istiyorum. Herhangi bir soru.
+7bf3b1fff483809e,L09 Alexander,Alexander_3_required,21,Alexander,Her çeşit. Sadece merak ediyorum.
+# --- progress: Alexander_questions ---
+9da08a79c3f86ee0,L09 Alexander,Alexander_questions,1,Kobold,Ders vermek nasıl bir his?
+337d9f85511815eb,L09 Alexander,Alexander_questions,2,Kobold/Alexander,Mor rengi seviyor musun?
+line:daa040eb,L09 Alexander,Alexander_questions,2,Kobold,Mor rengi seviyor musun?
+70523c9a506d9676,L09 Alexander,Alexander_questions,3,Kobold,Cüsseli olmak hoşuna gidiyor mu?
+3fbd83d375d6fa05,L09 Alexander,Alexander_questions,4,Kobold,7 sayısının tadı sence nasıldır?
+767b6d6bdc5b806a,L09 Alexander,Alexander_questions,5,Kobold,Benim hakkımda ne düşünüyorsun?
+8ed9fdad93b0f690,L09 Alexander,Alexander_questions,6,Kobold,Mutlu musun?
+e5263ec7185a5166,L09 Alexander,Alexander_questions,7,Kobold,Sorgucun çok havalı. Anlamı ne?
+bc116106c2929c42,L09 Alexander,Alexander_questions,8,Kobold,Sormak istediğim her şey bu kadardı.
+a04d5511812a415b,L09 Alexander,Alexander_questions,9,Alexander,O benim hayalim.
+6861f7c274e3de2c,L09 Alexander,Alexander_questions,10,Alexander,Bir sürü kişinin hayatına pozitif yönde dokunabilmek hoşuma gidiyor.
+8743d170a315e668,L09 Alexander,Alexander_questions,11,Alexander,...Gözümün içine baktıklarını bilmek bende biraz telaş uyandırıyor.
+7aebce70febcfb8c,L09 Alexander,Alexander_questions,12,Alexander,Sadece fiziksel olarak da değil.
+0ad864ff0c0b3f21,L09 Alexander,Alexander_questions,13,Kobold,Ne çeşit dersler veriyorsun?
+24244e96851180ca,L09 Alexander,Alexander_questions,14,Kobold,Onlara iyi bir örnek oluyorsun.
+f58328ac8301872f,L09 Alexander,Alexander_questions,15,Alexander,Çoğunlukla simya. Bazen dünya tarihi.
+771e997edf959694,L09 Alexander,Alexander_questions,16,Alexander,Kendimi sosyal bilimlere de atmaya çalışıyorum.
+9986ef8860d34d9e,L09 Alexander,Alexander_questions,17,Alexander,Beni telaşa sokan da işte tam olarak bu.
+e947bbc260ec1dad,L09 Alexander,Alexander_questions,18,Alexander,Seninleyken hata yapma korkum olmamasına mutluyum.
+818a4fe04a76ce19,L09 Alexander,Alexander_questions,19,Alexander,Lavanta gibi olduğum için mi soruyorsun bunu bana?
+54a1b0b8e5f6fa32,L09 Alexander,Alexander_questions,20,Kobold,Hehe.
+046427d028c69e4b,L09 Alexander,Alexander_questions,21,Kobold,Yoo.
+b849ed1e855cd6f5,L09 Alexander,Alexander_questions,22,Alexander,"Yani, o rengi seviyorum ama sanırım kendi renk tonumla pek de alakası yok."
+bbb1e1b8cec716b3,L09 Alexander,Alexander_questions,23,Alexander,O rengi de severim ama pek de kendi renk tonumla alakası yok sanırsam.
+line:ef052302,L09 Alexander,Alexander_questions,24,Alexander,Sen moru sever misin?
+525ba3c4a2511183,L09 Alexander,Alexander_questions,27,Alexander,Oh. Güzel.
+line:7e189c92,L09 Alexander,Alexander_questions,28,Alexander,...
+3885f7429496059d,L09 Alexander,Alexander_questions,29,Alexander,Ah. Peki.
+line:b7f0551c,L09 Alexander,Alexander_questions,30,Alexander,...
+8133434681c5d0c2,L09 Alexander,Alexander_questions,31,Alexander,Bunu cevaplamak biraz zor olacak.
+a3e6072e41a2ff07,L09 Alexander,Alexander_questions,32,Alexander,Bazı kısımları hoşuma gidiyor. Saygı görmek bunlardan biri...
+b1ca0efdea534b71,L09 Alexander,Alexander_questions,33,Alexander,"ancak, bu saygı beraberinde göründüğüm gibi davranmam gerektiği beklentisini doğuruyor. Bu durum beni fazlasıyla strese sokuyor."
+186edb7d24ea9459,L09 Alexander,Alexander_questions,34,Kobold,Benimleyken istediğin gibi davranabilirsin.
+1a6be1fd03e5ae6f,L09 Alexander,Alexander_questions,35,Kobold,Seni olduğun gibi seviyorum.
+08063aff652b7108,L09 Alexander,Alexander_questions,36,Alexander,Ne kadar da kibarsın.
+4f9390dd28090827,L09 Alexander,Alexander_questions,37,Alexander,Daha açık olmak istiyorum. Böylesi daha iyi.
+b38834ce4594ad5c,L09 Alexander,Alexander_questions,38,Alexander,Sarı misket limonu.
+5f6bb166b079c336,L09 Alexander,Alexander_questions,39,Kobold,Yok artık.
+aac4af2b645cf88e,L09 Alexander,Alexander_questions,40,Kobold,Yani... düz limon mu?
+0ee250681eda1a08,L09 Alexander,Alexander_questions,41,Alexander,"'Var artık', tadının öyle olduğuna adım gibi eminim."
+b83a1658171971d7,L09 Alexander,Alexander_questions,42,Alexander,Hayır. Misket limonu ama sarı.
+a87e0094e62cb429,L09 Alexander,Alexander_questions,43,Kobold,Doktor olan sensin. Yanılmış olamazsın.
+e154199e27c1d4a3,L09 Alexander,Alexander_questions,45,Alexander,"That's an appeal to authority fallacy. But, yes. I'm correct."
+0c137b35abd3f637,L09 Alexander,Alexander_questions,47,Alexander,Sen bir..
+d4efe0db738b52b5,L09 Alexander,Alexander_questions,48,Alexander,sapmasın.
+55c3e5daec20a64d,L09 Alexander,Alexander_questions,49,Kobold,Ha?
+2c291db1ddbe2b9d,L09 Alexander,Alexander_questions,50,Kobold,Bu iyi bir şey mi...?
+df2bc10ba434d57e,L09 Alexander,Alexander_questions,51,Alexander,"Demek istediğim, farklısın."
+019d328b739d99e6,L09 Alexander,Alexander_questions,52,Kobold,İyi anlamda mı?
+c2667b3b3dc54c1a,L09 Alexander,Alexander_questions,53,Kobold,Kötü anlamda mı?
+4f9b4a3cd9b0261a,L09 Alexander,Alexander_questions,54,Alexander,Tabii ki! Harikasın.
+ebb1884c75b23e27,L09 Alexander,Alexander_questions,55,Alexander,"Yıldızlar aşkına! Yok yok, mükemmelsin."
+3b2c32e616b24822,L09 Alexander,Alexander_questions,56,Alexander,"Hatta, yanında olması harikulade olan birisin"
+7e6a62b6d8659273,L09 Alexander,Alexander_questions,57,Alexander,Kim olduğum konusunda bana karşı tek beklentisi kendim olan tanıştığım kişiler arasında yalnızca sen...
+c48241cd21bb0d91,L09 Alexander,Alexander_questions,58,Alexander,varsın.
+5a4d28241178ab01,L09 Alexander,Alexander_questions,59,Alexander,Öyleyim.
+216bb6e650af4cfc,L09 Alexander,Alexander_questions,60,Alexander,Bunda senin de bir payın olduğuna inanıyorum.
+91ff270d6aaba6a4,L09 Alexander,Alexander_questions,61,Kobold,Ben ama yalnızca temizlikçiyim.
+f06f453ab3d6251f,L09 Alexander,Alexander_questions,62,Kobold,Çok tatlısın.
+8c2bdfa25fbde4ed,L09 Alexander,Alexander_questions,63,Alexander,"Biliyorum ama birine açılabilme şansı, kısa aralıklarla da olsa-"
+61639ef55caefda4,L09 Alexander,Alexander_questions,64,Alexander,harikalar yaratıyor.
+line:bc6cc4d2,L09 Alexander,Alexander_questions,65,Alexander,Sen çok tatlısın.
+22c1ab2eb72e5b44,L09 Alexander,Alexander_questions,66,Alexander,"Birine içini açabilme şansın, kısa aralıklarla da olsa..."
+439d8da114ab9162,L09 Alexander,Alexander_questions,68,Alexander,Bunun için sana teşekkür ederim.
+33d3f6495bad4d3c,L09 Alexander,Alexander_questions,69,Alexander,"Oh, başımın etrafında olan sorguç mu?"
+91d69b4f1f9739cb,L09 Alexander,Alexander_questions,70,Alexander,Çoğu kişi onun vücudumun bir parçası olduğunu zannediyor...
+dd0f2ff5e303f61a,L09 Alexander,Alexander_questions,71,Alexander,"ancak o sadece bir süs! Aile sürgücüm. Anlarsın ya..."
+7271f9e9b21e5401,L09 Alexander,Alexander_questions,72,Alexander,"Ejder tarihi çok karmaşıktır. Süs sorguçları <size=85%>çoğunlukla<size=70%> <size=55%>hangi aileye mensup olduklarını belli etmek için<size=40%> ejderler tarafında giyilirler! Kültürel ve ailevi soylarınını<size=35%> işaret eden ilginç bir damgadır. Her zaman giymeye devam etmeli miyim diye düşünmüşümdür ama<size=20%> kültürel ve ailevi bağlar ejder destanlarında her zaman baş üstünde tutulmuştur! Yani ben de böyle şeylere bağlıyım. <size=10%> Su. Toprak. Ateş. Hava. Evval zaman içinde, bu dört ulus huzur içine yaşarmış ama sonra Ateş ulusu saldırdığında her şey değişti."
+line:e90fee8e,L09 Alexander,Alexander_questions,73,Kobold,Oh.
+0006b6926947b91b,L09 Alexander,Alexander_questions,74,Kobold,Bir daha söyler misin?
+b6d573339ec0b66b,L09 Alexander,Alexander_questions,75,Alexander,"Ah, pardon, böyle şeylere karşı çok hırslı olabiliyorum."
+9909f3ea3dffb93e,L09 Alexander,Alexander_questions,76,Alexander,Sorgucumu beğendiğine sevindim.
+e5bccc3a053371ce,L09 Alexander,Alexander_questions,77,Alexander,...Olmaz
+# --- progress: Alexander_3_required_end | if $has_asked_question ---
+c225b2626bb24d2c,L09 Alexander,Alexander_3_required_end,1,Alexander,Soruların için sağ ol. Kişisel sorular sorulması zevkli geliyor.
+# --- jerkoff: Alexander_3_JerkOff_Start ---
+8342e51e14980481,L09 Alexander,Alexander_3_JerkOff_Start,1,Alexander,Ah aman- Bu kadar hırslı olduğunu... beklemiyordum.
+ce664ef00487ef78,L09 Alexander,Alexander_3_JerkOff_Start,2,Alexander,<size=70%><i>rahatına bak-</i>
+# --- cum: Alexander_3_Cum ---
+85503a54fcc74839,L09 Alexander,Alexander_3_Cum,1,Alexander,Uuuf. B-bu biraz... onur kırıcıydı.
+afa89c59eece65b9,L09 Alexander,Alexander_3_Cum,2,Alexander,<size=70%><i>ama hoşuma gitti... Sağ ol.
+# --- outro: Alexander_3_Outro ---
+d96b34ffac75e750,L09 Alexander,Alexander_3_Outro,1,Alexander,Ben <i>tertemizim</i>.
+6dae153117be9e8a,L09 Alexander,Alexander_3_Outro,2,Kobold,Tek bir leke bile kaçırmam.
+941f66ab23bc1b9b,L09 Alexander,Alexander_3_Outro,4,Alexander,Gayet farkındayım. Derin temizliğin kendine has bir hissi var!
+4598878b44333749,L09 Alexander,Alexander_3_Outro,5,Alexander,İşte duymak istediğim şey.
+7ea92f17440d2fae,L09 Alexander,Alexander_3_Outro,6,Alexander,Tekrar geleceğim. Arkadaşım olarak yanımda olman güzel bir şey.
+7bbef8475c6cdff7,L09 Alexander,Alexander_3_Outro,7,Kobold,Tekrar görüşmeyi iple çekiyorum.
+17d54d35bc089567,L09 Alexander,Alexander_3_Outro,8,Kobold,Burada evinde hissetmene mutluyum.
+
+# ===== Level 10: Ryan (Sunny) | ends PicnicCompleted =====
+# --- intro: Ryan_4_intro ---
+379060351b7eda00,L10 Ryan,Ryan_4_intro,1,Ryan,<b><i><size=130%>Ryan'ı Conrad'e sen mi tavsiye ettin?
+8a798890fe938171,L10 Ryan,Ryan_4_intro,2,Kobold,evet
+9390298f3fb0c5b1,L10 Ryan,Ryan_4_intro,3,Kobold,yo
+578f5563ae25f1ce,L10 Ryan,Ryan_4_intro,4,Kobold,Oha... Ağzındaki ne öyle?
+c03386d6c9efb92a,L10 Ryan,Ryan_4_intro,5,Kobold,"Hey Ryan, o ne öyle?"
+d85dcd17cab55fde,L10 Ryan,Ryan_4_intro,6,Ryan,Piknik fepeti-
+b9c2f8ae41c83ebe,L10 Ryan,Ryan_4_intro,7,Ryan,Fu an konussammyorum.
+696058e475fae76a,L10 Ryan,Ryan_4_intro,8,Ryan,geliyim mi?
+1f843189eaccc2b6,L10 Ryan,Ryan_4_intro,9,Kobold,Oh! Tabii. Bariyeri açayım!
+9cc8b0255238b35e,L10 Ryan,Ryan_4_intro,10,Kobold,"Haklısın, hemen gidip açmam lazım."
+1facde273315d636,L10 Ryan,Ryan_4_intro,11,Ryan,Fah ol!
+# --- picnic: Ryan_egg_dialog | if $food_number ---
+ff7696a47d0cd4ed,L10 Ryan,Ryan_egg_dialog,1,Kobold,"Amanın, yumurtayı süs sanmıştım."
+76dddaed85a8d844,L10 Ryan,Ryan_egg_dialog,2,Kobold,O nasıl bir yumurtaydı?
+9fe69182b150b8b1,L10 Ryan,Ryan_egg_dialog,3,Ryan,Ha? Tabii ki değildi!
+f5d2571561dba2b0,L10 Ryan,Ryan_egg_dialog,4,Ryan,"Oh. Onları tek lokmada yemeye alışık değilsin, şimdi anladım."
+718beb6db0dae659,L10 Ryan,Ryan_egg_dialog,5,Ryan,Onların yemenin en iyi yolu mideye indirmek!
+c03f60d1d7bd67e5,L10 Ryan,Ryan_egg_dialog,6,Ryan,Uhm...
+4a7cf2bb1bd01e0b,L10 Ryan,Ryan_egg_dialog,7,Ryan,Mavi mi...?
+640cee0646ecb66c,L10 Ryan,Ryan_egg_dialog,8,Ryan,Emin değilim. WingCo'da indirimdeydiler...
+f887a50c6f7d1edc,L10 Ryan,Ryan_egg_dialog,9,Ryan,ama bayağı lezizdi!
+# --- picnic: ryan_food_dialogue ---
+8b555a411ea346ec,L10 Ryan,ryan_food_dialogue,1,Ryan,Şey... ilişkileri düşünüyordum.
+03e1d33ec4a7f6e8,L10 Ryan,ryan_food_dialogue,2,Kobold,Nasıl yani?
+f1676448791feef6,L10 Ryan,ryan_food_dialogue,3,Ryan,"Yani, ilişkilerimin geleceğini."
+9d2e28c9ae2ed8b4,L10 Ryan,ryan_food_dialogue,4,Ryan,Biraz heyecanlıyım doğrusu.
+91b32d6180935501,L10 Ryan,ryan_food_dialogue,5,Kobold,"Aslında, ilişki pazarındaki en fena balıklardan birisin."
+e5d632fba39e2f0f,L10 Ryan,ryan_food_dialogue,6,Kobold,Senin adına ben de heyecanlandım!
+d228097b23b352e6,L10 Ryan,ryan_food_dialogue,7,Ryan,Sen var ya- Beni utandıracaksın.
+line:30f1f583,L10 Ryan,ryan_food_dialogue,8,Ryan,Teşekkürler!
+d94d7310f7d31a45,L10 Ryan,ryan_food_dialogue,9,Ryan,Yeni kişilerle tanışmak için sabırsızlanıyorum.
+1121175da09c0008,L10 Ryan,ryan_food_dialogue,10,Ryan,"Neyse, beni besler misin?"
+6ebac8131d5267ac,L10 Ryan,ryan_food_dialogue,11,Ryan,Hmm...
+d2c7e6789d89f523,L10 Ryan,ryan_food_dialogue,13,Ryan,Düşünüyordum da...
+67c0ce6aff865e1c,L10 Ryan,ryan_food_dialogue,14,Ryan,Kendi konfor alanımın dışından birilerini bulmak ne zormuş.
+d7f23a9907b74860,L10 Ryan,ryan_food_dialogue,15,Ryan,"Mesela, etrafımdakileri seviyorum ama bir yandan da bana yük oluyorlar."
+99daac47d7b305f6,L10 Ryan,ryan_food_dialogue,16,Ryan,Anlıyorsun değil mi?
+1b4b607607b8c988,L10 Ryan,ryan_food_dialogue,17,Kobold,"Evet, mantıklı geliyor."
+dfcb7cbdb552d8f5,L10 Ryan,ryan_food_dialogue,18,Kobold,"Evet, ilişkin bitince neden böyle hissettiğini anlıyorum."
+f574c59b56179de8,L10 Ryan,ryan_food_dialogue,19,Ryan,"Evet, ilişkim bittiğinden beri yeni şeyler arıyorum."
+0febbd04cce87646,L10 Ryan,ryan_food_dialogue,20,Ryan,Belki de yeni birini.
+b7fca6004f2d5325,L10 Ryan,ryan_food_dialogue,22,Ryan,Evet. Bu olaydan beridir çalacak kapım yok.
+8da113ef266e587f,L10 Ryan,ryan_food_dialogue,23,Ryan,Eski çevremden uzaklaşmaya niyetliyim ama bu sefer yeni şeyler de denemek istiyorum.
+baf0df26ea4f2e81,L10 Ryan,ryan_food_dialogue,24,Ryan,Belki de yeni birisini...
+03ccd297eb346729,L10 Ryan,ryan_food_dialogue,25,Ryan,...Daha önce sorduğum şeyi hatırlıyor musun?
+1032684d93c794bf,L10 Ryan,ryan_food_dialogue,26,Kobold,"Evet, ne oldu?"
+ace8c62e60ec2197,L10 Ryan,ryan_food_dialogue,27,Ryan,Tanışabileceğim birini biliyor musun? Yani şey için... ilişki?
+0a7119cfe1246546,L10 Ryan,ryan_food_dialogue,28,Kobold,"<gradient=""gold""><b>Bildiğim bir kızıl ejder var. Bence hoşuna gidecek! </b></gradient><size=70%> (Ryan'ı Conrad'a ayarla!)"
+4a3b65400e54f8ff,L10 Ryan,ryan_food_dialogue,29,Kobold,"<gradient=""gold""><b>Oh. aaa. <size=70%> O kişi... ben olsam fena olmazdı. </b></gradient><size=70%> (Yalnızca Ryan ile ilişki yap!)"
+bb7a6be711206298,L10 Ryan,ryan_food_dialogue,30,Kobold,"<gradient=""gold""><b>Şu an aklımda hiç öyle biri yok.</b></gradient><size=70%> (Conrad ile ilişkide kal!)"
+a6a744d6d60ec400,L10 Ryan,ryan_food_dialogue,31,Ryan/Alexander/Kobold,Oh?
+line:1d491283,L10 Ryan,ryan_food_dialogue,31,Ryan,Oh?
+cbe8e4adc9ca52df,L10 Ryan,ryan_food_dialogue,32,Ryan,O da kim?
+ca545deecbd9950d,L10 Ryan,ryan_food_dialogue,33,Kobold,Yıkanmaya gelen BAYAĞI tatlı kızıl bir drake!
+4a94ef80ae21582a,L10 Ryan,ryan_food_dialogue,34,Kobold,O bir kızıl ejder. Bence birbirinizden hoşlanacaksınız!
+0ea02ee3f0c5673d,L10 Ryan,ryan_food_dialogue,35,Ryan,"Oh! Sanırım onu gördüm. Ufak olandan bahsediyorsun, değil mi?"
+58b69c47fed8b38f,L10 Ryan,ryan_food_dialogue,36,Kobold,'dikey olarak' özel biri denmesini tercih ediyor... ama evet o.
+3ae2d547c997ca01,L10 Ryan,ryan_food_dialogue,37,Kobold,Hıhı! o da yeni birileriyle tanışmaya çalışıyor.
+474246952e0d1e50,L10 Ryan,ryan_food_dialogue,38,Ryan,Oh...
+ed2ece6040ec8b40,L10 Ryan,ryan_food_dialogue,39,Ryan,Çok tatlıymış.
+c0fb8d4f93270198,L10 Ryan,ryan_food_dialogue,40,Ryan,"Oh, harika. Ne çok ortak noktamız varmış."
+82767de7e3e22a4a,L10 Ryan,ryan_food_dialogue,41,Ryan,Onunla buluşmak isterim gibi!
+b423c91f4f75add4,L10 Ryan,ryan_food_dialogue,42,Kobold,O zaman ikinizi tanıştırayım.
+80c500f9c426d4cc,L10 Ryan,ryan_food_dialogue,43,Kobold,Çok heyecanlıyım. ikinizi tanıştıracağım!
+line:70190774,L10 Ryan,ryan_food_dialogue,44,Ryan,Teşekkürler!
+ec786c9a7656b0f9,L10 Ryan,ryan_food_dialogue,45,Ryan,"Ben de öyleyim, sağ ol!"
+line:3b6d644d,L10 Ryan,ryan_food_dialogue,46,Ryan,Oh.
+028dbc8d077c611f,L10 Ryan,ryan_food_dialogue,47,Ryan,<i>Oh...
+ae590830c4c03fd1,L10 Ryan,ryan_food_dialogue,48,Ryan,O kişini sen olmasını ben de isterim gibi.
+b4066b4e58df8005,L10 Ryan,ryan_food_dialogue,49,Kobold,Yani o zaman bu bizim... ilk randevumuz mu?
+8c7e5a49ec8fd685,L10 Ryan,ryan_food_dialogue,50,Kobold,Dürüst olayım. Sana biraz düşmedim değil.
+710ea0057247cb51,L10 Ryan,ryan_food_dialogue,51,Ryan,Sanırım öyle!
+de4d091acdb6059c,L10 Ryan,ryan_food_dialogue,52,Ryan,"Cidden mi? Ah, ne şekersin."
+35e3561cd36f36d6,L10 Ryan,ryan_food_dialogue,53,Ryan,Beni birinin o kadar çabuk sevebileceğini düşünmemiştim.
+f05160456925af3f,L10 Ryan,ryan_food_dialogue,54,Ryan,Tatlı birisin.
+a01d64fcb9d7d3a5,L10 Ryan,ryan_food_dialogue,55,Kobold,Evet. <size=90%>Oh- <size=80%>yani şey. Ben de... <size=70%>Haha. İşte. Hıhı!
+65691ff38c85e57c,L10 Ryan,ryan_food_dialogue,56,Kobold,Sen de tatlısın!
+d323e565ed8ea749,L10 Ryan,ryan_food_dialogue,57,Ryan,Yüzünü kızartmak istemiştim!
+145e6a2d848267cb,L10 Ryan,ryan_food_dialogue,58,Ryan,Sadece... mutluyum.
+0cc014df7d89d3e1,L10 Ryan,ryan_food_dialogue,59,Ryan,"Ah, sağ ol. Senin temizliklerin sayesinde öyleyim"
+eea7bdf3ab3f251c,L10 Ryan,ryan_food_dialogue,60,Ryan,Ben... Mutluyum.
+d619413abc4a1de1,L10 Ryan,ryan_food_dialogue,61,Ryan,Sorun değil!
+c2acc8d962a0c936,L10 Ryan,ryan_food_dialogue,62,Ryan,Senin görüştüğün biri var mı peki?
+2374bdd10aea40ba,L10 Ryan,ryan_food_dialogue,63,Kobold,"Tanıdığım bir kızıl ejder var, ismi Conrad. O şey... biraz yaramaz ama tatlıdır."
+58a5e5a5a9482e96,L10 Ryan,ryan_food_dialogue,64,Kobold,"Evet var! ismi Conrad, çok sevimli biri. Ona sevimli dediğimi duysa beni yakar."
+3d14bcafbc3f21c6,L10 Ryan,ryan_food_dialogue,65,Ryan,"Oh huh, o daha önce gelirken gördüğüm şu küçük Drake mi?"
+882d8b921688234c,L10 Ryan,ryan_food_dialogue,66,Kobold,Hey! O sadece... 'dikey olarak' özel biri.
+1ce76f0141c9f53b,L10 Ryan,ryan_food_dialogue,67,Kobold,Hıhı! o işte.
+eeedcdd5eaa13110,L10 Ryan,ryan_food_dialogue,68,Ryan,"Oh, pardon."
+dcfc67b1e58c5a49,L10 Ryan,ryan_food_dialogue,69,Ryan,Tatlı biri gibi duruyor!
+94ff2c4b836f0aef,L10 Ryan,ryan_food_dialogue,70,Ryan,"Harika, ne tatlıymış!"
+abe281ce74304803,L10 Ryan,ryan_food_dialogue,71,Ryan,"Hey şey, her şey için tekrar sağ ol."
+9144d5ad20e5a9e8,L10 Ryan,ryan_food_dialogue,72,Kobold,Sorun değil! Conrad ile buluşmanı sabırsızlıkla bekliyorum.
+e39b086d1bff71b1,L10 Ryan,ryan_food_dialogue,73,Kobold,"Öyle deme, asıl ben teşekkür ederim. Çok... heyecanlıyım."
+1f50e1361eaeacbf,L10 Ryan,ryan_food_dialogue,74,Kobold,Rica ederim! Yemek için sağ ol.
+489184ee3c2573f9,L10 Ryan,ryan_food_dialogue,75,Ryan,"Hah, evet. Eğlenceli biri gibi duruyor."
+28f3547a6af39629,L10 Ryan,ryan_food_dialogue,76,Ryan,"Nasıl geçtiğini anlatırım sana da, olur mu?"
+fcd75c87b326482c,L10 Ryan,ryan_food_dialogue,77,Kobold,Zevkle bekliyor olacağım!
+a66a9f98f63d5aaf,L10 Ryan,ryan_food_dialogue,78,Kobold,Evet. İki aşk kuşu gibi duracaksınız.
+39619dc71b15dfde,L10 Ryan,ryan_food_dialogue,79,Ryan,Piknik hoştu...
+b2d03d0e5222d95c,L10 Ryan,ryan_food_dialogue,80,Ryan,"Görüşmek üzere, tamam mı?"
+17c800776b082018,L10 Ryan,ryan_food_dialogue,81,Kobold,Umarım! Gidip bariyeri açayım.
+56372773e401e131,L10 Ryan,ryan_food_dialogue,82,Kobold,Görüşürüz! Yemek için sağ ol. Gidip bariyeri açayım.
+97cffb9a377004b2,L10 Ryan,ryan_food_dialogue,83,Ryan,Şey... Daha önce hiç bir koboldla çıkmamıştım...
+50ce0561192b6b01,L10 Ryan,ryan_food_dialogue,84,Ryan,ama şimdiden bu fikir çok hoşuma gidiyor.
+e823adcc22fd50c2,L10 Ryan,ryan_food_dialogue,85,Kobold,Sana bayılıyorum.
+62e851c911a254bb,L10 Ryan,ryan_food_dialogue,86,Kobold,"Evet, tüm bu her şey çok hoş."
+773c0ce37ffbb546,L10 Ryan,ryan_food_dialogue,87,Ryan,Heh. Ben de sana bayılıyorum.
+1c6058ce1c7242cf,L10 Ryan,ryan_food_dialogue,88,Ryan,Gerçekten öyle. Muhteşemsin.
+32e4e8851f8ac398,L10 Ryan,ryan_food_dialogue,89,Ryan,Benimle yemeğini paylaştığın için sağ ol...
+0a94f0c3b65c425c,L10 Ryan,ryan_food_dialogue,90,Ryan,Tekrar görüşmek üzere.
+8c39f31ac476e20e,L10 Ryan,ryan_food_dialogue,91,Kobold,Seni her zaman beklerim. Gidip bariyeri açayım.
+db8848bda5df285f,L10 Ryan,ryan_food_dialogue,92,Kobold,Sana da görüşürüz! Gidip kapıyı açayım.
+f0394a2181ae8df6,L10 Ryan,ryan_food_dialogue,93,Ryan,Olur! Görüşürüz.
+d48a9423f250312c,L10 Ryan,ryan_food_dialogue,94,Ryan,"Conrad denilen şu çocuk, onu sevdin herhalde değil mi?"
+6eb520b95e8c6388,L10 Ryan,ryan_food_dialogue,95,Kobold,Hehe evet.
+c97f0b6b1b436f26,L10 Ryan,ryan_food_dialogue,96,Kobold,"Benim için büyük bir lokma ama bu hoşuma gidiyor."
+6525ecb4cd0f0eea,L10 Ryan,ryan_food_dialogue,97,Ryan,Ne sevimli!
+6943d0645de48850,L10 Ryan,ryan_food_dialogue,98,Ryan,Onun en sevdiğin yönü ne?
+a695d517f16d1719,L10 Ryan,ryan_food_dialogue,99,Kobold,Onunki şey. KOCAMAN asılıyor.
+dbeb304df456a424,L10 Ryan,ryan_food_dialogue,100,Kobold,"Asabidir ama aynı zamanda yumuşak kalpli!"
+3c29c25f0a23d26a,L10 Ryan,ryan_food_dialogue,101,Kobold,"Ufak biri, onunla göz hizasında olabilmek hoşuma gidiyor."
+0911d52bc2d9f70b,L10 Ryan,ryan_food_dialogue,102,Kobold,Ondan... hoşlanıyorum.
+4aa9ae5f4bbb8541,L10 Ryan,ryan_food_dialogue,103,Ryan,"Oh... doğru, küçük ejderler başka yollarla... telafi ediyor."
+7859d5c981752171,L10 Ryan,ryan_food_dialogue,104,Ryan,"Mmm, evet o tipleri biliyorum."
+d8c70d62d0457935,L10 Ryan,ryan_food_dialogue,105,Ryan,Hiç şaşırmadım! Küçük drakeler zevklidir.
+97a18e09f3f990c5,L10 Ryan,ryan_food_dialogue,106,Ryan,Ah... ne tatlı.
+fac3f85c3c835445,L10 Ryan,ryan_food_dialogue,107,Ryan,Daha sonra bu ilişkiyi nasıl yürüttüğünüzü bana anlatmalısın!
+37e125daa86112bd,L10 Ryan,ryan_food_dialogue,108,Ryan,"Benimle yemeğini paylaştığın için sağ ol, iyi bir arkadaşsın."
+120807e0d30c65d5,L10 Ryan,ryan_food_dialogue,109,Kobold,Yemek için sağ ol! Gidip bariyeri açayım.
+94ddf87d22b36d07,L10 Ryan,ryan_food_dialogue,110,Kobold,"Sen de iyi bir arkadaşsın, gidip bariyeri açayım."
+02ca8c073be8669d,L10 Ryan,ryan_food_dialogue,111,Ryan,"Olur, görüşmek üzere!"
+# --- picnic: Ryan_grab_basket ---
+3276ca6f923e3a2e,L10 Ryan,Ryan_grab_basket,1,Ryan,Mleeh. Tuttuğun için sağ ol.
+1790d1bc285d158f,L10 Ryan,Ryan_grab_basket,2,Kobold,Yemek mi getirdin?
+fab7cff668586c9b,L10 Ryan,Ryan_grab_basket,3,Kobold,Ryan! Çok tatlısın.
+3f519f6990d85e4d,L10 Ryan,Ryan_grab_basket,4,Ryan,Hehe! İçinde ikimiz için de bir şeyler var.
+38953523aa1d8dc9,L10 Ryan,Ryan_grab_basket,5,Ryan,"Hehe, bir şey değil. İkimiz için de bir şeyler getirdim."
+f44e62ce0d92a9c3,L10 Ryan,Ryan_grab_basket,6,Ryan,"Yalnız, boyutları biraz... ejderlere göre olabilir."
+dbe7ccbf37aed06a,L10 Ryan,Ryan_grab_basket,7,Kobold,Bütün bunları niçin buraya getirdin?
+96082d9f598cc1db,L10 Ryan,Ryan_grab_basket,8,Kobold,Yıkanmaya ihtiyacın bile var mı ki senin?
+5be9d07e2e19a321,L10 Ryan,Ryan_grab_basket,9,Ryan,Senin için getirdim...
+eea2772cf2ab51f9,L10 Ryan,Ryan_grab_basket,10,Ryan,<size=70%> ve de benim!
+5da686787e870bc2,L10 Ryan,Ryan_grab_basket,11,Ryan,"Yok, ihtiyacım olduğunu zannetmiyorum."
+dfdd49c96bf70312,L10 Ryan,Ryan_grab_basket,12,Ryan,Sadece sana mama getirmek için geldim!
+7efd9697b321d608,L10 Ryan,Ryan_grab_basket,13,Ryan,Bana yaptığın tüm iyiliklere karşılık güzel bir şeyler getireyim dedim.
+414c0f3bb81740f3,L10 Ryan,Ryan_grab_basket,14,Ryan,Sakıncası yok değil mi?
+097832ea20a37b63,L10 Ryan,Ryan_grab_basket,15,Kobold,Tabii ki de yok!
+460dbc14c8f22914,L10 Ryan,Ryan_grab_basket,17,Ryan,"Harika, sevindim."
+6e1aac9408968a3c,L10 Ryan,Ryan_grab_basket,18,Ryan,Bu herhalde yok demek! Sevindim.
+fe3e5d4e4925ddb6,L10 Ryan,Ryan_grab_basket,19,Ryan,Neyse... yiyelim mi?
+# --- picnic: Ryan_grapes_dialog | if $food_number ---
+46ca5d912bed1dcc,L10 Ryan,Ryan_grapes_dialog,1,Kobold,Üzümler bayağı iyi duruyordu.
+33f099ac348159d4,L10 Ryan,Ryan_grapes_dialog,2,Kobold,"Ryan, dallarını yememen gerekiyordu-"
+174343e1e975e68b,L10 Ryan,Ryan_grapes_dialog,3,Ryan,Öylelerdi! Dalları en sevdiğim kısmı.
+976fdc62e4cbffcf,L10 Ryan,Ryan_grapes_dialog,4,Kobold,Sadece... tahtadan oluşmuyorlar mı?
+8e4f1f66ab3b3860,L10 Ryan,Ryan_grapes_dialog,5,Kobold,Hiç denememiştim.
+d053df82397c2f86,L10 Ryan,Ryan_grapes_dialog,6,Ryan,"Hehe, çok lezizler!"
+c994875a9f5c8520,L10 Ryan,Ryan_grapes_dialog,7,Ryan,Gene de muhtemelen senin yememen lazım.
+025e9c74601a1a65,L10 Ryan,Ryan_grapes_dialog,8,Ryan,Ejder mideleri sizinkilerden biraz daha... sağlamdır.
+b689b40a79b968df,L10 Ryan,Ryan_grapes_dialog,9,Ryan,Muhtemelen denememelisin bile.
+8d834797bd163119,L10 Ryan,Ryan_grapes_dialog,10,Ryan,Önce bir ejderin iştahı lazım sende!
+27935fd7477eba77,L10 Ryan,Ryan_grapes_dialog,11,Ryan,Kim demiş onu?
+0b71d27200d13a33,L10 Ryan,Ryan_grapes_dialog,12,Kobold,Ben
+47252f2c75dea9ef,L10 Ryan,Ryan_grapes_dialog,13,Kobold,Biyoloji mi...? <size=70%> <i>Herhalde
+5af35db6f8fe39ad,L10 Ryan,Ryan_grapes_dialog,14,Ryan,Yani...
+79436a008466d243,L10 Ryan,Ryan_grapes_dialog,15,Ryan,kurallar <i<çiğnenmek</i> için var!
+49e7a64aec55ff2a,L10 Ryan,Ryan_grapes_dialog,16,Ryan,"Endişelenme, ejderlerin doğasında var bu."
+5f82b968ccbb4aaa,L10 Ryan,Ryan_grapes_dialog,17,Ryan,Neredeyse her şeyi sindirebilirim.
+f9a3f85545840310,L10 Ryan,Ryan_grapes_dialog,18,Ryan,Sapı da vitaminli.
+53494acb38981cff,L10 Ryan,Ryan_grapes_dialog,19,Ryan,Üzümler özellikle iştahımı kabartıyor.
+77e53d1b1d33b9f0,L10 Ryan,Ryan_grapes_dialog,20,Ryan,"Oh, sanırım yüzüme de bulaştırmışım, hay aksi."
+# --- picnic: Ryan_ham_dialog | if $food_number ---
+cb2d2f80636d8a49,L10 Ryan,Ryan_ham_dialog,1,Kobold,RYAN KEMİK NE OLACAK!
+523a9690a00a7803,L10 Ryan,Ryan_ham_dialog,2,Kobold,Oha... cidden bütün hepsini yuttun.
+618839c9ee1f8a65,L10 Ryan,Ryan_ham_dialog,3,Ryan,Mmph- Hm?
+5b917e0078e6beb0,L10 Ryan,Ryan_ham_dialog,4,Ryan,"Oh, en sevdiğim kısım orası zaten!"
+7a41a3b5d6e1acf7,L10 Ryan,Ryan_ham_dialog,5,Kobold,Nasıl sindiriyorsun ki?
+846f850b875979d4,L10 Ryan,Ryan_ham_dialog,6,Kobold,<size=60%> aklımı başımdan aldın.
+f7d4b26ff67eee38,L10 Ryan,Ryan_ham_dialog,7,Ryan,Ben bir ejderim.
+b86257f47d85426e,L10 Ryan,Ryan_ham_dialog,8,Ryan,Her şeyi sindirebildiğime eminim.
+a165524a35a75706,L10 Ryan,Ryan_ham_dialog,9,Ryan,Öyle mi? Bunu bilmek güzel...
+db22d9512845d515,L10 Ryan,Ryan_ham_dialog,10,Ryan,Yemekten öyle haz alıyorum.
+a5af381d1ec66e2a,L10 Ryan,Ryan_ham_dialog,11,Ryan,İlginçtir; siz iki ayaklılar yemeğin tadını çıkartıyorsunuz...
+180983e0a4f4e327,L10 Ryan,Ryan_ham_dialog,12,Ryan,ama hiçbir şey çiğnemeden yutmak kadar iyi olamaz!
+# --- picnic: Ryan_melon_dialog | if $food_number ---
+e1d0d09daa3129d9,L10 Ryan,Ryan_melon_dialog,1,Ryan,Neredeyse ağzıma sığmıyordu-
+8725851a4492f86f,L10 Ryan,Ryan_melon_dialog,2,Kobold,Karpuzu soymadın bile.
+991947f3461b26a7,L10 Ryan,Ryan_melon_dialog,3,Kobold,Tadı nasıldı?
+7d20121dc2fa0757,L10 Ryan,Ryan_melon_dialog,4,Ryan,Yaaani.
+41f87d2c55073e29,L10 Ryan,Ryan_melon_dialog,5,Ryan,Hay aksi.
+4fafd5a0c9f29d5f,L10 Ryan,Ryan_melon_dialog,6,Ryan,Gene de güzeldi! Boğazımdan kaymasını hissetmek haz vericiydi.
+dc8488830f9d7192,L10 Ryan,Ryan_melon_dialog,7,Ryan,Isırmayı unuttum... yani benim için tatsızdı.
+7dedd07a7558afa9,L10 Ryan,Ryan_melon_dialog,8,Ryan,Boğazımdan aşağı kaymasını hissetmek ama haz vericiydi!
+8b4a775ae776722a,L10 Ryan,Ryan_melon_dialog,9,Kobold,<size=70%> Oha.
+ef03f59f06da8fa4,L10 Ryan,Ryan_melon_dialog,10,Kobold,Boğazına o kadar büyük şeyleri alabilmen tam bir çılgınlık.
+4fc09f2d61d5cc43,L10 Ryan,Ryan_melon_dialog,11,Ryan,Koboldlar nedense yemek yiyişime hep hasta oluyor.
+032ea150ccdf88be,L10 Ryan,Ryan_melon_dialog,12,Ryan,Tepkilerini görünce ben de onlar gibi hissediyorum!
+aad3715a2f685dc3,L10 Ryan,Ryan_melon_dialog,13,Ryan,Boğazım bir şeyleri tek lokmada yutmak için yapıldı.
+b0a73a78b7d9045b,L10 Ryan,Ryan_melon_dialog,14,Kobold,<size=70%><i>Harbiden mi?
+30ff5a696a0def56,L10 Ryan,Ryan_melon_dialog,16,Ryan,Hıhı!
+line:812700a5,L10 Ryan,Ryan_melon_dialog,17,Ryan,...
+901c77872c53d308,L10 Ryan,Ryan_melon_dialog,18,Ryan,Evet! İşime geliyor.
+# --- jerkoff: Ryan_4_JerkOff_Start ---
+2d434662c42f6a6c,L10 Ryan,Ryan_4_JerkOff_Start,1,Ryan,Emin misin...? Yemeğin önünde mi cidden?
+031703a96ac0df8c,L10 Ryan,Ryan_4_JerkOff_Start,2,Ryan,Heh... peki.
+# --- cum: Ryan_4_Cum ---
+3b1c48772bd5889e,L10 Ryan,Ryan_4_Cum,1,Ryan,Uuff... Güzeldi... ama birazcık etrafı kirlettim.
+# --- mount_start: Ryan_4_Mount_Start ---
+2f31dcbcaa980550,L10 Ryan,Ryan_4_Mount_Start,1,Ryan,Oha... Ona mı binmemi istiyorsun? Yemekler varken bile mi? Peki!
+# --- mount_finish: Ryan_4_Mount_Finish ---
+833d21b8cd952764,L10 Ryan,Ryan_4_Mount_Finish,1,Ryan,Etrafı birazcık pislettim ... ama değdi.
+
+# ===== Level 11: Conrad (Sunny) =====
+# --- intro: Conrad_Intro_4 ---
+a67959dc39353129,L11 Conrad,Conrad_Intro_4,1,Conrad/Ryan/Alexander,Flaglerle ilgili bir hata oluştu!
+line:8f64adc0,L11 Conrad,Conrad_Intro_4,1,Conrad,Flaglerle ilgili bir hata oluştu!
+c1a949184675fa92,L11 Conrad,Conrad_Intro_4,2,Conrad/Ryan/Alexander,Geliştiricilere lütfen yardım et..
+line:1954aab7,L11 Conrad,Conrad_Intro_4,2,Conrad,Geliştiricilere lütfen yardım et..
+60f8f02dd7a80d00,L11 Conrad,Conrad_Intro_4,3,Kobold,"conrad, ryan ile çıktı"
+6e98155abad655c3,L11 Conrad,Conrad_Intro_4,4,Kobold,"oyuncu, conrad ile çıktı"
+9cf9d4fc71363f68,L11 Conrad,Conrad_Intro_4,5,Kobold,"oyuncu, ryan ile de çıktı"
+67beed0c39e205b4,L11 Conrad,Conrad_Intro_4,6,Kobold,Hey Conrad!
+d22e2236304b2ef0,L11 Conrad,Conrad_Intro_4,7,Kobold,Seni bu kadar neşelendiren şey ne?
+6183e901a5a22ddc,L11 Conrad,Conrad_Intro_4,8,Kobold,Hey conrad!
+3c0eb60cca3b1422,L11 Conrad,Conrad_Intro_4,9,Conrad,Hey tosun kobold.
+ad13467d89f77645,L11 Conrad,Conrad_Intro_4,10,Conrad,Şeyin farklı duruyor şeyy...
+25aab860a8266c4c,L11 Conrad,Conrad_Intro_4,11,Conrad,Pullarını mı cilaladın yoksa? <size=70%><i>öyle bir şey var mı...? </i><size=100%>Güzel duruyorsun.
+42e1b9a73c953f33,L11 Conrad,Conrad_Intro_4,12,Kobold,Sağ ol! Üstündeki balçıklar... ne öyle?
+be118711068118d5,L11 Conrad,Conrad_Intro_4,13,Kobold,"Hah. Conrad, sen de güzel duruyorsun."
+a4008861bf24c47d,L11 Conrad,Conrad_Intro_4,14,Kobold,Öyle bir şey yok... ama teşekkür ederim!
+a951e05bf8506af1,L11 Conrad,Conrad_Intro_4,15,Conrad,Böğürtlen.
+line:d6483230,L11 Conrad,Conrad_Intro_4,16,Conrad,...
+765af85f1bd7eafe,L11 Conrad,Conrad_Intro_4,17,Conrad,"Her neyse"
+199e91c738a75b4c,L11 Conrad,Conrad_Intro_4,18,Conrad,Hem de fena!
+926069483fd35835,L11 Conrad,Conrad_Intro_4,19,Conrad,Haha... Doğru. İltifat etmekte iyi değilimdir.
+8c9dc9229a7630ce,L11 Conrad,Conrad_Intro_4,20,Conrad,Sadece hızlı bir temizlik istiyorum... belki binekle de oynarım.
+3ee865676f6e4c99,L11 Conrad,Conrad_Intro_4,21,Kobold/Ryan,Oh yeah?
+line:2d2820b0,L11 Conrad,Conrad_Intro_4,21,Kobold,Öyle mi?
+5fae46a5c8669c29,L11 Conrad,Conrad_Intro_4,22,Kobold,Tabii ki! Gidip bariyeri açayım.
+daa08f627cbbfb9e,L11 Conrad,Conrad_Intro_4,23,Conrad,Evet- Tabii istersen!
+20ee725c28fb397e,L11 Conrad,Conrad_Intro_4,24,Conrad,Yüzsüz davranmak istemem.
+374fe9cc22a15007,L11 Conrad,Conrad_Intro_4,25,Kobold,"Ah, gidip sana bariyeri açayım."
+line:34ec4db7,L11 Conrad,Conrad_Intro_4,26,Conrad,Sağ ol.
+line:188d4359,L11 Conrad,Conrad_Intro_4,27,Conrad,Sağ ol.
+ae53715099e0d53d,L11 Conrad,Conrad_Intro_4,28,Conrad,Ryan! Onunla tanıştım.
+caefb85b87a51126,L11 Conrad,Conrad_Intro_4,29,Kobold,Ne güzel! Üstündeki bütün bu balçık... da ne?
+0452c0f1847f4a72,L11 Conrad,Conrad_Intro_4,30,Kobold,Nasıl gitti?
+line:cfe4b91d,L11 Conrad,Conrad_Intro_4,32,Conrad,...
+940b2bb279fbfd8a,L11 Conrad,Conrad_Intro_4,33,Conrad,Beni ve Ryan'ı tanıştırdığınz için sağ ol.
+6c42e3202026a3e8,L11 Conrad,Conrad_Intro_4,34,Conrad,Aslında çok iyi gitti.
+91b34251e9ff7711,L11 Conrad,Conrad_Intro_4,35,Conrad,Onun gibi birinin benim tipim olacağını hiç düşünmezdim...
+abc0fe0ceed24339,L11 Conrad,Conrad_Intro_4,36,Kobold,Bana her şeyi anlatman lazım.
+ab20df82132f07cc,L11 Conrad,Conrad_Intro_4,37,Conrad,"Anlatacağım. Sadece hızlı bir yıkanmaya ihtiyacım var, sonra binekle oynamaya da hayır demem."
+17c5f180de5a8348,L11 Conrad,Conrad_Intro_4,38,Conrad,"Ryan için <i>alıştırma</i> yapmam lazım, neyi kastettiğimi anladıysan."
+9912569ea696f8ed,L11 Conrad,Conrad_Intro_4,39,Kobold,Conrad ayıp!
+106f99c061d35f26,L11 Conrad,Conrad_Intro_4,40,Kobold,Anladım- anladım. Gidip bariyeri açayım.
+f71200a57e2d1d7a,L11 Conrad,Conrad_Intro_4,41,Conrad,Ama ne? Önceden haberin olsun istemiştim!
+line:3484ab9d,L11 Conrad,Conrad_Intro_4,42,Conrad,Sağ ol!
+65bee50d904e101d,L11 Conrad,Conrad_Intro_4,43,Conrad,Hey hey. Açık olduğuna sevindim.
+4d5dda82efc31458,L11 Conrad,Conrad_Intro_4,44,Conrad,Hortumla sulanmam lazım. Binekle oynamaya da hayır demem.
+0ecdd0ec4c0cf66c,L11 Conrad,Conrad_Intro_4,45,Kobold,"Oooh, pekiii."
+3252727dec6314c5,L11 Conrad,Conrad_Intro_4,47,Kobold,Bütün bu balçıklar... da ne?
+91bc8d1d6dc8cdb7,L11 Conrad,Conrad_Intro_4,48,Conrad,Heh. Evet.
+line:bc5d790a,L11 Conrad,Conrad_Intro_4,50,Conrad,Sağ ol!
+line:4d868f2f,L11 Conrad,Conrad_Intro_4,51,Conrad,Sağ ol!
+line:c272e55f,L11 Conrad,Conrad_Intro_4,53,Conrad,...
+1aced2f074444bdc,L11 Conrad,Conrad_Intro_4,54,Kobold,Oh. Tamam gidip bariyeri açayım.
+# --- progress: Conrad_required_4 ---
+a5965f548b64e3cf,L11 Conrad,Conrad_required_4,1,Conrad,"Hey, sana bir sorum var."
+9ad0664c4ac1572a,L11 Conrad,Conrad_required_4,2,Kobold,Oh nedir?
+d448809fdbbeaf11,L11 Conrad,Conrad_required_4,4,Kobold,Oh neeeeey?
+51dbc8c7be16145b,L11 Conrad,Conrad_required_4,5,Kobold,"Nedir, yavrum?"
+# --- progress: Conrad_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+e6071cb4e7c448c8,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,1,Conrad,"Ryan'la, bu akşam çıkacağımdan eminim."
+9ee7e6a6ebccf907,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,2,Conrad,Bana hiç tavsiyen var mı?
+f7af2bd25c827e3d,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,3,Kobold,Doğal davran!
+a58248b820567c49,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,4,Kobold,Temiz olduğundan emin ol. <size=70%><i>hehe.
+528e2755301df89e,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,5,Conrad,Elimden geleni yapıyorum.
+71cfcccd17dc37fc,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,6,Conrad,"Her şey yolunda gibi, değil mi?"
+93a2ca86985333fe,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,7,Kobold,Öyle duruyor!
+55842427ae2db4e3,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,8,Kobold,"Ryan gibi birinin ilgisini çektiysen zaten harika iş çıkarıyorsun demektir."
+line:c642cb17,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,9,Conrad,Sağ ol.
+162762064c5d0461,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,10,Conrad,Hah. Keşke beni temizleyecek bir kobold olsaydı.
+4ae6d6619b0245f7,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,11,Kobold,Keşke.
+6267e98361c404ca,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,12,Kobold,<i>Tertemiz</i> yapacağım seni.
+7c0c5a4da3de6046,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,13,Conrad,"Şaka bir yana, en iyi temizlikçi sensin."
+207d91f2342e8d0c,L11 Conrad,Conrad_4_Ryan_Conrad_Romanced,14,Conrad,Teşekkür ederim. İyi görün iyi hisset demişler!
+# --- progress: Conrad_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+a8ee5e15400fc208,L11 Conrad,Conrad_4_Conrad_Romanced,1,Conrad,Peki... şey. Randevuya gitmek istiyorum!
+line:b9d8a22f,L11 Conrad,Conrad_4_Conrad_Romanced,2,Kobold,Öyle mi?
+f2f6817fb49621c2,L11 Conrad,Conrad_4_Conrad_Romanced,3,Kobold,Bayılırım!
+82ddb728ff9d18a9,L11 Conrad,Conrad_4_Conrad_Romanced,4,Conrad,Düşünüyordum da istersen gelecek hafta bir yerlere gidebiliriz?
+fc253d9eb67cd473,L11 Conrad,Conrad_4_Conrad_Romanced,5,Kobold,Bana uygun.
+9a03666243082379,L11 Conrad,Conrad_4_Conrad_Romanced,6,Kobold,Hayır demem!
+67f68a72462bca9b,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad/Ryan,Çok iyi!
+line:70306ba1,L11 Conrad,Conrad_4_Conrad_Romanced,7,Conrad,Çok iyi!
+45ec6449f36fb5b9,L11 Conrad,Conrad_4_Conrad_Romanced,8,Conrad,Sonraki sefer buraya yıkanmak için geldiğimde gideriz.
+ee6194b2fabfafdc,L11 Conrad,Conrad_4_Conrad_Romanced,9,Kobold,Hoşuma gider!
+38c7fbb586ed7788,L11 Conrad,Conrad_4_Conrad_Romanced,10,Kobold,Planı olmuş bil.
+de408e85752b4a9e,L11 Conrad,Conrad_4_Conrad_Romanced,11,Conrad/Kobold/Alexander,Sabırsızlanıyorum.
+line:69f406a6,L11 Conrad,Conrad_4_Conrad_Romanced,11,Conrad,Sabırsızlanıyorum.
+# --- progress: Conrad_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+8dc7f14f91542fe7,L11 Conrad,Conrad_Ryan_Romanced,1,Conrad,Yani sen ve Ryan ha?
+498cb71ee3e20098,L11 Conrad,Conrad_Ryan_Romanced,2,Kobold,"Oh, evet!"
+37d827f8025ee687,L11 Conrad,Conrad_Ryan_Romanced,3,Kobold,Çok yakışıklı biri.
+64db0ca49ca9563d,L11 Conrad,Conrad_Ryan_Romanced,4,Kobold,Hayalimdeki ejder.
+bdfc096fee84c4fb,L11 Conrad,Conrad_Ryan_Romanced,5,Conrad,Senin adına mutluyum!
+cb24c38318e64595,L11 Conrad,Conrad_Ryan_Romanced,6,Conrad,Öyle duruyor.
+0e5b54a94da4725b,L11 Conrad,Conrad_Ryan_Romanced,8,Kobold,Peki senin kalbini çalan biri var mı?
+5f9173229e51d947,L11 Conrad,Conrad_Ryan_Romanced,9,Kobold,Ben de mutluyum.
+68fa6f383249196c,L11 Conrad,Conrad_Ryan_Romanced,10,Conrad,Sayılır! Kendimi dışarı daha çok açtım.
+e589607da4e2983d,L11 Conrad,Conrad_Ryan_Romanced,11,Conrad,Yaklaşık benim boyutlarımmda... bir grifonla tanıştım.
+d69f5ee422fdf377,L11 Conrad,Conrad_Ryan_Romanced,12,Conrad,Sanırım benden hoşlanıyor.
+9aab87987aca7783,L11 Conrad,Conrad_Ryan_Romanced,13,Conrad,...<i><size=70%>en azından ben hoşlanıyorum.
+7b42e92a68e914e0,L11 Conrad,Conrad_Ryan_Romanced,14,Conrad,Duyduğuma sevindim.
+88b86bef7b86a770,L11 Conrad,Conrad_Ryan_Romanced,15,Conrad,Bendeki özel tuşlara tıklamayı iyi biliyor.
+# --- jerkoff: Conrad_4_JerkOff_Start ---
+395b9d676b6c01c5,L11 Conrad,Conrad_4_JerkOff_Start,1,Conrad,Oh- şimdi mi? Peki ben razıyım.
+# --- cum: Conrad_4_Cum ---
+cf5ea034da108d57,L11 Conrad,Conrad_4_Cum,1,Conrad,Nnnf... Şu böğürtlerden bile daha çok haz verdi bana.
+# --- mount_start: Conrad_4_Mount_Start ---
+9c4eeb4a7cc4c1e1,L11 Conrad,Conrad_4_Mount_Start,1,Conrad,Hey! Binek! Siktir harika.
+# --- mount_finish: Conrad_4_Mount_Finish ---
+307f6f92f16156e7,L11 Conrad,Conrad_4_Mount_Finish,1,Conrad,Haah. Bu kullandığım en iyi yıkama olabilir.
+# --- outro: Conrad_Outro_4 ---
+4012236175bc195e,L11 Conrad,Conrad_Outro_4,1,Kobold,Tertemiz oldun!
+4a93a020168bbd0d,L11 Conrad,Conrad_Outro_4,2,Kobold,Sanırım bu kadardı.
+2ce654e6ba32ebb8,L11 Conrad,Conrad_Outro_4,3,Kobold,Bu sefer güzel duruyorsun!
+d6d9eff64b0d7187,L11 Conrad,Conrad_Outro_4,4,Kobold,<i>Üstüne su sıkmaya bayılıyorum.
+feda452e0c677f41,L11 Conrad,Conrad_Outro_4,5,Kobold,İşte böyle! Sanırım bu kadardı.
+e2956ac74f8acb8e,L11 Conrad,Conrad_Outro_4,6,Kobold,Sanırım her yerin temiz artık.
+# --- outro: Conrad_Outro_4_Ryan_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+0fa2abeece5fd3de,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,1,Conrad,Evet! Temiz hissediyorum.
+1b5f2f27de868c08,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,2,Conrad,"Hey aa, Ryan ve ben <i>gerçekten</i> bu ilişkiyi yürütebilecek miyiz?"
+ebc110388e3748fa,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Kobold/Alexander,Tabii ki de!
+line:877aced7,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,3,Kobold,Tabii ki de!
+5bc10e8175dc9422,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,4,Kobold,Umarım.
+3da3a77980cb9eb9,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,5,Conrad,Umarım haklısındır.
+43e42fb816f1d2c2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,6,Conrad,"Evet, umarım. Gerçekten iyi biri."
+603a3749013e876b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,7,Conrad,Bütün her şeyden sonra gergin olmamak zor...
+189f4f64972cc1fe,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,8,Conrad,"ama bomba gibiyim, o yüzden iyi olacağım."
+40b8366766a655d6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,9,Conrad,Öyle umuyorum.
+dde93c3f47e98763,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,10,Conrad,İlk buluşmamız ama iyi geçti!
+0a47996c4c389f39,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,11,Kobold,Öyle mi? Anlat bakalım!
+589c19f0d1fb2d81,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,12,Kobold,Harika! İlk randevunuz ne zaman?
+56345c46f3840a46,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,13,Conrad,"O beni aradı, buluştuk. Fena kibar birisi."
+080824870e4c7a15,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,14,Conrad,"Sakin biri olduğumu söyledi, randevu planladık..."
+d98ca4f1aac91861,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,15,Conrad,ve işte o yüzden buradayım! Temizlendikten sonra gidip onunla görüşeceğim.
+35b34afec858433c,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,16,Conrad,Tam şu ankinden sonra!
+d925b0f0ac6611e6,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,17,Conrad,Bir tane deniz ürünleri restoranına gideceğiz-
+5421d19c6a9cd188,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,18,Conrad,Klüpte şimdiden rezervasyon aldım.
+6ffd2844813c419e,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,19,Kobold,O zaman artık seni tutmayayım!
+d547385bcae74ca2,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,20,Kobold,Senin adına heyecanlıyım. Gidip bariyeri açayım!
+9458fe24a9152c2b,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,21,Conrad,Hah... Evet çok heyecanlıyım.
+83a4b4bd32149db8,L11 Conrad,Conrad_Outro_4_Ryan_Conrad_Romanced,22,Conrad,"Sağ ol, ben de çok heyecanlıyım."
+# --- outro: Conrad_Outro_4_Conrad_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ad0500f8d2500c0f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,1,Conrad,Her zamanki gibi tertemizim.
+297d60c9e5c25580,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,2,Conrad,"Oh, bir de nereye gideceğimizi buldum."
+line:d8ce8566,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,3,Kobold,Oh neresiymiş?
+f22c7f64f7e136d4,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,5,Conrad,Şehir merkezinde 'Wings' diye bir klüp var. Eski gözdelerimdendir.
+5dcbc1f451fcc29d,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,6,Conrad,Orada beni herkes tanır.
+99c9d7ee0966d8d1,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,7,Conrad,Bize gösterideki <i>en iyi</i> yeri ayarlayabilirim.
+02f6a5560835daa6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,8,Kobold,"Hah, tamam. Ben varım."
+7137eb7d65d8f4d8,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,9,Kobold,Ooooh bayağı ünlü biri olmalısın.
+60c5caff4aee58e9,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,10,Conrad,"Siktir, heyecandan kalbim çıkacak."
+d37d98f486ba54c5,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,11,Conrad,Hazırlığa başlayacağım.
+bf3d9317290e56b0,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,12,Conrad,Buraya tekrar geldiğimde rezervasyon hazır olmuş olacak!
+f11ccc8c0bd5ecbc,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,13,Conrad,Gidip bariyeri açabilir misin?
+ffcc816df16993e6,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,14,Conrad,Fena hem de.
+line:b59e9091,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,15,Conrad,...
+c25790cd739260fd,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,16,Conrad,Çok önemli birisin.
+b18d301dab41755f,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,17,Conrad,Üzgünüm flört etmekte iyi değilim. Bariyeri açabilir misin?
+line:24832f01,L11 Conrad,Conrad_Outro_4_Conrad_Romanced,18,Conrad,Sabırsızlanıyorum.
+# --- outro: Conrad_Outro_4_Ryan_Romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+6fe24a5cf11acb37,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,1,Conrad,İşte böyle! Her zamanki gibi tertemiz.
+8f0378325ead68c7,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,2,Conrad,Ryan ile hiç planın var mı?
+a12011af4e943fb2,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,3,Kobold,Şimdilik emin değilim.
+c3393181a97b4208,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,4,Kobold,Yakında onunla çıkmayı düşünüyorum.
+5ef95c64f52e6263,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,5,Conrad,Yeterince makul. İkinizi çok sevimli duruyorsunuz.
+6d8a46a5e1da81ef,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,6,Conrad,Umarım her şey iyi gider!
+1884386d93b6fccd,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,7,Conrad,Evet! Beraber harika olurdu.
+c5cace2191af6925,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,8,Conrad,İkiniz ne kadar da tatlısınız...
+9e806b93dd0d48fe,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,9,Conrad,Umarım yürütebilirsiniz.
+83a8afa550485db4,L11 Conrad,Conrad_Outro_4_Ryan_Romanced,10,Conrad,"Sanırım hepsi bu kadardı, gidip bariyeri açabilir misin?"
+
+# ===== Level 12: Alexander (Rainy) =====
+# --- intro: Alexander_4_intro ---
+0248808ddaa3479e,L12 Alexander,Alexander_4_intro,1,Alexander,İyi akşamlar!
+d3d306a15d158e29,L12 Alexander,Alexander_4_intro,2,Kobold,Merhabaaa! Merhaba!
+68094c643e49d3c6,L12 Alexander,Alexander_4_intro,3,Kobold,"Hey, Alexander!"
+e8c921ab9051f110,L12 Alexander,Alexander_4_intro,4,Alexander,"Hah, her zamanki gibi heveslisin."
+3b767556f3eeaa3b,L12 Alexander,Alexander_4_intro,5,Alexander,Tekrar gelebilmek muhteşem!
+96ed1471d1f86a4d,L12 Alexander,Alexander_4_intro,6,Alexander,Yağmur bugün pek acımasız!
+429d93ef0fafbe8a,L12 Alexander,Alexander_4_intro,7,Alexander,Etraf çok güzel.
+a9945cd0cd165325,L12 Alexander,Alexander_4_intro,8,Kobold,Yağmuru severim.
+7259414f82b0b97a,L12 Alexander,Alexander_4_intro,9,Kobold,Yağmurdan her zaman nefret etmişimdir.
+bfad19e22f9652cc,L12 Alexander,Alexander_4_intro,10,Alexander,"Katılıyorum, tabii gene de en kısa sürede, müsaitse, içeri girmek istiyorum."
+line:fd8d786a,L12 Alexander,Alexander_4_intro,11,Alexander,Oh?
+91a5c27ef059ab24,L12 Alexander,Alexander_4_intro,12,Alexander,Sanırım yağmurun yaratacağı pislikten hoşlanmadığını anlıyorum...
+882df59f0a75b295,L12 Alexander,Alexander_4_intro,13,Alexander,ama zaten pis olduğum için burada değil miyim!
+990e43e4f2687cdf,L12 Alexander,Alexander_4_intro,14,Kobold,Tamam! Gidip bariyeri açayım.
+846b613e707ce00d,L12 Alexander,Alexander_4_intro,15,Kobold,İvit! <size=70%>(Bariyer)
+line:e449156d,L12 Alexander,Alexander_4_intro,16,Alexander,Thank you!
+1ceb64d9cf6889fd,L12 Alexander,Alexander_4_intro,17,Alexander,"Mmm, bu bariyeri açacağın anlamına mı geliyor?"
+56deaef9d6b92a31,L12 Alexander,Alexander_4_intro,18,Kobold,İvit! <size=70%>(Evet)
+fd0d3e3077aaf4ce,L12 Alexander,Alexander_4_intro,19,Alexander,Neden 'ivitlerini' bir anda anlamaya başladığımı bilmiyorum.
+7a919cef111fe275,L12 Alexander,Alexander_4_intro,20,Kobold,İvit! <size=70%>(çünkü ejdervari aklının beklenmedik bir parçası sen ve benim türümün arasındaki derin dil köprüsünü hatırlamakta. O da içerisinde 'ivitlerin' engin anlamlarını ve işaretlerini beraberinde taşımaktadır. Bu sendeki anlık evrekalar yalnızca aramızda giderek kuvvetlenen bağın ve bunun sonucunda aklının bir bölümünün faliyete geçmesinin sonucu.)
+6d8c462224bca1b5,L12 Alexander,Alexander_4_intro,21,Kobold,İvit! <size=70%>(bilmem)
+line:848f5cd8,L12 Alexander,Alexander_4_intro,23,Alexander,...
+8e7ead434fce5609,L12 Alexander,Alexander_4_intro,24,Alexander,Bariyeri açar mısın...?
+19be549c91d82ff3,L12 Alexander,Alexander_4_intro,25,Alexander,Gayet makul. Bekliyor olacağım!
+# --- progress: Alexander_4_required ---
+c19ca0647cc1a583,L12 Alexander,Alexander_4_required,1,Alexander,Aklıma takıldı da...
+6d9630067757f781,L12 Alexander,Alexander_4_required,2,Alexander,şurada duran bir... alete gözüm çarptı.
+7bd6925025a24288,L12 Alexander,Alexander_4_required,3,Alexander,"O bir binek, değil mi?"
+54b9fbcd575cd0a7,L12 Alexander,Alexander_4_required,4,Kobold,Evet öyle!
+1f5aad5cbae1a020,L12 Alexander,Alexander_4_required,5,Kobold,Binmek mi istiyorsun?
+36a85b3430aa6639,L12 Alexander,Alexander_4_required,6,Alexander,Ben... merak ettim de...
+d2b8ae469c604bfb,L12 Alexander,Alexander_4_required,7,Alexander,acaba aaa...
+577e4edfcd4fa53d,L12 Alexander,Alexander_4_required,8,Alexander,belki işte...
+4caa8162834de434,L12 Alexander,Alexander_4_required,9,Alexander,mümkünse...
+d89de41838a75fa0,L12 Alexander,Alexander_4_required,10,Kobold,Binmek istiyorsan hiç sorun değil!
+68ad27123e1df879,L12 Alexander,Alexander_4_required,11,Kobold,"Utanmana gerek yok, Alexander!"
+6dece6f0ec399d4e,L12 Alexander,Alexander_4_required,12,Alexander,Sanırım istiyorum.
+08ab3092d83ed1d3,L12 Alexander,Alexander_4_required,13,Alexander,Haklısın. Haklısın.
+81a4fcd2541ac990,L12 Alexander,Alexander_4_required,14,Alexander,Sanırım ona binmek istiyorum.
+line:ebd9b4d3,L12 Alexander,Alexander_4_required,15,Alexander,Oh.
+67c0f2a71f4ff613,L12 Alexander,Alexander_4_required,16,Alexander,Uh... aaa...
+4640c27322f55d8c,L12 Alexander,Alexander_4_required,17,Alexander,mümkünse-
+9739b879143b91cf,L12 Alexander,Alexander_4_required,18,Alexander,ve sakıncası yoksa?
+e2dce2bed173fba0,L12 Alexander,Alexander_4_required,20,Kobold,Tabii ki yok. Conrad sağ olsun o bana aldırdı.
+f12929f0cef567d7,L12 Alexander,Alexander_4_required,21,Alexander,Peki peki... O zaman binmek istiyorum.
+76ea754cd53f21dc,L12 Alexander,Alexander_4_required,22,Alexander,Conrad... mi?
+line:d9516fdd,L12 Alexander,Alexander_4_required,23,Alexander,...
+18b51cf572e4b49a,L12 Alexander,Alexander_4_required,25,Kobold,Bana uyar!
+334a54e73cf69dc1,L12 Alexander,Alexander_4_required,26,Kobold,Senin için zevkle getiririm onu.
+7bd62126f382f565,L12 Alexander,Alexander_4_required,27,Alexander,Mhm... Sağ ol.
+d2c15503eb28631b,L12 Alexander,Alexander_4_required,28,Alexander,Peki- Teşekkürler.
+# --- jerkoff: Alexander_4_JerkOff_Start ---
+47122b215cc11a2b,L12 Alexander,Alexander_4_JerkOff_Start,1,Alexander,Oh... Sanırım sakıncası olmaz~
+# --- cum: Alexander_4_Cum ---
+ed6a9612f44b19ea,L12 Alexander,Alexander_4_Cum,1,Alexander,Huff... Bunun için teşekkür ederim.
+# --- mount_start: Alexander_4_Mount_Start ---
+1db0bf44f69526fc,L12 Alexander,Alexander_4_Mount_Start,1,Alexander,Sanırsam... bu bir binek!
+# --- mount_finish: Alexander_4_Mount_Finish ---
+76527d719ccc95a3,L12 Alexander,Alexander_4_Mount_Finish,1,Alexander,Beklediğimden... Çok daha hoştu.
+# --- outro: Alexander_4_Outro ---
+35278dc46019f9b9,L12 Alexander,Alexander_4_Outro,1,Alexander,Çok daha iyi hissediyorum.
+5547ec33b10091a2,L12 Alexander,Alexander_4_Outro,2,Alexander,Şey... biliyorum bu biraz ani olacak ama
+3ce3dec2bd740757,L12 Alexander,Alexander_4_Outro,3,Alexander,"sanırım bana bir şey öğrettin."
+line:21c46e75,L12 Alexander,Alexander_4_Outro,4,Kobold,Oh?
+5eca8560307cac86,L12 Alexander,Alexander_4_Outro,5,Kobold,Öğretmen ejder olan ama sensin.
+419ecbf32abefda1,L12 Alexander,Alexander_4_Outro,6,Alexander,"Öğretim görevlisi ama evet. Öğrettin."
+0b1b8529d2c3c5fc,L12 Alexander,Alexander_4_Outro,7,Alexander,Sanırım ilgilenilmek hoşuma gidiyor.
+4df2487e01509478,L12 Alexander,Alexander_4_Outro,8,Kobold,Çoğunun hoşuna gider!
+c9f8ba59379bb60a,L12 Alexander,Alexander_4_Outro,9,Kobold,Sana bakmak hoşuma gidiyor.
+93786b06bef36348,L12 Alexander,Alexander_4_Outro,10,Alexander,"Yani, şey. Kastım daha çok... hayvani yönlerimleydi."
+b868cb066c4b572d,L12 Alexander,Alexander_4_Outro,11,Alexander,"Bunu duymak güzel... ama kastım daha çok... hayvani yönlerimleydi."
+565a3630f0cfbcc5,L12 Alexander,Alexander_4_Outro,12,Alexander,Bana elini dokundurarak neyi yapmam gerektiğini söylemen hoşuma gidiyor.
+1161a29c118dbaa6,L12 Alexander,Alexander_4_Outro,13,Alexander,Kendinden bu denli emin olmana bayılıyorum. Yaptığın iş sadece yıkamak olsa bile.
+32c31015075eeede,L12 Alexander,Alexander_4_Outro,14,Alexander,"Bir an için dahi olsa, kontrolü elimden alman iyi hissettiriyor."
+1651e2418c22d0c0,L12 Alexander,Alexander_4_Outro,15,Kobold,<size=70%> Büyük ejder kontrolü bana mı veriyor. Vaay.
+bd051341e68cc04e,L12 Alexander,Alexander_4_Outro,16,Kobold,Sana rahatlayabileceğin bir yer sunduğum için mutluyum.
+2e1f723e42b149be,L12 Alexander,Alexander_4_Outro,17,Alexander,Masal gibi değil mi?
+8212cbdd05d21f37,L12 Alexander,Alexander_4_Outro,18,Alexander,"Yine görüşeceğiz, tamam mı? Yıkadığın için teşekkürler."
+b5f8ec9a6918d554,L12 Alexander,Alexander_4_Outro,19,Alexander,"Burada özgür hissediyorum. Yine geleceğim, tamam mı?"
+
+# ===== Level 13: Ryan (Sunny) =====
+# --- intro: Ryan_5_intro ---
+line:61c7f2d6,L13 Ryan,Ryan_5_intro,1,Ryan,Flaglerle ilgili bir hata oluştu!
+line:f7f7f5a1,L13 Ryan,Ryan_5_intro,2,Ryan,Geliştiricilerle lütfen irtibata geçin..
+dcd95465ccb79997,L13 Ryan,Ryan_5_intro,6,Kobold,Naber tosun.
+a4c1cb0899f204fc,L13 Ryan,Ryan_5_intro,8,Ryan,Naber... ufaklık!
+df50afc7f5e2d994,L13 Ryan,Ryan_5_intro,9,Kobold,<i>O kadar</i> da küçük sayılmam-
+8061d3d1aed7c531,L13 Ryan,Ryan_5_intro,10,Kobold,"Neyse, yıkanmak için mi geldin?"
+1107598aa9bc6c75,L13 Ryan,Ryan_5_intro,11,Ryan,"Oh, pardon-"
+061629ac669e11f8,L13 Ryan,Ryan_5_intro,12,Ryan,Sadece dediklerini taklit ediyordum. Seni gördüğüme sevindim!
+cdc7ebc001250566,L13 Ryan,Ryan_5_intro,13,Ryan,Evet o sebeple!
+f8c3932b65e6bbb0,L13 Ryan,Ryan_5_intro,14,Ryan,Hey kobold!
+4a5d3b88460afb6b,L13 Ryan,Ryan_5_intro,15,Ryan,Fırında yemek yapmayı denedim.
+b483e9c7e323807a,L13 Ryan,Ryan_5_intro,16,Ryan,Son zamanlarda bayağı boş zamanım oluyor.
+afd9ef6045a7191c,L13 Ryan,Ryan_5_intro,17,Ryan,Yemek yapmak sandığımdan da fazla etrafı dağıtıyormuş!
+808f38835d1deb53,L13 Ryan,Ryan_5_intro,18,Ryan,Yıkanmak iyi gelirdi diye düşündüm.
+# --- intro: Ryan_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+efa367904267d1f9,L13 Ryan,Ryan_5_intro_ryan_romanced,1,Ryan,...Bu akşamki randevumuz için
+d510da8dc09c7bd7,L13 Ryan,Ryan_5_intro_ryan_romanced,2,Kobold,AH. DOĞRU.
+cb4f55dc25088cef,L13 Ryan,Ryan_5_intro_ryan_romanced,3,Kobold,Çok heyecanlıyım.
+63b5ec8a662e7e8f,L13 Ryan,Ryan_5_intro_ryan_romanced,4,Ryan,Buraya gelip sana hatırlattığıma sevindim.
+line:141c006f,L13 Ryan,Ryan_5_intro_ryan_romanced,5,Ryan,Ben de heyecanlıyım.
+60004e58bb12dd3c,L13 Ryan,Ryan_5_intro_ryan_romanced,6,Ryan,Bariyeri bekleyeceğim!
+# --- intro: Ryan_5_intro ---
+3ff66f86649ed3f4,L13 Ryan,Ryan_5_intro,19,Kobold,"Merhaba, Ryan!"
+bab3e0bf3bfcf52e,L13 Ryan,Ryan_5_intro,20,Ryan,Hey! Yıkanmak için geldim.
+747b7932ed2e84f2,L13 Ryan,Ryan_5_intro,24,Kobold,"Harika, gidip bariyeri açayım."
+1fa67d86839c19a3,L13 Ryan,Ryan_5_intro,25,Kobold,Tabii ki! Sana Conrad'i anlatmak için sabırsızlanıyorum.
+line:f62e1c4f,L13 Ryan,Ryan_5_intro,26,Ryan,Sağ ol.
+line:f103a4a8,L13 Ryan,Ryan_5_intro,27,Ryan,Öyle mi?
+4c5ca3860699fcd3,L13 Ryan,Ryan_5_intro,28,Kobold,Öyle! Yakında onunla randevuya gidiyorum.
+29301eae6840e128,L13 Ryan,Ryan_5_intro,29,Kobold,"Mmmmhm, randevudan önce hazırlık yapıyorum."
+154dbd6d6bdc9f0e,L13 Ryan,Ryan_5_intro,30,Ryan,Ne güzel!
+e1867b98d8ce23bd,L13 Ryan,Ryan_5_intro,31,Ryan,İçeri girince bana da anlat her şeyi.
+10dc92e80220fe9b,L13 Ryan,Ryan_5_intro,33,Kobold,Heeeey Ryan.
+b57c370a0fcc7045,L13 Ryan,Ryan_5_intro,34,Ryan,Hey!
+cd80a4a851309647,L13 Ryan,Ryan_5_intro,38,Kobold,Conrad ile olan randevun nasıl geçti?
+26eed1b65d0e1370,L13 Ryan,Ryan_5_intro,39,Kobold,CONRAD ILE NASIL GEÇTİ!
+b433dad7fc4cdb18,L13 Ryan,Ryan_5_intro,40,Ryan,Harika geçti!
+cd235c4d7d27fbdb,L13 Ryan,Ryan_5_intro,41,Ryan,Oh- Sabırsız!
+7b1f5d058f2045c5,L13 Ryan,Ryan_5_intro,43,Ryan,Yemeğe çıktı. Biraz sohbet ettik.
+4932dbc11ab131d4,L13 Ryan,Ryan_5_intro,44,Ryan,O oldu bu oldu derken...
+1a86226c86c7138f,L13 Ryan,Ryan_5_intro,45,Ryan,bar'a gittik... sonra iş biraz kızıştı. Daha sonra ne olduğunu tahmin edebiliyorsundur... <size=70%>Hah...
+# --- progress: Ryan_5_Required_ryan_romanced | if $ryan_romanced ---
+e61676df3c022293,L13 Ryan,Ryan_5_Required_ryan_romanced,1,Ryan,Peki. Bu akşamki randevumuz için...
+c022fa54258553ea,L13 Ryan,Ryan_5_Required_ryan_romanced,2,Ryan,nereye gitmek istersen?
+6c0884e4717c5d5b,L13 Ryan,Ryan_5_Required_ryan_romanced,3,Kobold,Sen karar ver!
+bbedb233b6bbe2ea,L13 Ryan,Ryan_5_Required_ryan_romanced,4,Kobold,Beraber çıkıp yemek yemek isterim.
+fb57b97d646f43c9,L13 Ryan,Ryan_5_Required_ryan_romanced,5,Kobold,Bildiğin güzel bir bar var mı?
+d2c0f4718541c240,L13 Ryan,Ryan_5_Required_ryan_romanced,6,Kobold,Sinemaya ne dersin?
+98ef145fb642c5b6,L13 Ryan,Ryan_5_Required_ryan_romanced,7,Ryan,Belki de sadece beraber... yürürüz?
+4bad2b5ecfe22c4a,L13 Ryan,Ryan_5_Required_ryan_romanced,8,Ryan,Birilerinin beni sırtımda sürtmesi çok hoşuma gidiyor.
+6e8c399ff118f405,L13 Ryan,Ryan_5_Required_ryan_romanced,9,Ryan,Senin de hoşuna gider miydi?
+7da2aa0d4ef74597,L13 Ryan,Ryan_5_Required_ryan_romanced,10,Kobold,Bayıldım!
+db39ae73af1cfae5,L13 Ryan,Ryan_5_Required_ryan_romanced,11,Kobold,Seni aşağılamak olmaz mı ama bu?
+line:22053f7f,L13 Ryan,Ryan_5_Required_ryan_romanced,12,Ryan,Harika!
+3185b026252747c6,L13 Ryan,Ryan_5_Required_ryan_romanced,13,Ryan,İki ayaklı dostlarıma binek olmaya her zaman bayılmışımdır...
+d2994ff918a23d86,L13 Ryan,Ryan_5_Required_ryan_romanced,14,Ryan,"O halde randevumuz hazır, sabırsızlanıyorum."
+3fdcf71c3e2f7ea0,L13 Ryan,Ryan_5_Required_ryan_romanced,15,Ryan,Ah! Tabii ki olmaz. Aslında zevklidir!
+8bacddc318adc2b9,L13 Ryan,Ryan_5_Required_ryan_romanced,16,Ryan,Diğer iki ayaklı dostlarıma beni sürmelerini her zaman izin veririm.
+638c1801c65c6b0c,L13 Ryan,Ryan_5_Required_ryan_romanced,17,Ryan,Eminim yapacak bir şeyler bulabiliriz! Sadece benimle rıhtımda buluşsan yeterli!
+25f86d817a092ae1,L13 Ryan,Ryan_5_Required_ryan_romanced,18,Ryan,Bu fikir hoşuma gitti.
+38ae2aec596ab356,L13 Ryan,Ryan_5_Required_ryan_romanced,19,Ryan,Deniz yemekleriyle aran nasıl?
+d7456d9e85366bc9,L13 Ryan,Ryan_5_Required_ryan_romanced,20,Kobold,İyi. Denizden babam çıksa yerim!
+925a663e1b23d966,L13 Ryan,Ryan_5_Required_ryan_romanced,21,Kobold,"Hmmm, başka bir şey mi denesek?"
+14d1fddd0115ee0d,L13 Ryan,Ryan_5_Required_ryan_romanced,22,Ryan,"Oh, harika. Ben daha çok somon severim."
+6b59acab736bd349,L13 Ryan,Ryan_5_Required_ryan_romanced,23,Ryan,"Eh bilirsin, ben bir ejderim- ama... Neyi kastettiğimi anlamışsındır."
+334998266afc2476,L13 Ryan,Ryan_5_Required_ryan_romanced,24,Ryan,O halde randevumuz hazır! O zaman ilk deniz yemekleri sonra kafamıza ne eserse.
+a02af61e18efb0f0,L13 Ryan,Ryan_5_Required_ryan_romanced,25,Ryan,Rıhtıma yakın atgillerin işlettiği bildiğim düzgün bir mekan var.
+cf73a93aa04fdd02,L13 Ryan,Ryan_5_Required_ryan_romanced,26,Ryan,Tüm atların toplandığı bir yer gibi bir şey...
+8771d66a0a1ace3e,L13 Ryan,Ryan_5_Required_ryan_romanced,27,Ryan,Sevdiğim bir yer! Bence sen de seversin.
+8cceef523eb8c739,L13 Ryan,Ryan_5_Required_ryan_romanced,28,Ryan,O halde randevumuz hazır!
+5a3b18942c9e3040,L13 Ryan,Ryan_5_Required_ryan_romanced,29,Ryan,"Ah evet, şehir merkezinde wings diye tatlı bir mekan var."
+4d1b2eff2bb69d21,L13 Ryan,Ryan_5_Required_ryan_romanced,30,Ryan,Bence gidilebilecek iyi bir yer! Her akşam gösteri düzenliyorlar.
+ebbcfde5ce6709d6,L13 Ryan,Ryan_5_Required_ryan_romanced,31,Ryan,"Öyle de yapabiliriz, sonra bir otel odası tutarız... Hmm."
+line:2b560f59,L13 Ryan,Ryan_5_Required_ryan_romanced,33,Ryan,Öyle mi yapalım?
+435234dd4f3b1033,L13 Ryan,Ryan_5_Required_ryan_romanced,34,Ryan,Sinema eğlenceli olabilir!
+0ef6ac4a015fbebd,L13 Ryan,Ryan_5_Required_ryan_romanced,35,Ryan,Hangi filmleri düşünüyorsun?
+070ff9504dd2e237,L13 Ryan,Ryan_5_Required_ryan_romanced,36,Kobold,Project Scale mary
+b64ebbe5369b5bbf,L13 Ryan,Ryan_5_Required_ryan_romanced,37,Kobold,İvit-Adam - Son İvit
+45afe74b37ed6bb0,L13 Ryan,Ryan_5_Required_ryan_romanced,38,Kobold,Ejderlerin koruyucusu 2
+a881cd2440d13252,L13 Ryan,Ryan_5_Required_ryan_romanced,39,Ryan,Oh daha önce iyi şeyler duymuştum o filmle ilgili.
+line:67f14802,L13 Ryan,Ryan_5_Required_ryan_romanced,40,Ryan,Olur!
+00712e7d97f1872a,L13 Ryan,Ryan_5_Required_ryan_romanced,41,Ryan,İvit-Adam filmleri çok bayat...
+037e3c0c446d2b14,L13 Ryan,Ryan_5_Required_ryan_romanced,42,Ryan,ama sen yanımdayken zevk alacağım kesin!
+b1ac5509459ca2a4,L13 Ryan,Ryan_5_Required_ryan_romanced,43,Ryan,"Oh harika, ilk filmini de çok sevmiştim."
+line:52542beb,L13 Ryan,Ryan_5_Required_ryan_romanced,44,Ryan,Olur!
+eb547bf48bc9637e,L13 Ryan,Ryan_5_Required_ryan_romanced,45,Ryan,O halde randevumuz hazır. Sabırsızlanıyorum.
+# --- progress: Ryan_5_Required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+1f2c5ed668dc8972,L13 Ryan,Ryan_5_Required_conrad_romanced,1,Ryan,"Peki, Conrad nasıl biri bana anlat!"
+522b54ddedc9ae6c,L13 Ryan,Ryan_5_Required_conrad_romanced,2,Kobold,Son zamanlarda çok daha kibar oldu.
+9df47f9485e2d886,L13 Ryan,Ryan_5_Required_conrad_romanced,3,Kobold,O şey... birkaç ufak keskin dikenle çevrili büyük bir pamuk yumağı.
+2e0446089ab2f237,L13 Ryan,Ryan_5_Required_conrad_romanced,4,Ryan,Öyle mi? Bana biraz fevri biri gibi gelmişti...
+eb926b4bc196ac32,L13 Ryan,Ryan_5_Required_conrad_romanced,5,Ryan,ama o tipleri bilirim... İçeriden koca bir pamuk yumağı gibidirler.
+8ea9e02ddeed61e3,L13 Ryan,Ryan_5_Required_conrad_romanced,6,Kobold,Evet kendini bayağı düzeltti.
+5085892250461c04,L13 Ryan,Ryan_5_Required_conrad_romanced,7,Kobold,Evet. Öyle olması hoşuma gidiyor.
+53011f72775c8ca4,L13 Ryan,Ryan_5_Required_conrad_romanced,8,Ryan,Bunu duymak güzel.
+4fbcc070e27c4736,L13 Ryan,Ryan_5_Required_conrad_romanced,9,Ryan,Kendini düzelten birinden daha çekici kimse olamaz!
+aa8e7dea9ad61538,L13 Ryan,Ryan_5_Required_conrad_romanced,10,Ryan,Bunu yürütebildiğinize mutluyum.
+390bea406a842664,L13 Ryan,Ryan_5_Required_conrad_romanced,11,Ryan,Ne harika. Bunu yürütebildiğinize mutluyum.
+f147cd900de98aeb,L13 Ryan,Ryan_5_Required_conrad_romanced,12,Ryan,"Ah, evet, o tipler çok tatlıdır."
+883fec192f3d1119,L13 Ryan,Ryan_5_Required_conrad_romanced,13,Ryan,"Duyduğuma göre son zamanlarda kendini bayağı düzeltmiş, doğru mu?"
+b5060af9808e8c7c,L13 Ryan,Ryan_5_Required_conrad_romanced,14,Kobold,"Mhm, çabalıyor."
+702195668cf48039,L13 Ryan,Ryan_5_Required_conrad_romanced,15,Kobold,Sanırım kötü bir çevresi vardı. Artık çok daha iyi.
+1e681c01b417052f,L13 Ryan,Ryan_5_Required_conrad_romanced,16,Ryan,"Hayattan başka ne istersin ki, değil mi?"
+9056022b2085d3b7,L13 Ryan,Ryan_5_Required_conrad_romanced,17,Ryan,Gene de mutluyum ikinizin de bu ilişkiyi yürütebildiğine.
+932d7df9b58f5376,L13 Ryan,Ryan_5_Required_conrad_romanced,18,Ryan,Bunu duymak güzel.
+# --- progress: Ryan_5_Required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e76e544c771880f3,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,1,Ryan,Conrad randevumuzda senin hakkında konuşuyordu.
+line:1121309c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,2,Kobold,Öyle mi?
+2e21aa0b86c092fb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,3,Kobold,Konu neymiş?
+271a662aed24f160,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,4,Ryan,Bana kötek yediği zamanı anlattı.
+1b0b214cb2df69ec,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,5,Ryan,Sanırım ona farkında olduğunda bile daha çok yardım etmişsin.
+ad14c398c575824b,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,7,Kobold,Yalnızca işimi yapıyordum!
+daddaa15545566ce,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,8,Ryan,"Her zaman ederim ama zaten o zaman yanında birine ihtiyacı vardı."
+f03747feadc10e71,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,9,Ryan,"Çıkarımlarıma göre, onunla uzun zamandır... ilgilenen pek de biri olmamış"
+2ed3613575959ca6,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,10,Ryan,Yalnızca işini yapmış olsan bile... bence ona çok yardımın dokundu.
+658add118bb17ed5,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,11,Ryan,"Neyse, onun adına ilgilendiğin için teşşekkür ederim."
+8ca78aefdf9d3b44,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,12,Ryan,Biliyorum bazen fazla asabi olup diğer kişilere kibarlık yapmayı unutabiliyor.
+9176dd2bd815750c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,13,Kobold,Ah... Sağ ol.
+5a4dcf1ccff086af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,14,Kobold,Bunu duymak beni de mutlu ediyor.
+6db8bf6280f68edb,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,15,Ryan,Oh. Bir de söylemeyi unuttum.
+49e6d82bb7d163af,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,16,Ryan,Randevumuzdan sonra seviştik.
+e06e957ec854ab4c,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,17,Kobold,<size=70%><i>Oha...
+9b2ad1c8b149bf00,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,19,Ryan,"Hah, evet. Conrad cidden çok deneyimli..."
+bc156217e847a8df,L13 Ryan,Ryan_5_Required_ryan_conrad_romanced,20,Ryan,Ama ne. Bence anlatmanın sakıncası yoktu! Bilmek isteyeceğini düşünmüştüm.
+# --- jerkoff: Ryan_5_JerkOff_Start ---
+9fec39c7cefbaca2,L13 Ryan,Ryan_5_JerkOff_Start,1,Ryan,"Heh... Bugün ellerine hakim olamıyor musun?"
+# --- cum: Ryan_5_Cum ---
+6f8c64dde681ced5,L13 Ryan,Ryan_5_Cum,1,Ryan,Uuf... Çok iyi geldi. Sağ ol.
+# --- mount_start: Ryan_5_Mount_Start ---
+c7f3dbd886d929a7,L13 Ryan,Ryan_5_Mount_Start,1,Ryan,Binek mi getirdin? Neden olmasın!
+# --- mount_finish: Ryan_5_Mount_Finish ---
+48ffbc93e2486713,L13 Ryan,Ryan_5_Mount_Finish,1,Ryan,Huff... İyi ki getirmişsin.
+# --- outro: Ryan_5_Outro_ryan_romanced | if $ryan_romanced ---
+6fc39ec69d974bb4,L13 Ryan,Ryan_5_Outro_ryan_romanced,1,Ryan,Sanırım her yerimi temizledin.
+c9e5fbe3317edd3f,L13 Ryan,Ryan_5_Outro_ryan_romanced,2,Ryan,Bunun anlamını biliyorsun...
+f553e58b991e05cc,L13 Ryan,Ryan_5_Outro_ryan_romanced,3,Kobold,RANDEVU GECESİ Mİ!
+line:95aa0bf4,L13 Ryan,Ryan_5_Outro_ryan_romanced,5,Ryan,Hem de dibine kadar!
+0eb7accf7a8bffc3,L13 Ryan,Ryan_5_Outro_ryan_romanced,6,Ryan,anlamı çok özel bir koboldla randevuya gideceğim demek.
+e7da2124354de72f,L13 Ryan,Ryan_5_Outro_ryan_romanced,7,Ryan,"Biliyorum dükkan sana emanet. Adresi alıp sana ulaştırdıktan sonra akşam orada buluşuruz, olur mu?"
+6b7ea0261a825f1b,L13 Ryan,Ryan_5_Outro_ryan_romanced,8,Kobold,Bana uyar!
+line:a00f681d,L13 Ryan,Ryan_5_Outro_ryan_romanced,9,Kobold,Çok heyacanlıyım.
+7809df3c2e9fa860,L13 Ryan,Ryan_5_Outro_ryan_romanced,10,Ryan,Sabırsızlıkla bekliyor olacağım.
+line:363f6f6a,L13 Ryan,Ryan_5_Outro_ryan_romanced,11,Ryan,Ben de.
+dc9e132cf2897c30,L13 Ryan,Ryan_5_Outro_ryan_romanced,12,Ryan,"Peki, bariyeri aç da buluşma yerine gideyim!"
+7d5a43fcbb4e03de,L13 Ryan,Ryan_5_Outro_ryan_romanced,13,Ryan,Görüşmek üzere.
+# --- outro: Ryan_5_Outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+b050469dea41d597,L13 Ryan,Ryan_5_Outro_conrad_romanced,2,Ryan,Benimle ilgilendiğin için sağ ol.
+25ec1c59caa5e66c,L13 Ryan,Ryan_5_Outro_conrad_romanced,3,Kobold,Seni yıkamak beni her zaman mutlu ediyor!
+2a67fb93196e8722,L13 Ryan,Ryan_5_Outro_conrad_romanced,5,Ryan,Oh- Sadece o değil.
+2140dcb75dc2d0f9,L13 Ryan,Ryan_5_Outro_conrad_romanced,6,Ryan,"Yani, her şey için"
+a6d4dab5c8699946,L13 Ryan,Ryan_5_Outro_conrad_romanced,7,Ryan,Daha öncesinde geçirdiğim ayrılık bayağı ağırdı.
+1fd66775cea2eb4b,L13 Ryan,Ryan_5_Outro_conrad_romanced,8,Ryan,Burası tüm o şeylerden uzaklaşmak için iyi bir kaçış noktası.
+8f4dc96f133fa75c,L13 Ryan,Ryan_5_Outro_conrad_romanced,9,Ryan,İkiniz için de çok mutluyum.
+8ed791569d35f02c,L13 Ryan,Ryan_5_Outro_conrad_romanced,10,Ryan,"Yine görüşelim, olur mu?"
+d38d6a1844481871,L13 Ryan,Ryan_5_Outro_conrad_romanced,11,Kobold,"Ryan, seni görmek beni her zaman mutlu eder."
+c88980c837fb6592,L13 Ryan,Ryan_5_Outro_conrad_romanced,12,Kobold,Gidip bariyeri açayım sana.
+b1e1c4e40f4aaeec,L13 Ryan,Ryan_5_Outro_conrad_romanced,13,Ryan,Beni de. Yıkadığın için sağ ol.
+line:cf716777,L13 Ryan,Ryan_5_Outro_conrad_romanced,14,Ryan,Teşekkürler.
+# --- outro: Ryan_5_Outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+c5f14714a1e0439c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,8,Ryan,Bu nokta çok iyi bir kaçış yeriydi...
+3eb55bf5de9c718b,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,9,Ryan,ve tabii ki beni Conrad ile de sen tanıştırdın.
+7aa8987bf569468c,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,10,Ryan,Harika biri.
+line:fbba1293,L13 Ryan,Ryan_5_Outro_ryan_conrad_romanced,15,Ryan,Sağ ol.
+
+# ===== Level 14: Conrad (Night) =====
+# --- intro: Conrad_Intro_5 ---
+line:4dac3d2b,L14 Conrad,Conrad_Intro_5,1,Conrad,Flaglerle ilgili bir hata oluştu!
+line:db9c3a5c,L14 Conrad,Conrad_Intro_5,2,Conrad,Lütfen geliştiricilerle iletişme geçin..
+# --- intro: Conrad_5_intro_ryan_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+ab4070df9f9d3980,L14 Conrad,Conrad_5_intro_ryan_romanced,1,Conrad,"<size=140%>HEY, <size=100%>yıkanmak için geldim."
+8597b1ea1423580d,L14 Conrad,Conrad_5_intro_ryan_romanced,2,Kobold,Hey Conrad.
+3ed1272125c54574,L14 Conrad,Conrad_5_intro_ryan_romanced,3,Kobold,Bu saatte seni buraya ne getirdi?
+d90de33a2137108a,L14 Conrad,Conrad_5_intro_ryan_romanced,4,Conrad,"Hehe, o benim."
+2ca9d5b1cf89ccc8,L14 Conrad,Conrad_5_intro_ryan_romanced,5,Conrad,Bu akşam şehir merkezine gidiyorum. Tertemeiz olmam lazım diyebilirim...
+f5ebf2a456433609,L14 Conrad,Conrad_5_intro_ryan_romanced,6,Conrad,Seninle büyük mavi çocuğun çıktığını duydum. Ryan'dı değil mi?
+061d649bf4c733b7,L14 Conrad,Conrad_5_intro_ryan_romanced,7,Conrad,Eminim eğlenmişsinizdir.
+4193e2b4730c89ad,L14 Conrad,Conrad_5_intro_ryan_romanced,8,Conrad,Umarım iyi geçmiştir.
+63ecf81d4e111712,L14 Conrad,Conrad_5_intro_ryan_romanced,9,Kobold,İyi geçti! Sorduğun için sağ ol.
+0c7c795d2dd5eb76,L14 Conrad,Conrad_5_intro_ryan_romanced,10,Kobold,İyi geçti.
+ae61bf1949b59852,L14 Conrad,Conrad_5_intro_ryan_romanced,12,Conrad,Neyse!
+25ba5fd876754270,L14 Conrad,Conrad_5_intro_ryan_romanced,13,Conrad,Conrad'i yıka bakalım!
+# --- intro: Conrad_5_intro_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+76777c9ea422832b,L14 Conrad,Conrad_5_intro_conrad_romanced,1,Conrad,Naber güzellik
+0b7efee62380b6cd,L14 Conrad,Conrad_5_intro_conrad_romanced,2,Conrad,Nasıl duruyorum?
+060982be63865e2c,L14 Conrad,Conrad_5_intro_conrad_romanced,3,Kobold,Çok havalısın
+b6fff34d007d61c9,L14 Conrad,Conrad_5_intro_conrad_romanced,4,Kobold,Ehh..
+806a4d3418ed236d,L14 Conrad,Conrad_5_intro_conrad_romanced,5,Conrad,Hehe! Öyleyim!
+4bd075c280186208,L14 Conrad,Conrad_5_intro_conrad_romanced,6,Conrad,Randevuya çıkacak kadar değilim tabii ki.
+777560a71762cf9b,L14 Conrad,Conrad_5_intro_conrad_romanced,7,Conrad,Bu akşamki randevumuz için hadi şunu temizleyelim artık.
+364ea49c3b6c9895,L14 Conrad,Conrad_5_intro_conrad_romanced,8,Conrad,Ha!
+3ef6b1f5eeda632e,L14 Conrad,Conrad_5_intro_conrad_romanced,9,Conrad,Dalga geçiyorum.
+ec760ba3440257aa,L14 Conrad,Conrad_5_intro_conrad_romanced,10,Conrad,Neyse bu akşamki randevumuz için hadi şunu temizleyelim artık.
+line:d66b9155,L14 Conrad,Conrad_5_intro_conrad_romanced,11,Kobold,Çok heyecanlıyım.
+300d848a1b6703e2,L14 Conrad,Conrad_5_intro_conrad_romanced,12,Kobold,Seni pırıl pırıl yapacağım!
+line:405b9622,L14 Conrad,Conrad_5_intro_conrad_romanced,13,Conrad,Ben de öyleyim.
+260d7e3607c0eca1,L14 Conrad,Conrad_5_intro_conrad_romanced,14,Conrad,Heh... Hadi yap bakalım.
+d875bd1d6febfd53,L14 Conrad,Conrad_5_intro_conrad_romanced,15,Conrad,Kalbim yerinden çıkacak.
+a652a464f67481de,L14 Conrad,Conrad_5_intro_conrad_romanced,16,Conrad,Daha önce bahsettiğim barda yer ayırttım bile.
+ce3783abd13119b6,L14 Conrad,Conrad_5_intro_conrad_romanced,17,Conrad,Bu geceki havası fena.
+18ed0c57d649df67,L14 Conrad,Conrad_5_intro_conrad_romanced,18,Conrad,Seveceksin.
+# --- intro: Conrad_5_intro_ryan_conrad_romanced | if $ryan_conrad_romanced $conrad_romanced $ryan_romanced ---
+9ec8a28e82bf29dd,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,1,Conrad,Heeeey.
+ce0517f9b97181e5,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,2,Kobold,Seni bu kadar mutlu eden ne?
+9560e52eac466c54,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,4,Conrad,Ryan ile olan randevum...
+f1afc0e7b46c4e3f,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,5,Conrad,Çok fenaydı!
+line:ab3a5d9c,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,6,Conrad,Merhaba.
+4b512432c16ce478,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,9,Conrad,Geç geldiğim için kusura bakma. Uyku düzenim bozuk.
+258282b3a0c1182a,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,10,Conrad,Sadece yıkanmaya geldim.
+b67855af6a6d0c66,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,11,Kobold,Bana Ryan ile ilgili her şeyi anlatırsın.
+9ab1cc314a249eac,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,12,Kobold,Peki! Gidip bariyeri açayım.
+1d28eb42dcdd879d,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,13,Conrad,Merak etme. Anlatırım.
+line:5183a6f2,L14 Conrad,Conrad_5_intro_ryan_conrad_romanced,14,Conrad,Sağ ol.
+# --- progress: Conrad_5_required_ryan_romanced | if $ryan_romanced ---
+189bf8eff795718a,L14 Conrad,Conrad_5_required_ryan_romanced,1,Conrad,"Hey, geç geldiğim için kusura bakma."
+cf69f255df6f95af,L14 Conrad,Conrad_5_required_ryan_romanced,2,Kobold,Sorun değil. Zaten daha bir saate kapatacağım.
+3aa0d9279bff43d9,L14 Conrad,Conrad_5_required_ryan_romanced,3,Kobold,Ne zaman istersen gelebilirsin!
+f135fa715daf4f0c,L14 Conrad,Conrad_5_required_ryan_romanced,4,Conrad,Ah. O zaman kusura bakıyorum.
+line:aea0be6b,L14 Conrad,Conrad_5_required_ryan_romanced,5,Conrad,"Ah, sağ ol."
+b127befdbae1da68,L14 Conrad,Conrad_5_required_ryan_romanced,6,Conrad,Ryan ile olan randevunda
+line:dd197e7c,L14 Conrad,Conrad_5_required_ryan_romanced,7,Conrad,...
+e00a5000d0f2cd2a,L14 Conrad,Conrad_5_required_ryan_romanced,8,Conrad,Seks nasıldı.
+7bd3b05552e5bd75,L14 Conrad,Conrad_5_required_ryan_romanced,10,Kobold,Oh. Aaa. <size=70%>Güzel.
+051b72b94276cf81,L14 Conrad,Conrad_5_required_ryan_romanced,11,Conrad,"Hey, sormanın sakıncası yok!"
+d5e5e7ee92b23759,L14 Conrad,Conrad_5_required_ryan_romanced,12,Conrad,Dediğine göre iyi geçmiş olmalı.
+83e2bb850a49b35e,L14 Conrad,Conrad_5_required_ryan_romanced,13,Conrad,"Hah, Yani öyle hayal ediyorum."
+9f69f9b215b926ee,L14 Conrad,Conrad_5_required_ryan_romanced,14,Conrad,Ellerini nasıl kullanacağını çok iyi biliyorsun.
+2c910bcdb2651bf0,L14 Conrad,Conrad_5_required_ryan_romanced,15,Conrad,Kıskandım!
+9e8a396c1742ffde,L14 Conrad,Conrad_5_required_ryan_romanced,16,Conrad,...ama kötü ve tuhaf anlamda değil tabii ki.
+# --- progress: Conrad_5_required_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+63b786e95b90bc5e,L14 Conrad,Conrad_5_required_conrad_romanced,1,Conrad,Şey. Bu akşam için...
+line:a0479425,L14 Conrad,Conrad_5_required_conrad_romanced,3,Kobold,Çok heyecanlıyım.
+line:95e2f7cc,L14 Conrad,Conrad_5_required_conrad_romanced,4,Conrad,Ben de.
+line:03d2f0bb,L14 Conrad,Conrad_5_required_conrad_romanced,5,Conrad,...
+6a74a80cafdccde8,L14 Conrad,Conrad_5_required_conrad_romanced,6,Conrad,Doğal olarak.
+06318559748ee640,L14 Conrad,Conrad_5_required_conrad_romanced,7,Conrad,Bayılacaksın.
+6c4d5b09c5034364,L14 Conrad,Conrad_5_required_conrad_romanced,8,Conrad,Renkler de harika olacak.
+95e9b7e01259ac1e,L14 Conrad,Conrad_5_required_conrad_romanced,9,Conrad,Ruh haline tam uyuyor.
+66e39f6379268a82,L14 Conrad,Conrad_5_required_conrad_romanced,10,Kobold,Ruh halini bu akşama sakla!
+line:6e82e54c,L14 Conrad,Conrad_5_required_conrad_romanced,11,Kobold,Öyle mi?
+f9ae65b8ce359331,L14 Conrad,Conrad_5_required_conrad_romanced,12,Conrad,Hah. Peki.
+1d1baaa8db27cb04,L14 Conrad,Conrad_5_required_conrad_romanced,13,Conrad,Öyle.
+ff84a4b13b8be2a4,L14 Conrad,Conrad_5_required_conrad_romanced,14,Conrad,Temizlendiğim gibi oraya gidip yerimizi hazırlayacağım.
+# --- progress: Conrad_5_required_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+1598446fc49cdf80,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,1,Conrad,Ryan o kadar kibar bir ejder ki...
+e2e3e43114ab1531,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold/Conrad,Cidden öyle.
+line:04b29e42,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,2,Kobold,Cidden öyle.
+73f5014bc8782ad4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,4,Conrad,"Evet, bana da çok nazik davranıyor."
+953a9b287930c86a,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,5,Conrad,Düşünceli ve.... gerçekten anlayışlı biri.
+41d3eda9c195fe48,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,6,Conrad,Onunla buluştuğum ilk zaman eski halime doğru kayıyordum.
+42fb7bc16778c0a5,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,7,Conrad,...yani biraz pislik birine.
+66ad79997bc62825,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,8,Conrad,O beni... Bu halden silkelemek için ne söyleyeceğini çok iyi biliyordu.
+7f8b591142c62352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,9,Kobold,Ne hoş!
+98e27e864ef9bcd4,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,10,Kobold,Ryan tam bir tatlış.
+7d6c8c039970d352,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,11,Conrad,Doğru... Gerçekten harika biri.
+line:c7e1b369,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,12,Conrad,Cidden.
+5e25d0f2371f53e0,L14 Conrad,Conrad_5_required_ryan_conrad_romanced,13,Conrad,Benimle tanıştırdığın için sağ ol.
+# --- jerkoff: Conrad_5_JerkOff_Start ---
+c96d891724f6aacb,L14 Conrad,Conrad_5_JerkOff_Start,1,Conrad,Hah... Şimdi de beni mi çekeceksin? Bana hava hoş.
+# --- cum: Conrad_5_Cum ---
+51bfc34995242b1a,L14 Conrad,Conrad_5_Cum,1,Conrad,Siktiiiir. Bir ejderi nasıl elleyeceğini iyi biliyorsun!
+# --- outro: Conrad_5_outro_ryan_romanced | if $ryan_romanced ---
+311729708567a9d6,L14 Conrad,Conrad_5_outro_ryan_romanced,1,Kobold,Bitti!
+84da55b8523dba73,L14 Conrad,Conrad_5_outro_ryan_romanced,2,Kobold,ARtık <i>pırıl pırılsın</i>.
+2bde145654bd4a8f,L14 Conrad,Conrad_5_outro_ryan_romanced,3,Conrad,Öyle duruyor.
+af144d6cb4daa5e6,L14 Conrad,Conrad_5_outro_ryan_romanced,4,Conrad,Fena hem de.
+8c873098ac0042a6,L14 Conrad,Conrad_5_outro_ryan_romanced,5,Conrad,Gecenin bu saattinde yıkadığın için sağ ol.
+028e30f8adf6e6ad,L14 Conrad,Conrad_5_outro_ryan_romanced,6,Conrad,"Ryan ile nasıl gittiğinizi bana da haber ver, olur mu?"
+a398eca1fb8d9924,L14 Conrad,Conrad_5_outro_ryan_romanced,7,Conrad,Neyse...
+234fc4abfc8d8619,L14 Conrad,Conrad_5_outro_ryan_romanced,8,Conrad,Bırak da <i>koca C</i> çıksın artık dışarı!
+a53a782390260e09,L14 Conrad,Conrad_5_outro_ryan_romanced,9,Kobold,Koca... C mi?
+8e369560d1581070,L14 Conrad,Conrad_5_outro_ryan_romanced,10,Kobold,"Olur, Conrad."
+line:227eda5e,L14 Conrad,Conrad_5_outro_ryan_romanced,11,Conrad,...
+f6b30f28e561466d,L14 Conrad,Conrad_5_outro_ryan_romanced,12,Conrad,Yaaani... Bir daha kullanmayacağım bunu.
+ac2b2c6605839727,L14 Conrad,Conrad_5_outro_ryan_romanced,13,Conrad,Hah... Tamam...
+fc66fcc7fd7d0e4d,L14 Conrad,Conrad_5_outro_ryan_romanced,14,Conrad,"Pekala, görüşürüz!"
+# --- outro: Conrad_5_outro_conrad_romanced | if $ryan_romanced $conrad_romanced ---
+9333db61bcc08052,L14 Conrad,Conrad_5_outro_conrad_romanced,1,Conrad,Tertemiz oldum...
+8b45593ada7894a3,L14 Conrad,Conrad_5_outro_conrad_romanced,2,Conrad,Bu ne anlama geliyor biliyorsun değil mi?
+53e54ad7b23e6757,L14 Conrad,Conrad_5_outro_conrad_romanced,3,Kobold,Randevu gecesi!
+4f319a155b3e572c,L14 Conrad,Conrad_5_outro_conrad_romanced,4,Kobold,Önce dükkanı kapatmam lazım-
+line:64889395,L14 Conrad,Conrad_5_outro_conrad_romanced,5,Conrad,Dibine kadar haklısın!
+f3296c9825518630,L14 Conrad,Conrad_5_outro_conrad_romanced,6,Conrad,Sen kapatırken gidip yerini ayırtacağım.
+c215e512d572e96c,L14 Conrad,Conrad_5_outro_conrad_romanced,7,Conrad,"Biliyorum, ben de yerini ayırtacağım!"
+22d803e60de439a9,L14 Conrad,Conrad_5_outro_conrad_romanced,8,Conrad,Peki! Gitmeye hazırım.
+092af5ec90bd21c7,L14 Conrad,Conrad_5_outro_conrad_romanced,9,Conrad,Bu gece seni barda bekliyor olacağım!
+# --- outro: Conrad_5_outro_ryan_conrad_romanced | if $ryan_romanced $conrad_romanced $ryan_conrad_romanced ---
+e079ff157877ea28,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,1,Conrad,Sanırım her yerimi temizledin!
+6749954edebda844,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,2,Conrad,Pullarını artık rahat bırakayım.
+2bc72fd03dd6d9e7,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,3,Conrad,Bu kadar geç beni içeri aldığın için sağ ol.
+f001e3ed4df7e0ee,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,4,Kobold,Sorun değil!
+9d4a6cd35afcc17e,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,5,Kobold,"Conrad, seni içeri almaktan her zamana mutluluk duyarıim."
+5e4e2c64bc630fa1,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,6,Conrad,Mmmhm. Şu uyku düzenimi halletmem lazım...
+5c58c3e6d4c7dc65,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,7,Conrad,Sağ ol. Burada olmak beni de hep mutlu ediyor.
+163137d1bff25904,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,8,Conrad,Her neyse. Bariyeri açabilir misin?
+94d29a68cf0c8c31,L14 Conrad,Conrad_5_outro_ryan_conrad_romanced,9,Conrad,Bu gece kendi kendini başlatmayacak!
+
+# ===== Level 15: Alexander (Sunny) =====
+# --- intro: Alexander_5_intro ---
+line:6d5ba814,L15 Alexander,Alexander_5_intro,1,Alexander,Flaglerle ilgili bir hata oluştu!
+line:fc461784,L15 Alexander,Alexander_5_intro,2,Alexander,Lütfen geliştiricilerle iletişime geçin...
+bc3d56d7794e4370,L15 Alexander,Alexander_5_intro,6,Kobold,"Hey, Alexander."
+1bef44aeb393caf0,L15 Alexander,Alexander_5_intro,7,Kobold,"Hey, tosun!"
+2d8bd7d9bb5f85ba,L15 Alexander,Alexander_5_intro,8,Alexander,Merhaba.
+line:82698bd1,L15 Alexander,Alexander_5_intro,9,Alexander,Merhaba.
+b048841add4ee6cf,L15 Alexander,Alexander_5_intro,10,Alexander,Yıkanmak için geldim.
+beeee2948bf1c30a,L15 Alexander,Alexander_5_intro,11,Alexander,Umarım iyisindir!
+906a59351176dc24,L15 Alexander,Alexander_5_intro,12,Kobold,İyiyim! Daha yeni Ryan ile randevumdaydım.
+2a75724b922176cf,L15 Alexander,Alexander_5_intro,13,Alexander,Öyle mi? Etrafta gördüğüm gök mavisi drakele mi?
+1f4da5e1dde7e17c,L15 Alexander,Alexander_5_intro,14,Alexander,Biriyle görüştüğünü bilmek ne harika!
+50f1967e1e33cecf,L15 Alexander,Alexander_5_intro,15,Kobold,İyiyim! Daha yeni Conrad ile randevumdaydım.
+0738da2a76bc2231,L15 Alexander,Alexander_5_intro,16,Alexander,Öyle mi? Şu küçük kızıl drake mi?
+896dc87e931d64eb,L15 Alexander,Alexander_5_intro,18,Kobold,Öyleyim! Burada olduğun için daha da bir iyiyim.
+0786859cb08f5ef9,L15 Alexander,Alexander_5_intro,19,Kobold,İyi gidiyor!
+414ed962f4c8a03a,L15 Alexander,Alexander_5_intro,20,Alexander,Oh. Bu... Harika!
+10cdda610834ef77,L15 Alexander,Alexander_5_intro,21,Alexander,Burada olmaktan ben de mutluyum.
+346865d8c1dd9693,L15 Alexander,Alexander_5_intro,22,Alexander,Bunu duymak harika.
+f9ccb379ac224d71,L15 Alexander,Alexander_5_intro,23,Alexander,"Her neyse, temizlenmeye ihtiyacım var."
+4e576daaec5a2d15,L15 Alexander,Alexander_5_intro,24,Kobold,Geliyorum!
+42dbc75670fc6105,L15 Alexander,Alexander_5_intro,26,Alexander,Yıkanmayı iple çekiyorum.
+line:316bb26e,L15 Alexander,Alexander_5_intro,27,Alexander,Sağ ol.
+# --- progress: Alexander_5_romance_route | if $ryan_conrad_romanced ---
+line:1b6c7f75,L15 Alexander,Alexander_5_romance_route,1,Alexander,Merhaba.
+067e958be39127d9,L15 Alexander,Alexander_5_romance_route,4,Alexander,Düşünüyordum da...
+4dd6f1ad9c86a533,L15 Alexander,Alexander_5_romance_route,5,Alexander,benim çekici olduğuma inanıyor musun?
+303f7b0a567bfb2b,L15 Alexander,Alexander_5_romance_route,6,Kobold,ÖYLESİN.
+09141003dee8665c,L15 Alexander,Alexander_5_romance_route,7,Kobold,İNANIYORUM!
+43c22d680a102c02,L15 Alexander,Alexander_5_romance_route,8,Kobold,Bence iyi görünüyorsun.
+line:4399096b,L15 Alexander,Alexander_5_romance_route,9,Alexander,Oh.
+4d433e9df480be59,L15 Alexander,Alexander_5_romance_route,10,Alexander,Sevindim!
+c2ec019426b864e2,L15 Alexander,Alexander_5_romance_route,11,Alexander,Bu... benim kendimden daha emin olmamı sağladı.
+2819c10656ee517a,L15 Alexander,Alexander_5_romance_route,12,Alexander,Gerçekten mi?
+line:e00c6df5,L15 Alexander,Alexander_5_romance_route,14,Alexander,Sağ ol.
+8fa16c7b8108298a,L15 Alexander,Alexander_5_romance_route,15,Alexander,Bu benim kendimden daha emin olmamı sağladı.
+4f6ee313463724ba,L15 Alexander,Alexander_5_romance_route,16,Alexander,Bu benin sonraki soruma getiriyor...
+96ec8add863c6173,L15 Alexander,Alexander_5_romance_route,17,Alexander,bu akşam üniversitenin kütüphanesinde bana eşil eder misin...?
+558dbfba7857e37d,L15 Alexander,Alexander_5_romance_route,18,Alexander,Bu bir şey... randevu teklifi. Diğerlerinin de dediğin gibi.
+76eea215ea7ba450,L15 Alexander,Alexander_5_romance_route,19,Kobold,"<gradient=""gold""><b> Fena olmazdı! </b></gradient><size=70%> (Alexander ile ilişki yaparsınız!)"
+500188b2a2627768,L15 Alexander,Alexander_5_romance_route,20,Kobold,"<gradient=""gold""><b> Bu akşam meşgul olacağum. Kusura bakma. </b></gradient><size=70%> (İlişkiye götürmeyecek!)"
+line:36d49875,L15 Alexander,Alexander_5_romance_route,21,Alexander,Harika!
+96b6a8b07a0781d0,L15 Alexander,Alexander_5_romance_route,22,Alexander,Bunu sana sormayı uzun süredir düşünüyordum.
+942b49a7c66fb0bf,L15 Alexander,Alexander_5_romance_route,23,Alexander,Ah. Sorun değil.
+b1cb9d9c9d3d9661,L15 Alexander,Alexander_5_romance_route,24,Alexander,Peki o halde. Yıkarken seni meşgul etmeyeyim!
+# --- progress: Alexander_5_required ---
+861a7c80ccb8a4ba,L15 Alexander,Alexander_5_required,1,Alexander,"Peki, randevun nasıl geçti?"
+3481be04c35d76a2,L15 Alexander,Alexander_5_required,2,Kobold,Harikaydı! Ryan tam bir şeker.
+d26f0d306552c44a,L15 Alexander,Alexander_5_required,3,Kobold,Harikaydı. Conrad çok vahşiydi. İyi anlamda.
+cf755b67feb7b6d9,L15 Alexander,Alexander_5_required,4,Kobold,İyiydi. Seviştik.
+6af3f2040301f8fa,L15 Alexander,Alexander_5_required,5,Alexander,Ne iyi. Düzgün birini hak ediyorsun.
+9b8379de3d387846,L15 Alexander,Alexander_5_required,6,Alexander,Eminim ki o da senden hoşlanıyordur!
+add751924d595d89,L15 Alexander,Alexander_5_required,7,Kobold,"Sağ ol, sen de hoş birisin!"
+line:44701902,L15 Alexander,Alexander_5_required,8,Kobold,Teşekkürler!
+01cb42db52da342d,L15 Alexander,Alexander_5_required,9,Alexander,Sağ ol. Çok naziksin.
+line:d2401e75,L15 Alexander,Alexander_5_required,10,Alexander,Ne demek!
+a8ab7e0a75fdc69c,L15 Alexander,Alexander_5_required,11,Alexander,"Hah, vahşi tiplerden biri olmalı."
+5bac15668ef9b115,L15 Alexander,Alexander_5_required,12,Alexander,Ondan hoşlanmana sevindim. Eminim o da senden hoşlanmıştır.
+line:e7e57d9c,L15 Alexander,Alexander_5_required,14,Kobold,Sağ ol!
+line:76f8c20c,L15 Alexander,Alexander_5_required,16,Alexander,Ne demek!
+line:87233429,L15 Alexander,Alexander_5_required,17,Alexander,Oh.
+line:1113335e,L15 Alexander,Alexander_5_required,18,Alexander,...
+line:ab423ac7,L15 Alexander,Alexander_5_required,19,Alexander,Harika!
+cb8f422bf973d563,L15 Alexander,Alexander_5_required,20,Alexander,Uyumlu olduğunuz anlamına geliyor olmalı.
+# --- jerkoff: Alexander_5_JerkOff_Start ---
+caa4d660ab8d004d,L15 Alexander,Alexander_5_JerkOff_Start,1,Alexander,<i> hoş hissettiriyor...</i>
+# --- cum: Alexander_5_Cum ---
+3eb65bb3b11e901c,L15 Alexander,Alexander_5_Cum,1,Alexander,Oh- Etrafı kirlettiğim için özür dilerim...
+# --- mount_start: Alexander_5_Mount_Start ---
+6df0c2c2617b9905,L15 Alexander,Alexander_5_Mount_Start,1,Alexander,Amanın- Herhalde sakıncası olmaz!
+# --- mount_finish: Alexander_5_Mount_Finish ---
+31ea4258e44c77e4,L15 Alexander,Alexander_5_Mount_Finish,1,Alexander,Nnf... Buna ihtiyacım varmış. Sağ ol.
+# --- outro: Alexander_5_Outro ---
+026554f86388b721,L15 Alexander,Alexander_5_Outro,1,Alexander,Temizlik için sağ ol.
+7f37ff79ee94bd0b,L15 Alexander,Alexander_5_Outro,2,Alexander,Bu gece- kampüsteyiz. Kütüphane büyük mavi kulede.
+f5e9b1cef9c39e89,L15 Alexander,Alexander_5_Outro,3,Alexander,"Ejder kapısına gel ve sonra ben de seni içeri alacağım."
+line:b5d7d26f,L15 Alexander,Alexander_5_Outro,4,Alexander,Sabırsızlanıyorum.
+5832139d604c3ee8,L15 Alexander,Alexander_5_Outro,5,Kobold,Ben de senin gibi!
+6ed2300bf162b1de,L15 Alexander,Alexander_5_Outro,6,Kobold,Ne havalı ama.
+line:99b6dc81,L15 Alexander,Alexander_5_Outro,7,Alexander,Sevindim.
+ada4e05c4d451f61,L15 Alexander,Alexander_5_Outro,8,Alexander,"Öyle, gerçekten havalı."
+6068953467a952bf,L15 Alexander,Alexander_5_Outro,9,Alexander,Artık pullarından çekileyim. Yıkadığın için sağ ol.
+7ca9216de53b82e5,L15 Alexander,Alexander_5_Outro,10,Alexander,Akşam görüşürüz.
+4f8eb9eeb14b2f7d,L15 Alexander,Alexander_5_Outro,11,Alexander,Artık her yerim temizlenmiş olmalı.
+991fa15e47275ce0,L15 Alexander,Alexander_5_Outro,12,Alexander,Temizlik için sağ ol!
+6d1255dd43802973,L15 Alexander,Alexander_5_Outro,13,Alexander,Seninle tanıştığıma mutluyum.
+5d5e0eafc7ef13d6,L15 Alexander,Alexander_5_Outro,14,Kobold,Ben de öyle.
+63b9a103362edd6c,L15 Alexander,Alexander_5_Outro,15,Kobold,"Ah, sağ ol Alexander."
+6df8f8008c57cbac,L15 Alexander,Alexander_5_Outro,16,Alexander,"Her neyse, artık pullarını rahat bırakayım."
+1cb7b221b7adda1c,L15 Alexander,Alexander_5_Outro,17,Alexander,Görüşürüz!
+
+# ===== Cutscenes (started by game code) =====
+# --- Alexander_SexScene ---
+266f7a45346224eb,Cutscene,Alexander_SexScene,1,Alexander,Burada sırnaşabiliriz...
+43b91c684627d3b6,Cutscene,Alexander_SexScene,2,Alexander,Her şeyi sen mi halledeceksin?
+# --- Alexander_SexScene_Loop ---
+7d085d9765e3c5d6,Cutscene,Alexander_SexScene_Loop,1,Alexander,Aman-
+f70738ec42aa401d,Cutscene,Alexander_SexScene_Loop,2,Alexander,Ellerin ne kadar marifetli
+328ad033a139998d,Cutscene,Alexander_SexScene_Loop,3,Alexander,mmm..
+5ec1f7e700f37c3d,Cutscene,Alexander_SexScene_Loop,4,Alexander/Conrad/Ryan,..
+line:b36eb839,Cutscene,Alexander_SexScene_Loop,4,Alexander,..
+# --- Alexander_SexScene_Cum | if $alexander_sexscene_loops ---
+08ab4c0c6ca5fe6f,Cutscene,Alexander_SexScene_Cum,1,Kobold,Böyle iyi mi?
+069e24aa896ea4cf,Cutscene,Alexander_SexScene_Cum,2,Alexander,İyi... Doğru yapıyorsun.
+2c33dcef91e06624,Cutscene,Alexander_SexScene_Cum,3,Kobold,Güzel.
+2d731f1625c8064f,Cutscene,Alexander_SexScene_Cum,4,Alexander,Ben... Yakınım.
+4650860eb73dd16f,Cutscene,Alexander_SexScene_Cum,5,Kobold,Benim için biraz daha tutar mısın?
+860ede2808e2507c,Cutscene,Alexander_SexScene_Cum,6,Kobold,Bırak gelsin!
+16c36baab1491eb1,Cutscene,Alexander_SexScene_Cum,7,Alexander,P-peki o zaman. Kendimi zorlayacağım.
+24537bfd61baf4a0,Cutscene,Alexander_SexScene_Cum,8,Alexander,Daha fazla tutabileceğimi düşünmüyorum.
+a63eed0b6b6a78c7,Cutscene,Alexander_SexScene_Cum,9,Kobold,Şimdi değil. Birazcık daha.
+35f5ee08b67fc0f5,Cutscene,Alexander_SexScene_Cum,10,Kobold,İstediğin zaman boşalabilirsin.
+82af5427ecb85c11,Cutscene,Alexander_SexScene_Cum,11,Alexander,Ahh..
+847ec7301eab2bde,Cutscene,Alexander_SexScene_Cum,12,Alexander,Huff...
+c958ed597f3ee7b9,Cutscene,Alexander_SexScene_Cum,13,Alexander,Çok hoşuma gitti.
+f3be3d62065c0791,Cutscene,Alexander_SexScene_Cum,14,Kobold,Bunu duymak beni de mutlu etti.
+6a629fe795ac84d7,Cutscene,Alexander_SexScene_Cum,15,Kobold,Şimdi ne yapacağız?
+4cc4342b97114697,Cutscene,Alexander_SexScene_Cum,16,Alexander,Şimdi... Sanırım zemini temizlememiz lazım...
+ee63118710aa5c5b,Cutscene,Alexander_SexScene_Cum,17,Alexander,Yerleri temizlememiz lazım...
+8319d1715d2a4149,Cutscene,Alexander_SexScene_Cum,18,Alexander,<i><size=70%>uh oh.. ve de kitapları.
+# --- Conrad_SexScene ---
+b6d2d6ccb52c5166,Cutscene,Conrad_SexScene,1,Conrad,Ah siktir! Gerçekten yaramazsın!
+e5c48d779d6422b5,Cutscene,Conrad_SexScene,2,Kobold,mmph! (Evet!)
+e0ecc38d8bbe3790,Cutscene,Conrad_SexScene,3,Conrad,Ağzın doluyken konuşmak olmaz.
+# --- Conrad_SexScene_Loop ---
+d7e01674d2776085,Cutscene,Conrad_SexScene_Loop,1,Conrad,Bunu nasıl becerdiğini cidden bilmiyorum...
+9b277d164ba8a630,Cutscene,Conrad_SexScene_Loop,2,Conrad,ama şikayet eden de yok.
+73433af885509f84,Cutscene,Conrad_SexScene_Loop,3,Conrad,Fena iyisin-
+line:8c0e2d04,Cutscene,Conrad_SexScene_Loop,4,Conrad,..
+# --- Conrad_SexScene_Cum | if $conrad_sexscene_loops ---
+fcfcfc2c31be11e5,Cutscene,Conrad_SexScene_Cum,1,Conrad,Hazır mısın?
+6b426873374bb7a4,Cutscene,Conrad_SexScene_Cum,2,Kobold,Biraz bekle.
+91213ceb7548b8dc,Cutscene,Conrad_SexScene_Cum,3,Kobold,Yolla!
+72e3cb39cf4a181a,Cutscene,Conrad_SexScene_Cum,4,Conrad,Conrad sen istediğin kadar tutabilir.
+3f2d1b3f808a4ec7,Cutscene,Conrad_SexScene_Cum,5,Conrad,Hazır olduğun an kendimi bırakacağım.
+46438371960f0974,Cutscene,Conrad_SexScene_Cum,6,Kobold,Henüz değil.
+d893ccbfc95475bc,Cutscene,Conrad_SexScene_Cum,7,Kobold,Bırak gelsin!
+aa1a7618e29e4482,Cutscene,Conrad_SexScene_Cum,8,Conrad,"Hey, bana hava hoş!"
+aa116a5879e94072,Cutscene,Conrad_SexScene_Cum,9,Conrad,Beni şaşırtıyorsun.
+45a9ad3bf69b0498,Cutscene,Conrad_SexScene_Cum,10,Conrad,Klübe geri dönmek ister misin?
+4db30f4a0f40d350,Cutscene,Conrad_SexScene_Cum,11,Kobold,Bana uyar!
+# --- Ryan_Conrad_SexScene ---
+e86ce51d1dbf8280,Cutscene,Ryan_Conrad_SexScene,1,Ryan,Ryan: Daha önce hiç dışarıda seks yapmadım.
+848d254c8d63e6fb,Cutscene,Ryan_Conrad_SexScene,2,Conrad,Conrad: Takılma!
+3e0325398f9de675,Cutscene,Ryan_Conrad_SexScene,3,Conrad,Conrad: Ben her zaman yaparım.
+d55845869b2cd946,Cutscene,Ryan_Conrad_SexScene,4,Ryan,Ryan: Sanırım bayağı zevkli olacak.
+# --- Ryan_Conrad_SexScene_Loop ---
+59a6f968c75b792f,Cutscene,Ryan_Conrad_SexScene_Loop,1,Conrad,Conrad: Hoşuna gidiyor mu?
+836b8c1db049dc01,Cutscene,Ryan_Conrad_SexScene_Loop,2,Ryan,Ryan: Evet kesinlikle. Beni mi düşünüyorsun sen?
+dd91f260275b5093,Cutscene,Ryan_Conrad_SexScene_Loop,3,Conrad,Conrad: Conrad sadece kendini düşünür.
+bf095ea55cdeb898,Cutscene,Ryan_Conrad_SexScene_Loop,4,Conrad,Conrad: Aslında.. şey...
+5001d1e4b306b6d9,Cutscene,Ryan_Conrad_SexScene_Loop,5,Conrad,Conrad: Bunun sadece iyi geçmesini istiyorum
+4c3de56e34727c37,Cutscene,Ryan_Conrad_SexScene_Loop,6,Ryan,Ryan: Bence çok iyi gidiyoruz.
+06cb256bd506fa70,Cutscene,Ryan_Conrad_SexScene_Loop,7,Ryan,Ryan: Çok haz alıyorum.
+2e028541c13b150b,Cutscene,Ryan_Conrad_SexScene_Loop,8,Conrad,Conrad: Ben de.
+# --- Ryan_Conrad_SexScene_Cum | if $ryan_conrad_sexscene_loops ---
+5142dd3610e4cc0c,Cutscene,Ryan_Conrad_SexScene_Cum,1,Conrad,Conrad: Neredeyse boşalacağım.
+357806c023d4c85e,Cutscene,Ryan_Conrad_SexScene_Cum,2,Kobold,Sonra sevişmeye devam ettiler...
+4e0f42eaaa70c70d,Cutscene,Ryan_Conrad_SexScene_Cum,3,Kobold,ve birlikte boşaldılar.
+d8e952b1635e3fe5,Cutscene,Ryan_Conrad_SexScene_Cum,4,Ryan,Ryan: Sanırım benimki de geldi..
+50504d8f1c0a5f1c,Cutscene,Ryan_Conrad_SexScene_Cum,7,Ryan,Ryan: Oooh.. Boyun seninle ilgili olan tek küçük şey herhalde.
+e7a686aecb078b9e,Cutscene,Ryan_Conrad_SexScene_Cum,8,Conrad,Conrad: Hem de nasıl!
+98087861fbfaa621,Cutscene,Ryan_Conrad_SexScene_Cum,9,Ryan,Ryan: Hoştu.
+be1dff750703beb9,Cutscene,Ryan_Conrad_SexScene_Cum,10,Conrad,Conrad: Evet.
+# --- Ryan_SexScene ---
+caa123c912750ed2,Cutscene,Ryan_SexScene,1,Ryan,İçine sığacağından emin misin?
+c8dda0f1b46383bc,Cutscene,Ryan_SexScene,2,Kobold,Kobolds çok esnektir. Sığacak.
+849b442f9a88c950,Cutscene,Ryan_SexScene,3,Kobold,İvit
+88f476f3d6ebac8d,Cutscene,Ryan_SexScene,4,Ryan,Tamam ama canın yanarsa söyle bana.
+# --- Ryan_SexScene_Loop ---
+48cf02e6d9e88966,Cutscene,Ryan_SexScene_Loop,1,Ryan,Hayret...
+8caf602c6f60f544,Cutscene,Ryan_SexScene_Loop,2,Ryan,Bir Koboldla ilk kez sevişiyorum.
+db7bd45c48fe49a2,Cutscene,Ryan_SexScene_Loop,3,Ryan,Gerçekten çok hoş bir şey..
+line:3d2df033,Cutscene,Ryan_SexScene_Loop,4,Ryan,..
+# --- Ryan_SexScene_Cum | if $ryan_sexscene_loops ---
+eff478354f7f1b18,Cutscene,Ryan_SexScene_Cum,1,Ryan,Sanırım yakında boşalacağım..
+ddfa0f7133303565,Cutscene,Ryan_SexScene_Cum,2,Kobold,Lütfen biraz daha devam et.
+f76c951c6c97d8cd,Cutscene,Ryan_SexScene_Cum,3,Kobold,Döllerini bana ver!
+27cb363532fd0324,Cutscene,Ryan_SexScene_Cum,4,Ryan,Peki devam edeyim.
+685d8bfcf6988796,Cutscene,Ryan_SexScene_Cum,5,Ryan,Daha fazla tutamayacağım...
+8fdcf9b73762886e,Cutscene,Ryan_SexScene_Cum,6,Kobold,Biraz daha zaman ver!
+5128d4e4a722127f,Cutscene,Ryan_SexScene_Cum,7,Kobold,Bırak gitsin!
+eb41a8966fdf7cfd,Cutscene,Ryan_SexScene_Cum,8,Ryan,Bu sadece onu daha da sert yaptı!
+9c78a3c6942a7982,Cutscene,Ryan_SexScene_Cum,9,Ryan,Peki başaracağım...
+b9ed3621fb6dfbef,Cutscene,Ryan_SexScene_Cum,10,Ryan,Çok eğlenceliydi.
+99955b75e0544165,Cutscene,Ryan_SexScene_Cum,11,Kobold,Bence de.
+ee60aadc2fcea44d,Cutscene,Ryan_SexScene_Cum,12,Ryan,İstersen yanımda kalabilirsin.
+9d29fc6dcfe7c05d,Cutscene,Ryan_SexScene_Cum,13,Ryan,Odayı bu gece için kiraladım.
+3736ec41338c7ad0,Cutscene,Ryan_SexScene_Cum,14,Kobold,Çok isterim.
+
+# ===== Dragon reactions (started by game code) =====
+# --- DragonAlmostClean ---
+bae76fc276bb2030,Reaction,DragonAlmostClean,1,Dragon,"Oh çok daha iyi ama hala pis hissediyorum."
+ce6aaf93738f317e,Reaction,DragonAlmostClean,2,Dragon,Temiz miyim diye bir kez daha kontrol edemez misin?
+16584052fd337f09,Reaction,DragonAlmostClean,3,Kobold,Tamam
+c54cbee211a25e14,Reaction,DragonAlmostClean,4,Kobold,Peki
+line:8b8f57c4,Reaction,DragonAlmostClean,5,Dragon,Sağ ol!
+# --- DragonAnnoyedByBuzzing ---
+d139edc8ffdc22b7,Reaction,DragonAnnoyedByBuzzing,1,Dragon,"Kes şunu, işimizi henüz bütmeid. Öyle değil mi?"
+631ef624f4506ea7,Reaction,DragonAnnoyedByBuzzing,2,Kobold,Hehe
+line:9504ba33,Reaction,DragonAnnoyedByBuzzing,3,Kobold,...
+# --- DragonColdBalls ---
+e820f3ec0397737f,Reaction,DragonColdBalls,1,Dragon,Of! Bayağı soğuktu!
+8408ed2f21e73811,Reaction,DragonColdBalls,2,Dragon,Off! Soğuk bu!
+46f3ba9fc7d04fa7,Reaction,DragonColdBalls,3,Dragon,Trrr! Su çok soğuk!
+00221b8a2772003a,Reaction,DragonColdBalls,4,Dragon,Ayy!
+# --- DragonConfusedAboutDismissal ---
+9b99cd22a6f3f85a,Reaction,DragonConfusedAboutDismissal,1,Dragon,Oh işimiz bitti mi?
+7022570f87a73481,Reaction,DragonConfusedAboutDismissal,2,Dragon,Sanırım birkaç yeri kaçırdın...
+27db29faa5e11bb6,Reaction,DragonConfusedAboutDismissal,3,Kobold,"Hay aksi, benim hatam."
+4fff64bb7aeed72f,Reaction,DragonConfusedAboutDismissal,4,Kobold,O tuşun ne işe yaradığıın bilmiyordum.
+b0869fc4ea46c5bd,Reaction,DragonConfusedAboutDismissal,5,Dragon,"Sorun değil"
+cb554196ac99a428,Reaction,DragonConfusedAboutDismissal,6,Dragon,Haha evet BRRT diye ses yaptı.
+345b04bed8d1a7e0,Reaction,DragonConfusedAboutDismissal,7,Dragon,"Her neyse bu kadar erken bitmediğine sevindim, hadi devam edelim!"
+# --- DragonSatisfiedAndLeaves ---
+7a8942e2613fa23c,Reaction,DragonSatisfiedAndLeaves,1,Dragon,Beni temizlediğin için sağ ol!!
+c92c35bb9f44dac4,Reaction,DragonSatisfiedAndLeaves,2,Dragon,Daha sonra takılmak ister misin?
+8aff5108a050bcfa,Reaction,DragonSatisfiedAndLeaves,3,Kobold,Evet!
+2cb6318b9f4550a8,Reaction,DragonSatisfiedAndLeaves,4,Kobold,EVET!
+28454e931a2d3578,Reaction,DragonSatisfiedAndLeaves,5,Dragon,Harika! Görüşmek üzere o zaman!
+
+# ===== Unused nodes (not reachable in the current game) =====
+# --- Alexander_1 ---
+31c53bea307f49d0,Unused,Alexander_1,1,Alexander/Ryan,I was helping the alchemist reach a high shelf
+line:fa97376e,Unused,Alexander_1,1,Alexander,I was helping the alchemist reach a high shelf
+f00ea25690e17adf,Unused,Alexander_1,2,Alexander,"I heard a loud bang, I don't think Igwix made it."
+# --- Alexander_2 ---
+07874aa669e5cb8c,Unused,Alexander_2,1,Alexander,If we're caught violating another policy my reputation would be in ruins!
+cfe73695b2bdfe19,Unused,Alexander_2,2,Alexander,The college cannot find out about this okay?
+27b11f3f6bf12fe9,Unused,Alexander_2,3,Kobold,Which college?
+2d3935f374b6474e,Unused,Alexander_2,5,Alexander,"The Burnswick Community College of Thaumaturgy, of course!"
+7a5128354d6171d0,Unused,Alexander_2,6,Alexander,The most prestigious college hosting prestigious professors like me:
+line:f167e3d7,Unused,Alexander_2,7,Alexander,Alexander!
+line:6757e4a0,Unused,Alexander_2,8,Alexander,...
+b34663a53a6541a7,Unused,Alexander_2,9,Alexander,"Good, I can't be having the Burnswick Community College of Thaumaturgy know that their best professor Alexander has caused another incident."
+line:85f39b27,Unused,Alexander_2,10,Alexander,...
+b39b95373bf40c36,Unused,Alexander_2,11,Alexander,"Oh fudge, forget I said that!"
+# --- Alexander_3 ---
+2501ad553fd20454,Unused,Alexander_3,1,Alexander,"I'll need to resurrect Igwix, oh how embarrassing!"
+7b282582fab597eb,Unused,Alexander_3,2,Alexander,The apothecary will tarnish my name for months.
+# --- Alexander_Dirty ---
+950b8260a6ca788f,Unused,Alexander_Dirty,1,Alexander,Look at me! I'll be the laughing stock of my students.
+97733f8db49fb168,Unused,Alexander_Dirty,2,Alexander,Please scrub Igwix off my back would you?
+# --- Alexander_Idle1 ---
+6a4162b247e5aae1,Unused,Alexander_Idle1,1,Alexander,I can't believe Igwix would make a mistake like this!
+5e971607fa926b31,Unused,Alexander_Idle1,2,Alexander,"Now I'm out here, agh!"
+# --- Alexander_Idle2 ---
+2a1b4481e851f727,Unused,Alexander_Idle2,1,Alexander,"I went out of my way for a discrete washing, I was sure I wasn't followed."
+26974d0189f0d75c,Unused,Alexander_Idle2,2,Alexander,I'm sure nobody will know...
+# --- Alexander_Idle3 ---
+db8cc14accf5dfe9,Unused,Alexander_Idle3,1,Alexander,"Ah, the grime did sting a little, thank you."
+# --- Alexander_Soapy ---
+e17d9103818204a4,Unused,Alexander_Soapy,1,Alexander,This soap isn't fitting for a professor don't you think?
+03c418e790b340c3,Unused,Alexander_Soapy,2,Alexander,Let me know when you're finished rinsing.
+# --- Alexander_Intro ---
+f82f410ee41cad07,Unused,Alexander_Intro,1,Alexander,Psst..!
+fedb00f6c13cec68,Unused,Alexander_Intro,2,Kobold,Uh... Hello?
+4359ca4e5c8fc816,Unused,Alexander_Intro,3,Kobold,Who's there?
+9e2816aaa10403b6,Unused,Alexander_Intro,4,Alexander,Shh! I'm not from around here...
+8275f13b67a6687b,Unused,Alexander_Intro,5,Alexander,Are you open right now?
+line:642255fc,Unused,Alexander_Intro,6,Kobold,Of course!
+7409deaefe456a49,Unused,Alexander_Intro,7,Alexander,Phew! I had an accident that needs to be taken care of... discretely.
+afb82d57a9c1ba48,Unused,Alexander_Intro,8,Alexander,Remove this barrier at once so I may enter.
+# --- Alexander_Outro ---
+0c2f6e570964b0c1,Unused,Alexander_Outro,1,Alexander,"Goodness, thanks to you I have a chance at redeeming this situation."
+639110e1c4cc2914,Unused,Alexander_Outro,2,Alexander,Say do you remember the name of the college I work at?
+e35f2c7dd32a4059,Unused,Alexander_Outro,3,Kobold,Burnswick Community College of Thaumaturgy
+8e3a0c6c1c068e67,Unused,Alexander_Outro,4,Kobold,You work at a college?
+7bf1556708efd0d8,Unused,Alexander_Outro,5,Kobold,Nope
+79acad09a68bf670,Unused,Alexander_Outro,6,Alexander,"No! I mean, yes, but for the sake of my reputation could you please keep my incursion here to yourself."
+3730dccb6a6582be,Unused,Alexander_Outro,7,Alexander,What? I'm a professor! Can't you tell from my crest?
+56723edcd935d476,Unused,Alexander_Outro,8,Alexander,Oh!
+e0723f4408ee3eda,Unused,Alexander_Outro,9,Alexander,"I see what you're doing, thank you."
+7973db48113175b5,Unused,Alexander_Outro,10,Alexander,"Well great, I appreciate your discretion, I'll be headed off to the apothecary."
+line:67fa34ad,Unused,Alexander_Outro,11,Alexander,==
+95958db076100eb8,Unused,Alexander_Outro,12,Alexander,title: Alexander_Done
+line:4b9b3a43,Unused,Alexander_Outro,13,Alexander,---
+677412526f14044a,Unused,Alexander_Outro,14,Alexander,I'm very satisfied with these results..
+# --- ConradBeatup_1 ---
+line:30a74521,Unused,ConradBeatup_1,1,Conrad,...
+72f9c6536242f235,Unused,ConradBeatup_1,2,Kobold,I'm here if you need someone to talk to.
+67410be84ad1b8ac,Unused,ConradBeatup_1,3,Kobold,"I'll take care of this, don't you worry."
+5b207ccbfd5d5679,Unused,ConradBeatup_1,4,Conrad,No.. No it's fine... thank you.
+b2139b5e4dc27f14,Unused,ConradBeatup_1,5,Conrad,... Thank you..
+# --- ConradBeatup_2 ---
+b841443b4a7e3b82,Unused,ConradBeatup_2,1,Conrad,Hey thanks for being here for me...
+02febaeeb5306c30,Unused,ConradBeatup_2,2,Conrad,It's nice to have friends to rely on.
+# --- ConradBeatup_Idle1 ---
+7ff77420c3518210,Unused,ConradBeatup_Idle1,1,Conrad,"... I thought we were good friends, we have sex all the time!"
+13a3bd02487dab16,Unused,ConradBeatup_Idle1,2,Conrad,I don't understand..
+# --- ConradBeatup_Idle2 ---
+861f99e073cd06e2,Unused,ConradBeatup_Idle2,1,Conrad,I act tough but am a small dragon...
+e375cf5dd6f03d34,Unused,ConradBeatup_Idle2,2,Conrad,They took it too far.
+# --- ConradBeatup_Intro ---
+line:cdb8d8db,Unused,ConradBeatup_Intro,1,Conrad,...
+19aa373fb830a05c,Unused,ConradBeatup_Intro,2,Kobold,Omg you're hurt!
+c7e055a695603f2b,Unused,ConradBeatup_Intro,3,Kobold,Are you okay?
+e4e0397bea6600f5,Unused,ConradBeatup_Intro,4,Conrad,"Hey uh, I just need a cleaning."
+e36f54f748a69d3e,Unused,ConradBeatup_Intro,5,Kobold,"...Okay, come in"
+# --- ConradBeatup_OutroDirty ---
+e17652524a905f18,Unused,ConradBeatup_OutroDirty,1,Conrad,... you're done? I'm still dirty..
+# --- ConradBeatup_OutroSoapy ---
+d0b060d51bc87feb,Unused,ConradBeatup_OutroSoapy,1,Conrad,... you're done? I'm still soapy..
+# --- ConradBeatup_Outro ---
+line:ce938344,Unused,ConradBeatup_Outro,1,Conrad,==
+8f8c3127986a0017,Unused,ConradBeatup_Outro,2,Conrad,title: ConradBeatup_OutroDone
+line:e2f28daa,Unused,ConradBeatup_Outro,3,Conrad,---
+# --- Conrad_1 ---
+5a208b2886d87937,Unused,Conrad_1,1,Conrad,"Do you also do ""special endings"" here?"
+d61259269b75dec9,Unused,Conrad_1,2,Kobold,What's that?
+1ea442a134b2a184,Unused,Conrad_1,4,Kobold,No
+335bcdceb30ec6b8,Unused,Conrad_1,5,Conrad,"Yeah, nah. Mate you gotta get in on this. I'll pay good!"
+2f7cc8c297b8d283,Unused,Conrad_1,6,Conrad,Grouse as! Excited to see you work!
+9d1528cc1118e4dd,Unused,Conrad_1,7,Conrad,What? All the best places do it!
+# --- Conrad_2 ---
+d892eb1f696177b4,Unused,Conrad_2,1,Conrad,"This place could use a makeover, I know would it could use!"
+0eaacb4d2b730370,Unused,Conrad_2,2,Conrad,I've got a guy who can drop a gift by tomorrow that would spruce things up.
+# --- Conrad_5_Mount_Finish ---
+28a96495be7701ea,Unused,Conrad_5_Mount_Finish,1,Conrad,Damn... Always feels good.
+# --- Conrad_5_Mount_Start ---
+cda9c08deb782b6e,Unused,Conrad_5_Mount_Start,1,Conrad,"<i>Ooooh. </i>The mount? Hell yeah, man."
+# --- Conrad_Idle1 ---
+06b2c581e253753a,Unused,Conrad_Idle1,1,Conrad,"People tell me I've got a fat cock, is that true?"
+ba07cdd711c7d570,Unused,Conrad_Idle1,2,Kobold,Oh my
+f2ea9d36d2c4032f,Unused,Conrad_Idle1,3,Kobold,I've seen bigger
+25cdc596cd23bedb,Unused,Conrad_Idle1,4,Conrad,You should feel it and check for me
+c3565cd77a3dcba9,Unused,Conrad_Idle1,5,Conrad,"But not in this sized package, right??"
+# --- Conrad_Intro ---
+bc1e29287f60b297,Unused,Conrad_Intro,1,Conrad,G'day mate!
+f7a29676d9621163,Unused,Conrad_Intro,2,Conrad,"Conrad needs a cleaning, got a slot for 'im?"
+8339b88ae51a85f6,Unused,Conrad_Intro,3,Kobold,Yes right this way.
+255d982b3d4c772e,Unused,Conrad_Intro,5,Conrad,Good as!
+# --- Mount_Alexander_2_6 ---
+dcc524605bec9fd8,Unused,Mount_Alexander_2_6,1,Alexander,What is..
+d010c18e5ff478ed,Unused,Mount_Alexander_2_6,2,Alexander,Oh goodness no..
+f025190cb1adde9c,Unused,Mount_Alexander_2_6,3,Alexander,"I don't mean to be rude, but I must decline"
+eec9d16c87323040,Unused,Mount_Alexander_2_6,4,Alexander,This is a common practice?
+929e50391bfd0646,Unused,Mount_Alexander_2_6,5,Kobold,Oh yes
+b6547fc9d980c16e,Unused,Mount_Alexander_2_6,6,Kobold,No I actually just got it
+40df3c9d9e1d5126,Unused,Mount_Alexander_2_6,7,Alexander,I see..
+d3acad6a7014a598,Unused,Mount_Alexander_2_6,8,Alexander,This feels scandalous
+ab5a3375052f41eb,Unused,Mount_Alexander_2_6,9,Alexander,Though I can't say I am not curious
+c5ba4f5f1cdff517,Unused,Mount_Alexander_2_6,10,Alexander,Even so. Not this time
+# --- RyanDate_1 ---
+14ecee0afc63c845,Unused,RyanDate_1,1,Ryan,I'm so excited about this date!
+90ba900c65607127,Unused,RyanDate_1,2,Ryan,"I brought watermelon, bread, grapes, and some other stuff."
+# --- RyanDate_2 ---
+690cf2b49eb95f79,Unused,RyanDate_2,1,Ryan,Is something on your mind?
+1648a912c46f7fec,Unused,RyanDate_2,2,Kobold,Something happened last night
+b3979a44b5b9376a,Unused,RyanDate_2,3,Ryan,Oh no! Do you want to talk about it?
+02c33e4e3c09bc79,Unused,RyanDate_2,4,Kobold,"It's just that something happened to Conrad, I hope he's okay."
+7680ca7ff15f1566,Unused,RyanDate_2,5,Ryan,I hope he's okay too.
+# --- RyanDate_3 ---
+7ba9e65f61ca2369,Unused,RyanDate_3,1,Ryan,This is delicious!
+ff74b82dcb8a11d3,Unused,RyanDate_3,2,Kobold,"Wow, it's an experience seeing you eat like that."
+5b14f19a86849ff5,Unused,RyanDate_3,3,Ryan,Like what?
+42af2c2067728998,Unused,RyanDate_3,4,Ryan,"Oh like, swallowing things whole?"
+37f99dd7cbcf5b6f,Unused,RyanDate_3,5,Ryan,It depends! Dragon thing.
+# --- RyanDate_Idle1 ---
+bcda1f48383d915f,Unused,RyanDate_Idle1,1,Ryan,"Hehe, I'm excited to get into the dating scene again."
+# --- RyanDate_Intro ---
+d5be54b666b3d38f,Unused,RyanDate_Intro,2,Ryan,"I was thinking about what you said"
+ffcaf369ac8b1a74,Unused,RyanDate_Intro,3,Ryan,you know about getting back into the dating scene...
+89f52a0dc3d757c1,Unused,RyanDate_Intro,4,Kobold,Yeah
+ecab929d37109ab0,Unused,RyanDate_Intro,5,Ryan,"I knew you were too busy, so I figured I'd bring the date to you!"
+92d9da0b0b22fd7a,Unused,RyanDate_Intro,6,Kobold,Awesome! Come on in..
+# --- RyanDate_Outro ---
+line:e41244bf,Unused,RyanDate_Outro,1,Ryan,==
+617c4e9fdb7890ae,Unused,RyanDate_Outro,2,Ryan,title: RyanDate_OutroDone
+line:97ab84a8,Unused,RyanDate_Outro,3,Ryan,---
+638d7c049f321a6d,Unused,RyanDate_Outro,4,Ryan,That was wonderful! I feel so much better about dating.
+line:bbca8a46,Unused,RyanDate_Outro,5,Ryan,Thank you!
+# --- RyanExploded_Intro ---
+8e87e6b28fb697c4,Unused,RyanExploded_Intro,1,Ryan,Hi again..
+53ca70e25fc42870,Unused,RyanExploded_Intro,3,Kobold,You again?
+line:ab5b2574,Unused,RyanExploded_Intro,4,Ryan,Thanks!
+b99d68084de082b6,Unused,RyanExploded_Intro,5,Ryan,heh.. yea.. sorry..
+81f2cb133d548396,Unused,RyanExploded_Intro,6,Ryan,"So yeah, I had a mishap.."
+line:e02f464d,Unused,RyanExploded_Intro,7,Ryan,I was helping the alchemist reach a high shelf
+d3e25fe68c13c02d,Unused,RyanExploded_Intro,8,Ryan,I heard a loud bang
+ce386faf68f3df7e,Unused,RyanExploded_Intro,9,Ryan,I don't know where they went but I feel dirty again.
+60c1424a59a1c912,Unused,RyanExploded_Intro,10,Ryan,Any chance you can clean me up again?
+917613bbf36e4b93,Unused,RyanExploded_Intro,11,Kobold,Of course! Right this way!
+line:6fdb2c3d,Unused,RyanExploded_Intro,12,Ryan,Awesome!
+# --- RyanExploded_OutroDirty ---
+f2bdff14318fd81c,Unused,RyanExploded_OutroDirty,1,Ryan,I think I can still feel some explosion grime on me...
+6a1900ba2212696d,Unused,RyanExploded_OutroDirty,2,Ryan,Mind washing more?
+85a39ab345d672ff,Unused,RyanExploded_OutroDirty,3,Kobold,Yes
+1562d2eeb95b795a,Unused,RyanExploded_OutroDirty,4,Kobold,My bad
+3bcf70f39eca74f1,Unused,RyanExploded_OutroDirty,5,Ryan,"No problem, thanks!"
+# --- RyanExploded_OutroSoapy ---
+9df62882448c291b,Unused,RyanExploded_OutroSoapy,1,Ryan,"Uh, I'm still really soapy!"
+29d1991e26b1773d,Unused,RyanExploded_OutroSoapy,2,Ryan,Could you wash it away?
+# --- RyanExploded_Outro ---
+line:22deeef6,Unused,RyanExploded_Outro,1,Ryan,==
+c5bae834767a347c,Unused,RyanExploded_Outro,2,Ryan,title: RyanExploded_OutroDone
+line:25f35611,Unused,RyanExploded_Outro,3,Ryan,---
+a45ce5a6357ad76f,Unused,RyanExploded_Outro,4,Ryan,"Phew, I was worried I'd make another mess of things."
+ca1dd92cfbe2dcd5,Unused,RyanExploded_Outro,5,Ryan,Now they'll never need to know!
+line:c07a9171,Unused,RyanExploded_Outro,6,Ryan,Thanks!
+# --- RyanMuddy_Dirty ---
+58246ed8cfcdfa19,Unused,RyanMuddy_Dirty,1,Ryan,"Yeah so I'm all muddy and stuff, love romping around in the public park."
+f27e94e23a2cc6eb,Unused,RyanMuddy_Dirty,2,Ryan,"I'm still very muddy, if you could soap me up that'd be great."
+# --- RyanMuddy_Idle1 ---
+c24aaf031df991a1,Unused,RyanMuddy_Idle1,1,Ryan,"So uhh, let me know if you need me to move."
+8bb630e0c8dc64ac,Unused,RyanMuddy_Idle1,2,Ryan,Just touch me with your hand and I'll try to help.
+# --- RyanMuddy_Idle2 ---
+bcee068ce8220b8e,Unused,RyanMuddy_Idle2,1,Ryan,Thanks for cleaning me!
+2c4f3b41240d00cd,Unused,RyanMuddy_Idle2,2,Ryan,Been looking forward to this.
+# --- RyanMuddy_Idle3 ---
+e304ea7f521df3f2,Unused,RyanMuddy_Idle3,1,Ryan,When you're done go ahead and hit the button.
+ac51ca95656fffdd,Unused,RyanMuddy_Idle3,2,Ryan,"The button on the wall, I mean."
+# --- RyanMuddy_Idle4 ---
+8fd85e09be693fbf,Unused,RyanMuddy_Idle4,1,Ryan,"Max says I'm a clumsy dragon"
+d2261edb51b885d9,Unused,RyanMuddy_Idle4,2,Ryan,I hope that you'll help me prove them wrong!
+# --- RyanMuddy_Idle5 ---
+9df1eb0e35a5d36a,Unused,RyanMuddy_Idle5,1,Ryan,"Soap, then rinse!"
+5e7b1eae20d0fb72,Unused,RyanMuddy_Idle5,2,Ryan,At least that's what I've heard anyway.
+# --- RyanMuddy_Soapy ---
+73d08af95ae8835e,Unused,RyanMuddy_Soapy,1,Ryan,"I love bubbles, they tickle!"
+83af94fb3d626970,Unused,RyanMuddy_Soapy,2,Ryan,I'm excited to see them washing down the drain though.
+6bc811f815ef9e24,Unused,RyanMuddy_Soapy,3,Ryan,Use the sprayer on the wall to wash me off.
+# --- RyanMuddy_Idle7 ---
+255bd9c513473506,Unused,RyanMuddy_Idle7,1,Ryan,"Wow thanks, that feels good."
+77ff00f75a7c2083,Unused,RyanMuddy_Idle7,2,Ryan,Being muddy is really fun up until it starts drying.
+620caab5d90b8d3f,Unused,RyanMuddy_Idle7,3,Ryan,Happy to get it off.
+# --- RyanMuddy_Idle8 ---
+afa88441bc4fc8d9,Unused,RyanMuddy_Idle8,1,Ryan,"Who knew a dragon could get so dirty, huh?"
+2ea6d5d46861d1bf,Unused,RyanMuddy_Idle8,2,Ryan,I was romping around the forest
+c65b5342f0285c16,Unused,RyanMuddy_Idle8,3,Ryan,"Only realized how much of a mess I made after Max yelled at me, haha."
+# --- RyanMuddy_Intro ---
+299e9d1e919c3a49,Unused,RyanMuddy_Intro,4,Ryan,I heard there was kobolds down here that could wash me up?
+05d9cdcce06b0c12,Unused,RyanMuddy_Intro,6,Kobold,I am THE kobold. Yip!
+d12499a3f17512de,Unused,RyanMuddy_Intro,7,Kobold,"Yes, welcome to Drag'N Wash!"
+213c112ac748eb9e,Unused,RyanMuddy_Intro,9,Ryan,"Great, so uh"
+44beadf6316d890e,Unused,RyanMuddy_Intro,12,Ryan,"Oh I see the button there, gotcha!"
+af8d3a1f26de30ef,Unused,RyanMuddy_Intro,13,Ryan,Thanks I'll be waiting!
+# --- RyanMuddy_Nag1 ---
+3605a9273b22288b,Unused,RyanMuddy_Nag1,1,Ryan,Hey could you come up front where I can see you?
+720febc2a9d251aa,Unused,RyanMuddy_Nag1,2,Ryan,I have something to say!
+# --- RyanMuddy_Nag2 ---
+6852c864bbd2afef,Unused,RyanMuddy_Nag2,1,Ryan,I wanna talk face to face!
+0918205f97d74d78,Unused,RyanMuddy_Nag2,2,Ryan,If you could come up front so I could talk.
+# --- RyanMuddy_Nag3 ---
+c8f453084718c8cc,Unused,RyanMuddy_Nag3,1,Ryan,I've been told it's polite to talk to smaller folk face to face.
+# --- RyanMuddy_NaughtyTouch ---
+4d13604e28159e56,Unused,RyanMuddy_NaughtyTouch,1,Ryan,Patilerine hakim ol!
+# --- RyanMuddy_Outro ---
+a46a0805bb6a5eda,Unused,RyanMuddy_Outro,1,Ryan,Thank you for the quick clean!
+168c7d0bb7743dec,Unused,RyanMuddy_Outro,2,Ryan,By the way would you be mad if your partner made a mess at home?
+3ae7f278ef092258,Unused,RyanMuddy_Outro,4,Kobold,Depends
+0dfd80e1f981faca,Unused,RyanMuddy_Outro,6,Ryan,Oh! Yeah that makes sense...
+8f207ab27746c010,Unused,RyanMuddy_Outro,7,Ryan,I suppose it depends on the circumstances.
+86b57f75d4c04b75,Unused,RyanMuddy_Outro,8,Ryan,I knew you'd have my back
+# --- RyanMuddy_SmallTalk ---
+0bf9a145c66c512b,Unused,RyanMuddy_SmallTalk,3,Kobold,"This is my first time, actually!"
+4eb8bdb270c030ae,Unused,RyanMuddy_SmallTalk,5,Ryan,Oh so it's new for both of us!
+ff152503516900ee,Unused,RyanMuddy_SmallTalk,6,Ryan,It's also new to me...
+13d1c29ec8784cae,Unused,RyanMuddy_SmallTalk,7,Ryan,I'm surprised how nice it is.
+# --- Ryan_3_wont_use_mount ---
+9221ab210b374d30,Unused,Ryan_3_wont_use_mount,1,Ryan,Oh- I'm not too interested in using that right now.
+f3f18c2eea794920,Unused,Ryan_3_wont_use_mount,2,Ryan,Maybe later...?
+# --- Start ---
+4a7d6d3e8888a86b,Unused,Start,1,Start,Wow!
+51fc886b5198c324,Unused,Start,2,Start,My first ever Yarn script in Unity!
+3f67462d672b7bcf,Unused,Start,3,Kobold,Gosh!
+04d0442b161ea908,Unused,Start,4,Kobold,Incredible!
+75e288b4fb9a6264,Unused,Start,5,Kobold,I'm amazed!
+8324eab8a6e9f930,Unused,Start,6,Start,"Anyway, time to get writing!"
+73a58edf82c7d1f9,Unused,Start,7,Start,Test line 1
+44cd17f6b06a1e2a,Unused,Start,8,Start,Test line 2
+5c7f5bd24b7aa929,Unused,Start,9,Start,Test line 3
+182d619fd2759e9e,Unused,Start,10,Start,Test line 4
+1631cc2062d35c85,Unused,Start,11,Start,Test line 5
+8badee5679752364,Unused,Start,12,Start,Test line 6
+dfd4710580ab5eb3,Unused,Start,13,Start,Test line 7
+af31c269dddcddde,Unused,Start,14,Start,Test line 8
+6da123fcc0f5c222,Unused,Start,15,Start,Test line 9
+f9465279bddb54ad,Unused,Start,16,Start,Test line 10
+46be06404c734dec,Unused,Start,17,Start,Test line 11
+7e32f1603f1a8563,Unused,Start,18,Start,Test line 12
+a494dfb9f1a57f33,Unused,Start,19,Start,Test line 13
+f4fc9cefe23a07b7,Unused,Start,20,Start,Test line 14
+627fb5b7002e048a,Unused,Start,21,Start,Test line 15
+dc2099e76df820a2,Unused,Start,22,Start,Test line 16
+10082959f17563f7,Unused,Start,23,Start,Test line 17
+add98a1ef99b1290,Unused,Start,24,Start,Test line 18
+
+# ===== UI and other text (not part of the dialogue script) =====
+fe199528850a4e24,UI,,,UI,Kaldır
+74a883a037bc227f,UI,,,UI,Ayarlar
+130011756125313c,UI,,,UI,Açık
+32e9c976b09bba8d,UI,,,UI,"ModFramework 1.1.0+, Alt yazılar, Diyaloglar, Araç menüsü, Assetler, Flagler ve kayıtlar"
+9e6151acb057025d,UI,,,UI,Bağımlılıklar
+065713a108c0577c,UI,,,UI,https://github.com/TomXV/dragnwash-localization
+1236e3be635f17c7,UI,,,UI,"Drag'n Wash'u 14 dilde oynayın. Diyaloglar, seçimler, UI ve seçenekler."
+04ee32b03369cee0,UI,,,UI,v1.1.2   TomXV
+f1bf7f20f1ac8913,UI,,,UI,Drag'n Wash Yerelleştirme
+be27d61a18d3f619,UI,,,UI,Drag'n Wash ModFramework: Araç menüsü
+dc20b3d5d2cddf82,UI,,,UI,Kütüphane
+e64fcdc9b9bbdbcf,UI,,,UI,Drag'n Wash ModFramework: Text
+5b82a6d83757ad27,UI,,,UI,Drag'n Wash ModFramework: Flagler ve kayıtlar
+464d3959feb57cc0,UI,,,UI,Drag'n Wash ModFramework: Diyaloglar
+6d1e01320ec0d0c4,UI,,,UI,Drag'n Wash ModFramework: Assetler
+4db4a2bfc7343827,UI,,,UI,Drag'n Wash ModFramework
+c461dbb2bab7d8bc,UI,,,UI,Pencere Tam Ekran
+b63e857488f49396,UI,,,UI,Pencere Modu
+ca7981b46ecf2c17,UI,,,UI,Kapalı
+4883b7dfffb02e36,UI,,,UI,Gerçek Tam Ekran
+da43a1983d819a4d,UI,,,UI,Genişletilmiş Pencere
+3f26603a2748fed3,UI,,,UI,Serbest Pencere
+052810dae19607f5,UI,,,UI,VSync
+42e7fdbd13ba2a01,UI,,,UI,Framerate Sınırı
+41ca171b0cbae01e,UI,,,UI,Ekran Parlaklığı
+d4055fafa3794fa8,UI,,,UI,Çözünürlük
+6a3041fb3ecba173,UI,,,UI,Kamera FOV'u
+c77c3af22c6429b2,UI,,,UI,Kenar Yumuşatma
+a874fca87cdd5e4e,UI,,,UI,Grafik Ayarları
+e3becbaee46cc0df,UI,,,UI,Dil (Mod)
+0286249762f7c943,UI,,,UI,Otomatik
+6c359dddb1d4c36e,UI,,,UI,Kontrolcü İpucu Türü
+3d03a1dea561d0db,UI,,,UI,Anahtar
+91d6e30620d99810,UI,,,UI,Bas/Basılı Tut
+8e685d5409b3a543,UI,,,UI,Basılı Tut
+43ff6e9485bf371e,UI,,,UI,Eğilme Yöntemi
+4571896d8a4d4162,UI,,,UI,Fare Hassasiyeti
+4d654c19179796ef,UI,,,UI,Sprey'in Hareketini Yavaşlat
+fd9baf7f335aa154,UI,,,UI,Pilot Kontrolü
+31bcb8940fffb7d1,UI,,,UI,Oynanış Ayarları
+59a4a3f7f7caa060,UI,,,UI,Çevre Sesleri
+de7b57b57b05d020,UI,,,UI,Ses Efektleri
+b3f848c2a09aa9ed,UI,,,UI,Müzik Seviyesi
+bc1b88907d3b748a,UI,,,UI,Ses Ayarları
+6e58b577a084052a,UI,,,UI,Modlar
+a462b8c590652563,UI,,,UI,Yazı Girin...
+fae07a8540ff237b,UI,,,UI,Gerçekten Kaydı Silmek İstiyor Musun?
+b8564290c0e0b5a8,UI,,,UI,Oynadığınız için teşekkürler!
+e9ef3ed08e160ae3,UI,,,UI,"Emeği Geçenler:
+"
+d6de61e6e492bf63,UI,,,UI,Jigglebonez
+5bc426e8d81e2f41,UI,,,UI,Leo
+7e8c729e4e4ecc32,UI,,,UI,Sarah
+c8449a6f5de92b03,UI,,,UI,Raliv
+8dc9ce2264ae3d37,UI,,,UI,Naelstrof
+abb999c4cc496598,UI,,,UI,Hopfel
+0548fc94d8b0c0e6,UI,,,UI,hannagreen
+95639378358b68d3,UI,,,UI,Carpet impacts
+bd237658a4713810,UI,,,UI,"Yazım
+Çevre Tasarımı
+Çevre Modelleri
+Çevre Animasyonları"
+cafbbc8744fb3f88,UI,,,UI,Halı pati sfx
+eb272d78dafd532b,UI,,,UI,kapı açılma sfx
+a8d44b781e51fdee,UI,,,UI,Tahta darbeleri
+0aac6acbbfb65b17,UI,,,UI,yağmur ve gök gürültüsü
+0d3334cea7a844a6,UI,,,UI,Çeşitli kayıtlar
+130adb8b5416455d,UI,,,UI,Tahta Takırtıları
+353e82a33e16fb82,UI,,,UI,GDC Paketi Parça 4
+6ad2a61accf9a333,UI,,,UI,Daha fazla odun darbesi
+7d3be2c5e37913a0,UI,,,UI,Derin Sakso Boğulma Sesleri
+2982fa3f366a1572,UI,,,UI,numara istasyonu kayıtları
+f0c6a834a89921df,UI,,,UI,Seramik darbeleri
+3a6ac8a265d09d48,UI,,,UI,pencereye çarpan yağmur damlacıkları
+8e0fd89cc7d12fcb,UI,,,UI,Kar adımları
+49eff747f7b66f70,UI,,,UI,gök gürültüsü
+68a1922c728bdca9,UI,,,UI,Cam darbeleri
+519bce7bc2dab47f,UI,,,UI,Gök gürültüsü
+0335f28c78f070f8,UI,,,UI,Slime sfx
+a78a42eddd896aa9,UI,,,UI,Çim adımları
+2ed020831ca96fb6,UI,,,UI,Serbest model darbeleri
+efe86698eb2a6158,UI,,,UI,Karton darbeleri
+b1f6f885318185f3,UI,,,UI,Kaydedilmiş musluk sesi
+18ea5806aee7de2c,UI,,,UI,Şehir ambiansı
+2786fd46c13233d1,UI,,,UI,düğüm pop sfx
+b076d0643d8294e9,UI,,,UI,nox
+4a44ba982588f650,UI,,,UI,mallement
+18afcd98e101c686,UI,,,UI,inspectorj
+613487dfb05f676d,UI,,,UI,poyekhai
+8a09eb97a7cce77e,UI,,,UI,EvilZorak(OpenNSFW)
+9713ee2716c21c9f,UI,,,UI,profispiesser
+9f596d75fb21be5c,UI,,,UI,Soniss Game Audio
+068ae96dc695056f,UI,,,UI,lamamakesmusic
+933cacf5a48e5892,UI,,,UI,sagamusix
+6ffa3aeffc3db90b,UI,,,UI,worthahep
+aac48e8922ea1e58,UI,,,UI,Archival
+e8f6f39110924111,UI,,,UI,simpsi
+9ab99ec37a06d162,UI,,,UI,sforsman
+f3fa807efb640654,UI,,,UI,Master of Dreams
+9a467ff6688ce052,UI,,,UI,Ahze
+a203603f60623fe0,UI,,,UI,Bendrain
+ff087b38e9d7de21,UI,,,UI,leafs67
+3a0dd39171c7b65b,UI,,,UI,stephensaldanha
+cf409b6f74dd7508,UI,,,UI,launemax
+6c8791dc35c51e72,UI,,,UI,ZapSplat
+5bad495eb180ad5b,UI,,,UI,hokstnator
+dba5a6469ecc734b,UI,,,UI,stinkhorn
+7d1d5c7f5dc48ea4,UI,,,UI,"Ejder Tasarımları
+Ejder Modelleri
+Ejder Dokuları"
+6eb00b4b2614a144,UI,,,UI,Müzikler
+f1309e22833f158e,UI,,,UI,"Ejder Animasyonları
+Sahne Animasyonları
+Ejder Rigging"
+4bf1bfd492424808,UI,,,UI,"Programlama
+Ejder Animasyonları
+Kullanıcı Arayüzü
+Kurulum Entegrasyonu"
+f3d469b0ea13e324,UI,,,UI,"Programlama
+İllüstrasyon
+2D Animasyonlar"
+dd3543e1d5e16d95,UI,,,UI,"Programlama
+Ejder Dokuları
+Kullanıcı Arayüzü"
+ef84c63d8ecb0aed,UI,,,UI,https://github.com/TomXV/dragnwash-modframework
+1a03bd2fd107c453,UI,,,UI,Debug
+3c811513c8d9eda0,UI,,,UI,DumpDialogueKey
+1c003eb26aa006fb,UI,,,UI,F6
+067e5946402e6e73,UI,,,UI,DumpUiTextKey
+d96b6ec75f4e3593,UI,,,UI,F7
+bee92ea3dae8e15f,UI,,,UI,FlagPanelDebug
+982fcd4a43f2f541,UI,,,UI,HotReloadTranslations
+1138c2e1a5445752,UI,,,UI,LayoutOverflowThreshold
+259dd11a5fe5e84f,UI,,,UI,LogDiscoveredKeys
+b0863c7a75a865da,UI,,,UI,VerboseTextLog
+64d0b3adcd2dbe33,UI,,,UI,Font
+f7cae54d8ff235f8,UI,,,UI,PreloadAllLocales
+c910d474dcd724bf,UI,,,UI,General
+c18468a48c686635,UI,,,UI,TargetLocale
+3702fc1866630796,UI,,,UI,ja
+c1c52345c9b88c25,UI,,,UI,Writes every dialogue line the game has loaded to Translations/_discovered/dialogue_lines.csv.
+e2b9759e2326caba,UI,,,UI,Removed when the game next starts
+63e38bd4b036193a,UI,,,UI,Cancel uninstall
+dbd3a49d0d906b4e,UI,,,UI,en
+21b111cbfe6e8fca,UI,,,UI,Default
+3d19e2d0333d7b19,UI,,,UI,Change this in the mod's config file in BepInEx/config.
+6c495f4932c0b67e,UI,,,UI,"Prepare the fonts of every installed language at startup rather than only the one in use. On Direct3D 12 this always happens, because loading a font while the game runs crashes that renderer; turning it on elsewhere makes the first switch to each language instant at the cost of a slower start."
+bc5b45ae7b60692a,UI,,,UI,Reset to default
+67529e7fdc6098a0,UI,,,UI,Saved right away. Some mods only use a change after a restart.
+b9d0dd131d07b5ad,UI,,,UI,"Shared tools for Drag'n Wash mods, including this Mods screen."
+4850b174b713d88c,UI,,,UI,Required
+22e2bada8f1c65cd,UI,,,UI,Updates
+f26f3275e735bdf6,UI,,,UI,Check for updates
+a6a1b13028fd8c9c,UI,,,UI,"Once a day, ask GitHub whether mods that name their GitHub repository have a newer release. Nothing about you or your game is sent."
+4a3370cdde3e93b5,UI,,,UI,v1.0.0   TomXV
+e6af4688a3314648,UI,,,UI,"One shared in-game window (F1) where mods add tabs for their developer and debug tools, usable with mouse, gamepad and on the Steam Deck."
+966e2f6e640f0be4,UI,,,UI,ModFramework
+fd35647f8ecb2f7d,UI,,,UI,Needed by
+2277a4269b0a8035,UI,,,UI,FontMode
+929260ad9b9ea9fe,UI,,,UI,auto
+c37dc0f17f3c5448,UI,,,UI,ToggleKey
+deae2d4d75857c10,UI,,,UI,F1
+2f27308da7a50245,UI,,,UI,"Font for the tool window: auto (an OS font with Japanese and Chinese, else the bundled one), builtin (Unity's built-in font, ASCII only), skin (the IMGUI skin's font)."
+507e6f82c57c2096,UI,,,UI,"Reads and changes the game's save slots and event flags, and keeps a copy of every version of each save so any change can be undone."
+0e76960093379060,UI,,,UI,History
+92c1cdfdf4cb9cf6,UI,,,UI,Enabled
+183f00f483d3844e,UI,,,UI,Keep
+2494f4e62d49edd7,UI,,,UI,Keep a copy in BepInEx/SaveHistory every time the game writes a save. Copies are always taken before a mod changes a save.
+e33072d0f0267e46,UI,,,UI,"Tells mods which line of dialogue or option is about to be shown, with its line ID and speaker."
+3839cc8c85e0dab6,UI,,,UI,"Fonts for text the game's own fonts cannot show, and loading of textures and asset bundles, done so they do not crash Direct3D 12."
+3680fcad01f4bfc6,UI,,,UI,Fonts
+5010898da2706278,UI,,,UI,AtlasPointSize
+8011d40f3e21c751,UI,,,UI,"Point size glyphs are rasterized at for the fallback fonts. Higher is sharper. Glyphs are rasterized when a mod prepares its text, usually at startup, so raising this costs loading time rather than performance during play."
+dabd3aff769f07eb,UI,,,UI,<
+62b67e1f685b7fef,UI,,,UI,>
