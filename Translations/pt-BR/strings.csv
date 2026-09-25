@@ -1962,3 +1962,19 @@ b92aac75152ab328,UI,,,UI,Mesma tecla que
 2f7d5fa49a67f87b,UI,,,UI,O que roda agora não é o arquivo que o BepInEx carregou.
 c3db47aff1d7221d,UI,,,UI,Os dois vão responder.
 0afead460dc30929,UI,,,UI,Todos vão responder.
+63bf045213cebbaf,UI,,,UI,Atualizar agora
+29adfc568a36baab,UI,,,UI,Sair e atualizar
+19766ed6ccb2f4a3,UI,,,UI,Cancelar
+df532670283df09b,UI,,,UI,Sair do jogo para atualizar? O progresso que você não salvou pode ser perdido.
+46e0ad3f4eb17a14,UI,,,UI,"O launcher não está instalado, então este mod não pode ser atualizado aqui. Execute o instalador de novo para adicioná-lo, ou abra a página da versão."
+db37d332162ee71f,UI,,,UI,"Não foi possível iniciar a atualização. Veja BepInEx/LogOutput.log, ou baixe a nova versão na página da versão."
+22614ace1aef7766,UI,,,UI,Launcher
+c7a708c5dca6db7c,UI,,,UI,A janela que abre antes do jogo quando ele é iniciado pelo launcher. O launcher lê estas configurações ao iniciar.
+435db04cc22e6547,UI,,,UI,Letras do logo
+64ef2dc2ace246ed,UI,,,UI,"Como MOD FRAMEWORK é desenhado no logo quando o launcher inicia: escrito à mão, um traço de cada vez, ou digitado uma letra de cada vez."
+88bbc75dfba2b514,UI,,,UI,Barra de progresso
+e07762a9e9a499f9,UI,,,UI,"Onde a barra de progresso fica na tela do logo: ao longo da borda inferior da janela, ou abaixo do texto."
+95a98bc81d9a8368,UI,,,UI,Escrita à mão
+b15b792b2b10eb15,UI,,,UI,Máquina de escrever
+3049c374deb390aa,UI,,,UI,Borda inferior
+6e7534dfb170b186,UI,,,UI,Abaixo do texto

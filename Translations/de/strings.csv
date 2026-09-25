@@ -1963,3 +1963,19 @@ b92aac75152ab328,UI,,,UI,Gleiche Taste wie
 2f7d5fa49a67f87b,UI,,,UI,"Was jetzt läuft, ist nicht die Datei, die BepInEx geladen hat."
 c3db47aff1d7221d,UI,,,UI,Beide reagieren darauf.
 0afead460dc30929,UI,,,UI,Alle reagieren darauf.
+63bf045213cebbaf,UI,,,UI,Jetzt aktualisieren
+29adfc568a36baab,UI,,,UI,Beenden und aktualisieren
+19766ed6ccb2f4a3,UI,,,UI,Abbrechen
+df532670283df09b,UI,,,UI,Spiel zum Aktualisieren beenden? Nicht gespeicherter Fortschritt kann verloren gehen.
+46e0ad3f4eb17a14,UI,,,UI,"Der Launcher ist nicht installiert, daher lässt sich dieser Mod hier nicht aktualisieren. Führe das Installationsprogramm erneut aus, um ihn hinzuzufügen, oder öffne die Release-Seite."
+db37d332162ee71f,UI,,,UI,Das Update konnte nicht gestartet werden. Sieh in BepInEx/LogOutput.log nach oder hol dir die neue Version von der Release-Seite.
+22614ace1aef7766,UI,,,UI,Launcher
+c7a708c5dca6db7c,UI,,,UI,"Das Fenster, das sich vor dem Spiel öffnet, wenn es über den Launcher gestartet wird. Der Launcher liest diese Einstellungen beim Start."
+435db04cc22e6547,UI,,,UI,Logo-Schriftzug
+64ef2dc2ace246ed,UI,,,UI,"Wie MOD FRAMEWORK beim Start des Launchers auf das Logo kommt: von Hand geschrieben, Strich für Strich, oder Buchstabe für Buchstabe getippt."
+88bbc75dfba2b514,UI,,,UI,Fortschrittsbalken
+e07762a9e9a499f9,UI,,,UI,Wo der Fortschrittsbalken auf dem Logo-Bildschirm sitzt: am unteren Rand des Fensters oder unter dem Text.
+95a98bc81d9a8368,UI,,,UI,Handschrift
+b15b792b2b10eb15,UI,,,UI,Schreibmaschine
+3049c374deb390aa,UI,,,UI,Unterer Rand
+6e7534dfb170b186,UI,,,UI,Unter dem Text

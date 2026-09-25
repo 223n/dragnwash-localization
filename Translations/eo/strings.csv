@@ -1957,3 +1957,19 @@ b92aac75152ab328,UI,,,UI,Sama klavo kiel
 2f7d5fa49a67f87b,UI,,,UI,"Kio nun funkcias ne estas la dosiero, kiun BepInEx ŝargis."
 c3db47aff1d7221d,UI,,,UI,Ambaŭ respondos al ĝi.
 0afead460dc30929,UI,,,UI,Ĉiuj respondos al ĝi.
+63bf045213cebbaf,UI,,,UI,Ĝisdatigi nun
+29adfc568a36baab,UI,,,UI,Eliri kaj ĝisdatigi
+19766ed6ccb2f4a3,UI,,,UI,Nuligi
+df532670283df09b,UI,,,UI,Ĉu eliri el la ludo por ĝisdatigi? Nekonservita progreso povas perdiĝi.
+46e0ad3f4eb17a14,UI,,,UI,"La lanĉilo ne estas instalita, do ĉi tiu modifo ne povas esti ĝisdatigita ĉi tie. Rulu la instalilon denove por aldoni ĝin, aŭ malfermu la eldonan paĝon."
+db37d332162ee71f,UI,,,UI,"Ne eblis komenci la ĝisdatigon. Vidu BepInEx/LogOutput.log, aŭ elŝutu la novan version de la eldona paĝo."
+22614ace1aef7766,UI,,,UI,Lanĉilo
+c7a708c5dca6db7c,UI,,,UI,"La fenestro, kiu malfermiĝas antaŭ la ludo, kiam ĝi estas startigita per la lanĉilo. La lanĉilo legas ĉi tiujn agordojn, kiam ĝi startas."
+435db04cc22e6547,UI,,,UI,Literoj de la emblemo
+64ef2dc2ace246ed,UI,,,UI,"Kiel MOD FRAMEWORK aperas sur la emblemo, kiam la lanĉilo startas: skribata permane, streko post streko, aŭ tajpata litero post litero."
+88bbc75dfba2b514,UI,,,UI,Progresbreto
+e07762a9e9a499f9,UI,,,UI,"Kie la progresbreto troviĝas sur la emblema ekrano: laŭ la malsupra rando de la fenestro, aŭ sub la teksto."
+95a98bc81d9a8368,UI,,,UI,Manskribo
+b15b792b2b10eb15,UI,,,UI,Skribmaŝino
+3049c374deb390aa,UI,,,UI,Malsupra rando
+6e7534dfb170b186,UI,,,UI,Sub la teksto

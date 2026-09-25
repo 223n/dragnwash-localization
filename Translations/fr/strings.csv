@@ -1958,3 +1958,19 @@ b92aac75152ab328,UI,,,UI,Même touche que
 2f7d5fa49a67f87b,UI,,,UI,Ce qui tourne maintenant n'est pas le fichier chargé par BepInEx.
 c3db47aff1d7221d,UI,,,UI,Les deux y répondront.
 0afead460dc30929,UI,,,UI,Tous y répondront.
+63bf045213cebbaf,UI,,,UI,Mettre à jour maintenant
+29adfc568a36baab,UI,,,UI,Quitter et mettre à jour
+19766ed6ccb2f4a3,UI,,,UI,Annuler
+df532670283df09b,UI,,,UI,Quitter le jeu pour faire la mise à jour ? La progression non sauvegardée peut être perdue.
+46e0ad3f4eb17a14,UI,,,UI,"Le lanceur n'est pas installé, ce mod ne peut donc pas être mis à jour ici. Relancez l'installateur pour l'ajouter, ou ouvrez la page de la version."
+db37d332162ee71f,UI,,,UI,"Impossible de lancer la mise à jour. Voir BepInEx/LogOutput.log, ou téléchargez la nouvelle version depuis la page de la version."
+22614ace1aef7766,UI,,,UI,Lanceur
+c7a708c5dca6db7c,UI,,,UI,La fenêtre qui s'ouvre avant le jeu quand il est lancé par le lanceur. Le lanceur lit ces réglages au démarrage.
+435db04cc22e6547,UI,,,UI,Lettrage du logo
+64ef2dc2ace246ed,UI,,,UI,"Comment MOD FRAMEWORK est dessiné sur le logo au démarrage du lanceur : écrit à la main, trait par trait, ou tapé lettre par lettre."
+88bbc75dfba2b514,UI,,,UI,Barre de progression
+e07762a9e9a499f9,UI,,,UI,"Où se place la barre de progression sur l'écran du logo : le long du bord inférieur de la fenêtre, ou sous le texte."
+95a98bc81d9a8368,UI,,,UI,Écriture manuscrite
+b15b792b2b10eb15,UI,,,UI,Machine à écrire
+3049c374deb390aa,UI,,,UI,Bord inférieur
+6e7534dfb170b186,UI,,,UI,Sous le texte
