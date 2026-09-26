@@ -93,7 +93,7 @@ Drag'n Wash Localizationのこれからの予定です。
   [NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)）。
   今は、実験的なインストールスクリプト（[`installer/experimental/install-macos.sh`](../installer/experimental/install-macos.sh)）で、
   UnityDoorstopの `ci` プレリリースのDoorstop（ゲームで試した4.6.0のビルドに固定）を入れ、ゲームをRosetta（x86_64）で動かし、Steamオーバーレイを引き継ぎます。
-  進み具合は [223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3) で確かめられます。
+  進み具合は [TomXV/dragnwash-modframework#85](https://github.com/TomXV/dragnwash-modframework/issues/85) で確かめられます。
   オーバーレイの引き継ぎは、2026-09-25に本家にマージされました（[NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121)、4.6.0に収録）。
   固定しているビルドを含め、Doorstop 4.6.0以降では、スクリプトによる書き換えは要らないので行いません。
   `ci` は同じURLのまま作り直されるので（前に固定していた4.5.0のビルドは、もうダウンロードできません）、スクリプトは4.6.0のビルドを、223nのフォークにプレリリースとして手を加えずに置いたコピー（[223n/UnityDoorstop `ci-4.6.0-97293a28`](https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28)）からダウンロードします。

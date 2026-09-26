@@ -845,7 +845,7 @@ TMPフックは画面に出る全文字列を拾うため、スライダーの�
   UnityDoorstop#107のarch対策と「動作確認」モードを持つ。
   リリースのzipには入れておらず、Macではまだ実行していない。
   修正版のBepInExが出たら `BEPINEX_URL` / `BEPINEX_SHA256` を差し替え、`KNOWN_ISSUE=0` にして試してから同梱する。
-- 追記（2026-09-25）: Apple A18 Pro / macOS 27.2で、動く組み合わせを手作業で確かめた（[223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3)。フォークに置いた下書きのissueで、本家にあらためて出す予定）。
+- 追記（2026-09-25）: Apple A18 Pro / macOS 27.2で、動く組み合わせを手作業で確かめた（[223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3)。フォークに置いた下書きのissueで、2026-09-26に本家に[TomXV/dragnwash-modframework#85](https://github.com/TomXV/dragnwash-modframework/issues/85)として出した）。
   BepInEx 5.4.23.5 `macos_universal` の `libdoorstop.dylib` と `run.sh` を、UnityDoorstopの `ci` プレリリースのものに差し替える。
   NeighTools/UnityDoorstop#108の修正（NeighTools/UnityDoorstop#117）が入っているのは、今はこのビルドだけで、安定版はまだない。
   ゲームはRosetta（x86_64）で動かす。

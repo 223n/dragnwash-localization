@@ -176,7 +176,7 @@ Deckで言語を変えるときは、コントローラーで **Options → 言�
 > 前に固定していた 4.5.0 のビルドは、2026-09-25 に `ci` が 4.6.0 に替わってから、もうダウンロードできません。
 > そのため、スクリプトは 4.6.0 のビルドを、223n のフォークにプレリリースとして手を加えずに置いたコピー（[223n/UnityDoorstop `ci-4.6.0-97293a28`](https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28)）からダウンロードし、SHA-256 を確かめます。
 > UnityDoorstop 4.6.0 の安定版が出て試せたら、そちらに切り替えます。
-> 進み具合は [223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3) で確かめられます。
+> 進み具合は [TomXV/dragnwash-modframework#85](https://github.com/TomXV/dragnwash-modframework/issues/85) で確かめられます。
 > ダウンロードした Doorstop が一致しないときや、もうダウンロードできない（HTTP 404）ときは、スクリプトはゲームのフォルダーを変えずに止まり、この issue を案内します。
 > 安定版の 4.6.0 には、UnityDoorstop の修正（[NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117) と [NeighTools/UnityDoorstop#114](https://github.com/NeighTools/UnityDoorstop/pull/114)）が両方とも入る見込みです。
 > どちらも、固定しているビルドにすでに入っているためです。

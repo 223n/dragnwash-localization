@@ -3,11 +3,10 @@
 #
 # !! EXPERIMENTAL, and not in the release zip. It installs what was checked by
 # !! hand on one Mac (Apple A18 Pro, macOS 27.2, the game's 9/12/2026 build),
-# !! following https://github.com/223n/dragnwash-modframework/issues/3 (a
-# !! draft issue in a fork, to be filed upstream). The script itself has been
-# !! run once on that Mac's real game, over the setup made by hand there (so
-# !! it downloaded nothing); a fresh install only against a test copy of a
-# !! game folder.
+# !! following https://github.com/TomXV/dragnwash-modframework/issues/85.
+# !! The script itself has been run once on that Mac's real game, over the
+# !! setup made by hand there (so it downloaded nothing); a fresh install
+# !! only against a test copy of a game folder.
 #
 # What it installs, and why:
 #   - BepInEx 5.4.23.5 for macOS, with its Doorstop (libdoorstop.dylib and
@@ -106,10 +105,8 @@ MARKER=".bepinex-installed-by-dragnwash-localization"
 # maybe patched, and is not this script's to delete.
 FW_MARKER=".modframework-installed-by-dragnwash-localization"
 BACKUP_SUFFIX=".dragnwash-backup"
-# Where the macOS setup is followed. For now it is a draft issue in a fork, to
-# be filed upstream in TomXV/dragnwash-modframework; point this there once it
-# is.
-MACOS_ISSUE="https://github.com/223n/dragnwash-modframework/issues/3"
+# Where the macOS setup is followed.
+MACOS_ISSUE="https://github.com/TomXV/dragnwash-modframework/issues/85"
 BEPINEX_URL="https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.5/BepInEx_macos_universal_5.4.23.5.zip"
 BEPINEX_SHA256="01c2ae782eb016dfd6c345a18dbd2dcafffb3d9d318449d6486689f426b4a323"
 # ---- The pinned Doorstop build. These four lines change together. ----
@@ -1197,8 +1194,8 @@ OV_OLD_IF='if [ -z "$DYLD_INSERT_LIBRARIES" ]; then'
 OV_OLD_SET='dyld_insert_libraries="${doorstop_name}:${DYLD_INSERT_LIBRARIES}"'
 # and the block that hands on Steam's overlay. UnityDoorstop 4.6.0 and later
 # have it (NeighTools/UnityDoorstop#121, merged 2026-09-25); into an older
-# run.sh this script's edit writes it (223n/dragnwash-modframework#3, step
-# 7). Only the comment above it differs:
+# run.sh this script's edit writes it (the overlay edit in the workaround of
+# TomXV/dragnwash-modframework#85). Only the comment above it differs:
 OV_NEW_INHERIT='inherited_libraries="${DYLD_INSERT_LIBRARIES:-${STEAM_DYLD_INSERT_LIBRARIES}}"'
 OV_NEW_IF='if [ -z "$inherited_libraries" ]; then'
 OV_NEW_SET='dyld_insert_libraries="${doorstop_name}:${inherited_libraries}"'
