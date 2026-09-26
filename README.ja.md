@@ -165,26 +165,24 @@ Deckで言語を変えるときは、コントローラーで **Options → 言�
 > 今のところの回避策を入れる**実験的な** macOS 用インストールスクリプトを、リポジトリに置いてあります
 > （[`installer/experimental/install-macos.sh`](installer/experimental/install-macos.sh)）。
 > リリースの zip には入っていません。
-> macOS 版 BepInEx 5.4.23.5 を、UnityDoorstop の `ci` プレリリースの Doorstop（ゲームで試した 4.5.0 のビルドに固定）と組み合わせて入れ、
+> macOS 版 BepInEx 5.4.23.5 を、UnityDoorstop の `ci` プレリリースの Doorstop（ゲームで試した 4.6.0 のビルドに固定）と組み合わせて入れ、
 > ゲームを Rosetta（x86_64）で動かします。
 > また、Steam オーバーレイをゲームへ引き継ぎ、Shift+Tab で開けるようにします。
 > この引き継ぎは、2026-09-25 に UnityDoorstop にも取り込まれました（[NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121)、4.6.0 に収録）。
-> Doorstop 4.6.0 以降では、スクリプトによる書き換えは要らないので行いません。
+> 固定しているビルドを含め、Doorstop 4.6.0 以降では、スクリプトによる書き換えは要らないので行いません。
 > Steam Deck 用スクリプトと同じく、Drag'n Wash ModFramework・Mod・言語・Steam の起動オプションも設定し、
 > ゲームを起動したあとで Mod が読み込まれたかを確かめる **動作確認** もできます。
-> `ci` プレリリースは同じ URL のまま作り直されるので、固定したビルドが変わったり、なくなったりすることがあります。
-> **今は、固定している 4.5.0 の `ci` ビルドが、もうダウンロードできません**（`ci` プレリリースが 4.6.0 に替わったため）。
-> そのため、Doorstop をダウンロードする必要があるときは、スクリプトはゲームのフォルダーを変えずに止まります。
-> このダウンロードが要るインストールは、次に固定し直すまで止まったままです。
-> 次に固定するのは、別の `ci` ビルドではなく、試したあとの UnityDoorstop 4.6.0 の安定版です。
+> `ci` プレリリースは、master ブランチが変わるたびに同じ URL のまま作り直されるので、そこに固定したファイルは変わったり、なくなったりすることがあります。
+> 前に固定していた 4.5.0 のビルドは、2026-09-25 に `ci` が 4.6.0 に替わってから、もうダウンロードできません。
+> そのため、スクリプトは 4.6.0 のビルドを、223n のフォークにプレリリースとして手を加えずに置いたコピー（[223n/UnityDoorstop `ci-4.6.0-97293a28`](https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28)）からダウンロードし、SHA-256 を確かめます。
+> UnityDoorstop 4.6.0 の安定版が出て試せたら、そちらに切り替えます。
 > 進み具合は [223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3) で確かめられます。
-> 固定した Doorstop がすでに入っているゲームのフォルダーには影響しません。
-> 固定した zip を保存してあれば、`--doorstop-zip <そのファイル>` を付けて実行するとインストールできます。
+> ダウンロードした Doorstop が一致しないときや、もうダウンロードできない（HTTP 404）ときは、スクリプトはゲームのフォルダーを変えずに止まり、この issue を案内します。
 > 安定版の 4.6.0 には、UnityDoorstop の修正（[NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117) と [NeighTools/UnityDoorstop#114](https://github.com/NeighTools/UnityDoorstop/pull/114)）が両方とも入る見込みです。
-> どちらも、固定している `ci` ビルドにすでに入っているためです。
+> どちらも、固定しているビルドにすでに入っているためです。
 > そのあとにスクリプトが待つのは、BepInEx の arm64 向けの修正（[BepInEx/BepInEx#1288](https://github.com/BepInEx/BepInEx/pull/1288) と [BepInEx/BepInEx#1402](https://github.com/BepInEx/BepInEx/pull/1402)）が入った BepInEx のリリースだけで、出たらそちらに切り替えます。
 > そのリリースなら、Rosetta なしのネイティブで動く見込みです（まだ試していません）。
-> この組み合わせは Apple A18 Pro / macOS 27.2 で、手作業で確かめました。
+> この組み合わせは、固定している 4.6.0 のビルドも含めて、Apple A18 Pro / macOS 27.2 で手作業で確かめました。
 > スクリプトは、同じ Mac の実際のゲームで、手作業で入れた環境の上から 1 回実行しました（すでに入っていたので、何もダウンロードしていません）。
 > 何も入っていない状態からのインストールは、ゲームのフォルダーのテスト用コピーでしか動かしていません。
 > ゲームは Steam から起動してください。ターミナルから起動すると、セーブが見つかりません。

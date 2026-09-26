@@ -15,14 +15,14 @@
 #     (DOORSTOP_URL and the lines around it). The Doorstop inside BepInEx
 #     5.4.23.5 cannot hook Unity 6.3 games (NeighTools/UnityDoorstop#108); so
 #     far only UnityDoorstop's "ci" pre-release has the fix
-#     (NeighTools/UnityDoorstop#117), and the pin is its 4.5.0 build. The ci
-#     build is made again under the same URL on every push to UnityDoorstop's
-#     master, and renamed when the version goes up: since 2026-09-25 it is
-#     4.6.0, and the pinned 4.5.0 file is gone (HTTP 404). When the pinned
-#     build is gone or has changed, installs that have to download it stay
-#     stopped until the next pin, which will be the stable UnityDoorstop 4.6.0
-#     release once it has been tried with the game, not another ci build.
-#     Follow that in the issue above.
+#     (NeighTools/UnityDoorstop#117). The pin is the ci 4.6.0 build that was
+#     tried with the game, downloaded from an unchanged copy of it that is
+#     kept as a pre-release in 223n's fork (223n/UnityDoorstop):
+#     the ci pre-release itself is built again under the same URL on every
+#     push to UnityDoorstop's master, which is how the ci 4.5.0 build pinned
+#     before went away (HTTP 404) on 2026-09-25. Once the stable UnityDoorstop
+#     4.6.0 is released and tried, the pin moves to it and the copy is no
+#     longer used. Follow that in the issue above.
 #   - The game is started as x86_64, under Rosetta (archpreference="x86_64" in
 #     run_bepinex.sh). Running natively on Apple silicon, BepInEx 5.4.23.5
 #     cannot apply Harmony patches, which its own preloader needs; the fix
@@ -31,17 +31,20 @@
 #   - run_bepinex.sh hands Steam's overlay libraries on to the game
 #     (STEAM_DYLD_INSERT_LIBRARIES), so Shift+Tab still opens the overlay.
 #     UnityDoorstop merged the same change on 2026-09-25
-#     (NeighTools/UnityDoorstop#121, in 4.6.0): the script only edits a run.sh
-#     from before that, and leaves one that already has it as it is.
+#     (NeighTools/UnityDoorstop#121, in 4.6.0), so the pinned build's run.sh
+#     already has it and is left as it is; the script only edits a
+#     run_bepinex.sh from before that (the ci 4.5.0 build pinned earlier, or
+#     one set up by hand).
 #   - Drag'n Wash ModFramework, the release mod-install.json names, when the
 #     game folder does not have it, then the mod itself.
 #
-# The plan is to wait for stable releases with the fixes, not to pin another
-# ci build. UnityDoorstop's fixes (NeighTools/UnityDoorstop#117, and
-# NeighTools/UnityDoorstop#114, which BepInEx/BepInEx#1402 needs) are both in
-# the pinned ci 4.5.0 build, so the stable UnityDoorstop 4.6.0, the next pin,
-# is expected to carry both. After it, the script only waits for a BepInEx
-# release with BepInEx's arm64 fixes (BepInEx/BepInEx#1288 and
+# The plan: the copy of the ci 4.6.0 build stays pinned until the stable
+# UnityDoorstop 4.6.0 is released and tried, and then that release is pinned
+# (the steps are next to DOORSTOP_URL). UnityDoorstop's fixes
+# (NeighTools/UnityDoorstop#117, and NeighTools/UnityDoorstop#114, which
+# BepInEx/BepInEx#1402 needs) are both in the pinned build, so the stable
+# 4.6.0 is expected to carry both. After it, the script only waits for a
+# BepInEx release with BepInEx's arm64 fixes (BepInEx/BepInEx#1288 and
 # BepInEx/BepInEx#1402), and moves to it; the game is then expected to run
 # natively without Rosetta - not yet tested.
 #
@@ -115,18 +118,49 @@ BEPINEX_SHA256="01c2ae782eb016dfd6c345a18dbd2dcafffb3d9d318449d6486689f426b4a323
 # DOORSTOP_DYLIB_SHA256  universal/libdoorstop.dylib in that zip. A game folder
 #                     that already has this file and a run_bepinex.sh made
 #                     from a Doorstop run.sh (ci_run_script) needs no download.
-# DOORSTOP_BUILD      how messages and the log name the build
+# DOORSTOP_BUILD      how messages and the log name the build (not where it
+#                     comes from: the download list takes the repository
+#                     from DOORSTOP_URL)
 #
-# Now: UnityDoorstop's "ci" pre-release 4.5.0, which was tried with the game
-# (the ci 4.6.0 was tried by hand too, but is not pinned).
-# The ci build is made again under the same URL on every push to
-# UnityDoorstop's master, and when its version goes up the file is renamed and
-# the old one removed: since master 97293a28 (2026-09-25) it is
-# doorstop_macos_release_4.6.0.zip, and the URL below answers 404. So installs
-# that have to download the Doorstop stop, with a message that sends users to
-# MACOS_ISSUE; a game folder that already has the pinned libdoorstop.dylib,
-# and --doorstop-zip with a saved copy of the pinned zip, still work.
-# The decision is to wait for the stable release, not to pin the ci 4.6.0.
+# Now: UnityDoorstop's ci 4.6.0 build, the doorstop_macos_release_4.6.0.zip
+# that its master 97293a28 built (upstream Build run 36186569352) and that was
+# published to the "ci" pre-release on 2026-09-25 20:37 UTC, downloaded from an
+# unchanged copy kept as a pre-release in 223n's fork:
+#   https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28
+# Its tag is at the same commit, so GitHub's source archives of that tag are
+# the source of the build; it is LGPL-2.1, like UnityDoorstop, and the LICENSE
+# file is in the zip. This build was tried with the game on the Mac named at
+# the top, set up by hand and then with this script run over that setup (so
+# the script downloaded nothing); a fresh install on the real game is not
+# tested yet. Pinned on 2026-09-26.
+#
+# Why a copy: the ci pre-release is built again under the same URL on every
+# push to UnityDoorstop's master (10 pushes from 2026-09-20 to 2026-09-25), so
+# its bytes change, and when the version goes up the file is renamed and the
+# old one removed. That is how the pin before this one, the ci 4.5.0 build
+# (master d8973b22, .../releases/download/ci/doorstop_macos_release_4.5.0.zip),
+# went away (HTTP 404) when ci became 4.6.0 on 2026-09-25 (master 97293a28,
+# after NeighTools/UnityDoorstop#121), and fresh installs that had to download
+# the Doorstop were blocked. The first decision (2026-09-26) was to wait for
+# the stable 4.6.0; it was revised the same day so that fresh installs work
+# now, from a copy that keeps the tried bytes at a URL that no push to
+# UnityDoorstop changes. The ci URL itself is not pinned again for that
+# reason. The ci 4.6.0 has the same libdoorstop.dylib as the ci 4.5.0, byte for
+# byte, so a game folder set up from the 4.5.0 build needs no download and
+# keeps its run_bepinex.sh (the overlay edit below adds the hand-over when it
+# is missing).
+#
+# Should the copy be removed, or GitHub serve other bytes under its URL,
+# installs that have to download the Doorstop stop without changing anything,
+# with a message that sends users to MACOS_ISSUE; a game folder that already
+# has the pinned libdoorstop.dylib, and --doorstop-zip with a saved copy of the
+# pinned zip, still work.
+#
+# For the pull request to TomXV/dragnwash-localization: its maintainer may
+# prefer to keep the same zip in a release of their own. Then, of the four
+# lines, only DOORSTOP_URL changes; the SHA-256 values and DOORSTOP_BUILD
+# stay as they are. The links to the copy move with it: the header at the
+# top, "Now:" above, README*.md and docs/ROADMAP*.md.
 #
 # When the stable UnityDoorstop 4.6.0 is released: try it with the game on a
 # Mac, then set these four lines to
@@ -134,25 +168,32 @@ BEPINEX_SHA256="01c2ae782eb016dfd6c345a18dbd2dcafffb3d9d318449d6486689f426b4a323
 #   DOORSTOP_SHA256="<shasum -a 256 of that zip>"
 #   DOORSTOP_DYLIB_SHA256="<shasum -a 256 of universal/libdoorstop.dylib in it>"
 #   DOORSTOP_BUILD="v4.6.0 release"
-# and say so in MACOS_ISSUE. Nothing else has to change: the zip has the same
-# layout (universal/libdoorstop.dylib, run.sh, .doorstop_version), and the
-# message parts about the ci build's churn and the coming stable release
-# (ds_ci) are shown only while DOORSTOP_URL points at the ci pre-release.
-# 4.6.0's run.sh already hands on Steam's overlay (NeighTools/UnityDoorstop#121),
-# so the overlay edit in configure_run_script finds it and does nothing. (The
-# ci 4.6.0 zip has the same libdoorstop.dylib as the ci 4.5.0 one, byte for
-# byte; whether the stable one does too is to be seen. If it does, a game
-# folder set up from the 4.5.0 build keeps its run_bepinex.sh, which this
-# script already gave the overlay hand-over, and needs no download.)
+# and say so in MACOS_ISSUE. The release replaces the copy; keep the copy
+# downloadable for a while all the same, since copies of this script from
+# before the switch still fetch it. (UnityDoorstop already has a tag v4.6.0 at
+# master 97293a28, and its tag build succeeded, but no v4.6.0 release was
+# published as of 2026-09-26.) Nothing else has to change: the zip has the
+# same layout (universal/libdoorstop.dylib, run.sh, .doorstop_version), and the
+# stop message leaves out the part about the ci pre-release's churn (ds_ci) as
+# it does for the copy, since that part is only added for a DOORSTOP_URL on the
+# ci pre-release itself. The stable run.sh is expected to hand on Steam's
+# overlay like the ci 4.6.0 one (NeighTools/UnityDoorstop#121), so the overlay
+# edit in configure_run_script finds it and does nothing. If the stable
+# libdoorstop.dylib is the pinned one byte for byte, game folders set up from
+# the ci builds need no download; otherwise their next install downloads the
+# release and replaces libdoorstop.dylib and run_bepinex.sh.
 #
 # Later, the archpreference line in configure_run_script is expected to go
 # once BepInEx's arm64 fixes (BepInEx/BepInEx#1288 and BepInEx/BepInEx#1402)
 # are released, so the game runs natively without Rosetta - not yet tested.
-DOORSTOP_URL="https://github.com/NeighTools/UnityDoorstop/releases/download/ci/doorstop_macos_release_4.5.0.zip"
-DOORSTOP_SHA256="025296d7339c72cce3020d46efd91823802ad06feb18706dd738f90bc762d649"
+DOORSTOP_URL="https://github.com/223n/UnityDoorstop/releases/download/ci-4.6.0-97293a28/doorstop_macos_release_4.6.0.zip"
+DOORSTOP_SHA256="fa3c9e4638f82873620b7e7e12ce1730ce01cdc23a7ba3bac2e6bfa31c0e929d"
 DOORSTOP_DYLIB_SHA256="5f31b9fca678536ed1636206f47b77431ac5b972ff92a0a2badf84bc065f9562"
-DOORSTOP_BUILD="ci pre-release 4.5.0, master d8973b22, built 2026-09-25 11:11 UTC"
+DOORSTOP_BUILD="ci 4.6.0 build of UnityDoorstop master 97293a28, unchanged copy"
 # ---- end of the pinned Doorstop build ----
+# The GitHub repository DOORSTOP_URL downloads from, for the download list.
+DOORSTOP_REPO="${DOORSTOP_URL#https://github.com/}"
+DOORSTOP_REPO="${DOORSTOP_REPO%%/releases/*}"
 FRAMEWORK_REPO="TomXV/dragnwash-modframework"
 FRAMEWORK_PREFIX="DragNWash.ModFramework"
 FRAMEWORK_PATCHER="DragNWash.ModFramework.Preloader.dll"
@@ -411,8 +452,9 @@ Install Rosetta in Terminal, then run this script again:
         zh:ds_ok) echo "Doorstop：校验通过，已放置" ;;
         *:ds_ok) echo "Doorstop: verified and put in place" ;;
         # The pinned Doorstop cannot be used: ds_blocked_text puts together
-        # what happened (ds_bad or ds_gone), ds_ci while the pin is a ci build,
-        # and ds_blocked.
+        # what happened (ds_bad or ds_gone), ds_ci only when DOORSTOP_URL is
+        # on UnityDoorstop's ci pre-release itself (not the copy pinned now,
+        # nor a release), and ds_blocked.
         ja:ds_bad) echo "ダウンロードした Doorstop は、このスクリプトで確かめたビルドではありません（SHA-256 不一致）。そのため導入していません。" ;;
         zh:ds_bad) echo "下载的 Doorstop 不是此脚本测试过的版本（SHA-256 不一致），因此没有安装。" ;;
         *:ds_bad) echo "The Doorstop download is not the build this script was tested with (SHA-256 mismatch), so it was not installed." ;;
@@ -422,14 +464,14 @@ Install Rosetta in Terminal, then run this script again:
         ja:ds_ci) echo "UnityDoorstop の「ci」プレリリースは、master ブランチが変わるたびに同じ URL のまま作り直されます。版が上がるとファイル名が変わり、前のファイルは消えます。これは、壊れているのではなく新しいビルドに替わったためである可能性が高いです。ただし、このスクリプトは新しいビルドを固定していません。次は UnityDoorstop 4.6.0 の安定版が出る見込みで、それを試してから固定します。" ;;
         zh:ds_ci) echo "UnityDoorstop 的「ci」预发布版每当 master 分支变化时都会以相同的 URL 重新生成；版本号提升时文件名也会改变，旧文件会被删除。因此这很可能是换成了更新的版本，而不是文件损坏；但此脚本没有固定新版本。预计接下来会发布 UnityDoorstop 4.6.0 稳定版，测试后脚本将固定它。" ;;
         *:ds_ci) echo "UnityDoorstop's \"ci\" pre-release is made again under the same URL whenever its master branch changes, and when its version goes up, the file gets a new name and the old one is removed. So this most likely means a newer build rather than a damaged one, but the script does not pin that build. A stable UnityDoorstop 4.6.0 release is expected next; the script will pin it once it has been tested." ;;
-        ja:ds_blocked) echo "スクリプトの管理者が新しいビルドを試してスクリプトに固定するまで、このスクリプトではインストールできません。
-進み具合は $MACOS_ISSUE で確かめられます。新しいビルドのことがまだ書かれていなければ、https://github.com/TomXV/dragnwash-localization/issues で知らせてください。
+        ja:ds_blocked) echo "スクリプトの管理者が、ゲームで確かめてあってダウンロードできる Doorstop のビルドをスクリプトに固定するまで、このスクリプトではインストールできません。
+進み具合は $MACOS_ISSUE で確かめられます。このことがまだ書かれていなければ、https://github.com/TomXV/dragnwash-localization/issues で知らせてください。
 確かめたビルド（${DOORSTOP_URL##*/}、SHA-256 ${DOORSTOP_SHA256}）を保存してあれば、--doorstop-zip <そのファイル> を付けてもう一度実行するとインストールできます。" ;;
-        zh:ds_blocked) echo "在脚本维护者测试新版本并将其固定到脚本中之前，无法用此脚本安装。
-进展可在 $MACOS_ISSUE 查看；如果那里还没有提到新版本，请在 https://github.com/TomXV/dragnwash-localization/issues 报告。
+        zh:ds_blocked) echo "在脚本维护者把一个用游戏测试过、并且可以下载的 Doorstop 版本固定到脚本中之前，无法用此脚本安装。
+进展可在 $MACOS_ISSUE 查看；如果那里还没有提到这个问题，请在 https://github.com/TomXV/dragnwash-localization/issues 报告。
 如果保存了测试过的版本（${DOORSTOP_URL##*/}，SHA-256 ${DOORSTOP_SHA256}），加上 --doorstop-zip <该文件> 再次运行即可安装。" ;;
-        *:ds_blocked) echo "Installing with this script is blocked until its maintainer has tested a new build and pinned it in the script.
-You can follow that at $MACOS_ISSUE. If the new build is not mentioned there yet, please report it at https://github.com/TomXV/dragnwash-localization/issues.
+        *:ds_blocked) echo "Installing with this script is blocked until its maintainer has pinned a Doorstop build that was tested with the game and can be downloaded.
+You can follow that at $MACOS_ISSUE. If this is not mentioned there yet, please report it at https://github.com/TomXV/dragnwash-localization/issues.
 If you kept a copy of the tested build (${DOORSTOP_URL##*/}, SHA-256 $DOORSTOP_SHA256), run the script again with --doorstop-zip <that file> to install with it." ;;
         ja:ds_pin_bad) echo "Doorstop の zip に、このスクリプトが想定する libdoorstop.dylib が入っていません（${BAD_PART}、SHA-256 不一致）。スクリプトに固定した値どうしが合っていません。https://github.com/TomXV/dragnwash-localization/issues で知らせてください。" ;;
         zh:ds_pin_bad) echo "Doorstop 的 zip 中没有此脚本预期的 libdoorstop.dylib（${BAD_PART}，SHA-256 不一致）。脚本中固定的值互相不符，请在 https://github.com/TomXV/dragnwash-localization/issues 报告。" ;;
@@ -929,8 +971,12 @@ $(t unchanged)"
 }
 
 # Why the pinned Doorstop was not installed: <key> is what happened (ds_bad or
-# ds_gone). While the pin is a ci build, ds_ci explains the ci churn and names
-# the release that is expected next.
+# ds_gone). ds_ci, which explains the ci pre-release's churn and names the
+# release that is expected next, is added only when DOORSTOP_URL is on the ci
+# pre-release itself (.../releases/download/ci/...). The pin is not: it is an
+# unchanged copy under a tag of its own, and later a release, and for those a
+# 404 or other bytes mean that the file was removed or replaced; the message
+# then says only that, and ds_blocked.
 ds_blocked_text() {  # ds_blocked_text <key>
     t "$1"
     case "$DOORSTOP_URL" in */releases/download/ci/*) t ds_ci ;; esac
@@ -1789,7 +1835,7 @@ if [ "$MODE" = install ]; then
     fi
     if [ "$NEED_DS" -eq 1 ] && [ -z "$DOORSTOP_ZIP" ]; then
         downloads="$downloads
-  ${DOORSTOP_URL##*/} (NeighTools/UnityDoorstop, $DOORSTOP_BUILD)"
+  ${DOORSTOP_URL##*/} ($DOORSTOP_REPO, $DOORSTOP_BUILD)"
     fi
     if [ "$NEED_FW" -eq 1 ] && [ -z "$FRAMEWORK_ZIP" ]; then
         downloads="$downloads
@@ -1815,11 +1861,11 @@ $(t unchanged)"
         fi
     fi
     if [ "$NEED_DS" -eq 1 ]; then
-        # Only the pinned build is installed. A ci build changes under the
-        # same URL, and is removed when UnityDoorstop's version goes up, so a
-        # mismatch or a 404 here most likely means a newer build rather than
-        # a broken download. Either way it is not the one that was tested:
-        # the same message for both says installs wait for a new pin, and how
+        # Only the pinned build is installed. The pinned file is not meant to
+        # change (an unchanged copy now, a release later), so a mismatch or a
+        # 404 here means it was replaced or removed, or altered on the way.
+        # Either way it is not the one that was tested: the same message for
+        # both says installs wait for a new pin, where to follow that, and how
         # to install with a saved copy meanwhile. Any other failed download
         # (no network, say) gets the plain download message.
         get_zip "$DOORSTOP_ZIP" "$DOORSTOP_URL" "$WORK/doorstop.zip" "$(t ds_get)" ds_gone_text

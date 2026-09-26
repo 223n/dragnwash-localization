@@ -92,15 +92,14 @@ Drag'n Wash Localizationのこれからの予定です。
 - macOS: BepInEx 5.4.23.5に入っているDoorstopは、Unity 6.3にフックできません（
   [NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)）。
   今は、実験的なインストールスクリプト（[`installer/experimental/install-macos.sh`](../installer/experimental/install-macos.sh)）で、
-  UnityDoorstopの `ci` プレリリースのDoorstop（ゲームで試した4.5.0のビルドに固定）を入れ、ゲームをRosetta（x86_64）で動かし、Steamオーバーレイを引き継ぎます。
+  UnityDoorstopの `ci` プレリリースのDoorstop（ゲームで試した4.6.0のビルドに固定）を入れ、ゲームをRosetta（x86_64）で動かし、Steamオーバーレイを引き継ぎます。
   進み具合は [223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3) で確かめられます。
   オーバーレイの引き継ぎは、2026-09-25に本家にマージされました（[NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121)、4.6.0に収録）。
-  Doorstop 4.6.0以降では、スクリプトによる書き換えは要らないので行いません。
-  固定している4.5.0の `ci` ビルドは、もうダウンロードできません。
-  そのため今は、Doorstopをダウンロードする必要があるとき、スクリプトは何も変えずに止まります。
-  次は、別の `ci` ビルドではなく、UnityDoorstop 4.6.0の安定版が出て試せたら、それに固定します。
+  固定しているビルドを含め、Doorstop 4.6.0以降では、スクリプトによる書き換えは要らないので行いません。
+  `ci` は同じURLのまま作り直されるので（前に固定していた4.5.0のビルドは、もうダウンロードできません）、スクリプトは4.6.0のビルドを、223nのフォークにプレリリースとして手を加えずに置いたコピー（[223n/UnityDoorstop `ci-4.6.0-97293a28`](https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28)）からダウンロードします。
+  次は、UnityDoorstop 4.6.0の安定版が出て試せたら、コピーに代えてそれに固定します。
   4.6.0の安定版には、UnityDoorstopの修正（[NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117) と [NeighTools/UnityDoorstop#114](https://github.com/NeighTools/UnityDoorstop/pull/114)）が両方とも入る見込みです。
-  どちらも、固定している `ci` ビルドにすでに入っているためです。
+  どちらも、固定しているビルドにすでに入っているためです。
   そのあとにスクリプトが待つのは、BepInExのarm64向けの修正（[BepInEx/BepInEx#1288](https://github.com/BepInEx/BepInEx/pull/1288) と [BepInEx/BepInEx#1402](https://github.com/BepInEx/BepInEx/pull/1402)）が入ったBepInExのリリースだけで、出たらそちらに切り替えます。
   そのリリースなら、Rosettaなしのネイティブ（arm64）で動く見込みです（まだ試していません）。
 
