@@ -152,20 +152,41 @@ Deckで言語を変えるときは、コントローラーで **Options → 言�
 - スティックと十字キーで、ポインターが乗っている一覧をスクロール
 
 > [!WARNING]
-> **macOS では現在動作しません。**
-> Drag'n Wash は Unity 6.3 で作られていて、BepInEx 5.4.23.5 が macOS で使う読み込み役（Doorstop）が、
-> まだ Unity 6.3 のゲームに割り込めません（[NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)）。
+> **macOS では今のところ、実験的な方法でしか動きません。**
+> Drag'n Wash は Unity 6.3 で作られていて、macOS 版 BepInEx 5.4.23.5 に入っている読み込み役（Doorstop）は、
+> Unity 6.3 のゲームに割り込めません（[NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)）。
 > Doorstop 自体はゲームに読み込まれますが BepInEx が起動せず、`BepInEx/LogOutput.log` も `BepInEx/config` も作られないまま、
 > ゲームは英語で始まります。
 > Apple M3 Pro / macOS 26.6 で、Apple シリコンのままでも Rosetta でも同じ結果になることを確かめました。
-> BepInEx 側の問題なので、この Mod からは回避できません。修正の入った BepInEx が出たら、あらためて macOS で試します。
+> この不具合の修正（[NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117)）が入っているのは、今は UnityDoorstop の `ci` プレリリースだけです。
+> また、Apple シリコンのネイティブ実行では BepInEx 5.4.23.5 がパッチを当てられず、
+> その修正（[BepInEx/BepInEx#1402](https://github.com/BepInEx/BepInEx/pull/1402)）もまだリリースされていません。
 >
-> その日のために、**実験的な** macOS 用インストールスクリプトをリポジトリに置いてあります
+> 今のところの回避策を入れる**実験的な** macOS 用インストールスクリプトを、リポジトリに置いてあります
 > （[`installer/experimental/install-macos.sh`](installer/experimental/install-macos.sh)）。
-> Steam Deck 用スクリプトと同じく、macOS 版 BepInEx・Mod・言語・Steam の起動オプションを設定し、
-> ゲームを起動したあとで Mod が読み込まれたかを確かめる **動作確認** もできます。
-> Mac ではまだ一度も動かしていません。導入する前に、上の不具合について確認が出ます。
 > リリースの zip には入っていません。
+> macOS 版 BepInEx 5.4.23.5 を、UnityDoorstop の `ci` プレリリースの Doorstop（ゲームで試した 4.6.0 のビルドに固定）と組み合わせて入れ、
+> ゲームを Rosetta（x86_64）で動かします。
+> また、Steam オーバーレイをゲームへ引き継ぎ、Shift+Tab で開けるようにします。
+> この引き継ぎは、2026-09-25 に UnityDoorstop にも取り込まれました（[NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121)、4.6.0 に収録）。
+> 固定しているビルドを含め、Doorstop 4.6.0 以降では、スクリプトによる書き換えは要らないので行いません。
+> Steam Deck 用スクリプトと同じく、Drag'n Wash ModFramework・Mod・言語・Steam の起動オプションも設定し、
+> ゲームを起動したあとで Mod が読み込まれたかを確かめる **動作確認** もできます。
+> `ci` プレリリースは、master ブランチが変わるたびに同じ URL のまま作り直されるので、そこに固定したファイルは変わったり、なくなったりすることがあります。
+> 前に固定していた 4.5.0 のビルドは、2026-09-25 に `ci` が 4.6.0 に替わってから、もうダウンロードできません。
+> そのため、スクリプトは 4.6.0 のビルドを、このリポジトリのプレリリースに手を加えずに置いたコピー（[`doorstop-4.6.0-ci-97293a28`](https://github.com/TomXV/dragnwash-localization/releases/tag/doorstop-4.6.0-ci-97293a28)）からダウンロードし、SHA-256 を確かめます。
+> UnityDoorstop 4.6.0 の安定版が出て試せたら、そちらに切り替えます。
+> 進み具合は [TomXV/dragnwash-modframework#85](https://github.com/TomXV/dragnwash-modframework/issues/85) で確かめられます。
+> ダウンロードした Doorstop が一致しないときや、もうダウンロードできない（HTTP 404）ときは、スクリプトはゲームのフォルダーを変えずに止まり、この issue を案内します。
+> 安定版の 4.6.0 には、UnityDoorstop の修正（[NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117) と [NeighTools/UnityDoorstop#114](https://github.com/NeighTools/UnityDoorstop/pull/114)）が両方とも入る見込みです。
+> どちらも、固定しているビルドにすでに入っているためです。
+> そのあとにスクリプトが待つのは、BepInEx の arm64 向けの修正（[BepInEx/BepInEx#1288](https://github.com/BepInEx/BepInEx/pull/1288) と [BepInEx/BepInEx#1402](https://github.com/BepInEx/BepInEx/pull/1402)）が入った BepInEx のリリースだけで、出たらそちらに切り替えます。
+> そのリリースなら、Rosetta なしのネイティブで動く見込みです（まだ試していません）。
+> この組み合わせは、固定している 4.6.0 のビルドも含めて、Apple A18 Pro / macOS 27.2 で手作業で確かめました。
+> スクリプトは、同じ Mac の実際のゲームで、手作業で入れた環境の上から 1 回実行しました（すでに入っていたので、何もダウンロードしていません）。
+> 何も入っていない状態からのインストールは、ゲームのフォルダーのテスト用コピーでしか動かしていません。
+> ゲームは Steam から起動してください。ターミナルから起動すると、セーブが見つかりません。
+> 起動中にゲームのウィンドウが前面にないと、タイトル画面の前で止まったように見えることがあります。ウィンドウをクリックすると進みます（同じ Mac で確かめました）。
 
 ### 手動で導入する
 
@@ -511,7 +532,7 @@ zip には Drag'n Wash ModFramework を入れなくなり、
 **v0.4.0** で13言語になり、言語ごとのフォント準備、Aboutタブ、日英中に切り替えられるインストーラーが入りました。
 
 **v0.3.0** でSteam Deckに対応しました。Windows on ARMでも動くことを確かめてあります（ゲーム本体の都合で `-force-d3d11` が要ります）。
-macOSは、BepInEx側の既知の不具合のため今は動きません（[Steam Deck / Linux](#steam-deck--linux動作確認済み) の下の注意書きを見てください）。
+macOSは、BepInEx側の既知の不具合のため、今は実験的な方法でしか動きません（[Steam Deck / Linux](#steam-deck--linux動作確認済み) の下の注意書きを見てください）。
 BepInExプラグインの骨格、UI文字列・会話文の日本語/中国語差し替え、CJKフォント表示、会話・UIの一括抽出、
 ゲーム内デバッグメニュー、レイアウト崩れ検出、翻訳者向けドキュメント、リリース手順も、作って実機で確かめてあります。
 
