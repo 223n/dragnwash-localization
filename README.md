@@ -315,9 +315,11 @@ To avoid it, do one of these:
 
 ## Current status
 
-v1.5.0 is the latest release. In it, the F1 window's Activity log, Translation, Saves and About tabs were gone through one by one, and every language pack translates the new Mods screen. The zip no longer carries Drag'n Wash ModFramework: `Install.exe` and `install-steamdeck.sh` fetch ModFramework 1.5.0 from its own release and check it before installing.
+v1.6.0 is the latest release. It adds Turkish, translated by a native speaker (DarkBloodKing), and translates Drag'n Wash ModFramework 1.6.0's launcher and **Update now** in every pack. The installers now fetch ModFramework 1.6.0, whose launcher can bring this mod up to date before you play. On macOS, an experimental install script runs the mod for now (see the note under Installation).
 
 Earlier releases, newest first:
+
+- v1.5.0 went through the F1 window's Activity log, Translation, Saves and About tabs one by one, translated the new Mods screen in every pack, and stopped carrying Drag'n Wash ModFramework in the zip: `Install.exe` and `install-steamdeck.sh` fetch it from its own release and check it before installing.
 
 - v1.4.0 made text from other mods translatable (experimental and off by default, [#28](https://github.com/TomXV/dragnwash-localization/issues/28)) and pictures translatable per language ([#4](https://github.com/TomXV/dragnwash-localization/issues/4); that's the machinery, and no pictures have been drawn yet), on Drag'n Wash ModFramework 1.4.0.
 

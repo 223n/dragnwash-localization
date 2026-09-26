@@ -4,6 +4,13 @@
 
 Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-26.
 
+## Released: v1.6.0 (2026-09-26)
+
+- Turkish, translated by a native speaker (DarkBloodKing).
+- Every language pack translates Drag'n Wash ModFramework 1.6.0's launcher, **Update now** and the launcher's settings.
+- The installers fetch ModFramework 1.6.0, with its launcher.
+- macOS: an experimental install script (`installer/experimental/install-macos.sh`, by 223n) runs the mod through a Doorstop build that isn't released yet, under Rosetta.
+
 ## Released: v1.5.0 (2026-09-23)
 
 - The F1 window's Activity log, Translation, Saves and About tabs, gone through one by one.
