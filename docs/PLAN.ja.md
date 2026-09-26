@@ -895,7 +895,7 @@ TMPフックは画面に出る全文字列を拾うため、スライダーの�
   HTTPのステータスはcurlの `%{http_code}` で見る。macOSに入っているcurl（試したMacでは8.7.1）は、HTTP/2の404を終了コード22ではなく56で返すため。
   DoorstopのURL、zipのSHA-256、dylibのSHA-256、ビルドの名前は1か所にまとめ、安定版の4.6.0が出たときに何をどう変えるかをコメントに書いた。`ci` 版が作り直されることの説明は、URLが `ci` 版のときだけ出す。`libdoorstop.dylib` が固定したハッシュと合わないzipは使わない。
 - 方針の見直し（2026-09-26）: 新規インストールを今すぐ動かせるように、`install-macos.sh` を、ゲームで試した `ci` 版4.6.0のビルドに固定する。
-  ダウンロード元は、223nのフォークにプレリリースとして手を加えずに置いたコピー（[223n/UnityDoorstop `ci-4.6.0-97293a28`](https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28)）。
+  ダウンロード元は、このリポジトリのプレリリースに手を加えずに置いたコピー（[`doorstop-4.6.0-ci-97293a28`](https://github.com/TomXV/dragnwash-localization/releases/tag/doorstop-4.6.0-ci-97293a28)）。
   `ci` のURLそのものに固定しないのは、`ci` プレリリースがUnityDoorstopのmasterへのpushのたびに同じURLのまま作り直され（2026-09-20から2026-09-25までに10回）、固定しても4.5.0のときと同じく次のpushで壊れるため。
   コピーは、本家のBuild run 36186569352（master `97293a28`）が2026-09-25 20:37 UTCに `ci` へ出した `doorstop_macos_release_4.6.0.zip` と、バイト単位で同じ。
   zipのSHA-256は `fa3c9e4638f82873620b7e7e12ce1730ce01cdc23a7ba3bac2e6bfa31c0e929d`、`universal/libdoorstop.dylib` は `5f31b9fca678536ed1636206f47b77431ac5b972ff92a0a2badf84bc065f9562`（`ci` 版4.5.0のものと同じ）。

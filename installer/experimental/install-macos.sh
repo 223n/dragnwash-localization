@@ -16,7 +16,7 @@
 #     far only UnityDoorstop's "ci" pre-release has the fix
 #     (NeighTools/UnityDoorstop#117). The pin is the ci 4.6.0 build that was
 #     tried with the game, downloaded from an unchanged copy of it that is
-#     kept as a pre-release in 223n's fork (223n/UnityDoorstop):
+#     kept as a pre-release of this repository (doorstop-4.6.0-ci-97293a28):
 #     the ci pre-release itself is built again under the same URL on every
 #     push to UnityDoorstop's master, which is how the ci 4.5.0 build pinned
 #     before went away (HTTP 404) on 2026-09-25. Once the stable UnityDoorstop
@@ -122,10 +122,11 @@ BEPINEX_SHA256="01c2ae782eb016dfd6c345a18dbd2dcafffb3d9d318449d6486689f426b4a323
 # Now: UnityDoorstop's ci 4.6.0 build, the doorstop_macos_release_4.6.0.zip
 # that its master 97293a28 built (upstream Build run 36186569352) and that was
 # published to the "ci" pre-release on 2026-09-25 20:37 UTC, downloaded from an
-# unchanged copy kept as a pre-release in 223n's fork:
-#   https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28
-# Its tag is at the same commit, so GitHub's source archives of that tag are
-# the source of the build; it is LGPL-2.1, like UnityDoorstop, and the LICENSE
+# unchanged copy kept as a pre-release of this repository:
+#   https://github.com/TomXV/dragnwash-localization/releases/tag/doorstop-4.6.0-ci-97293a28
+# (first kept in 223n's fork, 223n/UnityDoorstop ci-4.6.0-97293a28). The source
+# of the build is UnityDoorstop's master 97293a28, not the source archives of
+# that release, which are this repository's; it is LGPL-2.1, like UnityDoorstop, and the LICENSE
 # file is in the zip. This build was tried with the game on the Mac named at
 # the top, set up by hand and then with this script run over that setup (so
 # the script downloaded nothing); a fresh install on the real game is not
@@ -183,7 +184,7 @@ BEPINEX_SHA256="01c2ae782eb016dfd6c345a18dbd2dcafffb3d9d318449d6486689f426b4a323
 # Later, the archpreference line in configure_run_script is expected to go
 # once BepInEx's arm64 fixes (BepInEx/BepInEx#1288 and BepInEx/BepInEx#1402)
 # are released, so the game runs natively without Rosetta - not yet tested.
-DOORSTOP_URL="https://github.com/223n/UnityDoorstop/releases/download/ci-4.6.0-97293a28/doorstop_macos_release_4.6.0.zip"
+DOORSTOP_URL="https://github.com/TomXV/dragnwash-localization/releases/download/doorstop-4.6.0-ci-97293a28/doorstop_macos_release_4.6.0.zip"
 DOORSTOP_SHA256="fa3c9e4638f82873620b7e7e12ce1730ce01cdc23a7ba3bac2e6bfa31c0e929d"
 DOORSTOP_DYLIB_SHA256="5f31b9fca678536ed1636206f47b77431ac5b972ff92a0a2badf84bc065f9562"
 DOORSTOP_BUILD="ci 4.6.0 build of UnityDoorstop master 97293a28, unchanged copy"

@@ -96,7 +96,7 @@ Drag'n Wash Localizationのこれからの予定です。
   進み具合は [TomXV/dragnwash-modframework#85](https://github.com/TomXV/dragnwash-modframework/issues/85) で確かめられます。
   オーバーレイの引き継ぎは、2026-09-25に本家にマージされました（[NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121)、4.6.0に収録）。
   固定しているビルドを含め、Doorstop 4.6.0以降では、スクリプトによる書き換えは要らないので行いません。
-  `ci` は同じURLのまま作り直されるので（前に固定していた4.5.0のビルドは、もうダウンロードできません）、スクリプトは4.6.0のビルドを、223nのフォークにプレリリースとして手を加えずに置いたコピー（[223n/UnityDoorstop `ci-4.6.0-97293a28`](https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28)）からダウンロードします。
+  `ci` は同じURLのまま作り直されるので（前に固定していた4.5.0のビルドは、もうダウンロードできません）、スクリプトは4.6.0のビルドを、このリポジトリのプレリリースに手を加えずに置いたコピー（[`doorstop-4.6.0-ci-97293a28`](https://github.com/TomXV/dragnwash-localization/releases/tag/doorstop-4.6.0-ci-97293a28)）からダウンロードします。
   次は、UnityDoorstop 4.6.0の安定版が出て試せたら、コピーに代えてそれに固定します。
   4.6.0の安定版には、UnityDoorstopの修正（[NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117) と [NeighTools/UnityDoorstop#114](https://github.com/NeighTools/UnityDoorstop/pull/114)）が両方とも入る見込みです。
   どちらも、固定しているビルドにすでに入っているためです。

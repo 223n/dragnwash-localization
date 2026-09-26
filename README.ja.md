@@ -174,7 +174,7 @@ Deckで言語を変えるときは、コントローラーで **Options → 言�
 > ゲームを起動したあとで Mod が読み込まれたかを確かめる **動作確認** もできます。
 > `ci` プレリリースは、master ブランチが変わるたびに同じ URL のまま作り直されるので、そこに固定したファイルは変わったり、なくなったりすることがあります。
 > 前に固定していた 4.5.0 のビルドは、2026-09-25 に `ci` が 4.6.0 に替わってから、もうダウンロードできません。
-> そのため、スクリプトは 4.6.0 のビルドを、223n のフォークにプレリリースとして手を加えずに置いたコピー（[223n/UnityDoorstop `ci-4.6.0-97293a28`](https://github.com/223n/UnityDoorstop/releases/tag/ci-4.6.0-97293a28)）からダウンロードし、SHA-256 を確かめます。
+> そのため、スクリプトは 4.6.0 のビルドを、このリポジトリのプレリリースに手を加えずに置いたコピー（[`doorstop-4.6.0-ci-97293a28`](https://github.com/TomXV/dragnwash-localization/releases/tag/doorstop-4.6.0-ci-97293a28)）からダウンロードし、SHA-256 を確かめます。
 > UnityDoorstop 4.6.0 の安定版が出て試せたら、そちらに切り替えます。
 > 進み具合は [TomXV/dragnwash-modframework#85](https://github.com/TomXV/dragnwash-modframework/issues/85) で確かめられます。
 > ダウンロードした Doorstop が一致しないときや、もうダウンロードできない（HTTP 404）ときは、スクリプトはゲームのフォルダーを変えずに止まり、この issue を案内します。
