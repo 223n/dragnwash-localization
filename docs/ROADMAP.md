@@ -2,7 +2,7 @@
 
 [日本語](ROADMAP.ja.md)
 
-Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-23.
+Where Drag'n Wash Localization is going. Plans change; dates are given only when they are close. Updated 2026-09-26.
 
 ## Released: v1.5.0 (2026-09-23)
 
@@ -62,7 +62,7 @@ German, French, Spanish, Brazilian Portuguese, Russian, Polish, Hebrew, Ukrainia
 ### Checks on other systems
 
 - Steam Deck: typing in the F1 window with the on-screen keyboard.
-- macOS: waiting on BepInEx's Doorstop, which cannot hook Unity 6.3 yet ([UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)).
+- macOS: the Doorstop in BepInEx 5.4.23.5 cannot hook Unity 6.3 ([NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)). For now, an experimental install script ([`installer/experimental/install-macos.sh`](../installer/experimental/install-macos.sh)) puts in the Doorstop from UnityDoorstop's `ci` pre-release, pinned to its 4.5.0 build, which was tested with the game, runs the game as x86_64 under Rosetta, and hands Steam's overlay on to it; progress is followed in [223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3). The overlay hand-over was merged upstream on 2026-09-25 ([NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121), in 4.6.0); with Doorstop 4.6.0 or later the script's edit is not needed and is skipped. The pinned 4.5.0 `ci` build can no longer be downloaded, so for now the script stops, without changing anything, when it has to download the Doorstop. Next, the script pins the stable UnityDoorstop 4.6.0 once it is released and tested, rather than another `ci` build. It is expected to carry both UnityDoorstop fixes ([NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117) and [NeighTools/UnityDoorstop#114](https://github.com/NeighTools/UnityDoorstop/pull/114)), as both are already in the pinned `ci` build. After that, the script only waits for a BepInEx release with BepInEx's arm64 fixes ([BepInEx/BepInEx#1288](https://github.com/BepInEx/BepInEx/pull/1288) and [BepInEx/BepInEx#1402](https://github.com/BepInEx/BepInEx/pull/1402)), and moves to it. With it, the game is expected to run natively on arm64, without Rosetta (not tested yet).
 
 ## Not planned
 

@@ -845,6 +845,52 @@ TMPフックは画面に出る全文字列を拾うため、スライダーの�
   UnityDoorstop#107のarch対策と「動作確認」モードを持つ。
   リリースのzipには入れておらず、Macではまだ実行していない。
   修正版のBepInExが出たら `BEPINEX_URL` / `BEPINEX_SHA256` を差し替え、`KNOWN_ISSUE=0` にして試してから同梱する。
+- 追記（2026-09-25）: Apple A18 Pro / macOS 27.2で、動く組み合わせを手作業で確かめた（[223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3)。フォークに置いた下書きのissueで、本家にあらためて出す予定）。
+  BepInEx 5.4.23.5 `macos_universal` の `libdoorstop.dylib` と `run.sh` を、UnityDoorstopの `ci` プレリリースのものに差し替える。
+  NeighTools/UnityDoorstop#108の修正（NeighTools/UnityDoorstop#117）が入っているのは、今はこのビルドだけで、安定版はまだない。
+  ゲームはRosetta（x86_64）で動かす。
+  arm64のネイティブ実行では、BepInEx 5.4.23.5がHarmonyのパッチを当てられないため（BepInEx/BepInEx#1402、マージ済み・未リリース）。
+  `run_bepinex.sh` は `STEAM_DYLD_INSERT_LIBRARIES` も引き継ぐので、Steamオーバーレイが開く。
+  結果は `Chainloader startup complete` で、ModFramework 1.5.0のプラグイン10個が読み込まれた。
+  起動はSteamから行う。ターミナルから起動するとSteam APIが使えず、セーブが見えない。
+- `install-macos.sh` がこの組み合わせを入れるようにした（2026-09-26）。
+  `ci` 版のDoorstopのzipをSHA-256で固定して取得し、同じURLのままビルドが変わっているか、なくなっていれば（HTTP 404）止まる。
+  その場合、固定したハッシュを更新するまでインストールできない。メッセージでは上のissueを案内する。
+  `--bepinex-zip`、`--doorstop-zip`、`--framework-zip` で手元のzipを渡せる。こちらも同じように確かめる。
+  Rosettaが入っているかも確かめる。
+  `run_bepinex.sh` は、既定値の入った行だけで `executable_name`、`archpreference`、`target_assembly` を設定し、`run.sh` にまだなければオーバーレイの引き継ぎを足してから、結果を確かめる。2回目の実行では何も変わらない。
+  ほかに、`mod-install.json` が指すModFrameworkのリリースを入れる。
+  バックアップを残すのは、`run_bepinex.sh` と `libdoorstop.dylib`（初めて置き換えるときに一度だけ `<名前>.dragnwash-backup` として）と、`localconfig.vdf`（書き換えるたびに、その前に `localconfig.vdf.dragnwash-backup` へ）だけ。
+  アンインストールでは、自分で入れたBepInExと一緒に、Doorstopのファイル、バックアップ、`preloader_*.log` も消す。
+  ModFrameworkは、スクリプトが入れたときだけ、入れた部分だけを消す（マーカーファイルに記録する）。手作業で入れたModFrameworkは残し、BepInExと起動オプションもそのままにする。
+  プラグインを「入れた」と記録するのは、そのフォルダーごとなかったときだけにする。
+  オフの部分（`<名前>.dll.disabled`）は入っているものとして扱い、隣にDLLを置かない。最後の案内で戻し方を伝える（ライブラリはMods画面で。Mods画面で切り替えられないコアとPreloaderは、名前を戻して）。
+  このMod自体は逆で、Deck用スクリプトと同じく、入れるのはオンにしたいからと考える。`.dll.disabled` を消し、Preloaderのリスト（`disabled.txt`、`state.txt`、`uninstall.txt`）からこのModの行を消す。ほかの行はそのまま残す。アンインストールでもこの行を消す。
+  自分で入れたPreloaderをアンインストールで消すときも、残るModFrameworkの部分のためにリストは残す。残した部分がオフなら、案内でそう伝える。
+  「動作確認」は、`Chainloader startup complete`、プラグインの行、最後の起動より古い `LogOutput.log` を知らせる。
+  `KNOWN_ISSUE` とNeighTools/UnityDoorstop#107の対策は外した。
+  スクリプト自体は、はじめ隔離したゲームフォルダーとSteamのフォルダーでしか試していなかった。
+  2026-09-26に、同じMacの実際のゲームで、手作業で入れた環境（`ci` 版4.6.0のDoorstop。`libdoorstop.dylib` は固定したものとバイト単位で同じ）の上から1回実行した。何もダウンロードしなかった。
+  BepInEx、Doorstop、ModFramework 1.5.0はそのまま残し、`executable_name` をフルパスにするため `run_bepinex.sh` を書き直し（バックアップあり）、オーバーレイの引き継ぎはそのままにした。Mod（v1.5.0のリリースのzip）を入れ、起動オプションを設定した。
+  Steamから起動すると、翻訳、Steamオーバーレイ、F1の窓が動いた。
+  実際のゲームへの新規インストールは試していないので、実験的なままで、リリースのzipにも入れない。
+  インストール後の最初の起動で15秒ほど固まるように見えたのは、ゲームのウィンドウが前面にないときに起きるらしい。ウィンドウをアクティブにしておくと、なめらかに起動した（同じMac、2026-09-26）。
+- 方針（2026-09-26）: 別の `ci` ビルドに固定し直さず、安定版を待つ。
+  同じURLで新しい `ci` ビルドが出て、固定したビルドが替わると、Doorstopのダウンロードが要るインストールは、次に固定し直すまで止まったままになる。
+  次に固定するのは、試したあとのUnityDoorstop 4.6.0の安定版。進み具合は上のissueで追う。
+  NeighTools/UnityDoorstop#117とNeighTools/UnityDoorstop#114は、どちらも固定している `ci` 版4.5.0（master `d8973b22`）に入っているので、安定版の4.6.0にも両方入る見込み。
+  そのあとにスクリプトが待つのは、BepInExのarm64向けの修正（BepInEx/BepInEx#1288とBepInEx/BepInEx#1402）が入ったBepInExのリリースだけで、出たらそちらに切り替える。そのリリースなら、Rosettaなしのネイティブで動く見込み（まだ試していない）。
+  オーバーレイの引き継ぎは、2026-09-25に本家にマージされた（[NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121)、4.6.0に収録）。Doorstop 4.6.0以降では、スクリプトによるオーバーレイの書き換えは要らないので行わない。
+- 追記（2026-09-26）: NeighTools/UnityDoorstop#121のマージのあと、UnityDoorstopのmaster `97293a28` で版が4.6.0に上がった。
+  `ci` プレリリースのファイルは `doorstop_macos_release_4.6.0.zip` に替わり、固定していた4.5.0の `ci` 版のzipはもうダウンロードできない（HTTP 404）。
+  同じMacで手作業で確かめた。`ci` 版4.6.0の `run.sh` に3つの設定だけを入れ（オーバーレイの書き換えはなし）、Steamオーバーレイが開き、BepInExとModFrameworkが読み込まれ、Rosetta（x86_64）で動いた。
+  `ci` 版4.6.0の `libdoorstop.dylib` は、4.5.0の `ci` 版とバイト単位で同じ。
+  方針: `ci` 版の4.6.0には固定し直さず、安定版の4.6.0を待つ。出たら、そのリリースのURLに固定する。
+  それまでは、Doorstopをダウンロードする必要があるインストールは、何も変えずに止まる。固定した `libdoorstop.dylib` がすでにあるゲームフォルダーと、固定したzipの保存コピーを渡す `--doorstop-zip` は、そのまま使える。
+  `install-macos.sh` は、`STEAM_DYLD_INSERT_LIBRARIES` をすでに引き継いでいる `run_bepinex.sh`（4.6.0の形、自分が前に書き換えた形、同じ行を手で入れた形）をそのままにし、そのことをログに書く。書き換えるのは古いブロックのある `run.sh` だけで、どちらでもないものは今までどおり使わない。
+  固定したDoorstopのダウンロードが404か410で失敗したときは、SHA-256の不一致と同じ案内を出す。新しいビルドを試して固定するまでインストールできないこと、進み具合を追う場所、`--doorstop-zip` での入れ方。ほかのダウンロードの失敗は、今までどおりの案内のまま。
+  HTTPのステータスはcurlの `%{http_code}` で見る。macOSに入っているcurl（試したMacでは8.7.1）は、HTTP/2の404を終了コード22ではなく56で返すため。
+  DoorstopのURL、zipのSHA-256、dylibのSHA-256、ビルドの名前は1か所にまとめ、安定版の4.6.0が出たときに何をどう変えるかをコメントに書いた。`ci` 版が作り直されることの説明は、URLが `ci` 版のときだけ出す。`libdoorstop.dylib` が固定したハッシュと合わないzipは使わない。
 
 ## 台詞 ID ごとの訳（2026-09-14）
 

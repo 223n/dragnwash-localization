@@ -4,7 +4,7 @@
 
 Drag'n Wash Localizationのこれからの予定です。
 予定は変わることがあり、日付は近いものだけ書いています。
-更新日：2026-09-23。
+更新日：2026-09-26。
 
 ## リリース済み：v1.5.0（2026-09-23）
 
@@ -89,8 +89,20 @@ Drag'n Wash Localizationのこれからの予定です。
 ### ほかの環境での確認
 
 - Steam Deck: F1の窓で、画面キーボードで文字を入力できるか。
-- macOS: BepInExのDoorstopがUnity 6.3にフックできるようになるのを待っています（
-  [UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)）。
+- macOS: BepInEx 5.4.23.5に入っているDoorstopは、Unity 6.3にフックできません（
+  [NeighTools/UnityDoorstop#108](https://github.com/NeighTools/UnityDoorstop/issues/108)）。
+  今は、実験的なインストールスクリプト（[`installer/experimental/install-macos.sh`](../installer/experimental/install-macos.sh)）で、
+  UnityDoorstopの `ci` プレリリースのDoorstop（ゲームで試した4.5.0のビルドに固定）を入れ、ゲームをRosetta（x86_64）で動かし、Steamオーバーレイを引き継ぎます。
+  進み具合は [223n/dragnwash-modframework#3](https://github.com/223n/dragnwash-modframework/issues/3) で確かめられます。
+  オーバーレイの引き継ぎは、2026-09-25に本家にマージされました（[NeighTools/UnityDoorstop#121](https://github.com/NeighTools/UnityDoorstop/pull/121)、4.6.0に収録）。
+  Doorstop 4.6.0以降では、スクリプトによる書き換えは要らないので行いません。
+  固定している4.5.0の `ci` ビルドは、もうダウンロードできません。
+  そのため今は、Doorstopをダウンロードする必要があるとき、スクリプトは何も変えずに止まります。
+  次は、別の `ci` ビルドではなく、UnityDoorstop 4.6.0の安定版が出て試せたら、それに固定します。
+  4.6.0の安定版には、UnityDoorstopの修正（[NeighTools/UnityDoorstop#117](https://github.com/NeighTools/UnityDoorstop/pull/117) と [NeighTools/UnityDoorstop#114](https://github.com/NeighTools/UnityDoorstop/pull/114)）が両方とも入る見込みです。
+  どちらも、固定している `ci` ビルドにすでに入っているためです。
+  そのあとにスクリプトが待つのは、BepInExのarm64向けの修正（[BepInEx/BepInEx#1288](https://github.com/BepInEx/BepInEx/pull/1288) と [BepInEx/BepInEx#1402](https://github.com/BepInEx/BepInEx/pull/1402)）が入ったBepInExのリリースだけで、出たらそちらに切り替えます。
+  そのリリースなら、Rosettaなしのネイティブ（arm64）で動く見込みです（まだ試していません）。
 
 ## 予定していないこと
 
